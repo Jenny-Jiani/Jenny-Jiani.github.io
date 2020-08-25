@@ -34,7 +34,7 @@
 	text-decoration: underline;
 }
 
-.otherLinkColour{
+.otherLinkColour {
 	color: #3C3C3C; 
 }
 
@@ -43,7 +43,7 @@
 	color: #585858; 
 }
 
-.unavailableLink{
+.unavailableLink {
 	color: 	#A9A9A9;
 	
 	cursor: text;
@@ -55,7 +55,7 @@
 	margin-top: 40px;
 }
 
-.dynamsoftLogo{
+.dynamsoftLogo {
 	height: 45px;
 }
 
@@ -109,20 +109,20 @@
 	color: #585858; 
 }
 
-table { 
+table {
 	border-collapse: collapse; 
 	text-align: left; 
 	table-layout: fixed; 
 }
 
-table td, table th { 
+table td, table th {
 	border: 1px solid #c7d0db; 
 	color: #666; 
 	height: 30px; 
 	padding: 5px 10px; 
 }
 
-.markdown-body table th, .markdown-body table td { 
+.markdown-body table th, .markdown-body table td {
 	border-left: 1px solid #306877; 
 	border-right: 1px solid #306877; 
 	border-top: 1px solid #c7d0db; 
@@ -134,11 +134,11 @@ table td, table th {
 	border-bottom: 1px solid #306877; 
 }
 
-.markdown-body table th {  
+.markdown-body table th {
 	border-top: 1px solid #306877; 
 }
 
-table thead th { 
+table thead th {
 	background-color: #306877; 
 	text-align: left; 
 	color: #FFFFFF;
@@ -147,11 +147,11 @@ table thead th {
 	font-weight: normal!important;
 }
 
-table thead th strong {  
+table thead th strong {
 	color: #FFFFFF;
 }
 
-ul { 
+ul {
 	margin-left: 20px; 
 }
 
@@ -167,44 +167,40 @@ ul.square {
 	line-height: 28px;
 }
 
-ul.disc { 
+ul.disc {
 	list-style-type: disc; 
 	padding-left: 30px; 
 	line-height: 28px; 
 	margin-left: 0;
 	margin-top: 149px;
 }
-ul li { 
+ul li {
 	cursor: pointer; 
 }
 
 ul.circle > li p:hover, ul.circle li.on p, ul.square > li.on p, ul.square > li p:hover, ul.disc > li.on p, ul.disc > li p:hover { color: #3196fc; }
 
-.mainPage { 
+.mainPage {
 	padding-left: 30px; 
 	line-height: 28px;  
 	margin: 0;
 	margin-top:40px; 
 }
 
-.headCounter h2:before
-{
-    content: counter(h2counter) "	";
+.headCounter h2:before {
+    content: counter(h2counter) ".	";
 }
 
-.headCounter h2
-{
+.headCounter h2 {
   counter-reset: h3counter;
     counter-increment: h2counter;
 }
 
-.headCounter h3:before
-{
+.headCounter h3:before {
     content: counter(h2counter) "." counter(h3counter) "	";
 }
 
-.headCounter h3
-{
+.headCounter h3 {
     counter-increment: h3counter;
 }
 
@@ -235,11 +231,11 @@ ul.circle > li p:hover, ul.circle li.on p, ul.square > li.on p, ul.square > li p
 .markdown-body ol, .markdown-body ol li  { list-style: decimal; }
 .markdown-body ul, .markdown-body ul li { list-style: disc; margin-left: 0; }
 
-#crumbs{
+#crumbs {
 	font-size: 15px;
 }
 
-#crumbs ul{
+#crumbs ul {
 	list-style: none;
 	padding-inline-start: 0px;
 	margin-left: 0px;
@@ -255,15 +251,15 @@ ul.circle > li p:hover, ul.circle li.on p, ul.square > li.on p, ul.square > li p
 	padding: 0 5px;
 }
 
-#menuLsitContainer ul{
+#menuLsitContainer ul {
 	display: none;
 }
 
-#fullTreeMenuListContainer ul{
+#fullTreeMenuListContainer ul {
 	display: none;
 }
 
-#fullTreeMenuListContainer li{
+#fullTreeMenuListContainer li {
 	list-style-type: square;
 	list-style-image: none;
 }
@@ -331,19 +327,19 @@ ul.circle > li p:hover, ul.circle li.on p, ul.square > li.on p, ul.square > li p
     }
 }
 
-.markdown-body h2{
+.markdown-body h2 {
 	padding-top: 140px;
 	margin-top: -110px;
 	font-weight: normal;
 }
 
-.markdown-body h3{
+.markdown-body h3 {
 	padding-top: 110px;
 	margin-top: -110px;
 	font-weight: normal;
 }
 
-.markdown-body h4{
+.markdown-body h4 {
 	padding-top: 110px;
 	margin-top: -110px;
 	font-weight: normal;
