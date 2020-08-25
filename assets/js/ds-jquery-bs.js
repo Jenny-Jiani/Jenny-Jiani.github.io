@@ -147,20 +147,6 @@ $(function(){
 		stopPropagation(e);
 	});	
 	
-	//Image lazy loading
-	$(".lazy").lazyload({
-		effect:"fadeIn",
-		threshold : 100,
-		placeholder:"https://www.dynamsoft.com/assets/images/img-Placeholder-1x1.png"
-		});
-	setTimeout(function(){
-    	$(".lazy-bg").lazyload({
-			effect:"fadeIn",
-			placeholder:"https://www.dynamsoft.com/assets/images/img-Placeholder-1x1.png"
-			//threshold : 500
-		});
-	},1000);
-	
 	//cookieAlert
 	var cookieWarnText = '<div class="container pr"><p>We use cookies to study how our website is being used. You consent to our cookies if you continue to use this website.</p><span class="close-cookieAlert"><i class="fa fa-times close" aria-hidden="true"></i></span></div>';
 	var cookieWarn = $("<div id='cookieAlert'></div>").html(cookieWarnText);
