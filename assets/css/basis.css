@@ -220,6 +220,7 @@ ul.circle > li p:hover, ul.circle li.on p, ul.square > li.on p, ul.square > li p
 .subHeadWrapper .subHeaderMenuUl li { padding: 0 10px; display: inline-block; color: #323234; margin-right: 20px; }
 .subHeadWrapper .subHeaderMenuUl li.on { color: #FE8E14; vertical-align: top; }
 .subHeadWrapper .subHeaderMenuUl li a, .subHeadWrapper .subHeaderMenuUl li a.whitelink { color: #323234; }
+.subHeadWrapper .subHeaderMenuUl li a.bgOrange { color: #FFFFFF; }
 .subHeadWrapper .subHeaderMenuUl li.title { margin-right: 100px; padding: 0; }
 
 .rightSideMenu { border-left: 1px solid #ddd; margin-top: 40px; }
