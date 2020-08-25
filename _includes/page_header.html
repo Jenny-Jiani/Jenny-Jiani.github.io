@@ -107,7 +107,8 @@
                             $("#txtSearch").animate({width:"240",paddingLeft:"5px",paddingRight:"5px",borderWidth:"1px"},500);
                           });
                           $(document).click(function(){
-                            if(breakpoint()=='md'){
+                            var w = document.documentElement.offsetWidth || document.body.offsetWidth;
+                            if(w < 1200 && w > 991){
                               $(".company-header #txtSearch").animate({width:"0",paddingLeft:"0",paddingRight:"0",borderWidth:"0"},500);
                               setTimeout(function(){
                                 $(".company-header .action-signin, .company-header .toggle-search").fadeIn();
