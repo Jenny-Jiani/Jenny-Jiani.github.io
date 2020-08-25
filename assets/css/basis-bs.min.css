@@ -662,6 +662,6 @@ input[type=email]:focus, input[type=password]:focus, input[type=text]:focus, tex
     #footerBottom .ct-rt { width: 18%; padding: 15px 0 0 }
 }
 
-/* @media (min-width: 1700px) {
-    .container { width: 1660px; }
-} */
+@media (min-width: 1680px) {
+    .container { width: 1630px; }
+}
