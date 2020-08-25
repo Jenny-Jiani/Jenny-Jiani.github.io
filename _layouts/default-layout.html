@@ -4,16 +4,22 @@
 {%- include head.html -%}
 
 <body>
+    <div class="headWrapper">
+        {%- include page_header.html -%}
+    </div>
+    <div class="subHeadWrapper">
+        <div class="subHeader">
+            <ul class="subHeaderMenuUl">
+                <li class="title"><a class="orangelink" href="/">Dynamsoft Barcode Reader</a> | DEVELOPER'S CENTER</li>
+                <li class="on">DOCUMENTATION</li>
+                <li><a class="whitelink" href="/">CODE GALLERY</a></li>
+                <li><a class="whitelink" href="/">RESOURCES</a></li>
+            </ul>
+        </div>
+    </div>
     <div class="wrapper">
         <div class="sideBar">
-            <div class="sideBarProductPage">
-                <p align="left"><img src="{{ site.dbr_logo }}" class="sideDBRLogo" alt="DBR Logo" />&nbsp;&nbsp;<a
-                        href="https://www.dynamsoft.com/Products/Dynamic-Barcode-Reader.aspx"
-                        class="sideProductPage">Dynamsoft Barcode Reader</a></p>
-            </div>
-            <div class="sideBarHeader">
-                <p><a href="{{ site.docHomePage }}" class="sideHomePage">< Documentation Home Page</a></p>
-            </div>
+
             <ul class="mainPage" id="fullTreeMenuListContainer" name="listLevel1">
                 <li><a href="{{ site.introduction }}" class="otherLinkColour">Introduction</a>
                     <ul>
@@ -81,15 +87,13 @@
 				</div>
                 <div class="content markdown-body headCounter">
                     {{ content }}
-                    <hr />
-                    <div class="footer">
-                        <p>© 2020 Dynamsoft Corporation. All rights reserved.</p>
-                        <p>Sales: <a href="mailto:sales@dynamsoft.com">sales@dynamsoft.com</a>      Support: <a href="mailto:support@dynamsoft.com">support@dynamsoft.com</a></p>
-                        <p>Live Chat: <a href="http://www.dynamsoft.com/Support/LiveHelp.aspx">http://www.dynamsoft.com/Support/LiveHelp.aspx</a></p>
-                    </div>
+                    
                 </div>
             </div>
         </div>
+    </div>
+    <div class="footerWrapper">
+        {%- include page_footer.html -%}
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js"
         integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>

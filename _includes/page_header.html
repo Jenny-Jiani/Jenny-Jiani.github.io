@@ -1,0 +1,179 @@
+<div id="overall-header"> 
+    <!--xs-header-->
+    <div id="xsHeader" class="visible-xs">
+        <div id="xsMenu" class="container">
+            <div class="row">
+                <div class="col-xs-12"> <a class="ds-logo" href="https://www.dynamsoft.com"></a>
+                    <div class="xsMenuToggle">
+                        <div class="open"><span></span><span></span><span></span></div>
+                        <span class="close">&times;</span> </div>
+                </div>
+            </div>
+        </div>
+        <div id="xsNav">
+            <div id="xsSearch" class="headerSearch">
+                <input type="text" placeholder="Search"/>
+                <span class="xsSearchSubmit headerSearchSubmit"></span> </div>
+            <div><span class="xsNavToggle">Products <i class="fa fa-caret-up" aria-hidden="true"></i></span></div>
+            <ul class="products clearfix">
+                <li><a href="https://www.dynamsoft.com/Products/WebTWAIN_Overview.aspx">Dynamic Web TWAIN</a></li>
+                <li><a href="https://www.dynamsoft.com/Products/.Net-TWAIN-Scanner.aspx">Dynamic .Net TWAIN</a></li>
+                <li><a href="https://www.dynamsoft.com/Products/Dynamic-Barcode-Reader.aspx">Dynamsoft Barcode Reader</a></li>
+                <li><a href="https://www.dynamsoft.com/Products/dynamsoft-webcam-sdk.aspx">Dynamsoft Camera SDK</a></li>
+                <li><a href="https://www.dynamsoft.com/Products/Products.aspx">See all</a></li>
+            </ul>
+            <ul class="company clearfix">
+                <li><a class="bluelink" href="https://www.dynamsoft.com/Support/How-to-purchase-Dynamsoft-products.aspx">Pricing</a></li>
+                <li><a class="bluelink" href="https://www.dynamsoft.com/Downloads/Downloads.aspx">Download</a></li>
+                <li><a class="bluelink" href="https://www.dynamsoft.com/Support/Support.aspx">Support</a></li>
+                <li><a class="bluelink" href="https://www.dynamsoft.com/Company/AboutDynamsoft.aspx">Company</a></li>
+            </ul>
+        </div>
+    </div>
+    
+    <!--sm-header-->
+    <div id="smHeader" class="visible-sm">
+        <div id="smMenu">
+            <div class="container"> <a class="ds-logo" href="https://www.dynamsoft.com"> </a>
+                <div class="smMenuToggle">
+                    <div class="bars"><span></span> <span></span> <span></span> </div>
+                    <span class="textMenu">MENU</span> </div>
+            </div>
+        </div>
+    </div>
+    
+    <!--md&lg- header -->
+    <div id="mdHeader" class="visible-md visible-lg">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12"> <a class="ds-logo" href="https://www.dynamsoft.com"></a>
+                    <ul id="mdMenu" class="clearfix">
+                        <li class="products"><a class="mdMenuToggle" href="javascript:void(0);">Products <i class="fa fa-caret-down" aria-hidden="true"></i></a></li>
+                        <li><a href="https://www.dynamsoft.com/Company/AboutDynamsoft.aspx">Company</a></li>
+                    </ul>
+                    <div id="cp-header">
+                      <link href="https://www.dynamsoft.com/CustomerPortal/css/pages/header_site.css?v=20171106" rel="stylesheet" type="text/css">
+                      <script>    
+                        !window.jQuery && document.write("<script src=\"https://www.dynamsoft.com/CustomerPortal/js/jquery.js\">" + "</scr" + "ipt>");
+                      </script>
+                      <div id="CPHeader-Container">
+                        <ul id="action-nav">
+                          <li class="action-signin">
+                              <div class="header-visitor"> <a class="fr" href="https://www.dynamsoft.com/Signin.aspx"><img src="../assets/img-icon/icon-user-16x16.png" alt="Sign In">Sign In</a> </div>
+                          </li>
+                          <li class="action-search">
+                            <div class="toggle-search"><span class="icon-search"></span>Search</div>
+                              <input id="txtSearch" class="search" type="text" style="background-image: url(&quot;../assets/img-icon/icon-search-a-16x16.png&quot;);">
+                          </li>
+                        </ul>
+                        <a id="btnSearch" href="javascript:void(0)" class="d-btn mdBtn bgOrange hidden">Search</a>
+                        <script type="text/javascript">
+                          function setPrechatFieldsOnLiveChatCodeLoaded() {
+                          }
+                          $(document).ready(function () {
+                          
+                          function searchJump(){
+                            if ($('#txtSearch').val() == "") {
+                              location = "https://www.dynamsoft.com/Search.aspx";
+                            }
+                            else {
+                              location = "https://www.dynamsoft.com/Search.aspx?q=" + encodeURIComponent($('#txtSearch').val());
+                            }
+                          };
+                          if($('#txtSearch').val()!=""){
+                            $('#txtSearch').val("");
+                          }			
+                          $('#btnSearch').click(function(){
+                              searchJump();
+                          });
+                          $('#txtSearch').keyup(function (e) {
+                              if (e.keyCode == 13) {
+                                searchJump();
+                              }
+                          });
+                          $('#txtSearch').blur(function(){
+                            if($(this).val()!=""){
+                              $(this).css("background-image","none");
+                            }else{
+                              $(this).css("background-image","url(../assets/img-icon/icon-search-a-16x16.png)");
+                            }
+                          });
+                          $('#txtSearch').focus(function(){
+                            $(this).css("background-image","none");
+                          });
+                          $('.toggle-search').click(function(){
+                            $(this).hide();
+                            $(".action-signin").hide();
+                            $("#txtSearch").animate({width:"240",paddingLeft:"5px",paddingRight:"5px",borderWidth:"1px"},500);
+                          });
+                          $(document).click(function(){
+                            if(breakpoint()=='md'){
+                              $(".company-header #txtSearch").animate({width:"0",paddingLeft:"0",paddingRight:"0",borderWidth:"0"},500);
+                              setTimeout(function(){
+                                $(".company-header .action-signin, .company-header .toggle-search").fadeIn();
+                              },250);
+                            }
+                            });
+                            $(".company-header .toggle-search,#txtSearch").bind('click',function(e){
+                              stopPropagation(e);
+                            });
+                            $(document).mousedown(
+                            function (event) {
+                              var target = $(event.target);
+                              if ($("#cp-header .popup").is(':visible') == true) {
+                                if (target.closest(".popup").length == 0) {
+                                  if ($("#cp-header .popup").is(':visible') == true) {
+                                    $("#cp-header .popup").hide();
+                                    $("#action-nav").css("overflow", "hidden");
+                                  }
+                                }
+                              }
+                              else {
+                                if (target.closest(".userbox").length > 0) {
+                                  if ($("#cp-header .popup").is(':visible') == false) {
+                                    $("#cp-header .popup").fadeIn(130);
+                                    $("#action-nav").css("overflow", "visible");
+                                  }
+                                }
+                              }
+                            });
+                          })
+                        </script> 
+                      </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--subMenu-->
+<div id="subMenu" class="clearfix hidden-xs">
+    <ul id="smNav" class="clearfix visible-sm">
+        <li><a href="javascript:void(0)">Products <i class="fa fa-caret-down" aria-hidden="true"></i></a></li>
+        <li><a href="https://www.dynamsoft.com/Support/How-to-purchase-Dynamsoft-products.aspx">Pricing</a></li>
+        <li><a href="https://www.dynamsoft.com/Downloads/Downloads.aspx">Download</a></li>
+        <li><a href="https://www.dynamsoft.com/Support/Support.aspx">Support</a></li>
+        <li><a href="https://www.dynamsoft.com/Company/AboutDynamsoft.aspx">Company</a></li>
+    </ul>
+    <div class="subMenuContent">
+        <div class="row proPanel">
+            <div class="col-md-4 pro">
+                <a href="https://www.dynamsoft.com/Products/WebTWAIN_Overview.aspx"><i class="logo"><img class="img-responsive" src="../assets/img-icon/icon-dwt.svg" alt="Dynamic Web TWAIN"/></i>Dynamic Web TWAIN</a>
+                <p class="intro">Cross-browser document scanning SDK for web application;</p>
+                <p class="intro">Supports browsers on Windows, Linux and macOS</p>
+            </div>
+            <div class="col-md-4 pro">
+                <a href="https://www.dynamsoft.com/Products/.Net-TWAIN-Scanner.aspx"><i class="logo"><img class="img-responsive" src="../assets/img-icon/icon-dnt.svg" alt="Dynamic .NET TWAIN"/></i>Dynamic .NET TWAIN</a>
+                <p class="intro">Document scanning SDK for .NET desktop applications</p>
+            </div>
+            <div class="col-md-4 pro">
+                <a href="https://www.dynamsoft.com/Products/Dynamic-Barcode-Reader.aspx"><i class="logo"><img class="img-responsive" src="../assets/img-icon/icon-dbr.svg" alt="Dynamsoft Barcode Reader"/></i>Dynamsoft Barcode Reader</a>
+                <p class="intro"><a class="bluelink" href="https://www.dynamsoft.com/Products/barcode-cpp-api-for-windows.aspx">Windows</a> and <a class="bluelink" href="https://www.dynamsoft.com/Products/barcode-reader-c-api-linux.aspx">Linux</a> editions</p>
+                <p class="intro"><a class="bluelink" href="https://www.dynamsoft.com/Products/barcode-scanner-sdk-ios.aspx">iOS</a> and <a class="bluelink" href="https://www.dynamsoft.com/Products/barcode-scanner-sdk-android.aspx">Android</a> editions</p>
+                <p class="intro"><a class="bluelink" href="https://www.dynamsoft.com/Products/barcode-recognition-javascript.aspx">JavaScript</a> editions for web</p>
+            </div>
+        </div>
+        <div class="ct-bt"><a class="bluelink" href="https://www.dynamsoft.com/Products/Products.aspx">View All Products &rsaquo;</a></div>
+    </div>
+</div>

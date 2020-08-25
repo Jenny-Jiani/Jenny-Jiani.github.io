@@ -233,6 +233,14 @@ ul.circle > li p:hover, ul.circle li.on p, ul.square > li.on p, ul.square > li p
     counter-increment: h3counter;
 }
 
+/* default-layout.html   ---- subHeadWrapper */
+.subHeadWrapper {
+	width: 100%;
+	height: 60px;
+	line-height: 60px;
+	background-color: #323234;
+}
+
 @media (max-width: 1200px) {
   .wrapper .sideBar { display:  none; }
   .wrapper .container { padding-left: 0 } 
