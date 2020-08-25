@@ -75,7 +75,7 @@
                 </ul>
             </div>
             <div class="col-xs-12 col-md-9">
-                <div class = "head">
+                <div class = "head clearfix">
                     {%- include main-page-head.html -%}
                 </div>
                 <div class="main row">
@@ -83,15 +83,15 @@
                         {{ content }}
                         
                     </div>
-                    <div class="sideMenu col-xs-12 col-md-3">	
-                        <div id="feedbackFooter">
-                            <p>Is this page helpful? </p>
+                    <div class="rightSideMenu col-xs-12 col-md-3">	
+                        <div id="feedbackFooter" style="color: #306877;">
+                            <p style="font-family: Oswald;">Is this page helpful? </p>
                             <a href="javascript:void(0)" onclick="UsefulRecord(true)">Yes</a>
-                            <a href="javascript:void(0)" onclick="UsefulRecord(false)">No</a>
+                            <a href="javascript:void(0)" style="margin-left: 30px;" onclick="UsefulRecord(false)">No</a>
                         </div>
                         <hr />
                         {%- if page.needAutoGenerateSidebar -%}
-                        <p style="font-weight: bold;"> In this article: </p>
+                        <p style="font-family: Oswald;color: #306877;"> In this article: </p>
                         {%- endif -%}
                     </div>
                 </div>

@@ -1,5 +1,5 @@
 {%- assign level_ary = page.url | split: '/' -%}
-<li><a href = "{{ site.docHomePage }}">HomePage</a></li>
+<li><a class="orangelink" href = "{{ site.docHomePage }}">HomePage</a></li>
 {%- for cur_level in level_ary -%}
     {%- assign breadcrumbUrl = page.url | split: cur_level | first | strip -%}
     {%- if breadcrumbUrl == "/" or breadcrumbUrl == "" -%}
@@ -8,7 +8,7 @@
     {%- for my_page in site.pages -%}
         {%- if breadcrumbUrl == my_page.url | strip -%}
             {%- assign listUrl = site.docHomePage | strip | append: breadcrumbUrl -%}
-            <li><a href = "{{ listUrl }}">{{ my_page.breadcrumbText }}</a></li>
+            <li><a class="orangelink" href = "{{ listUrl }}">{{ my_page.breadcrumbText }}</a></li>
             {%- break -%}
         {%- endif -%}
     {%- endfor -%}
@@ -30,6 +30,6 @@
     {%- if page.breadcrumbText -%}
         {%- assign pageUrlWihtoutSpace = page.url | strip -%}
         {%- assign listUrl =  site.docHomePage | strip | append: pageUrlWihtoutSpace -%}
-        <li><a href = "{{ listUrl }}">{{ page.breadcrumbText }}</a></li>
+        <li><a class="orangelink" href = "{{ listUrl }}">{{ page.breadcrumbText }}</a></li>
     {%- endif -%}
 {%- endif -%}
