@@ -72,30 +72,7 @@
 
 .container .head { 
 	margin-top: 40px;
-	/* position: fixed;  */
-	/* top: 0; 
-	width: calc(100% - 330px); 
-	height: 110px; 
-	background-color: white;
-	padding-right: 320px;
-	padding-left: 20px;
-	padding-top: 10px; */
 }
-
-/* .wrapper .container .main { 	  
-	margin-top: 60px; 	
-	padding: 20px; 	
-}
-
-.wrapper .container .main .content { 
-	padding-right: 300px; 
-}
-
-.wrapper .container .main .sideMenu { 	
-	width: 270px;	
-    position: fixed;	
-    right: 15px;	
-} */
 
 .dynamsoftLogo{
 	height: 45px;
@@ -171,12 +148,15 @@ table td, table th {
 	border-bottom: 1px solid #c7d0db; 
 	font-size: 14px;
 }
+
 .markdown-body table tr:last-child td {
 	border-bottom: 1px solid #306877; 
 }
+
 .markdown-body table th {  
 	border-top: 1px solid #306877; 
 }
+
 table thead th { 
 	background-color: #306877; 
 	text-align: left; 
@@ -189,14 +169,6 @@ table thead th {
 table thead th strong {  
 	color: #FFFFFF;
 }
-
-/* table tr:nth-child(odd) { 
-	background: #fff; 
-}
-
-table tr:nth-child(even) { 
-	background: #F5FAFA; 
-} */
 
 ul { 
 	margin-left: 20px; 
@@ -280,17 +252,6 @@ ul.circle > li p:hover, ul.circle li.on p, ul.square > li.on p, ul.square > li p
 .markdown-body code { padding: 3px 5px; color: #306877;background-color: #d5e6ea; border-radius: 0; }
 .markdown-body ol, .markdown-body ol li  { list-style: decimal; }
 .markdown-body ul, .markdown-body ul li { list-style: disc; margin-left: 0; }
-@media (max-width: 1200px) {
-  /* .wrapper .sideBar { display:  none; }
-  .wrapper .container { padding-left: 0 } 
-  .wrapper .container .head { width: 100%;  } */
-}
-
-/* .footer {
-	color: #808080;
-	font-size: 12px; 
-	line-height: 13px;
-} */
 
 #crumbs{
 	font-size: 15px;
