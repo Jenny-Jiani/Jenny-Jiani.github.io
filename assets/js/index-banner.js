@@ -63,7 +63,7 @@ function FullTreeMenuList(generateDocHead, needh3 = true) {
                                 if (subUl[j].style.display == "block") {
                                     var parentL = $(subUl[j]).parents("li");
                                     if (parentL.length > 0) {
-                                        parentL[0].style.listStyleImage = "url('/barcode-reader/assets/img-icon/collapse-list.png')";
+                                        parentL[0].style.listStyleImage = "url('/assets/img-icon/collapse-list.png')";
                                     }
                                     subUl[j].style.display = "none";
                                 }
@@ -71,14 +71,14 @@ function FullTreeMenuList(generateDocHead, needh3 = true) {
                                     subUl[j].style.display = "block";
                                     var parentL = $(subUl[j]).parents("li");
                                     if (parentL.length > 0) {
-                                        parentL[0].style.listStyleImage = "url('/barcode-reader/assets/img-icon/expand-list.png')";
+                                        parentL[0].style.listStyleImage = "url('/assets/img-icon/expand-list.png')";
                                     }
                                     var parentUl = $(liAry[i]).parents("ul");
                                     for (var m = 0; m < parentUl.length; m++) {
                                         if (parentUl[m].style.display != "block") {
                                             var parentL = $(parentUl[m]).parents("li");
                                             if (parentL.length > 0) {
-                                                parentL[0].style.listStyleImage = "url('/barcode-reader/assets/img-icon/expand-list.png')";
+                                                parentL[0].style.listStyleImage = "url('/assets/img-icon/expand-list.png')";
                                             }
                                             parentUl[m].style.display = "block";
                                         }
@@ -145,10 +145,10 @@ function HighlightCurrentListForFullTree(searchListId, firstTime, searchUrl = do
                                     var curULTag = $(curULChildrenListAry[k]).children("ul");
                                     if (curULTag.length > 0) {
                                         if (curULTag[0].style.display != "block") {
-                                            curULChildrenListAry[k].style.listStyleImage = "url('/barcode-reader/assets/img-icon/collapse-list.png')";  
+                                            curULChildrenListAry[k].style.listStyleImage = "url('/assets/img-icon/collapse-list.png')";  
                                         }
                                         else {
-                                            curULChildrenListAry[k].style.listStyleImage = "url('/barcode-reader/assets/img-icon/expand-list.png')";
+                                            curULChildrenListAry[k].style.listStyleImage = "url('/assets/img-icon/expand-list.png')";
                                         }
                                     }
                                 }
@@ -156,7 +156,7 @@ function HighlightCurrentListForFullTree(searchListId, firstTime, searchUrl = do
     
                             var childUL = $(curLi).children("ul");
                             if (childUL.length > 0) {
-                                curLi.style.listStyleImage = "url('/barcode-reader/assets/img-icon/expand-list.png')";
+                                curLi.style.listStyleImage = "url('/assets/img-icon/expand-list.png')";
                                 if (childUL[0].style.display != "block") {
                                     childUL[0].style.display = "block";
                                 }
@@ -167,17 +167,17 @@ function HighlightCurrentListForFullTree(searchListId, firstTime, searchUrl = do
                                     var curULTag = $(childrenLi[j]).children("ul");
                                     if (curULTag.length > 0) {
                                         if (curULTag[0].style.display != "block") {
-                                            childrenLi[j].style.listStyleImage = "url('/barcode-reader/assets/img-icon/collapse-list.png')";  
+                                            childrenLi[j].style.listStyleImage = "url('/assets/img-icon/collapse-list.png')";  
                                         }
                                         else {
-                                            childrenLi[j].style.listStyleImage = "url('/barcode-reader/assets/img-icon/expand-list.png')";
+                                            childrenLi[j].style.listStyleImage = "url('/assets/img-icon/expand-list.png')";
                                         }
                                     }
                                 }
                             }
                             var parentsLi = $(curLi).parents("li");
                             for (var j = 0, lenLi = parentsLi.length; j < lenLi; j++) {
-                                parentsLi[j].style.listStyleImage = "url('/barcode-reader/assets/img-icon/expand-list.png')";
+                                parentsLi[j].style.listStyleImage = "url('/assets/img-icon/expand-list.png')";
                             }
                             break;
                         }               

@@ -25,7 +25,8 @@
             <div class="sideBar col-xs-12 col-md-3">
 
                 <ul class="mainPage" id="fullTreeMenuListContainer" name="listLevel1">
-                    <li><a href="{{ site.introduction }}" class="otherLinkColour">Introduction</a>
+                    <li>
+                        <a href="{{ site.introduction }}" class="otherLinkColour">Introduction</a>
                         <ul>
                             {%- if page.url contains '/introduction/' -%}
                             <li><a href="{{ site.introduction }}overview.html" class="otherLinkColour">Overview</a></li>
