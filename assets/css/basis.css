@@ -271,8 +271,8 @@ ul.circle > li p:hover, ul.circle li.on p, ul.square > li.on p, ul.square > li p
 
 
 .markdown-body { margin-top: 40px; }
-.markdown-body h1 { border-bottom: 0; font-size: 26px; font-family: Oswald; }
-.markdown-body h2 { border-bottom: 0; font-size: 20px; font-family: Oswald; }
+.markdown-body h1 { border-bottom: 0; font-size: 26px; font-family: Oswald; font-weight: normal; }
+.markdown-body h2 { border-bottom: 0; font-size: 20px; font-family: Oswald; font-weight: normal;}
 .markdown-body code { padding: 3px 5px; color: #306877;background-color: #d5e6ea; border-radius: 0; }
 .markdown-body ol, .markdown-body ol li  { list-style: decimal; }
 
@@ -387,14 +387,17 @@ ul.circle > li p:hover, ul.circle li.on p, ul.square > li.on p, ul.square > li p
 .markdown-body h2{
 	padding-top: 110px;
 	margin-top: -110px;
+	font-weight: normal;
 }
 
 .markdown-body h3{
 	padding-top: 110px;
 	margin-top: -110px;
+	font-weight: normal;
 }
 
 .markdown-body h4{
 	padding-top: 110px;
 	margin-top: -110px;
+	font-weight: normal;
 }
