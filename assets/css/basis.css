@@ -352,8 +352,10 @@ ul.circle > li p:hover, ul.circle li.on p, ul.square > li.on p, ul.square > li p
 	background-color: #ffffff;
 }
 
-.icon-smile { display: inline-block; width: 24px; height: 24px; background: url(../img-icon/icon-smile.png); background-size: 100% 100%; margin-right: 5px;}
-.icon-sad { display: inline-block; width: 24px; height: 24px; background: url(../img-icon/icon-sad.png); background-size: 100% 100%; margin-right: 5px; }
+.recordLink { color: #306877;  display: inline-block;line-height: 24px; }
+.recordLink.sadLink { margin-left: 15px; }
+.icon-smile { display: inline-block; width: 24px; height: 24px; background: url(../img-icon/icon-smile.png); background-size: 100% 100%; margin-right: 5px; vertical-align: top;}
+.icon-sad { display: inline-block; width: 24px; height: 24px; background: url(../img-icon/icon-sad.png); background-size: 100% 100%; margin-right: 5px; vertical-align: top;}
 
 @media (min-width: 992px) {
 	.markdown-body h1 { font-size: 40px; }
@@ -366,4 +368,5 @@ ul.circle > li p:hover, ul.circle li.on p, ul.square > li.on p, ul.square > li p
 	.sideBar { max-width: 316px; }
 	.docContainer { width: calc(100% - 320px);border-left: 1px solid #ddd;padding-left: 80px; }
 	.markdown-body { padding-right: 80px; }
+	.recordLink.sadLink { margin-left: 30px; }
 }

@@ -10,11 +10,12 @@
     <div class="subHeadWrapper">
         <div class="subHeader container">
             <div class="row">
-                <ul class="subHeaderMenuUl col-xs-12">
+                <ul class="subHeaderMenuUl col-xs-12 clearfix">
                     <li class="title"><a class="f18 fontOswald" href="/">Dynamsoft Barcode Reader</a> <span class="fc9">|</span> Developer's Center</li>
                     <li class="on">Documentation</li>
                     <li><a class="whitelink" href="/">Code Gallery</a></li>
                     <li><a class="whitelink" href="/">Resources</a></li>
+                    <li class="fr"><a class="d-btn bgOrange" href="https://www.dynamsoft.com/Downloads/Dynamic-Barcode-Reader-Download.aspx">Download 30-Day Free Trial</a></li>
                 </ul>
             </div>
         </div>
@@ -86,8 +87,8 @@
                     <div class="rightSideMenu col-xs-12 col-md-3 col-xl-2">	
                         <div id="feedbackFooter" style="color: #306877;">
                             <p style="font-family: Oswald;">Is this page helpful? </p>
-                            <a href="javascript:void(0)" style="color: #306877;" onclick="UsefulRecord(true)"><i class="icon-smile"></i>Yes</a>
-                            <a href="javascript:void(0)" style="color: #306877;margin-left: 30px;" onclick="UsefulRecord(false)"><i class="icon-sad"></i>No</a>
+                            <a href="javascript:void(0)" class="recordLink smileLink" onclick="UsefulRecord(true)"><i class="icon-smile"></i>Yes</a>
+                            <a href="javascript:void(0)" class="recordLink sadLink" onclick="UsefulRecord(false)"><i class="icon-sad"></i>No</a>
                         </div>
                         <hr />
                         {%- if page.needAutoGenerateSidebar -%}
