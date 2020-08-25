@@ -51,25 +51,6 @@
 
 *{ box-sizing: border-box; margin: 0; padding: 0; }
 
-/* .wrapper { 
-	width: 100%; 
-}
-
-.wrapper .sideBar {
-	display: inline-block;
-	width: 330px;
-	height: 80vh;
-	border-right: 1px solid #ddd;
-	background: #fff;
-	overflow: auto;
-}
-
-.wrapper .container { 
-	width: calc(100% - 350px);
-	display: inline-block;
-	vertical-align: top;
-} */
-
 .container .head { 
 	margin-top: 40px;
 }
