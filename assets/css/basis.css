@@ -274,7 +274,7 @@ ul.circle > li p:hover, ul.circle li.on p, ul.square > li.on p, ul.square > li p
 .markdown-body h1 { border-bottom: 0; font-size: 26px; font-family: Oswald; }
 .markdown-body h2 { border-bottom: 0; font-size: 20px; font-family: Oswald; }
 .markdown-body code { padding: 3px 5px; color: #306877;background-color: #d5e6ea; border-radius: 0; }
-
+.markdown-body ol, .markdown-body ol li  { list-style: decimal; }
 
 @media (max-width: 1200px) {
   /* .wrapper .sideBar { display:  none; }
