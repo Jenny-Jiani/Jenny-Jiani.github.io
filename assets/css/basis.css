@@ -74,8 +74,8 @@ ul.circle > li p:hover, ul.circle li.on p, ul.square > li.on p, ul.square > li p
 
 #fullTreeMenuListContainer ul { display: none; margin-left: 20px; }
 #fullTreeMenuListContainer li { list-style: none; }
-#fullTreeMenuListContainer li.collapseListStyle a { padding-left: 20px; background: url(../img-icon/collapse-list.png) left top no-repeat; }
-#fullTreeMenuListContainer li.expandListStyle a { padding-left: 20px; background: url(../img-icon/expand-list.png) left top no-repeat; }
+#fullTreeMenuListContainer li.collapseListStyle > a { padding-left: 20px; background: url(../img-icon/collapse-list.png) left top no-repeat; }
+#fullTreeMenuListContainer li.expandListStyle > a { padding-left: 20px; background: url(../img-icon/expand-list.png) left top no-repeat; }
 
 .recordLink { color: #306877;  display: inline-block;line-height: 24px; }
 .recordLink.sadLink { margin-left: 15px; }
