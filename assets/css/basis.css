@@ -91,6 +91,10 @@ ul.circle > li p:hover, ul.circle li.on p, ul.square > li.on p, ul.square > li p
 	.subHeaderMenuUl .btn { padding: 0 10px; }
 }
 
+@media (max-width: 991px) {
+	.footerWrapper { margin-top: 100px; }
+}
+
 @media (min-width: 992px) {
 	.markdown-body h1 { font-size: 40px; }
 	.markdown-body h2 { font-size: 30px; }
