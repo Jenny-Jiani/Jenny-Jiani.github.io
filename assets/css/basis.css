@@ -31,7 +31,7 @@ ul.square { list-style-type:square; padding-left: 30px; line-height: 28px; }
 ul.disc { list-style-type: disc; padding-left: 30px; line-height: 28px; margin-left: 0; margin-top: 149px; }
 ul.circle > li p:hover, ul.circle li.on p, ul.square > li.on p, ul.square > li p:hover, ul.disc > li.on p, ul.disc > li p:hover { color: #3196fc; }
 
-.mainPage { padding-left: 30px; line-height: 28px; margin: 0; margin-top:40px; }
+.mainPage { padding-left: 0px; line-height: 28px; margin: 0; margin-top:40px; }
 
 .headCounter h2:before { content: counter(h2counter) ".	"; }
 .headCounter h2 { counter-reset: h3counter; counter-increment: h2counter; }
@@ -72,8 +72,8 @@ ul.circle > li p:hover, ul.circle li.on p, ul.square > li.on p, ul.square > li p
 
 #menuLsitContainer ul { display: none; }
 
-#fullTreeMenuListContainer ul { display: none; margin-left: 0px; }
-#fullTreeMenuListContainer li { list-style-type: square; list-style-image: none; }
+#fullTreeMenuListContainer ul { display: none; margin-left: 20px; }
+#fullTreeMenuListContainer li { list-style: none; }
 #fullTreeMenuListContainer li.collapseListStyle a { padding-left: 20px; background: url(../img-icon/collapse-list.png) left top no-repeat; }
 #fullTreeMenuListContainer li.expandListStyle a { padding-left: 20px; background: url(../img-icon/expand-list.png) left top no-repeat; }
 
