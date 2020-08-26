@@ -263,7 +263,7 @@ input[type=email]:focus, input[type=password]:focus, input[type=text]:focus, tex
     #cp-header { float: right; padding: 6px 0; height: 65px }
     #cp-header li { text-indent: 0 }
     #cp-header iframe { position: relative; right: 15px }
-    #action-nav .action-tel { background: url(../img-icon/icn-phone-24X24.png) no-repeat left center; padding-left: 25px; }
+    #action-nav .action-tel { background: url(../img-icon/icn-phone-24X24.png) no-repeat left center; padding-left: 25px; line-height: 50px; }
     #subMenu { padding: 40px 30px 50px 60px; width: 918px; margin-left: -459px; }
     #subMenu.overall { margin-left: -459px }
     #subMenu .subMenuContent .ct-lt { width: 400px }

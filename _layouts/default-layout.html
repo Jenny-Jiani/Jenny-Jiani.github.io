@@ -127,21 +127,23 @@
             var sd = $(window).scrollTop();
             console.log('Scroll Top: ' + sd)
             var ph = document.body.scrollHeight;
+            var menuHeight = $('#fullTreeMenuListContainer').outerHeight(true);
+            var rightMenuHeight = $('.rightSideMenu').outerHeight(true);
             console.log('Page Height: ' + ph)
             if (breakpoint() == 'lg') {
-                if (sd > 140 && sd < (ph - 680)) {
+                if (sd > 140 && sd < (ph - 680 - 150 - menuHeight)) {
                     $("#fullTreeMenuListContainer").css({ "position": "fixed", "top": "100px" });
                 } else {
                     $("#fullTreeMenuListContainer").css({ "position": "static", "top": "unset" });
                 }
-                if (sd > 180 && sd < (ph - 680)) {
+                if (sd > 180 && sd < (ph - 680 - 150 - rightMenuHeight)) {
                     $(".rightSideMenu").css({ "position": "fixed", "top": "100px" });
                 } else {
                     $(".rightSideMenu").css({ "position": "static", "top": "unset" });
                 }
             }
             if (breakpoint() == 'md') {
-                if (sd > 140 && sd < (ph - 660)) {
+                if (sd > 140 && sd < (ph - 660 - 150 - menuHeight)) {
                     $("#fullTreeMenuListContainer").css({ "position": "fixed", "top": "100px" });
                 } else {
                     $("#fullTreeMenuListContainer").css({ "position": "static", "top": "unset" });

@@ -147,49 +147,6 @@ $(function(){
 		stopPropagation(e);
 	});	
 	
-	//Image lazy loading
-	$(".lazy").lazyload({
-		effect:"fadeIn",
-		threshold : 100,
-		placeholder:"https://www.dynamsoft.com/assets/images/img-Placeholder-1x1.png"
-		});
-	setTimeout(function(){
-    	$(".lazy-bg").lazyload({
-			effect:"fadeIn",
-			placeholder:"https://www.dynamsoft.com/assets/images/img-Placeholder-1x1.png"
-			//threshold : 500
-		});
-	},1000);
-	
-	//cookieAlert
-	var cookieWarnText = '<div class="container pr"><p>We use cookies to study how our website is being used. You consent to our cookies if you continue to use this website.</p><span class="close-cookieAlert"><i class="fa fa-times close" aria-hidden="true"></i></span></div>';
-	var cookieWarn = $("<div id='cookieAlert'></div>").html(cookieWarnText);
-	$.ajax({
-		type: "GET",
-		url: "https://www.dynamsoft.com/CustomerPortal/CookieHints.ashx",
-		//dataType: "json",
-		success: function (returnData) {			
-            var visits = $.getCookie("cookie-alert")||$.getCookie("DSCookieCompliancyAccepted");
-			if((returnData.toLowerCase() == "true"?true:false)){
-				if(!visits){
-					cookieWarn.insertBefore($("#wrapper"));
-					$("#cookieAlert .close-cookieAlert").click(function(){
-						$("#cookieAlert").hide();
-					});
-					$("#cookieAlert").fadeIn();
-                    $.setCookie("DSCookieCompliancyAccepted", 1, 7, "/", "dynamsoft.com");
-				}else{
-					$("#cookieAlert").fadeOut();
-				}
-			}else{
-				$("#cookieAlert").fadeOut();
-			}
-		},
-		error: function(err){
-			$("#cookieAlert").fadeOut();
-		}
-	});
-	
 	/*toTop && sunNav-scroll-fixed*/
     $("#toTop").hide();
 	$(window).scroll(function(){
@@ -213,6 +170,7 @@ $(function(){
 			$(".form-email-only").show();
 		}
 	});
+	
 	$("#toTop").click(function(){
 		$('html,body').animate({scrollTop:0},500);
 		return false;		

@@ -45,7 +45,7 @@ ul.circle > li p:hover, ul.circle li.on p, ul.square > li.on p, ul.square > li p
 .subHeadWrapper .subHeaderMenuUl li.on { color: #FE8E14; vertical-align: top; }
 .subHeadWrapper .subHeaderMenuUl li a, .subHeadWrapper .subHeaderMenuUl li a.whitelink { color: #323234; }
 .subHeadWrapper .subHeaderMenuUl li a.bgOrange { color: #FFFFFF; }
-.subHeadWrapper .subHeaderMenuUl li.title { margin-right: 100px; padding: 0; }
+.subHeadWrapper .subHeaderMenuUl li.title { margin-right: 20px; padding: 0; }
 
 .rightSideMenu { border-left: 1px solid #ddd; margin-top: 40px; }
 .rightSideMenu ul { font-size: 14px; line-height: 22px; }
@@ -79,6 +79,13 @@ ul.circle > li p:hover, ul.circle li.on p, ul.square > li.on p, ul.square > li p
 .recordLink.sadLink { margin-left: 15px; }
 .icon-smile { display: inline-block; width: 24px; height: 24px; margin-right: 5px; vertical-align: top;}
 .icon-sad { display: inline-block; width: 24px; height: 24px; margin-right: 5px; vertical-align: top;}
+
+@media (max-width: 767px) {
+	.subHeaderMenuUl li { display: none; }
+	.subHeaderMenuUl li.title { display: inline-block; }
+	.container .head { margin-top: 20px; }
+	.markdown-body { margin-top: 20px; }
+}
 
 @media (max-width: 1199px) {
 	.subHeaderMenuUl .btn { padding: 0 10px; }
