@@ -81,8 +81,8 @@ ul.circle > li p:hover, ul.circle li.on p, ul.square > li.on p, ul.square > li p
 .icon-sad { display: inline-block; width: 24px; height: 24px; margin-right: 5px; vertical-align: top;}
 
 @media (max-width: 767px) {
-	.subHeaderMenuUl li { display: none; }
-	.subHeaderMenuUl li.title { display: inline-block; }
+	.subHeaderMenuUl li { display: none!important; }
+	.subHeaderMenuUl li.title { display: inline-block!important; }
 	.container .head { margin-top: 20px; }
 	.markdown-body { margin-top: 20px; min-height: calc(100vh - 348px); }
 }
