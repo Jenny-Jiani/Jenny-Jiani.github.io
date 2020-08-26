@@ -121,32 +121,33 @@
         FullTreeMenuList(false);
     </script>
     {%- endif -%}
+    
+    <script type="text/javascript">
+        $(window).scroll(function () {
+            var sd = $(window).scrollTop();
+            console.log(sd)
+            var ph = document.body.clientHeight;
+            if (breakpoint() == 'lg') {
+                if (sd > 140 && sd < (ph - 680)) {
+                    $("#fullTreeMenuListContainer").css({ "position": "fixed", "top": "100px" });
+                } else {
+                    $("#fullTreeMenuListContainer").css({ "position": "static", "top": "unset" });
+                }
+                if (sd > 180 && sd < (ph - 680)) {
+                    $(".rightSideMenu").css({ "position": "fixed", "top": "100px" });
+                } else {
+                    $(".rightSideMenu").css({ "position": "static", "top": "unset" });
+                }
+            }
+            if (breakpoint() == 'md') {
+                if (sd > 140 && sd < (ph - 660)) {
+                    $("#fullTreeMenuListContainer").css({ "position": "fixed", "top": "100px" });
+                } else {
+                    $("#fullTreeMenuListContainer").css({ "position": "static", "top": "unset" });
+                }
+            }
+        })
+    </script>
 </body>
-<script type="text/javascript">
-$(window).scroll(function () {
-    var sd = $(window).scrollTop();
-    console.log(sd)
-    var pw = document.body.offsetWidth;
-    var ph = document.body.offsetHeight;
-    if (breakpoint() == 'lg') {
-        if (sd > 140 && sd < (ph - 680)) {
-            $("#fullTreeMenuListContainer").css({ "position": "fixed", "top": "100px" });
-        } else {
-            $("#fullTreeMenuListContainer").css({ "position": "static", "top": "unset" });
-        }
-        if (sd > 180 && sd < (ph - 680)) {
-            $(".rightSideMenu").css({ "position": "fixed", "top": "100px" });
-        } else {
-            $(".rightSideMenu").css({ "position": "static", "top": "unset" });
-        }
-    }
-    if (breakpoint() == 'md') {
-        if (sd > 140 && sd < (ph - 660)) {
-            $("#fullTreeMenuListContainer").css({ "position": "fixed", "top": "100px" });
-        } else {
-            $("#fullTreeMenuListContainer").css({ "position": "static", "top": "unset" });
-        }
-    }
-})
-</script>
+
 </html>
