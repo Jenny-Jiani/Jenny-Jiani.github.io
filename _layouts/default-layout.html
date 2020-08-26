@@ -11,19 +11,18 @@
         <div class="subHeader container">
             <div class="row">
                 <ul class="subHeaderMenuUl col-xs-12 clearfix">
-                    <li class="title"><a class="f18 fontOswald" href="/">Dynamsoft Barcode Reader</a> <span class="fc9">|</span> Developer's Center</li>
+                    <li class="title"><a class="f18 fontOswald" href="https://www.dynamsoft.com/Products/Dynamic-Barcode-Reader.aspx">Dynamsoft Barcode Reader</a> <span class="fc9">|</span> Developer's Center</li>
                     <li class="on">Documentation</li>
-                    <li><a class="whitelink" href="/">Code Gallery</a></li>
-                    <li><a class="whitelink" href="/">Resources</a></li>
-                    <li class="fr"><a class="d-btn bgOrange" href="https://www.dynamsoft.com/Downloads/Dynamic-Barcode-Reader-Download.aspx">Download 30-Day Free Trial</a></li>
+                    <li><a class="whitelink hide-xs" href="/">Code Gallery</a></li>
+                    <li><a class="whitelink hide-xs" href="/">Resources</a></li>
+                    <li class="fr"><a class="btn d-btn bgOrange hide-sm hide-xs" href="https://www.dynamsoft.com/Downloads/Dynamic-Barcode-Reader-Download.aspx">Download 30-Day Free Trial</a></li>
                 </ul>
             </div>
         </div>
     </div>
     <div class="container">
         <div class="row">
-            <div class="sideBar col-xs-12 col-md-3">
-
+            <div class="sideBar col-xs-12 col-md-3 hide-sm hide-xs">
                 <ul class="mainPage" id="fullTreeMenuListContainer" name="listLevel1">
                     <li>
                         <a href="{{ site.introduction }}" class="otherLinkColour">Introduction</a>
@@ -81,11 +80,11 @@
                     {%- include main-page-head.html -%}
                 </div>
                 <div class="main row">
-                    <div class="content markdown-body headCounter col-xs-12 col-md-9 col-xl-10">
+                    <div class="content markdown-body headCounter col-xs-12 col-md-12 col-lg-9 col-xl-10">
                         {{ content }}
                         
                     </div>
-                    <div class="rightSideMenu col-xs-12 col-md-3 col-xl-2">	
+                    <div class="rightSideMenu col-xs-12 col-md-12 col-lg-3 col-xl-2  hide-md hide-sm hide-xs">	
                         <div id="feedbackFooter" style="color: #306877;">
                             <p style="font-family: Oswald;">Is this page helpful? </p>
                             <a href="javascript:void(0)" class="recordLink smileLink" onclick="UsefulRecord(true)"><i class="icon-smile"></i>Yes</a>
@@ -123,5 +122,31 @@
     </script>
     {%- endif -%}
 </body>
-
+<script type="text/javascript">
+$(window).scroll(function () {
+    var sd = $(window).scrollTop();
+    console.log(sd)
+    var pw = document.body.offsetWidth;
+    var ph = document.body.offsetHeight;
+    if (breakpoint() == 'lg') {
+        if (sd > 140 && sd < (ph - 680)) {
+            $("#fullTreeMenuListContainer").css({ "position": "fixed", "top": "100px" });
+        } else {
+            $("#fullTreeMenuListContainer").css({ "position": "static", "top": "unset" });
+        }
+        if (sd > 180 && sd < (ph - 680)) {
+            $(".rightSideMenu").css({ "position": "fixed", "top": "100px" });
+        } else {
+            $(".rightSideMenu").css({ "position": "static", "top": "unset" });
+        }
+    }
+    if (breakpoint() == 'md') {
+        if (sd > 140 && sd < (ph - 660)) {
+            $("#fullTreeMenuListContainer").css({ "position": "fixed", "top": "100px" });
+        } else {
+            $("#fullTreeMenuListContainer").css({ "position": "static", "top": "unset" });
+        }
+    }
+})
+</script>
 </html>

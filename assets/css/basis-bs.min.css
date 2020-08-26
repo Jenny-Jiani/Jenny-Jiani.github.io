@@ -362,7 +362,7 @@ input[type=email]:focus, input[type=password]:focus, input[type=text]:focus, tex
     #subMenu .subMenuContent ul li.dcs .intro a.bluelink { margin-bottom: 0; line-height: 26px; font-family: OpenSans-Regular }
     #subMenu .subMenuContent .ct-rt { float: left; width: 250px }
     #subMenu .subMenuContent .pro > a { display: inline-block; margin: 0 0 6px; font-size: 14px; line-height: 32px; color: #444; font-family: OpenSans-Semibold }
-    #subMenu .subMenuContent .pro .logo { display: inline-block; margin: 0 9px 0 0 }
+    #subMenu .subMenuContent .pro .logo { display: inline-block; margin: 0 9px 0 0; vertical-align: top; }
     #subMenu .subMenuContent .pro .logo img { width: 33px; height: 32px }
     #subMenu .subMenuContent .pro .intro { margin: 4px 0 0; font-size: 14px; line-height: 22px; color: #999 }
     #subNav { height: 54px }
@@ -386,7 +386,7 @@ input[type=email]:focus, input[type=password]:focus, input[type=text]:focus, tex
     #subNav .ct-more li { float: none; padding: 0; height: 30px; line-height: 30px }
     #subNav .ct-more li a { display: block; padding: 0 17px; width: auto; text-align: left; white-space: nowrap }
     #main { padding-bottom: 292px }
-    #footerWrapper { height: 292px }
+    #footerWrapper { height: auto; }
     #footerWrapper .ds-white { margin-top: 16px; width: 102px; height: 25px }
     #footerTop { padding: 40px 0 32px }
     #footerTop ul { float: left }
@@ -558,7 +558,7 @@ input[type=email]:focus, input[type=password]:focus, input[type=text]:focus, tex
     #subNav .subNav-ct { position: absolute; left: 210px; float: none; margin: 0 }
     #subNav .ct-list > li { padding: 0 15px }
     #main { padding-bottom: 292px }
-    #footerWrapper { height: 292px }
+    #footerWrapper { height: auto; }
     #footerTop .products { width: 40%; margin-left: 0; }
     #footerTop .resources { width: 34%; margin-left: 0; }
     #footerTop .company { width: 17%; margin-left: 0; }
@@ -638,7 +638,7 @@ input[type=email]:focus, input[type=password]:focus, input[type=text]:focus, tex
     #subMenu.overall { margin-left: -432px }
     #subNav .subNav-ct { left: 215px }
     #main { padding-bottom: 292px }
-    #footerWrapper { height: 292px }
+    #footerWrapper { height: auto; }
     #footerTop .company { width: 20% }
     #footerTop .subscribe { width: 31% }
     #footerTop .subscribe .form input { width: 69% }

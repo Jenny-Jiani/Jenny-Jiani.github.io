@@ -213,7 +213,7 @@ ul.circle > li p:hover, ul.circle li.on p, ul.square > li.on p, ul.square > li p
 	border-bottom: 1px solid #ddd;
 }
 .subHeadWrapper .subHeaderMenuUl { list-style: none; font-size: 16px; margin: 0; }
-.subHeadWrapper .subHeaderMenuUl li { padding: 0 10px; display: inline-block; color: #323234; margin-right: 20px; }
+.subHeadWrapper .subHeaderMenuUl li { padding: 0 10px; display: inline-block; color: #323234; vertical-align: top; }
 .subHeadWrapper .subHeaderMenuUl li.on { color: #FE8E14; vertical-align: top; }
 .subHeadWrapper .subHeaderMenuUl li a, .subHeadWrapper .subHeaderMenuUl li a.whitelink { color: #323234; }
 .subHeadWrapper .subHeaderMenuUl li a.bgOrange { color: #FFFFFF; }
@@ -354,10 +354,29 @@ ul.circle > li p:hover, ul.circle li.on p, ul.square > li.on p, ul.square > li p
 .icon-smile { display: inline-block; width: 24px; height: 24px; background: url(../img-icon/icon-smile.png); background-size: 100% 100%; margin-right: 5px; vertical-align: top;}
 .icon-sad { display: inline-block; width: 24px; height: 24px; background: url(../img-icon/icon-sad.png); background-size: 100% 100%; margin-right: 5px; vertical-align: top;}
 
+@media (max-width: 1199px) {
+	.subHeaderMenuUl .btn { padding: 0 10px; }
+}
+
 @media (min-width: 992px) {
 	.markdown-body h1 { font-size: 40px; }
 	.markdown-body h2 { font-size: 30px; }
 	.markdown-body h3 { font-size: 24px; }
+	.markdown-body { padding-right: 40px; }
+	.docContainer { border-left: 1px solid #ddd;padding-left: 40px; }
+	.subHeadWrapper .subHeaderMenuUl li { margin-right: 0px; }
+	.subHeadWrapper .subHeaderMenuUl li.title { margin-right: 20px; padding: 0; }
+}
+
+@media (min-width: 1200px) {
+	.markdown-body h1 { font-size: 40px; }
+	.markdown-body h2 { font-size: 30px; }
+	.markdown-body h3 { font-size: 24px; }
+	.markdown-body { padding-right: 40px; }
+	.docContainer { border-left: 1px solid #ddd;padding-left: 40px; }
+	.subHeadWrapper .subHeaderMenuUl li { margin-right: 20px; }
+	.subHeadWrapper .subHeaderMenuUl li.title { margin-right: 100px; padding: 0; }
+	
 }
 
 @media (min-width: 1680px) {
