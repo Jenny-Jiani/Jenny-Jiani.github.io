@@ -14,7 +14,7 @@
 
 .otherLinkColour { color: #3C3C3C; }
 .otherLinkColour:hover { text-decoration: underline; color: #585858; }
-.unavailableLink { color: 	#A9A9A9; cursor: text; }
+.unavailableLink { color: 	#A9A9A9; cursor: text; padding-left: 20px; }
 
 .container .head {  margin-top: 40px; }
 
