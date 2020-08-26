@@ -140,6 +140,7 @@ input[type=email]:focus, input[type=password]:focus, input[type=text]:focus, tex
   #xsSearch input[type=text]:-ms-input-placeholder { color: #aaa; font-size: 1.4rem }
 
   #footerTop .footerSubscribeSuccess p { width: 80%; margin: auto }
+  #footerWrapper { margin-top: 100px;}
 }
 
 @media (min-width:768px) {
@@ -175,7 +176,7 @@ input[type=email]:focus, input[type=password]:focus, input[type=text]:focus, tex
     #subMenu .subMenuContent .pro .logo img { width: 33px; height: 32px }
     #subMenu .subMenuContent .pro .intro { margin: 4px 0 0; font-size: 14px; line-height: 22px; color: #999 }
 
-    #footerWrapper { height: auto; }
+    #footerWrapper { height: auto; margin-top: 100px;}
     #footerWrapper .ds-white { margin-top: 16px; width: 102px; height: 25px }
     #footerTop { padding: 40px 0 32px }
     #footerTop ul { float: left }
