@@ -84,7 +84,7 @@ ul.circle > li p:hover, ul.circle li.on p, ul.square > li.on p, ul.square > li p
 	.subHeaderMenuUl li { display: none; }
 	.subHeaderMenuUl li.title { display: inline-block; }
 	.container .head { margin-top: 20px; }
-	.markdown-body { margin-top: 20px; }
+	.markdown-body { margin-top: 20px; min-height: calc(100vh - 348px); }
 }
 
 @media (max-width: 1199px) {
@@ -93,6 +93,7 @@ ul.circle > li p:hover, ul.circle li.on p, ul.square > li.on p, ul.square > li p
 
 @media (max-width: 991px) {
 	.footerWrapper { margin-top: 100px; }
+	.markdown-body { min-height: calc(100vh - 378px); }
 }
 
 @media (min-width: 992px) {
