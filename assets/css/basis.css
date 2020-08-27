@@ -6,7 +6,7 @@
 
 /*  NORMAL STYLE  */
 html {font-size:10px;color:#606060;font-family:OpenSans-Regular}
-.h1, .h2, .h3, .h4, .h5, h1, h2, h3, h4, h5 {color:#444; font-family: Oswald-Light}
+.h1, .h2, .h3, .h4, .h5, h1, h2, h3, h4, h5 {color:#444; font-family: Oswald-Light; font-weight: normal;}
 strong {color:#444;font-weight:400}
 .h1, h1 {font-size:30px;font-size:3rem;line-height:42px}
 .h2, h2 {font-size:24px;font-size:2.4rem;line-height:36px}
@@ -99,7 +99,9 @@ ul.circle > li p:hover, ul.circle li.on p, ul.square > li.on p, ul.square > li p
 
 .btn { font-family: OpenSans-Regular; }
 
+#footerTop .subscribe { margin-left: 0; }
 
+#TryFreeDownload { margin-top: 140px }
 
 @media (min-width: 768px) {
 	.h1, h1 {font-size:36px;font-size:3.6rem;line-height:48px}
@@ -122,6 +124,7 @@ ul.circle > li p:hover, ul.circle li.on p, ul.square > li.on p, ul.square > li p
 	.sideBar {position: absolute; width: auto; left: 0; z-index: 12; background: #eeeeee; padding: 20px; padding-left: calc(50% - 355px);}
 	.sideBar .mainPage { margin-top: 0; width: auto; }
 	#fullTreeMenuListContainer > li { max-width: 320px; min-width: 200px; }
+	#TryFreeDownload { margin-top: 100px }
 }
 
 @media (max-width: 767px) {
