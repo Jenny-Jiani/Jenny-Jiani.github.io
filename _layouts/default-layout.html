@@ -19,7 +19,7 @@
                 </ul>
             </div>
             <div class="row mobileSubHeaderMenu">
-                <ul class="show-xs">
+                <ul class="col-xs-12 show-xs">
                     <li><a class="orangelink" href = "{{ site.docHomePage }}">Documentation</a></li>
                     <li><a class="whitelink" href="https://www.dynamsoft.com/Downloads/Dynamic-Barcode-Reader-Sample-Download.aspx">Code Gallery</a></li>
                     <li><a class="whitelink" href="https://www.dynamsoft.com/Products/Barcode-Reader-Resources.aspx">Resources</a></li>
@@ -30,7 +30,7 @@
     <div class="sideBarIcon"><i class="fa fa-list" style="margin-right: 5px;"></i> Table of contents</div>
     <div class="container">
         <div class="row">
-            <div class="sideBar col-xs-12 col-md-3 hide-sm">
+            <div class="sideBar col-xs-12 col-md-3 hide-xs hide-sm">
                 <ul class="mainPage" id="fullTreeMenuListContainer" name="listLevel1">
                     <li>
                         <a href="{{ site.introduction }}" class="otherLinkColour">Introduction</a>
@@ -159,6 +159,7 @@
         })
         $('.sideBarIcon').click(function() {
             $(".sideBar").toggleClass('hide-sm');
+            $(".sideBar").toggleClass('hide-xs');
         })
     </script>
 </body>
