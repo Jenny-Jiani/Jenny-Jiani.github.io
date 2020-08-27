@@ -12,17 +12,25 @@
             <div class="row">
                 <ul class="subHeaderMenuUl col-xs-12 clearfix">
                     <li class="title"><a class="f18 fontOswald" href="https://www.dynamsoft.com/Products/Dynamic-Barcode-Reader.aspx">Dynamsoft Barcode Reader</a> <span class="fc9">|</span> Developer's Center</li>
-                    <li class="on">Documentation</li>
+                    <li class="on"><a class="orangelink" href = "{{ site.docHomePage }}">Documentation</a></li>
                     <li><a class="whitelink hide-xs" href="https://www.dynamsoft.com/Downloads/Dynamic-Barcode-Reader-Sample-Download.aspx">Code Gallery</a></li>
                     <li><a class="whitelink hide-xs" href="https://www.dynamsoft.com/Products/Barcode-Reader-Resources.aspx">Resources</a></li>
                     <li class="fr"><a class="btn d-btn bgOrange hide-sm hide-xs" href="https://www.dynamsoft.com/Downloads/Dynamic-Barcode-Reader-Download.aspx">Download 30-Day Free Trial</a></li>
                 </ul>
             </div>
+            <div class="row mobileSubHeaderMenu">
+                <ul class="show-xs">
+                    <li><a class="orangelink" href = "{{ site.docHomePage }}">Documentation</a></li>
+                    <li><a class="whitelink" href="https://www.dynamsoft.com/Downloads/Dynamic-Barcode-Reader-Sample-Download.aspx">Code Gallery</a></li>
+                    <li><a class="whitelink" href="https://www.dynamsoft.com/Products/Barcode-Reader-Resources.aspx">Resources</a></li>
+                </ul>
+            </div>
         </div>
     </div>
+    <div class="sideBarIcon"><i class="fa fa-list" style="margin-right: 5px;"></i> Table of contents</div>
     <div class="container">
         <div class="row">
-            <div class="sideBar col-xs-12 col-md-3 hide-sm hide-xs">
+            <div class="sideBar col-xs-12 col-md-3 hide-sm">
                 <ul class="mainPage" id="fullTreeMenuListContainer" name="listLevel1">
                     <li>
                         <a href="{{ site.introduction }}" class="otherLinkColour">Introduction</a>
@@ -76,7 +84,7 @@
                 </ul>
             </div>
             <div class="docContainer col-xs-12 col-md-9">
-                <div class = "head clearfix">
+                <div class = "head clearfix hide-xs">
                     {%- include main-page-head.html -%}
                 </div>
                 <div class="main row">
@@ -148,6 +156,9 @@
                     $("#fullTreeMenuListContainer").css({ "position": "static", "top": "unset" });
                 }
             }
+        })
+        $('.sideBarIcon').click(function() {
+            $(".sideBar").toggleClass('hide-sm');
         })
     </script>
 </body>
