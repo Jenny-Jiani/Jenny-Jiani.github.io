@@ -17,27 +17,6 @@ $(function(){
 })
 
 $(function(){
-	/*header search*/
-	function headerSearch(){
-		var searchVal = '';
-		if(breakpoint()=='xs'){
-			searchVal = $("#xsSearch input[type='text']").val();
-		}else{
-			searchVal = $("#smSearch input[type='text']").val();
-		}
-		$('#txtSearch').val(searchVal);
-	    $("#btnSearch").click();
-	}
-	$(".headerSearch .headerSearchSubmit").click(function(){
-		headerSearch();
-	});
-	$(".headerSearch input[type='text']").bind('keypress',function(event){  
-        if(event.keyCode == "13")      
-        {
-            headerSearch();
-        }
-    });
-	
 	/*xsMenu*/
 	$("#xsMenu .xsMenuToggle").click(function() {
 		$("#xsNav").slideToggle();
@@ -95,27 +74,7 @@ $(function(){
 			$(this).siblings('ul.ct-more').css('left',(toggleWidth-ulWidth)/2);
 		}
 	});
-
-	/*$("#subNav").clickhide({
-		_rootObjID: "#subNav",
-		_toggleNode: ".dropdown-toggle",
-		_operateNode: ".subNav-ct-more",
-		_currentTabClass: "on",
-	});
-	$("#subNav .dropdown-toggle").click(function(){
-	    var toggleWidth = $(this).parent().outerWidth();
-		var ulWidth = $(this).siblings('ul').outerWidth();
-		$(this).siblings('ul').css('left',(toggleWidth-ulWidth)/2);
-	});*/
 	
-	/*smSearch*/
-	$("#smSearch .smSearchToggle").click(function(){
-	    $(this).hide();
-		$("#smSearch .smSearchSubmit").show();
-		$("#smSearch input[type='text']").show().focus();
-		$("#subNav .ct-list > li").removeClass('on');
-		$("#subNav .ct-list > li ul.ct-more").hide();
-	});	
 	
 	$(document).click(function(){
 		/*header*/
@@ -138,12 +97,8 @@ $(function(){
 		$("#subNav .ct-list > li").removeClass('on');
 		$("#subNav .ct-list > li ul.ct-more").slideUp();
 		$("#subNav .ct-list > li .subNav-toggle i.show-xs").addClass('fa-angle-down').removeClass('fa-angle-up');
-		/*smSearch*/
-		$("#smSearch .smSearchSubmit").hide();
-		$("#smSearch input[type='text']").hide();
-		$("#smSearch .smSearchToggle").show();		
 	});
-	$("#xsHeader .xsMenuToggle, #xsNav, #smHeader .smMenuToggle, #smSearch, #mdMenu .mdMenuToggle, #subMenu, #subNav .subNav-xsToggle, #subNav .ct-list").bind('click',function(e){
+	$("#xsHeader .xsMenuToggle, #xsNav, #smHeader .smMenuToggle, #mdMenu .mdMenuToggle, #subMenu, #subNav .subNav-xsToggle, #subNav .ct-list").bind('click',function(e){
 		stopPropagation(e);
 	});	
 	
@@ -345,46 +300,4 @@ function scrollToMainContent(){
 		});
 		
 	};
-	
-	//Cookie addition, deletion, and change
-	$.extend({
-		getCookie:function(cookieName){
-			var targetCookieStr = cookieName + "=";
-			var targetCookieStrLength = targetCookieStr.length;
-			var cookieLength = document.cookie.length;
-			var i = 0;
-			while (i < cookieLength) {
-			var j = i + targetCookieStrLength;
-			if (document.cookie.substring(i, j) == targetCookieStr){
-				var endstr = (document.cookie.indexOf(";", j) == -1)?document.cookie.length:document.cookie.indexOf(";", j);
-				return unescape(document.cookie.substring(j, endstr));
-			}
-			i = document.cookie.indexOf(" ", i) + 1;
-			if (i == 0) break;
-			}
-			return null;
-		},
-		setCookie:function(name,value,expiredays,path,domain,secure){
-			/*
-			name: cookie's name
-			value: cookie's content
-			expiredays: cookie's expiredays
-			path: cookie's default path
-			domain: The domain cookie allowed
-			secure: cookie's security field
-			*/
-			var exdate=new Date();
-			exdate.setDate(exdate.getDate() + expiredays);
-			document.cookie = name + "=" + escape (value) +
-			((expiredays) ? "; expires=" + exdate.toGMTString() : "") +
-			((path) ? "; path=" + path : "") +
-			((domain) ? "; domain=" + domain : "") +
-			((secure) ? "; secure" : "");
-		},
-		deleteCookie:function(cookieName){
-			var exdate=new Date();
-			exdate.setDate(exdate.getDate() - 1);
-			$.setCookie(cookieName, "", exdate);
-		}
-	});
 })(jQuery);

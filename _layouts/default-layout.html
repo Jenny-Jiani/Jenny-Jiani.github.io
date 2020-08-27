@@ -130,19 +130,19 @@
             var rightMenuHeight = $('.rightSideMenu').outerHeight(true);
             if (breakpoint() == 'lg') {
                 if (sd > 140 && sd < (ph - 680 - 150 - menuHeight)) {
-                    $("#fullTreeMenuListContainer").css({ "position": "fixed", "top": "100px" });
+                    $("#fullTreeMenuListContainer").css({ "position": "fixed", "top": "40px" });
                 } else {
                     $("#fullTreeMenuListContainer").css({ "position": "static", "top": "unset" });
                 }
-                if (sd > 180 && sd < (ph - 680 - 150 - rightMenuHeight)) {
-                    $(".rightSideMenu").css({ "position": "fixed", "top": "100px" });
+                if (sd > 140 && sd < (ph - 680 - 150 - rightMenuHeight)) {
+                    $(".rightSideMenu").css({ "position": "fixed", "top": "80px" });
                 } else {
                     $(".rightSideMenu").css({ "position": "static", "top": "unset" });
                 }
             }
             if (breakpoint() == 'md') {
                 if (sd > 140 && sd < (ph - 660 - 150 - menuHeight)) {
-                    $("#fullTreeMenuListContainer").css({ "position": "fixed", "top": "100px" });
+                    $("#fullTreeMenuListContainer").css({ "position": "fixed", "top": "40px" });
                 } else {
                     $("#fullTreeMenuListContainer").css({ "position": "static", "top": "unset" });
                 }
