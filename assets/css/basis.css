@@ -74,11 +74,15 @@ ul.circle > li p:hover, ul.circle li.on p, ul.square > li.on p, ul.square > li p
 
 #menuLsitContainer ul { display: none; }
 
-#fullTreeMenuListContainer ul { display: none; margin-left: 20px; }
-#fullTreeMenuListContainer li { list-style: none; padding-left: 20px; }
+#fullTreeMenuListContainer ul { display: none; margin-left: 15px; margin-bottom: 10px; }
+#fullTreeMenuListContainer li { list-style: none; padding-left: 15px; line-height: 20px; margin-bottom: 8px; position: relative; }
+#fullTreeMenuListContainer li:before { content: ''; width: 6px; height: 6px; border-radius: 50%; display: inline-block; background: #999; position: absolute; left: 2px; top: 8px; }
+#fullTreeMenuListContainer li.unavailableLink:before { display: none; }
+#fullTreeMenuListContainer li > ul { margin-top: 8px; }
 #fullTreeMenuListContainer li.collapseListStyle, #fullTreeMenuListContainer li.expandListStyle { padding-left: 0; }
-#fullTreeMenuListContainer li.collapseListStyle > a { padding-left: 20px; background: url(../img-icon/collapse-list.png) left center no-repeat; }
-#fullTreeMenuListContainer li.expandListStyle > a { padding-left: 20px; background: url(../img-icon/expand-list.png) left center no-repeat; }
+#fullTreeMenuListContainer li.collapseListStyle:before, #fullTreeMenuListContainer li.expandListStyle:before { display: none; }
+#fullTreeMenuListContainer li.collapseListStyle > a { display: inline-block; padding-left: 15px; background: url(../img-icon/collapse-list.png) left 2px no-repeat; }
+#fullTreeMenuListContainer li.expandListStyle > a { display: inline-block; padding-left: 15px; background: url(../img-icon/expand-list.png) left 2px no-repeat; }
 #AutoGenerateSidebar li a:hover, #fullTreeMenuListContainer li a:hover { color: #FE8E14; }
 
 .recordLink { color: #306877;  display: inline-block;line-height: 24px; }
@@ -135,7 +139,7 @@ ul.circle > li p:hover, ul.circle li.on p, ul.square > li.on p, ul.square > li p
 	.subHeadWrapper .subHeaderMenuUl li.title { margin-right: 100px; padding: 0; }
 	#crumbs { font-size: 16px; }
 	.rightSideMenu { width: 212px; }
-	.sideBar { width: 292px; }
+	.sideBar .mainPage { width: 262px; }
 }
 
 @media (min-width: 1680px) {
@@ -145,5 +149,5 @@ ul.circle > li p:hover, ul.circle li.on p, ul.square > li.on p, ul.square > li p
 	.markdown-body { padding-right: 80px; }
 	.recordLink.sadLink { margin-left: 30px; }
 	.rightSideMenu { width: 207px; }
-	.sideBar { width: 316px; }
+	.sideBar .mainPage { width: 286px; }
 }
