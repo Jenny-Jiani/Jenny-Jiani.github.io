@@ -32,8 +32,8 @@ function GenerateContentByHead(needh3 = true) {
             appendContent += curliContent;
         }
         appendContent += '</ul>'
-        if ($('.rightSideMenu').length != 0) {
-            $($('.rightSideMenu')[0]).append(appendContent);
+        if ($('#AutoGenerateSidebar').length != 0) {
+            $('#AutoGenerateSidebar').append(appendContent);
         }
         // if (!needh3 && $('#sidelistDocContent').length != 0) {
         //     $($('#sidelistDocContent')[0]).append(appendContent);
