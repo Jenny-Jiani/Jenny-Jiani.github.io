@@ -73,7 +73,8 @@ ul.circle > li p:hover, ul.circle li.on p, ul.square > li.on p, ul.square > li p
 .markdown-body h3 code { font-family: Oswald-Light; font-weight: normal; }
 .markdown-body ol, .markdown-body ol li  { list-style: decimal; }
 .markdown-body ul, .markdown-body ul li { list-style: disc; margin-left: 0; }
-
+.markdown-body a, .markdown-body a:active { color:#fe8e14;text-decoration:none!important }
+.markdown-body a:hover { color:#ff9f1f }
 #crumbs { font-size: 14px; }
 #crumbs ul { list-style: none; padding-inline-start: 0px; margin-left: 0px; }
 #crumbs ul li { display: inline-block; }
