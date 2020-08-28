@@ -53,7 +53,7 @@ ul.circle > li p:hover, ul.circle li.on p, ul.square > li.on p, ul.square > li p
 .subHeadWrapper .mobileSubHeaderMenu ul li { display: inline-block; margin-right: 20px; }
 .subHeadWrapper .mobileSubHeaderMenu ul li:last-child { margin-right: 0; }
 
-.rightSideMenu { border-left: 1px solid #ddd; margin-top: 40px; height: 100%; max-height: 90vh; }
+.rightSideMenu { border-left: 1px solid #ddd; margin-top: 40px; height: 100%; max-height: 90vh; overflow: auto; }
 .rightSideMenu ul { font-size: 14px; line-height: 22px; }
 .rightSideMenu ul li { margin-bottom: 5px; }
 .rightSideMenu ul li > ul { margin-top: 5px; }
