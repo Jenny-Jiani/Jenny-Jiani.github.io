@@ -167,7 +167,7 @@ ul.circle > li p:hover, ul.circle li.on p, ul.square > li.on p, ul.square > li p
 	.subHeadWrapper .subHeaderMenuUl li { margin-right: 20px; }
 	.subHeadWrapper .subHeaderMenuUl li.title { margin-right: 100px; padding: 0; }
 	#crumbs { font-size: 16px; }
-	.rightSideMenu { width: 212px; }
+	.rightSideMenu { max-width: 212px; }
 	/* .sideBar .mainPage { width: 262px; overflow: auto; } */
 }
 
@@ -177,6 +177,6 @@ ul.circle > li p:hover, ul.circle li.on p, ul.square > li.on p, ul.square > li p
 	.docContainer { width: calc(100% - 320px);border-left: 1px solid #ddd;padding-left: 80px; }
 	.markdown-body { padding-right: 80px; }
 	.recordLink.sadLink { margin-left: 30px; }
-	.rightSideMenu { width: 207px; }
+	.rightSideMenu { max-width: 207px; }
 	.sideBar .mainPage { width: 286px; overflow: auto; }
 }
