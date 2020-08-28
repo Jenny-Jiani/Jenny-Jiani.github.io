@@ -137,25 +137,35 @@
             var ph = document.body.scrollHeight;
             var menuHeight = $('#fullTreeMenuListContainer').outerHeight(true);
             var rightMenuHeight = $('.rightSideMenu').outerHeight(true);
+            var dcheight = $('.docContainer').height() + 125 - sd 
+            if (dcheight > document.body.clientHeight) {
+                $('.sideBar .mainPage').css({'height': document.body.clientHeight})
+            } else {
+                $('.sideBar .mainPage').css({'height': dcheight})
+            }
             if (breakpoint() == 'lg') {
                 if (sd > 140 && sd < (ph - 680 - 150 - menuHeight)) {
-                    $("#fullTreeMenuListContainer").css({ "position": "fixed", "top": "40px" });
+                    $("#fullTreeMenuListContainer").css({ "position": "fixed", "top": "0px" });
                 } else {
                     $("#fullTreeMenuListContainer").css({ "position": "static", "top": "unset" });
                 }
-                if (sd > 140 && sd < (ph - 680 - 150 - rightMenuHeight)) {
-                    $(".rightSideMenu").css({ "position": "fixed", "top": "80px" });
+                if (sd > 180 && sd < (ph - 680 - 150 - rightMenuHeight)) {
+                    $(".rightSideMenu").css({ "position": "fixed", "top": "0px" });
                 } else {
                     $(".rightSideMenu").css({ "position": "static", "top": "unset" });
                 }
             }
             if (breakpoint() == 'md') {
                 if (sd > 140 && sd < (ph - 660 - 150 - menuHeight)) {
-                    $("#fullTreeMenuListContainer").css({ "position": "fixed", "top": "40px" });
+                    $("#fullTreeMenuListContainer").css({ "position": "fixed", "top": "0px" });
                 } else {
                     $("#fullTreeMenuListContainer").css({ "position": "static", "top": "unset" });
                 }
             }
+        })
+        $('.sideBar .mainPage').css({'width': $('.sideBar').width()})
+        $(window).resize(function() {
+            $('.sideBar .mainPage').css({'width': $('.sideBar').width()})
         })
         $('.sideBarIcon').click(function() {
             $(".sideBar").toggleClass('hide-sm');
