@@ -144,25 +144,25 @@
                 $('.sideBar .mainPage').css({'height': '100vh'})
             } else {
                 if (dcheight > 0) {
-                    $('.sideBar .mainPage').css({'height': dcheight + 'px'})
+                    $('.sideBar .mainPage').css({'height': (dcheight - 40) + 'px'})
                 } else {
                     $('.sideBar .mainPage').css({'height': 0})
                 }
             }
             if (breakpoint() == 'lg') {
-                if (sd > 140 && sd < (ph - 680 - 150 - menuHeight)) {
+                if (sd > 140) {
                     $("#fullTreeMenuListContainer").css({ "position": "fixed", "top": "0px" });
                 } else {
                     $("#fullTreeMenuListContainer").css({ "position": "static", "top": "unset" });
                 }
-                if (sd > 180 && sd < (ph - 680 - 150 - rightMenuHeight)) {
+                if (sd > 180) {
                     $(".rightSideMenu").css({ "position": "fixed", "top": "0px" });
                 } else {
                     $(".rightSideMenu").css({ "position": "static", "top": "unset" });
                 }
             }
             if (breakpoint() == 'md') {
-                if (sd > 140 && sd < (ph - 660 - 150 - menuHeight)) {
+                if (sd > 140) {
                     $("#fullTreeMenuListContainer").css({ "position": "fixed", "top": "0px" });
                 } else {
                     $("#fullTreeMenuListContainer").css({ "position": "static", "top": "unset" });
