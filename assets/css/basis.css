@@ -153,7 +153,7 @@ ul.circle > li p:hover, ul.circle li.on p, ul.square > li.on p, ul.square > li p
 	.docContainer { border-left: 1px solid #ddd;padding-left: 40px;min-height: calc(100vh - 300px); }
 	.subHeadWrapper .subHeaderMenuUl li { margin-right: 0px; }
 	.subHeadWrapper .subHeaderMenuUl li.title { margin-right: 20px; padding: 0; }
-	.sideBar .mainPage { width: 242px; height: auto; max-height: calc(100vh - 80px); }
+	.sideBar .mainPage { width: 242px; height: auto; max-height: calc(100vh - 205px); }
 	.sideBarIcon { display: none; overflow: auto; }
 }
 
