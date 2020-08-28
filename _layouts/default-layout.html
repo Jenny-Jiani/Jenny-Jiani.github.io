@@ -141,8 +141,9 @@
             console.log('dcHeight: ' + dcheight)
             console.log('clientHeight: ' + document.body.clientHeight)
             if (breakpoint() == 'lg') {
-                if (sd > 140) {
-                    $("#fullTreeMenuListContainer").css({ "position": "fixed", "top": "0px" });
+                if (sd > 126) {
+                    $("#fullTreeMenuListContainer").css({ "position": "fixed", "top": "0px" })
+                    $('.sideBar .mainPage').css({'max-height': 'unset'})
                     if (dcheight > document.body.clientHeight) {
                         $('.sideBar .mainPage').css({'height': 'calc(100vh - 80px)'})
                     } else {
@@ -153,7 +154,8 @@
                         }
                     }
                 } else {
-                    $("#fullTreeMenuListContainer").css({ "position": "static", "top": "unset" });
+                    $("#fullTreeMenuListContainer").css({ "position": "static", "top": "unset" })
+                    $('.sideBar .mainPage').css({'max-height': 'calc(100vh - ' + (sd + 80)+ 'px)'})
                     if (dcheight > document.body.clientHeight) {
                         $('.sideBar .mainPage').css({'height': 'auto'})
                     } else {
@@ -164,7 +166,7 @@
                         }
                     }
                 }
-                if (sd > 180) {
+                if (sd > 166) {
                     $(".rightSideMenu").css({ "position": "fixed", "top": "0px" });
                     if (dcheight > document.body.clientHeight) {
                         $('.rightSideMenu').css({'height': 'calc(100vh - 80px)'})
