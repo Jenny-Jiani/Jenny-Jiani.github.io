@@ -140,28 +140,53 @@
             var dcheight = $('.docContainer').height() + 125 - sd 
             console.log('dcHeight: ' + dcheight)
             console.log('clientHeight: ' + document.body.clientHeight)
-            if (dcheight > document.body.clientHeight) {
-                $('.sideBar .mainPage').css({'height': '100vh'})
-                $('.rightSideMenu').css({'height': '100vh'})
-            } else {
-                if (dcheight > 0) {
-                    $('.sideBar .mainPage').css({'height': (dcheight - 40) + 'px'})
-                    $('.rightSideMenu').css({'height': (dcheight - 40) + 'px'})
-                } else {
-                    $('.sideBar .mainPage').css({'height': 0})
-                    $('.rightSideMenu').css({'height':0})
-                }
-            }
+            
             if (breakpoint() == 'lg') {
                 if (sd > 140) {
                     $("#fullTreeMenuListContainer").css({ "position": "fixed", "top": "0px" });
+                    if (dcheight > document.body.clientHeight) {
+                        $('.sideBar .mainPage').css({'height': 'calc(100vh - 80px);'})
+                    } else {
+                        if (dcheight > 0) {
+                            $('.sideBar .mainPage').css({'height': (dcheight - 40) + 'px'})
+                        } else {
+                            $('.sideBar .mainPage').css({'height': 0})
+                        }
+                    }
                 } else {
                     $("#fullTreeMenuListContainer").css({ "position": "static", "top": "unset" });
+                    if (dcheight > document.body.clientHeight) {
+                        $('.sideBar .mainPage').css({'height': 'auto'})
+                    } else {
+                        if (dcheight > 0) {
+                            $('.sideBar .mainPage').css({'height': 'auto'})
+                        } else {
+                            $('.sideBar .mainPage').css({'height': 'auto'})
+                        }
+                    }
                 }
                 if (sd > 180) {
                     $(".rightSideMenu").css({ "position": "fixed", "top": "0px" });
+                    if (dcheight > document.body.clientHeight) {
+                        $('.rightSideMenu').css({'height': 'calc(100vh - 80px);'})
+                    } else {
+                        if (dcheight > 0) {
+                            $('.rightSideMenu').css({'height': (dcheight - 40) + 'px'})
+                        } else {
+                            $('.rightSideMenu').css({'height':0})
+                        }
+                    }
                 } else {
                     $(".rightSideMenu").css({ "position": "static", "top": "unset" });
+                    if (dcheight > document.body.clientHeight) {
+                        $('.rightSideMenu').css({'height': 'auto'})
+                    } else {
+                        if (dcheight > 0) {
+                            $('.rightSideMenu').css({'height':'auto' })
+                        } else {
+                            $('.rightSideMenu').css({'height': 'auto'})
+                        }
+                    }
                 }
             }
             if (breakpoint() == 'md') {
