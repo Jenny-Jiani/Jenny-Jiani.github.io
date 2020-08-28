@@ -142,11 +142,14 @@
             console.log('clientHeight: ' + document.body.clientHeight)
             if (dcheight > document.body.clientHeight) {
                 $('.sideBar .mainPage').css({'height': '100vh'})
+                $('.rightSideMenu').css({'height': '100vh'})
             } else {
                 if (dcheight > 0) {
                     $('.sideBar .mainPage').css({'height': (dcheight - 40) + 'px'})
+                    $('.rightSideMenu').css({'height': (dcheight - 40) + 'px'})
                 } else {
                     $('.sideBar .mainPage').css({'height': 0})
+                    $('.rightSideMenu').css({'height':0})
                 }
             }
             if (breakpoint() == 'lg') {

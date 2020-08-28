@@ -91,7 +91,6 @@ ul.circle > li p:hover, ul.circle li.on p, ul.square > li.on p, ul.square > li p
 #fullTreeMenuListContainer li.collapseListStyle > a { display: inline-block; padding-left: 15px; background: url(../img-icon/collapse-list.png) left 2px no-repeat; }
 #fullTreeMenuListContainer li.expandListStyle > a { display: inline-block; padding-left: 15px; background: url(../img-icon/expand-list.png) left 2px no-repeat; }
 #AutoGenerateSidebar li a:hover, #fullTreeMenuListContainer li a:hover { color: #FE8E14; }
-#AutoGenerateSidebar { max-height: 400px; }
 .recordLink { color: #306877;  display: inline-block;line-height: 24px; }
 .recordLink.sadLink { margin-left: 15px; }
 .icon-smile { display: inline-block; width: 24px; height: 24px; margin-right: 5px; vertical-align: top;}
