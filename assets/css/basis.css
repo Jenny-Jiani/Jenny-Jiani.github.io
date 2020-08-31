@@ -70,7 +70,7 @@ ul.circle > li p:hover, ul.circle li.on p, ul.square > li.on p, ul.square > li p
 .markdown-body h2 { padding-top: 140px; margin-top: -110px; border-bottom: 0; font-size: 20px;}
 .markdown-body h3 { padding-top: 110px; margin-top: -110px; border-bottom: 0; font-size: 18px;}
 .markdown-body h4 { padding-top: 110px; margin-top: -110px; font-weight: normal; }
-.markdown-body code { padding: 3px 5px; color: #306877;background-color: #d5e6ea; border-radius: 0; }
+.markdown-body code.language-plaintext { padding: 3px 5px; color: #306877;background-color: #d5e6ea; border-radius: 0; }
 .markdown-body h3 code { font-family: Oswald-Light; font-weight: normal; }
 .markdown-body ol, .markdown-body ol li  { list-style: decimal; }
 .markdown-body ul, .markdown-body ul li { list-style: disc; margin-left: 0; }
