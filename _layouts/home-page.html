@@ -13,17 +13,18 @@
                 {{ content }}
             </div>
         </div>
-        <!-- <p align="right">
-            {% capture sourceCodeUrl %}		
-            {% if page.url contains '.html' %}		
-                {{ page.url | strip | replace: '.html', '.md'}}		
-            {% else %}
-                {{ page.url	| strip }}index.md
-            {% endif %}
-            {% endcapture %}
-            <a href="{{ site.repositoryUrl }}{{ sourceCodeUrl | strip }}" class="otherLinkColour">Edit<img src="{{ site.edit_icon }}" width="20px" height="15px" /></a>
-        </p> -->
-        
+        <p class="row">
+            <div class="col-xs-12 col-md-10 col-md-offset-1 col-xl-8 col-xl-offset-2">
+                {% capture sourceCodeUrl %}		
+                {% if page.url contains '.html' %}		
+                    {{ page.url | strip | replace: '.html', '.md'}}		
+                {% else %}
+                    {{ page.url	| strip }}index.md
+                {% endif %}
+                {% endcapture %}
+                <a href="{{ site.repositoryUrl }}{{ sourceCodeUrl | strip }}" class="otherLinkColour pull-right">Edit<img src="{{ site.edit_icon }}" width="20px" height="15px" /></a>
+            </div>
+        </p> 
     </div>
     <div id="footerWrapper">
         {%- include page_footer.html -%}
