@@ -23,7 +23,8 @@ strong {color:#444;font-weight:400}
 .unavailableLink { color:#A9A9A9; cursor: text; }
 
 .container .head {  margin-top: 40px; }
-
+.container .docContainer .head { width: 100%; }
+.container .docContainer .head  .editLinkColour  { padding: 0 20px; }
 .sideHomePage { font-size: 15px; color: #585858; }
 
 ul { margin-left: 20px; }
@@ -116,6 +117,7 @@ ul.circle > li p:hover, ul.circle li.on p, ul.square > li.on p, ul.square > li p
 @media (max-width: 1199px) {
 	.subHeaderMenuUl .btn { padding: 0 10px; }
 	#fullTreeMenuListContainer ul { font-size: 14px; }
+	.container .docContainer .head  .editLinkColour  { padding: 0; }
 }
 
 @media (max-width: 991px) {
