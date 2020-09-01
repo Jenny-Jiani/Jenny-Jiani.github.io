@@ -140,8 +140,6 @@
             $('.container .head').css({'width': $('.docContainer').width() + 'px'})
         })
 
-
-        
         // 简单的节流函数
         function throttle(func, wait, mustRun) {
             var timeout,
@@ -163,6 +161,7 @@
                 }
             };
         };
+
         // 实际想绑定在 scroll 事件上的 handler
         function realFunc(){
             var sd = $(window).scrollTop();
