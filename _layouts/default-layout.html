@@ -165,6 +165,10 @@
                         $('#fullTreeMenuListContainer').css({'height': (dcheight - 40) + 'px'})
                         $('.rightSideMenu').css({'height': (dcheight - 40) + 'px'})
                     }
+                    if(!$('.container .head').hasClass('ch-fixed')) {
+                        $('.container .head').addClass('ch-fixed')
+                    }
+                    $('.markdown-body').css({'margin-top': (100 + $('.container .head').height()) + 'px'})
                     if (sd > 85) {
                         // if(!$('.container .head').hasClass('ch-fixed')) {
                         //     $('.container .head').addClass('ch-fixed')
