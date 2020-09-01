@@ -140,7 +140,31 @@
             $('.container .head').css({'width': $('.docContainer').width() + 'px'})
         })
 
-        $(window).scroll(function () {
+
+        
+        // 简单的节流函数
+        function throttle(func, wait, mustRun) {
+            var timeout,
+                startTime = new Date();
+        
+            return function() {
+                var context = this,
+                    args = arguments,
+                    curTime = new Date();
+        
+                clearTimeout(timeout);
+                // 如果达到了规定的触发时间间隔，触发 handler
+                if(curTime - startTime >= mustRun){
+                    func.apply(context,args);
+                    startTime = curTime;
+                // 没达到触发间隔，重新设定定时器
+                }else{
+                    timeout = setTimeout(func, wait);
+                }
+            };
+        };
+        // 实际想绑定在 scroll 事件上的 handler
+        function realFunc(){
             var sd = $(window).scrollTop();
             var dcheight = $('.docContainer').height() + 65 - sd 
             console.log('scrollTop: ' + sd)
@@ -170,17 +194,6 @@
                         $('.container .head').addClass('ch-fixed')
                     }
                     $('.markdown-body').css({'margin-top': (100 + $('.container .head').height()) + 'px'})
-                    // if (sd > 85) {
-                    //     if(!$('.container .head').hasClass('ch-fixed')) {
-                    //         $('.container .head').addClass('ch-fixed')
-                    //     }
-                    //     $('.markdown-body').css({'margin-top': (100 + $('.container .head').height()) + 'px'})
-                    // } else {
-                    //     if($('.container .head').hasClass('ch-fixed')) {
-                    //         $('.container .head').removeClass('ch-fixed')
-                    //     }
-                    //     $('.markdown-body').css({'margin-top': '40px'})
-                    // }
                 } else {
                     if ($('.subHeadWrapper').hasClass('shw-fixed')) {
                         $('.subHeadWrapper').removeClass('shw-fixed')
@@ -199,20 +212,36 @@
                     $('.markdown-body').css({'margin-top': '40px'})
                 }
             }
-            // if (breakpoint() == 'md') {
-            //     if (sd > 65 && dcheight > 0) {
-            //         $('.subHeadWrapper').css({'position': 'fixed', 'z-index': '12', 'top': '0'})
-            //         $("#fullTreeMenuListContainer").css({ "position": "fixed", "top": "0px" });
-            //         $('.container .head').css({'position': 'fixed', 'z-index': '12', 'background': '#ffffff', 'top': '60px', 'padding-top': '20px', 'padding-bottom': '20px'})
-            //         $('.markdown-body').css({'margin-top': '150px'})
-            //     } else {
-            //         $('.subHeadWrapper').css({'position': 'static'})
-            //         $("#fullTreeMenuListContainer").css({ "position": "static", "top": "unset" });
-            //         $('.container .head').css({'position': 'static', 'padding-top': '40px', 'padding-bottom': '0'})
-            //         $('.markdown-body').css({'margin-top': '40px'})
-            //     }
-            // }
-        })
+            if (breakpoint() == 'md') {
+                if (sd > 65 && dcheight > 0) {
+                    if (!$('.subHeadWrapper').hasClass('shw-fixed')) {
+                        $('.subHeadWrapper').addClass('shw-fixed')
+                        $('.docContainer').addClass('dc-fixed')
+                    }
+                    if (!$('#fullTreeMenuListContainer').hasClass('ftm-fixed')) {
+                        $('#fullTreeMenuListContainer').addClass('ftm-fixed')
+                    }
+                    if(!$('.container .head').hasClass('ch-fixed')) {
+                        $('.container .head').addClass('ch-fixed')
+                    }
+                    $('.markdown-body').css({'margin-top': (100 + $('.container .head').height()) + 'px'})
+                } else {
+                    if ($('.subHeadWrapper').hasClass('shw-fixed')) {
+                        $('.subHeadWrapper').removeClass('shw-fixed')
+                        $('.docContainer').removeClass('dc-fixed')
+                    }
+                    if ($('#fullTreeMenuListContainer').hasClass('ftm-fixed')) {
+                        $('#fullTreeMenuListContainer').removeClass('ftm-fixed')
+                    }
+                    if($('.container .head').hasClass('ch-fixed')) {
+                        $('.container .head').removeClass('ch-fixed')
+                    }
+                    $('.markdown-body').css({'margin-top': '40px'})
+                }
+            }
+        }
+        // 采用了节流函数
+        window.addEventListener('scroll',throttle(realFunc,500,1000));
 
         $('.sideBarIcon').click(function() {
             $(".sideBar").toggleClass('hide-sm');
