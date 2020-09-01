@@ -179,7 +179,7 @@
                     $('.docContainer').removeClass('dc-fixed')
                     $('#fullTreeMenuListContainer').removeClass('ftm-fixed')
                     $('.rightSideMenu').removeClass('rsm-fixed')
-                    // $('.container .head').removeClass('ch-fixed')
+                    $('.container .head').removeClass('ch-fixed')
                     $('.markdown-body').css({'margin-top': '40px'})
                 }
             }
@@ -216,30 +216,38 @@
         })
 
 
-        // var scrollFunc = function(e) {
-        //     var e = e || window.event;
-        //     var sd = $(window).scrollTop();
-        //     console.log(sd)
-        //     if(e.wheelDelta) {
-        //         if(e.wheelDelta < 0) {
-        //             if (sd < 65) {
-        //                 $(window).animate({scrollTop: 65}, 300);
-        //             }
-        //         }
-        //     } else if(e.detail) {
-        //         if(e.detail > 0) {
-        //             if (sd < 65) {
-        //                 $(window).animate({scrollTop: 65}, 300);
-        //             }
-        //         }
-        //     }
-        // }
-        // //    给页面绑定鼠标滚轮事件,针对火狐的非标准事件 
-        // window.addEventListener("DOMMouseScroll", scrollFunc)
-        // //    给页面绑定鼠标滚轮事件，针对Google，mousewheel非标准事件已被弃用，请使用 wheel事件代替
-        // window.addEventListener("wheel", scrollFunc)
-        // //    ie不支持wheel事件，若一定要兼容，可使用mousewheel
-        // window.addEventListener("mousewheel", scrollFunc)
+        var scrollFunc = function(e) {
+            var e = e || window.event;
+            var sd = $(window).scrollTop();
+            console.log(sd)
+            if(e.wheelDelta) {
+                if(e.wheelDelta < 0) {
+                    if (sd < 65) {
+                        $(window).animate({scrollTop: 65}, 300);
+                    }
+                }
+            } else if(e.detail) {
+                if(e.detail > 0) {
+                    if (sd < 65) {
+                        $(window).animate({scrollTop: 65}, 300);
+                    }
+                }
+            }
+        }
+        //    给页面绑定鼠标滚轮事件,针对火狐的非标准事件 
+        window.addEventListener("DOMMouseScroll", scrollFunc)
+        //    给页面绑定鼠标滚轮事件，针对Google，mousewheel非标准事件已被弃用，请使用 wheel事件代替
+        window.addEventListener("wheel", scrollFunc)
+        //    ie不支持wheel事件，若一定要兼容，可使用mousewheel
+        window.addEventListener("mousewheel", scrollFunc)
+        document.onkeydown = function(ev){
+            if (ev.keyCode == 40) {
+                var sd = $(window).scrollTop();
+                if (sd < 65) {
+                    $(window).animate({scrollTop: 65}, 300);
+                }
+            }
+        }
     </script>
 </body>
 
