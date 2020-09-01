@@ -148,11 +148,16 @@
             console.log('clientHeight: ' + document.body.clientHeight)
             console.log(breakpoint())
             if (breakpoint() == 'lg') {
-                if (sd > 65) {
-                    $('.subHeadWrapper').css({'position': 'fixed', 'z-index': '12', 'top': '0'})
-                    $("#fullTreeMenuListContainer").css({ "position": "fixed", "top": "60px" })
-                    $('#fullTreeMenuListContainer').css({'max-height': 'unset'})
-                    $(".rightSideMenu").css({ "position": "fixed", "top": "80px" });
+                if (sd > 65 && dcheight>0) {
+                    if (!$('.subHeadWrapper').hasClass('shw-fixed')) {
+                        $('.subHeadWrapper').addClass('shw-fixed')
+                    }
+                    if (!$('#fullTreeMenuListContainer').hasClass('ftm-fixed')) {
+                        $('#fullTreeMenuListContainer').addClass('ftm-fixed')
+                    }
+                    if (!$('.rightSideMenu').hasClass('rsm-fixed')) {
+                        $('.rightSideMenu').addClass('rsm-fixed')
+                    }
                     if (dcheight > document.body.clientHeight) {
                         $('#fullTreeMenuListContainer').css({'height': 'calc(100vh - 170px)'})
                         $('.rightSideMenu').css({'height': 'calc(100vh - 170px)'})
@@ -160,38 +165,47 @@
                         $('#fullTreeMenuListContainer').css({'height': (dcheight - 40) + 'px'})
                         $('.rightSideMenu').css({'height': (dcheight - 40) + 'px'})
                     }
-                    $('.container .head').css({'position': 'fixed', 'z-index': '12', 'top': '60px', 'padding': '20px 0 20px 0',  'margin-top': '0px'})
-                    $('.markdown-body').css({'margin-top': (100 + $('.container .head').height()) + 'px'})
-                    // if (sd > 85) {
-                    //     $('.container .head').css({'position': 'fixed', 'z-index': '12', 'background': '#ffffff', 'top': '60px', 'padding-top': '20px', 'padding-bottom': '20px',  'margin-top': '0px'})
-                    //     $('.markdown-body').css({'margin-top': '150px'})
-                    // } else {
-                    //     $('.container .head').css({'position': 'static', 'padding-top': '40px', 'padding-bottom': '0', 'margin-top': '60px'})
-                    //     $('.markdown-body').css({'margin-top': '40px'})
-                    // }
+                    if (sd > 85) {
+                        if(!$('.container .head').hasClass('ch-fixed')) {
+                            $('.container .head').addClass('ch-fixed')
+                        }
+                        $('.markdown-body').css({'margin-top': (100 + $('.container .head').height()) + 'px'})
+                    } else {
+                        if($('.container .head').hasClass('ch-fixed')) {
+                            $('.container .head').removeClass('ch-fixed')
+                        }
+                        $('.markdown-body').css({'margin-top': '40px'})
+                    }
                 } else {
-                    $('.subHeadWrapper').css({'position': 'static', 'top': 'unset'})
-                    $("#fullTreeMenuListContainer").css({ "position": "static", "top": "unset" })
+                    if ($('.subHeadWrapper').hasClass('shw-fixed')) {
+                        $('.subHeadWrapper').removeClass('shw-fixed')
+                    }
+                    if ($('#fullTreeMenuListContainer').hasClass('ftm-fixed')) {
+                        $('#fullTreeMenuListContainer').removeClass('ftm-fixed')
+                    }
+                    if ($('.rightSideMenu').hasClass('rsm-fixed')) {
+                        $('.rightSideMenu').removeClass('rsm-fixed')
+                    }
+                    if($('.container .head').hasClass('ch-fixed')) {
+                        $('.container .head').removeClass('ch-fixed')
+                    }
                     $('#fullTreeMenuListContainer').css({'max-height': 'calc(100vh - ' + (sd + 80)+ 'px)', 'height': 'auto'})
-                    $(".rightSideMenu").css({ "position": "static", "top": "unset", 'height':'auto' })
-                    
-                    $('.container .head').css({'position': 'static', 'top': 'unset', 'padding': '40px 0 0 0',  'margin-top': '0px'})
                     $('.markdown-body').css({'margin-top': '40px'})
                 }
             }
-            if (breakpoint() == 'md') {
-                if (sd > 65 && dcheight > 0) {
-                    $('.subHeadWrapper').css({'position': 'fixed', 'z-index': '12', 'top': '0'})
-                    $("#fullTreeMenuListContainer").css({ "position": "fixed", "top": "0px" });
-                    $('.container .head').css({'position': 'fixed', 'z-index': '12', 'background': '#ffffff', 'top': '60px', 'padding-top': '20px', 'padding-bottom': '20px'})
-                    $('.markdown-body').css({'margin-top': '150px'})
-                } else {
-                    $('.subHeadWrapper').css({'position': 'static'})
-                    $("#fullTreeMenuListContainer").css({ "position": "static", "top": "unset" });
-                    $('.container .head').css({'position': 'static', 'padding-top': '40px', 'padding-bottom': '0'})
-                    $('.markdown-body').css({'margin-top': '40px'})
-                }
-            }
+            // if (breakpoint() == 'md') {
+            //     if (sd > 65 && dcheight > 0) {
+            //         $('.subHeadWrapper').css({'position': 'fixed', 'z-index': '12', 'top': '0'})
+            //         $("#fullTreeMenuListContainer").css({ "position": "fixed", "top": "0px" });
+            //         $('.container .head').css({'position': 'fixed', 'z-index': '12', 'background': '#ffffff', 'top': '60px', 'padding-top': '20px', 'padding-bottom': '20px'})
+            //         $('.markdown-body').css({'margin-top': '150px'})
+            //     } else {
+            //         $('.subHeadWrapper').css({'position': 'static'})
+            //         $("#fullTreeMenuListContainer").css({ "position": "static", "top": "unset" });
+            //         $('.container .head').css({'position': 'static', 'padding-top': '40px', 'padding-bottom': '0'})
+            //         $('.markdown-body').css({'margin-top': '40px'})
+            //     }
+            // }
         })
 
         $('.sideBarIcon').click(function() {
