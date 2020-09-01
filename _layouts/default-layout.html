@@ -218,16 +218,18 @@
 
         var scrollFunc = function(e) {
             var e = e || window.event;
+            var sd = $(window).scrollTop();
+            console.log(sd)
             if(e.wheelDelta) {
                 if(e.wheelDelta < 0) {
-                    if ($(window).scrollTop() < 65 && $(window).scrollTop() > 10) {
-                        $("html,body").animate({scrollTop: 65}, 300);
+                    if (sd < 65) {
+                        $(window).animate({scrollTop: 65}, 300);
                     }
                 }
             } else if(e.detail) {
                 if(e.detail > 0) {
-                    if ($(window).scrollTop() < 65 && $(window).scrollTop() > 10) {
-                        $("html,body").animate({scrollTop: 65}, 300);
+                    if (sd < 65) {
+                        $(window).animate({scrollTop: 65}, 300);
                     }
                 }
             }
