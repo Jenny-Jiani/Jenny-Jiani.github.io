@@ -162,6 +162,29 @@
             };
         };
 
+        function debounce(func, wait, immediate) {
+            var timeout;
+            return function() {
+                var context = this, args = arguments;
+                var later = function() {
+                    timeout = null;
+                    if (!immediate) func.apply(context, args);
+                };
+                var callNow = immediate && !timeout;
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+                if (callNow) func.apply(context, args);
+            };
+        };
+        
+        var myEfficientFn = debounce(function() {
+            // 滚动中的真正的操作
+            realFunc()
+        }, 100);
+        
+        // 绑定监听
+        window.addEventListener('scroll', myEfficientFn);
+
         // 实际想绑定在 scroll 事件上的 handler
         function realFunc(){
             var sd = $(window).scrollTop();
@@ -240,7 +263,7 @@
             }
         }
         // 采用了节流函数
-        window.addEventListener('scroll',throttle(realFunc,50,100));
+        // window.addEventListener('scroll',throttle(realFunc,50,100));
 
         $('.sideBarIcon').click(function() {
             $(".sideBar").toggleClass('hide-sm');
