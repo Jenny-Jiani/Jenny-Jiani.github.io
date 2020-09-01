@@ -218,19 +218,13 @@
 
         var scrollFunc = function(e) {
             var e = e || window.event;
-            if(e.wheelDelta) {   
-                if(e.wheelDelta > 0) {     //当鼠标滚轮向上滚动时
-                    alert("鼠标滚轮向上滚动");
-                }
-                if(e.wheelDelta < 0) {     //当鼠标滚轮向下滚动时
-                    alert("鼠标滚轮向下滚动");
+            if(e.wheelDelta) {
+                if(e.wheelDelta < 0) {
+                    $("html,body").animate({scrollTop: 65}, 300);
                 }
             } else if(e.detail) {
-                if(e.detail < 0) {   //当鼠标滚轮向上滚动时
-                    alert("鼠标滚轮向上滚动");
-                }
-                if(e.detail > 0) {   //当鼠标滚轮向下滚动时
-                    alert("鼠标滚轮向下滚动");
+                if(e.detail > 0) {
+                    $("html,body").animate({scrollTop: 65}, 300);
                 }
             }
         }
