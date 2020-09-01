@@ -240,7 +240,7 @@
             }
         }
         // 采用了节流函数
-        window.addEventListener('scroll',throttle(realFunc,500,1000));
+        window.addEventListener('scroll',throttle(realFunc,50,100));
 
         $('.sideBarIcon').click(function() {
             $(".sideBar").toggleClass('hide-sm');
