@@ -24,6 +24,7 @@ strong {color:#444;font-weight:400}
 
 .container .head {  padding-top: 40px; background: #ffffff; }
 .container .head.ch-fixed { position: fixed; z-index: 12; top: 60px; padding: 20px 0 20px 0; margin-top: 0px; }
+.container .docContainer.dc-fixed { margin-top: 60px; }
 .container .docContainer .head { width: 100%; }
 .container .docContainer .head  .editLinkColour  { padding: 0 20px; }
 .sideHomePage { font-size: 15px; color: #585858; }
