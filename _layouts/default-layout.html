@@ -173,14 +173,14 @@
                     if(!$('.container .head').hasClass('ch-fixed')) {
                         $('.container .head').addClass('ch-fixed')
                     }
-                    // $('.markdown-body').css({'margin-top': (100 + $('.container .head').height()) + 'px'})
+                    $('.markdown-body').css({'margin-top': (100 + $('.container .head').height()) + 'px'})
                 } else {
                     $('.subHeadWrapper').removeClass('shw-fixed')
                     $('.docContainer').removeClass('dc-fixed')
                     $('#fullTreeMenuListContainer').removeClass('ftm-fixed')
                     $('.rightSideMenu').removeClass('rsm-fixed')
-                    $('.container .head').removeClass('ch-fixed')
-                    // $('.markdown-body').css({'margin-top': '40px'})
+                    // $('.container .head').removeClass('ch-fixed')
+                    $('.markdown-body').css({'margin-top': '40px'})
                 }
             }
             if (breakpoint() == 'md') {
