@@ -140,13 +140,12 @@
             var dcheight = $('.docContainer').height() + 125 - sd 
             console.log('dcHeight: ' + dcheight)
             console.log('clientHeight: ' + document.body.clientHeight)
+            $('.container .head').css({'width': $('.docContainer').width() + 'px'})
             if (breakpoint() == 'lg') {
                 if (sd>65) {
                     $('.subHeadWrapper').css({'position': 'fixed', 'z-index': '12', 'top': '0'})
                     $("#fullTreeMenuListContainer").css({ "position": "fixed", "top": "60px" })
                     $('.sideBar .mainPage').css({'max-height': 'unset'})
-                    $('.container .head').css({'position': 'fixed', 'background': '#ffffff', 'top': '60px'})
-                    $('.markdown-body').css({'margin-top': '100px'})
                     if (dcheight > document.body.clientHeight) {
                         $('.sideBar .mainPage').css({'height': 'calc(100vh - 80px)'})
                     } else {
@@ -170,8 +169,6 @@
                     $('.subHeadWrapper').css({'position': 'static'})
                     $("#fullTreeMenuListContainer").css({ "position": "static", "top": "unset" })
                     $('.sideBar .mainPage').css({'max-height': 'calc(100vh - ' + (sd + 80)+ 'px)'})
-                    $('.container .head').css({'position': 'static'})
-                    $('.markdown-body').css({'margin-top': '40px'})
                     if (dcheight > document.body.clientHeight) {
                         $('.sideBar .mainPage').css({'height': 'auto'})
                     } else {
@@ -191,6 +188,14 @@
                             $('.rightSideMenu').css({'height': 'auto'})
                         }
                     }
+                }
+
+                if (sd > 85) {
+                    $('.container .head').css({'position': 'fixed', 'background': '#ffffff', 'top': '60px', 'padding-top': '20px', 'padding-bottom': '20px'})
+                    $('.markdown-body').css({'margin-top': '150px'})
+                } else {
+                    $('.container .head').css({'position': 'static', 'padding-top': '40px', 'padding-bottom': '0'})
+                    $('.markdown-body').css({'margin-top': '40px'})
                 }
             }
             if (breakpoint() == 'md') {
