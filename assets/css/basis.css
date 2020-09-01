@@ -22,7 +22,7 @@ strong {color:#444;font-weight:400}
 .otherLinkColour:hover { text-decoration: underline; color: #585858; }
 .unavailableLink { color:#A9A9A9; cursor: text; }
 
-.container .head {  margin-top: 40px; }
+.container .head {  padding-top: 40px; }
 .container .docContainer .head { width: 100%; }
 .container .docContainer .head  .editLinkColour  { padding: 0 20px; }
 .sideHomePage { font-size: 15px; color: #585858; }
@@ -135,7 +135,7 @@ ul.circle > li p:hover, ul.circle li.on p, ul.square > li.on p, ul.square > li p
 	.sideBar { position: absolute; width: auto; left: 0; z-index: 12; background: #eeeeee; padding: 20px 15px; padding-left: 15px;}
 	.subHeaderMenuUl li { display: none!important; }
 	.subHeaderMenuUl li.title { display: inline-block!important; }
-	.container .head { margin-top: 20px; }
+	.container .head { padding-top: 20px; }
 	.markdown-body { margin-top: 20px; min-height: calc(100vh - 348px); }
 	.markdown-body h2 { padding-top: 120px; margin-top: -110px; border-bottom: 0; font-size: 20px; }
 	#fullTreeMenuListContainer > li { max-width: 320px; min-width: 200px; }
