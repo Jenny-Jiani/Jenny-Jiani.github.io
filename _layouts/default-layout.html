@@ -182,21 +182,16 @@
                 if (sd > 60 && dcheight > 0) {
                     $('.subHeadWrapper').css({'position': 'fixed', 'z-index': '12', 'top': '0'})
                     $("#fullTreeMenuListContainer").css({ "position": "fixed", "top": "0px" });
-                } else {
-                    $('.subHeadWrapper').css({'position': 'static'})
-                    $("#fullTreeMenuListContainer").css({ "position": "static", "top": "unset" });
-                }
-                if (sd > 85 && dcheight > 0) {
                     $('.container .head').css({'position': 'fixed', 'z-index': '12', 'background': '#ffffff', 'top': '60px', 'padding-top': '20px', 'padding-bottom': '20px'})
                     $('.markdown-body').css({'margin-top': '150px'})
                 } else {
+                    $('.subHeadWrapper').css({'position': 'static'})
+                    $("#fullTreeMenuListContainer").css({ "position": "static", "top": "unset" });
                     $('.container .head').css({'position': 'static', 'padding-top': '40px', 'padding-bottom': '0'})
                     $('.markdown-body').css({'margin-top': '40px'})
                 }
             }
         })
-        
-        
         
         $('.sideBarIcon').click(function() {
             $(".sideBar").toggleClass('hide-sm');
