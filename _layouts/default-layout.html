@@ -220,11 +220,15 @@
             var e = e || window.event;
             if(e.wheelDelta) {
                 if(e.wheelDelta < 0) {
-                    $("html,body").animate({scrollTop: 65}, 300);
+                    if ($(window).scrollTop() < 65 && $(window).scrollTop() > 10) {
+                        $("html,body").animate({scrollTop: 65}, 300);
+                    }
                 }
             } else if(e.detail) {
                 if(e.detail > 0) {
-                    $("html,body").animate({scrollTop: 65}, 300);
+                    if ($(window).scrollTop() < 65 && $(window).scrollTop() > 10) {
+                        $("html,body").animate({scrollTop: 65}, 300);
+                    }
                 }
             }
         }
