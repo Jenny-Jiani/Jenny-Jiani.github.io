@@ -22,7 +22,7 @@ strong {color:#444;font-weight:400}
 .otherLinkColour:hover { text-decoration: underline; color: #585858; }
 .unavailableLink { color:#A9A9A9; cursor: text; }
 
-.container .head {  padding-top: 40px; }
+.container .head {  padding-top: 40px; background: #ffffff; }
 .container .docContainer .head { width: 100%; }
 .container .docContainer .head  .editLinkColour  { padding: 0 20px; }
 .sideHomePage { font-size: 15px; color: #585858; }
@@ -170,7 +170,6 @@ ul.circle > li p:hover, ul.circle li.on p, ul.square > li.on p, ul.square > li p
 	.subHeadWrapper .subHeaderMenuUl li.title { margin-right: 100px; padding: 0; }
 	#crumbs { font-size: 16px; }
 	.rightSideMenu { max-width: 212px; }
-	.container .head { width: 1214px; }
 	/* .sideBar .mainPage { width: 262px; overflow: auto; } */
 }
 
@@ -182,5 +181,4 @@ ul.circle > li p:hover, ul.circle li.on p, ul.square > li.on p, ul.square > li p
 	.recordLink.sadLink { margin-left: 30px; }
 	.rightSideMenu { max-width: 207px; }
 	.sideBar .mainPage { width: 286px; overflow: auto; }
-	.container .head { width: 1214px; }
 }

@@ -146,20 +146,21 @@
             console.log('scrollTop: ' + sd)
             console.log('dcHeight: ' + dcheight)
             console.log('clientHeight: ' + document.body.clientHeight)
+            console.log(breakpoint())
             if (breakpoint() == 'lg') {
-                if (sd>65 && dcheight>0) {
+                if (sd > 65) {
                     $('.subHeadWrapper').css({'position': 'fixed', 'z-index': '12', 'top': '0'})
                     $("#fullTreeMenuListContainer").css({ "position": "fixed", "top": "60px" })
-                    $('.sideBar .mainPage').css({'max-height': 'unset'})
+                    $('#fullTreeMenuListContainer').css({'max-height': 'unset'})
                     $(".rightSideMenu").css({ "position": "fixed", "top": "80px" });
                     if (dcheight > document.body.clientHeight) {
-                        $('.sideBar .mainPage').css({'height': 'calc(100vh - 170px)'})
+                        $('#fullTreeMenuListContainer').css({'height': 'calc(100vh - 170px)'})
                         $('.rightSideMenu').css({'height': 'calc(100vh - 170px)'})
                     } else {
-                        $('.sideBar .mainPage').css({'height': (dcheight - 40) + 'px'})
+                        $('#fullTreeMenuListContainer').css({'height': (dcheight - 40) + 'px'})
                         $('.rightSideMenu').css({'height': (dcheight - 40) + 'px'})
                     }
-                    $('.container .head').css({'position': 'fixed', 'z-index': '12', 'background': '#ffffff', 'top': '60px', 'padding-top': '20px', 'padding-bottom': '20px',  'margin-top': '0px'})
+                    $('.container .head').css({'position': 'fixed', 'z-index': '12', 'top': '60px', 'padding': '20px 0 20px 0',  'margin-top': '0px'})
                     $('.markdown-body').css({'margin-top': (100 + $('.container .head').height()) + 'px'})
                     // if (sd > 85) {
                     //     $('.container .head').css({'position': 'fixed', 'z-index': '12', 'background': '#ffffff', 'top': '60px', 'padding-top': '20px', 'padding-bottom': '20px',  'margin-top': '0px'})
@@ -169,17 +170,17 @@
                     //     $('.markdown-body').css({'margin-top': '40px'})
                     // }
                 } else {
-                    $('.subHeadWrapper').css({'position': 'static'})
+                    $('.subHeadWrapper').css({'position': 'static', 'top': 'unset'})
                     $("#fullTreeMenuListContainer").css({ "position": "static", "top": "unset" })
-                    $('.sideBar .mainPage').css({'max-height': 'calc(100vh - ' + (sd + 80)+ 'px)', 'height': 'auto'})
+                    $('#fullTreeMenuListContainer').css({'max-height': 'calc(100vh - ' + (sd + 80)+ 'px)', 'height': 'auto'})
                     $(".rightSideMenu").css({ "position": "static", "top": "unset", 'height':'auto' })
                     
-                    $('.container .head').css({'position': 'static', 'padding-top': '40px', 'padding-bottom': '0',  'margin-top': '0px'})
+                    $('.container .head').css({'position': 'static', 'top': 'unset', 'padding': '40px 0 0 0',  'margin-top': '0px'})
                     $('.markdown-body').css({'margin-top': '40px'})
                 }
             }
             if (breakpoint() == 'md') {
-                if (sd > 60 && dcheight > 0) {
+                if (sd > 65 && dcheight > 0) {
                     $('.subHeadWrapper').css({'position': 'fixed', 'z-index': '12', 'top': '0'})
                     $("#fullTreeMenuListContainer").css({ "position": "fixed", "top": "0px" });
                     $('.container .head').css({'position': 'fixed', 'z-index': '12', 'background': '#ffffff', 'top': '60px', 'padding-top': '20px', 'padding-bottom': '20px'})
@@ -192,7 +193,7 @@
                 }
             }
         })
-        
+
         $('.sideBarIcon').click(function() {
             $(".sideBar").toggleClass('hide-sm');
             $(".sideBar").toggleClass('hide-xs');
