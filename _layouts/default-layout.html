@@ -84,7 +84,7 @@
                 </ul>
             </div>
             <div class="docContainer col-xs-12 col-md-9">
-                <div class = "head row hide-xs hide-sm">
+                <div id="docHead" class = "head row hide-xs hide-sm">
                     {%- include main-page-head.html -%}
                 </div>
                 <div class="main row">
@@ -146,22 +146,15 @@
         // 实际想绑定在 scroll 事件上的 handler
         function realFunc(){
             var sd = $(window).scrollTop();
-            var dcheight = $('.docContainer').height() + 65 - sd 
-            console.log('scrollTop: ' + sd)
-            console.log('dcHeight: ' + dcheight)
-            console.log('clientHeight: ' + document.body.clientHeight)
-            console.log(breakpoint())
+            var dcheight = $('.docContainer').height() + 65 - sd
             if (breakpoint() == 'lg') {
                 if (sd > 65 && dcheight>0) {
                     if (!$('.subHeadWrapper').hasClass('shw-fixed')) {
                         $('.subHeadWrapper').addClass('shw-fixed')
                         $('.docContainer').addClass('dc-fixed')
-                    }
-                    if (!$('#fullTreeMenuListContainer').hasClass('ftm-fixed')) {
                         $('#fullTreeMenuListContainer').addClass('ftm-fixed')
-                    }
-                    if (!$('.rightSideMenu').hasClass('rsm-fixed')) {
                         $('.rightSideMenu').addClass('rsm-fixed')
+                        $('#docHead').addClass('ch-fixed')
                     }
                     if (dcheight > document.body.clientHeight) {
                         $('#fullTreeMenuListContainer.ftm-fixed').css({'height': 'calc(100vh - 170px)'})
@@ -169,9 +162,6 @@
                     } else {
                         $('#fullTreeMenuListContainer.ftm-fixed').css({'height': (dcheight - 40) + 'px'})
                         $('.rightSideMenu.rsm-fixed').css({'height': (dcheight - 40) + 'px'})
-                    }
-                    if(!$('.container .head').hasClass('ch-fixed')) {
-                        $('.container .head').addClass('ch-fixed')
                     }
                     $('.markdown-body').css({'margin-top': (100 + $('.container .head').height()) + 'px'})
                 } else {
@@ -214,40 +204,6 @@
             $(".sideBar").toggleClass('hide-sm');
             $(".sideBar").toggleClass('hide-xs');
         })
-
-
-        var scrollFunc = function(e) {
-            var e = e || window.event;
-            var sd = $(window).scrollTop();
-            console.log(sd)
-            if(e.wheelDelta) {
-                if(e.wheelDelta < 0) {
-                    if (sd < 65) {
-                        $(window).animate({scrollTop: 65}, 300);
-                    }
-                }
-            } else if(e.detail) {
-                if(e.detail > 0) {
-                    if (sd < 65) {
-                        $(window).animate({scrollTop: 65}, 300);
-                    }
-                }
-            }
-        }
-        //    给页面绑定鼠标滚轮事件,针对火狐的非标准事件 
-        window.addEventListener("DOMMouseScroll", scrollFunc)
-        //    给页面绑定鼠标滚轮事件，针对Google，mousewheel非标准事件已被弃用，请使用 wheel事件代替
-        window.addEventListener("wheel", scrollFunc)
-        //    ie不支持wheel事件，若一定要兼容，可使用mousewheel
-        window.addEventListener("mousewheel", scrollFunc)
-        document.onkeydown = function(ev){
-            if (ev.keyCode == 40) {
-                var sd = $(window).scrollTop();
-                if (sd < 65) {
-                    $(window).animate({scrollTop: 65}, 300);
-                }
-            }
-        }
     </script>
 </body>
 
