@@ -159,13 +159,15 @@
                         $('.sideBar .mainPage').css({'height': (dcheight - 40) + 'px'})
                         $('.rightSideMenu').css({'height': (dcheight - 40) + 'px'})
                     }
-                    if (sd > 85) {
-                        $('.container .head').css({'position': 'fixed', 'z-index': '12', 'background': '#ffffff', 'top': '60px', 'padding-top': '20px', 'padding-bottom': '20px',  'margin-top': '0px'})
-                        $('.markdown-body').css({'margin-top': '150px'})
-                    } else {
-                        $('.container .head').css({'position': 'static', 'padding-top': '40px', 'padding-bottom': '0', 'margin-top': '60px'})
-                        $('.markdown-body').css({'margin-top': '40px'})
-                    }
+                    $('.container .head').css({'position': 'fixed', 'z-index': '12', 'background': '#ffffff', 'top': '60px', 'padding-top': '20px', 'padding-bottom': '20px',  'margin-top': '0px'})
+                    $('.markdown-body').css({'margin-top': (100 + $('.container .head').height()) + 'px'})
+                    // if (sd > 85) {
+                    //     $('.container .head').css({'position': 'fixed', 'z-index': '12', 'background': '#ffffff', 'top': '60px', 'padding-top': '20px', 'padding-bottom': '20px',  'margin-top': '0px'})
+                    //     $('.markdown-body').css({'margin-top': '150px'})
+                    // } else {
+                    //     $('.container .head').css({'position': 'static', 'padding-top': '40px', 'padding-bottom': '0', 'margin-top': '60px'})
+                    //     $('.markdown-body').css({'margin-top': '40px'})
+                    // }
                 } else {
                     $('.subHeadWrapper').css({'position': 'static'})
                     $("#fullTreeMenuListContainer").css({ "position": "static", "top": "unset" })
