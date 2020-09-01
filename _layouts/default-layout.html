@@ -164,11 +164,11 @@
                         $('.rightSideMenu').addClass('rsm-fixed')
                     }
                     if (dcheight > document.body.clientHeight) {
-                        $('#fullTreeMenuListContainer').css({'height': 'calc(100vh - 170px)'})
-                        $('.rightSideMenu').css({'height': 'calc(100vh - 170px)'})
+                        $('#fullTreeMenuListContainer.ftm-fixed').css({'height': 'calc(100vh - 170px)'})
+                        $('.rightSideMenu.rsm-fixed').css({'height': 'calc(100vh - 170px)'})
                     } else {
-                        $('#fullTreeMenuListContainer').css({'height': (dcheight - 40) + 'px'})
-                        $('.rightSideMenu').css({'height': (dcheight - 40) + 'px'})
+                        $('#fullTreeMenuListContainer.ftm-fixed').css({'height': (dcheight - 40) + 'px'})
+                        $('.rightSideMenu.rsm-fixed').css({'height': (dcheight - 40) + 'px'})
                     }
                     if(!$('.container .head').hasClass('ch-fixed')) {
                         $('.container .head').addClass('ch-fixed')
@@ -180,7 +180,6 @@
                     $('#fullTreeMenuListContainer').removeClass('ftm-fixed')
                     $('.rightSideMenu').removeClass('rsm-fixed')
                     $('.container .head').removeClass('ch-fixed')
-                    $('#fullTreeMenuListContainer').css({'max-height': 'calc(100vh - ' + (sd + 80)+ 'px)', 'height': 'auto'})
                     $('.markdown-body').css({'margin-top': '40px'})
                 }
             }
