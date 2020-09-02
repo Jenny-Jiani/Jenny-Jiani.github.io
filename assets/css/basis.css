@@ -107,7 +107,6 @@ ul.circle > li p:hover, ul.circle li.on p, ul.square > li.on p, ul.square > li p
 
 #footerTop .subscribe { margin-left: 0; }
 
-#TryFreeDownload { margin-top: 140px }
 #TryFreeDownload .discription { max-width: 800px; text-align: center; margin: 20px auto 0; }
 
 @media (min-width: 768px) {

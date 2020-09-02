@@ -178,23 +178,15 @@
                     if (!$('.subHeadWrapper').hasClass('shw-fixed')) {
                         $('.subHeadWrapper').addClass('shw-fixed')
                         $('.docContainer').addClass('dc-fixed')
-                    }
-                    if (!$('#fullTreeMenuListContainer').hasClass('ftm-fixed')) {
                         $('#fullTreeMenuListContainer').addClass('ftm-fixed')
-                    }
-                    if(!$('.container .head').hasClass('ch-fixed')) {
-                        $('.container .head').addClass('ch-fixed')
+                        $('#docHead').addClass('ch-fixed')
                     }
                     $('.markdown-body').css({'margin-top': (100 + $('.container .head').height()) + 'px'})
                 } else {
-                        $('.subHeadWrapper').removeClass('shw-fixed')
-                        $('.docContainer').removeClass('dc-fixed')
-                    if ($('#fullTreeMenuListContainer').hasClass('ftm-fixed')) {
-                        $('#fullTreeMenuListContainer').removeClass('ftm-fixed')
-                    }
-                    if($('.container .head').hasClass('ch-fixed')) {
-                        $('.container .head').removeClass('ch-fixed')
-                    }
+                    $('.subHeadWrapper').removeClass('shw-fixed')
+                    $('.docContainer').removeClass('dc-fixed')
+                    $('#fullTreeMenuListContainer').removeClass('ftm-fixed')
+                    $('#docHead').removeClass('ch-fixed')
                     $('.markdown-body').css({'margin-top': '40px'})
                 }
             }
