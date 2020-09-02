@@ -158,20 +158,9 @@
                     }
                     if (dcheight > document.body.clientHeight) {
                         $('#fullTreeMenuListContainer.ftm-fixed').css({'height': 'calc(100vh - 170px)'})
-                        var container = $('#fullTreeMenuListContainer'), scrollTo = $('#fullTreeMenuListContainer .activeLink');
-                        if (scrollTo.length>0) {
-                            container.scrollTop(
-                                scrollTo.offset().top - container.offset().top + container.scrollTop()
-                            );
-                        }
                         $('.rightSideMenu.rsm-fixed').css({'height': 'calc(100vh - 170px)'})
                     } else {
                         $('#fullTreeMenuListContainer.ftm-fixed').css({'height': (dcheight - 40) + 'px'})
-                        if (scrollTo.length>0) {
-                            container.scrollTop(
-                                scrollTo.offset().top - container.offset().top + container.scrollTop()
-                            );
-                        }
                         $('.rightSideMenu.rsm-fixed').css({'height': (dcheight - 40) + 'px'})
                     }
                     $('.markdown-body').css({'margin-top': (100 + $('.container .head').height()) + 'px'})
