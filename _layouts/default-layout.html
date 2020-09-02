@@ -196,6 +196,17 @@
             $(".sideBar").toggleClass('hide-sm');
             $(".sideBar").toggleClass('hide-xs');
         })
+
+        let timeInt = setInterval(function() {
+            var container = $('#fullTreeMenuListContainer'), scrollTo = $('#fullTreeMenuListContainer .activeLink');
+            console.log(scrollTo)
+            if (scrollTo.length>0) {
+                container.scrollTop(
+                    scrollTo.offset().top - container.offset().top + container.scrollTop()
+                );
+                clearInterval(timeInt)
+            }
+        }, 500)
     </script>
 </body>
 

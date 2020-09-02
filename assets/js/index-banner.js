@@ -131,6 +131,7 @@ function HighlightCurrentListForFullTree(searchListId, firstTime, searchUrl = do
                     if (UrlSearch(searchUrl, curListATag[0].href)) {
                         foundCurList = true;
                         curListATag[0].style.color = '#fe8e14';
+                        curListATag[0].className = "otherLinkColour activeLink";
 
                         // if (needGenerateDocHead) {
                         //     curLi.id = "sidelistDocContent";
