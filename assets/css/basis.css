@@ -153,6 +153,11 @@ ul.circle > li p:hover, ul.circle li.on p, ul.square > li.on p, ul.square > li p
 	.subHeadWrapper .mobileSubHeaderMenu ul { font-size: 14px; }
 }
 
+@media (max-width: 374px) {
+	.subHeadWrapper .subHeaderMenuUl li.title { font-size: 12px; margin-right: 0px; }
+	.subHeadWrapper .subHeaderMenuUl li a, .subHeadWrapper .subHeaderMenuUl li a.whitelink { font-size: 16px; }
+}
+
 @media (min-width: 992px) {
 	.markdown-body h1 { font-size: 40px; }
 	.markdown-body h2 { font-size: 30px; }
