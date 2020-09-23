@@ -112,23 +112,23 @@ ul.circle > li p:hover, ul.circle li.on p, ul.square > li.on p, ul.square > li p
 
 
 /*修改滚动条样式*/
-div::-webkit-scrollbar{
+div::-webkit-scrollbar, ul::-webkit-scrollbar{
   width:8px;
   height:8px;
   /**/
 }
-div::-webkit-scrollbar-track{
+div::-webkit-scrollbar-track, ul::-webkit-scrollbar-track{
   background: rgb(239, 239, 239);
   border-radius:2px;
 }
-div::-webkit-scrollbar-thumb{
+div::-webkit-scrollbar-thumb, ul::-webkit-scrollbar-thumb{
   background: #bfbfbf;
   border-radius:8px;
 }
-div::-webkit-scrollbar-thumb:hover{
+div::-webkit-scrollbar-thumb:hover, ul::-webkit-scrollbar-thumb:hover{
   background: #999;
 }
-div::-webkit-scrollbar-corner{
+div::-webkit-scrollbar-corner, ul::-webkit-scrollbar-corner{
   background: #179a16;
 }
 
