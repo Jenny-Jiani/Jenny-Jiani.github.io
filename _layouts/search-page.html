@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+{%- include head.html -%}
+<style>
+    .markdown-body .editLinkColour { color: #323234; vertical-align: middle; height: 24px; line-height: 24px; display: inline-block; }
+    .markdown-body .editLinkColour:hover { color: #616167; }
+</style>
+<style type="text/css">
+  #searchResult h1 { margin-bottom: 15px; }
+  #searchResult b { color: #444; font-family: OpenSans-Semibold; }
+  #searchResult .gsc-control-cse { padding: 0; }
+  #searchResult input.gsc-input { width: 100%; height: 40px; line-height: 40px; font-size: 16px; font-size: 1.6rem; border-color: #ccc; border-radius: 3px; -webkit-border-radius: 3px; -moz-border-radius: 3px; background: none !important; }
+  #searchResult input.gsc-search-button { display: inline-block; width: 85px; height: 40px; line-height: 34px; background: #ff9f1f; color: #fff; font-family: OpenSans-Semibold; font-size: 14px; text-align: center; cursor: pointer; border: solid 2px #ff9f1f; border-radius: 3px; -webkit-border-radius: 3px; -moz-border-radius: 3px; -o-border-radius: 3px; -webkit-transition: all .2s ease-in-out; -moz-transition: all .2s ease-in-out; -ms-transition: all .2s ease-in-out; -o-transition: all .2s ease-in-out; transition: all .2s ease-in-out; outline: none; }
+  #searchResult input.gsc-search-button:hover { background: #ff9f1f; opacity: 1; }
+  #searchResult input.gsc-search-button:active { background: #f99d31; opacity: 1; }
+  #searchResult td.gsc-input { padding-right: 0; }
+  #searchResult td.gsc-search-button { position: relative; left: -4px; }
+  #searchResult td.gsc-clear-button { display: none; }
+  #searchResult .gsc-wrapper { padding-top: 15px; }
+  #searchResult .gsc-adBlock {    display: none!important;}
+  #searchResult .gsc-tabsArea { margin: 0; padding: 20px 0 8px; height: auto; }
+  #searchResult .gsc-result-info { padding: 0; margin: 6px 0; }
+  #searchResult .gsc-result { margin-bottom: 10px; padding: 0; }
+  #searchResult .gs-per-result-labels { display: none; }
+  #searchResult .gs-result .gs-snippet { margin: 10px 0 6px; font-size: 14px; font-size: 1.4rem; line-height: 24px; font-family: OpenSans-Regular; }
+  #searchResult .gsc-tabHeader { padding: 0 13px; margin: 0 10px 10px 0; height: 30px; line-height: 28px; font-size: 14px; font-size: 1.4rem; background: #eee; color: #606060; border: solid 1px #eee; border-radius: 3px; -webkit-border-radius: 3px; -moz-border-radius: 3px; font-family: OpenSans-Semibold; }
+  #searchResult .gsc-tabHeader.gsc-tabhActive { background: #999; border-color: #999; color: #fff; }
+  #searchResult .gs-image-box { display: none; }
+  #searchResult .gs-result .gs-title, #searchResult .gs-result .gs-title * { color: #50a8e1; text-decoration: none; font-family: OpenSans-Regular; }
+  #searchResult .gs-result .gs-title:hover { color: #61c2ec; }
+  #searchResult .gs-result .gs-visibleUrl { font-size: 14px; font-size: 1.4rem; line-height: 24px; color: #999; font-family: OpenSans-Regular; }
+  #searchResult .gsc-cursor-page { margin-right: 15px; font-size: 16px; font-size: 1.6rem; color: #50a8e1; }
+  #searchResult .gsc-cursor-page:hover { color: #61c2ec; }
+  #searchResult .gsc-cursor-current-page { color: #000; }
+  #searchResult .gsc-above-wrapper-area { border-bottom: none; }
+  #searchResult .gsc-cursor-box { margin-top: 25px; }
+  #searchResult .gsc-thumbnail-inside, #searchResult .gsc-url-top {padding: 0;}
+  #searchResult .gsc-result .gs-title {height:2.8rem;}
+  @media screen and (max-width: 767px) {
+    #searchResult input.gsc-search-button { border-bottom-left-radius: 0; -webkit-border-bottom-left-radius: 0; -moz-border-bottom-left-radius: 0; border-top-left-radius: 0; -webkit-border-bottom-left-radius: 0; -moz-border-top-left-radius: 0; }
+  }
+  @media (min-width: 768px) {
+    #searchResult .gs-result .gs-title, #searchResult .gs-result .gs-title * { font-size: 18px; font-size: 1.8rem; line-height: 30px; }
+    #searchResult input.gsc-input { height: 42px; line-height: 42px; }
+    #searchResult input.gsc-search-button { width: 105px; height: 42px; line-height: 36px; }
+    #searchResult table.gsc-search-box { position: relative; }
+    #searchResult td.gsc-input { padding-right: 20px; }
+    #searchResult td.gsc-search-button { left: 0; }
+    #searchResult td.gsc-clear-button { display: block; position: absolute; top: 0; right: 150px; }
+    #searchResult div.gsc-clear-button { display: block; margin: 9px 0 0 0; padding: 0; width: 25px; height: 25px; background: url(assets/img-icon/icon-close-12x13.png) no-repeat center center; }
+    #searchResult .gsc-webResult.gsc-result { margin-bottom: 20px; }
+    #searchResult .gsc-results .gsc-cursor-box { margin-top: 25px; margin-bottom: 20px; }
+    #searchResult .gsc-wrapper { padding-right: 100px; }
+    #searchResult .gcsc-branding { margin-bottom: 10px; }
+    #searchResult.gs-result .gs-title { font-size: 18px; font-size: 1.8rem; }
+  }
+  @media (min-width: 992px) {
+    #searchResult .gsc-wrapper { padding-right: 130px; }
+    #searchResult td.gsc-clear-button {display:none;}
+  }
+  @media (min-width: 1200px) {
+    #searchResult { width: 960px; }
+    #searchResult .gsc-wrapper { padding-right: 170px; }
+    #searchResult .gsc-results .gsc-cursor-box { margin-bottom: 25px; }
+    #searchResult td.gsc-clear-button {display:none;}
+  }
+</style>
+<body>
+    <div class="headWrapper">
+        {%- include page_header.html -%}
+    </div>
+    <div class="markdown-body container">
+        <div id="searchResult" class="container pt40 pb60 sm-pt50">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h1>Search</h1>                        
+                    <script async src="https://cse.google.com/cse.js?cx=32039cdf85bc7ae2b"></script>
+                    <div class="gcse-search"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-md-10 col-md-offset-1 col-xl-8 col-xl-offset-2">
+                {{ content }}
+            </div>
+        </div>
+    </div>
+    <div id="footerWrapper">
+        {%- include page_footer.html -%}
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js"
+        integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
+    <script>anchors.add();</script>
+
+</body>
+
+</html>
