@@ -50,6 +50,7 @@
     border-color: rgba(254, 142, 20, .7);
     background-color: rgba(254, 142, 20, .7);
   }
+  #searchResult .gsc-search-button-v2:focus, #searchResult .gsc-search-button-v2:active { border: 1px solid rgb(254, 142, 20);}
   #searchResult .gsc-search-button-v2 svg {
     width: 16px;
     height: 16px;
@@ -83,12 +84,10 @@
     #searchResult div.gsc-clear-button { display: block; margin: 9px 0 0 0; padding: 0; width: 25px; height: 25px; background: url(assets/img-icon/icon-close-12x13.png) no-repeat center center; }
     #searchResult .gsc-webResult.gsc-result { margin-bottom: 20px; }
     #searchResult .gsc-results .gsc-cursor-box { margin-top: 25px; margin-bottom: 20px; }
-    #searchResult .gsc-wrapper { padding-right: 100px; }
     #searchResult .gcsc-branding { margin-bottom: 10px; }
     #searchResult.gs-result .gs-title { font-size: 18px; font-size: 1.8rem; }
   }
   @media (min-width: 992px) {
-    #searchResult .gsc-wrapper { padding-right: 130px; }
     #searchResult td.gsc-clear-button {display:none;}
   }
   @media (min-width: 1200px) {
@@ -179,9 +178,6 @@
               </ul>
           </div>
           <div class="docContainer col-xs-12 col-md-9">
-              <div id="docHead" class = "head row hide-xs hide-sm">
-                  {%- include main-page-head.html -%}
-              </div>
               <div class="main row">
                   <div id="searchResult" class="container pt40 pb60 sm-pt50">
                       <div class="row">
@@ -192,7 +188,7 @@
                           </div>
                       </div>
                   </div>
-                  <div class="content markdown-body headCounter col-xs-12">
+                  <div class="content markdown-body headCounter col-xs-12" style="min-height: unset;">
                       {{ content }}
                       
                   </div>
