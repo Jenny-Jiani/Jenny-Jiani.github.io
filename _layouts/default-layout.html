@@ -141,10 +141,8 @@
             realFunc()
         })
         
-        // 绑定监听
         window.addEventListener('scroll', realFunc);
 
-        // 实际想绑定在 scroll 事件上的 handler
         function realFunc(){
             var sd = $(window).scrollTop();
             var dcheight = $('.docContainer').height() + 65 - sd
@@ -210,6 +208,7 @@
         }, 500)
     </script>
 
+    {%- include livehelp.html -%}
 
  <!-- Marketo & google-analytics -->
  <script>
