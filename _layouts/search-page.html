@@ -10,7 +10,7 @@
   #searchResult h1 { margin-bottom: 15px; }
   #searchResult b { color: #444; font-family: OpenSans-Semibold; }
   #searchResult .gsc-control-cse { padding: 0; }
-  .markdown-body #searchResult table.gsc-input { margin-bottom: 0; }
+  #searchResult table.gsc-input { margin-bottom: 0; }
   #searchResult input.gsc-input { width: 100%; height: 40px; line-height: 40px; font-size: 16px; font-size: 1.6rem; border-color: #ccc; border-radius: 3px; -webkit-border-radius: 3px; -moz-border-radius: 3px; background: none !important; outline: none!important; box-shadow: none; outline: none!important;}
   #searchResult input.gsc-search-button { display: inline-block; width: 85px; height: 40px; line-height: 34px; background: #ff9f1f; color: #fff; font-family: OpenSans-Semibold; font-size: 14px; text-align: center; cursor: pointer; border: solid 2px #ff9f1f; border-radius: 3px; -webkit-border-radius: 3px; -moz-border-radius: 3px; -o-border-radius: 3px; -webkit-transition: all .2s ease-in-out; -moz-transition: all .2s ease-in-out; -ms-transition: all .2s ease-in-out; -o-transition: all .2s ease-in-out; transition: all .2s ease-in-out; outline: none; }
   #searchResult input.gsc-search-button:hover { background: #ff9f1f; opacity: 1; }
@@ -38,7 +38,7 @@
   #searchResult .gsc-cursor-box { margin-top: 25px; }
   #searchResult .gsc-thumbnail-inside, #searchResult .gsc-url-top {padding: 0;}
   #searchResult .gsc-result .gs-title {height:2.8rem;}
-  .markdown-body #searchResult table tr, .markdown-body #searchResult table td { border: 0; }
+  #searchResult table tr, #searchResult table td { border: 0; }
   #searchResult td.gsc-input { padding: 0; }
   #searchResult .gsc-search-button-v2 {
     height: 40px;
@@ -68,6 +68,7 @@
   }
   .gsc-overflow-hidden { overflow: auto!important; }
   #searchResult .gsc-results-close-btn-visible { display: none; }
+  #searchResult .gcsc-find-more-on-google-branding { display: none; }
   @media screen and (max-width: 767px) {
     #searchResult input.gsc-search-button { border-bottom-left-radius: 0; -webkit-border-bottom-left-radius: 0; -moz-border-bottom-left-radius: 0; border-top-left-radius: 0; -webkit-border-bottom-left-radius: 0; -moz-border-top-left-radius: 0; }
   }
@@ -101,21 +102,103 @@
     <div class="headWrapper">
         {%- include page_header.html -%}
     </div>
-    <div class="markdown-body container">
-        <div id="searchResult" class="container pt40 pb60 sm-pt50">
+    <div class="subHeadWrapper">
+        <div class="subHeader container">
             <div class="row">
-                <div class="col-xs-12">
-                    <h1>Search</h1>                        
-                    <script async src="https://cse.google.com/cse.js?cx=32039cdf85bc7ae2b"></script>
-                    <div class="gcse-search"></div>
-                </div>
+                <ul class="subHeaderMenuUl col-xs-12 clearfix">
+                    <li class="title"><a class="f18 fontOswald" href="https://www.dynamsoft.com/Products/Dynamic-Barcode-Reader.aspx">Dynamsoft Barcode Reader</a> <span class="fc9">|</span> Developer's Center</li>
+                    <li class="on"><a class="orangelink" href="{{ site.docHomePage }}">Documentation</a></li>
+                    <li><a class="whitelink hide-xs" href="https://www.dynamsoft.com/Downloads/Dynamic-Barcode-Reader-Sample-Download.aspx">Code Gallery</a></li>
+                    <li><a class="whitelink hide-xs" href="https://www.dynamsoft.com/Products/Barcode-Reader-Resources.aspx">Resources</a></li>
+                    <li class="fr" style="margin-right: 0; padding: 0;"><a class="btn d-btn bgOrange hide-sm hide-xs" href="https://www.dynamsoft.com/Downloads/Dynamic-Barcode-Reader-Download.aspx">Download 30-Day Free Trial</a></li>
+                </ul>
+            </div>
+            <div class="row mobileSubHeaderMenu">
+                <ul class="col-xs-12 show-xs">
+                    <li><a class="orangelink" href = "{{ site.docHomePage }}">Documentation</a></li>
+                    <li><a class="whitelink" href="https://www.dynamsoft.com/Downloads/Dynamic-Barcode-Reader-Sample-Download.aspx">Code Gallery</a></li>
+                    <li><a class="whitelink" href="https://www.dynamsoft.com/Products/Barcode-Reader-Resources.aspx">Resources</a></li>
+                </ul>
             </div>
         </div>
-        <div class="row">
-            <div class="col-xs-12 col-md-10 col-md-offset-1 col-xl-8 col-xl-offset-2">
-                {{ content }}
-            </div>
-        </div>
+    </div>
+    <div class="sideBarIcon"><i class="fa fa-list" style="margin-right: 5px;"></i> Table of contents</div>
+    <div class="container">
+      <div class="row">
+          <div class="sideBar col-xs-12 col-md-3 hide-xs hide-sm">
+              <ul class="mainPage" id="fullTreeMenuListContainer" name="listLevel1">
+                  <li>
+                      <a href="{{ site.introduction }}" class="otherLinkColour">Introduction</a>
+                      <ul>
+                          {%- if page.url contains '/introduction/' -%}
+                          <li><a href="{{ site.introduction }}overview.html" class="otherLinkColour">Overview</a></li>
+                          <li><a href="{{ site.introduction }}architecture.html" class="otherLinkColour">Architecture</a></li>
+                          {%- include sidelist-introduction/introduction-licensing.html -%}
+                          {%- include sidelist-introduction/introduction-how-to-guides.html -%}
+                          {%- include sidelist-introduction/introduction-comparison-tools.html -%}
+                          <li><a href="{{ site.faqs }}" class="otherLinkColour">FAQs</a></li>
+                          <li class="unavailableLink">Security Features</li>
+                          {%- endif -%}
+                      </ul>
+                  </li>
+                  <li><a href="{{ site.programming }}" class="otherLinkColour">Programming</a>
+                      <ul>
+                          {%- if page.url contains '/programming/' -%}
+                          {%- include sidelist-programming/programming-c.html -%}
+                          {%- include sidelist-programming/programming-cpp.html -%}
+                          {%- include sidelist-programming/programming-javascript.html -%}
+                          {%- include sidelist-programming/programming-dotnet.html -%}
+                          {%- include sidelist-programming/programming-oc.html -%}
+                          {%- include sidelist-programming/programming-java.html -%}
+                          {%- include sidelist-programming/programming-android.html -%}
+                          {%- include sidelist-programming/programming-python.html -%}
+                          {%- endif -%}
+                      </ul>
+                  </li>
+                  <li><a href="{{ site.parameters }}" class="otherLinkColour">Parameters</a>
+                      <ul>
+                          {%- if page.url contains '/parameters/' -%}
+                          <li><a href="{{ site.parameters }}structure-and-interfaces-of-parameters.html" class="otherLinkColour">Structure and Interfaces of Parameters</a></li>
+                          {%- include sidelist-parameters/parameters-references.html -%}
+                          {%- include sidelist-parameters/parameters-enumerations.html -%}
+                          {%- include sidelist-parameters/parameters-scenario-settings.html -%}
+                          <li class="unavailableLink">Example Image Settings</li>
+                          {%- endif -%}
+                      </ul>
+                  </li>
+                  <li class="unavailableLink">Enhancements
+                      {%- if page.url contains '/enhancements/' -%}
+                      <ul>
+                          <li class="unavailableLink">DPM Codes</li>
+                          <li class="unavailableLink">Intermediate Result</li>
+                          <li class="unavailableLink">Panorama</li>
+                          <li class="unavailableLink">PDF Vector</li>
+                      </ul>
+                      {%- endif -%}
+                  </li>
+              </ul>
+          </div>
+          <div class="docContainer col-xs-12 col-md-9">
+              <div id="docHead" class = "head row hide-xs hide-sm">
+                  {%- include main-page-head.html -%}
+              </div>
+              <div class="main row">
+                  <div id="searchResult" class="container pt40 pb60 sm-pt50">
+                      <div class="row">
+                          <div class="col-xs-12">
+                              <h1>Search</h1>                        
+                              <script async src="https://cse.google.com/cse.js?cx=32039cdf85bc7ae2b"></script>
+                              <div class="gcse-search"></div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="content markdown-body headCounter col-xs-12">
+                      {{ content }}
+                      
+                  </div>
+              </div>
+          </div>
+      </div>
     </div>
     <div id="footerWrapper">
         {%- include page_footer.html -%}
@@ -125,6 +208,23 @@
         integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
     <script>anchors.add();</script>
 
+    {%- if page.needAutoGenerateSidebar -%}
+    {%- unless page.needGenerateH3Content -%}
+    <script>
+        FullTreeMenuList(true, false);
+    </script>
+    {%- else -%}
+    <script>
+        FullTreeMenuList(true);
+    </script>
+    {%- endunless -%}
+    {%- else -%}
+    <script>
+        FullTreeMenuList(false);
+    </script>
+    {%- endif -%}
+
+    {%- include livehelp.html -%}
 </body>
 
 </html>
