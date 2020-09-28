@@ -124,57 +124,62 @@
     <div class="container">
       <div class="row">
           <div class="sideBar col-xs-12 col-md-3 hide-xs hide-sm">
-              <ul class="mainPage" id="fullTreeMenuListContainer" name="listLevel1">
-                  <li>
-                      <a href="{{ site.introduction }}" class="otherLinkColour">Introduction</a>
-                      <ul>
-                          {%- if page.url contains '/introduction/' -%}
-                          <li><a href="{{ site.introduction }}overview.html" class="otherLinkColour">Overview</a></li>
-                          <li><a href="{{ site.introduction }}architecture.html" class="otherLinkColour">Architecture</a></li>
-                          {%- include sidelist-introduction/introduction-licensing.html -%}
-                          {%- include sidelist-introduction/introduction-how-to-guides.html -%}
-                          {%- include sidelist-introduction/introduction-comparison-tools.html -%}
-                          <li><a href="{{ site.faqs }}" class="otherLinkColour">FAQs</a></li>
-                          <li class="unavailableLink">Security Features</li>
-                          {%- endif -%}
-                      </ul>
-                  </li>
-                  <li><a href="{{ site.programming }}" class="otherLinkColour">Programming</a>
-                      <ul>
-                          {%- if page.url contains '/programming/' -%}
-                          {%- include sidelist-programming/programming-c.html -%}
-                          {%- include sidelist-programming/programming-cpp.html -%}
-                          {%- include sidelist-programming/programming-javascript.html -%}
-                          {%- include sidelist-programming/programming-dotnet.html -%}
-                          {%- include sidelist-programming/programming-oc.html -%}
-                          {%- include sidelist-programming/programming-java.html -%}
-                          {%- include sidelist-programming/programming-android.html -%}
-                          {%- include sidelist-programming/programming-python.html -%}
-                          {%- endif -%}
-                      </ul>
-                  </li>
-                  <li><a href="{{ site.parameters }}" class="otherLinkColour">Parameters</a>
-                      <ul>
-                          {%- if page.url contains '/parameters/' -%}
-                          <li><a href="{{ site.parameters }}structure-and-interfaces-of-parameters.html" class="otherLinkColour">Structure and Interfaces of Parameters</a></li>
-                          {%- include sidelist-parameters/parameters-references.html -%}
-                          {%- include sidelist-parameters/parameters-enumerations.html -%}
-                          {%- include sidelist-parameters/parameters-scenario-settings.html -%}
-                          <li class="unavailableLink">Example Image Settings</li>
-                          {%- endif -%}
-                      </ul>
-                  </li>
-                  <li class="unavailableLink">Enhancements
-                      {%- if page.url contains '/enhancements/' -%}
-                      <ul>
-                          <li class="unavailableLink">DPM Codes</li>
-                          <li class="unavailableLink">Intermediate Result</li>
-                          <li class="unavailableLink">Panorama</li>
-                          <li class="unavailableLink">PDF Vector</li>
-                      </ul>
-                      {%- endif -%}
-                  </li>
-              </ul>
+            <div id="sideBarCnt">
+                <div class="docSearchPart" style="margin-top: 30px;">
+                    <input id="txtSearch" class="search" type="text">
+                </div>
+                <ul class="mainPage" id="fullTreeMenuListContainer" name="listLevel1">
+                    <li>
+                        <a href="{{ site.introduction }}" class="otherLinkColour">Introduction</a>
+                        <ul>
+                            {%- if page.url contains '/introduction/' -%}
+                            <li><a href="{{ site.introduction }}overview.html" class="otherLinkColour">Overview</a></li>
+                            <li><a href="{{ site.introduction }}architecture.html" class="otherLinkColour">Architecture</a></li>
+                            {%- include sidelist-introduction/introduction-licensing.html -%}
+                            {%- include sidelist-introduction/introduction-how-to-guides.html -%}
+                            {%- include sidelist-introduction/introduction-comparison-tools.html -%}
+                            <li><a href="{{ site.faqs }}" class="otherLinkColour">FAQs</a></li>
+                            <li class="unavailableLink">Security Features</li>
+                            {%- endif -%}
+                        </ul>
+                    </li>
+                    <li><a href="{{ site.programming }}" class="otherLinkColour">Programming</a>
+                        <ul>
+                            {%- if page.url contains '/programming/' -%}
+                            {%- include sidelist-programming/programming-c.html -%}
+                            {%- include sidelist-programming/programming-cpp.html -%}
+                            {%- include sidelist-programming/programming-javascript.html -%}
+                            {%- include sidelist-programming/programming-dotnet.html -%}
+                            {%- include sidelist-programming/programming-oc.html -%}
+                            {%- include sidelist-programming/programming-java.html -%}
+                            {%- include sidelist-programming/programming-android.html -%}
+                            {%- include sidelist-programming/programming-python.html -%}
+                            {%- endif -%}
+                        </ul>
+                    </li>
+                    <li><a href="{{ site.parameters }}" class="otherLinkColour">Parameters</a>
+                        <ul>
+                            {%- if page.url contains '/parameters/' -%}
+                            <li><a href="{{ site.parameters }}structure-and-interfaces-of-parameters.html" class="otherLinkColour">Structure and Interfaces of Parameters</a></li>
+                            {%- include sidelist-parameters/parameters-references.html -%}
+                            {%- include sidelist-parameters/parameters-enumerations.html -%}
+                            {%- include sidelist-parameters/parameters-scenario-settings.html -%}
+                            <li class="unavailableLink">Example Image Settings</li>
+                            {%- endif -%}
+                        </ul>
+                    </li>
+                    <li class="unavailableLink">Enhancements
+                        {%- if page.url contains '/enhancements/' -%}
+                        <ul>
+                            <li class="unavailableLink">DPM Codes</li>
+                            <li class="unavailableLink">Intermediate Result</li>
+                            <li class="unavailableLink">Panorama</li>
+                            <li class="unavailableLink">PDF Vector</li>
+                        </ul>
+                        {%- endif -%}
+                    </li>
+                </ul>
+            </div>
           </div>
           <div class="docContainer col-xs-12 col-md-9">
               <div class="main row">
@@ -218,6 +223,97 @@
         FullTreeMenuList(false);
     </script>
     {%- endif -%}
+
+    <script type="text/javascript">
+      $('#sideBarCnt').css({'width': $('.sideBar').width() + 'px'})
+      $('.container .head').css({'width': $('.docContainer').width() + 'px'})
+
+      $(window).resize(function() {
+          $('#sideBarCnt').css({'width': $('.sideBar').width() + 'px'})
+          $('.container .head').css({'width': $('.docContainer').width() + 'px'})
+          realFunc()
+      })
+      
+      window.addEventListener('scroll', realFunc);
+
+      function realFunc(){
+          var sd = $(window).scrollTop();
+          var dcheight = $('.docContainer').height() + 65 - sd
+          if (breakpoint() == 'lg') {
+              if (sd > 65 && dcheight>0) {
+                  if (!$('.subHeadWrapper').hasClass('shw-fixed')) {
+                      $('.subHeadWrapper').addClass('shw-fixed')
+                      $('.docContainer').addClass('dc-fixed')
+                      $('#sideBarCnt').addClass('ftm-fixed')
+                      $('.rightSideMenu').addClass('rsm-fixed')
+                      $('#docHead').addClass('ch-fixed')
+                  }
+                  if (dcheight > document.body.clientHeight) {
+                      $('#sideBarCnt.ftm-fixed').css({'height': 'calc(100vh - 170px)'})
+                      $('.rightSideMenu.rsm-fixed').css({'height': 'calc(100vh - 170px)'})
+                  } else {
+                      $('#sideBarCnt.ftm-fixed').css({'height': (dcheight - 40) + 'px'})
+                      $('.rightSideMenu.rsm-fixed').css({'height': (dcheight - 40) + 'px'})
+                  }
+                  $('.markdown-body').css({'margin-top': (100 + $('.container .head').height()) + 'px'})
+              } else {
+                  $('.subHeadWrapper').removeClass('shw-fixed')
+                  $('.docContainer').removeClass('dc-fixed')
+                  $('#sideBarCnt').removeClass('ftm-fixed')
+                  $('.rightSideMenu').removeClass('rsm-fixed')
+                  $('.container .head').removeClass('ch-fixed')
+                  $('.markdown-body').css({'margin-top': '40px'})
+              }
+          }
+          if (breakpoint() == 'md') {
+              if (sd > 65 && dcheight > 0) {
+                  if (!$('.subHeadWrapper').hasClass('shw-fixed')) {
+                      $('.subHeadWrapper').addClass('shw-fixed')
+                      $('.docContainer').addClass('dc-fixed')
+                      $('#sideBarCnt').addClass('ftm-fixed')
+                      $('#docHead').addClass('ch-fixed')
+                  }
+                  $('.markdown-body').css({'margin-top': (100 + $('.container .head').height()) + 'px'})
+              } else {
+                  $('.subHeadWrapper').removeClass('shw-fixed')
+                  $('.docContainer').removeClass('dc-fixed')
+                  $('#sideBarCnt').removeClass('ftm-fixed')
+                  $('#docHead').removeClass('ch-fixed')
+                  $('.markdown-body').css({'margin-top': '40px'})
+              }
+          }
+      }
+
+      $('.sideBarIcon').click(function() {
+          $(".sideBar").toggleClass('hide-sm');
+          $(".sideBar").toggleClass('hide-xs');
+      })
+
+      let timeInt = setInterval(function() {
+          var container = $('#sideBarCnt'), scrollTo = $('#sideBarCnt .activeLink');
+          console.log(scrollTo)
+          if (scrollTo.length>0) {
+              container.scrollTop(
+                  scrollTo.offset().top - container.offset().top + container.scrollTop()
+              );
+              clearInterval(timeInt)
+          }
+      }, 500)
+  
+      function onSearchFinish(e) {
+          var evt = window.event || e;
+          if (evt.keyCode == 13) {
+
+          }
+      }
+
+      $('#txtSearch').keydown(function(e) { 
+          if (e.keyCode == 13) {
+              window.location.href = '/search?q=' + $('#txtSearch').val()
+          }
+      })
+
+  </script>
 
     {%- include livehelp.html -%}
 </body>
