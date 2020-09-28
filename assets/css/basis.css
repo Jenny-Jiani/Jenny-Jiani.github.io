@@ -88,7 +88,7 @@ ul.circle > li p:hover, ul.circle li.on p, ul.square > li.on p, ul.square > li p
 
 #menuLsitContainer ul { display: none; }
 
-#fullTreeMenuListContainer.ftm-fixed { position: fixed; top: 60px; max-height: unset; }
+#sideBarCnt.ftm-fixed, #fullTreeMenuListContainer.ftm-fixed { position: fixed; top: 60px; max-height: unset; }
 #fullTreeMenuListContainer ul { display: none; margin-left: 15px; margin-bottom: 10px; }
 #fullTreeMenuListContainer li { list-style: none; padding-left: 15px; line-height: 20px; margin-bottom: 8px; position: relative; }
 #fullTreeMenuListContainer li:before { content: ''; width: 6px; height: 6px; border-radius: 50%; display: inline-block; background: #999; position: absolute; left: 2px; top: 8px; }
@@ -103,6 +103,7 @@ ul.circle > li p:hover, ul.circle li.on p, ul.square > li.on p, ul.square > li p
 .recordLink.sadLink { margin-left: 15px; }
 .icon-smile { display: inline-block; width: 24px; height: 24px; margin-right: 5px; vertical-align: top;}
 .icon-sad { display: inline-block; width: 24px; height: 24px; margin-right: 5px; vertical-align: top;}
+#sideBarCnt .docSearchPart .search { height: 30px; width: 100%; max-width: 250px; padding: 0 5px; }
 
 .btn { font-family: OpenSans-Regular; }
 
