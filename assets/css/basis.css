@@ -35,7 +35,7 @@ ul.square { list-style-type:square; padding-left: 30px; line-height: 28px; }
 ul.disc { list-style-type: disc; padding-left: 30px; line-height: 28px; margin-left: 0; margin-top: 149px; }
 ul.circle > li p:hover, ul.circle li.on p, ul.square > li.on p, ul.square > li p:hover, ul.disc > li.on p, ul.disc > li p:hover { color: #3196fc; }
 
-.mainPage { padding-left: 0px; line-height: 28px; margin: 0; margin-top:40px; overflow: auto; }
+.mainPage { padding-left: 0px; line-height: 28px; margin: 0; margin-top:10px; overflow: auto; }
 
 .headCounter h2:before { content: counter(h2counter) ".	"; }
 .headCounter h2 { counter-reset: h3counter; counter-increment: h2counter; }
@@ -103,7 +103,17 @@ ul.circle > li p:hover, ul.circle li.on p, ul.square > li.on p, ul.square > li p
 .recordLink.sadLink { margin-left: 15px; }
 .icon-smile { display: inline-block; width: 24px; height: 24px; margin-right: 5px; vertical-align: top;}
 .icon-sad { display: inline-block; width: 24px; height: 24px; margin-right: 5px; vertical-align: top;}
-#sideBarCnt .docSearchPart .search { height: 30px; width: 100%; max-width: 250px; padding: 0 5px; }
+#sideBarCnt .docSearchPart .search { position: relative; height: 30px; width: 100%; max-width: 250px; padding: 0 5px; }
+#sideBarCnt .docSearchPart .search::before {
+	content: '';
+	width: 10px;
+	height: 10px;
+	position: absolute;
+	background: #ddd;
+	display: block;
+	top: 0;
+	left: 0;
+}
 
 .btn { font-family: OpenSans-Regular; }
 
