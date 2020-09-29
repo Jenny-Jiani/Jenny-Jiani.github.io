@@ -199,6 +199,8 @@
         }
 
         $('.sideBarIcon').click(function() {
+            console.log('sidebar' + $('.sideBar').width())
+            $('#sideBarCnt').css({'width': $('.sideBar').width() + 'px'})
             $(".sideBar").toggleClass('hide-sm');
             $(".sideBar").toggleClass('hide-xs');
         })
