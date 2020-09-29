@@ -50,6 +50,8 @@ ul.circle > li p:hover, ul.circle li.on p, ul.square > li.on p, ul.square > li p
 .subHeadWrapper .subHeaderMenuUl li { padding: 0 10px; cursor: pointer; display: inline-block; color: #323234; vertical-align: top; }
 .subHeadWrapper .subHeaderMenuUl li.on { color: #FE8E14; vertical-align: top; }
 .subHeadWrapper .subHeaderMenuUl li a, .subHeadWrapper .subHeaderMenuUl li a.whitelink { color: #323234; }
+.subHeadWrapper .subHeaderMenuUl li a.orangelink { color: #323234; }
+.subHeadWrapper .subHeaderMenuUl li a.whitelink:hover { color: #FE8E14; }
 .subHeadWrapper .subHeaderMenuUl li a.bgOrange { color: #FFFFFF; }
 .subHeadWrapper .subHeaderMenuUl li.title { margin-right: 20px; padding: 0; }
 .subHeadWrapper .mobileSubHeaderMenu { line-height: 40px; }
