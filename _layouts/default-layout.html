@@ -137,12 +137,10 @@
     {%- endif -%}
 
     <script type="text/javascript">
-        console.log('sidebar' + $('.sideBar').width())
         $('#sideBarCnt').css({'width': $('.sideBar').width() + 'px'})
         $('.container .head').css({'width': $('.docContainer').width() + 'px'})
 
         $(window).resize(function() {
-            console.log('sidebar' + $('.sideBar').width())
             $('#sideBarCnt').css({'width': $('.sideBar').width() + 'px'})
             $('.container .head').css({'width': $('.docContainer').width() + 'px'})
             realFunc()
@@ -199,10 +197,12 @@
         }
 
         $('.sideBarIcon').click(function() {
-            console.log('sidebar' + $('.sideBar').width())
-            $('#sideBarCnt').css({'width': $('.sideBar').width() + 'px'})
             $(".sideBar").toggleClass('hide-sm');
             $(".sideBar").toggleClass('hide-xs');
+            setTimeout(function() {
+                console.log('sidebar' + $('.sideBar').width())
+                $('#sideBarCnt').css({'width': $('.sideBar').width() + 'px'})
+            }, 100)
         })
 
         let timeInt = setInterval(function() {
