@@ -1,0 +1,10 @@
+<li><a href="{{ site.getstarted }}starting.html" class="otherLinkColour">About</a>
+  <ul>
+    {%- if page.url contains '/getstarted/' -%}
+    <li><a href="{{ site.getstarted }}helloworld.html" class="otherLinkColour">HelloWorld</a></li>
+    <li><a href="{{ site.getstarted }}hardware.html" class="otherLinkColour">Hardware</a></li>
+    <li><a href="{{ site.getstarted }}platform.html" class="otherLinkColour">Platform</a></li>
+    <li><a href="{{ site.getstarted }}fileTypes.html" class="otherLinkColour">FileTypes</a></li>
+    {%- endif -%}
+  </ul>
+</li>
