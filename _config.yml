@@ -1,15 +1,15 @@
-repositoryUrl: https://github.com/Dynamsoft/web-twain-docs/master
+repositoryUrl: https://github.com/Jenny-Jiani/Jenny-Jiani.github.io/blob/master
 
-docHomePage: /web-twain/docs/
-dynamsoft_logo: /web-twain/docs/assets/img-icon/dynamsoft-logo.png
-dwt_logo: /web-twain/docs/assets/img-icon/dwt-logo.png
-edit_icon: /web-twain/docs/assets/img-icon/edit-icon.png
+docHomePage:
+dynamsoft_logo: /assets/img-icon/dynamsoft-logo.png
+dwt_logo: /assets/img-icon/dwt-logo.png
+edit_icon: /assets/img-icon/edit-icon.png
 
-assets: /web-twain/docs/assets/
-_includes: /web-twain/docs/_includes/
-_layouts: /web-twain/docs/_layouts/
-about: /web-twain/docs/about/
-getstarted: /web-twain/docs/getstarted/
-indepth: /web-twain/docs/indepth/
-info: /web-twain/docs/info/
+assets: /assets/
+_includes: /_includes/
+_layouts: /_layouts/
+about: /about/
+getstarted: /getstarted/
+indepth: /indepth/
+info: /info/
 theme: jekyll-theme-cayman

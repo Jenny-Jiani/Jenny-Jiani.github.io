@@ -1,6 +1,9 @@
 ---
-layout: default-layout
+layout: home-page
+title: Dynamic Web TWAIN SDK Documentation
+keywords: Dynamic Web TWAIN, dbr, documentation
 breadcrumbText: HomePage
+description: Dynamic Web TWAIN SDK Documentation Homepage
 ---
 
 # Dynamic Web TWAIN Documentation  
