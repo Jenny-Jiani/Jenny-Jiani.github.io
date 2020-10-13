@@ -35,9 +35,6 @@ function GenerateContentByHead(needh3 = true) {
         if ($('#AutoGenerateSidebar').length != 0) {
             $('#AutoGenerateSidebar').append(appendContent);
         }
-        // if (!needh3 && $('#sidelistDocContent').length != 0) {
-        //     $($('#sidelistDocContent')[0]).append(appendContent);
-        // }
     }
 }
 
