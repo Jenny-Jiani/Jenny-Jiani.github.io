@@ -1,5 +1,7 @@
-## Dynamsoft Barcode Reader Documentation
+## Dynamic Web TWAIN Documentation
 
-This project is to store DBR documentation.
+This project is to store DWT documentation.
 
-Test Auto Synchronization.
+Set up with
+
+https://docs.github.com/en/enterprise/2.14/user/articles/setting-up-your-github-pages-site-locally-with-jekyll

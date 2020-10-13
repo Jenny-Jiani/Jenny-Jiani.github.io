@@ -1,6 +1,0 @@
----
-layout: developing
-title: Dynamsoft Barcode Reader Comparison Tools - Test Set Images
-keywords: test set images, comparison tools
-needAutoGenerateSidebar: false
----

@@ -1,6 +1,5 @@
 {%- assign level_ary = page.url | split: '/' -%}
-<li><a class="bluelink" href = "https://www.dynamsoft.com/Products/Dynamic-Barcode-Reader.aspx">Dynamsoft Barcode Reader</a></li>
-<li><a class="bluelink" href = "{{ site.docHomePage }}/">Documentation</a></li>
+<li><a class="bluelink" href = "{{ site.docHomePage }}">DWT Docs</a></li>
 {%- for cur_level in level_ary -%}
     {%- assign breadcrumbUrl = page.url | split: cur_level | first | strip -%}
     {%- if breadcrumbUrl == "/" or breadcrumbUrl == "" -%}
@@ -15,6 +14,9 @@
     {%- endfor -%}
 {%- endfor -%}
 {%- if page.url contains '.html' -%}
+
+    <li id="breadcrumbLastNode"></li>
+    {%- comment -%}
     {%- assign file_name =  level_ary | last |  split: '.' | first |  strip -%}
     {%- if file_name contains '-' -%}
         {%- assign file_name_str = file_name | split:'-' -%}
@@ -27,6 +29,8 @@
     {%- else -%}
             <li>{{ file_name }}</li>
     {%- endif -%}
+    {%- endcomment -%}
+    
 {%- else -%}
     {%- if page.breadcrumbText -%}
         {%- assign pageUrlWihtoutSpace = page.url | strip -%}
