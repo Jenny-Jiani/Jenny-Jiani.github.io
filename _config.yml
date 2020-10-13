@@ -12,4 +12,16 @@ about: /about/
 getstarted: /getstarted/
 indepth: /indepth/
 info: /info/
+
+dynamsoft_logo: /assets/img-icon/dynamsoft-logo.png
+dbr_logo: /assets/img-icon/dbr-logo.png
+edit_icon: /assets/img-icon/edit-icon.png
+smile_icon: /assets/img-icon/icon-smile.png
+sad_icon: /assets/img-icon/icon-sad.png
+dbr_icon: /assets/img-icon/icon-dbr.svg
+dwt_icon: /assets/img-icon/icon-dwt.svg
+dnt_icon: //assets/img-icon/icon-dnt.svg
+
+baseurl: /
+
 theme: jekyll-theme-cayman
