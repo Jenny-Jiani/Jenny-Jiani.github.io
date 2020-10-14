@@ -1,3 +1,11 @@
+---
+layout: default-layout
+needAutoGenerateSidebar: true
+description: "TOADD"
+title: "TOADD"
+---
+
+
 # Dynamic Web TWAIN Troubleshooting - Connection Errors
 ## License errors
 

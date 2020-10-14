@@ -1,4 +1,9 @@
-
+---
+layout: default-layout
+needAutoGenerateSidebar: true
+description: "TOADD"
+title: "TOADD"
+---
 
 # Dynamic Web TWAIN Advanced Troubleshooting - Logs & Dump Files
 
