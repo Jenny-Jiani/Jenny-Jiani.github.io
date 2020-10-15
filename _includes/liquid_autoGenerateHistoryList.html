@@ -7,13 +7,13 @@
 {%- endcapture -%}
 
 {%- if curPageVersion == "latest version" -%}
-	<li class="otherLinkColour" style="font-weight: bold;">latest version</li>		
+	<p class="currentVersion" style="font-weight: bold;">latest version</p>		
 {%- else -%}
-	<li class="otherLinkColour" style="font-weight: bold;">{{ "version " | append: curPageVersion }}</li>
+	<p class="currentVersion" style="font-weight: bold;">{{ "version " | append: curPageVersion }}</p>
 {%- endif -%}
 
 
-
+<ul class="otherVersions">
 {%- assign needRemoveStr = "-v" | append: curPageVersion -%}
 {%- assign curUsedToMatchUrl = page.url | remove: needRemoveStr -%}
 
@@ -57,3 +57,4 @@
 		{%- endif -%}
 	{%- endif -%}
 {%- endfor -%}
+</ul>
