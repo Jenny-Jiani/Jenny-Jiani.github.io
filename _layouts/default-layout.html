@@ -250,7 +250,7 @@
         $(document).click(function(){
             $('.otherVersions').hide()
         })
-        $('.changeBtn').on('click', function() {
+        $('.changeBtn').on('click', function(e) {
             $('.otherVersions').toggle()
             stopPropagation(e);
         })
