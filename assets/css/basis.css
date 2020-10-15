@@ -207,7 +207,7 @@ div::-webkit-scrollbar-corner, ul::-webkit-scrollbar-corner{
 	.docContainer { border-left: 1px solid #ddd;padding-left: 40px;min-height: calc(100vh - 300px); }
 	.subHeadWrapper .subHeaderMenuUl li { margin-right: 0px; }
 	.subHeadWrapper .subHeaderMenuUl li.title { margin-right: 20px; padding: 0; }
-	.sideBar .mainPage { width: 242px; height: auto; max-height: calc(100vh - 205px); }
+	.sideBar .mainPage { width: auto; height: auto; max-height: calc(100vh - 205px); }
 	.sideBarIcon { display: none; overflow: auto; }
 }
 

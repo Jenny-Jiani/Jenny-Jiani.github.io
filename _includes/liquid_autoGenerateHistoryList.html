@@ -7,17 +7,18 @@
 {%- endcapture -%}
 
 {%- if curPageVersion == "latest version" -%}
-	<p class="currentVersion" style="font-weight: bold;">latest version</p>		
+	<p class="currentVersion fontOswald">latest version</p>		
 {%- else -%}
-	<p class="currentVersion" style="font-weight: bold;">{{ "version " | append: curPageVersion }}</p>
+	<p class="currentVersion fontOswald">{{ "version " | append: curPageVersion }}</p>
 {%- endif -%}
 
 
-<ul class="otherVersions">
+
 {%- assign needRemoveStr = "-v" | append: curPageVersion -%}
 {%- assign curUsedToMatchUrl = page.url | remove: needRemoveStr -%}
-
 {%- assign historyRecode = "" -%}
+
+<ul class="otherVersions">
 
 {%- for my_page in site.pages -%}
 	{%- capture tmpPageVersion -%}
@@ -58,3 +59,36 @@
 	{%- endif -%}
 {%- endfor -%}
 </ul>
+
+{%- if historyRecode != '' -%}
+	<a class="changeBtn fontOswald" href="javascript:;">Change +</a>
+{%- endif -%}
+
+<style type="text/css">
+	.otherVersions {
+		position: absolute;
+    display: none;
+    bottom: 47px;
+    background: #ffffff;
+    right: 0;
+    border: 1px olid;
+    box-shadow: 0px 0px 5px 2px #ddd;
+    padding: 10px 15px;
+		text-transform: capitalize;
+	}
+	.currentVersion {
+		margin-bottom: 0;
+    text-transform: capitalize;
+    font-size: 18px;
+	}
+	.changeBtn {
+		color: #FE8E14;
+    float: right;
+	}
+</style>
+
+<script type="text/javascript">
+	$('.changeBtn').on('click', function() {
+		$('.otherVersions').toggle()
+	})
+</script>

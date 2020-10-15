@@ -58,6 +58,8 @@ dbr_icon: /assets/img-icon/icon-dbr.svg
 dwt_icon: /assets/img-icon/icon-dwt.svg
 dnt_icon: /assets/img-icon/icon-dnt.svg
 
+testFile: /testFile/
+
 baseurl: "/"
 plugins:
   - jemoji
