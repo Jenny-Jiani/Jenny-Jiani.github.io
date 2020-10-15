@@ -247,8 +247,12 @@
             }
         })
 
+        $(document).click(function(){
+            $('.otherVersions').hide()
+        })
         $('.changeBtn').on('click', function() {
             $('.otherVersions').toggle()
+            stopPropagation(e);
         })
 
     </script>
