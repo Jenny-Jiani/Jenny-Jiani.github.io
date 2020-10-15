@@ -63,32 +63,3 @@
 {%- if historyRecode != '' -%}
 	<a class="changeBtn fontOswald" href="javascript:;">Change +</a>
 {%- endif -%}
-
-<style type="text/css">
-	.otherVersions {
-		position: absolute;
-    display: none;
-    bottom: 47px;
-    background: #ffffff;
-    right: 0;
-    border: 1px olid;
-    box-shadow: 0px 0px 5px 2px #ddd;
-    padding: 10px 15px;
-		text-transform: capitalize;
-	}
-	.currentVersion {
-		margin-bottom: 0;
-    text-transform: capitalize;
-    font-size: 18px;
-	}
-	.changeBtn {
-		color: #FE8E14;
-    float: right;
-	}
-</style>
-
-<script type="text/javascript">
-	$('.changeBtn').on('click', function() {
-		$('.otherVersions').toggle()
-	})
-</script>

@@ -53,10 +53,11 @@
                         </li>
                         {%- endcomment -%}
                         <li>
-                            <a href="{{ site.testFile }}" class="otherLinkColour">Introduction</a>
+                            <a href="{{ site.testFile }}" class="otherLinkColour">TestFile</a>
                             <ul>
                                 {%- if page.url contains '/testFile/' -%}
                                 <li><a href="{{ site.testFile }}testFile.html" class="otherLinkColour">Overview</a></li>
+                                {%- endif -%}
                             </ul>
                         </li>
                         <li><a href="{{ site.programming }}" class="otherLinkColour">Programming</a>
@@ -244,6 +245,10 @@
             if (e.keyCode == 13) {
                 window.location.href = '/barcode-reader/search.html?q=' + $('#txtSearch').val()
             }
+        })
+
+        $('.changeBtn').on('click', function() {
+            $('.otherVersions').toggle()
         })
 
     </script>
