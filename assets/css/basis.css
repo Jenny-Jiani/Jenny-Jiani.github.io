@@ -136,7 +136,6 @@ div::-webkit-scrollbar-thumb:hover, ul::-webkit-scrollbar-thumb:hover{
 div::-webkit-scrollbar-corner, ul::-webkit-scrollbar-corner{
   background: #179a16;
 }
-
 .history { position: relative; border-top: 1px solid #ddd; border-bottom: 1px solid #ddd; padding: 10px; }
 .history .otherVersions {
 	position: absolute;
@@ -144,7 +143,6 @@ div::-webkit-scrollbar-corner, ul::-webkit-scrollbar-corner{
 	bottom: 47px;
 	background: #ffffff;
 	right: 0;
-	border: 1px olid;
 	box-shadow: 0px 0px 5px 2px #ddd;
 	padding: 10px 15px;
 	text-transform: capitalize;
