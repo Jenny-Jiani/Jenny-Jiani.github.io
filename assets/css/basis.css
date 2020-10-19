@@ -215,6 +215,8 @@ div::-webkit-scrollbar-corner, ul::-webkit-scrollbar-corner{
 	.subHeadWrapper .mobileSubHeaderMenu ul { font-size: 14px; }
 	#TryFreeDownload .discription { max-width: 400px; text-align: left; }
 	#sideBarCnt .docSearchPart { position: relative; margin-top: 0px; margin-bottom: 10px; }
+	.history { padding: 10px 10px; }
+	.history .otherVersions { right: 10px; }
 }
 
 @media (max-width: 400px) {
