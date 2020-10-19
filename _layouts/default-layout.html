@@ -179,11 +179,11 @@
             if (sd > 0 && dcheight < document.body.clientHeight) {
                 $('.history').removeClass('history-fixed')
             } else {
-                if ($('.docContainer').height() + 125 > document.body.clientHeight) {
-                    $('.history').removeClass('history-fixed')
-                }
                 if (!$('.history').hasClass('history-fixed')) {
                     $('.history').addClass('history-fixed')
+                }
+                if ($('.docContainer').height() + 125 < document.body.clientHeight) {
+                    $('.history').removeClass('history-fixed')
                 }
             }
             if (breakpoint() == 'lg') {
