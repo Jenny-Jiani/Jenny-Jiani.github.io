@@ -161,6 +161,10 @@
         $('#sideBarCnt').css({'width': $('.sideBar').width() + 'px'})
         $('.container .head').css({'width': $('.docContainer').width() + 'px'})
 
+        if ($('.docContainer').height() + 125 > document.body.clientHeight) {
+            $('.history').addClass('history-fixed')
+        }
+
         $(window).resize(function() {
             $('#sideBarCnt').css({'width': $('.sideBar').width() + 'px'})
             $('.container .head').css({'width': $('.docContainer').width() + 'px'})
@@ -172,6 +176,9 @@
         function realFunc(){
             var sd = $(window).scrollTop();
             var dcheight = $('.docContainer').height() + 65 - sd
+            if (sd > 0 && dcheight < document.body.clientHeight) {
+                $('.history').removeClass('history-fixed')
+            }
             if (breakpoint() == 'lg') {
                 if (sd > 65 && dcheight>0) {
                     if (!$('.subHeadWrapper').hasClass('shw-fixed')) {
@@ -215,6 +222,7 @@
                     $('.markdown-body').css({'margin-top': '40px'})
                 }
             }
+
         }
 
         $('.sideBarIcon').click(function() {

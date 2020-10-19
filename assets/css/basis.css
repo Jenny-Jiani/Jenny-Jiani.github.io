@@ -145,6 +145,11 @@ div::-webkit-scrollbar-corner, ul::-webkit-scrollbar-corner{
 	text-align: right;
 	background: #FFFFFF; 
 }
+.history.history-fixed {
+	position: fixed;
+	width: 100%;
+	bottom: 0;
+}
 .history .otherVersions {
 	position: absolute;
 	display: none;
