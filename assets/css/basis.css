@@ -190,11 +190,11 @@ div::-webkit-scrollbar-corner, ul::-webkit-scrollbar-corner{
 }
 
 @media (max-width: 1679px) {
-	.rightSideMenu {
+	/* .rightSideMenu {
     right: 50px;
 		float: right;
 		position: fixed;
-	}
+	} */
 }
 
 @media (max-width: 991px) {
