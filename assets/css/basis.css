@@ -140,7 +140,8 @@ div::-webkit-scrollbar-corner, ul::-webkit-scrollbar-corner{
 	position: relative;
 	border-top: 1px solid #ddd;
 	border-bottom: 1px solid #ddd;
-	padding: 10px 137px;
+	padding-top: 10px;
+	padding-bottom: 10px;
 	text-align: right;
 	background: #FFFFFF; 
 }
@@ -149,7 +150,7 @@ div::-webkit-scrollbar-corner, ul::-webkit-scrollbar-corner{
 	display: none;
 	bottom: 47px;
 	background: #ffffff;
-	right: 137px;
+	right: 0;
 	box-shadow: 0px 0px 5px 2px #ddd;
 	padding: 10px 15px;
 	text-transform: capitalize;
@@ -215,8 +216,6 @@ div::-webkit-scrollbar-corner, ul::-webkit-scrollbar-corner{
 	.subHeadWrapper .mobileSubHeaderMenu ul { font-size: 14px; }
 	#TryFreeDownload .discription { max-width: 400px; text-align: left; }
 	#sideBarCnt .docSearchPart { position: relative; margin-top: 0px; margin-bottom: 10px; }
-	.history { padding: 10px 10px; }
-	.history .otherVersions { right: 10px; }
 }
 
 @media (max-width: 400px) {
