@@ -182,6 +182,7 @@ div::-webkit-scrollbar-corner, ul::-webkit-scrollbar-corner{
 	padding: 10px 15px;
 	text-transform: capitalize;
 	width: 155px;
+	z-index: 1111;
 }
 
 .fullVersionHistory .fvChange {
