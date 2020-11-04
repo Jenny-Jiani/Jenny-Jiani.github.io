@@ -184,7 +184,9 @@ div::-webkit-scrollbar-corner, ul::-webkit-scrollbar-corner{
 	width: 155px;
 	z-index: 1111;
 }
-
+.fullVersionHistory .fullVersionInfo li {
+	cursor: pointer;
+}
 .fullVersionHistory .fvChange {
 	color: #FE8E14;
 }
