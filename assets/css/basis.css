@@ -143,8 +143,8 @@ div::-webkit-scrollbar-corner, ul::-webkit-scrollbar-corner{
 	border-bottom: 1px solid #ddd; */
 	padding-top: 10px;
 	padding-bottom: 10px;
-	text-align: left;
-	background: #FFFFFF; 
+	text-align: center;
+	background: #306877; 
 }
 .history.history-fixed {
 	position: fixed;
