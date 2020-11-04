@@ -40,7 +40,7 @@
                         <li>
                             <a href="{{ site.introduction }}" class="otherLinkColour">Introduction</a>
                             <ul>
-                                {%- if page.url contains '/introduction/' -%}
+                                {%- if page.url contains '/introduction/' or page.url contains '/introduction-v' -%}
                                 <li><a href="{{ site.introduction }}overview.html" class="otherLinkColour">Overview</a></li>
                                 <li><a href="{{ site.introduction }}architecture.html" class="otherLinkColour">Architecture</a></li>
                                 {%- include sidelist-introduction/introduction-licensing.html -%}
@@ -52,17 +52,9 @@
                             </ul>
                         </li>
                         {%- endcomment -%}
-                        <li>
-                            <a href="{{ site.testFile }}" class="otherLinkColour">TestFile</a>
-                            <ul>
-                                {%- if page.url contains '/testFile/' -%}
-                                <li><a href="{{ site.testFile }}testFile.html" class="otherLinkColour">Overview</a></li>
-                                {%- endif -%}
-                            </ul>
-                        </li>
                         <li><a href="{{ site.programming }}" class="otherLinkColour">Programming</a>
                             <ul>
-                                {%- if page.url contains '/programming/' -%}
+                                {%- if page.url contains '/programming/' or page.url contains '/programming-v' -%}
                                 {%- include sidelist-programming/programming-c.html -%}
                                 {%- include sidelist-programming/programming-cpp.html -%}
                                 {%- include sidelist-programming/programming-dotnet.html -%}
@@ -76,7 +68,7 @@
                         </li>
                         <li><a href="{{ site.parameters }}" class="otherLinkColour">Parameters</a>
                             <ul>
-                                {%- if page.url contains '/parameters/' -%}
+                                {%- if page.url contains '/parameters/' or page.url contains '/parameters-v' -%}
                                 <li><a href="{{ site.parameters }}structure-and-interfaces-of-parameters.html" class="otherLinkColour">Structure and Interfaces of Parameters</a></li>
                                 {%- include sidelist-parameters/parameters-references.html -%}
                                 {%- include sidelist-parameters/parameters-enumerations.html -%}
@@ -89,7 +81,7 @@
                         </li>
                         {%- comment -%}
                         <li class="unavailableLink">Enhancements
-                            {%- if page.url contains '/enhancements/' -%}
+                            {%- if page.url contains '/enhancements/' or page.url contains '/enhancements-v' -%}
                             <ul>
                                 <li class="unavailableLink">DPM Codes</li>
                                 <li class="unavailableLink">Intermediate Result</li>
@@ -156,11 +148,14 @@
         FullTreeMenuList(false);
     </script>
     {%- endif -%}
+    <script>
+        UrlReplace();
+    </script>
 
     <script type="text/javascript">
         $('#sideBarCnt').css({'width': $('.sideBar').width() + 'px'})
-        $('#fullTreeMenuListContainer').css({'height': 'calc(100vh - 245px)'})
         $('.container .head').css({'width': $('.docContainer').width() + 'px'})
+        $('#fullTreeMenuListContainer').css({'height': 'calc(100vh - 245px)'})
 
         if ($('.docContainer').height() + 125 > document.body.clientHeight) {
             $('.history').addClass('history-fixed')
@@ -213,7 +208,6 @@
                     $('.rightSideMenu').removeClass('rsm-fixed')
                     $('.container .head').removeClass('ch-fixed')
                     $('.markdown-body').css({'margin-top': '40px'})
-                    $('#fullTreeMenuListContainer').css({'height': 'calc(100vh - 245px)'})
                 }
             }
             if (breakpoint() == 'md') {
@@ -223,15 +217,15 @@
                         $('.docContainer').addClass('dc-fixed')
                         $('#sideBarCnt').addClass('ftm-fixed')
                         $('#docHead').addClass('ch-fixed')
-                        if (dcheight > document.body.clientHeight) {
-                            $('#sideBarCnt.ftm-fixed').css({'height': 'calc(100vh - 120px)'})
-                            $('#sideBarCnt.ftm-fixed #fullTreeMenuListContainer').css({'height': 'calc(100vh - 180px)'})
-                            $('.rightSideMenu.rsm-fixed').css({'height': 'calc(100vh - 110px)'})
-                        } else {
-                            $('#sideBarCnt.ftm-fixed').css({'height': (dcheight - 40) + 'px'})
-                            $('#sideBarCnt.ftm-fixed #fullTreeMenuListContainer').css({'height': (dcheight - 90) + 'px'})
-                            $('.rightSideMenu.rsm-fixed').css({'height': (dcheight - 40) + 'px'})
-                        }
+                    }
+                    if (dcheight > document.body.clientHeight) {
+                        $('#sideBarCnt.ftm-fixed').css({'height': 'calc(100vh - 120px)'})
+                        $('#sideBarCnt.ftm-fixed #fullTreeMenuListContainer').css({'height': 'calc(100vh - 180px)'})
+                        $('.rightSideMenu.rsm-fixed').css({'height': 'calc(100vh - 110px)'})
+                    } else {
+                        $('#sideBarCnt.ftm-fixed').css({'height': (dcheight - 40) + 'px'})
+                        $('#sideBarCnt.ftm-fixed #fullTreeMenuListContainer').css({'height': (dcheight - 90) + 'px'})
+                        $('.rightSideMenu.rsm-fixed').css({'height': (dcheight - 40) + 'px'})
                     }
                     $('.markdown-body').css({'margin-top': (100 + $('.container .head').height()) + 'px'})
                 } else {
@@ -240,6 +234,7 @@
                     $('#sideBarCnt').removeClass('ftm-fixed')
                     $('#docHead').removeClass('ch-fixed')
                     $('.markdown-body').css({'margin-top': '40px'})
+                    $('#fullTreeMenuListContainer').css({'height': 'calc(100vh - 245px)'})
                 }
             }
 
@@ -280,9 +275,15 @@
 
         $(document).click(function(){
             $('.otherVersions').hide()
+            $('.fullVersionInfo').hide()
         })
         $('.changeBtn').on('click', function(e) {
             $('.otherVersions').toggle()
+            stopPropagation(e);
+        })
+
+        $('.fvChange').on('click', function(e) {
+            $('.fullVersionInfo').toggle()
             stopPropagation(e);
         })
 

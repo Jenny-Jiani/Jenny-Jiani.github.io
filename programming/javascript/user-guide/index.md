@@ -4,14 +4,25 @@ title: Dynamsoft Barcode Reader for JavaScript - User Guide
 description: This is the user guide of Dynamsoft Barcode Reader JavaScript SDK.
 keywords: user guide, javascript, js
 breadcrumbText: User Guide
-needAutoGenerateSidebar: true
+needAutoGenerateSidebar: false
 ---
 
-# Dynamsoft JavaScript Barcode SDK for Web 
+# Dynamsoft Barcode Reader - for JavaScript User Guide
 
-![Dynamsoft JavaScript Barcode SDK](assets/user-guide/dbr-js-sdk.png)  
+![Dynamsoft JavaScript Barcode SDK](assets/getting-started/dbr-js-sdk.png)  
 
 [Dynamsoft BarcodeReader SDK for Web](https://www.dynamsoft.com/Products/barcode-recognition-javascript.aspx) is a JavaScript SDK for barcode scanning based on **WebAssembly**. It supports real-time barcode localization and decoding of various barcode types. The library is capable of scanning barcodes directly from live video streams and static images. It also supports reading multiple barcodes at once.  
+
+In this guide, you will learn step by step how to use Dynamsoft Barcode Reader JavaScript Edition in your application:
+
+- [Getting Started](#getting-started---hello-world)
+- [Installation](#installation)
+- [Basic Customizations]({{ site.js }}user-guide/basic-customizations.html)
+- [Advanced Customizations]({{ site.js }}user-guide/advanced-customizations.html)
+- [Deployment Activation]({{ site.js }}user-guide/deployment-activation.html)
+- [Features Requirements]({{ site.js }}user-guide/features-requirements.html)
+- [Upgrade]({{ site.js }}user-guide/upgrade.html)
+
 
 ## Getting Started - Hello World  
 
@@ -97,12 +108,35 @@ In a production environment, you will need a valid HTTPS certificate.
 
 Place a barcode in front of the camera. You should see an alert pop up with the decoded barcode result and a coloured region on the video to highlight the barcode location. 
 
+## Installation
+
+yarn
+
+```
+$ yarn add dynamsoft-javascript-barcode
+```
+
+npm
+
+```
+$ npm install dynamsoft-javascript-barcode --save
+```
+
+cdn
+
+```
+<script src="https://cdn.jsdelivr.net/npm/dynamsoft-javascript-barcode@7.6.0/dist/dbr.js" data-productKeys="PRODUCT-KEYS"></script>
+<!-- or -->
+<script src="https://unpkg.com/dynamsoft-javascript-barcode@7.6.0/dist/dbr.js" data-productKeys="PRODUCT-KEYS"></script>
+```
+
+Also see [Dynamsoft JavaScript Barcode SDK for Node](https://github.com/dynamsoft-dbr/node-javascript-barcode).  
+
+
 ## Demos and Examples
 
 - [Online demo](https://demo.dynamsoft.com/dbr_wasm/barcode_reader_javascript.html)
-
 - [Vue example](https://github.com/Dynamsoft/javascript-barcode/tree/master/example/web/vue)    
 - [React example](https://github.com/Dynamsoft/javascript-barcode/tree/master/example/web/react)     
-- [Angular example](https://github.com/Dynamsoft/javascript-barcode/tree/master/example/web/angular)   
-
+- [Angular example](https://github.com/Dynamsoft/javascript-barcode/tree/master/example/web/angular)  
 
