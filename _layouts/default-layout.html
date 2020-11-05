@@ -99,8 +99,8 @@
                     {%- include main-page-head.html -%}
                 </div>
                 <div class="main row">
-                    <div class="dbrThanksDownloading" style="display: none; background: #306877; color: #ffffff; padding: 40px 20px; text-align: center;">
-                        <h2>Thanks for downloading Dynamsoft Barcode Reader <span class="editionName"></span> Edition!</h2>
+                    <div class="dbrThanksDownloading" style="display: none; background: #306877; color: #ffffff; padding: 40px 20px; text-align: center; margin-top: 20px;">
+                        <h2 style="color: #FFFFFF;">Thanks for downloading Dynamsoft Barcode Reader <span class="editionName"></span> Edition!</h2>
                         <p>Your download will start shortly. If your download does not begin, <a class="bluelink downloadlink" href="">click here to retry</a>.</p>
                     </div>
                     <div class="content markdown-body headCounter col-xs-12 col-md-12 col-lg-9 col-xl-10" style="margin-bottom: 20px;">
@@ -159,22 +159,20 @@
     <!-- for dbr downloads -->
     <script type="text/javascript">
         var ei = getUrlParam('ei')
-        var ver = getUrlParam('ver')
         console.log(ei)
-        console.log(ver)
-        if (ei == '0' && ver == 'raspi') {
-            $('.editionName').html('raspberry pi');
-            window.location.href= 'https://download2.dynamsoft.com/dbr/dbr-rpi-7.6.tar.gz';
-            $('.downloadlink').attr('href', 'https://download2.dynamsoft.com/dbr/dbr-rpi-7.6.tar.gz');
-            $('.dbrThanksDownloading').show();
-        }
-        if (ei == '0' && ver == 'java') {
+        if (ei == '0') {
             $('.editionName').html('Java');
             window.location.href= 'https://download2.dynamsoft.com/dbr/dbr-java-7.6.zip';
             $('.downloadlink').attr('href', 'https://download2.dynamsoft.com/dbr/dbr-java-7.6.zip');
             $('.dbrThanksDownloading').show();
         }
-        if (ei && ei != '' && ei != '0') {
+        if (ei == '1') {
+            $('.editionName').html('raspberry pi');
+            window.location.href= 'https://download2.dynamsoft.com/dbr/dbr-rpi-7.6.tar.gz';
+            $('.downloadlink').attr('href', 'https://download2.dynamsoft.com/dbr/dbr-rpi-7.6.tar.gz');
+            $('.dbrThanksDownloading').show();
+        }
+        if (ei && ei != '' && ei != '0' && ei != '1') {
             $.ajax({
                 type: 'GET',
                 url: '/assets/files/ProductList.js',
