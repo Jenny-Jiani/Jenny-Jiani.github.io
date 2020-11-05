@@ -164,15 +164,13 @@
         console.log(ver)
         if (ei == '0' && ver == 'raspi') {
             $('.editionName').html('raspberry pi');
-            var tempwindow = window.open('_blank');
-            tempwindow.location = 'https://download2.dynamsoft.com/dbr/dbr-rpi-7.6.tar.gz';
+            window.location.href= 'https://download2.dynamsoft.com/dbr/dbr-rpi-7.6.tar.gz';
             $('.downloadlink').attr('href', 'https://download2.dynamsoft.com/dbr/dbr-rpi-7.6.tar.gz');
             $('.dbrThanksDownloading').show();
         }
         if (ei == '0' && ver == 'java') {
             $('.editionName').html('Java');
-            var tempwindow = window.open('_blank');
-            tempwindow.location = 'https://download2.dynamsoft.com/dbr/dbr-java-7.6.zip';
+            window.location.href= 'https://download2.dynamsoft.com/dbr/dbr-java-7.6.zip';
             $('.downloadlink').attr('href', 'https://download2.dynamsoft.com/dbr/dbr-java-7.6.zip');
             $('.dbrThanksDownloading').show();
         }
@@ -203,8 +201,7 @@
                                     var vlength = VersionInfos.length
                                     if (vlength > 0) {
                                         var vlink = VersionInfos[vlength-1].TrialResourceUrl
-                                        var tempwindow = window.open('_blank');
-                                        tempwindow.location = vlink;
+                                        window.location.href= vlink;
                                         $('.downloadlink').attr('href', vlink);
                                         $('.dbrThanksDownloading').show();
                                     }
