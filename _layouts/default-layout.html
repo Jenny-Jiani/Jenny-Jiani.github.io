@@ -99,6 +99,10 @@
                     {%- include main-page-head.html -%}
                 </div>
                 <div class="main row">
+                    <div class="dbrThanksDownloading" style="display: none; background: #306877; color: #ffffff; padding: 40px 20px; text-align: center;">
+                        <h2>Thanks for downloading Dynamsoft Barcode Reader <span class="editionName"></span> Edition!</h2>
+                        <p>Your download will start shortly. If your download does not begin, <a class="bluelink downloadlink" href="">click here to retry</a>.</p>
+                    </div>
                     <div class="content markdown-body headCounter col-xs-12 col-md-12 col-lg-9 col-xl-10" style="margin-bottom: 20px;">
                         {{ content }}
                         
@@ -152,6 +156,69 @@
         UrlReplace();
     </script>
 
+    <!-- for dbr downloads -->
+    <script type="text/javascript">
+        var ei = getUrlParam('ei')
+        var ver = getUrlParam('ver')
+        console.log(ei)
+        console.log(ver)
+        console.log(docFullPath)
+        if (ei == '0' && ver == 'raspi') {
+            $('.editionName').html('raspberry pi');
+            var tempwindow = window.open('_blank');
+            tempwindow.location = 'https://download2.dynamsoft.com/dbr/dbr-rpi-7.6.tar.gz';
+            $('.downloadlink').attr('href', 'https://download2.dynamsoft.com/dbr/dbr-rpi-7.6.tar.gz');
+            $('.dbrThanksDownloading').show();
+        }
+        if (ei == '0' && ver == 'java') {
+            $('.editionName').html('Java');
+            var tempwindow = window.open('_blank');
+            tempwindow.location = 'https://download2.dynamsoft.com/dbr/dbr-java-7.6.zip';
+            $('.downloadlink').attr('href', 'https://download2.dynamsoft.com/dbr/dbr-java-7.6.zip');
+            $('.dbrThanksDownloading').show();
+        }
+        if (ei && ei != '' && ei != '0') {
+            $.ajax({
+                type: 'GET',
+                url: '/assets/files/ProductList.js',
+                data: {},
+                dataType: 'JSON',
+                success: function(res) {
+                    for (var i = 0; i < res.length; i++) {
+                        if (res[i].ProductId == 1000003) {
+                            var editionInfos = res[i].EditionInfos
+                            for (var j = 0; j<editionInfos.length; j++) {
+                                if (editionInfos[j].ProductEditionId == ei) {
+                                    if (ei == '1000010') {
+                                        $('.editionName').html('JavaScript');
+                                    } else if (ei == '1000005') {
+                                        $('.editionName').html('Windows');
+                                    } else if (ei == '1000009') {
+                                        $('.editionName').html('Android');
+                                    } else if (ei == '1000008') {
+                                        $('.editionName').html('iOS');
+                                    } else if (ei == '1000007') {
+                                        $('.editionName').html('Linux');
+                                    }
+                                    var VersionInfos = editionInfos[j].VersionInfos
+                                    var vlength = VersionInfos.length
+                                    if (vlength > 0) {
+                                        var vlink = VersionInfos[vlength-1].TrialResourceUrl
+                                        var tempwindow = window.open('_blank');
+                                        tempwindow.location = vlink;
+                                        $('.downloadlink').attr('href', vlink);
+                                        $('.dbrThanksDownloading').show();
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            })
+        }
+    </script>
+
+    <!-- dbr docs -->
     <script type="text/javascript">
         $('#sideBarCnt').css({'width': $('.sideBar').width() + 'px'})
         $('.container .head').css({'width': $('.docContainer').width() + 'px'})
