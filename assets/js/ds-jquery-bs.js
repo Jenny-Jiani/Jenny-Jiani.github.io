@@ -251,7 +251,7 @@ function MsgDialog(){
 function scrollToMainContent(){
 	var targetOffsetTop = $(".scrollToMainContent").offset().top;
 	$('html,body').animate({scrollTop:targetOffsetTop + 10},300);
-	}
+}
 
 (function ($) {
 	/*drop down menu*/
