@@ -219,9 +219,10 @@ if (ei && ei != '' && ei != '0' && ei != '1') {
                                     return 1
                                 }
                             })
+                            console.log(VersionInfos)
                             var vlength = VersionInfos.length
                             if (vlength > 0) {
-                                var vlink = VersionInfos[0].TrialResourceUrl
+                                var vlink = VersionInfos[vlength-1].TrialResourceUrl
                                 window.location.href= vlink;
                                 $('.downloadlink').attr('href', vlink);
                                 $('.dbrThanksDownloading').show();
