@@ -211,6 +211,10 @@ div::-webkit-scrollbar-corner, ul::-webkit-scrollbar-corner{
 	font-family: Oswald-Light;
 }
 
+#compatibleInfo { background: #f5f5f5; padding: 10px;margin-bottom: 10px; }
+#compatibleInfo p { margin-bottom: 0; font-family: Oswald-Light; }
+#compatibleInfo p.compatibleCurVersion  { font-family: Oswald; }
+
 @media (min-width: 768px) {
 	.h1, h1 {font-size:36px;font-size:3.6rem;line-height:48px}
 	.h2, h2 {font-size:30px;font-size:3rem;line-height:45px}
