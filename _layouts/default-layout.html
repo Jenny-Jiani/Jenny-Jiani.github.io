@@ -304,16 +304,34 @@
         if(download == 'true') {
             var curHref = window.location.href.toLowerCase()
             if (curHref.indexOf('/c/') || curHref.indexOf('/cplusplus/')) {
+                $('.editionName').html('C/C++');
+                $('.downloadlink').attr('href', 'https://download.dynamsoft.com/dbr/DBR-C_CPP-8.0.zip');
+                $('.dbrThanksDownloading').show();
                 window.location.href = 'https://download.dynamsoft.com/dbr/DBR-C_CPP-8.0.zip'
             } else if (curHref.indexOf('/dotnet/')) {
+                $('.editionName').html('.NET');
+                $('.downloadlink').attr('href', 'https://download.dynamsoft.com/dbr/DBR-DotNet-8.0.zip');
+                $('.dbrThanksDownloading').show();
                 window.location.href = 'https://download.dynamsoft.com/dbr/DBR-DotNet-8.0.zip'
             } else if (curHref.indexOf('/java/')) {
+                $('.editionName').html('Java');
+                $('.downloadlink').attr('href', 'https://download.dynamsoft.com/dbr/DBR-Java-8.0.zip');
+                $('.dbrThanksDownloading').show();
                 window.location.href = 'https://download.dynamsoft.com/dbr/DBR-Java-8.0.zip'
             } else if (curHref.indexOf('/javascript/')) {
+                $('.editionName').html('Javascript');
+                $('.downloadlink').attr('href', 'https://download.dynamsoft.com/dbr/DBR-JS-7.6.0.zip');
+                $('.dbrThanksDownloading').show();
                 window.location.href = 'https://download.dynamsoft.com/dbr/DBR-JS-7.6.0.zip'
             } else if (curHref.indexOf('/android/')) {
+                $('.editionName').html('Android');
+                $('.downloadlink').attr('href', 'https://download.dynamsoft.com/dbr/dbr-android-8.0.zip');
+                $('.dbrThanksDownloading').show();
                 window.location.href = 'https://download.dynamsoft.com/dbr/dbr-android-8.0.zip'
             } else if (curHref.indexOf('/objectivec-swift/')) {
+                $('.editionName').html('iOS');
+                $('.downloadlink').attr('href', 'https://download.dynamsoft.com/dbr/dbr-iOS-8.0.zip');
+                $('.dbrThanksDownloading').show();
                 window.location.href = 'https://download.dynamsoft.com/dbr/dbr-iOS-8.0.zip'
             }
         }
