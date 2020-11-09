@@ -302,17 +302,13 @@
     <script type="text/javascript">
         var download = getUrlParam('download')
         if(download == 'true') {
-            console.log('download: ' + download)
             var curHref = window.location.href.toLowerCase()
-            console.log(curHref)
             if (curHref.indexOf('/c/') > -1 || curHref.indexOf('/cplusplus/') > -1) {
-                console.log(1)
                 $('.editionName').html('C/C++');
                 $('.downloadlink').attr('href', 'https://download.dynamsoft.com/dbr/DBR-C_CPP-8.0.zip');
                 $('.dbrThanksDownloading').show();
                 window.location.href = 'https://download.dynamsoft.com/dbr/DBR-C_CPP-8.0.zip'
             } else if (curHref.indexOf('/dotnet/') > -1) {
-                console.log(3)
                 $('.editionName').html('.NET');
                 $('.downloadlink').attr('href', 'https://download.dynamsoft.com/dbr/DBR-DotNet-8.0.zip');
                 $('.dbrThanksDownloading').show();
