@@ -1,0 +1,11 @@
+<li><a href="{{ site.about }}index.html" class="otherLinkColour">ABOUT</a>
+  <ul>
+      {%- if page.url contains '/about/' -%}
+      <li><a href="{{ site.about }}features.html" class="otherLinkColour">Features</a></li>
+      <li><a href="{{ site.about }}resources.html" class="otherLinkColour">Resources</a></li>
+      <li><a href="{{ site.about }}license.html" class="otherLinkColour">License</a></li>
+      <li><a href="{{ site.about }}faqs.html" class="otherLinkColour">FAQs</a></li>
+      <li><a href="{{ site.about }}getsupport.html" class="otherLinkColour">Support</a></li>
+      {%- endif -%}
+  </ul>
+</li>
