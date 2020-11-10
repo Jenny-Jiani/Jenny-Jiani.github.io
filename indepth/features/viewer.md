@@ -9,7 +9,7 @@ description: Dynamic Web TWAIN SDK Documentation Viewer Page
 
 # Viewer [Due to major changes in v16.2, this guide is not yet complete]
 
-`DWT` comes with a `Viewer` component to help visualize the data in the buffer. To make things easy, the `Viewer` has within itself a built-in `Image Editor` UI.
+`DWT` has a `Viewer` component to help visualize the data in the buffer. The component also comes with a built-in `Image Editor` UI which makes things easier for customers to implement editing functions.
 
 ## Bind the Viewer
 
@@ -55,13 +55,20 @@ DWObject.UpdateViewer({
 
 #### Q: How to display the thumbnail viewer?
 
-#### Q: Can I change the language used on the viewer?
+A: The thumbnail viewer is also built-in, the following code shows the thumbnail viewer on the left which takes 20% of the total width of the viewer, then the 80% on the right is occupied by the "main viewer" which shows the current image.
 
-A: Yes.
-
-#### Q: Can I change the colors of the viewer?
-
-A: Yes, you can use the following to change the colors of the viewer.
+``` javascript
+DWObject.UpdateViewer({
+    Height: "500px",
+    Width: "700px",
+    view: {
+        // Show the 2nd viewer
+        bShow: true,
+        // The 2nd viewer takes up 80% of the viewer width
+        Width: "80%"
+    }
+});
+```
 
 ## Use the Viewer
 
@@ -69,19 +76,27 @@ You can use the `Viewer` in the following ways
 
 ### Navigate through all images
 
+You can use the mouse or arrow keys to navigate through the images in buffer.
+
 ### Show one or multiple images in one view
+
+You can change the view mode to show one or multiple images. The API is [ `SetViewMode()` ]({{site.info}}api/WebTwain_Viewer.html#setviewmode).
 
 ### Fit one image to the view
 
+The image in the viewer can fit to the width or height of the viewer or both. The APIs are [ `IfFitWindow` ]({{site.info}}api/WebTwain_Viewer.html#iffitwindow) and [ `FitWindowType` ]({{site.info}}api/WebTwain_Viewer.html#fitwindowtype).
+
 ### Show the image in its actual size
+
+You can show the image in its actual size by setting [ `Zoom` ]({{site.info}}api/WebTwain_Viewer.html#zoom) to 1. This is only supported when the view mode is set to -1 x -1.
 
 ### Zoom in to see more details of an image
 
-  + How to use Ctrl + Wheel to do this
-
-### Highlight a specified region on the image (OverlayRectangle) -- deprecated, can ignore this one?
+To do this, you just set a bigger or smaller value to  [ `Zoom` ]({{site.info}}api/WebTwain_Viewer.html#zoom). This is only supported when the view mode is set to -1 x -1.
 
 ### Select an area
+
+You can use the API [ `SetSelectedImageArea()` ]({{site.info}}api/WebTwain_Viewer.html#setselectedimagearea).
 
 ## Unbind the Viewer
 
@@ -89,32 +104,25 @@ You can call the method [ `UnbindViewer()` ]({{site.info}}api/WebTwain_Viewer.ht
 
 ## The Image Editor
 
-The Image Editor is 
+The Image Editor is a built-in UI that contains the most commonly used editing functions. If you don't want to build your own specific UI, you can give it a try and see if it meets your requirements.
 
 ### How to show or hide the Image Editor
 
+The Image Editor can be opened by the API [ `ShowImageEditor()` ]({{site.info}}api/WebTwain_Viewer.html#showimageeditor).
+
 ### Questions
 
-#### Is the editor compatible across all platforms
+#### Q: Is the Image Editor compatible across all platforms?
 
-#### Can I change the language of the Editor
+A: The Image Editor is availabe on all platforms where `DWT` is supported. However, while it is built into the browser page in most cases, it runs as a separate programme if `DWT` ActiveX edition is used.
+<!-->
 
-#### Can I remove or add buttons on the toolbar of the Editor
+#### Q: Can I change the language of the Editor
 
-#### Can I specify where and how big the Editor is
+#### Q: Can I remove or add buttons on the toolbar of the Editor
 
-#### Can I change the colors of the Editor
+#### Q: Can I specify where and how big the Editor is
 
-## Using the built-in Image Editor
+#### Q: Can I change the colors of the Editor
 
-`DWT` comes with a built-in GUI image editor that offers the user a more visual way to edit scanned images.
-
-Accessing the image editor is simple, all you need to do is call the ShowImageEditor() method.
-
-Calling the method by default will have the image editor occupy the entire image. However, you can customize that by assigning the image editor a specific 'div' element in code, specified by the input parameter(s).
-
-``` 
-
-DWObject.ShowImageEditor(); // displays image editor in full screen
-DWObject.ShowImageEditor("divID", <width in px>, <height in px>); // limit the image editor to a section of the page
-```
+-->

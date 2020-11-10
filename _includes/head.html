@@ -21,4 +21,14 @@
     <script type="text/javascript" src="{{ site.assets }}js/bootstrap.min.js"></script>
     <script type="text/javascript" src="{{ site.assets }}js/ds-jquery-bs.js"></script>
     <script type="text/javascript" src="{{ site.assets }}js/index-banner.js"></script>
+    
+    <style></style>
+    {%- if page.noTitleIndex -%}
+    <style>
+        .headCounter h2:before { content: "" !important; }
+        .headCounter h2 { counter-reset: unset; counter-increment: unset; }
+        .headCounter h3:before { content: "" !important; }
+        .headCounter h3 { counter-increment: unset; }
+    </style>
+    {%- endif -%}
 </head>

@@ -1,6 +1,7 @@
 ---
 layout: default-layout
 needAutoGenerateSidebar: true
+noTitleIndex: true
 title: About Dynamic Web TWAIN
 keywords: Dynamic Web TWAIN, TWAIN, About, Documentation
 breadcrumbText: About
