@@ -15,7 +15,7 @@ $(document).ready(function(){
 
     window.addEventListener('scroll', realFunc);
 
-    function realFunc(){
+    function realFunc() {
         var sd = $(window).scrollTop();
         var dcheight = $('.docContainer').height() + 65 - sd
         if (sd > 0 && dcheight < document.body.clientHeight) {
