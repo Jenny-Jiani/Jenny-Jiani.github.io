@@ -47,7 +47,7 @@ $(document).ready(function(){
                 //     $('#sideBarCnt.ftm-fixed #fullTreeMenuListContainer').css({'height': (dcheight - 90) + 'px'})
                 //     $('.rightSideMenu.rsm-fixed').css({'height': (dcheight - 40) + 'px'})
                 // }
-                $('.markdown-body').css({'margin-top': (100 + $('.container .head').height()) + 'px'})
+                $('.markdown-body').css({'margin-top': '80px'})
             } else {
                 if ($('.subHeadWrapper').hasClass('shw-fixed')) {
                     $('.subHeadWrapper').removeClass('shw-fixed')
@@ -55,7 +55,7 @@ $(document).ready(function(){
                     $('#sideBarCnt').removeClass('ftm-fixed')
                     $('.rightSideMenu').removeClass('rsm-fixed')
                     $('.container .head').removeClass('ch-fixed')
-                    // $('.markdown-body').css({'margin-top': '40px'})
+                    $('.markdown-body').css({'margin-top': '50px'})
                     // $('#sideBarCnt').css({'height': 'calc(100vh - 220px)'})
                     // $('#fullTreeMenuListContainer').css({'height': 'calc(100vh - 245px)'})
                     // $('.rightSideMenu').css({'height': 'calc(100vh - 260px)'})
@@ -80,14 +80,14 @@ $(document).ready(function(){
                 //     $('#sideBarCnt.ftm-fixed #fullTreeMenuListContainer').css({'height': (dcheight - 90) + 'px'})
                 //     $('.rightSideMenu.rsm-fixed').css({'height': (dcheight - 40) + 'px'})
                 // }
-                $('.markdown-body').css({'margin-top': (100 + $('.container .head').height()) + 'px'})
+                $('.markdown-body').css({'margin-top': '80px'})
             } else {
                 if ($('.subHeadWrapper').hasClass('shw-fixed')) {
                     $('.subHeadWrapper').removeClass('shw-fixed')
                     $('.docContainer').removeClass('dc-fixed')
                     $('#sideBarCnt').removeClass('ftm-fixed')
                     $('#docHead').removeClass('ch-fixed')
-                    // $('.markdown-body').css({'margin-top': '40px'})
+                    $('.markdown-body').css({'margin-top': '40px'})
                     // $('#sideBarCnt').css({'height': 'calc(100vh - 220px)'})
                     // $('#fullTreeMenuListContainer').css({'height': 'calc(100vh - 245px)'})
                     // $('.rightSideMenu').css({'height': 'calc(100vh - 260px)'})
