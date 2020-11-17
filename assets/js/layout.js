@@ -56,9 +56,9 @@ $(document).ready(function(){
                     $('.rightSideMenu').removeClass('rsm-fixed')
                     $('.container .head').removeClass('ch-fixed')
                     $('.markdown-body').css({'margin-top': '40px'})
-                    $('#sideBarCnt').css({'height': 'calc(100vh - 220px)'})
-                    $('#fullTreeMenuListContainer').css({'height': 'calc(100vh - 245px)'})
-                    $('.rightSideMenu').css({'height': 'calc(100vh - 260px)'})
+                    // $('#sideBarCnt').css({'height': 'calc(100vh - 220px)'})
+                    // $('#fullTreeMenuListContainer').css({'height': 'calc(100vh - 245px)'})
+                    // $('.rightSideMenu').css({'height': 'calc(100vh - 260px)'})
                 }
             }
         }
@@ -88,9 +88,9 @@ $(document).ready(function(){
                     $('#sideBarCnt').removeClass('ftm-fixed')
                     $('#docHead').removeClass('ch-fixed')
                     $('.markdown-body').css({'margin-top': '40px'})
-                    $('#sideBarCnt').css({'height': 'calc(100vh - 220px)'})
-                    $('#fullTreeMenuListContainer').css({'height': 'calc(100vh - 245px)'})
-                    $('.rightSideMenu').css({'height': 'calc(100vh - 260px)'})
+                    // $('#sideBarCnt').css({'height': 'calc(100vh - 220px)'})
+                    // $('#fullTreeMenuListContainer').css({'height': 'calc(100vh - 245px)'})
+                    // $('.rightSideMenu').css({'height': 'calc(100vh - 260px)'})
                 }
             }
         }
