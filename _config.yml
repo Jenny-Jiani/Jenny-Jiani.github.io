@@ -1,22 +1,57 @@
 repositoryUrl: https://github.com/Jenny-Jiani/Jenny-Jiani.github.io/blob/master
 
 docFullPath: https://jenny-jiani.github.io/
-docHomePage: /
+docHomePage: /programming/
 
-dynamsoft_logo: /assets/img-icon/dynamsoft-logo.png
-dwt_logo: /assets/img-icon/dwt-logo.png
-edit_icon: /assets/img-icon/edit-icon.png
+productUrl: https://www.dynamsoft.com/Products/Dynamic-Barcode-Reader.aspx
+productName: Dynamsoft Barcode Reader
+
+introduction: /introduction/
+programming: /programming/
+parameters: /parameters/
+enhancements: /enhancements/
+
+licensing: /introduction/licensing/
+comparison_tools: /introduction/comparison-tools/
+
+c_cplusplus: /programming/c-cplusplus/
+structs: /programming/c-cplusplus/struct/
+
+c: /programming/c/
+c_api: /programming/c/api-reference/
+c_methods: /programming/c/api-reference/methods/
+
+cpp: /programming/cplusplus/
+cpp_api: /programming/cplusplus/api-reference/
+cpp_methods: /programming/cplusplus/api-reference/cbarcodereader-methods/
+
+
+js: /programming/javascript/
+js_api: /programming/javascript/api-reference/
+
+dotnet: /programming/dotnet/
+dotnet_api: /programming/dotnet/api-reference/
+
+oc: /programming/objectivec-swift/
+oc_api: /programming/objectivec-swift/api-reference/
+
+java: /programming/java/
+java_api: /programming/java/api-reference/
+
+android: /programming/android/
+android_api: /programming/android/api-reference/
+  
+python: /programming/python/
+python_api: /programming/python/api-reference/
+
+parameters_reference: /parameters/reference/
+scenario_settings: /parameters/scenario-settings/
+enumerations: /parameters/enum/
+
+faqs: /introduction/faqs.html
+how_to: /introduction/how-to-guide/
 
 assets: /assets/
-_includes: /_includes/
-_layouts: /_layouts/
-about: /about/
-getstarted: /getstarted/
-indepth: /indepth/
-info: /info/
-
-dynamsoft_logo: /assets/img-icon/dynamsoft-logo.png
-dbr_logo: /assets/img-icon/dbr-logo.png
 edit_icon: /assets/img-icon/edit-icon.png
 smile_icon: /assets/img-icon/icon-smile.png
 sad_icon: /assets/img-icon/icon-sad.png
@@ -24,6 +59,6 @@ dbr_icon: /assets/img-icon/icon-dbr.svg
 dwt_icon: /assets/img-icon/icon-dwt.svg
 dnt_icon: /assets/img-icon/icon-dnt.svg
 
-baseurl: /
-
-theme: jekyll-theme-cayman
+baseurl: "/"
+plugins:
+  - jemoji
