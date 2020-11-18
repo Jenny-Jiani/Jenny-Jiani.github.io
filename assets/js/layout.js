@@ -24,10 +24,8 @@ $(document).ready(function(){
         console.log(breakpoint())
         if (breakpoint() == 'lg') {
             var sd = $(window).scrollTop();
-            
             var dcHeight = $('.docContainer').height() + 125 - sd
             var clientHeight = document.body.clientHeight
-
             if (sd >= 65) {
                 // head and sidebar fixed
                 $('.subHeadWrapper').css({'top': '0px'})
@@ -35,9 +33,6 @@ $(document).ready(function(){
                 $('.sideBar').css({'padding-top': '0px'})
                 $('.sideBar #sideBarCnt').addClass('sidebar-fixed')
                 $('.rightSideMenu').addClass('rsm-fixed')
-                // change sidebar height
-                // $('#fullTreeMenuListContainer').css({'height': 'calc(100vh - 245px)'})
-                // $('.rightSideMenu').css({'height': 'calc(100vh - 245px)'})
                 if (dcHeight + 48 > clientHeight) {
                     // history fixed
                     $('.history').addClass('history-fixed')
@@ -54,8 +49,6 @@ $(document).ready(function(){
                 $('.sideBar').css({'padding-top': '60px'})
                 $('.sideBar #sideBarCnt').removeClass('sidebar-fixed')
                 $('.rightSideMenu').removeClass('rsm-fixed')
-                // $('#fullTreeMenuListContainer').css({'height': 'calc(100vh - 200px)'})
-                // $('.rightSideMenu').css({'height': 'calc(100vh - 200px)'})
 
                 // history fixed
                 if (sd < 65 && dcHeight + 48 > clientHeight) {
@@ -67,8 +60,11 @@ $(document).ready(function(){
                     $('.history').removeClass('history-fixed')
                     $('#footerWrapper').css({'margin-top': '0px'})
                 }
-
             }
+        } else {
+            $('.subHeadWrapper').css({'top': 'unset'})
+            $('#docHead').css({'top': 'unset'})
+            $('.sideBar').css({'padding-top': '20px'})
         }
     }
 
