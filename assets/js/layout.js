@@ -22,8 +22,7 @@ $(document).ready(function(){
     function realFunc(){
         var sd = $(window).scrollTop();
         
-        // 185 = 60*2+65
-        var dcHeight = $('.docContainer').height() + 185 - sd
+        var dcHeight = $('.docContainer').height() + 125 - sd
         var clientHeight = document.body.clientHeight
 
         if (sd >= 65) {
@@ -33,11 +32,16 @@ $(document).ready(function(){
             $('.sideBar').css({'padding-top': '0px'})
             $('.sideBar #sideBarCnt').addClass('sidebar-fixed')
 
-            if (dcHeight > clientHeight) {
+            console.log(dcHeight + 48)
+            console.log(clientHeight)
+            if (dcHeight + 48 > clientHeight) {
                 // history fixed
                 $('.history').addClass('history-fixed')
                 $('#footerWrapper').css({'margin-top': '48px'})
                 // change sidebar height
+            } else {
+                $('.history').removeClass('history-fixed')
+                $('#footerWrapper').css({'margin-top': '0px'})
             }
         } else {
             // head and sidebar fixed
@@ -47,9 +51,9 @@ $(document).ready(function(){
             $('.sideBar #sideBarCnt').removeClass('sidebar-fixed')
 
             // history fixed
-            console.log(dcHeight + 48 - sd)
+            console.log(dcHeight + 48)
             console.log(clientHeight)
-            if (sd < 65 && dcHeight + 48 - sd > clientHeight) {
+            if (sd < 65 && dcHeight + 48 > clientHeight) {
                 if (!$('.history').hasClass('history-fixed')) {
                     $('.history').addClass('history-fixed')
                     $('#footerWrapper').css({'margin-top': '48px'})
