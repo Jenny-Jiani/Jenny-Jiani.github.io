@@ -45,6 +45,7 @@ $(document).ready(function(){
 
             // history fixed
             console.log($('.docContainer').height() + 173 - sd)
+            console.log(clientHeight)
             if (sd < 65 && $('.docContainer').height() + 173 - sd > clientHeight) {
                 if (!$('.history').hasClass('history-fixed')) {
                     $('.history').addClass('history-fixed')
