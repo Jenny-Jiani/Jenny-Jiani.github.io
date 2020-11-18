@@ -12,7 +12,8 @@ $(document).ready(function(){
         $('#sideBarCnt').css({'width': $('.sideBar').width() + 'px'})
         $('.container .head').css({'width': $('.docContainer').width() + 'px'})
         $('#fullTreeMenuListContainer').css({'height': 'calc(100vh - 245px)'})
-
+        $('.rightSideMenu').css({'height': 'calc(100vh - 245px)'})
+        
         if ($('.docContainer').height() + 125 >= document.body.clientHeight) {
             $('.history').addClass('history-fixed')
             $('#footerWrapper').css({'margin-top': '48px'})
@@ -31,14 +32,15 @@ $(document).ready(function(){
             $('#docHead').css({'top': '60px'})
             $('.sideBar').css({'padding-top': '0px'})
             $('.sideBar #sideBarCnt').addClass('sidebar-fixed')
-
-            console.log(dcHeight + 48)
-            console.log(clientHeight)
+            $('.rightSideMenu').addClass('rsm-fixed')
+            // change sidebar height
+            $('#fullTreeMenuListContainer').css({'height': 'calc(100vh - 245px)'})
+            $('.rightSideMenu').css({'height': 'calc(100vh - 245px)'})
             if (dcHeight + 48 > clientHeight) {
                 // history fixed
                 $('.history').addClass('history-fixed')
                 $('#footerWrapper').css({'margin-top': '48px'})
-                // change sidebar height
+                
             } else {
                 $('.history').removeClass('history-fixed')
                 $('#footerWrapper').css({'margin-top': '0px'})
@@ -49,10 +51,11 @@ $(document).ready(function(){
             $('#docHead').css({'top': (125-sd) + 'px'})
             $('.sideBar').css({'padding-top': '60px'})
             $('.sideBar #sideBarCnt').removeClass('sidebar-fixed')
+            $('.rightSideMenu').removeClass('rsm-fixed')
+            $('#fullTreeMenuListContainer').css({'height': 'calc(100vh - 200px)'})
+            $('.rightSideMenu').css({'height': 'calc(100vh - 200px)'})
 
             // history fixed
-            console.log(dcHeight + 48)
-            console.log(clientHeight)
             if (sd < 65 && dcHeight + 48 > clientHeight) {
                 if (!$('.history').hasClass('history-fixed')) {
                     $('.history').addClass('history-fixed')
