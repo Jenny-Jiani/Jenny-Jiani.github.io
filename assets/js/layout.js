@@ -13,93 +13,45 @@ $(document).ready(function(){
         $('.container .head').css({'width': $('.docContainer').width() + 'px'})
         $('#fullTreeMenuListContainer').css({'height': 'calc(100vh - 245px)'})
 
-        if ($('.docContainer').height() + 125 > document.body.clientHeight) {
+        if ($('.docContainer').height() + 125 >= document.body.clientHeight) {
             $('.history').addClass('history-fixed')
         }
     }
 
     function realFunc(){
         var sd = $(window).scrollTop();
-        // history fixed
+        
         var dcHeight = $('.docContainer').height() + 65 - sd
-        if (sd > 65 && dcHeight > document.body.clientHeight) {
-            $('.history').addClass('history-fixed')
+        var clientHeight = document.body.clientHeight
+
+        if (sd >= 65) {
+            // head and sidebar fixed
+            $('.subHeadWrapper').css({'top': '0px'})
+            $('.sideBar').css({'margin-top': '0px'})
+            $('.sideBar #sideBarCnt').addClass('sidebar-fixed')
+
+            if (dcHeight > clientHeight) {
+                // history fixed
+                $('.history').addClass('history-fixed')
+                
+                // change sidebar height
+            }
         } else {
-            if (sd <=65 && $('.docContainer').height() + 125 - sd > document.body.clientHeight) {
+            // head and sidebar fixed
+            $('.subHeadWrapper').css({'top': (65-sd) + 'px'})
+            $('.sideBar').css({'margin-top': '60px'})
+            $('.sideBar #sideBarCnt').removeClass('sidebar-fixed')
+
+            // history fixed
+            if (sd < 65 && $('.docContainer').height() + 173 - sd >= clientHeight) {
                 if (!$('.history').hasClass('history-fixed')) {
                     $('.history').addClass('history-fixed')
                 }
             } else {
                 $('.history').removeClass('history-fixed')
             }
+
         }
-        // head and sidebar fixed
-        // var dcheight = $('.docContainer').height() + 65 - sd
-        // if (sd > 0 && dcheight < document.body.clientHeight) {
-        //     $('.history').removeClass('history-fixed')
-        // } else {
-        //     if (!$('.history').hasClass('history-fixed')) {
-        //         $('.history').addClass('history-fixed')
-        //     }
-        //     if ($('.docContainer').height() + 125 < document.body.clientHeight) {
-        //         $('.history').removeClass('history-fixed')
-        //     }
-        // }
-        // if (breakpoint() == 'lg') {
-        //     if (sd > 65 && dcheight>0) {
-        //         if (!$('.subHeadWrapper').hasClass('shw-fixed')) {
-        //             $('.subHeadWrapper').addClass('shw-fixed')
-        //             $('.docContainer').addClass('dc-fixed')
-        //             $('#sideBarCnt').addClass('ftm-fixed')
-        //             $('.rightSideMenu').addClass('rsm-fixed')
-        //             $('#docHead').addClass('ch-fixed')
-        //         }
-        //         if (dcheight > document.body.clientHeight) {
-        //             // $('#sideBarCnt.ftm-fixed').css({'height': 'calc(100vh - 120px)'})
-        //             $('#sideBarCnt.ftm-fixed #fullTreeMenuListContainer').css({'height': 'calc(100vh - 180px)'})
-        //             $('.rightSideMenu.rsm-fixed').css({'height': 'calc(100vh - 110px)'})
-        //         } else {
-        //             // $('#sideBarCnt.ftm-fixed').css({'height': (dcheight - 40) + 'px'})
-        //             $('#sideBarCnt.ftm-fixed #fullTreeMenuListContainer').css({'height': (dcheight - 90) + 'px'})
-        //             $('.rightSideMenu.rsm-fixed').css({'height': (dcheight - 40) + 'px'})
-        //         }
-        //         $('.markdown-body').css({'margin-top': (100 + $('.container .head').height()) + 'px'})
-        //     } else {
-        //         $('.subHeadWrapper').removeClass('shw-fixed')
-        //         $('.docContainer').removeClass('dc-fixed')
-        //         $('#sideBarCnt').removeClass('ftm-fixed')
-        //         $('.rightSideMenu').removeClass('rsm-fixed')
-        //         $('.container .head').removeClass('ch-fixed')
-        //         $('.markdown-body').css({'margin-top': '40px'})
-        //     }
-        // }
-        // if (breakpoint() == 'md') {
-        //     if (sd > 65 && dcheight > 0) {
-        //         if (!$('.subHeadWrapper').hasClass('shw-fixed')) {
-        //             $('.subHeadWrapper').addClass('shw-fixed')
-        //             $('.docContainer').addClass('dc-fixed')
-        //             $('#sideBarCnt').addClass('ftm-fixed')
-        //             $('#docHead').addClass('ch-fixed')
-        //         }
-        //         if (dcheight > document.body.clientHeight) {
-        //             // $('#sideBarCnt.ftm-fixed').css({'height': 'calc(100vh - 120px)'})
-        //             $('#sideBarCnt.ftm-fixed #fullTreeMenuListContainer').css({'height': 'calc(100vh - 180px)'})
-        //             $('.rightSideMenu.rsm-fixed').css({'height': 'calc(100vh - 110px)'})
-        //         } else {
-        //             // $('#sideBarCnt.ftm-fixed').css({'height': (dcheight - 40) + 'px'})
-        //             $('#sideBarCnt.ftm-fixed #fullTreeMenuListContainer').css({'height': (dcheight - 90) + 'px'})
-        //             $('.rightSideMenu.rsm-fixed').css({'height': (dcheight - 40) + 'px'})
-        //         }
-        //         $('.markdown-body').css({'margin-top': (100 + $('.container .head').height()) + 'px'})
-        //     } else {
-        //         $('.subHeadWrapper').removeClass('shw-fixed')
-        //         $('.docContainer').removeClass('dc-fixed')
-        //         $('#sideBarCnt').removeClass('ftm-fixed')
-        //         $('#docHead').removeClass('ch-fixed')
-        //         $('.markdown-body').css({'margin-top': '40px'})
-        //         $('#fullTreeMenuListContainer').css({'height': 'calc(100vh - 245px)'})
-        //     }
-        // }
     }
 
     $('.sideBarIcon').click(function() {
@@ -109,17 +61,6 @@ $(document).ready(function(){
             $('#sideBarCnt').css({'width': $('.sideBar').width() + 'px'})
         }, 100)
     })
-
-    // let timeInt = setInterval(function() {
-    //     var container = $('#sideBarCnt'), scrollTo = $('#sideBarCnt .activeLink');
-    //     console.log(scrollTo)
-    //     if (scrollTo.length>0) {
-    //         container.scrollTop(
-    //             scrollTo.offset().top - container.offset().top + container.scrollTop()
-    //         );
-    //         clearInterval(timeInt)
-    //     }
-    // }, 500)
 
     $(document).click(function(){
         $('.otherVersions').hide()
