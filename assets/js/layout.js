@@ -44,7 +44,8 @@ $(document).ready(function(){
             $('.sideBar #sideBarCnt').removeClass('sidebar-fixed')
 
             // history fixed
-            if (sd < 65 && $('.docContainer').height() + 173 - sd >= clientHeight) {
+            console.log($('.docContainer').height() + 173 - sd)
+            if (sd < 65 && $('.docContainer').height() + 173 - sd > clientHeight) {
                 if (!$('.history').hasClass('history-fixed')) {
                     $('.history').addClass('history-fixed')
                     $('#footerWrapper').css({'margin-top': '48px'})
