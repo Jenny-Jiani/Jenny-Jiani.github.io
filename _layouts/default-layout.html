@@ -131,6 +131,9 @@
         <div class="container">
             <div class="col-xs-12">
                 {%- include liquid_autoGenerateHistoryList.html -%}
+                {%- if historyRecode != '' -%}
+                    <a class="fvChange fontOswald" href="javascript:;">Change +</a>
+                {%- endif -%}
             </div>
         </div>
     </div>

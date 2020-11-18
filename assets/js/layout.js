@@ -15,6 +15,7 @@ $(document).ready(function(){
 
         if ($('.docContainer').height() + 125 >= document.body.clientHeight) {
             $('.history').addClass('history-fixed')
+            $('#footerWrapper').css({'margin-top': '48px'})
         }
     }
 
@@ -33,7 +34,7 @@ $(document).ready(function(){
             if (dcHeight > clientHeight) {
                 // history fixed
                 $('.history').addClass('history-fixed')
-                
+                $('#footerWrapper').css({'margin-top': '48px'})
                 // change sidebar height
             }
         } else {
@@ -46,9 +47,11 @@ $(document).ready(function(){
             if (sd < 65 && $('.docContainer').height() + 173 - sd >= clientHeight) {
                 if (!$('.history').hasClass('history-fixed')) {
                     $('.history').addClass('history-fixed')
+                    $('#footerWrapper').css({'margin-top': '48px'})
                 }
             } else {
                 $('.history').removeClass('history-fixed')
+                $('#footerWrapper').css({'margin-top': '0px'})
             }
 
         }
