@@ -21,7 +21,6 @@ $(document).ready(function(){
     }
 
     function realFunc() {
-        console.log(breakpoint())
         if (breakpoint() == 'lg') {
             var sd = $(window).scrollTop();
             var dcHeight = $('.docContainer').height() + 125 - sd
@@ -37,7 +36,6 @@ $(document).ready(function(){
                     // history fixed
                     $('.history').addClass('history-fixed')
                     $('#footerWrapper').css({'margin-top': '48px'})
-                    
                 } else {
                     $('.history').removeClass('history-fixed')
                     $('#footerWrapper').css({'margin-top': '0px'})
