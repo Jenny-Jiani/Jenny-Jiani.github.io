@@ -25,10 +25,10 @@ function GenerateContentByHead(needh3 = true) {
                         curH3Href = curH3Href.toLowerCase();
                         curliContent += '<li style="list-style-image: none; list-style-type: disc;"><a href="#' + curH3Href + '" class="otherLinkColour">' + curH3Text + '</a></li>';
                     }
-                    curliContent += '</ul>'
+                    curliContent += '</ul>';
                 }
             }
-            curliContent += '</li>'
+            curliContent += '</li>';
             appendContent += curliContent;
         }
         appendContent += '</ul>'

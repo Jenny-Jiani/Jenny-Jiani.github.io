@@ -17,7 +17,7 @@ function UrlReplace()
         curVerFromUrl = curVerFromUrl.replace('/', '');
     }
     else{
-        curVerFromUrl = "latest"
+        curVerFromUrl = "latest";
     }
 
     var compatiableDiv = document.getElementById( "compatibleInfo");
@@ -266,5 +266,5 @@ function changeVersion (liTag)
 		curUrl = curUrl + "#" + anchorVar;
 	}
 	window.location.href = curUrl;
-	return;
+	// return;
 }
