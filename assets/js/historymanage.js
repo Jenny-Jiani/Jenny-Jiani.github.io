@@ -54,11 +54,14 @@ function UrlReplace()
     }
     
 
-    var allHerf1 = $(".docContainer,.sideBar").find("a");
-    for (var i = 0; i < allHerf1.length; i++)
-    {
-        allHerf1[i].onclick = function(){addParam(this, ver); return false;};
-    }
+    // var allHerf1 = $(".docContainer,.sideBar").find("a");
+    // for (var i = 0; i < allHerf1.length; i++)
+    // {
+    //     allHerf1[i].onclick = function(){
+    //         addParam(this, ver); 
+    //         return false;
+    //     };
+    // }
 }
 
 function RedirToGivenVersionPage(inputVer)
@@ -266,5 +269,5 @@ function changeVersion (liTag)
 		curUrl = curUrl + "#" + anchorVar;
 	}
 	window.location.href = curUrl;
-	// return;
+	return;
 }
