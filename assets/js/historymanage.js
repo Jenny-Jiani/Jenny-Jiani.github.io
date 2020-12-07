@@ -212,7 +212,7 @@ function addParam (aTag, verText)
 	
 	var verStr = "";
 	exp = new RegExp(/[?]+([^=]+)=/gi)
-        if (exp.exec(hrefVal) != null){
+    if (exp.exec(hrefVal) != null){
 		verStr = "&&ver=" + verText;
 	}
 	else{
