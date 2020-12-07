@@ -163,7 +163,7 @@
     <script>
         $(document).ready(function(){
             UrlReplace();
-        }
+        });
     </script>
 
     <!-- dbr docs -->
@@ -172,7 +172,7 @@
             if (e.keyCode == 13) {
                 window.location.href = '/barcode-reader/search.html?q=' + $('#txtSearch').val()
             }
-        })
+        });
     </script>
 
     <!-- for dbr downloads -->
@@ -219,7 +219,7 @@
                     // Download('https://download.dynamsoft.com/dbr/dbr-iOS-8.0.zip')
                 }
             }
-        })
+        });
     </script>
 
     {%- include livehelp.html -%}
