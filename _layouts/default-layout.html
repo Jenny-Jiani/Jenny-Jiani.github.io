@@ -127,7 +127,7 @@
             </div>
         </div>
     </div>
-    <!-- <div class="history list">
+    <div class="history list">
         <div class="container">
             <div class="col-xs-12">
                 {%- include liquid_autoGenerateHistoryList.html -%}
@@ -136,7 +136,7 @@
                 {%- endif -%}
             </div>
         </div>
-    </div> -->
+    </div>
     <div id="footerWrapper">
         {%- include page_footer.html -%}
     </div>
@@ -169,29 +169,6 @@
 
     <!-- dbr docs -->
     <script type="text/javascript">
-            
-        function UsefulRecordNew(product, rate) {
-            console.log(1111)
-            var encodeUrl = encodeURIComponent(document.URL);
-            console.log(encodeUrl)
-            $.ajax({
-                url: 'https://www.dynamsoft.com/Secure/Rate.ashx',
-                type: 'Get',
-                dataType: 'json',
-                data: {
-                    paper: encodeUrl,
-                    product: product,
-                    rate: rate
-                },
-                success: function(res) {
-                    var feedbackTag = document.getElementById("feedbackFooter");
-                    if(feedbackTag!=null) {
-                        feedbackTag.innerHTML = "Thanks!";
-                    }
-                }
-            })
-        }
-
         $('#txtSearch').keydown(function(e) { 
             if (e.keyCode == 13) {
                 window.location.href = '/barcode-reader/search.html?q=' + $('#txtSearch').val()
