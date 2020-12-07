@@ -315,3 +315,26 @@ function UsefulRecord(isUseful) {
         })
     }
 }
+
+
+function UsefulRecordNew(product, rate) {
+    console.log(1111)
+    var encodeUrl = encodeURIComponent(document.URL);
+    console.log(encodeUrl)
+    $.ajax({
+        url: 'https://www.dynamsoft.com/Secure/Rate.ashx',
+        type: 'Get',
+        dataType: 'json',
+        data: {
+            paper: encodeUrl,
+            product: product,
+            rate: rate
+        },
+        success: function(res) {
+            var feedbackTag = document.getElementById("feedbackFooter");
+            if(feedbackTag!=null) {
+                feedbackTag.innerHTML = "Thanks!";
+            }
+        }
+    })
+}

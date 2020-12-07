@@ -114,8 +114,8 @@
                         </div>
                         <div id="feedbackFooter" style="color: #306877;">
                             <p class="fontOswald">Is this page helpful? </p>
-                            <a href="javascript:void(0)" style="color: #306877;" class="recordLink smileLink" onclick="UsefulRecord(true)"><img class="icon-smile" src="{{ site.smile_icon }}" alt="Yes" />Yes</a>
-                            <a href="javascript:void(0)" style="color: #306877;" class="recordLink sadLink" onclick="UsefulRecord(false)"><img class="icon-sad" src="{{ site.sad_icon }}" alt="No" />No</a>
+                            <a href="javascript:void(0)" style="color: #306877;" class="recordLink smileLink" onclick="UsefulRecordNew('DBR-Doc', 5)"><img class="icon-smile" src="{{ site.smile_icon }}" alt="Yes" />Yes</a>
+                            <a href="javascript:void(0)" style="color: #306877;" class="recordLink sadLink" onclick="UsefulRecordNew('DBR-Doc', 1)"><img class="icon-sad" src="{{ site.sad_icon }}" alt="No" />No</a>
                         </div>
                         <hr />
                         {%- if page.needAutoGenerateSidebar -%}
