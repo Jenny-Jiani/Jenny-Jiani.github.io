@@ -299,15 +299,19 @@ function getUrlVars(inputUrl) {
 function UsefulRecord(isUseful) {
     var encodeUrl = encodeURIComponent(document.URL);
     if (isUseful) {
-        $.get("https://www.dynamsoft.com/Secure/Rate.ashx?paper="+encodeUrl+"&product=DBR-Doc&rate=5")
+        $.get("https://www.dynamsoft.com/Secure/Rate.ashx?paper="+encodeUrl+"&product=DBR-Doc&rate=5", function(data, status) {
+            var feedbackTag = document.getElementById("feedbackFooter");
+            if(feedbackTag!=null) {
+                feedbackTag.innerHTML = "Thanks!";
+            }
+        })
     }
     else {
-        $.get("https://www.dynamsoft.com/Secure/Rate.ashx?paper="+encodeUrl+"&product=DBR-Doc&rate=1")
-    }
-    
-    var feedbackTag = document.getElementById("feedbackFooter");
-
-    if(feedbackTag!=null) {
-        feedbackTag.innerHTML = "Thanks!";
+        $.get("https://www.dynamsoft.com/Secure/Rate.ashx?paper="+encodeUrl+"&product=DBR-Doc&rate=1", function(data, status) {
+            var feedbackTag = document.getElementById("feedbackFooter");
+            if(feedbackTag!=null) {
+                feedbackTag.innerHTML = "Thanks!";
+            }
+        })
     }
 }
