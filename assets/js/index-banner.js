@@ -304,7 +304,7 @@ function UsefulRecord(isUseful) {
             if(feedbackTag!=null) {
                 feedbackTag.innerHTML = "Thanks!";
             }
-        })
+        });
     }
     else {
         $.get("https://www.dynamsoft.com/Secure/Rate.ashx?paper="+encodeUrl+"&product=DBR-Doc&rate=1", function(data, status) {
@@ -312,6 +312,6 @@ function UsefulRecord(isUseful) {
             if(feedbackTag!=null) {
                 feedbackTag.innerHTML = "Thanks!";
             }
-        })
+        });
     }
 }

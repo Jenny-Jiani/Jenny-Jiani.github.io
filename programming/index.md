@@ -1,21 +1,13 @@
 ---
 layout: default-layout
-title: Dynamsoft Barcode Reader Programming - Main Page
+title: Dynamsoft Label Recognition Programming - Main Page
 keywords: programming
 needAutoGenerateSidebar: false
 breadcrumbText: Programming
-description: Dynamsoft Barcode Reader supports the following programming languages - .NET, Android, C, C++, Java, JavaScript, Objective-C & Swift, Python
+description: Dynamsoft Label Recognition supports the following programming languages - C, C++
 ---
 
-# Dynamsoft Barcode Reader - Programming
+# Dynamsoft Label Recognition Documentation - Programming Section
 
-This section covers the following programming languages:
+- [C/C++](./c-cplusplus/)
 
-- [C]({{ site.c }})
-- [C++]({{ site.cpp }})
-- [.NET]({{ site.dotnet }})
-- [Java]({{ site.java }})
-- [Python]({{ site.python }})
-- [JavaScript]({{ site.js }})
-- [Android]({{ site.android }})
-- [Objective-C & Swift]({{ site.oc }})
