@@ -114,8 +114,8 @@
                         </div>
                         <div id="feedbackFooter" style="color: #306877;">
                             <p class="fontOswald">Is this page helpful? </p>
-                            <a href="javascript:void(0)" style="color: #306877;" class="recordLink smileLink" onclick="UsefulRecordNew('DBR-Doc', 5)"><img class="icon-smile" src="{{ site.smile_icon }}" alt="Yes" />Yes</a>
-                            <a href="javascript:void(0)" style="color: #306877;" class="recordLink sadLink" onclick="UsefulRecordNew('DBR-Doc', 1)"><img class="icon-sad" src="{{ site.sad_icon }}" alt="No" />No</a>
+                            <a href="javascript:void(0)" style="color: #306877;" class="recordLink smileLink" onclick="UsefulRecord(true)"><img class="icon-smile" src="{{ site.smile_icon }}" alt="Yes" />Yes</a>
+                            <a href="javascript:void(0)" style="color: #306877;" class="recordLink sadLink" onclick="UsefulRecord(false)"><img class="icon-sad" src="{{ site.sad_icon }}" alt="No" />No</a>
                         </div>
                         <hr />
                         {%- if page.needAutoGenerateSidebar -%}
@@ -140,31 +140,7 @@
     <div id="footerWrapper">
         {%- include page_footer.html -%}
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js"
-        integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
-    <script>anchors.add();</script>
 
-    {%- if page.needAutoGenerateSidebar -%}
-    {%- unless page.needGenerateH3Content -%}
-    <script>
-        FullTreeMenuList(true, false);
-    </script>
-    {%- else -%}
-    <script>
-        FullTreeMenuList(true);
-    </script>
-    {%- endunless -%}
-    {%- else -%}
-    <script>
-        FullTreeMenuList(false);
-    </script>
-    {%- endif -%}
-
-    <script>
-        UrlReplace();
-    </script>
-
-    {%- include livehelp.html -%}
 
     <!-- for dbr -->
     <script type="text/javascript">
@@ -212,6 +188,33 @@
             })
         })
     </script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js"
+        integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
+    <script type="text/javascript">anchors.add();</script>
+
+    {%- if page.needAutoGenerateSidebar -%}
+    {%- unless page.needGenerateH3Content -%}
+    <script type="text/javascript">
+        FullTreeMenuList(true, false);
+    </script>
+    {%- else -%}
+    <script type="text/javascript">
+        FullTreeMenuList(true);
+    </script>
+    {%- endunless -%}
+    {%- else -%}
+    <script type="text/javascript">
+        FullTreeMenuList(false);
+    </script>
+    {%- endif -%}
+
+    <script type="text/javascript">
+        UrlReplace();
+    </script>
+
+    {%- include livehelp.html -%}
 </body>
 
 </html>
