@@ -9,11 +9,11 @@ $(document).ready(function(){
     window.addEventListener('scroll', realFunc);
 
     function init() {
+        var menuHeight = $('#overall-header').height() + $('.subHeadWrapper').height()
         $('#sideBarCnt').css({'width': $('.sideBar').width() + 'px'})
         $('.container .head').css({'width': $('.docContainer').width() + 'px'})
-        $('#fullTreeMenuListContainer').css({'height': 'calc(100vh - '+($('.subHeadWrapper').height()+ 180) +'px);'})
-        $('.rightSideMenu').css({'height': 'calc(100vh - '+($('.subHeadWrapper').height() + 180)+'px);'})
-        var menuHeight = $('#overall-header').height() + $('.subHeadWrapper').height()
+        $('#fullTreeMenuListContainer').css({'height': 'calc(100vh - '+(menuHeight + 115) +'px);'})
+        $('.rightSideMenu').css({'height': 'calc(100vh - '+(menuHeight + 115)+'px);'})
         if ($('.docContainer').height() + menuHeight >= document.body.clientHeight) {
             $('.history').addClass('history-fixed')
             $('#footerWrapper').css({'margin-top': '48px'})
@@ -26,7 +26,7 @@ $(document).ready(function(){
             var sd = $(window).scrollTop();
             var dcHeight = $('.docContainer').height() + menuHeight - sd
             var clientHeight = document.body.clientHeight
-            if (sd >= 65) {
+            if (sd >= $('#overall-header').height()) {
                 // head and sidebar fixed
                 $('.subHeadWrapper').css({'top': '0px'})
                 $('#docHead').css({'top': $('.subHeadWrapper').height() + 'px'})
@@ -43,14 +43,14 @@ $(document).ready(function(){
                 }
             } else {
                 // head and sidebar fixed
-                $('.subHeadWrapper').css({'top': (65-sd) + 'px'})
+                $('.subHeadWrapper').css({'top': ($('#overall-header').height()-sd) + 'px'})
                 $('#docHead').css({'top': (menuHeight-sd) + 'px'})
                 $('.sideBar').css({'padding-top': $('.subHeadWrapper').height() + 'px'})
                 $('.sideBar #sideBarCnt').removeClass('sidebar-fixed')
                 $('.rightSideMenu').removeClass('rsm-fixed')
 
                 // history fixed
-                if (sd < 65 && dcHeight + 48 > clientHeight) {
+                if (sd < $('#overall-header').height() && dcHeight + 48 > clientHeight) {
                     if (!$('.history').hasClass('history-fixed')) {
                         $('.history').addClass('history-fixed')
                         $('#footerWrapper').css({'margin-top': '48px'})
