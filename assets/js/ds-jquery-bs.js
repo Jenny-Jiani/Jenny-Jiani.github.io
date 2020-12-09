@@ -17,7 +17,6 @@ $(function(){
 })
 
 $(function(){
-	isLogin();
 	/*header search*/
 	function headerSearch(){
 		var searchVal = '';
@@ -165,10 +164,6 @@ $(function(){
 		$("#smSearch input[type='text']").hide();
 		$("#smSearch .smSearchToggle").show();	
 	});
-
-	$('.header-signin').on('click', function () {
-		$('.header-signin .userbox-more').slideToggle();
-	})
 
 	$("#xsHeader .xsMenuToggle, #xsNav, #smHeader .smMenuToggle, #mdMenu .mdMenuToggle, #subMenu, #subNav .subNav-xsToggle, #subNav .ct-list,.header-signin, .showMenuMore, .mobileProductMenu .productLogo, mobileProductDetailMenu").bind('click',function(e){
 		stopPropagation(e);
