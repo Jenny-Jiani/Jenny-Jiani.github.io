@@ -109,7 +109,7 @@ $(function(){
 		$("#subNav .ct-list > li ul.ct-more").slideUp();
 		$("#subNav .ct-list > li .subNav-toggle i.show-xs").addClass('fa-angle-down').removeClass('fa-angle-up');
 	});
-	
+
 	$("#subNav .subNav-toggle").click(function(){		
 		$(this).parent('li').siblings('li').removeClass('on');
 		$(this).parent('li').siblings('li').find("ul.ct-more").hide();
@@ -126,6 +126,14 @@ $(function(){
 		}
 	});
 	
+	/*smSearch*/
+	$("#smSearch .smSearchToggle").click(function(){
+		$(this).hide();
+		$("#smSearch .smSearchSubmit").show();
+		$("#smSearch input[type='text']").show().focus();
+		$("#subNav .ct-list > li").removeClass('on');
+		$("#subNav .ct-list > li ul.ct-more").hide();
+	});	
 	
 	$(document).click(function(){
 		/*header*/
@@ -137,8 +145,12 @@ $(function(){
 			$("#xsNav .xsNavToggle .fa").removeClass("fa-caret-down").addClass("fa-caret-up");
 		},200);
 		$("#subMenu").slideUp('fast');
-		$("#mdMenu li.products").removeClass('on');
-		$("#mdMenu li.products i").removeClass('fa-caret-up').addClass('fa-caret-down');
+		$("#menuMask").hide();
+		$('.headSubMenu').slideUp(300);
+		$("#mdMenu li").removeClass('on');
+		// $("#subMenu").slideUp('fast');
+		// $("#mdMenu li.products").removeClass('on');
+		// $("#mdMenu li.products i").removeClass('fa-caret-up').addClass('fa-caret-down');
 		/*subNav*/
 		if(breakpoint()=='xs'){
 			$("#subNav .ct-list").slideUp();
@@ -148,8 +160,17 @@ $(function(){
 		$("#subNav .ct-list > li").removeClass('on');
 		$("#subNav .ct-list > li ul.ct-more").slideUp();
 		$("#subNav .ct-list > li .subNav-toggle i.show-xs").addClass('fa-angle-down').removeClass('fa-angle-up');
+		/*smSearch*/
+		$("#smSearch .smSearchSubmit").hide();
+		$("#smSearch input[type='text']").hide();
+		$("#smSearch .smSearchToggle").show();	
 	});
-	$("#xsHeader .xsMenuToggle, #xsNav, #smHeader .smMenuToggle, #mdMenu .mdMenuToggle, #subMenu, #subNav .subNav-xsToggle, #subNav .ct-list").bind('click',function(e){
+
+	$('.header-signin').on('click', function () {
+		$('.header-signin .userbox-more').slideToggle();
+	})
+
+	$("#xsHeader .xsMenuToggle, #xsNav, #smHeader .smMenuToggle, #mdMenu .mdMenuToggle, #subMenu, #subNav .subNav-xsToggle, #subNav .ct-list,.header-signin, .showMenuMore, .mobileProductMenu .productLogo, mobileProductDetailMenu").bind('click',function(e){
 		stopPropagation(e);
 	});	
 	

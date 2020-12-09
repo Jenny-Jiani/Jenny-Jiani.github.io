@@ -47,7 +47,7 @@ ul.circle > li p:hover, ul.circle li.on p, ul.square > li.on p, ul.square > li p
 
 /* default-layout.html   ---- subHeadWrapper */
 
-.subHeadWrapper { width: 100%; height: 95px; line-height: 58px; background-color: #ffffff; border-bottom: 1px solid #ddd; position: fixed; top: 65px; z-index: 12 }
+.subHeadWrapper { width: 100%; height: 95px; line-height: 58px; background-color: #ffffff; border-bottom: 1px solid #ddd; position: fixed; top: 95px; z-index: 12 }
 #docHead { position: fixed; z-index: 12; top: 180px; padding: 20px 0 20px 0; margin-top: 0px; }
 /* .subHeadWrapper.shw-fixed { position: fixed; z-index: 12; top: 0; } */
 .subHeadWrapper .subHeaderMenuUl { list-style: none; font-size: 16px; margin: 0; cursor: pointer; }
@@ -254,7 +254,7 @@ div::-webkit-scrollbar-corner, ul::-webkit-scrollbar-corner{
 
 @media (max-width: 1679px) {
 	#docHead { top: 137px; }
-	.subHeadWrapper { height: 72px; }
+	.subHeadWrapper { height: 72px; top: 72px; }
 	.sideBar, .docContainer { padding-top: 72px; }
 	.rightSideMenu.rsm-fixed { position: fixed; top: 90px; }
 	#sideBarCnt.sidebar-fixed { position: fixed; top: 72px; max-height: unset; }
@@ -420,10 +420,10 @@ li, ul { list-style: none; margin: 0; padding: 0; }
     #subMenu { display: none !important; box-shadow: none; }
     #pcMenu { display: none !important; }
     #xsNav li.menuItem { padding: 20px 0; border-bottom: 1px solid #999; }
-    #xsNav li.menuItem .menuName, #xsNav li.menuItem .menuName a { color: #FFFFFF; font-size: 20px; font-family: Oswald-Regular; }
+    #xsNav li.menuItem .menuName, #xsNav li.menuItem .menuName a { color: #FFFFFF; font-size: 20px; font-family: Oswald; }
     #xsNav li.menuItem .menuDetail { display: none; }
     #xsNav li.menuItem .menuDetail .productLogo { margin-top: 20px; }
-    #xsNav li.menuItem .menuDetail .menu-left, #xsNav li.menuItem .menuDetail .menu-right { display: inline-block; font-family: Oswald-Regular; }
+    #xsNav li.menuItem .menuDetail .menu-left, #xsNav li.menuItem .menuDetail .menu-right { display: inline-block; font-family: Oswald; }
     #xsNav li.menuItem .menuDetail .menu-left { padding-right: 50px; }
     #xsNav li.menuItem .menuDetail .menu-left .subMenuList li.item a { color: #FFFFFF; font-size: 16px; }
     #xsNav li.menuItem .menuDetail .menu-right { padding-left: 30px; }
@@ -496,7 +496,7 @@ li, ul { list-style: none; margin: 0; padding: 0; }
     #mdHeader .ds-logo { float: left; margin: 16px 0 0; width: 145px; height: 35px; }
     #mdMenu { padding-left: 190px; margin: 0; width: 100%;}
     #mdMenu li { float: left; height: 72px; padding: 0; text-align: center; list-style: none; margin-right: 40px; }
-    #mdMenu li a { display: inline-block; padding: 0; line-height: 71px; font-size: 18px; color: #444; font-family: Oswald-Regular; }
+    #mdMenu li a { display: inline-block; padding: 0; line-height: 71px; font-size: 18px; color: #444; font-family: Oswald; }
     #mdMenu .icon-orange-angle { width: 7px; height: 13px; }
 
     #cp-header { float: right; padding: 0; height: 72px; }
@@ -522,13 +522,13 @@ li, ul { list-style: none; margin: 0; padding: 0; }
     .headSubMenu .menu-top .menu-right { display: inline-block; padding: 55px 0 0 80px; vertical-align: top; }
     .headSubMenu .menu-top .menu-right .subMenuList li.subTitle { color: #323234; font-family: Oswald-Light; font-size: 18px; }
     .headSubMenu .menu-top .subMenuList li.item { margin-top: 15px; }
-    .headSubMenu .menu-top .subMenuList li.item a { color: #323234; font-size: 18px; font-family: Oswald-Regular; }
+    .headSubMenu .menu-top .subMenuList li.item a { color: #323234; font-size: 18px; font-family: Oswald; }
     .headSubMenu .menu-top .subMenuList li.item a:hover, .headSubMenu .menu-top .subMenuList li.item a:visited, .headSubMenu .menu-top .subMenuList li.item a:active { color: #323234 }
     .headSubMenu .menu-bottom { width: 100%; height: 65px; line-height: 65px; }
-    .headSubMenu .menu-bottom a { display: block; width: 100%; height: 100%; color: #ffffff; text-align: center; font-size: 24px; font-family: Oswald-Regular; }
+    .headSubMenu .menu-bottom a { display: block; width: 100%; height: 100%; color: #ffffff; text-align: center; font-size: 24px; font-family: Oswald; }
     #companySubMenu { display: none; padding: 20px 70px 30px 60px; left: 290px; }
     #companySubMenu .subMenuList li.item { margin-top: 15px; }
-    #companySubMenu .subMenuList li.item a { color: #323234; font-size: 16px; font-family: Oswald-Regular; }
+    #companySubMenu .subMenuList li.item a { color: #323234; font-size: 16px; font-family: Oswald; }
     #companySubMenu .subMenuList li.item a:visited, #companySubMenu .subMenuList li.item a:active { color: #323234 }
     #companySubMenu .subMenuList li.item a:hover { color: #fe8e14; }
     #companySubMenu .icon-orange-angle { left: 60px; }
@@ -599,13 +599,13 @@ li, ul { list-style: none; margin: 0; padding: 0; }
     .headSubMenu .menu-top .menu-right { display: inline-block; padding: 55px 0 0 80px; vertical-align: top; }
     .headSubMenu .menu-top .menu-right .subMenuList li.subTitle { color: #323234; font-family: Oswald-Light; font-size: 18px; }
     .headSubMenu .menu-top .subMenuList li.item { margin-top: 15px; }
-    .headSubMenu .menu-top .subMenuList li.item a { color: #323234; font-size: 18px; font-family: Oswald-Regular; }
+    .headSubMenu .menu-top .subMenuList li.item a { color: #323234; font-size: 18px; font-family: Oswald; }
     .headSubMenu .menu-top .subMenuList li.item a:hover, .headSubMenu .menu-top .subMenuList li.item a:visited, .headSubMenu .menu-top .subMenuList li.item a:active { color: #323234 }
     .headSubMenu .menu-bottom { width: 100%; height: 65px; line-height: 65px; }
-    .headSubMenu .menu-bottom a { display: block; width: 100%; height: 100%; color: #ffffff; text-align: center; font-size: 24px; font-family: Oswald-Regular; }
+    .headSubMenu .menu-bottom a { display: block; width: 100%; height: 100%; color: #ffffff; text-align: center; font-size: 24px; font-family: Oswald; }
     #companySubMenu { display: none; padding: 20px 70px 30px 60px; left: 376px; }
     #companySubMenu .subMenuList li.item { margin-top: 15px; }
-    #companySubMenu .subMenuList li.item a { color: #323234; font-size: 16px; font-family: Oswald-Regular; }
+    #companySubMenu .subMenuList li.item a { color: #323234; font-size: 16px; font-family: Oswald; }
     #companySubMenu .subMenuList li.item a:visited, #companySubMenu .subMenuList li.item a:active { color: #323234 }
     #companySubMenu .subMenuList li.item a:hover { color: #fe8e14; }
     #companySubMenu .icon-orange-angle { left: 60px; }
@@ -718,9 +718,9 @@ li, ul { list-style: none; margin: 0; padding: 0; }
 }
 
 .textUpperCase { text-transform: uppercase; }
-.orangeBgBtn { display: inline-block; padding: 0 25px !important; height: 30px !important; line-height: 30px !important; font-size: 16px !important; text-align: center; cursor: pointer; color: #FFFFFF !important; background: #FE8E14 !important; font-family: Oswald-Regular; vertical-align: top; }
+.orangeBgBtn { display: inline-block; padding: 0 25px !important; height: 30px !important; line-height: 30px !important; font-size: 16px !important; text-align: center; cursor: pointer; color: #FFFFFF !important; background: #FE8E14 !important; font-family: Oswald; vertical-align: top; }
 .orangeBgBtn:hover, .orangeBgBtn:visited, .orangeBgBtn:active { background: #FE8E14; color: #FFFFFF; }
-.orangeBorderBtn { display: inline-block; padding: 0 25px !important; height: 30px !important; line-height: 26px !important; font-size: 16px !important; text-align: center; cursor: pointer; color: #FE8E14 !important; background: transparent !important; border: 2px solid #FE8E14; font-family: Oswald-Regular; vertical-align: top; }
+.orangeBorderBtn { display: inline-block; padding: 0 25px !important; height: 30px !important; line-height: 26px !important; font-size: 16px !important; text-align: center; cursor: pointer; color: #FE8E14 !important; background: transparent !important; border: 2px solid #FE8E14; font-family: Oswald; vertical-align: top; }
 .orangeBgBtn:hover, .orangeBgBtn:visited, .orangeBgBtn:active { border-color: #FEA543; color: #FEA543; }
 
 i.dbr-logo { display: inline-block; width: 267px; height: 36px; background: url(../img-icon/logo-dbr-365x68.png) no-repeat left; background-size: contain; }
