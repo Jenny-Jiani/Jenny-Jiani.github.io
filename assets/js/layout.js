@@ -11,10 +11,10 @@ $(document).ready(function(){
     function init() {
         $('#sideBarCnt').css({'width': $('.sideBar').width() + 'px'})
         $('.container .head').css({'width': $('.docContainer').width() + 'px'})
-        $('#fullTreeMenuListContainer').css({'height': 'calc(100vh - 245px)'})
-        $('.rightSideMenu').css({'height': 'calc(100vh - 245px)'})
+        $('#fullTreeMenuListContainer').css({'height': 'calc(100vh - 280px);'})
+        $('.rightSideMenu').css({'height': 'calc(100vh - 280px);'})
 
-        if ($('.docContainer').height() + 125 >= document.body.clientHeight) {
+        if ($('.docContainer').height() + 160 >= document.body.clientHeight) {
             $('.history').addClass('history-fixed')
             $('#footerWrapper').css({'margin-top': '48px'})
         }
@@ -23,7 +23,7 @@ $(document).ready(function(){
     function realFunc() {
         if (breakpoint() == 'lg') {
             var sd = $(window).scrollTop();
-            var dcHeight = $('.docContainer').height() + 125 - sd
+            var dcHeight = $('.docContainer').height() + 160 - sd
             var clientHeight = document.body.clientHeight
             if (sd >= 65) {
                 // head and sidebar fixed
@@ -43,7 +43,7 @@ $(document).ready(function(){
             } else {
                 // head and sidebar fixed
                 $('.subHeadWrapper').css({'top': (65-sd) + 'px'})
-                $('#docHead').css({'top': (125-sd) + 'px'})
+                $('#docHead').css({'top': (160-sd) + 'px'})
                 $('.sideBar').css({'padding-top': '60px'})
                 $('.sideBar #sideBarCnt').removeClass('sidebar-fixed')
                 $('.rightSideMenu').removeClass('rsm-fixed')
