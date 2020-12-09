@@ -11,10 +11,10 @@ $(document).ready(function(){
     function init() {
         $('#sideBarCnt').css({'width': $('.sideBar').width() + 'px'})
         $('.container .head').css({'width': $('.docContainer').width() + 'px'})
-        $('#fullTreeMenuListContainer').css({'height': 'calc(100vh - 280px);'})
-        $('.rightSideMenu').css({'height': 'calc(100vh - 280px);'})
-
-        if ($('.docContainer').height() + 160 >= document.body.clientHeight) {
+        $('#fullTreeMenuListContainer').css({'height': 'calc(100vh - '+($('.subHeadWrapper').height()+ 180) +'px);'})
+        $('.rightSideMenu').css({'height': 'calc(100vh - '+($('.subHeadWrapper').height() + 180)+'px);'})
+        var menuHeight = $('#overall-header').height() + $('.subHeadWrapper').height()
+        if ($('.docContainer').height() + menuHeight >= document.body.clientHeight) {
             $('.history').addClass('history-fixed')
             $('#footerWrapper').css({'margin-top': '48px'})
         }
@@ -22,13 +22,14 @@ $(document).ready(function(){
 
     function realFunc() {
         if (breakpoint() == 'lg') {
+            var menuHeight = $('#overall-header').height() + $('.subHeadWrapper').height()
             var sd = $(window).scrollTop();
-            var dcHeight = $('.docContainer').height() + 160 - sd
+            var dcHeight = $('.docContainer').height() + menuHeight - sd
             var clientHeight = document.body.clientHeight
             if (sd >= 65) {
                 // head and sidebar fixed
                 $('.subHeadWrapper').css({'top': '0px'})
-                $('#docHead').css({'top': '60px'})
+                $('#docHead').css({'top': $('.subHeadWrapper').height() + 'px'})
                 $('.sideBar').css({'padding-top': '0px'})
                 $('.sideBar #sideBarCnt').addClass('sidebar-fixed')
                 $('.rightSideMenu').addClass('rsm-fixed')
@@ -43,8 +44,8 @@ $(document).ready(function(){
             } else {
                 // head and sidebar fixed
                 $('.subHeadWrapper').css({'top': (65-sd) + 'px'})
-                $('#docHead').css({'top': (160-sd) + 'px'})
-                $('.sideBar').css({'padding-top': '60px'})
+                $('#docHead').css({'top': (menuHeight-sd) + 'px'})
+                $('.sideBar').css({'padding-top': $('.subHeadWrapper').height() + 'px'})
                 $('.sideBar #sideBarCnt').removeClass('sidebar-fixed')
                 $('.rightSideMenu').removeClass('rsm-fixed')
 
