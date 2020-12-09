@@ -133,6 +133,10 @@ $(function(){
 		$("#subNav .ct-list > li").removeClass('on');
 		$("#subNav .ct-list > li ul.ct-more").hide();
 	});	
+
+	$('.mobileProductMenu .productLogo').on('click', function () {
+		$('.mobileProductDetailMenu').slideToggle(300);
+	})
 	
 	$(document).click(function(){
 		/*header*/

@@ -264,7 +264,7 @@ div::-webkit-scrollbar-corner, ul::-webkit-scrollbar-corner{
 	.footerWrapper { margin-top: 100px; }
 	.markdown-body { min-height: calc(100vh - 378px); margin-top: 40px;  }
 	.rightSideMenu { margin-top: 40px; }
-	.subHeadWrapper { position: relative; top: 0; }
+	.subHeadWrapper { position: relative; top: 0; height: 60px; }
 	.sideBar, .docContainer { padding-top: 0px; }
 	#docHead { position: relative; top: 0; }
 	.sideBarIcon { height: 40px; line-height: 38px; background: #EEEEEE; color: #444; text-align: right; padding-right: 36px; width: calc(50% - 175px); cursor: pointer; }
