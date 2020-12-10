@@ -29,7 +29,7 @@ $(document).ready(function(){
             if (sd >= $('#overall-header').height()) {
                 // head and sidebar fixed
                 $('.subHeadWrapper').css({'top': '0px'})
-                $('#docHead').css({'top': $('.subHeadWrapper').height() + 'px'})
+                $('#docHead').css({'top': ($('.subHeadWrapper').height() + 1) + 'px'})
                 $('.sideBar').css({'padding-top': '0px'})
                 $('.sideBar #sideBarCnt').addClass('sidebar-fixed')
                 $('.rightSideMenu').addClass('rsm-fixed')
