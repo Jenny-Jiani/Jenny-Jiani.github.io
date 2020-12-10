@@ -44,7 +44,7 @@ $(document).ready(function(){
             } else {
                 // head and sidebar fixed
                 $('.subHeadWrapper').css({'top': ($('#overall-header').height()-sd) + 'px'})
-                $('#docHead').css({'top': (menuHeight-sd) + 'px'})
+                $('#docHead').css({'top': (menuHeight-sd)+1 + 'px'})
                 $('.sideBar').css({'padding-top': $('.subHeadWrapper').height() + 'px'})
                 $('.sideBar #sideBarCnt').removeClass('sidebar-fixed')
                 $('.rightSideMenu').removeClass('rsm-fixed')
