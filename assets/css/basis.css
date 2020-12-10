@@ -318,7 +318,7 @@ div::-webkit-scrollbar-corner, ul::-webkit-scrollbar-corner{
 	.markdown-body h2 { font-size: 30px; }
 	.markdown-body h3 { font-size: 24px; }
 	.markdown-body { padding-right: 40px; }
-	.docContainer { border-left: 1px solid #ddd;padding-left: 40px;min-height: calc(100vh - 235px); }
+	.docContainer { border-left: 1px solid #ddd;padding-left: 40px;min-height: calc(100vh - 181px); }
 	.subHeadWrapper .subHeaderMenuUl li { margin-right: 0px; }
 	.subHeadWrapper .subHeaderMenuUl li.title { margin-right: 20px; padding: 0; }
 	.sideBar .mainPage { width: auto; height: auto; max-height: auto; }
@@ -341,7 +341,7 @@ div::-webkit-scrollbar-corner, ul::-webkit-scrollbar-corner{
 @media (min-width: 1680px) {
 	.subHeadWrapper .subHeaderMenuUl li.title { margin-right: 230px; padding: 0; }
 	.sideBar { max-width: 316px; }
-	.docContainer { width: calc(100% - 320px);border-left: 1px solid #ddd;padding-left: 80px; }
+	.docContainer { width: calc(100% - 320px);border-left: 1px solid #ddd;padding-left: 80px;min-height: calc(100vh - 203px); }
 	.markdown-body { padding-right: 80px; }
 	.recordLink.sadLink { margin-left: 30px; }
 	.rightSideMenu { max-width: 207px; }
