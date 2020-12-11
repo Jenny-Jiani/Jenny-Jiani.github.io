@@ -1,21 +1,9 @@
 repositoryUrl: https://github.com/Jenny-Jiani/Jenny-Jiani.github.io/blob/master
 
 docFullPath: https://jenny-jiani.github.io/
-docHomePage: /programming/
+docHomePage: /use-cases/
 
-parameters: /parameters/
-enumerations: parameters/enum/
-parameters-reference: /parameters/reference/
-
-programming: /programming/
-
-c-cplusplus: /programming/c-cplusplus/
-c-cplusplus-api-reference: /programming/c-cplusplus/api-reference/
-c-functions: /programming/c-cplusplus/api-reference/c-functions/
-cpp-methods: /programming/c-cplusplus/api-reference/c-label-recognition-class/
-c-cplusplus-structs: /programming/c-cplusplus/structs/
-
-c-cplusplus-release-notes: /programming/c-cplusplus/release-notes/
+COVID-19: /use-cases/covid-19/
 
 assets: /assets/
 edit_icon: /assets/img-icon/edit-icon.png
