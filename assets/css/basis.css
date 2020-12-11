@@ -874,3 +874,11 @@ i.dbr-white-logo { display: inline-block; width: 221px; height: 30px; background
     .productMenu .container { max-width: 1630px }
 }
 
+
+.card-table tr td { padding: 0 10px; border: 0; }
+.card-table tr { border-top: 0; }
+.card-item { border: 1px solid #ddd; height: 100%; }
+.card-item h3 { padding-top: 0px; margin-top: -0px; }
+.card-item .imgBox { width: 100%; height: 200px; background: #ddd; }
+.card-item .card-content { padding: 20px; }
+

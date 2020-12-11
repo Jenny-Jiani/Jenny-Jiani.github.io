@@ -23,52 +23,36 @@ The barcode has long been used in retail and the possibilities for its use conti
   <tr>
     <td width="33.3%" style="vertical-align: top">
       <div class="card-item">
-        <h3>Resist Wrinkles and Deformation on Packagings</h3>
         <div class="imgBox"><img /></div>
-        <p>Read product barcode on soft packagings and deformed round bottles accurately and quickly for accurate information lookup and faster self-checkout.</p>
-        <p>Get the <a class="orangeLink" href="https://www.dynamsoft.com/barcode-reader/introduction/how-to-guide/set-custom-area-for-accompanying-texts.html">AccompanyingTextBytes</a> and compare it with the barcode result to guarantee that there is no room for mistakes.</p>
+        <div class="card-content">
+          <h3>Resist Wrinkles and Deformation on Packagings</h3>
+          <p>Read product barcode on soft packagings and deformed round bottles accurately and quickly for accurate information lookup and faster self-checkout.</p>
+          <p>Get the <a class="orangeLink" href="https://www.dynamsoft.com/barcode-reader/introduction/how-to-guide/set-custom-area-for-accompanying-texts.html">AccompanyingTextBytes</a> and compare it with the barcode result to guarantee that there is no room for mistakes.</p>
+        </div>
       </div>
     </td>
     <td width="33.3%" style="vertical-align: top">
       <div class="card-item">
-        <h3>Remove Glares on Reflective Cans</h3>
         <div class="imgBox"><img /></div>
-        <p>Grocery stores have a wide variety of products and often face issues like light glare from reflective surfaces such as from soda pop cans, condensation build up from frozen foods, and curved barcodes on canned goods.</p>
+        <div class="card-content">
+          <h3>Remove Glares on Reflective Cans</h3>
+          <p>Grocery stores have a wide variety of products and often face issues like light glare from reflective surfaces such as from soda pop cans, condensation build up from frozen foods, and curved barcodes on canned goods.</p>
+        </div>
       </div>
     </td>
     <td width="33.3%" style="vertical-align: top">
       <div class="card-item">
-        <h3>Verify via Accompanying Text</h3>
         <div class="imgBox"><img /></div>
-        <p>To ensure 100% accuracy, and eliminate manual verification, automatically verify barcode result with the accompanying text that usually appears below the product barcode.</p>
-        <p>Get the <a class="orangeLink" href="https://www.dynamsoft.com/barcode-reader/introduction/how-to-guide/set-custom-area-for-accompanying-texts.html">AccompanyingTextBytes</a> and compare it with the barcode result to guarantee that there is no room for mistakes.</p>
+        <div class="card-content">
+          <h3>Verify via Accompanying Text</h3>
+          <p>To ensure 100% accuracy, and eliminate manual verification, automatically verify barcode result with the accompanying text that usually appears below the product barcode.</p>
+          <p>Get the <a class="orangeLink" href="https://www.dynamsoft.com/barcode-reader/introduction/how-to-guide/set-custom-area-for-accompanying-texts.html">AccompanyingTextBytes</a> and compare it with the barcode result to guarantee that there is no room for mistakes.</p>
+        </div>
       </div>
     </td>
   </tr>
 </table>
 
-
-### Resist Wrinkles and Deformation on Packagings
-
-[2 images to be inserted here: soft packagings and deformed round bottles]
-
-Read product barcode on soft packagings and deformed round bottles accurately and quickly for accurate information lookup and faster self-checkout.
-
-Use [deformationResistingModes](https://www.dynamsoft.com/barcode-reader/parameters/scenario-settings/resist-deformation.html) to set the mode and priority for deformation resisting in order to read barcodes on deformed surfaces.
-
-### Remove Glares on Reflective Cans
-
-[image to be inserted here: glare from reflective surfaces]
-
-Grocery stores have a wide variety of products and often face issues like light glare from reflective surfaces such as from soda pop cans, condensation build up from frozen foods, and curved barcodes on canned goods.
-
-### Verify via Accompanying Text
-
-[images to be inserted here]
-
-To ensure 100% accuracy, and eliminate manual verification, automatically verify barcode result with the accompanying text that usually appears below the product barcode.
-
-Get the [AccompanyingTextBytes](https://www.dynamsoft.com/barcode-reader/introduction/how-to-guide/set-custom-area-for-accompanying-texts.html) and compare it with the barcode result to guarantee that there is no room for mistakes.
 
 ## Videos
 
