@@ -57,3 +57,8 @@ The barcode has long been used in retail and the possibilities for its use conti
 ## Videos
 
 [![how the barcode wrinkles are corrected](http://img.youtube.com/vi/fraXfsNqr24/0.jpg)](http://www.youtube.com/watch?v=fraXfsNqr24 "how the barcode wrinkles are corrected")
+
+## Case Studies
+
+![Multi-Billion Dollar Retailer Switched to Dynamsoft Barcode Reader SDK to Realize Consumer-Grade Barcode App Performance](https://www.dynamsoft.com/assets/images/img-banner/caseStudyImage/oceania-leading-retailer-case-study-banner.png)
+[Multi-Billion Dollar Retailer Switched to Dynamsoft Barcode Reader SDK to Realize Consumer-Grade Barcode App Performance](https://www.dynamsoft.com/Company/oceania-leading-retailer-case-study.aspx)
