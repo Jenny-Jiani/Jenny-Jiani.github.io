@@ -14,9 +14,9 @@ noTitleIndex: true
 
 ## User Stories
 
-<ul class="tabList">
-  <li class="on">Healthcare</li>
-  <li>Retail</li>
+<ul class="tabList clearfix">
+  <li class="on fl">Healthcare</li>
+  <li class="fl">Retail</li>
 </ul>
 <div class="tabContentList">
   <div class="tabContent on">
@@ -47,8 +47,6 @@ noTitleIndex: true
     </div>
   </div>
 </div>
-
-### Retail - Contactless Shopping
 
 ## Featured Content
 
