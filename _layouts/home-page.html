@@ -45,6 +45,16 @@
         integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
     <script>anchors.add();</script>
 
+    <script>
+        $('.tabList li').on('click', function() {
+            let index = $(this).index();
+            console.log($(this).index());
+            $('.tabList li').removeClass('on');
+            $('.tabList li').addClass('on');
+            $('.tabContentList .tabContent').removeClass('on');
+            $('.tabContentList .tabContent').eq(index).addClass('on');
+        })
+    </script>
 </body>
 
 </html>
