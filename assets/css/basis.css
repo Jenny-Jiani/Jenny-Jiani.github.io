@@ -883,3 +883,13 @@ i.dbr-white-logo { display: inline-block; width: 221px; height: 30px; background
 .card-item .imgBox { width: 100%; height: 200px; background: #ddd; }
 .card-item .card-content { padding: 20px; }
 
+.tabList { padding: 0; margin: 0; list-style: none; }
+.tabList li { display: inline-block; padding: 15px 30px; background: #ddd; color: #323234; }
+.tabList li.on { background: #f5f5f5; color: #999999;  }
+.tabContentList { padding: 50px 30px; }
+.tabContentList .tabContent { display: none; }
+.tabContentList .tabContent.on { display: block; }
+.tabDetail { width: 100%; }
+.tabDetail .descCnt { display: inline-block; width: 55%; }
+.tabDetail .imgCnt { display: inline-block; width: 45%; }
+.tabDetail .imgCnt img { width: 100%; }
