@@ -885,7 +885,7 @@ i.dbr-white-logo { display: inline-block; width: 221px; height: 30px; background
 .card-item .card-content { padding: 20px; }
 
 .h1Title { width: 750px; margin: 0 auto 20px; }
-.titleDescription { width: 1020px;font-size: 16px;margin: 0 auto 60px; }
+.titleDescription { width: 1020px;font-size: 16px;margin: 0 auto 60px !important; }
 .tabList { padding: 0; margin: 0; padding-left: 0 !important; margin-bottom: 0 !important; list-style: none; }
 .tabList li { display: inline-block; padding: 15px 30px; background: #ddd; color: #323234; vertical-align: top; margin-top: 0!important; font-family: Oswald; font-size: 20px; }
 .tabList li.on { background: #f5f5f5; color: #999999;  }
