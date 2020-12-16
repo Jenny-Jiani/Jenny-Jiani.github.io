@@ -15,24 +15,11 @@ noTitleIndex: true
 ## User Stories
 
 <ul class="tabList clearfix">
-  <li class="on fl">Healthcare</li>
-  <li class="fl">Retail</li>
+  <li class="fl on">Retail</li>
+  <li class="fl">Healthcare</li>
 </ul>
 <div class="tabContentList">
   <div class="tabContent on">
-    <h3>Healthcare - Track COVID-19 Diagnostic Samples</h3>
-    <div class="tabDetail clearfix">
-      <div class="descCnt fl">
-        <p>We have a customer that is a New York-based company that provides services related to COVID-19 diagnostic testing and other healthcare needs. It has done millions of COVID-19 tests, using barcoding technology to track the samples because accurate recording of COVID-19 diagnostic samples is paramount.</p>
-        <p>The key feature that the company requires in their application is 100% accuracy in a web-based barcode scanner. Also, for maximum customer reach, the barcode scanner needs to work on mobile and desktop browsers. The company validated Dynamsoft Barcode Reader against other offerings and found it was the best option. Dynamsoft’s javascript barcode SDK offers many benefits like, ease of implementation, flexible licensing, and ease of use.</p>
-        <p>With the help of the barcode SDK, the healthcare company designed their application quickly, in two weeks from the point of planning to actually making it available for use.</p>
-      </div>
-      <div class="imgCnt fl">
-        <img src="assets\user-story-vault-health.png" alt="user story of tracking COVID-19 diagnostic samples"/>
-      </div>
-    </div>
-  </div>
-  <div class="tabContent">
     <h3>Retail - Contactless Shopping</h3>
     <div class="tabDetail clearfix">
       <div class="descCnt fl">
@@ -46,6 +33,20 @@ noTitleIndex: true
       </div>
     </div>
   </div>
+  <div class="tabContent">
+    <h3>Healthcare - Track COVID-19 Diagnostic Samples</h3>
+    <div class="tabDetail clearfix">
+      <div class="descCnt fl">
+        <p>We have a customer that is a New York-based company that provides services related to COVID-19 diagnostic testing and other healthcare needs. It has done millions of COVID-19 tests, using barcoding technology to track the samples because accurate recording of COVID-19 diagnostic samples is paramount.</p>
+        <p>The key feature that the company requires in their application is 100% accuracy in a web-based barcode scanner. Also, for maximum customer reach, the barcode scanner needs to work on mobile and desktop browsers. The company validated Dynamsoft Barcode Reader against other offerings and found it was the best option. Dynamsoft’s javascript barcode SDK offers many benefits like, ease of implementation, flexible licensing, and ease of use.</p>
+        <p>With the help of the barcode SDK, the healthcare company designed their application quickly, in two weeks from the point of planning to actually making it available for use.</p>
+      </div>
+      <div class="imgCnt fl">
+        <img src="assets\user-story-vault-health.png" alt="user story of tracking COVID-19 diagnostic samples"/>
+      </div>
+    </div>
+  </div>
+  
 </div>
 
 ## Featured Content
@@ -84,13 +85,3 @@ noTitleIndex: true
     </td>
   </tr>
 </table>
-
-
-[How Barcodes Can Help in the Fight Against Covid-19](https://www.dynamsoft.com/blog/insights/how-barcodes-can-help-against-covid-19/)
-
-[Adapting Building Security to Get Back to Work During COVID-19](https://www.dynamsoft.com/blog/insights/adapting-building-security-get-back-to-work-during-covid-19/)
-
-[The Role of Barcode Technology in Retail](https://www.dynamsoft.com/blog/imaging/barcode/role-of-barcode-technology-in-retail/)
-
-[1]:assets\user-story-vault-health.png
-[2]:assets\Lee-Valley-Scan-Barcode.jpg =680x
