@@ -875,7 +875,7 @@ i.dbr-white-logo { display: inline-block; width: 221px; height: 30px; background
 }
 
 
-.card-table tr td { padding: 0 20px 0; border: 0; }
+.card-table tr td { padding: 0 20px 0 0; border: 0; }
 .card-table tr { border-top: 0!important; }
 .card-table tr:last-child td { border-bottom: 0!important; }
 .card-item { border: 1px solid #ddd; height: 100%; font-size: 16px; }
@@ -894,5 +894,23 @@ i.dbr-white-logo { display: inline-block; width: 221px; height: 30px; background
 .tabContentList .tabContent.on { display: block; }
 .tabDetail { width: 100%; }
 .tabDetail .descCnt { display: inline-block; width: 55%; padding-right: 50px; }
+.tabDetail .descCnt p { font-size: 16px; }
 .tabDetail .imgCnt { display: inline-block; width: 45%; padding-right: 10px; }
 .tabDetail .imgCnt img { width: 100%; box-shadow: 15px 16px 0px 0px #323234; }
+
+@media (max-width: 1679px) {
+    .h1Title { font-size: 36px!important; }
+    .tabDetail .descCnt p { font-size: 14px; }
+}
+
+@media (max-width: 1199px) {
+    .h1Title { width: 670px; margin: 0 auto 20px; font-size: 32px!important; }
+    .tabDetail .descCnt p { font-size: 14px; margin-bottom: 5px!important; }
+    .titleDescription { width: 720px; font-size: 14px; }
+    .tabDetail .descCnt { padding-right: 30px; }
+}
+
+@media (max-width: 991px) {
+    .tabDetail .descCnt { display: inline-block; width: 100%; padding-right: 0px; }
+    .tabDetail .imgCnt { display: none; }
+}
