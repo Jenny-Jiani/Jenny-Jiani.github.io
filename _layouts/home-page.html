@@ -50,7 +50,7 @@
             let index = $(this).index();
             console.log($(this).index());
             $('.tabList li').removeClass('on');
-            $('.tabList li').addClass('on');
+            $(this).addClass('on');
             $('.tabContentList .tabContent').removeClass('on');
             $('.tabContentList .tabContent').eq(index).addClass('on');
         })
