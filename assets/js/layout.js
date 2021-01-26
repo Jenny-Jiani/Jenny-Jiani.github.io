@@ -92,6 +92,7 @@ $(document).ready(function(){
     }
 
     $('.sideBarIcon').click(function() {
+        console.log('1111')
         $(".sideBar").toggleClass('hide-sm');
         $(".sideBar").toggleClass('hide-xs');
         setTimeout(function() {
