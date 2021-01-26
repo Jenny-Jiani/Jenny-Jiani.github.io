@@ -45,7 +45,7 @@ $(document).ready(function(){
                     $('#docHead').css({'top': ($('.subHeadWrapper').height() + 1) + 'px'});
                 } else {
                     $('.productMenu').css({'top': '0px'});
-                    $('#docHead').css({'top': ($('.productMenu').height() + 1) + 'px'});
+                    $('#docHead').css({'top': ($('.productMenu').height()) + 'px'});
                 }
                 $('.sideBar').css({'padding-top': '0px'})
                 $('.sideBar #sideBarCnt').addClass('sidebar-fixed')
