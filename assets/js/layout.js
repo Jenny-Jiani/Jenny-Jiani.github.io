@@ -27,8 +27,8 @@ $(document).ready(function(){
     }
 
     function realFunc() {
-            if (breakpoint() == 'lg') {
-                var subHeight = 0;
+        if (breakpoint() == 'lg') {
+            var subHeight = 0;
             if ($('.subHeadWrapper').length > 0) {
                 subHeight = $('.subHeadWrapper').height();
             } else {
