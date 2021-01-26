@@ -6,23 +6,15 @@
 <style>
     .markdown-body .editLinkColour { color: #323234; vertical-align: middle; height: 24px; line-height: 24px; display: inline-block; }
     .markdown-body .editLinkColour:hover { color: #616167; }
-    .homepageContainer {
-        min-height: calc(100vh - 165px);
-    }
-    @media (max-width: 767px) {
-        .homepageContainer {
-            min-height: calc(100vh - 144px);
-        }
-    }
 </style>
 
 <body>
     <div class="headWrapper">
         {%- include page_header.html -%}
     </div>
-    <div class="markdown-body homepageContainer container">
+    <div class="markdown-body container">
         <div class="row">
-            <div class="col-xs-12 col-xl-10 col-xl-offset-1">
+            <div class="col-xs-12 col-md-10 col-md-offset-1 col-xl-8 col-xl-offset-2">
                 <!-- <p class="pull-right">
                     {% capture sourceCodeUrl %}		
                     {% if page.url contains '.html' %}		
@@ -41,53 +33,10 @@
         {%- include page_footer.html -%}
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js"
+        integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
     <script>anchors.add();</script>
 
-    <script>
-        $('.tabList li').on('click', function() {
-            let index = $(this).index();
-            console.log($(this).index());
-            $('.tabList li').removeClass('on');
-            $(this).addClass('on');
-            $('.tabContentList .tabContent').removeClass('on');
-            $('.tabContentList .tabContent').eq(index).addClass('on');
-        })
-
-
-        $(function(){
-            // do something
-            // var script=document.createElement("script");
-            // script.type="text/javascript";
-            // script.src="js/translate.js";
-            // document.getElementsByTagName('head')[0].appendChild(script);
-            var value = sessionStorage.getItem("language");
-            document.onreadystatechange = function () {
-                if (document.readyState == 'complete') {
-                    if(value==="1"){
-                        Microsoft.Translator.Widget.Translate('zh-CHS', 'en', onProgress, onError, onComplete, onRestoreOriginal, 2000);
-                    }
-                }
-            }
-            function onProgress(value) {
-            }
-            function onError(error) {
-            }
-            function onComplete() {
-                $("#WidgetFloaterPanels").hide();
-            }
-            function onRestoreOriginal() {
-            }
-        });
-        function translate(){
-            var value = sessionStorage.getItem("language");
-            if(value==="1"){
-                sessionStorage.setItem("language", "0");
-            }else{
-                sessionStorage.setItem("language", "1");
-            }
-            window.location.reload();//刷新当前页面.
-        }
-    </script>
 </body>
 
 </html>

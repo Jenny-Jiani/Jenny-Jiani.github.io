@@ -1,11 +1,24 @@
 repositoryUrl: https://github.com/Jenny-Jiani/Jenny-Jiani.github.io/blob/master
-
+firstLevelUrl: /
+repository: Dynamsoft/web-twain-docs
 docFullPath: https://jenny-jiani.github.io/
-docHomePage: /use-cases/
-
-COVID-19: /use-cases/covid-19/
+productUrl: https://www.dynamsoft.com/Products/WebTWAIN_Overview.aspx
+productName: Dynamic Web TWAIN
+docHomePage: /
+dynamsoft_logo: /assets/img-icon/dynamsoft-logo.png
+dwt_logo: /assets/img-icon/dwt-logo.png
+edit_icon: /assets/img-icon/edit-icon.png
 
 assets: /assets/
+_includes: /_includes/
+_layouts: /_layouts/
+about: /about/
+getstarted: /getstarted/
+indepth: /indepth/
+info: /info/
+
+dynamsoft_logo: /assets/img-icon/dynamsoft-logo.png
+dbr_logo: /assets/img-icon/dbr-logo.png
 edit_icon: /assets/img-icon/edit-icon.png
 smile_icon: /assets/img-icon/icon-smile.png
 sad_icon: /assets/img-icon/icon-sad.png
@@ -13,6 +26,6 @@ dbr_icon: /assets/img-icon/icon-dbr.svg
 dwt_icon: /assets/img-icon/icon-dwt.svg
 dnt_icon: /assets/img-icon/icon-dnt.svg
 
-baseurl: "/"
-plugins:
-  - jemoji
+baseurl: /
+
+theme: jekyll-theme-cayman
