@@ -160,35 +160,18 @@ $(function(){
 
 	
 	$(document).click(function(){
-		/*header*/
-		$("#xsNav").slideUp('fast');
-		$("#xsHeader .xsMenuToggle .open").show();
-		$("#xsHeader .xsMenuToggle .close").hide();
-		setTimeout(function(){
-			$("#xsNav .products").show(); 
-			$("#xsNav .xsNavToggle .fa").removeClass("fa-caret-down").addClass("fa-caret-up");
-		},200);
-		$("#subMenu").slideUp('fast');
-		$("#menuMask").hide();
-		$('.headSubMenu').slideUp(300);
-		$("#mdMenu li").removeClass('on');
-		$('body').removeClass('overviewHidden');
-		$('.mobileProductDetailMenu').slideUp();
-		$('.ct-more').slideUp().removeClass('on');
+		 /*header*/
+		 $("#mdMenu li").removeClass('on');
+		 $('.headSubMenu').slideUp(300);
+		 $("#subMenu").slideUp();
+		 $("#menuMask").hide();
+		 $('body').removeClass('overviewHidden');
+		 $('.mobileProductDetailMenu').slideUp();
+		 $('.ct-more').slideUp().removeClass('on');
 
-		/*subNav*/
-		if(breakpoint()=='xs'){
-			$("#subNav .ct-list").slideUp();
-		}
-		$("#subNav .subNav-xsToggle").removeClass('on');
-		$("#subNav .subNav-xsToggle .fa").addClass('fa-caret-right').removeClass('fa-caret-down');
-		$("#subNav .ct-list > li").removeClass('on');
-		$("#subNav .ct-list > li ul.ct-more").slideUp();
-		$("#subNav .ct-list > li .subNav-toggle i.show-xs").addClass('fa-angle-down').removeClass('fa-angle-up');
-		/*smSearch*/
-		$("#smSearch .smSearchSubmit").hide();
-		$("#smSearch input[type='text']").hide();
-		$("#smSearch .smSearchToggle").show();	
+		 $('.header-signin .userbox-more').slideUp('fast');
+
+		 $('.showMenuMore').removeClass('on');
 	});
 
 	$("#xsHeader .xsMenuToggle, #xsNav, #smHeader .smMenuToggle, #smSearch, #mdMenu .mdMenuToggle, #subMenu, #subNav .subNav-xsToggle, #subNav .ct-list, .header-signin, .showMenuMore, .mobileProductMenu .productLogo, mobileProductDetailMenu").bind('click', function (e) {
