@@ -10,7 +10,7 @@ $(document).ready(function(){
 
     function init() {
         var subHeight = 0;
-        if ($('.subHeadWrapper').length() > 0) {
+        if ($('.subHeadWrapper').length > 0) {
             subHeight = $('.subHeadWrapper').height();
         } else {
             subHeight = $('.productMenu').height();
@@ -29,7 +29,7 @@ $(document).ready(function(){
     function realFunc() {
             if (breakpoint() == 'lg') {
                 var subHeight = 0;
-            if ($('.subHeadWrapper').length() > 0) {
+            if ($('.subHeadWrapper').length > 0) {
                 subHeight = $('.subHeadWrapper').height();
             } else {
                 subHeight = $('.productMenu').height();
@@ -40,7 +40,7 @@ $(document).ready(function(){
             var clientHeight = document.body.clientHeight
             if (sd >= $('#overall-header').height()) {
                 // head and sidebar fixed
-                if ($('.subHeadWrapper').length() > 0) {
+                if ($('.subHeadWrapper').length > 0) {
                     $('.subHeadWrapper').css({'top': '0px'});
                     $('#docHead').css({'top': ($('.subHeadWrapper').height() + 1) + 'px'});
                 } else {
@@ -60,7 +60,7 @@ $(document).ready(function(){
                 }
             } else {
                 // head and sidebar fixed
-                if ($('.subHeadWrapper').length() > 0) {
+                if ($('.subHeadWrapper').length > 0) {
                     $('.subHeadWrapper').css({'top': ($('#overall-header').height()-sd) + 'px'})
                     $('.sideBar').css({'padding-top': $('.subHeadWrapper').height() + 'px'})
                 } else {
