@@ -1,14 +1,4 @@
-{%- if page.url contains '/zh/' -%}
-    {%- assign products = site.data.zh.text.products -%}
-    {%- assign client = site.data.zh.text.client -%}
-    {%- assign company = site.data.zh.text.company -%}
-    {%- assign homelink = '/zh/' -%}
-{%- else -%}
-    {%- assign products = site.data.text.products -%}
-    {%- assign client = site.data.text.client -%}
-    {%- assign company = site.data.text.company -%}
-    {%- assign homelink = '/' -%}
-{%- endif -%}
+{%- assign historyRecode = "123" -%}
 
 <div id="dynamsoft-header">
     <div id="overall-header">
@@ -140,12 +130,12 @@
                         <a class="ds-logo" href="https://www.dynamsoft.com"></a>
                         <ul id="mdMenu" class="clearfix">
                             <li>
-                                <a class="mdMenuToggle proMenu textUpperCase" href="javascript:void(0);">{{products}} <i class="icon-orange-angle"></i></a>
+                                <a class="mdMenuToggle proMenu textUpperCase" href="javascript:void(0);">{{historyRecode}} <i class="icon-orange-angle"></i></a>
                             </li>
                             <li class="hide-md">
-                                <a class="textUpperCase" href="https://www.dynamsoft.com/Company/Customers.aspx?Category=UserList">{{client}}</a>
+                                <a class="textUpperCase" href="https://www.dynamsoft.com/Company/Customers.aspx?Category=UserList">{{historyRecode}}</a>
                             </li>
-                            <li style="margin-right: 0!important;"><a class="mdMenuToggle companyMenu textUpperCase" href="javascript:void(0);">{{company}} <i class="icon-orange-angle"></i></a></li>
+                            <li style="margin-right: 0!important;"><a class="mdMenuToggle companyMenu textUpperCase" href="javascript:void(0);">{{historyRecode}} <i class="icon-orange-angle"></i></a></li>
                             <div id="cp-header">
                                 <div id="CPHeader-Container">
                                     <ul id="action-nav">
