@@ -2,15 +2,15 @@
 layout: default-layout
 needAutoGenerateSidebar: true
 noTitleIndex: true
-title: About Dynamic Web TWAIN
-keywords: Dynamic Web TWAIN, TWAIN, About, Documentation
-breadcrumbText: About
+title: 关于 Dynamic Web TWAIN
+keywords: Dynamic Web TWAIN, TWAIN, 介绍, 文档
+breadcrumbText: 介绍
 description: Dynamic Web TWAIN SDK Documentation About Page
 ---
 
-# About the docs
+# 关于文件
 
-These docs aim to help you learn and use the Dynamic Web TWAIN library. They will help you integrate the library into your app no matter whether you are building a workflow from scratch or optimzing an existing workflow.
+这些文档旨在帮助您学习和使用动态Web TWAIN库。无论您是从头开始构建工作流还是优化现有工作流，它们都将帮助您将库集成到应用程序中。
 
 ## Introduction to Dynamic Web TWAIN
 

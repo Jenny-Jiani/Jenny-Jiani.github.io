@@ -1,22 +1,22 @@
 ---
 layout: home-page
-title: Dynamic Web TWAIN SDK Documentation
-keywords: Dynamic Web TWAIN, TWAIN, documentation
-breadcrumbText: HomePage
+title: Dynamic Web TWAIN SDK 文档
+keywords: Dynamic Web TWAIN, TWAIN, 文档
+breadcrumbText: 主页
 description: Dynamic Web TWAIN SDK Documentation Homepage
 ---
 
-# Dynamic Web TWAIN Documentation  
+# Dynamic Web TWAIN 文档
 
-* [About]({{site.about}}index.html)
+* [关于]({{site.about}}index.html)
 
-   - [Features]({{site.about}}features.html)
-   - [Resources]({{site.about}}resources.html)
-   - [License]({{site.about}}license.html)
-   - [FAQs]({{site.about}}faqs.html)
-   - [Support]({{site.about}}getsupport.html)
+   - [特征]({{site.about}}features.html)
+   - [资源]({{site.about}}resources.html)
+   - [证书]({{site.about}}license.html)
+   - [常见问题解答]({{site.about}}faqs.html)
+   - [支持]({{site.about}}getsupport.html)
 
-* [Getting Started]({{site.getstarted}}index.html)
+* [开始使用]({{site.getstarted}}index.html)
 
    - [HelloWorld]({{site.getstarted}}helloworld.html)
    - [Hardware]({{site.getstarted}}hardware.html)
