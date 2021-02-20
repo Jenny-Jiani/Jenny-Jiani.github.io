@@ -2,6 +2,11 @@
 {%- assign client = "Clients" -%}
 {%- assign company = "Company" -%}
 
+{%- if page.url contains '/zh/' -%}
+    {%- assign products = "产品" -%}
+    {%- assign client = "客户" -%}
+    {%- assign company = "公司" -%}
+{%- endif -%}
 
 <div id="dynamsoft-header">
     <div id="overall-header">
