@@ -1,9 +1,13 @@
 $(document).ready(function(){
-    init()
+    init();
+    var sd = $(window).scrollTop();
+    if(sd > 0) {
+        realFunc();
+    }
 
     $(window).resize(function() {
-        init()
-        realFunc()
+        init();
+        realFunc();
     })
 
     window.addEventListener('scroll', realFunc);
@@ -92,7 +96,6 @@ $(document).ready(function(){
     }
 
     $('.sideBarIcon').click(function() {
-        console.log('1111')
         $(".sideBar").toggleClass('hide-sm');
         $(".sideBar").toggleClass('hide-xs');
         setTimeout(function() {
