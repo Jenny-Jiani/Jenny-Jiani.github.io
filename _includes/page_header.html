@@ -1,12 +1,12 @@
 {% if page.url contains '/zh/' %}
-{% assign products=site.data.zh.text.products %}
-{% assign client=site.data.zh.text.client %}
-{% assign company=site.data.zh.text.company %}
+{% assign products=site.zh.text.products %}
+{% assign client=site.zh.text.client %}
+{% assign company=site.zh.text.company %}
 {% assign homelink='/zh/' %}
 {% else %}
-{% assign products=site.data.text.products %}
-{% assign client=site.data.text.client %}
-{% assign company=site.data.text.company %}
+{% assign products=site.text.products %}
+{% assign client=site.text.client %}
+{% assign company=site.text.company %}
 {% assign homelink='/' %}
 {% endif %}
 
