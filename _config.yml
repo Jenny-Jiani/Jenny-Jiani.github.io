@@ -29,3 +29,9 @@ dnt_icon: /assets/img-icon/icon-dnt.svg
 baseurl: /
 
 theme: jekyll-theme-cayman
+
+
+collections:
+  zh:
+    output: true
+    permalink: /:collection/:path
