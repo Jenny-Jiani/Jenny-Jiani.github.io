@@ -1,6 +1,7 @@
 {%- assign products = "Products" -%}
 {%- assign client = "Clients" -%}
 {%- assign company = "Company" -%}
+{%- assign companyTest = site.data.i18n['cn'].products -%}
 
 {%- if page.url contains '/zh/' -%}
     {%- assign products = "产品" -%}
@@ -167,7 +168,7 @@
                 <div id="companySubMenu" class="clearfix hide-sm headSubMenu">
                     <i class="icon-orange-angle"></i>
                     <ul class="subMenuList">
-                        <li class="item"><a href="https://www.dynamsoft.com/company/about">ABOUT US</a></li>
+                        <li class="item"><a href="https://www.dynamsoft.com/company/about">{{companyTest}}</a></li>
                         <li class="item"><a href="https://www.dynamsoft.com/company/contact">CONTACT US</a></li>
                         <li class="item"><a href="https://www.dynamsoft.com/company/careers">CAREERS</a></li>
                         <li class="item"><a href="https://www.dynamsoft.com/company/news">NEWS</a></li>
