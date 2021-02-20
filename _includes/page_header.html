@@ -1,21 +1,20 @@
-{% assign products='Products' %}
-{% assign client='Client' %}
-{% assign company= 'Company' %}
-{% assign homelink='/' %}
+{%- assign products='Products' -%}
+{%- assign client='Client' -%}
+{%- assign company= 'Company' -%}
+{%- assign homelink='/' -%}
 
-{% if page.url contains '/zh/' %}
-    {% products=site.data.zh.text.products %}
-    {% assign client=site.data.zh.text.client %}
-    {% assign company=site.data.zh.text.company %}
-    {% assign homelink='/zh/' %}
-{% else %}
-    {% products=site.data.text.products %}
-    {% assign client=site.data.text.client %}
-    {% assign company=site.data.text.company %}
-    {% assign homelink='/' %}
-{% endif %}
+{%- if page.url contains '/zh/' -%}
+    {%- products=site.data.zh.text.products -%}
+    {%- assign client=site.data.zh.text.client -%}
+    {%- assign company=site.data.zh.text.company -%}
+    {%- assign homelink='/zh/' -%}
+{%- else %}
+    {%- products=site.data.text.products -%}
+    {%- assign client=site.data.text.client -%}
+    {%- assign company=site.data.text.company -%}
+    {%- assign homelink='/' -%}
+{%- endif -%}
 
-{{site}}
 <div id="dynamsoft-header">
     <div id="overall-header">
         <!--xs-header-->
