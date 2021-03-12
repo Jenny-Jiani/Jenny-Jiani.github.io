@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en-US">
+{%- include head.html -%}
+<body>
+    <div class="headWrapper">
+        {%- include page_header.html -%}
+    </div>
+    {%- include dwtNav.html -%}
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+              {{ content }}
+            </div>
+        </div>
+    </div>
+
+    <div class="history list">
+        <div class="container">
+            <div class="col-xs-12">
+                {%- include liquid_autoGenerateHistoryList.html -%}
+                {%- include version-list.html -%}
+            </div>
+        </div>
+    </div>
+  
+    <div id="footerWrapper">
+        {%- include page_footer.html -%}
+    </div>
+
+    <script type="text/javascript">anchors.add();</script>
+</body>
+
+</html>

@@ -35,3 +35,16 @@ collections:
   zh:
     output: true
     permalink: /:collection/:path
+  blogs:
+    output: true
+    premalink: /:path
+
+pagination:
+  collection: blogs
+  enabled: true
+  debug: false
+  title: ':title - 奚西溪的小天地'
+  per_page: 10
+  permalink: '/page/:num'
+  sort_field: 'date'
+  sort_reverse: true
