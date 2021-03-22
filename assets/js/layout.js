@@ -1,13 +1,14 @@
 $(document).ready(function(){
     init();
-    var sd = $(window).scrollTop();
+
+    var sd = $(window).scrollTop()
     if(sd > 0) {
-        realFunc();
+        realFunc()
     }
 
     $(window).resize(function() {
-        init();
-        realFunc();
+        init()
+        realFunc()
     })
 
     window.addEventListener('scroll', realFunc);
@@ -22,8 +23,8 @@ $(document).ready(function(){
         var menuHeight = $('#overall-header').height() + subHeight;
         $('#sideBarCnt').css({'width': $('.sideBar').width() + 'px'});
         $('.container .head').css({'width': $('.docContainer').width() + 'px'});
-        $('#fullTreeMenuListContainer').css({'height': 'calc(100vh - '+(menuHeight + 115) +'px);'});
-        $('.rightSideMenu').css({'height': 'calc(100vh - '+(menuHeight + 115)+'px);'});
+        $('#fullTreeMenuListContainer').css({'height': 'calc(100vh - '+(menuHeight + 120) +'px)'});
+        $('.rightSideMenu').css({'height': 'calc(100vh - '+(menuHeight + 195)+'px)'});
         if ($('.docContainer').height() + menuHeight >= document.body.clientHeight) {
             $('.history').addClass('history-fixed');
             $('#footerWrapper').css({'margin-top': '48px'});
@@ -40,8 +41,8 @@ $(document).ready(function(){
             }
             var menuHeight = $('#overall-header').height() + subHeight;
             var sd = $(window).scrollTop();
-            var dcHeight = $('.docContainer').height() + menuHeight - sd
-            var clientHeight = document.body.clientHeight
+            var dcHeight = $('.docContainer').height() + menuHeight - sd;
+            var clientHeight = document.body.clientHeight;
             if (sd >= $('#overall-header').height()) {
                 // head and sidebar fixed
                 if ($('.subHeadWrapper').length > 0) {
@@ -51,47 +52,46 @@ $(document).ready(function(){
                     $('.productMenu').css({'top': '0px'});
                     $('#docHead').css({'top': ($('.productMenu').height()) + 'px'});
                 }
-                $('.sideBar').css({'padding-top': '0px'})
-                $('.sideBar #sideBarCnt').addClass('sidebar-fixed')
-                $('.rightSideMenu').addClass('rsm-fixed')
+                $('.sideBar').css({'padding-top': '0px'});
+                $('.sideBar #sideBarCnt').addClass('sidebar-fixed');
+                $('.rightSideMenu').addClass('rsm-fixed');
                 if (dcHeight + 48 > clientHeight) {
                     // history fixed
-                    $('.history').addClass('history-fixed')
-                    $('#footerWrapper').css({'margin-top': '48px'})
+                    $('.history').addClass('history-fixed');
+                    $('#footerWrapper').css({'margin-top': '48px'});
                 } else {
-                    $('.history').removeClass('history-fixed')
-                    $('#footerWrapper').css({'margin-top': '0px'})
+                    $('.history').removeClass('history-fixed');
+                    $('#footerWrapper').css({'margin-top': '0px'});
                 }
             } else {
                 // head and sidebar fixed
                 if ($('.subHeadWrapper').length > 0) {
-                    $('.subHeadWrapper').css({'top': ($('#overall-header').height()-sd) + 'px'})
-                    $('.sideBar').css({'padding-top': $('.subHeadWrapper').height() + 'px'})
+                    $('.subHeadWrapper').css({'top': ($('#overall-header').height()-sd) + 'px'});
+                    $('.sideBar').css({'padding-top': $('.subHeadWrapper').height() + 'px'});
                 } else {
-                    $('.productMenu').css({'top': ($('#overall-header').height()-sd) + 'px'})
-                    $('.sideBar').css({'padding-top': $('.productMenu').height() + 'px'})
+                    $('.productMenu').css({'top': ($('#overall-header').height()-sd) + 'px'});
+                    $('.sideBar').css({'padding-top': $('.productMenu').height() + 'px'});
                 }
-
-                $('#docHead').css({'top': (menuHeight-sd)+1 + 'px'})
-                $('.sideBar #sideBarCnt').removeClass('sidebar-fixed')
-                $('.rightSideMenu').removeClass('rsm-fixed')
+                $('#docHead').css({'top': (menuHeight-sd)+1 + 'px'});
+                $('.sideBar #sideBarCnt').removeClass('sidebar-fixed');
+                $('.rightSideMenu').removeClass('rsm-fixed');
 
                 // history fixed
                 if (sd < $('#overall-header').height() && dcHeight + 48 > clientHeight) {
                     if (!$('.history').hasClass('history-fixed')) {
-                        $('.history').addClass('history-fixed')
-                        $('#footerWrapper').css({'margin-top': '48px'})
+                        $('.history').addClass('history-fixed');
+                        $('#footerWrapper').css({'margin-top': '48px'});
                     }
                 } else {
-                    $('.history').removeClass('history-fixed')
-                    $('#footerWrapper').css({'margin-top': '0px'})
+                    $('.history').removeClass('history-fixed');
+                    $('#footerWrapper').css({'margin-top': '0px'});
                 }
             }
         } else {
-            $('.subHeadWrapper').css({'top': 'unset'})
-            $('.productMenu').css({'top': 'unset'})
-            $('#docHead').css({'top': 'unset'})
-            $('.sideBar').css({'padding-top': '20px'})
+            $('.subHeadWrapper').css({'top': 'unset'});
+            $('.productMenu').css({'top': 'unset'});
+            $('#docHead').css({'top': 'unset'});
+            $('.sideBar').css({'padding-top': '20px'});
         }
     }
 
@@ -99,22 +99,22 @@ $(document).ready(function(){
         $(".sideBar").toggleClass('hide-sm');
         $(".sideBar").toggleClass('hide-xs');
         setTimeout(function() {
-            $('#sideBarCnt').css({'width': $('.sideBar').width() + 'px'})
+            $('#sideBarCnt').css({'width': $('.sideBar').width() + 'px'});
         }, 100)
     })
 
     $(document).click(function(){
-        $('.otherVersions').hide()
-        $('.fullVersionInfo').hide()
+        $('.otherVersions').hide();
+        $('.fullVersionInfo').hide();
     })
 
     $('.changeBtn').on('click', function(e) {
-        $('.otherVersions').toggle()
+        $('.otherVersions').toggle();
         stopPropagation(e);
     })
 
     $('.fvChange').on('click', function(e) {
-        $('.fullVersionInfo').toggle()
+        $('.fullVersionInfo').toggle();
         stopPropagation(e);
     })
 })

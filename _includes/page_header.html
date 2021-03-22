@@ -1,13 +1,3 @@
-{%- assign products = "Products" -%}
-{%- assign client = "Clients" -%}
-{%- assign company = "Company" -%}
-
-{%- if page.url contains '/zh/' -%}
-    {%- assign products = site.data.i18n['cn'].products -%}
-    {%- assign client = site.data.i18n['cn'].client -%}
-    {%- assign company = site.data.i18n['cn'].company -%}
-{%- endif -%}
-
 <div id="dynamsoft-header">
     <div id="overall-header">
         <!--xs-header-->
@@ -92,7 +82,7 @@
                                     </div>
                                 </li>
                                 <li class="menuItem">
-                                    <div class="menuName textUpperCase"><a href="https://www.dynamsoft.com/Support/How-to-purchase-Dynamsoft-products.aspx">Client</a></div>
+                                    <div class="menuName textUpperCase"><a href="https://www.dynamsoft.com/Support/How-to-purchase-Dynamsoft-products.aspx">Clients</a></div>
                                 </li>
                                 <li class="menuItem">
                                     <div class="menuName textUpperCase" style="cursor: pointer;">Company <i class="icon-orange-angle"></i></div>
@@ -100,10 +90,10 @@
                                         <div class="subMenus">
                                             <div class="menu-left" style="margin-top: 20px;border-right: 0;">
                                                 <ul class="subMenuList">
-                                                    <li class="item"><a href="https://www.dynamsoft.com/company/about">ABOUT US</a></li>
-                                                    <li class="item"><a href="https://www.dynamsoft.com/company/contact">CONTACT US</a></li>
-                                                    <li class="item"><a href="https://www.dynamsoft.com/company/careers">CAREERS</a></li>
-                                                    <li class="item"><a href="https://www.dynamsoft.com/company/news">NEWS</a></li>
+                                                    <li class="item"><a href="https://www.dynamsoft.com/Company/AboutDynamsoft.aspx">ABOUT US</a></li>
+                                                    <li class="item"><a href="https://www.dynamsoft.com/Company/Contact.aspx">CONTACT US</a></li>
+                                                    <li class="item"><a href="https://www.dynamsoft.com/Company/Careers.aspx">CAREERS</a></li>
+                                                    <li class="item"><a href="https://www.dynamsoft.com/Company/news.aspx">NEWS</a></li>
                                                     <li class="item"><a href="https://www.dynamsoft.com/blog">BLOG</a></li>
                                                 </ul>
                                             </div>
@@ -138,22 +128,22 @@
                         <a class="ds-logo" href="https://www.dynamsoft.com"></a>
                         <ul id="mdMenu" class="clearfix">
                             <li>
-                                <a class="mdMenuToggle proMenu textUpperCase" href="javascript:void(0);">{{products}} <i class="icon-orange-angle"></i></a>
+                                <a class="mdMenuToggle proMenu textUpperCase" href="javascript:void(0);">Products <i class="icon-orange-angle"></i></a>
                             </li>
                             <li class="hide-md">
-                                <a class="textUpperCase" href="https://www.dynamsoft.com/Company/Customers.aspx?Category=UserList">{{client}}</a>
+                                <a class="textUpperCase" href="https://www.dynamsoft.com/Company/Customers.aspx?Category=UserList">Clients</a>
                             </li>
-                            <li style="margin-right: 0!important;"><a class="mdMenuToggle companyMenu textUpperCase" href="javascript:void(0);">{{company}} <i class="icon-orange-angle"></i></a></li>
-                            <div id="cp-header">
+                            <li style="margin-right: 0!important;"><a class="mdMenuToggle companyMenu textUpperCase" href="javascript:void(0);">Company <i class="icon-orange-angle"></i></a></li>
+                            <!-- <div id="cp-header">
                                 <div id="CPHeader-Container">
                                     <ul id="action-nav">
                                         <li class="action-buttons">
-                                            <a class="textUpperCase fontOswald orangeBgBtn"  style="transition:ease-in 0.2s all" href="https://www.dynamsoft.com/Downloads/Downloads.aspx">Download Free Trail</a>
+                                            <a class="textUpperCase fontOswald orangeBgBtn"  style="transition:ease-in 0.2s all" href="https://www.dynamsoft.com/downloads">Download Free Trial</a>
                                             <a class="textUpperCase fontOswald orangeBorderBtn" href="https://www.dynamsoft.com/Support/How-to-purchase-Dynamsoft-products.aspx">Buy Now</a>
                                         </li>
                                     </ul>
                                 </div>
-                            </div>
+                            </div> -->
                         </ul>
                     </div>
                 </div>
@@ -167,10 +157,10 @@
                 <div id="companySubMenu" class="clearfix hide-sm headSubMenu">
                     <i class="icon-orange-angle"></i>
                     <ul class="subMenuList">
-                        <li class="item"><a href="https://www.dynamsoft.com/company/about">ABOUT US</a></li>
-                        <li class="item"><a href="https://www.dynamsoft.com/company/contact">CONTACT US</a></li>
-                        <li class="item"><a href="https://www.dynamsoft.com/company/careers">CAREERS</a></li>
-                        <li class="item"><a href="https://www.dynamsoft.com/company/news">NEWS</a></li>
+                        <li class="item"><a href="https://www.dynamsoft.com/Company/AboutDynamsoft.aspx">ABOUT US</a></li>
+                        <li class="item"><a href="https://www.dynamsoft.com/Company/Contact.aspx">CONTACT US</a></li>
+                        <li class="item"><a href="https://www.dynamsoft.com/Company/Careers.aspx">CAREERS</a></li>
+                        <li class="item"><a href="https://www.dynamsoft.com/Company/news.aspx">NEWS</a></li>
                         <li class="item"><a href="https://www.dynamsoft.com/blog">BLOG</a></li>
                     </ul>
                 </div>
@@ -229,7 +219,7 @@
                                 </div>
                                 <div class="subProduct">
                                     <a href="https://www.dynamsoft.com/Products/direct-part-marking.aspx">
-                                        <div class="title fontOswald textUpperCase">Direct Park Marking</div>
+                                        <div class="title fontOswald textUpperCase">Direct Part Marking</div>
                                         <div class="intro">DPM scanning SDK for etched Data Matrix codes</div>
                                     </a>
                                 </div>

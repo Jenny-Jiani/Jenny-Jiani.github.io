@@ -1,24 +1,65 @@
 repositoryUrl: https://github.com/Jenny-Jiani/Jenny-Jiani.github.io/blob/master
-firstLevelUrl: /
-repository: Dynamsoft/web-twain-docs
+repository: /
 docFullPath: https://jenny-jiani.github.io/
-productUrl: https://www.dynamsoft.com/Products/WebTWAIN_Overview.aspx
-productName: Dynamic Web TWAIN
-docHomePage: /
-dynamsoft_logo: /assets/img-icon/dynamsoft-logo.png
-dwt_logo: /assets/img-icon/dwt-logo.png
-edit_icon: /assets/img-icon/edit-icon.png
+firstLevelUrl: /
+docHomePage: /programming/
+
+productUrl: https://www.dynamsoft.com/Products/Dynamic-Barcode-Reader.aspx
+productName: Dynamsoft Barcode Reader
+
+introduction: /introduction/
+programming: /programming/
+parameters: /parameters/
+license_activation: /license-activation/
+enhancements: /enhancements/
+
+comparison_tools: /introduction/comparison-tools/
+
+c_cplusplus: /programming/c-cplusplus/
+structs: /programming/c-cplusplus/struct/
+
+c: /programming/c/
+c_api: /programming/c/api-reference/
+c_methods: /programming/c/api-reference/methods/
+c_release_notes: /programming/c/release-notes/
+
+cpp: /programming/cplusplus/
+cpp_api: /programming/cplusplus/api-reference/
+cpp_methods: /programming/cplusplus/api-reference/cbarcodereader-methods/
+cpp_release_notes: /programming/cplusplus/release-notes/
+
+js: /programming/javascript/
+js_api: /programming/javascript/api-reference/
+js_release_notes: /programming/javascript/release-notes/
+
+dotnet: /programming/dotnet/
+dotnet_api: /programming/dotnet/api-reference/
+dotnet_release_notes: /programming/dotnet/release-notes/
+
+oc: /programming/objectivec-swift/
+oc_api: /programming/objectivec-swift/api-reference/
+oc_release_notes: /programming/objectivec-swift/release-notes/
+
+java: /programming/java/
+java_api: /programming/java/api-reference/
+java_release_notes: /programming/java/release-notes/
+
+android: /programming/android/
+android_api: /programming/android/api-reference/
+android_release_notes: /programming/android/release-notes/
+  
+python: /programming/python/
+python_api: /programming/python/api-reference/
+python_release_notes: /programming/python/release-notes/
+
+parameters_reference: /parameters/reference/
+scenario_settings: /parameters/scenario-settings/
+enumerations: /parameters/enum/
+
+faqs: /introduction/faqs.html
+how_to: /introduction/how-to-guide/
 
 assets: /assets/
-_includes: /_includes/
-_layouts: /_layouts/
-about: /about/
-getstarted: /getstarted/
-indepth: /indepth/
-info: /info/
-
-dynamsoft_logo: /assets/img-icon/dynamsoft-logo.png
-dbr_logo: /assets/img-icon/dbr-logo.png
 edit_icon: /assets/img-icon/edit-icon.png
 smile_icon: /assets/img-icon/icon-smile.png
 sad_icon: /assets/img-icon/icon-sad.png
@@ -26,6 +67,6 @@ dbr_icon: /assets/img-icon/icon-dbr.svg
 dwt_icon: /assets/img-icon/icon-dwt.svg
 dnt_icon: /assets/img-icon/icon-dnt.svg
 
-baseurl: /
-
-theme: jekyll-theme-cayman
+baseurl: ""
+plugins:
+  - jemoji

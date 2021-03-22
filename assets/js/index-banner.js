@@ -10,9 +10,7 @@ function GenerateContentByHead(needh3 = true) {
         // }
         for (var i = 0; i < h2_list.length; i++) {
             var curH2Text = $(h2_list[i]).text();
-            var curH2Href = curH2Text.replace(/\s+/g, '-');
-            curH2Href = curH2Href.replace(/[/#:\\\[\]@$^();,`"'|.&]/g, "");
-            curH2Href = curH2Href.toLowerCase();
+            var curH2Href =  $(h2_list[i]).attr("id");
             var curliContent = '<li style="list-style-image: none; list-style-type: circle;"><a href="#' + curH2Href + '" class="otherLinkColour">' + curH2Text + '</a>';
             if (needh3) {
                 var h3_list = $(h2_list[i]).nextUntil(h2_list[i + 1], "h3");
@@ -20,15 +18,13 @@ function GenerateContentByHead(needh3 = true) {
                     curliContent += '<ul name="listLevel2">';
                     for (var j = 0; j < h3_list.length; j++) {
                         var curH3Text = $(h3_list[j]).text();
-                        var curH3Href = curH3Text.replace(/\s+/g, '-');
-                        curH3Href = curH3Href.replace(/[/#:\\\[\]@$^();,`"'|.&]/g, "");
-                        curH3Href = curH3Href.toLowerCase();
+                        var curH3Href = $(h3_list[j]).attr("id");
                         curliContent += '<li style="list-style-image: none; list-style-type: disc;"><a href="#' + curH3Href + '" class="otherLinkColour">' + curH3Text + '</a></li>';
                     }
-                    curliContent += '</ul>';
+                    curliContent += '</ul>'
                 }
             }
-            curliContent += '</li>';
+            curliContent += '</li>'
             appendContent += curliContent;
         }
         appendContent += '</ul>'
@@ -157,6 +153,28 @@ function HighlightCurrentListForFullTree(searchListId, firstTime, searchUrl = do
                         // }
 
                         if (firstTime) {
+                            var crumbul = $($('#crumbs')).children("ul")
+                            if (crumbul.length != 0) {
+                                var parentsLi = $(curLi).parents("li");
+                                var appendText = "";
+                                if (parentsLi.length > 0) {
+                                    for (var j = parentsLi.length - 1; j >= 0 ; j--) {
+                                        var tmpATag = $(parentsLi[j]).children("a");
+                                        if (tmpATag.length > 0) {
+                                            appendText += '<li><a class="bluelink" href = "' + tmpATag[0].href + '">'+ tmpATag[0].textContent + '</a></li>';
+                                        }
+                                    }
+                                }
+
+                                var childUl = $(curLi).children("ul");
+                                if (childUl.length > 0) {
+                                    appendText += '<li><a class="bluelink" href = "' + curListATag[0].href + '">'+ curListATag[0].textContent + '</a></li>';
+                                }
+                                else {
+                                    appendText += '<li id="breadcrumbLastNode">' + curListATag[0].textContent + '</li>'
+                                }
+                                $(crumbul[0]).append(appendText);
+                            }
                             var parentsUL = $(curLi).parents("ul");
                             for (var j = 0, lenUL = parentsUL.length; j < lenUL; j++) {
                                 var curUL =  parentsUL[j];
@@ -209,12 +227,6 @@ function HighlightCurrentListForFullTree(searchListId, firstTime, searchUrl = do
                                 // parentsLi[j].style.listStyleImage = "url('/assets/img-icon/expand-list.png')";
                             }
 
-                            var breadcrumbLastNode = document.getElementById("breadcrumbLastNode");
-                            if (breadcrumbLastNode != null)
-                            {
-                                breadcrumbLastNode.textContent = curListATag[0].textContent;
-                            }
-
                             break;
                         }               
                     }
@@ -228,9 +240,15 @@ function HighlightCurrentListForFullTree(searchListId, firstTime, searchUrl = do
 }
 
 function UrlSearch(docUrl, listUrl) {
+    docUrl = docUrl.toLowerCase();
+    listUrl = listUrl.toLowerCase();
+
+    docUrl = docUrl.replace(/\/index.html/g,"/");
+    listUrl = listUrl.replace(/\/index.html/g,"/");
+
     var docUrlWithParam = getUrlVars(docUrl)["src"];
     var listUrlWithParam = getUrlVars(listUrl)["src"];
-
+    
     var tmpExp = new RegExp('programming/c-cplusplus/$')
     if (tmpExp.exec(docUrl) != null){
         docUrl = docUrl.substring(0, docUrl.indexOf("c-cplusplus/"));
@@ -299,19 +317,15 @@ function getUrlVars(inputUrl) {
 function UsefulRecord(isUseful) {
     var encodeUrl = encodeURIComponent(document.URL);
     if (isUseful) {
-        $.get("https://www.dynamsoft.com/Secure/Rate.ashx?paper="+encodeUrl+"&product=DBR-Doc&rate=5", function(data, status) {
-            var feedbackTag = document.getElementById("feedbackFooter");
-            if(feedbackTag!=null) {
-                feedbackTag.innerHTML = "Thanks!";
-            }
-        });
+        $.get("https://www.dynamsoft.com/Secure/Rate.ashx?paper="+encodeUrl+"&product=DBR-Doc&rate=5")
     }
     else {
-        $.get("https://www.dynamsoft.com/Secure/Rate.ashx?paper="+encodeUrl+"&product=DBR-Doc&rate=1", function(data, status) {
-            var feedbackTag = document.getElementById("feedbackFooter");
-            if(feedbackTag!=null) {
-                feedbackTag.innerHTML = "Thanks!";
-            }
-        });
+        $.get("https://www.dynamsoft.com/Secure/Rate.ashx?paper="+encodeUrl+"&product=DBR-Doc&rate=1")
+    }
+    
+    var feedbackTag = document.getElementById("feedbackFooter");
+
+    if(feedbackTag!=null) {
+        feedbackTag.innerHTML = "Thanks!";
     }
 }

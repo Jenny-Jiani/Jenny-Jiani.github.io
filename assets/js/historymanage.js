@@ -17,7 +17,7 @@ function UrlReplace()
         curVerFromUrl = curVerFromUrl.replace('/', '');
     }
     else{
-        curVerFromUrl = "latest";
+        curVerFromUrl = "latest"
     }
 
     var compatiableDiv = document.getElementById( "compatibleInfo");
@@ -54,19 +54,15 @@ function UrlReplace()
     }
     
 
-    var allHerf1 = $(".docContainer,.sideBar").find("a");
+    var allHerf1 = $(".docContainer .content, #docHead, #AutoGenerateSidebar, .sideBar").find("a");
     for (var i = 0; i < allHerf1.length; i++)
     {
-        allHerf1[i].setAttribute("onclick", "allHerfClick("+this+","+ver+")");
-        // allHerf1[i].onclick = function(){
-        //     addParam(this, ver); 
-        //     return false;
-        // };
+        allHerf1[i].onclick = function(){addParam(this, ver); return false;};
     }
 }
 
 function allHerfClick(_this, ver) {
-    addParam(_this, ver); 
+    addParam(_this, ver);
     return false;
 }
 
@@ -80,7 +76,7 @@ function RedirToGivenVersionPage(inputVer)
     if (curVerTag != null) {
         var verText = (curVerTag[0].innerText).toLowerCase();
         if (verText == "latest version"){
-            curVer = "latest";
+            curVer = "latest"
         }
         else{
             curVer = verText.replace('version ','');
@@ -104,7 +100,7 @@ function RedirToGivenVersionPage(inputVer)
             var tmpVerText = listAry[i].innerText;
             var tmpVer = null;
             if (tmpVerText == "latest version"){
-                tmpVer = "latest";
+                tmpVer = "latest"
             }
             else{
                 tmpVer = tmpVerText.replace('version ','');
@@ -221,7 +217,7 @@ function addParam (aTag, verText)
 	
 	var verStr = "";
 	exp = new RegExp(/[?]+([^=]+)=/gi)
-    if (exp.exec(hrefVal) != null){
+        if (exp.exec(hrefVal) != null){
 		verStr = "&&ver=" + verText;
 	}
 	else{
@@ -248,7 +244,7 @@ function changeVersion (liTag)
 	var innertext = (liTag.innerText).toLowerCase();
 	var ver = null;
 	if (innertext == "latest version"){
-		ver = "latest";
+		ver = "latest"
 	}
 	else{
 		ver = innertext.replace('version ','');
