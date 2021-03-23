@@ -278,8 +278,8 @@ div::-webkit-scrollbar-corner, ul::-webkit-scrollbar-corner{
     .dlrDoc #sideBarCnt.sidebar-fixed { position: fixed; top: 72px; max-height: unset; }
 
     .docContainer .arrowLeftBtn { position: absolute; left: 5px; top: 90px; width: 30px; height: 30px; border-radius: 3px; text-align: center; line-height: 26px; font-size: 22px; cursor: pointer; z-index: 111; -webkit-border-radius: 3px; -moz-border-radius: 3px; -ms-border-radius: 3px; -o-border-radius: 3px; }
-    .arrowLeftBtn.arrowBtnFixed {position: fixed;left: auto;top: 90px; margin-right: -40px;}
-    .arrowLeftBtn.arrowRightBtn.arrowBtnFixed { position: fixed; left: auto; top: 90px; margin-right: -40px; }
+    .arrowLeftBtn.arrowBtnFixed {position: fixed;left: auto;top: 90px;margin-left: -34px;}
+    .arrowLeftBtn.arrowRightBtn.arrowBtnFixed { position: fixed; left: auto; top: 90px;margin-left: -34px;}
 }
 
 @media (max-width: 991px) {
