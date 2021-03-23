@@ -296,6 +296,7 @@ div::-webkit-scrollbar-corner, ul::-webkit-scrollbar-corner{
 	#fullTreeMenuListContainer > li { max-width: 320px; min-width: 200px; }
 	#TryFreeDownload { margin-top: 100px }
 	#sideBarCnt .docSearchPart { position: relative; margin-top: 0px; margin-bottom: 10px; }
+    .arrowLeftBtn { display: none; }
 }
 
 @media (max-width: 767px) {
