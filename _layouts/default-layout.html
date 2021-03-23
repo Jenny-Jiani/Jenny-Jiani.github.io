@@ -26,6 +26,7 @@
                 </div>
             </div>
             <div class="docContainer col-xs-12 col-md-9">
+                <div class="arrowLeftBtn"><i class="fa fa-angle-double-left"></i></div>
                 <div id="docHead" class = "head row hide-xs hide-sm">
                     {%- include main-page-head.html -%}
                 </div>
@@ -139,7 +140,18 @@
                 if (e.keyCode == 13) {
                     window.location.href = '/barcode-reader/search.html?q=' + $('#txtSearch').val();
                 }
-            })
+            });
+
+            $('.arrowLeftBtn').on('click', function() {
+                $('.arrowLeftBtn i').toggleClass('fa-angle-double-right')
+                if($('.arrowLeftBtn i').hasClass('fa-angle-double-right')) {
+                    $('.docContainer').addClass('leftPartHide').removeClass('col-md-9');
+                    $('.sideBar').hide();
+                } else {
+                    $('.docContainer').removeClass('leftPartHide').addClass('col-md-9');
+                    $('.sideBar').show();
+                }
+            });
         })
     </script>
 
