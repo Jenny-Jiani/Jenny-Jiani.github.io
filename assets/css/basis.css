@@ -236,8 +236,8 @@ div::-webkit-scrollbar-corner, ul::-webkit-scrollbar-corner{
 .docContainer.leftPartHide { width: 100%!important; border-left: 0px; }
 .docContainer .arrowLeftBtn { position: absolute;left: 20px; top: 115px;width: 40px;height: 40px;border: 1px solid #323234; color: #323234; border-radius: 5px;text-align: center;line-height: 35px;font-size: 26px;cursor: pointer; }
 .docContainer .arrowLeftBtn:hover { background: #306877; color: #fff; border-color: #306877; }
-.arrowLeftBtn.arrowBtnFixed { position: fixed; left: 385px; top: 115px; }
-.arrowLeftBtn.arrowRightBtn.arrowBtnFixed { position: fixed; left: 75px; top: 115px; }
+.arrowLeftBtn.arrowBtnFixed { position: fixed; top: 115px; left: auto; margin-left: -56px; }
+.arrowLeftBtn.arrowRightBtn.arrowBtnFixed { position: fixed; left: auto; top: 115px; margin-left: -56px; }
 
 @media (min-width: 768px) {
 	.h1, h1 {font-size:36px;font-size:3.6rem;line-height:48px}
@@ -276,6 +276,10 @@ div::-webkit-scrollbar-corner, ul::-webkit-scrollbar-corner{
 	.dlrDoc .sideBar, .dlrDoc .docContainer { padding-top: 72px; }
 	.dlrDoc .rightSideMenu.rsm-fixed { position: fixed; top: 90px; }
     .dlrDoc #sideBarCnt.sidebar-fixed { position: fixed; top: 72px; max-height: unset; }
+
+    .docContainer .arrowLeftBtn { position: absolute; left: 5px; top: 90px; width: 30px; height: 30px; border-radius: 3px; text-align: center; line-height: 26px; font-size: 22px; cursor: pointer; z-index: 111; -webkit-border-radius: 3px; -moz-border-radius: 3px; -ms-border-radius: 3px; -o-border-radius: 3px; }
+    .arrowLeftBtn.arrowBtnFixed {position: fixed;left: auto;top: 90px; margin-right: -40px;}
+    .arrowLeftBtn.arrowRightBtn.arrowBtnFixed { position: fixed; left: auto; top: 90px; margin-right: -40px; }
 }
 
 @media (max-width: 991px) {
