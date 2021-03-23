@@ -143,6 +143,7 @@
             });
 
             $('.arrowLeftBtn').on('click', function() {
+                $('.arrowLeftBtn').toggleClass('arrowRightBtn')
                 $('.arrowLeftBtn i').toggleClass('fa-angle-double-right')
                 if($('.arrowLeftBtn i').hasClass('fa-angle-double-right')) {
                     $('.docContainer').addClass('leftPartHide').removeClass('col-md-9');

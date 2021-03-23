@@ -55,6 +55,9 @@ $(document).ready(function(){
                 $('.sideBar').css({'padding-top': '0px'});
                 $('.sideBar #sideBarCnt').addClass('sidebar-fixed');
                 $('.rightSideMenu').addClass('rsm-fixed');
+                $('.arrowLeftBtn').addClass('arrowBtnFixed');
+
+
                 if (dcHeight + 48 > clientHeight) {
                     // history fixed
                     $('.history').addClass('history-fixed');
@@ -75,6 +78,7 @@ $(document).ready(function(){
                 $('#docHead').css({'top': (menuHeight-sd)+1 + 'px'});
                 $('.sideBar #sideBarCnt').removeClass('sidebar-fixed');
                 $('.rightSideMenu').removeClass('rsm-fixed');
+                $('.arrowLeftBtn').removeClass('arrowBtnFixed');
 
                 // history fixed
                 if (sd < $('#overall-header').height() && dcHeight + 48 > clientHeight) {

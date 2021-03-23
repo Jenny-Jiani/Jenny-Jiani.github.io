@@ -236,6 +236,8 @@ div::-webkit-scrollbar-corner, ul::-webkit-scrollbar-corner{
 .docContainer.leftPartHide { width: 100%!important; border-left: 0px; }
 .docContainer .arrowLeftBtn { position: absolute;left: 20px; top: 115px;width: 40px;height: 40px;border: 1px solid #323234; color: #323234; border-radius: 5px;text-align: center;line-height: 35px;font-size: 26px;cursor: pointer; }
 .docContainer .arrowLeftBtn:hover { background: #306877; color: #fff; border-color: #306877; }
+.arrowLeftBtn.arrowBtnFixed { position: fixed; left: 385px; top: 115px; }
+.arrowLeftBtn.arrowRightBtn.arrowBtnFixed { position: fixed; left: 75px; top: 115px; }
 
 @media (min-width: 768px) {
 	.h1, h1 {font-size:36px;font-size:3.6rem;line-height:48px}
