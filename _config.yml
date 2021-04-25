@@ -7,15 +7,17 @@ firstLevelUrl: /
 docHomePage: /
 
 productUrl: https://www.dynamsoft.com/Products/Dynamic-Barcode-Reader.aspx
-productName: Dynamsoft Barcode Reader
+# productName: Dynamsoft Barcode Reader
 
-about: /about/
-common: /common/
-dshosting: /dshosting/
-selfhosting: /selfhosting/
-schedule: /schedule/
-
-sampleFolder: /sample-folder/
+imagecore-viewer-module: /imagecore-viewer-module/
+twainscan-module: /twainscan-module/
+camera-module: /camera-module/
+pdf-module: /pdf-module/
+ocr-module: /ocr-module/
+troubleshooting: /troubleshooting/
+upgrade-dotnet-twain: /upgrade-dotnet-twain/
+api-reference: /api-reference/
+release-notes: /release-notes/
 
 assets: /assets/
 edit_icon: /assets/img-icon/edit-icon.png
