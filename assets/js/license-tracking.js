@@ -1,26 +1,24 @@
 $(document).ready(function(){ 
   var sd = $(window).scrollTop()
   if(sd > 0) {
-      realFunc()
+    realFunc2()
   }
 
   $(window).resize(function() {
-      realFunc()
+    realFunc2()
   })
 
-  window.addEventListener('scroll', realFunc);
+  window.addEventListener('scroll', realFunc2);
 
-  function realFunc() {
+  function realFunc2() {
       if (breakpoint() == 'lg') {
-          var subHeight = 0;
-          subHeight = $('.productMenu').height();
-          var menuHeight = $('#overall-header').height() + subHeight;
+          var menuHeight = $('#overall-header').height();
           var sd = $(window).scrollTop();
           if (sd >= $('#overall-header').height()) {
             // head and sidebar fixed
-            $('#docHead').css({'top': ($('.productMenu').height() + 1) + 'px'});
+            $('#docHead').css({'top': '0px'});
           } else {
-            $('#docHead').css({'top': (menuHeight-sd)+1 + 'px'});
+            $('#docHead').css({'top': (menuHeight - sd + 1) + 'px'});
           }
       } else {
           $('#docHead').css({'top': 'unset'});
