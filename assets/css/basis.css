@@ -1,12 +1,12 @@
-@font-face { font-family: Oswald-Regular; src: local('â˜º'), url('../font-face/Oswald-Regular.ttf') format('truetype'); font-weight: normal; font-style: normal; }
-@font-face { font-family: Oswald-Light; src: local('â˜º'), url('../font-face/Oswald-Regular-Light.ttf') format('truetype'); font-weight: normal; font-style: normal; }
+@font-face { font-family: Oswald-Regular; src: local('â˜º'), url('../font-face/Oswald.ttf') format('truetype'); font-weight: normal; font-style: normal; }
+@font-face { font-family: Oswald-Light; src: local('â˜º'), url('../font-face/Oswald-Light.ttf') format('truetype'); font-weight: normal; font-style: normal; }
 @font-face { font-family: OpenSans-Light; src: url('../font-face/OpenSans-Light.eot'); src: local('â˜º'), url('../font-face/OpenSans-Light.eot?#iefix') format('embedded-opentype'), url('../font-face/OpenSans-Light.woff') format('woff'), url('../font-face/OpenSans-Light.ttf') format('truetype'), url('../font-face/OpenSans-Light.svg#webfontOTINA1xY') format('svg'); font-weight: normal; font-style: normal; }
 @font-face { font-family: OpenSans-Regular; src: url('../font-face/OpenSans-Regular.eot'); src: local('â˜º'), url('../font-face/OpenSans-Regular.eot?#iefix') format('embedded-opentype'), url('../font-face/OpenSans-Regular.woff') format('woff'), url('../font-face/OpenSans-Regular.ttf') format('truetype'), url('../font-face/OpenSans-Regular.svg#webfontOTINA1xY') format('svg'); font-weight: normal; font-style: normal; }
 @font-face { font-family: OpenSans-Semibold; src: url('../font-face/OpenSans-Semibold.eot'); src: local('â˜º'), url('../font-face/OpenSans-Semibold.eot?#iefix') format('embedded-opentype'), url('../font-face/OpenSans-Semibold.woff') format('woff'), url('../font-face/OpenSans-Semibold.ttf') format('truetype'), url('../font-face/OpenSans-Semibold.svg#webfontOTINA1xY') format('svg'); font-weight: normal; font-style: normal; }
 
 /*  NORMAL STYLE  */
 html {font-size:10px;color:#606060;font-family:OpenSans-Regular}
-.h1, .h2, .h3, .h4, .h5, h1, h2, h3, h4, h5 {color:#444; font-family: Oswald-Regular-Light; font-weight: normal;}
+.h1, .h2, .h3, .h4, .h5, h1, h2, h3, h4, h5 {color:#444; font-family: Oswald-Light; font-weight: normal;}
 strong {color:#444;font-weight:400}
 .h1, h1 {font-size:30px;font-size:3rem;line-height:42px}
 .h2, h2 {font-size:24px;font-size:2.4rem;line-height:36px}
@@ -16,7 +16,7 @@ strong {color:#444;font-weight:400}
 .h5, h5 {font-size:14px;font-size:1.4rem;line-height:24px}
 .markdown-body h1, .markdown-body h2, .markdown-body h3, .markdown-body h4, .markdown-body h5, .markdown-body h6 { font-weight: normal; }
 *{ box-sizing: border-box; margin: 0; padding: 0; }
-.fontOswald-Regular { font-family: Oswald-Regular; }
+.fontOswald { font-family: Oswald-Regular; }
 a.orangeLink { color: #FE8E14 !important; }
 a.orangeLink:hover { color: #FEA543 !important; }
 a.orangeLink:active { color: #FEA543 !important; }
@@ -89,7 +89,7 @@ ul.circle > li p:hover, ul.circle li.on p, ul.square > li.on p, ul.square > li p
 .markdown-body h3 { padding-top: 160px; margin-top: -160px; border-bottom: 0; font-size: 18px;}
 .markdown-body h4 { padding-top: 160px; margin-top: -160px; font-weight: normal; }
 .markdown-body code.language-plaintext { padding: 3px 5px; color: #306877;background-color: #d5e6ea; border-radius: 0; }
-.markdown-body h3 code { font-family: Oswald-Regular-Light; font-weight: normal; }
+.markdown-body h3 code { font-family: Oswald-Light; font-weight: normal; }
 .markdown-body ol, .markdown-body ol li  { list-style: decimal; }
 .markdown-body ul { padding-left: 20px; }
 .markdown-body ul, .markdown-body ul li { list-style: disc; margin-left: 0; }
@@ -133,7 +133,7 @@ ul.circle > li p:hover, ul.circle li.on p, ul.square > li.on p, ul.square > li p
 #TryFreeDownload .discription { max-width: 800px; text-align: center; margin: 20px auto 0; }
 
 #compatibleInfo { background: #ebebeb; padding: 10px;margin-bottom: 10px; }
-#compatibleInfo p { margin-bottom: 0; font-family: Oswald-Regular-Light; }
+#compatibleInfo p { margin-bottom: 0; font-family: Oswald-Light; }
 #compatibleInfo p.compatibleCurVersion  { font-family: Oswald-Regular; }
 
 /*修改滚动条样式*/
@@ -230,7 +230,7 @@ div::-webkit-scrollbar-corner, ul::-webkit-scrollbar-corner{
 	font-size: 24px; 
 	line-height: 36px; 
 	margin-bottom: 5px;
-	font-family: Oswald-Regular-Light;
+	font-family: Oswald-Light;
 }
 
 
@@ -443,7 +443,7 @@ li, ul { list-style: none; margin: 0; padding: 0; }
     #xsNav li.menuItem .menuDetail .menu-left .subMenuList li.item a { color: #FFFFFF; font-size: 16px; }
     #xsNav li.menuItem .menuDetail .menu-right { padding-left: 30px; }
     #xsNav li.menuItem .menuDetail .menu-right .subMenuList li.item a { color: #FFFFFF; padding-left: 20px; font-size: 16px; }
-    #xsNav li.menuItem .menuDetail .menu-right .subMenuList li.subTitle { font-family: Oswald-Regular-Light; font-size: 16px; }
+    #xsNav li.menuItem .menuDetail .menu-right .subMenuList li.subTitle { font-family: Oswald-Light; font-size: 16px; }
     #xsNav li.menuItem .menuDetail .desc { font-size: 14px; }
     #xsNav li.menuItem.on .icon-orange-angle { transform: rotate(180deg) }
     #xsNav li.menuItem .menuDetail .menu-left .subMenuList li.dwtDownload a { color: #FE8E14 }
@@ -543,7 +543,7 @@ li, ul { list-style: none; margin: 0; padding: 0; }
     .headSubMenu .menu-top .menu-left { display: inline-block; padding: 40px 80px 25px; border-right: 1px solid #323234; vertical-align: top; }
     .headSubMenu .menu-top .menu-left .dbr-logo { margin-bottom: 5px; }
     .headSubMenu .menu-top .menu-right { display: inline-block; padding: 55px 0 0 80px; vertical-align: top; }
-    .headSubMenu .menu-top .menu-right .subMenuList li.subTitle { color: #323234; font-family: Oswald-Regular-Light; font-size: 18px; }
+    .headSubMenu .menu-top .menu-right .subMenuList li.subTitle { color: #323234; font-family: Oswald-Light; font-size: 18px; }
     .headSubMenu .menu-top .subMenuList li.item { margin-top: 15px; }
     .headSubMenu .menu-top .subMenuList li.item a { color: #323234; font-size: 18px; font-family: Oswald-Regular; }
     .headSubMenu .menu-top .subMenuList li.item a:hover, .headSubMenu .menu-top .subMenuList li.item a:visited, .headSubMenu .menu-top .subMenuList li.item a:active { color: #323234 }
@@ -629,7 +629,7 @@ li, ul { list-style: none; margin: 0; padding: 0; }
     .headSubMenu .menu-top .menu-left { display: inline-block; padding: 40px 80px 25px; border-right: 1px solid #323234; vertical-align: top; }
     .headSubMenu .menu-top .menu-left .dbr-logo { margin-bottom: 5px; }
     .headSubMenu .menu-top .menu-right { display: inline-block; padding: 55px 0 0 80px; vertical-align: top; }
-    .headSubMenu .menu-top .menu-right .subMenuList li.subTitle { color: #323234; font-family: Oswald-Regular-Light; font-size: 18px; }
+    .headSubMenu .menu-top .menu-right .subMenuList li.subTitle { color: #323234; font-family: Oswald-Light; font-size: 18px; }
     .headSubMenu .menu-top .subMenuList li.item { margin-top: 15px; }
     .headSubMenu .menu-top .subMenuList li.item a { color: #323234; font-size: 18px; font-family: Oswald-Regular; }
     .headSubMenu .menu-top .subMenuList li.item a:hover, .headSubMenu .menu-top .subMenuList li.item a:visited, .headSubMenu .menu-top .subMenuList li.item a:active { color: #323234 }
