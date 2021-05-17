@@ -90,7 +90,7 @@
   }
   @media (min-width: 992px) {
     #searchResult td.gsc-clear-button {display:none;}
-    .docContainer { min-height: calc(100vh - 125px); }
+    .docContainer { min-height: calc(100vh - 285px); }
   }
   @media (min-width: 1200px) {
     #searchResult { width: 960px; }
@@ -112,20 +112,18 @@
         <div class="subHeader container">
             <div class="row">
                 <ul class="subHeaderMenuUl col-xs-12 clearfix">
-                    <!-- Replace with your product information -->
-                    <li class="title"><a class="f18 fontOswald" href="https://www.dynamsoft.com/Products/.Net-TWAIN-Scanner.aspx">Dynamic .NET TWAIN</a> <span class="fc9"></li>
-                    <li class="on"><a class="orangelink" href = "{{ site.docHomePage }}">Documentation</a></li>
-                    <li><a class="whitelink hide-xs" href="https://www.dynamsoft.com/Downloads/.Net-TWAIN-Sample-Download.aspx">Code Gallery</a></li>
-                    <li><a class="whitelink hide-xs" href="https://www.dynamsoft.com/Products/.Net-TWAIN-Scanner-Resource.aspx">Resources</a></li>
-                    <li class="fr" style="margin-right: 0; padding: 0;"><a class="btn d-btn bgOrange hide-sm hide-xs" href="https://www.dynamsoft.com/dotnet-twain/downloads">Download 30-Day Free Trial</a></li>
+                    <li class="title"><a class="f18 fontOswald" href="https://www.dynamsoft.com/Products/Dynamic-Barcode-Reader.aspx">Dynamsoft Barcode Reader</a> <span class="fc9">|</span> Developer's Center</li>
+                    <li class="on"><a class="orangelink" href="{{ site.docHomePage }}">Documentation</a></li>
+                    <li><a class="whitelink hide-xs" href="https://www.dynamsoft.com/Downloads/Dynamic-Barcode-Reader-Sample-Download.aspx">Code Gallery</a></li>
+                    <li><a class="whitelink hide-xs" href="https://www.dynamsoft.com/Products/Barcode-Reader-Resources.aspx">Resources</a></li>
+                    <li class="fr" style="margin-right: 0; padding: 0;"><a class="btn d-btn bgOrange hide-sm hide-xs" href="https://www.dynamsoft.com/Downloads/Dynamic-Barcode-Reader-Download.aspx">Download 30-Day Free Trial</a></li>
                 </ul>
             </div>
             <div class="row mobileSubHeaderMenu">
                 <ul class="col-xs-12 show-xs">
-                    <!-- Replace with your product information -->
                     <li><a class="orangelink" href = "{{ site.docHomePage }}">Documentation</a></li>
-                    <li><a class="whitelink" href="https://www.dynamsoft.com/Downloads/.Net-TWAIN-Sample-Download.aspx">Code Gallery</a></li>
-                    <li><a class="whitelink" href="https://www.dynamsoft.com/Products/.Net-TWAIN-Scanner-Resource.aspx">Resources</a></li>
+                    <li><a class="whitelink" href="https://www.dynamsoft.com/Downloads/Dynamic-Barcode-Reader-Sample-Download.aspx">Code Gallery</a></li>
+                    <li><a class="whitelink" href="https://www.dynamsoft.com/Products/Barcode-Reader-Resources.aspx">Resources</a></li>
                 </ul>
             </div>
         </div>
@@ -139,7 +137,7 @@
                       <div class="row">
                           <div class="col-xs-12">
                               <h1>Search</h1>                        
-                              <script async src="https://cse.google.com/cse.js?cx=5e9ca7e281c5bfa2a"></script>
+                              <script async src="https://cse.google.com/cse.js?cx=32039cdf85bc7ae2b"></script>
                               <div class="gcse-search"></div>
                           </div>
                       </div>
@@ -240,21 +238,19 @@
           $(".sideBar").toggleClass('hide-sm');
           $(".sideBar").toggleClass('hide-xs');
           setTimeout(function() {
-              console.log('sidebar' + $('.sideBar').width())
               $('#sideBarCnt').css({'width': $('.sideBar').width() + 'px'})
           }, 100)
       })
 
-      let timeInt = setInterval(function() {
-          var container = $('#sideBarCnt'), scrollTo = $('#sideBarCnt .activeLink');
-          console.log(scrollTo)
-          if (scrollTo.length>0) {
-              container.scrollTop(
-                  scrollTo.offset().top - container.offset().top + container.scrollTop()
-              );
-              clearInterval(timeInt)
-          }
-      }, 500)
+    //   let timeInt = setInterval(function() {
+    //       var container = $('#sideBarCnt'), scrollTo = $('#sideBarCnt .activeLink');
+    //       if (scrollTo.length>0) {
+    //           container.scrollTop(
+    //               scrollTo.offset().top - container.offset().top + container.scrollTop()
+    //           );
+    //           clearInterval(timeInt)
+    //       }
+    //   }, 500)
   
       function onSearchFinish(e) {
           var evt = window.event || e;
