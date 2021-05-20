@@ -98,8 +98,10 @@
                 var sd = $(window).scrollTop();
                 if (sd >= $('#overall-header').height()) {
                     NoteHide()
+                    realFunc()
                 } else {
                     $('#DWT17Note').show()
+                    realFunc()
                     if ($(window).outerWidth() > 1680) {
                         if (breakpoint() == 'lg') {
                             $('.markdown-body h2').css({'padding-top': $('#docHead').outerHeight() + 110 + 'px'})
