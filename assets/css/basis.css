@@ -923,4 +923,7 @@ i.dbr-white-logo { display: inline-block; width: 221px; height: 30px; background
     .col-md-9 {
         width: 79%;
     }
+    .markdown-body { 
+        width: calc(100% - 212px);
+    }
 }
