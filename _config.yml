@@ -61,6 +61,13 @@ enumerations: /parameters/enum/
 faqs: /introduction/faqs.html
 how_to: /introduction/how-to-guide/
 
+_includes: /docs/_includes/
+_layouts: /docs/_layouts/
+about: /docs/about/
+getstarted: /docs/getstarted/
+indepth: /docs/indepth/
+info: /docs/info/
+
 assets: /assets/
 edit_icon: /assets/img-icon/edit-icon.png
 smile_icon: /assets/img-icon/icon-smile.png
