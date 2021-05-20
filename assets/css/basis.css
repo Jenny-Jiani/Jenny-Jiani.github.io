@@ -915,3 +915,12 @@ i.dbr-white-logo { display: inline-block; width: 221px; height: 30px; background
     left: unset!important;
     background: url(../img-icon/liveMessage.png)!important;
 }
+
+@media (min-width: 1200px) and (max-width: 1679.98px) {
+    .col-md-3 {
+        width: 21%;
+    }
+    .col-md-9 {
+        width: 79%;
+    }
+}
