@@ -25,10 +25,10 @@ $(document).ready(function(){
         $('.container .head').css({'width': $('.docContainer').width() + 'px'});
         $('#fullTreeMenuListContainer').css({'height': 'calc(100vh - '+(menuHeight + 120) +'px)'});
         $('.rightSideMenu').css({'height': 'calc(100vh - '+(menuHeight + 195)+'px)'});
-        if ($('.docContainer').height() + menuHeight >= document.body.clientHeight) {
-            $('.history').addClass('history-fixed');
-            $('#footerWrapper').css({'margin-top': '48px'});
-        }
+        // if ($('.docContainer').height() + menuHeight >= document.body.clientHeight) {
+            // $('.history').addClass('history-fixed');
+            // $('#footerWrapper').css({'margin-top': '48px'});
+        // }
         $('.docContainer .markdown-body').css({'margin-top': ($('#docHead').outerHeight() + 0) + 'px'});
         if ($(window).outerWidth() > 1680) {
             if (breakpoint() == 'lg') {
@@ -80,37 +80,37 @@ $(document).ready(function(){
                 $('.sideBar').css({'padding-top': '0px'});
                 $('.sideBar #sideBarCnt').addClass('sidebar-fixed');
                 $('.rightSideMenu').addClass('rsm-fixed');
-                if (dcHeight + 48 > clientHeight) {
+                // if (dcHeight + 48 > clientHeight) {
                     // history fixed
-                    $('.history').addClass('history-fixed');
-                    $('#footerWrapper').css({'margin-top': '48px'});
-                } else {
-                    $('.history').removeClass('history-fixed');
-                    $('#footerWrapper').css({'margin-top': '0px'});
-                }
+                    // $('.history').addClass('history-fixed');
+                    // $('#footerWrapper').css({'margin-top': '48px'});
+                // } else {
+                    // $('.history').removeClass('history-fixed');
+                    // $('#footerWrapper').css({'margin-top': '0px'});
+                // }
             } else {
                 // head and sidebar fixed
                 if ($('.subHeadWrapper').length > 0) {
                     $('.subHeadWrapper').css({'top': ($('#overall-header').height()-sd) + 'px'});
-                    $('.sideBar').css({'padding-top': $('.subHeadWrapper').height() + 'px'});
+                    $('.sideBar').css({'padding-top': $('.subHeadWrapper').height() + 42 + 'px'});
                 } else {
                     $('.productMenu').css({'top': ($('#overall-header').height()-sd) + 'px'});
-                    $('.sideBar').css({'padding-top': $('.productMenu').height() + 'px'});
+                    $('.sideBar').css({'padding-top': $('.productMenu').height() + 42 + 'px'});
                 }
                 $('#docHead').css({'top': (menuHeight-sd)+1 + 'px'});
                 $('.sideBar #sideBarCnt').removeClass('sidebar-fixed');
                 $('.rightSideMenu').removeClass('rsm-fixed');
 
                 // history fixed
-                if (sd < $('#overall-header').height() && dcHeight + 48 > clientHeight) {
-                    if (!$('.history').hasClass('history-fixed')) {
-                        $('.history').addClass('history-fixed');
-                        $('#footerWrapper').css({'margin-top': '48px'});
-                    }
-                } else {
-                    $('.history').removeClass('history-fixed');
-                    $('#footerWrapper').css({'margin-top': '0px'});
-                }
+                // if (sd < $('#overall-header').height() && dcHeight + 48 > clientHeight) {
+                    // if (!$('.history').hasClass('history-fixed')) {
+                        // $('.history').addClass('history-fixed');
+                        // $('#footerWrapper').css({'margin-top': '48px'});
+                    // }
+                // } else {
+                    // $('.history').removeClass('history-fixed');
+                    // $('#footerWrapper').css({'margin-top': '0px'});
+                // }
             }
         } else {
             $('.subHeadWrapper').css({'top': 'unset'});
@@ -143,15 +143,8 @@ $(document).ready(function(){
         stopPropagation(e);
     })
 
-    // var commBtnInterval = setInterval(function() {
-    //     if ($('#comm100-float-button-2').css('background') != undefined && $('#comm100-float-button-2').css('background')!='') {
-    //         if ($('#comm100-float-button-2').css('background').indexOf('imgId=5000315') >= 0) {
-    //             $('#comm100-float-button-2').addClass('online');
-    //         } 
-    //         if ($('#comm100-float-button-2').css('background').indexOf('imgId=5000316') >= 0) {
-    //             $('#comm100-float-button-2').addClass('offline');
-    //         }
-    //         clearInterval(commBtnInterval)
-    //     }
-    // }, 1000);
+    $('.history .currentVersion').on('click', function(e) {
+        $('.fullVersionInfo').slideToggle();
+        stopPropagation(e);
+    })
 })
