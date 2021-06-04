@@ -924,6 +924,8 @@ i.dbr-white-logo { display: inline-block; width: 221px; height: 30px; background
 
 
 /* version style adjust 2021-06-04 */
+.sideBar { padding-top: 137px; }
+#sideBarCnt.sidebar-fixed { top: 130px; }
 .history { position: fixed; width: 250px; height: 32px; background: #ffffff; border: 1px solid #ddd; border-radius: 3px;  color: #323234; padding: 0; top: 219px; left: calc(50% - 800px); z-index: 12; }
 .history .container { width: 100%;padding: 0; }
 .history .container .col-xs-12 { padding: 0; }

@@ -80,6 +80,7 @@ $(document).ready(function(){
                 $('.sideBar').css({'padding-top': '0px'});
                 $('.sideBar #sideBarCnt').addClass('sidebar-fixed');
                 $('.rightSideMenu').addClass('rsm-fixed');
+                $('.history').css({'top': '119px'})
                 // if (dcHeight + 48 > clientHeight) {
                     // history fixed
                     // $('.history').addClass('history-fixed');
@@ -102,6 +103,8 @@ $(document).ready(function(){
                 $('.rightSideMenu').removeClass('rsm-fixed');
 
                 // history fixed
+                $('.history').css({'top': (parseInt($('.history').css('top').replace('px', '')) - sd) + 'px'})
+
                 // if (sd < $('#overall-header').height() && dcHeight + 48 > clientHeight) {
                     // if (!$('.history').hasClass('history-fixed')) {
                         // $('.history').addClass('history-fixed');
