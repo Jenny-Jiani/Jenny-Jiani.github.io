@@ -945,10 +945,12 @@ i.dbr-white-logo { display: inline-block; width: 221px; height: 30px; background
 }
 
 @media (max-width: 991px) {
+    .sideBar { padding-top: 0; }
     .history.history-absolute { position: absolute; top: 130px!important; left: calc(50% - 160px);}
 }
 
 @media (max-width: 767px) {
+    .sideBar { padding-top: 0; }
     .history.history-absolute { position: absolute; top: 110px!important; left: 185px;}
 }
 
