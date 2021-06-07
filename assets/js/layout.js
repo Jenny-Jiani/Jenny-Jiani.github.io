@@ -22,6 +22,7 @@ $(document).ready(function(){
         }
         var menuHeight = $('#overall-header').height() + subHeight;
         $('#sideBarCnt').css({'width': $('.sideBar').width() + 'px'});
+        $('..history').css({'width': $('#txtSearch').width() + 'px'});
         $('.container .head').css({'width': $('.docContainer').width() + 'px'});
         $('#fullTreeMenuListContainer').css({'height': 'calc(100vh - '+(menuHeight + 120) +'px)'});
         $('.rightSideMenu').css({'height': 'calc(100vh - '+(menuHeight + 195)+'px)'});
@@ -68,6 +69,7 @@ $(document).ready(function(){
             var sd = $(window).scrollTop();
             var dcHeight = $('.docContainer').height() + menuHeight - sd;
             var clientHeight = document.body.clientHeight;
+            $('.history').removeClass('history-absolute');
             if (sd >= $('#overall-header').height()) {
                 // head and sidebar fixed
                 if ($('.subHeadWrapper').length > 0) {
@@ -120,6 +122,7 @@ $(document).ready(function(){
             $('.productMenu').css({'top': 'unset'});
             $('#docHead').css({'top': 'unset'});
             $('.sideBar').css({'padding-top': '20px'});
+            $('.history').addClass('history-absolute');
         }
     }
 

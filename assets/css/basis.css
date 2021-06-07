@@ -287,7 +287,7 @@ div::-webkit-scrollbar-corner, ul::-webkit-scrollbar-corner{
 	.dlrDoc .subHeadWrapper { position: relative; top: 0; height: 60px; }
 	.sideBar, .docContainer { padding-top: 0px; }
 	#docHead { position: relative; top: 0; }
-	.sideBarIcon { height: 40px; line-height: 38px; background: #EEEEEE; color: #444; text-align: right; padding-right: 36px; width: calc(50% - 175px); cursor: pointer; }
+	.sideBarIcon { position: relative; z-index: 11; height: 40px; line-height: 38px; background: #EEEEEE; color: #444; text-align: right; padding-right: 36px; width: calc(50% - 175px); cursor: pointer; }
 	.sideBar {position: absolute; width: auto; left: 0; z-index: 12; background: #eeeeee; padding: 20px; padding-left: calc(50% - 355px);}
 	.sideBar .mainPage { margin-top: 0; width: auto!important; max-width: calc(100% - 20px); overflow-x: auto; }
 	#fullTreeMenuListContainer > li { max-width: 320px; min-width: 200px; }
@@ -925,7 +925,7 @@ i.dbr-white-logo { display: inline-block; width: 221px; height: 30px; background
 
 /* version style adjust 2021-06-04 */
 .sideBar { padding-top: 137px; }
-#sideBarCnt.sidebar-fixed { top: 130px; }
+#sideBarCnt.sidebar-fixed { top: 134px!important; }
 .history { position: fixed; width: 250px; height: 32px; background: #ffffff; border: 1px solid #ddd; border-radius: 3px;  color: #323234; padding: 0; top: 219px; left: calc(50% - 800px); z-index: 12; }
 .history .container { width: 100%;padding: 0; }
 .history .container .col-xs-12 { padding: 0; }
@@ -935,3 +935,20 @@ i.dbr-white-logo { display: inline-block; width: 221px; height: 30px; background
 .fullVersionHistory .fullVersionInfo { position: absolute; display: none; top: -1px; background: #fff; left: 0; right: unset; bottom: unset; box-shadow: unset; padding: 0px 0px; text-transform: capitalize; width: 100%; z-index: 1111; border: 1px solid #ddd; border-top: 0; }
 .fullVersionHistory .fullVersionInfo li { cursor: pointer; color: #323234;  text-align: left; padding: 3px 10px; font-size: 14px; }
 .fullVersionHistory .fvChange { display: none; }
+
+@media (max-width: 1679px) {
+    .history { left: 65px; top: 195px; }
+}
+
+@media (max-width: 1199px) {
+    .history { left: 35px; top: 195px; }
+}
+
+@media (max-width: 991px) {
+    .history.history-absolute { position: absolute; top: 130px!important; left: calc(50% - 160px);}
+}
+
+@media (max-width: 767px) {
+    .history.history-absolute { position: absolute; top: 130px!important; left: 185px;}
+}
+
