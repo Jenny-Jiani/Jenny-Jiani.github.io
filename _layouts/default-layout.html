@@ -6,6 +6,18 @@
 <style>
     .DWT17Note {position: relative; padding: 15px 20px 15px 20px;background: #e5f5ff;border: 1px solid #c7dbe8;color: #4788b3;margin-bottom: 20px;}
     .DWT17Note i { position: absolute; right: 10px; top: 8px; font-size: 20px; cursor: pointer; }
+
+    @media (min-width: 1200px) and (max-width: 1679.98px) {
+        .col-md-3 {
+            width: 21%;
+        }
+        .col-md-9 {
+            width: 79%;
+        }
+        .markdown-body { 
+            width: calc(100% - 212px);
+        }
+    }
 </style>
 
 <body>
@@ -37,8 +49,8 @@
                 <div id="docHead" class = "head row hide-xs hide-sm">
                     {%- if page.url contains '-v' || page.url contains 'ver=1' -%}
                     {%- else -%}
-                    <div id="DWT17Note" class="col-xs-12 col-md-12">
-                        <div class="DWT17Note"><i class="fa fa-close"></i>This is the <span style="font-weight: bold">documentation for the latest version (v17.0) of Dynamic Web TWAIN</span>. If you are using an older version, please switch the doc version at the bottom of the page.</div>
+                    <div id="DWT17Note" style="display: none;" class="col-xs-12 col-md-12">
+                        <div class="DWT17Note"><i class="fa fa-close"></i>This is the <span style="font-weight: bold">documentation for the latest version (v17.0) of Dynamic Web TWAIN</span>. If you are using an older version, please switch the doc version above the table of contents on the left.</div>
                     </div>
                     {%- endif -%}
                     {%- include main-page-head.html -%}
@@ -91,6 +103,20 @@
     {%- endif -%}
 
     <script type="text/javascript">
+        function getCookie(name) {
+            var arr, reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
+            return (arr = document.cookie.match(reg)) ? unescape(arr[2]) : null;
+        }
+
+        function setCookie(name, value, minutes) {
+            if (minutes == undefined) {
+                minutes = 24 * 60 - 1;
+            }
+            var exp = new Date();
+            exp.setTime(exp.getTime() + minutes * 60 * 1000);
+            document.cookie = name + "=" + (value) + ";expires=" + exp.toGMTString() + ";path=/";
+        }
+
         window.addEventListener('scroll', dwtScrollListener);
 
         function dwtScrollListener() {
@@ -98,8 +124,10 @@
                 var sd = $(window).scrollTop();
                 if (sd >= $('#overall-header').height()) {
                     NoteHide()
+                    realFunc1()
                 } else {
                     $('#DWT17Note').show()
+                    realFunc1()
                     if ($(window).outerWidth() > 1680) {
                         if (breakpoint() == 'lg') {
                             $('.markdown-body h2').css({'padding-top': $('#docHead').outerHeight() + 110 + 'px'})
@@ -138,16 +166,17 @@
             }
         })
 
-        if($('.currentVersion').html() != 'latest version') {
+        if($('.currentVersion').html() == 'latest version' &&  getCookie('NoAlertNote') != 'true') {
             NoteHide()
         }
 
         $('#DWT17Note i').on('click', function() {
+            setCookie('NoAlertNote', 'true')
             NoteHide()
         })
 
         function NoteHide() {
-            $('#DWT17Note').hide()
+            $('#DWT17Note').toggle()
             $('.docContainer .markdown-body').css({'margin-top': ($('#docHead').outerHeight() + 0) + 'px'});
             if ($(window).outerWidth() > 1680) {
                 if (breakpoint() == 'lg') {
@@ -171,6 +200,55 @@
                     $('.markdown-body h5').css({'padding-top': $('#docHead').outerHeight() + 90 + 'px'})
                     $('.markdown-body h5').css({'margin-top': -$('#docHead').outerHeight() - 90 + 'px'})
                 }
+            }
+        }
+
+        function realFunc1() {
+            if (breakpoint() == 'lg') {
+                var subHeight = 0;
+                if ($('.subHeadWrapper').length > 0) {
+                    subHeight = $('.subHeadWrapper').height();
+                } else {
+                    subHeight = $('.productMenu').height();
+                }
+                var menuHeight = $('#overall-header').height() + subHeight;
+                var sd = $(window).scrollTop();
+                var dcHeight = $('.docContainer').height() + menuHeight - sd;
+                var clientHeight = document.body.clientHeight;
+                if (sd >= $('#overall-header').height()) {
+                    // head and sidebar fixed
+                    if ($('.subHeadWrapper').length > 0) {
+                        $('.subHeadWrapper').css({'top': '0px'});
+                        $('#docHead').css({'top': ($('.subHeadWrapper').height() + 1) + 'px'});
+                    } else {
+                        $('.productMenu').css({'top': '0px'});
+                        $('#docHead').css({'top': ($('.productMenu').height()) + 'px'});
+                    }
+                    // $('.sideBar').css({'padding-top': '0px'});
+                    $('.sideBar #sideBarCnt').addClass('sidebar-fixed');
+                    $('.rightSideMenu').addClass('rsm-fixed');
+                    $('.history').css({'top': '119px'})
+                } else {
+                    // head and sidebar fixed
+                    if ($('.subHeadWrapper').length > 0) {
+                        $('.subHeadWrapper').css({'top': ($('#overall-header').height()-sd) + 'px'});
+                        $('.sideBar').css({'padding-top': $('.subHeadWrapper').height() + 42 + 'px'});
+                    } else {
+                        $('.productMenu').css({'top': ($('#overall-header').height()-sd) + 'px'});
+                        $('.sideBar').css({'padding-top': $('.productMenu').height() + 42 + 'px'});
+                    }
+                    $('#docHead').css({'top': (menuHeight-sd)+1 + 'px'});
+                    $('.sideBar #sideBarCnt').removeClass('sidebar-fixed');
+                    $('.rightSideMenu').removeClass('rsm-fixed');
+
+                    // history fixed
+                    $('.history').css({'top': ($('#overall-header').height() + $('.productMenu').height() + 30 +  - sd) + 'px'})
+                }
+            } else {
+                $('.subHeadWrapper').css({'top': 'unset'});
+                $('.productMenu').css({'top': 'unset'});
+                $('#docHead').css({'top': 'unset'});
+                $('.sideBar').css({'padding-top': '20px'});
             }
         }
     </script>
