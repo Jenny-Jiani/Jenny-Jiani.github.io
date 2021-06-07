@@ -22,7 +22,7 @@ $(document).ready(function(){
         }
         var menuHeight = $('#overall-header').height() + subHeight;
         $('#sideBarCnt').css({'width': $('.sideBar').width() + 'px'});
-        $('.history').css({'width': $('#txtSearch').width() + 'px'});
+        $('.history').css({'width': $('#txtSearch').outerWidth() + 'px'});
         $('.container .head').css({'width': $('.docContainer').width() + 'px'});
         $('#fullTreeMenuListContainer').css({'height': 'calc(100vh - '+(menuHeight + 120) +'px)'});
         $('.rightSideMenu').css({'height': 'calc(100vh - '+(menuHeight + 195)+'px)'});
