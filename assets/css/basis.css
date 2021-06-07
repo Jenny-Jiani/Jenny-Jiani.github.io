@@ -949,6 +949,6 @@ i.dbr-white-logo { display: inline-block; width: 221px; height: 30px; background
 }
 
 @media (max-width: 767px) {
-    .history.history-absolute { position: absolute; top: 130px!important; left: 185px;}
+    .history.history-absolute { position: absolute; top: 110px!important; left: 185px;}
 }
 
