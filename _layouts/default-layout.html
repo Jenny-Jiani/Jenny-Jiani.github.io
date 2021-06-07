@@ -123,34 +123,18 @@
             if (breakpoint() == 'lg') {
                 var sd = $(window).scrollTop();
                 if (sd >= $('#overall-header').height()) {
-                    NoteHide()
+                    if($('.currentVersion').html() == 'latest version' &&  getCookie('NoAlertNote') != 'true') {
+                        $('#DWT17Note').hide()
+                        markdownHChange()
+                    }
                     realFunc1()
                 } else {
-                    $('#DWT17Note').show()
-                    realFunc1()
-                    if ($(window).outerWidth() > 1680) {
-                        if (breakpoint() == 'lg') {
-                            $('.markdown-body h2').css({'padding-top': $('#docHead').outerHeight() + 110 + 'px'})
-                            $('.markdown-body h2').css({'margin-top': -$('#docHead').outerHeight() - 80 + 'px'})
-                            $('.markdown-body h3').css({'padding-top': $('#docHead').outerHeight() + 110 + 'px'})
-                            $('.markdown-body h3').css({'margin-top': -$('#docHead').outerHeight() - 110 + 'px'})
-                            $('.markdown-body h4').css({'padding-top': $('#docHead').outerHeight() + 110 + 'px'})
-                            $('.markdown-body h4').css({'margin-top': -$('#docHead').outerHeight() - 110 + 'px'})
-                            $('.markdown-body h5').css({'padding-top': $('#docHead').outerHeight() + 110 + 'px'})
-                            $('.markdown-body h5').css({'margin-top': -$('#docHead').outerHeight() - 110 + 'px'})
-                        }
-                    } else {
-                        if (breakpoint() == 'lg') {
-                            $('.markdown-body h2').css({'padding-top': $('#docHead').outerHeight() + 90 + 'px'})
-                            $('.markdown-body h2').css({'margin-top': -$('#docHead').outerHeight() - 60 + 'px'})
-                            $('.markdown-body h3').css({'padding-top': $('#docHead').outerHeight() + 90 + 'px'})
-                            $('.markdown-body h3').css({'margin-top': -$('#docHead').outerHeight() - 90 + 'px'})
-                            $('.markdown-body h4').css({'padding-top': $('#docHead').outerHeight() + 90 + 'px'})
-                            $('.markdown-body h4').css({'margin-top': -$('#docHead').outerHeight() - 90 + 'px'})
-                            $('.markdown-body h5').css({'padding-top': $('#docHead').outerHeight() + 90 + 'px'})
-                            $('.markdown-body h5').css({'margin-top': -$('#docHead').outerHeight() - 90 + 'px'})
-                        }
+                    if($('.currentVersion').html() == 'latest version' &&  getCookie('NoAlertNote') != 'true') {
+                        $('#DWT17Note').show()
+                        markdownHChange()
                     }
+                    realFunc1()
+                    
                 }
             } else {
                 $('.subHeadWrapper').css({'top': 'unset'});
@@ -167,16 +151,17 @@
         })
 
         if($('.currentVersion').html() == 'latest version' &&  getCookie('NoAlertNote') != 'true') {
-            NoteHide()
+            $('#DWT17Note').show()
+            markdownHChange()
         }
 
         $('#DWT17Note i').on('click', function() {
             setCookie('NoAlertNote', 'true')
-            NoteHide()
+            $('#DWT17Note').hide()
+            markdownHChange()
         })
 
-        function NoteHide() {
-            $('#DWT17Note').toggle()
+        function markdownHChange() {
             $('.docContainer .markdown-body').css({'margin-top': ($('#docHead').outerHeight() + 0) + 'px'});
             if ($(window).outerWidth() > 1680) {
                 if (breakpoint() == 'lg') {
