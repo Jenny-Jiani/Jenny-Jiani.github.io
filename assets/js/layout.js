@@ -1,11 +1,7 @@
 $(document).ready(function(){ 
-    $('#fullTreeMenuListContainer li.expandListStyle > ul li:not(.expandListStyle)').forEach(function() {
+    $('#fullTreeMenuListContainer li.expandListStyle > ul li:not(.expandListStyle)').each(function() {
         $(this).attr("text-content-after", $(this).find('a').html()[0])
     });
-
-    $('#fullTreeMenuListContainer li.expandListStyle > ul li:not(.expandListStyle):after').css({
-        'content': $('#fullTreeMenuListContainer li.expandListStyle > ul li:not(.expandListStyle)').val()[0]
-    })
     init();
 
     var sd = $(window).scrollTop()
