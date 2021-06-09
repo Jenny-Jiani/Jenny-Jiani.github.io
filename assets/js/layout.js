@@ -1,6 +1,8 @@
 $(document).ready(function(){ 
     $('#fullTreeMenuListContainer li.expandListStyle > ul li:not(.expandListStyle)').each(function() {
-        $(this).attr("text-content-after", $(this).find('a').html()[0])
+        if (!$(this).attr("text-content-after") || $(this).attr("text-content-after") == "") {
+            $(this).attr("text-content-after", $(this).find('a').html()[0])
+        }
     });
     init();
 
