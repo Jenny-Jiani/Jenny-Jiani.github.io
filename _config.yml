@@ -68,11 +68,13 @@ productName: Dynamsoft Barcode Reader
 # indepth: /indepth/
 # info: /info/
 
+_includes: /_includes/
+_layouts: /_layouts/
 about: /about/
-common: /common/
-dshosting: /dshosting/
-selfhosting: /selfhosting/
-schedule: /schedule/
+getstarted: /getstarted/
+indepth: /indepth/
+info: /info/
+
 
 assets: /assets/
 edit_icon: /assets/img-icon/edit-icon.png
