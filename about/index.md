@@ -1,32 +1,27 @@
 ---
 layout: default-layout
-title: About Dynamsoft License Tracking Docs
-keywords: License Tracking, index page
-description: This page introduces the docs and the license types involved
-breadcrumbText: About
 needAutoGenerateSidebar: true
+noTitleIndex: true
+title: About Dynamic Web TWAIN
+keywords: Dynamic Web TWAIN, TWAIN, About, Documentation
+breadcrumbText: About
+description: Dynamic Web TWAIN SDK Documentation About Page
 ---
 
 # About the docs
 
-These docs aim to help you learn and understand how Dynamsoft License Tracking works. 
+These docs aim to help you learn and use the Dynamic Web TWAIN library. They will help you integrate the library into your app no matter whether you are building a workflow from scratch or optimzing an existing workflow.
 
-## Purchase licenses
+## Introduction to Dynamic Web TWAIN
 
-If you are interested in acquiring a trackable license to use one of Dynamsoft's SDKs, please visit the [purchase page]({{site.about}}purchase.html).
+The Dynamic Web TWAIN library (`DWT` for short thereafter) is a software development kit (SDK) specifically designed for adding efficient document management workflows to any kind of web apps.
 
-## Types of trackable licenses
+<a class="btn d-btn bgOrange hide-sm hide-xs" href="https://www.dynamsoft.com/web-twain/downloads">Download 30-Day Free Trial</a>
 
-Not all Dynamsoft Licenses are trackable, a trackable license is one that is compliant with [Dynamsoft License 2.0]({{site.about}}terms.html#license-20). To learn more, please see the [Trackable Licenses]({{site.about}}licensetypes.html) page.
+For more info, please check out [DWT release history]({{site.info}}schedule/stable.html).
 
-## Terms
+## Assumptions
 
-To learn about Handshake Codes, License Items, and other terminologies, please see the [Terms]({{site.about}}terms.html) page.
+These docs are meant for developers who are already familiar with [HTML](https://developer.mozilla.org/docs/Learn/HTML/Introduction_to_HTML), [CSS](https://developer.mozilla.org/docs/Learn/CSS/First_steps), [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript), and some related ideas, tools, etc.
 
-## Activate trackable licenses
-
-Activation is required for trackable licenses to work. Please see [how to Activate a license]({{site.about}}activate.html).
-
-## FAQ
-
-You can also check out the [frequently asked questions]({{site.about}}licensefaq.html).
+To try the samples or code snippets mentioned in the docs, you will need to have an IDE. If you are looking for one, Dynamsoft recommends [Visual Studio Code](https://code.visualstudio.com/) by Microsoft.
