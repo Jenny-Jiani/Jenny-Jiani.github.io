@@ -6,7 +6,7 @@
 <style>
     .DWT17Note {position: relative; padding: 15px 20px 15px 20px;background: #e5f5ff;border: 1px solid #c7dbe8;color: #4788b3;margin-bottom: 20px;}
     .DWT17Note i { position: absolute; right: 10px; top: 8px; font-size: 20px; cursor: pointer; }
-
+    .rightSideMenu.hasNote { margin-top: 168px; }
     @media (min-width: 1200px) and (max-width: 1679.98px) {
         .col-md-3 {
             width: 21%;
@@ -125,11 +125,13 @@
                 if (sd >= $('#overall-header').height()) {
                     if($('.currentVersion').html() == 'latest version' &&  getCookie('NoAlertNote') != 'true') {
                         $('#DWT17Note').hide()
+                        $('.rightSideMenu').removeClass('hasNote')
                         // markdownHChange2()
                     }
                 } else {
                     if($('.currentVersion').html() == 'latest version' &&  getCookie('NoAlertNote') != 'true') {
                         $('#DWT17Note').show()
+                        $('.rightSideMenu').addClass('hasNote')
                         // markdownHChange2()
                     }
                 }
@@ -144,12 +146,14 @@
 
         if($('.currentVersion').html() == 'latest version' &&  getCookie('NoAlertNote') != 'true') {
             $('#DWT17Note').show()
+            $('.rightSideMenu').addClass('hasNote')
             markdownHChange()
         }
 
         $('#DWT17Note i').on('click', function() {
             setCookie('NoAlertNote', 'true')
             $('#DWT17Note').hide()
+            $('.rightSideMenu').removeClass('hasNote')
             markdownHChange()
         })
 

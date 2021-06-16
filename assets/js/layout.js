@@ -23,8 +23,8 @@ $(document).ready(function(){
         var menuHeight = $('#overall-header').height() + subHeight;
         $('#sideBarCnt').css({'width': $('.sideBar').width() + 'px'});
         $('.container .head').css({'width': $('.docContainer').width() + 'px'});
-        $('#fullTreeMenuListContainer').css({'height': 'calc(100vh - '+(menuHeight + 120) +'px)'});
-        $('.rightSideMenu').css({'height': 'calc(100vh - '+(menuHeight + 195)+'px)'});
+        $('#fullTreeMenuListContainer').css({'height': 'calc(100vh - ' + (menuHeight + 120) +'px)'});
+        $('.rightSideMenu').css({'height': 'calc(100vh - '+ (menuHeight)+'px)'});
         $('.docContainer .markdown-body').css({'margin-top': ($('#docHead').outerHeight() + 0) + 'px'});
         if (breakpoint() == 'lg') {
             $('.history').css({'width': $('#txtSearch').outerWidth() + 'px'});
