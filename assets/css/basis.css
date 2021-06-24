@@ -66,11 +66,11 @@ ul.circle > li p:hover, ul.circle li.on p, ul.square > li.on p, ul.square > li p
 .subHeadWrapper .mobileSubHeaderMenu ul li { display: inline-block; margin-right: 20px; }
 .subHeadWrapper .mobileSubHeaderMenu ul li:last-child { margin-right: 0; }
 
-.rightSideMenu { border-left: 1px solid #ddd; margin-top: 66px; height: 100%; max-height: calc(100vh - 210px); overflow: auto; }
+.rightSideMenu { border-left: 1px solid #ddd; padding-top: 66px; height: 100%; max-height: calc(100vh - 210px); overflow: auto; }
 .rightSideMenu.rsm-fixed { position: fixed; top: 80px; }
 .rightSideMenu ul { font-size: 14px; line-height: 22px; padding-left: 20px; }
 
-.dlrDoc .rightSideMenu { border-left: 1px solid #ddd; margin-top: 66px; height: 100%; max-height: calc(100vh - 290px); overflow: auto; }
+.dlrDoc .rightSideMenu { border-left: 1px solid #ddd; padding-top: 66px; height: 100%; max-height: calc(100vh - 290px); overflow: auto; }
 .dlrDoc .rightSideMenu.rsm-fixed { position: fixed; top: 100px; }
 .dlrDoc .rightSideMenu ul { font-size: 14px; line-height: 22px; padding-left: 20px; }
 .rightSideMenu ul li { margin-bottom: 5px; }
@@ -945,4 +945,19 @@ i.dbr-white-logo { display: inline-block; width: 221px; height: 30px; background
 @media (max-width: 767px) {
     .sideBar { padding-top: 0!important; }
     .history.history-absolute { position: absolute; top: 110px!important; left: 185px;}
+}
+
+
+.markdown-body .doc-card-prefix + blockquote {
+    padding: 20px;
+    margin: 20px 0;
+    border: solid lightgray 1px;
+    box-shadow: 0 0 4px rgb(0 0 0 / 25%);
+}
+
+.markdown-body .doc-card-prefix + blockquote hr {
+    height: 1px;
+    margin: 10px -20px;
+    background-color: #e1e4e8;
+    border: 0;
 }

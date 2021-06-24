@@ -9,64 +9,57 @@ docHomePage: /
 productUrl: https://www.dynamsoft.com/Products/Dynamic-Barcode-Reader.aspx
 productName: Dynamsoft Barcode Reader
 
-# introduction: /introduction/
-# programming: /programming/
-# parameters: /parameters/
-# license_activation: /license-activation/
-# enhancements: /enhancements/
+introduction: /introduction/
+programming: /programming/
+parameters: /parameters/
+license_activation: /license-activation/
+enhancements: /enhancements/
 
-# comparison_tools: /introduction/comparison-tools/
+comparison_tools: /introduction/comparison-tools/
 
-# c_cplusplus: /programming/c-cplusplus/
-# structs: /programming/c-cplusplus/struct/
+c_cplusplus: /programming/c-cplusplus/
+structs: /programming/c-cplusplus/struct/
 
-# c: /programming/c/
-# c_api: /programming/c/api-reference/
-# c_methods: /programming/c/api-reference/methods/
-# c_release_notes: /programming/c/release-notes/
+c: /programming/c/
+c_api: /programming/c/api-reference/
+c_methods: /programming/c/api-reference/methods/
+c_release_notes: /programming/c/release-notes/
 
-# cpp: /programming/cplusplus/
-# cpp_api: /programming/cplusplus/api-reference/
-# cpp_methods: /programming/cplusplus/api-reference/cbarcodereader-methods/
-# cpp_release_notes: /programming/cplusplus/release-notes/
+cpp: /programming/cplusplus/
+cpp_api: /programming/cplusplus/api-reference/
+cpp_methods: /programming/cplusplus/api-reference/cbarcodereader-methods/
+cpp_release_notes: /programming/cplusplus/release-notes/
 
-# js: /programming/javascript/
-# js_api: /programming/javascript/api-reference/
-# js_release_notes: /programming/javascript/release-notes/
+js: /programming/javascript/
+js_api: /programming/javascript/api-reference/
+js_release_notes: /programming/javascript/release-notes/
 
-# dotnet: /programming/dotnet/
-# dotnet_api: /programming/dotnet/api-reference/
-# dotnet_release_notes: /programming/dotnet/release-notes/
+dotnet: /programming/dotnet/
+dotnet_api: /programming/dotnet/api-reference/
+dotnet_release_notes: /programming/dotnet/release-notes/
 
-# oc: /programming/objectivec-swift/
-# oc_api: /programming/objectivec-swift/api-reference/
-# oc_release_notes: /programming/objectivec-swift/release-notes/
+oc: /programming/objectivec-swift/
+oc_api: /programming/objectivec-swift/api-reference/
+oc_release_notes: /programming/objectivec-swift/release-notes/
 
-# java: /programming/java/
-# java_api: /programming/java/api-reference/
-# java_release_notes: /programming/java/release-notes/
+java: /programming/java/
+java_api: /programming/java/api-reference/
+java_release_notes: /programming/java/release-notes/
 
-# android: /programming/android/
-# android_api: /programming/android/api-reference/
-# android_release_notes: /programming/android/release-notes/
+android: /programming/android/
+android_api: /programming/android/api-reference/
+android_release_notes: /programming/android/release-notes/
   
-# python: /programming/python/
-# python_api: /programming/python/api-reference/
-# python_release_notes: /programming/python/release-notes/
+python: /programming/python/
+python_api: /programming/python/api-reference/
+python_release_notes: /programming/python/release-notes/
 
-# parameters_reference: /parameters/reference/
-# scenario_settings: /parameters/scenario-settings/
-# enumerations: /parameters/enum/
+parameters_reference: /parameters/reference/
+scenario_settings: /parameters/scenario-settings/
+enumerations: /parameters/enum/
 
-# faqs: /introduction/faqs.html
-# how_to: /introduction/how-to-guide/
-
-# _includes: /_includes/
-# _layouts: /_layouts/
-# about: /about/
-# getstarted: /getstarted/
-# indepth: /indepth/
-# info: /info/
+faqs: /introduction/faqs.html
+how_to: /introduction/how-to-guide/
 
 _includes: /_includes/
 _layouts: /_layouts/

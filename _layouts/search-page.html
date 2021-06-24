@@ -112,18 +112,18 @@
         <div class="subHeader container">
             <div class="row">
                 <ul class="subHeaderMenuUl col-xs-12 clearfix">
-                    <li class="title"><a class="f18 fontOswald" href="https://www.dynamsoft.com/Products/WebTWAIN_Overview.aspx">Dynamic Web Twain</a> <span class="fc9">|</span> Developer's Center</li>
-                    <li class="on"><a class="orangelink" href = "{{ site.docHomePage }}">Documentation</a></li>
-                    <li><a class="whitelink hide-xs" href="https://www.dynamsoft.com/Downloads/WebTWAIN-Sample-Download.aspx">Code Gallery</a></li>
-                    <li><a class="whitelink hide-xs" href="https://developer.dynamsoft.com/dwt">Dev Center</a></li>
-                    <li class="fr" style="margin-right: 0; padding: 0;"><a class="btn d-btn bgOrange hide-sm hide-xs" href="https://www.dynamsoft.com/web-twain/downloads">Download 30-Day Free Trial</a></li>
+                    <li class="title"><a class="f18 fontOswald" href="https://www.dynamsoft.com/Products/Dynamic-Barcode-Reader.aspx">Dynamsoft Barcode Reader</a> <span class="fc9">|</span> Developer's Center</li>
+                    <li class="on"><a class="orangelink" href="{{ site.docHomePage }}">Documentation</a></li>
+                    <li><a class="whitelink hide-xs" href="https://www.dynamsoft.com/Downloads/Dynamic-Barcode-Reader-Sample-Download.aspx">Code Gallery</a></li>
+                    <li><a class="whitelink hide-xs" href="https://www.dynamsoft.com/Products/Barcode-Reader-Resources.aspx">Resources</a></li>
+                    <li class="fr" style="margin-right: 0; padding: 0;"><a class="btn d-btn bgOrange hide-sm hide-xs" href="https://www.dynamsoft.com/Downloads/Dynamic-Barcode-Reader-Download.aspx">Download 30-Day Free Trial</a></li>
                 </ul>
             </div>
             <div class="row mobileSubHeaderMenu">
                 <ul class="col-xs-12 show-xs">
                     <li><a class="orangelink" href = "{{ site.docHomePage }}">Documentation</a></li>
-                    <li><a class="whitelink" href="https://www.dynamsoft.com/Downloads/WebTWAIN-Sample-Download.aspx">Code Gallery</a></li>
-                    <li><a class="whitelink" href="https://developer.dynamsoft.com/dwt">Dev Center</a></li>
+                    <li><a class="whitelink" href="https://www.dynamsoft.com/Downloads/Dynamic-Barcode-Reader-Sample-Download.aspx">Code Gallery</a></li>
+                    <li><a class="whitelink" href="https://www.dynamsoft.com/Products/Barcode-Reader-Resources.aspx">Resources</a></li>
                 </ul>
             </div>
         </div>
@@ -136,8 +136,8 @@
                   <div id="searchResult" class="container pt40 pb60 sm-pt50">
                       <div class="row">
                           <div class="col-xs-12">
-                              <h1>Search</h1>
-                              <script async src="https://cse.google.com/cse.js?cx=2849fa1c545c59689"></script>
+                              <h1>Search</h1>                        
+                              <script async src="https://cse.google.com/cse.js?cx=32039cdf85bc7ae2b"></script>
                               <div class="gcse-search"></div>
                           </div>
                       </div>
@@ -238,14 +238,12 @@
           $(".sideBar").toggleClass('hide-sm');
           $(".sideBar").toggleClass('hide-xs');
           setTimeout(function() {
-            //   console.log('sidebar' + $('.sideBar').width())
               $('#sideBarCnt').css({'width': $('.sideBar').width() + 'px'})
           }, 100)
       })
 
     //   let timeInt = setInterval(function() {
     //       var container = $('#sideBarCnt'), scrollTo = $('#sideBarCnt .activeLink');
-    //       console.log(scrollTo)
     //       if (scrollTo.length>0) {
     //           container.scrollTop(
     //               scrollTo.offset().top - container.offset().top + container.scrollTop()
@@ -261,11 +259,11 @@
           }
       }
 
-    $('#txtSearch').keydown(function(e) { 
-        if (e.keyCode == 13) {
-            window.location.href = '/web-twain/docs/search.html?q=' + $('#txtSearch').val()
-        }
-    })
+      $('#txtSearch').keydown(function(e) { 
+          if (e.keyCode == 13) {
+              window.location.href = '/barcode-reader/search.html?q=' + $('#txtSearch').val()
+          }
+      })
 
   </script>
 
