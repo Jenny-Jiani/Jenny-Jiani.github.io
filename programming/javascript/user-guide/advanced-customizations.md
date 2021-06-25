@@ -43,7 +43,7 @@ To speed up the scanning process, you can choose to scan only a specific area/re
 >```javascript
 >let settings = await scanner.getRuntimeSettings();
 >/*
-> * The following code shrinks the decoding region by 25% on all sides
+> * Javascript
 > */
 >settings.region.regionMeasuredByPercentage = 1;
 >settings.region.regionLeft = 25;
@@ -57,7 +57,7 @@ To speed up the scanning process, you can choose to scan only a specific area/re
 >```javascript
 >let settings = await scanner.getRuntimeSettings();
 >/*
-> * The following code shrinks the decoding region by 25% on all sides
+> * C# Test
 > */
 >settings.region.regionMeasuredByPercentage = 1;
 >settings.region.regionLeft = 25;
