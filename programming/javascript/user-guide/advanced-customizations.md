@@ -10,28 +10,63 @@ needAutoGenerateSidebar: true
 
 ## Debugging with Logs
 
-Include the following in your code to print internal logs in the console.
+Include1 the following in your code to print internal logs in the console.
 
-```javascript
-Dynamsoft.DBR.BarcodeReader._onLog = console.log;
-```
+<div class="sample-code-prefix"></div>
+
+>- Javascript
+>- C#
+>
+>1. 
+>[![Copy Code][1]](javascript:;)
+>```javascript
+>Dynamsoft.DBR.BarcodeReader._onLog = console.log;
+>```
+>2. 
+>[![Copy Code][1]](javascript:;)
+>```javascript
+>Dynamsoft.DBR.BarcodeReader._onLog = console.log;
+>```
 
 ## Read a specific area/region
 
 To speed up the scanning process, you can choose to scan only a specific area/region.
 
-```javascript
-let settings = await scanner.getRuntimeSettings();
-/*
- * The following code shrinks the decoding region by 25% on all sides
- */
-settings.region.regionMeasuredByPercentage = 1;
-settings.region.regionLeft = 25;
-settings.region.regionTop = 25;
-settings.region.regionRight = 75;
-settings.region.regionBottom = 75;
-await scanner.updateRuntimeSettings(settings);
-```
+
+<div class="sample-code-prefix"></div>
+
+>- Javascript
+>- C#
+>
+>1. 
+>[![Copy Code][1]](javascript:;)
+>```javascript
+>let settings = await scanner.getRuntimeSettings();
+>/*
+> * The following code shrinks the decoding region by 25% on all sides
+> */
+>settings.region.regionMeasuredByPercentage = 1;
+>settings.region.regionLeft = 25;
+>settings.region.regionTop = 25;
+>settings.region.regionRight = 75;
+>settings.region.regionBottom = 75;
+>await scanner.updateRuntimeSettings(settings);
+>```
+>2. 
+>[![Copy Code][1]](javascript:;)
+>```javascript
+>let settings = await scanner.getRuntimeSettings();
+>/*
+> * The following code shrinks the decoding region by 25% on all sides
+> */
+>settings.region.regionMeasuredByPercentage = 1;
+>settings.region.regionLeft = 25;
+>settings.region.regionTop = 25;
+>settings.region.regionRight = 75;
+>settings.region.regionBottom = 75;
+>await scanner.updateRuntimeSettings(settings);
+>```
+
 [Try in JSFiddle](https://jsfiddle.net/DynamsoftTeam/taykq592/)
 
 ## Set mode arguments
@@ -81,3 +116,5 @@ let scanner = null;
 ```
 
 [Try in JSFiddle](https://jsfiddle.net/DynamsoftTeam/tz9ngm2a/)
+
+[1]:/assets/img-icon/copy.svg
