@@ -18,12 +18,12 @@ Include1 the following in your code to print internal logs in the console.
 >- C#
 >
 >1. 
->[![Copy Code][1]](javascript:;)
+>[![Copy Code]({{ site.copy_icon }})](javascript:;)
 >```javascript
 >Dynamsoft.DBR.BarcodeReader._onLog = console.log;
 >```
 >2. 
->[![Copy Code][1]](javascript:;)
+>[![Copy Code]({{ site.copy_icon }})](javascript:;)
 >```javascript
 >Dynamsoft.DBR.BarcodeReader._onLog = console.log;
 >```
@@ -37,35 +37,36 @@ To speed up the scanning process, you can choose to scan only a specific area/re
 
 >- Javascript
 >- C#
+>- 
 >
 >1. 
->[![Copy Code][1]](javascript:;)
->```javascript
->let settings = await scanner.getRuntimeSettings();
->/*
-> * Javascript
-> */
->settings.region.regionMeasuredByPercentage = 1;
->settings.region.regionLeft = 25;
->settings.region.regionTop = 25;
->settings.region.regionRight = 75;
->settings.region.regionBottom = 75;
->await scanner.updateRuntimeSettings(settings);
->```
->2. 
->[![Copy Code][1]](javascript:;)
->```javascript
->let settings = await scanner.getRuntimeSettings();
->/*
-> * C# Test
-> */
->settings.region.regionMeasuredByPercentage = 1;
->settings.region.regionLeft = 25;
->settings.region.regionTop = 25;
->settings.region.regionRight = 75;
->settings.region.regionBottom = 75;
->await scanner.updateRuntimeSettings(settings);
->```
+[![Copy Code]({{ site.copy_icon }})](javascript:;)
+```javascript
+let settings = await scanner.getRuntimeSettings();
+/*
+ * Javascript
+ */
+settings.region.regionMeasuredByPercentage = 1;
+settings.region.regionLeft = 25;
+settings.region.regionTop = 25;
+settings.region.regionRight = 75;
+settings.region.regionBottom = 75;
+await scanner.updateRuntimeSettings(settings);
+```
+2. 
+[![Copy Code]({{ site.copy_icon }})](javascript:;)
+```javascript
+let settings = await scanner.getRuntimeSettings();
+/*
+ * C# Test
+ */
+settings.region.regionMeasuredByPercentage = 1;
+settings.region.regionLeft = 25;
+settings.region.regionTop = 25;
+settings.region.regionRight = 75;
+settings.region.regionBottom = 75;
+await scanner.updateRuntimeSettings(settings);
+```
 
 [Try in JSFiddle](https://jsfiddle.net/DynamsoftTeam/taykq592/)
 
@@ -73,6 +74,9 @@ To speed up the scanning process, you can choose to scan only a specific area/re
 
 To precisely control a mode, you could adjust the specific mode parameter.
 
+<div class="copy-prefix"></div>
+
+[![Copy Code]({{ site.copy_icon }})](javascript:;)
 ```javascript
 let settings = await scanner.getRuntimeSettings();
 
@@ -117,4 +121,5 @@ let scanner = null;
 
 [Try in JSFiddle](https://jsfiddle.net/DynamsoftTeam/tz9ngm2a/)
 
-[1]:/assets/img-icon/copy.svg
+
+

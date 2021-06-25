@@ -154,6 +154,10 @@ $(document).ready(function(){
     $('.markdown-body .sample-code-prefix + blockquote ol li a').on('click', function() {
         copy($(this).parent().find('code').text())
     })
+
+    $('.copy-prefix + p a').on('click', function() {
+        copy($(this).parent().find('+ div code').text())
+    })
 })
 
 function copy(data) {

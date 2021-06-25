@@ -76,6 +76,7 @@ sad_icon: /assets/img-icon/icon-sad.png
 dbr_icon: /assets/img-icon/icon-dbr.svg
 dwt_icon: /assets/img-icon/icon-dwt.svg
 dnt_icon: /assets/img-icon/icon-dnt.svg
+copy_icon: /assets/img-icon/copy.svg
 
 baseurl: ""
 plugins:
