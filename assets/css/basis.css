@@ -4071,6 +4071,7 @@ i.dbr-white-logo {
     padding: 5px 5px 5px 27px;
 }
 
+.sideBar .showMobile { display: none; }
 
 .middleWrapper {
     display: -webkit-box;
@@ -4160,6 +4161,10 @@ i.dbr-white-logo {
 
 #footerBottom { margin-left: 280px; }
 
+a.otherLinkColour.active { color: #fe8e14; }
+#mdHeader li.hide-lg {
+    display: inline-block!important;
+}
 @media (max-width: 1679px) {
     .sideBar { width: 260px; top: 146px; height: calc(100vh - 146px); }
     .markdown-body { min-height: calc(100vh - 228px); }
@@ -4172,6 +4177,9 @@ i.dbr-white-logo {
     }
     .rightSideMenu .rightMenuContent.fixedMenu {
         top: 105px;
+    }
+    #footerBottom {
+        margin-left: 260px;
     }
 }
 
@@ -4203,6 +4211,16 @@ i.dbr-white-logo {
         padding: 0;
         list-style: none;
     }
+    .sideBar { width: 260px; top: 0; height: 100vh; z-index: 9999; left:-260px;  transition: left ease-in-out .5s; -webkit-transition: left ease-in-out .5s; -moz-transition: left ease-in-out .5s; -ms-transition: left ease-in-out .5s; -o-transition: left ease-in-out .5s; }
+    .sideBar.show { left: 0; transition: left ease-in-out .5s; -webkit-transition: left ease-in-out .5s; -moz-transition: left ease-in-out .5s; -ms-transition: left ease-in-out .5s; -o-transition: left ease-in-out .5s; }
+    .sideBar .showMobile { display: block; }
+    .sideBar .showMobile i { cursor: pointer; }
+    .docContainer { display: block; }
+    body, html { background: #ffffff; }
+    .markdown-body { padding-top: 0px; }
+    .markdown-body .article { padding-top: 20px; box-shadow: none; }
+    #footerBottom { margin-left: 0; }
+    #menuMask.showTableContent { display: block!important; z-index: 9000; }
 }
 
 @media (max-width: 767px) {}
