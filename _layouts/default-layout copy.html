@@ -4,70 +4,70 @@
 {%- include head.html -%}
 
 <body>
-    <script src="{{ site.assets }}js/urlRewrite.js"></script>
-
     <div class="headWrapper">
         {%- include page_header.html -%}
     </div>
     {%- include dbrNav.html -%}
     <div class="sideBarIcon"><i class="fa fa-list" style="margin-right: 5px;"></i> Table of contents</div>
-    <div class="sideBar">
-        <div id="sideBarCnt">
-            <div class="history list">
-                {%- include liquid_autoGenerateHistoryList.html -%}
-                {%- include version-list.html -%}
-            </div>
-            <div class="docSearchPart" style="margin-top: 10px;">
-                <input id="txtSearch" class="search" type="text">
-            </div>
-            <ul class="mainPage" id="fullTreeMenuListContainer" name="listLevel1">
-                {%- include sidelist-introduction.html -%}
-                {%- include sidelist-programming.html -%}
-                {%- include sidelist-parameters.html -%}
-                {%- include sidelist-enhancement.html -%}
-                {%- include sidelist-license_activation.html -%}
-            </ul>
-        </div>
-    </div>
-    <section class="middleWrapper">
-        <div class="docContainer">
-            <div class="rightSideMenu">
-                <div class="rightMenuContent">
-                    <div id="compatibleInfo">
-                        <p>This page is compatible for:</p>
-                        <p class="compatibleCurVersion">Version 7.5</p>
+    <div class="container">
+        <div class="row">
+            <div class="sideBar col-xs-12 col-md-3 hide-xs hide-sm">
+                <div id="sideBarCnt">
+                    <div class="history list">
+                        {%- include liquid_autoGenerateHistoryList.html -%}
+                        {%- include version-list.html -%}
                     </div>
-                    <div id="feedbackFooter" style="color: #306877;">
-                        <p class="fontOswald">Is this page helpful? </p>
-                        <a href="javascript:void(0)" style="color: #306877;" class="recordLink smileLink" onclick="UsefulRecord(true)"><img class="icon-smile" src="{{ site.smile_icon }}" alt="Yes" />Yes</a>
-                        <a href="javascript:void(0)" style="color: #306877;" class="recordLink sadLink" onclick="UsefulRecord(false)"><img class="icon-sad" src="{{ site.sad_icon }}" alt="No" />No</a>
+                    <div class="docSearchPart" style="margin-top: 10px;">
+                        <input id="txtSearch" class="search" type="text">
                     </div>
-                    {%- if page.needAutoGenerateSidebar -%}
-                    <hr />
-                    <p class="fontOswald" style="color: #306877;"> In this article: </p>
-                    <div id="AutoGenerateSidebar"></div>
-                    {%- endif -%}
+                    <ul class="mainPage" id="fullTreeMenuListContainer" name="listLevel1">
+                        {%- include sidelist-introduction.html -%}
+                        {%- include sidelist-programming.html -%}
+                        {%- include sidelist-parameters.html -%}
+                        {%- include sidelist-enhancement.html -%}
+                        {%- include sidelist-license_activation.html -%}
+                    </ul>
                 </div>
             </div>
-            <div class="content markdown-body headCounter" style="margin-bottom: 20px;">
-                <article class="article">
-                    <div id="docHead" class = "head clearfix">
-                        {%- include main-page-head.html -%}
+            <div class="docContainer col-xs-12 col-md-9">
+                <div id="docHead" class = "head row hide-xs hide-sm">
+                    {%- include main-page-head.html -%}
+                </div>
+                <div class="main row">
+                    <div class="content markdown-body headCounter col-xs-12 col-md-12 col-lg-9 col-xl-10" style="margin-bottom: 20px;">
+                        <div class="dbrThanksDownloading">
+                            <p class="thanksDownloadTitle">Thanks for downloading Dynamsoft Barcode Reader <span class="editionName"></span> Package!</p>
+                            <p style="margin-bottom: 0;">Your download will start shortly. If your download does not begin, <a class="bluelink downloadlink" href="">click here to retry</a>.</p>
+                        </div>
+                        {{ content }}
+                        
                     </div>
-                    <div class="dbrThanksDownloading">
-                        <p class="thanksDownloadTitle">Thanks for downloading Dynamsoft Barcode Reader <span class="editionName"></span> Package!</p>
-                        <p style="margin-bottom: 0;">Your download will start shortly. If your download does not begin, <a class="bluelink downloadlink" href="">click here to retry</a>.</p>
+                    <div class="rightSideMenu col-xs-12 col-md-12 col-lg-3 col-xl-2  hide-md hide-sm hide-xs">
+                        <div id="compatibleInfo">
+                            <p>This page is compatible for:</p>
+                            <p class="compatibleCurVersion">Version 7.5</p>
+                        </div>
+                        <div id="feedbackFooter" style="color: #306877;">
+                            <p class="fontOswald">Is this page helpful? </p>
+                            <a href="javascript:void(0)" style="color: #306877;" class="recordLink smileLink" onclick="UsefulRecord(true)"><img class="icon-smile" src="{{ site.smile_icon }}" alt="Yes" />Yes</a>
+                            <a href="javascript:void(0)" style="color: #306877;" class="recordLink sadLink" onclick="UsefulRecord(false)"><img class="icon-sad" src="{{ site.sad_icon }}" alt="No" />No</a>
+                        </div>
+                        <hr />
+                        {%- if page.needAutoGenerateSidebar -%}
+                        <p class="fontOswald" style="color: #306877;"> In this article: </p>
+                        <div id="AutoGenerateSidebar"></div>
+                        {%- endif -%}
                     </div>
-                    {{ content }}
-                </article>
+                </div>
             </div>
         </div>
-        <div id="footerWrapper">
-            {%- include page_footer.html -%}
-        </div>
-    </section>
+    </div>
+    <div id="footerWrapper">
+        {%- include page_footer.html -%}
+    </div>
 
     <script type="text/javascript">anchors.add();</script>
+
 
     <script type="text/javascript">
         UrlReplace();
@@ -91,12 +91,14 @@
 
     {%- include livehelp.html -%}
 
+
     <!-- for dbr -->
     <script type="text/javascript">
         function getCookie(name) {
             var arr, reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
             return (arr = document.cookie.match(reg)) ? unescape(arr[2]) : null;
         }
+
 
         $(document).ready(function(){
             var download = getUrlParam('download');
