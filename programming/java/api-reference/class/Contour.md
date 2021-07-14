@@ -1,7 +1,6 @@
 ---
 layout: default-layout
 title: Dynamsoft Barcode Reader Java API Reference - Contour Class
-description: This page shows the Contour Class of Dynamsoft Barcode Reader for Java SDK API Reference.
 keywords: Contour, class, api reference, java
 needAutoGenerateSidebar: false
 ---
@@ -20,6 +19,6 @@ Stores the contour information.
 ### points
 The points array.
 ```java
-Point[] com.dynamsoft.dbr.Contour.points
+Point[] com.dynamsoft.barcode.Contour.points
 
 ```  

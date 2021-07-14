@@ -1,7 +1,6 @@
 ---
 layout: default-layout
 title: Dynamsoft Barcode Reader Python API Reference - FrameDecodingParameters Class
-description: This page shows the FrameDecodingParameters Class of Dynamsoft Barcode Reader for Python SDK.
 keywords: FrameDecodingParameters, class, api reference, python
 needAutoGenerateSidebar: false
 ---
@@ -215,7 +214,7 @@ FrameDecodingParameters.threshold
 - **Default value**   
     0.1
     
-- **Remarks**  
+- **Remark**  
     The SDK will calculate an inner indicator for each frame from [`append_video_frame`](../BarcodeReader/video.md#append_video_frame), if the change rate of the indicators between the current frame and the history frames is larger than the given threshold, the current frame will not be added to the inner frame queue waiting for decoding.
 
 ### fps
@@ -231,7 +230,7 @@ FrameDecodingParameters.fps
 - **Default value**   
     0  
     
-- **Remarks**  
+- **Remark**  
     0 means the frequency will be calculated automatically by the SDK.
 
 ### auto_filter
@@ -247,7 +246,7 @@ FrameDecodingParameters.auto_filter
 - **Default value**   
     1  
     
-- **Remarks**  
+- **Remark**  
     0: Diable filtering frames automatically.  
     1: Enable filtering frames automatically. 
     

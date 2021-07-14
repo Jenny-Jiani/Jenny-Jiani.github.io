@@ -1,7 +1,6 @@
 ---
 layout: default-layout
 title: Dynamsoft Barcode Reader C & C++ Struct - PublicRuntimeSettings
-description: This page shows the PublicRuntimeSettings struct of Dynamsoft Barcode Reader for C & C++ Language.
 keywords: PublicRuntimeSettings, struct, c, c++
 needAutoGenerateSidebar: false
 ---
@@ -45,9 +44,7 @@ typedef struct tagPublicRuntimeSettings  PublicRuntimeSettings
 | [`minResultConfidence`](#minresultconfidence) | *int* |
 | [`scaleUpModes`](#scaleupmodes) | [`ScaleUpMode`]({{ site.enumerations }}parameter-mode-enums.html#scaleupmodes)\[8\] |
 | [`pdfReadingMode`](#pdfreadingmode) | [`PDFReadingMode`]({{ site.enumerations }}parameter-mode-enums.html#pdfreadingmode) | 
-| [`deblurModes`](#deblurmodes) | [`DeblurMode`]({{ site.enumerations }}parameter-mode-enums.html#DeblurMode)\[10\] | 
-| [`barcodeZoneMinDistanceToImageBorders`](#barcodezonemindistancetoimageborders) | *int* |
-| [`reserved`](#reserved) | *char\[36\]* |
+| [`reserved`](#reserved) | *char\[84\]* |
 
 
 ### terminatePhase
@@ -61,7 +58,7 @@ TerminatePhase tagPublicRuntimeSettings::terminatePhase
 - **Default value**   
     `TP_BARCODE_RECOGNIZED`
     
-- **Remarks**   
+- **Remark**   
     When the recognition result is not desired, you can set this parameter can be set to skip certain processing stages.
     
 - **See also**  
@@ -79,7 +76,7 @@ int tagPublicRuntimeSettings::timeout
 - **Default value**   
     10000
     
-- **Remarks**   
+- **Remark**   
     If you want to stop reading barcodes after a certain period of time, you can use this parameter to set a timeout.
     
 
@@ -94,7 +91,7 @@ int tagPublicRuntimeSettings::timeout
 - **Default value**   
     4
     
-- **Remarks**   
+- **Remark**   
     To keep a balance between speed and quality, the library concurrently runs four different threads for barcode decoding by default.
 
 ### expectedBarcodesCount
@@ -108,7 +105,7 @@ int tagPublicRuntimeSettings::expectedBarcodesCount
 - **Default value**   
     0
     
-- **Remarks**   
+- **Remark**   
     0: means Unknown and it will find at least one barcode. 1: try to find one barcode. If one barcode is found, the library will stop the localization process and perform barcode decoding. n: try to find n barcodes. If the library only finds m (m<n) barcode, it will try different algorithms till n barcodes are found or all algorithms are tried.
 
 ### barcodeFormatIds
@@ -122,7 +119,7 @@ int tagPublicRuntimeSettings::barcodeFormatIds
 - **Default value**   
     `BF_ALL`
     
-- **Remarks**   
+- **Remark**   
     If the barcode type(s) are certain, specifying the barcode type(s) to be read will speed up the recognition process. The barcode format our library will search for is composed of [BarcodeFormat group 1]({{ site.enumerations }}format-enums.html#barcodeformat) and [BarcodeFormat group 2]({{ site.enumerations }}format-enums.html#barcodeformat_2), so you need to specify the barcode format in group 1 and group 2 individually.
     
 - **See also**  
@@ -139,7 +136,7 @@ int tagPublicRuntimeSettings::barcodeFormatIds_2
 - **Default value**   
     `BF2_NULL`
     
-- **Remarks**   
+- **Remark**   
     If the barcode type(s) are certain, specifying the barcode type(s) to be read will speed up the recognition process. The barcode format our library will search for is composed of [BarcodeFormat group 1]({{ site.enumerations }}format-enums.html#barcodeformat) and [BarcodeFormat group 2]({{ site.enumerations }}format-enums.html#barcodeformat_2), so you need to specify the barcode format in group 1 and group 2 individually.
     
 - **See also**  
@@ -156,7 +153,7 @@ int tagPublicRuntimeSettings::pdfRasterDPI
 - **Default value**   
     300
     
-- **Remarks**   
+- **Remark**   
     When decoding barcodes from a PDF file using the DecodeFile method, the library will convert the PDF file to image(s) first, then perform barcode recognition.
 
 ### scaleDownThreshold
@@ -170,7 +167,7 @@ int tagPublicRuntimeSettings::scaleDownThreshold
 - **Default value**   
     2300
     
-- **Remarks**   
+- **Remark**   
     If the shorter edge size is larger than the given threshold value, the library will calculate the required height and width of the barcode image and shrink the image to that size before localization. Otherwise, the library will perform barcode localization on the original image.
 
 ### binarizationModes
@@ -184,7 +181,7 @@ BinarizationMode tagPublicRuntimeSettings::binarizationModes[8]
 - **Default value**   
     `[BM_LOCAL_BLOCK,BM_SKIP,BM_SKIP,BM_SKIP,BM_SKIP,BM_SKIP,BM_SKIP,BM_SKIP]`
     
-- **Remarks**   
+- **Remark**   
     The array index represents the priority of the item. The smaller index is, the higher priority is.
     
 - **See also**   
@@ -202,7 +199,7 @@ LocalizationMode tagPublicRuntimeSettings::localizationModes[8]
 - **Default value**   
     `[LM_CONNECTED_BLOCKS, LM_SCAN_DIRECTLY, LM_STATISTICS, LM_LINES, LM_SKIP, LM_SKIP, LM_SKIP, LM_SKIP]`
     
-- **Remarks**   
+- **Remark**   
     The array index represents the priority of the item. The smaller index is, the higher priority is.
     
 - **See also**   
@@ -226,7 +223,7 @@ int tagPublicRuntimeSettings::deblurLevel
 - **Default value**   
     9
     
-- **Remarks**   
+- **Remark**   
     If you have a blurry image, you can set this property to a larger value. The higher the value set, the more effort the library will spend to decode images, but it may also slow down the recognition process.
 
 ### intermediateResultTypes
@@ -283,7 +280,7 @@ TextResultOrderMode tagPublicRuntimeSettings::textResultOrderModes[8]
 - **Default value**   
     `[TROM_CONFIDENCE, TROM_POSITION, TROM_FORMAT, TROM_SKIP, TROM_SKIP, TROM_SKIP, TROM_SKIP, TROM_SKIP]`
     
-- **Remarks**   
+- **Remark**   
     The array index represents the priority of the item. The smaller the index, the higher the priority.   
  
 - **See also**    
@@ -300,8 +297,8 @@ int tagPublicRuntimeSettings::returnBarcodeZoneClarity
 - **Default value**   
     0
     
-- **Remarks**   
-    0: Do not return the clarity of the barcode zone; 1: Return the clarity of the barcode zone.  
+- **Remark**   
+    0: Do not return the clarity of the barcode zone; 1: Return the clarity of the batcode zone.  
 
 ### region
 Sets the region definition including regionTop, regionLeft, regionRight, regionBottom, and regionMeasuredByPercentage.
@@ -320,7 +317,7 @@ int tagPublicRuntimeSettings::minBarcodeTextLength
 - **Default value**   
     0
     
-- **Remarks**   
+- **Remark**   
     0: means no limitation on the barcode text length. 
 
 ### minResultConfidence
@@ -334,7 +331,7 @@ int tagPublicRuntimeSettings::minResultConfidence
 - **Default value**   
     0
     
-- **Remarks**   
+- **Remark**   
     0: means no limitation on the result confidence.
 
 ### scaleUpModes
@@ -348,7 +345,7 @@ ScaleUpMode tagPublicRuntimeSettings::scaleUpModes[8]
 - **Default value**   
     `[SUM_AUTO, SUM_SKIP, SUM_SKIP, SUM_SKIP, SUM_SKIP, SUM_SKIP, SUM_SKIP, SUM_SKIP]`
     
-- **Remarks**   
+- **Remark**   
     The array index represents the priority of the item. The smaller the index, the higher the priority.   
  
 - **See also**    
@@ -370,41 +367,8 @@ PDFReadingMode tagPublicRuntimeSettings::pdfReadingMode
     [`PDFReadingMode`]({{ site.enumerations }}parameter-mode-enums.html#pdfreadingmode) 
 
 
-### deblurModes
-Sets the mode and priority for deblurring.
-```cpp
-DeblurMode tagPublicRuntimeSettings::deblurModes[10]
-```
-- **Value range**   
-    Each array item can be any one of the [`DeblurMode`]({{ site.enumerations }}parameter-mode-enums.html#deblurmode) Enumeration items.
-      
-- **Default value**   
-    `[DM_SKIP,DM_SKIP,DM_SKIP,DM_SKIP,DM_SKIP,DM_SKIP,DM_SKIP,DM_SKIP,DM_SKIP,DM_SKIP]`
-    
-- **Remarks**   
-    The array index represents the priority of the item. The smaller index is, the higher priority is.
-    
-- **See also**   
-    [`DeblurMode`]({{ site.enumerations }}parameter-mode-enums.html#deblurmode)
-
-
-### barcodeZoneMinDistanceToImageBorders
-Sets the minimum distance (in pixels) between the barcode zone and image borders.
-```cpp
-int tagPublicRuntimeSettings::barcodeZoneMinDistanceToImageBorders
-```
-- **Value range**   
-    [0, 0x7fffffff]
-      
-- **Default value**   
-    0
-    
-- **Remarks**   
-    0: means no limitation on the distance. 
-
-
 ### reserved
 Reserved memory for struct. The length of this array indicates the size of the memory reserved for this struct.
 ```cpp
-char tagPublicRuntimeSettings::reserved[36]
+char tagPublicRuntimeSettings::reserved[84]
 ```

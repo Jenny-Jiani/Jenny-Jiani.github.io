@@ -1,7 +1,6 @@
 ---
 layout: default-layout
 title: Dynamsoft Barcode Reader .NET API Reference - BarcodeReader Result Methods
-description: This page shows BarcodeReader Result methods of Dynamsoft Barcode Reader for .NET SDK.
 keywords: GetIntermediateResults, result methods, BarcodeReader, api reference, .Net
 needAutoGenerateSidebar: true
 ---
@@ -22,15 +21,15 @@ needAutoGenerateSidebar: true
 ## GetIntermediateResults
 Returns intermediate results containing the original image, the colour clustered image, the binarized Image, contours, Lines, TextBlocks, etc.
 
-```csharp
-IntermediateResult[] Dynamsoft.DBR.BarcodeReader.GetIntermediateResults() 
+```C#
+IntermediateResult[] Dynamsoft.Barcode.BarcodeReader.GetIntermediateResults() 
 ```   
 
 #### Return value
 Intermediate results. 
 
 #### Code Snippet
-```csharp
+```C#
 BarcodeReader reader = new BarcodeReader();
 reader.ProductKeys = "t0260NwAAAHV***************";
 PublicRuntimeSettings settings = new PublicRuntimeSettings();
@@ -43,5 +42,3 @@ IntermediateResult[] intermediateResults = reader.GetIntermediateResults();
 reader.Dispose();
 ```
 
-#### See Also
-[`IntermediateResult`](../class/IntermediateResult.md)

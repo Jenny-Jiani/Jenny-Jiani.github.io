@@ -1,7 +1,6 @@
 ---
 layout: default-layout
-title: Dynamsoft Barcode Reader Java API Reference - BarcodeReader Initialization and Destroy
-description: This page shows BarcodeReader Initialization and Destroy of Dynamsoft Barcode Reader for Java SDK API Reference.
+title: Dynamsoft Barcode Reader Java API Reference - BarcodeReader initialization and Destroy
 keywords: BarcodeReader, destroy, initialization and destroy, api reference, java
 needAutoGenerateSidebar: true
 ---
@@ -24,7 +23,7 @@ needAutoGenerateSidebar: true
 Initialization of `BarcodeReader` object.
 
 ```java
-com.dynamsoft.dbr.BarcodeReader.BarcodeReader() throws BarcodeReaderException
+com.dynamsoft.barcode.BarcodeReader.BarcodeReader() throws BarcodeReaderException
 ```
 
 #### Exceptions
@@ -45,7 +44,7 @@ BarcodeReader reader = new BarcodeReader();
 Initialization of `BarcodeReader` with license.
 
 ```java
-com.dynamsoft.dbr.BarcodeReader.BarcodeReader(String license)throws BarcodeReaderException
+com.dynamsoft.barcode.BarcodeReader.BarcodeReader(String license)throws BarcodeReaderException
 ```
 
 #### Exceptions
@@ -63,7 +62,7 @@ BarcodeReader reader = new BarcodeReader("t0260NwAAAHV***************");
 ## Destroy
 
 ```java
-void com.dynamsoft.dbr.BarcodeReader.destroy()	
+void com.dynamsoft.barcode.BarcodeReader.destroy()	
 ```
 
 

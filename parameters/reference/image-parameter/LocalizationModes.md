@@ -1,7 +1,6 @@
 ---
 layout: default-layout
 title: Dynamsoft Barcode Reader Parameter Reference for ImageParameter Object - LocalizationModes
-description: This page shows Dynamsoft Barcode Reader Parameter Reference for ImageParameter Object - LocalizationModes.
 keywords: LocalizationModes, ImageParameter, image process control parameters, parameter reference, parameter
 needAutoGenerateSidebar: false
 ---
@@ -11,13 +10,13 @@ needAutoGenerateSidebar: false
 
  | Parameter Name | Description |
  | -------------- | ----------- | 
+ | [`ImageParameter.AccompanyingTextRecognitionModes`](AccompanyingTextRecognitionModes.md#accompanyingtextrecognitionmodes) | Sets the mode and priority to recognize accompanying text. |
  | [`ImageParameter.BarcodeColourModes`](BarcodeColourModes.md#barcodecolourmodes) | Sets the mode and priority for the barcode colour mode used to process the barcode zone. |
  | [`ImageParameter.BarcodeComplementModes`](BarcodeComplementModes.md#barcodecomplementmodes) | Sets the mode and priority to complement the missing parts in the barcode. |
  | [`ImageParameter.BinarizationModes`](BinarizationModes.md#binarizationmodes) | 	Sets the mode and priority for binarization. |
  | [`ImageParameter.ColourClusteringModes`](ColourClusteringModes.md#colourclusteringmodes) | Sets the mode and priority for colour categorization. Not supported yet. |
  | [`ImageParameter.ColourConversionModes`](ColourConversionModes.md#colourconversionmodes) | Sets the mode and priority for converting a colour image to a grayscale image. |
  | [`ImageParameter.DeblurLevel`](image-process-control.md#deblurlevel) | Sets the degree of blurriness of the barcode. |
- | [`ImageParameter.DeblurModes`](DeblurModes.md#deblurmodes) | Sets the mode and priority for deblurring. |
  | [`ImageParameter.DeformationResistingModes`](DeformationResistingModes.md#deformationresistingmodes) | Sets the mode and priority for deformation resisting. |
  | [`ImageParameter.DPMCodeReadingModes`](DPMCodeReadingModes.md#dpmcodereadingmodes) | Sets the mode and priority for DPM code reading. Not support yet. |
  | [`ImageParameter.GrayscaleTransformationModes`](GrayscaleTransformationModes.md#grayscaletransformationmodes) | Sets the mode and priority for the grayscale image conversion. |
@@ -52,17 +51,15 @@ needAutoGenerateSidebar: false
 #### Mode Arguments
 - [ScanStride](#scanstride)
 - [ScanDirection](#scandirection)
-- [LibraryFileName](#libraryfilename)
-- [LibraryParameters](#libraryparameters)
  
 ##### ScanStride 
 Sets the stride in pixels between scans when searching for barcodes.
 
-| Value Type | Value Range | Default Value | Valid Modes | 
+| Value Type | Value Range | Default Value | Vaild Modes | 
 | ---------- | ----------- | ------------- | ----------- |
 | *int* | [0, 0x7fffffff] | 0 | "LM_SCAN_DIRECTLY" |         
 
-- **Remarks**     
+- **Remark**     
   0: automatically set by the library.   
   When the set value is greater than half the width or height of the current image, the actual processing is 0.  
 
@@ -70,34 +67,15 @@ Sets the stride in pixels between scans when searching for barcodes.
 ##### ScanDirection 
 Sets the scan direction when searching barcode.
 
-| Value Type | Value Range | Default Value | Valid Modes | 
+| Value Type | Value Range | Default Value | Vaild Modes | 
 | ---------- | ----------- | ------------- | ----------- |
 | *int* | [0, 2] | 0 | "LM_SCAN_DIRECTLY" |             
 
-- **Remarks**     
+- **Remark**     
   0: Both vertical and horizontal direction.   
   1: Vertical direction.   
   2: Horizontal direction. 
   
-
-##### LibraryFileName 
-Sets the file name of the library to load dynamically.
-
-| Value Type | Value Range | Default Value | Valid Modes | 
-| ---------- | ----------- | ------------- | ----------- |
-| *string* | A string value representing file name. | "" | All `LocalizationMode` items except LM_SKIP and LM_AUTO |         
-
-
-- **Remarks**     
-  - The library must be in the same place with Dynamsoft Barcode Reader Library.
-
-
-##### LibraryParameters 
-Sets the parameters passed to the library to load dynamically.
-
-| Value Type | Value Range | Default Value | Valid Modes | 
-| ---------- | ----------- | ------------- | ----------- |
-| *string* | A string value representing parameters. | "" | All `LocalizationMode` items except LM_SKIP and LM_AUTO |         
 
 ### Setting Methods
 
@@ -136,7 +114,7 @@ Sets the parameters passed to the library to load dynamically.
 | [`PublicRuntimeSettings`]({{ site.structs }}PublicRuntimeSettings.html) | [`localizationModes`]({{ site.structs }}PublicRuntimeSettings.html#localizationmodes) | [`LocalizationMode`]({{ site.enumerations }}parameter-mode-enums.html#localizationmode)[8] |
 
 
-**Remarks**   
+**Remark**   
 [`GetModeArgument`]({{ site.cpp_methods }}parameter-and-runtime-settings-basic.html#getmodeargument) and [`SetModeArgument`]({{ site.cpp_methods }}parameter-and-runtime-settings-basic.html#setmodeargument) need to be called for getting or setting the value of [arguments](#mode-arguments).
 
 

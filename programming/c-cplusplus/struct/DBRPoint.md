@@ -1,7 +1,6 @@
 ---
 layout: default-layout
 title: Dynamsoft Barcode Reader C & C++ Struct - DBRPoint
-description: This page shows the DBRPoint struct of Dynamsoft Barcode Reader for C & C++ Language.
 keywords: DBRPoint, struct, c, c++
 needAutoGenerateSidebar: false
 ---

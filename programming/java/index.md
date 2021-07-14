@@ -1,7 +1,6 @@
 ---
 layout: default-layout
 title: Dynamsoft Barcode Reader for Java - Main Page
-description: This is the main page of Dynamsoft Barcode Reader for Java SDK.
 keywords: java
 needAutoGenerateSidebar: false
 breadcrumbText: Java
@@ -22,11 +21,4 @@ The Java documentation mainly consists of two parts. One is the [User Guide](#ge
 - [Interface](api-reference/#interface)
 - [Class](api-reference/#classes)
 
-## Release Notes
-- [Version 8.0](release-notes/java-8.md)
-- [Version 7.6 and below](release-notes/java-7.md)
-
 ## Samples and Demos
-
-- <a href="https://demo.dynamsoft.com/DBR/BarcodeReaderDemo.aspx" target="_blank">Online Demo</a>
-- <a href="https://www.dynamsoft.com/Downloads/Dynamic-Barcode-Reader-Sample-Download.aspx?Tag=java" target="_blank">Code Gallery - Java</a>

@@ -14,10 +14,10 @@ If the user is only concerned about certain regions of the image, then in JSON, 
 To use the defined RegionDefinition, please specify the ROI Name through `RegionDefinitionNameArray`.
 ## Expected count of barcodes in ROI - ExpectedBarcodesCount
 In `RegionDefinition`, [`ExpectedBarcodesCount`]({{ site.parameters_reference }}region-definition/cost-control.html#expectedbarcodescount) can be used to specify the number of expected barcodes in the region. The clear expectation of the number of barcodes helps DBR to determine whether it has met the requirements and exit in time.
-## Barcode Format in ROI -  BarcodeFormatIds, BarcodeFormatIds_2
+## Barcode Format in ROI -  BarcodeFormatIds，BarcodeFormatIds_2
 These two parameters set the code type to be processed in the ROI. Specific configuration barcode format can be used to improve the processing speed of DBR, otherwise DBR may waste time on irrelevant barcode format.
 ## Specific barcode format configuration used by ROI - FormatSpecificationNameArray
-This parameter sets names corresponding to `FormatSpecifications` used by the current ROI. After setting, the ROI will use the corresponding FormatSpecifications configuration. The default value is empty, using the global FormatSpecifications configuration. If you want to configure some specific barcode format in ROI, you should use this parameter. For a detailed description of `FormatSpecifications`, please refer to our documentation [Specific barcode format configuration][1].
+This parameter sets names corresponding to `FormatSpecifications` used by the current ROI. After setting, the ROI will use the corresponding FormatSpecifications configuration. The default value is empty, using the global FormatSpecifications configuration. If you want to configure some specific barcode format in ROI, you should use this parameter. For a detailed description of `FormatSpecifications`, please refer to our documentation [Specific barcode format configuration][1]。
 ## Examples
 The following shows how to use RuntimeSetting and JSON template to demonstrate the usage of `RegionDefinition` parameter.
 - RuntimeSetting
@@ -36,7 +36,7 @@ reader->UpdateRuntimeSettings(runtimeSettings, sError, 512); //update RuntimeSet
 reader->DecodeFile("File Path", ""); //decoding      
 TextResultArray* paryResult = NULL;     
 reader->GetAllTextResults(&paryResult); //get decoded results  
-dynamsoft::dbr::CBarcodeReader::FreeTextResults(&paryResult);     
+CBarcodeReader::FreeTextResults(&paryResult);     
 delete runtimeSettings;     
 delete reader;  
 ```

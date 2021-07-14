@@ -1,7 +1,6 @@
 ---
 layout: default-layout
 title: Dynamsoft Barcode Reader C & C++ Struct - AztecDetails
-description: This page shows the AztecDetails struct of Dynamsoft Barcode Reader for C & C++ Language.
 keywords: AztecDetails, struct, c, c++
 needAutoGenerateSidebar: false
 ---

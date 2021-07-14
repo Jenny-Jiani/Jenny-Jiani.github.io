@@ -1,7 +1,6 @@
 ---
 layout: default-layout
 title: Dynamsoft Barcode Reader Objective-C & Swift API Reference - Main Page
-description: This is the main page of Dynamsoft Barcode Reader for iOS SDK API Reference.
 keywords: api reference, objective-c, oc, swift
 needAutoGenerateSidebar: false
 breadcrumbText: API Reference
@@ -24,9 +23,7 @@ breadcrumbText: API Reference
 | [`license`](#license) | *NSString\** |
 
 ### license
-
 Stores the license used in DynamsoftBarcodeReader.
-
 ```objc
 NSString* license
 ```
@@ -53,8 +50,6 @@ NSString* license
   | [`decodeImage`](methods/decode.md#decodeimage) | Decode barcodes from an image file in memory. |
   | [`decodeBuffer`](methods/decode.md#decodebuffer) | Decode barcodes from raw buffer. |
   | [`decodeBase64`](methods/decode.md#decodebase64) | Decode barcodes from a base64 encoded string. |
-  | [`createIntermediateResult`](methods/decode.md#createintermediateresult) | Inits an intermediateResult struct with default values. |
-  | [`decodeIntermediateResults`](methods/decode.md#decodeintermediateresults) | Decodes barcode from intermediate results. |
 
 
 &nbsp; 
@@ -95,7 +90,6 @@ NSString* license
   | [`initWithLicense`](methods/license.md#initwithlicense) | Read product key and activate the SDK. |
   | [`initWithLicenseFromServer`](methods/license.md#initwithlicensefromserver) | Initialize license and connect to the specified server for online verification. |
   | [`outputLicenseToString`](methods/license.md#outputlicensetostring) | Output the license content to a string from the license server. |
-  | [`initLicenseFromLTS`](methods/license.md#initlicensefromlts) | Initializes the barcode reader license and connects to the specified server for online verification. |
 
 &nbsp; 
 
@@ -111,7 +105,6 @@ NSString* license
 
 
 ### Video
-
 #### Decode
    
   | Method               | Description |
@@ -150,11 +143,9 @@ NSString* license
 &nbsp;
 
 ## [Classes]
-
 - [`iAztecDetails`](class/iAztecDetails.md)	
 - [`iContour`](class/iContour.md)	
 - [`iDBRPoint`](class/iDBRPoint.md)	
-- [`iDMLTSConnectionParameters`](class/iDMLTSConnectionParameters.md)		
 - [`iDataMatrixDetails`](class/iDataMatrixDetails.md)		
 - [`iExtendedResult`](class/iExtendedResult.md)		
 - [`iFrameDecodingParameters`](class/iFrameDecodingParameters.md)	
@@ -178,7 +169,6 @@ NSString* license
 
 
 ## [Enumerations]()
-
 - [`EnumAccompanyingTextRecognitionMode`]({{ site.enumerations }}parameter-mode-enums.html#accompanyingtextrecognitionmode)	
 - [`EnumBarcodeColourMode`]({{ site.enumerations }}parameter-mode-enums.html#barcodecolourmode)	
 - [`EnumBarcodeComplementMode`]({{ site.enumerations }}parameter-mode-enums.html#barcodecomplementmode)	
@@ -190,11 +180,7 @@ NSString* license
 - [`EnumColourClusteringMode`]({{ site.enumerations }}parameter-mode-enums.html#colourclusteringmode)	
 - [`EnumColourConversionMode`]({{ site.enumerations }}parameter-mode-enums.html#colourconversionmode)	
 - [`EnumConflictMode`]({{ site.enumerations }}parameter-mode-enums.html#conflictmode)	
-- [`EnumDeblurMode`]({{ site.enumerations }}parameter-mode-enums.html#deblurmode)
-- [`EnumDeformationResistingMode`]({{ site.enumerations }}parameter-mode-enums.html#deformationresistingmode)
-- [`EnumDMChargeWay`]({{ site.enumerations }}other-enums.html#dm_chargeway)
-- [`EnumDMLicenseModule`]({{ site.enumerations }}other-enums.html#dm_licensemodule)
-- [`EnumDMUUIDGenerationMethod`]({{ site.enumerations }}other-enums.html#dm_uuidgenerationmethod)
+- [`EnumDeformationResistingMode`]({{ site.enumerations }}parameter-mode-enums.html#deformationresistingmode)	
 - [`EnumDPMCodeReadingMode`]({{ site.enumerations }}parameter-mode-enums.html#dpmcodereadingmode)	
 - [`EnumGrayscaleTransformationMode`]({{ site.enumerations }}parameter-mode-enums.html#grayscaletransformationmode)	
 - [`EnumImagePixelFormat`]({{ site.enumerations }}other-enums.html#imagepixelformat)	

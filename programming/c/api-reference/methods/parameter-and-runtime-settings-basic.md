@@ -1,7 +1,6 @@
 ---
 layout: default-layout
 title: Dynamsoft Barcode Reader C Language API Reference - Parameter and Runtime Settings Basic Methods
-description: This page shows basic Runtime Settings methods of Dynamsoft Barcode Reader for C Language.
 keywords: DBR_SetModeArgument, DBR_GetModeArgument, DBR_GetRuntimeSettings, DBR_UpdateRuntimeSettings, DBR_ResetRuntimeSettings, parameter and runtime settings basic methods, api reference, c
 needAutoGenerateSidebar: true
 ---
@@ -46,6 +45,7 @@ Returns error code. Possible return(s): DBR_OK; DBRERR_SET_MODE_ARGUMENT_ERROR.
   
 #### Remark
 Check follow link for available modes and arguments:
+- [`AccompanyingTextRecognitionModes`]({{ site.parameters_reference }}image-parameter/AccompanyingTextRecognitionModes.html#mode-arguments)
 - [`BarcodeColourModes`]({{ site.parameters_reference }}image-parameter/BarcodeColourModes.html#mode-arguments)
 - [`BinarizationModes`]({{ site.parameters_reference }}image-parameter/BinarizationModes.html#mode-arguments)
 - [`ColourClusteringModes`]({{ site.parameters_reference }}image-parameter/ColourClusteringModes.html#mode-arguments)
@@ -102,6 +102,7 @@ Returns error code. Possible return(s): DBR_OK; DBRERR_GET_MODE_ARGUMENT_ERROR.
 
 #### Remark
 Check follow link for available modes and arguments:
+- [`AccompanyingTextRecognitionModes`]({{ site.parameters_reference }}image-parameter/AccompanyingTextRecognitionModes.html#mode-arguments)
 - [`BarcodeColourModes`]({{ site.parameters_reference }}image-parameter/BarcodeColourModes.html#mode-arguments)
 - [`BinarizationModes`]({{ site.parameters_reference }}image-parameter/BinarizationModes.html#mode-arguments)
 - [`ColourClusteringModes`]({{ site.parameters_reference }}image-parameter/ColourClusteringModes.html#mode-arguments)

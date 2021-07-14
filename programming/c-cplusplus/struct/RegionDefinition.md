@@ -1,7 +1,6 @@
 ---
 layout: default-layout
 title: Dynamsoft Barcode Reader C & C++ Struct - RegionDefinition
-description: This page shows the RegionDefinition struct of Dynamsoft Barcode Reader for C & C++ Language.
 keywords: RegionDefinition, struct, c, c++
 needAutoGenerateSidebar: false
 ---
@@ -89,5 +88,5 @@ int tagRegionDefinition::regionMeasuredByPercentage
 - **Default value**   
     0
     
-- **Remarks**   
+- **Remark**   
     When it's set to 1, the values of Top, Left, Right, Bottom indicate percentage (from 0 to 100); Otherwise, they indicate coordinates. 0: not by percentage 1: by percentage.

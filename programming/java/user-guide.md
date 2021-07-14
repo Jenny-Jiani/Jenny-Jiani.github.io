@@ -1,24 +1,21 @@
 ---
 layout: default-layout
 title: Dynamsoft Barcode Reader for Java - User Guide
-description: This is the user guide of Dynamsoft Barcode Reader for Java SDK.
 keywords: user guide, java
 needAutoGenerateSidebar: true
-needGenerateH3Content: false
-noTitleIndex: true
+needGenerateH3Content: true
 ---
 
 
-# User Guide for Java SDK
+# User Guide for Java Edition
 
 ## System Requirements
 
 - Operating systems:
-   - Windows 7, 8, 10
-   - Windows Server 2003, 2008, 2008 R2, 2012
+   - Windows 7, 8, 10.
+   - Windows Server 2003, 2008, 2008 R2, 2012.
    - Linux x64 (Ubuntu 14.04.4+ LTS, Debian 8+, etc.)
-   - macOS x64 10.12+
-   - JDK 1.7 and above
+   - JDK 1.7 and above. 
 
 
 &nbsp;
@@ -27,26 +24,21 @@ noTitleIndex: true
 ## Installation
 
 ### Option 1: Download from website
+To install Dynamsoft Barcode Reader Java SDK on your development machine, you can download the SDK from the [Dynamsoft website](https://www.dynamsoft.com/Downloads/Dynamic-Barcode-Reader-Download.aspx) and unzip the dbr-java-{version number}.zip
 
-To install Dynamsoft Barcode Reader Java SDK on your development machine, you can download the SDK from the [Dynamsoft website](https://www.dynamsoft.com/Downloads/Dynamic-Barcode-Reader-Download.aspx) and unzip the DBR-Java-{version number}.zip
-
-The items under the DBR-Java-{version number} folder:
-
- - DynamsoftBarcodeReader\documents contains the API Reference, the Developer's Guide, and legal notices.
- - DynamsoftBarcodeReader\images contains the sample barcode images.
- - DynamsoftBarcodeReader\samples contains the source code of sample application.
- - DynamsoftBarcodeReader\lib\dynamsoft-barcodereader-{version number}.jar is the library file.
- - DynamsoftBarcodeReader\readme.txt is the readme file to help you get started.
+The items under the dbr-java-{version number} folder:
+Dynamsoft Barcode Reader\samples contains the source code of sample application.
+Dynamsoft Barcode Reader\documents contains the API Reference, the Developer's Guide, and legal notices.
+Dynamsoft Barcode Reader\lib\dynamsoft-barcodereader-{version number}.jar is the library file.
 
 ### Option 2: Build with Maven
-
 You can add Dynamsoft Barcode Reader as the dependency to pom.xml like this:
    ```xml
     <dependencies>
         <dependency>
             <groupId>com.dynamsoft</groupId>
             <artifactId>dbr</artifactId>
-            <version>8.0.0</version>
+            <version>7.4</version>
         </dependency>
     </dependencies>
     <repositories>
@@ -62,14 +54,13 @@ You can add Dynamsoft Barcode Reader as the dependency to pom.xml like this:
 
 
 ## Getting Started: HelloWorld
-
-1. Open Eclipse and create a new Java project HelloDBR.
+1. Open Eclipse and create a new Java project HelloDBR .
 2. Add the required JAR file to your project.
     Click File > Properties > Java Build Path > Libraries > Add external JARs, add dynamsoft-barcodereader-{version number}.jar and click Apply.
-    The JAR file can be found at `DBR-Java-{version number}\DynamsoftBarcodeReader\lib`.
+    The JAR file can be found at [INSTALLATION FOLDER]\Dynamsoft Barcode Reader\lib\ .
 3. Import the header.
     ```java
-    import com.dynamsoft.dbr.*;
+    import com.dynamsoft.barcode.*;
     ```
 4. Replace the code of HelloDBR with the following.
     ```java
@@ -99,11 +90,11 @@ You can add Dynamsoft Barcode Reader as the dependency to pom.xml like this:
 
 ## Decoding Methods
 The SDK provides multiple decoding methods that support reading barcodes from different sources, including static images, video stream, files in memory, base64 string, bitmap, etc. Here is a list of all decoding methods:
-- [DecodeFile](api-reference/BarcodeReader/decode.md#decodefile): Reads barcodes from a specified file (BMP, JPEG, PNG, GIF, TIFF or PDF).
-- [DecodeBase64String](api-reference/BarcodeReader/decode.md#decodebase64string): Reads barcodes from a base64 encoded string of a file.  
-- [DecodeBitmap](api-reference/BarcodeReader/decode.md#decodebitmap): Reads barcodes from a bitmap. When handling multi-page images, it will only decode the current page.
-- [DecodeBuffer](api-reference/BarcodeReader/decode.md#decodebuffer): Reads barcodes from raw buffer.
-- [DecodeFileInMemory](api-reference/BarcodeReader/decode.md#decodefileinmemory): Decodes barcodes from an image file in memory.
+- [DecodeFile](api-reference/BarcodeReader/decode.md#DecodeFile): Reads barcodes from a specified file (BMP, JPEG, PNG, GIF, TIFF or PDF).
+- [DecodeBase64String](api-reference/BarcodeReader/decode.md#DecodeBase64String): Reads barcodes from a base64 encoded string of a file.  
+- [DecodeBitmap](api-reference/BarcodeReader/decode.md#DecodeBitmap): Reads barcodes from a bitmap. When handling multi-page images, it will only decode the current page.
+- [DecodeBuffer](api-reference/BarcodeReader/decode.md#DecodeBuffer): Reads barcodes from raw buffer.
+- [DecodeFileInMemory](api-reference/BarcodeReader/decode.md#DecodeFileInMemory): Decodes barcodes from an image file in memory.
 
 You can find more samples in more programming languages at [Code Gallery](https://www.dynamsoft.com/Downloads/Dynamic-Barcode-Reader-Sample-Download.aspx) or [Github Repositories](https://github.com/dynamsoft-dbr?q=java&type=&language=).
 
@@ -128,7 +119,7 @@ Here are some common scanning settings you might find helpful:
 For more scanning settings guide, check out the [How To](#how-to-guide) section.
 
 #### Specify Barcode Type to Read
-By default, the SDK will read all the supported barcode formats except Postal Codes and DotCode from the image. (See [Product Overview]({{ site.introduction }}overview.html) for the full supported barcode list.) 
+By default, the SDK will read all the supported barcode formats except Postal Codes and Dotcode from the image. (See [Product Overview]({{ site.introduction }}overview.html) for the full supported barcode list.) 
 
 If your full license only covers some barcode formats, you can use `BarcodeFormatIds` and `BarcodeFormatIds_2` to specify the barcode format(s). Check out [`BarcodeFormat`]({{ site.enumerations }}format-enums.html#barcodeformat) and [`BarcodeFormat_2`]({{ site.enumerations }}format-enums.html#barcodeformat_2).
 
@@ -137,7 +128,7 @@ For example, to enable only 1D barcode reading, you can use the following code:
 ```java
 BarcodeReader dbr = new BarcodeReader();
 dbr.initLicense("<Put your license key here>"); //Replace "<Put your license key here>" with your own license
-// Set barcodeFormatIds via PublicRuntimeSettings instance and update it to BarcodeReader instance
+// Set barcodeFromatIds via PublicRuntimeSettings instance and update it to BarcodeReader instance
 PublicRuntimeSettings runtimeSettings = dbr.getRuntimeSettings();
 runtimeSettings.barcodeFormatIds = 0x7FF;// OneD barcode
 dbr.updateRuntimeSettings(runtimeSettings);
@@ -184,7 +175,7 @@ reader.destroy();
 
 
 ### Use A Template to Change Settings
-Besides the option of using the PublicRuntimeSettings class, the SDK also provides [`initRuntimeSettingsWithString`](api-reference/BarcodeReader/parameter-and-runtime-settings-advanced.md#initruntimesettingswithstring) and [`initRuntimeSettingsWithFile`](api-reference/BarcodeReader/parameter-and-runtime-settings-advanced.md#initruntimesettingswithfile) APIs that enable you to use a template to control all the runtime settings. With a template, instead of writing many codes to modify the settings, you can manage all the runtime settings in a JSON file/string. 
+Besides the option of using the PublicRuntimeSettings class, the SDK also provides [`initRuntimeSettingsWithString`](api-reference/BarcodeReader/parameter-and-runtime-settings-advanced.md#InitRuntimeSettingsWithString) and [`initRuntimeSettingsWithFile`](api-reference/BarcodeReader/parameter-and-runtime-settings-advanced.md#InitRuntimeSettingsWithFile) APIs that enable you to use a template to control all the runtime settings. With a template, instead of writing many codes to modify the settings, you can manage all the runtime settings in a JSON file/string. 
 
 ```java
 BarcodeReader dbr = new BarcodeReader();
@@ -210,6 +201,7 @@ Below is a template for your reference. To learn more about the APIs, you can ch
             "ThreshValueCoefficient" : 10
          }
       ],
+      "DeblurLevel" : 9,
       "Description" : "",
       "ExpectedBarcodesCount" : 0,
       "GrayscaleTransformationModes" : [
@@ -269,51 +261,12 @@ Below is a template for your reference. To learn more about the APIs, you can ch
 }
 ```
 
-## How to Distribute
 
-Distribute the `dynamsoft-barcodereader-{version number}.jar` file with the applications using the Dynamsoft Barcode Reader SDK. The .JAR file can be found under `DBR-Java-{version number}\DynamsoftBarcodeReader\lib`.
-
-You can also distribute with Maven, like this:
-
-```xml
-   <dependencies>
-      <dependency>
-         <groupId>com.dynamsoft</groupId>
-         <artifactId>dbr</artifactId>
-         <version>8.0.0</version>
-      </dependency>
-   </dependencies>
-   <repositories>
-      <repository>
-         <id>dbr</id>
-         <url>https://download2.dynamsoft.com/maven/dbr/jar</url>
-      </repository>
-   </repositories>
-```
-
-## How to Upgrade
-
-### From version 7.x
-
-You need to replace the old assembly files with the ones in the latest version. Download the latest version [here](https://www.dynamsoft.com/Downloads/Dynamic-Barcode-Reader-Download.aspx).
-
-Your previous SDK license for version 7.x is not compatible with the version 8.x. Please [contact us](https://www.dynamsoft.com/Company/Contact.aspx) to upgrade your license.
-
-After you upgraded your license to version 8.x:
-
-- If you were using `ProductKeys`, please replace the old license with the newly generated one.
-
-- If you were using `InitLicenseFromServer` to connect to Dynamsoft server for license verification, then no need to change the license key. But please make sure the device has Internet connection.
-
-- If you were using `InitLicenseFromServer` + `DBR_InitLicenseFromLicenseContent` to connect to Dynamsoft server once and use the SDK offline, please follow [these steps](../../license-activation/set-full-license-7.md#connect-once) to re-register the device.
-
-- If you were using `DBR_InitLicenseFromLicenseContent` to use the SDK offline, please follow [these steps](../../license-activation/set-full-license-7.md#offline) to re-register the device.
-
-### From version 6.x
-
-We made some structural updates in the new version. To upgrade from 6.x to 8.x, we recommend you to review our sample code and re-write the barcode scanning module.
+&nbsp; 
 
 
-
-
+## Useful Links
+- [Licensing and Distributing]()
+- [How-to Guides]({{ site.how_to }})
+- [FAQs]({{ site.faqs }})
 

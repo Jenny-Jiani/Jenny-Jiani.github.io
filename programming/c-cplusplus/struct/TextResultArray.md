@@ -1,7 +1,6 @@
 ---
 layout: default-layout
 title: Dynamsoft Barcode Reader C & C++ Struct - TextResultArray
-description: This page shows the TextResultArray struct of Dynamsoft Barcode Reader for C & C++ Language.
 keywords: TextResultArray, struct, c, c++
 needAutoGenerateSidebar: false
 ---

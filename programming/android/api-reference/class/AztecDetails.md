@@ -1,15 +1,14 @@
 ---
 layout: default-layout
 title: Dynamsoft Barcode Reader Android API Reference - AztecDetails Class
-description: This page shows the AztecDetails Class of Dynamsoft Barcode Reader for Android SDK.
 keywords: AztecDetails, class, api reference, android
 needAutoGenerateSidebar: false
 ---
 
 
 # AztecDetails
-
 Stores the Aztec details.
+  
 
 ## Attributes
   
@@ -22,33 +21,25 @@ Stores the Aztec details.
   
   
 ### moduleSize
-
 The barcode module size (the minimum bar width in pixel).
-
 ```java
-int com.dynamsoft.dbr.AztecDetails.moduleSize
+int com.dynamsoft.barcode.AztecDetails.moduleSize
 ```  
-
+   
 ### rows
-
 The row count of the barcode.
-
 ```java
-int com.dynamsoft.dbr.AztecDetails.rows
+int com.dynamsoft.barcode.AztecDetails.rows
 ```  
 
 ### columns
-
 The column count of the barcode.
-
 ```java
-int com.dynamsoft.dbr.AztecDetails.columns
+int com.dynamsoft.barcode.AztecDetails.columns
 ```  
 
 ### layerNumber
-
 A negative number (-1, -2, -3, -4) specifies a compact Aztec code. A positive number (1, 2, .. 32) specifies a normal (full-rang) Aztec code.  
-
 ```java
-int com.dynamsoft.dbr.AztecDetails.layerNumber
+int com.dynamsoft.barcode.AztecDetails.layerNumber
 ```  

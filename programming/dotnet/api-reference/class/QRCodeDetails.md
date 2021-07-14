@@ -1,7 +1,6 @@
 ---
 layout: default-layout
 title: Dynamsoft Barcode Reader .NET API Reference - QRCodeDetails Class
-description: This page shows the QRCodeDetails Class of Dynamsoft Barcode Reader for .NET SDK.
 keywords: QRCodeDetails, class, api reference, .Net
 needAutoGenerateSidebar: false
 ---
@@ -11,7 +10,7 @@ needAutoGenerateSidebar: false
 Stores the QRCode details.  
 
 
-```csharp
+```C#
 public class QRCodeDetails
 ```  
   
@@ -25,7 +24,7 @@ public class QRCodeDetails
 | [`ModuleSize`](#modulesize) | *int* |
 | [`Rows`](#rows) | *int* |
 | [`Columns`](#columns) | *int* |
-| [`ErrorCorrectionLevel`](#errorcorrectionlevel) | [`EnumQRCodeErrorCorrectionLevel`]({{ site.enumerations }}other-enums.html#qrcodeerrorcorrectionlevel) |
+| [`ErrorCorrectionLevel`](#errorcorrectionlevel) | [`QRCodeErrorCorrectionLevel`]({{ site.enumerations }}other-enums.html#qrcodeerrorcorrectionlevel) |
 | [`Version`](#version) | *int* |
 | [`Model`](#model) | *int* |
 
@@ -33,41 +32,41 @@ public class QRCodeDetails
 ### ModuleSize
 The barcode module size (the minimum bar width in pixel).  
 
-```csharp
-int Dynamsoft.DBR.QRCodeDetails.ModuleSize
+```C#
+int Dynamsoft.Barcode.QRCodeDetails.ModuleSize
 ```
 
 ### Rows
 The row count of the barcode.  
 
-```csharp
-int Dynamsoft.DBR.QRCodeDetails.Rows
+```C#
+int Dynamsoft.Barcode.QRCodeDetails.Rows
 ```
 
 ### Columns
 The column count of the barcode. 
 
-```csharp
-int Dynamsoft.DBR.QRCodeDetails.Columns
+```C#
+int Dynamsoft.Barcode.QRCodeDetails.Columns
 ```
 
 ### ErrorCorrectionLevel
 The error correction level of the barcode.  
 
-```csharp
-EnumQRCodeErrorCorrectionLevel Dynamsoft.DBR.QRCodeDetails.ErrorCorrectionLevel
+```C#
+EnumQRCodeErrorCorrectionLevel Dynamsoft.Barcode.QRCodeDetails.ErrorCorrectionLevel
 ```
 
 ### Version
 The version of the QR Code.
 
-```csharp
-int Dynamsoft.DBR.QRCodeDetails.Version
+```C#
+int Dynamsoft.Barcode.QRCodeDetails.Version
 ```
 
 ### Model
 Number of the models.
 
-```csharp
-int Dynamsoft.DBR.QRCodeDetails.Model
+```C#
+int Dynamsoft.Barcode.QRCodeDetails.Model
 ```

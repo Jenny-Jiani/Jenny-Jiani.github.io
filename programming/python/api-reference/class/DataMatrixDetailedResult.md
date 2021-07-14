@@ -1,7 +1,6 @@
 ---
 layout: default-layout
 title: Dynamsoft Barcode Reader Python API Reference - DataMatrixDetailedResult Class
-description: This page shows the DataMatrixDetailedResult Class of Dynamsoft Barcode Reader for Python SDK.
 keywords: DataMatrixDetailedResult, class, api reference, python
 needAutoGenerateSidebar: false
 ---

@@ -25,7 +25,7 @@ If you want to configure parameters for a certain barcode type, you can use the 
 
     Specifies The deviation of the specified bar size from the standard bar size
 
--  [HeadModuleRati,TailModuleRatio](#HeadModuleRatio,TailModuleRatio)
+-  [HeadModuleRatio，TailModuleRatio](#HeadModuleRatio，TailModuleRatio)
 
     Species the number and size of customized bars at the head and tail of non-standard 1D barcode
 
@@ -167,7 +167,7 @@ We can set AllModuleDeviation to 2, so that the deviation value of 2 moduleSize 
 }   
 ```
 
-## HeadModuleRatio, TailModuleRatio
+## HeadModuleRatio，TailModuleRatio
 Normally, the start and stop characters of 1D barcodes have a standard fixed proportion, but in reality, there may also be situations where the proportion is not standard.
 
 In this situation, If there is a fixed deviation between standard proportion and the non-standard proportion, we could try to set the value of [`AllModuleDeviation`](##AllModuleDeviation) to customize the proportion; If there is an irregular deviation, you can customize the proportion using `HeadModuleRatio` and `TailModuleRatio`.
@@ -218,11 +218,11 @@ By default, DBR will not be able to read the above code128. In this case, in ord
 
 ## StandardFormat
 
-This parameter specifies the character set of the standard barcode type referenced by the non-standard 1D character set. It should be used together with [`AllModuleDeviation`](##AllModuleDeviation), [`HeadModuleRatio`](##HeadModuleRatio,TailModuleRatio), [`TailModuleRatio`](##HeadModuleRatio,TailModuleRatio), we will not explain this parameter in detail here.
+This parameter specifies the character set of the standard barcode type referenced by the non-standard 1D character set. It should be used together with [`AllModuleDeviation`](##AllModuleDeviation)、[`HeadModuleRatio`](##HeadModuleRatio，TailModuleRatio)、[`TailModuleRatio`](##HeadModuleRatio，TailModuleRatio), we will not explain this parameter in detail here.
 
 ## AustralianPostEncodingTable
 
-The AustralianPost Code has a section of customer information area, which can be decoded using two standard defined decoding tables (N table, C table). This parameter can be set to specify either N table or C table for decoding. Please refer to the AustralianPostcode standard documentation for specific definitions of these two code tables.
+The AustralianPost Code has a section of customer information area, which can be decoded using two standard defined decoding tables (N table, C table). This parameter can be set to specify either N table or C table for decoding. Please refer to the AustralianPostcode standard [documentation](https://auspost.com.au/content/dam/auspost_corp/mediai/documents/customer-barcode-technical-specifications-aug2012.pdf) for specific definitions of these two code tables.
 
 This parameter can be set to "C" or "N" and the default value is "C".
 
@@ -299,9 +299,11 @@ JSON template
 
 ## Others
 The usage of the other parameters in `FormatSpecification` will be covered in more detail in other related documentation than we will expand on in this article.
-- BarcodeAngleRangeArray, BarcodeBytesLengthRangeArray, BarcodeHeightRangeArray, BarcodeTextLengthRangeArray, BarcodeWidthRangeArray, BarcodeTextRegExPattern, MinResultConfidence.    
-
+- BarcodeAngleRangeArray、BarcodeBytesLengthRangeArray、BarcodeHeightRangeArray、BarcodeTextLengthRangeArray、BarcodeWidthRangeArray、BarcodeTextRegExPattern、MinResultConfidence    
 Please refer to [Barcode Results][12]
+
+- AccompanyingTextRecognitionModes    
+Please refer to [RecogniseAccompanyingText][14]
 
 [1]:assets/format-specification/normal-qr.png
 
@@ -326,5 +328,7 @@ Please refer to [Barcode Results][12]
 [11]:assets/format-specification/barcode-with-narrow-quietzone.png
 
 [12]:decode-result.html
+
+[14]:recognise-accompanying-text.html
 
 

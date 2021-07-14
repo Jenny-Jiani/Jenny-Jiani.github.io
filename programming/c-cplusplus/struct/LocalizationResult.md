@@ -1,7 +1,6 @@
 ---
 layout: default-layout
 title: Dynamsoft Barcode Reader C & C++ Struct - LocalizationResult
-description: This page shows the LocalizationResult struct of Dynamsoft Barcode Reader for C & C++ Language.
 keywords: LocalizationResult, struct, c, c++
 needAutoGenerateSidebar: false
 ---

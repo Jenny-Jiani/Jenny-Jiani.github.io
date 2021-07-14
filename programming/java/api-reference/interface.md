@@ -1,7 +1,6 @@
 ---
 layout: default-layout
 title: Dynamsoft Barcode Reader Java API Reference - Interface
-description: This page shows the interfaces of Dynamsoft Barcode Reader for Java SDK API Reference.
 keywords: ErrorCallback, IntermediateResultCallback, TextResultCallback, interface, api reference, java
 needAutoGenerateSidebar: false
 ---
@@ -25,7 +24,7 @@ needAutoGenerateSidebar: false
 Represents the method that will handle the error code returned by the SDK.
 
 ```java
-void com.dynamsoft.dbr.ErrorCallback.errorCallback(int frameId, int errorCode, Object userData)	
+void com.dynamsoft.barcode.ErrorCallback.errorCallback(int frameId, int errorCode, Object userData)	
 ```   
    
 #### Parameters
@@ -43,7 +42,7 @@ void com.dynamsoft.dbr.ErrorCallback.errorCallback(int frameId, int errorCode, O
 Represents the method that will handle the intermediate result array returned by the SDK.
 
 ```java
-void com.dynamsoft.dbr.IntermediateResultCallback.intermediateResultCallback(int frameId, IntermediateResult[] results, Object userData)	
+void com.dynamsoft.barcode.IntermediateResultCallback.intermediateResultCallback(int frameId, IntermediateResult[] results, Object userData)	
 ```   
    
 #### Parameters

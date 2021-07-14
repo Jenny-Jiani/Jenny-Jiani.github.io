@@ -1,7 +1,6 @@
 ---
 layout: default-layout
 title: Dynamsoft Barcode Reader C++ API Reference - CBarcodeReader Video Methods
-description: This page shows CBarcodeReader video methods of Dynamsoft Barcode Reader for C++ Language.
 keywords: StartFrameDecoding, StartFrameDecodingEx, AppendFrame, StopFrameDecoding, InitFrameDecodingParameters, SetErrorCallback, SetTextResultCallback, SetIntermediateResultCallback, GetLengthOfFrameQueue, video methods, CBarcodeReader, api reference, c++
 needAutoGenerateSidebar: true
 ---
@@ -50,7 +49,7 @@ needAutoGenerateSidebar: true
 Start a new thread to decode barcodes from the inner frame queue with specific frame decoding setting passed in.
 
 ```cpp
-int dynamsoft::dbr::CBarcodeReader::StartFrameDecoding (const int maxQueueLength, const int maxResultQueueLength, const int width, const int height, const int stride, const ImagePixelFormat format, const char* pTemplateName = "") 
+int CBarcodeReader::StartFrameDecoding (const int maxQueueLength, const int maxResultQueueLength, const int width, const int height, const int stride, const ImagePixelFormat format, const char* pTemplateName = "") 
 ```   
    
 #### Parameters
@@ -88,7 +87,7 @@ delete reader;
 Start a new thread to decode barcodes from the inner frame queue with specific frame decoding setting defined in `FrameDecodingParameters` struct.
 
 ```cpp
-int dynamsoft::dbr::CBarcodeReader::StartFrameDecodingEx (FrameDecodingParameters parameters, const char* pTemplateName = "")	
+int CBarcodeReader::StartFrameDecodingEx (FrameDecodingParameters parameters, const char* pTemplateName = "")	
 ```   
    
 #### Parameters
@@ -139,7 +138,7 @@ delete reader;
 Append a frame image buffer to the inner frame queue.  
 
 ```cpp
-int dynamsoft::dbr::CBarcodeReader::AppendFrame (unsigned char* pBufferBytes) 
+int CBarcodeReader::AppendFrame (unsigned char* pBufferBytes) 
 ```   
    
 #### Parameters
@@ -168,7 +167,7 @@ delete reader;
 Stop the frame decoding thread created by [`StartFrameDecoding`](#startframedecoding) or [`StartFrameDecodingEx`](#startframedecodingex).
 
 ```cpp
-int dynamsoft::dbr::CBarcodeReader::AppendFrame (unsigned char* pBufferBytes) 
+int CBarcodeReader::AppendFrame (unsigned char* pBufferBytes) 
 ```   
    
 #### Parameters
@@ -199,7 +198,7 @@ delete reader;
 Initialize frame decoding parameters with default values.
 
 ```cpp
-int dynamsoft::dbr::CBarcodeReader::InitFrameDecodingParameters (FrameDecodingParameters* pParameters)
+int CBarcodeReader::InitFrameDecodingParameters (FrameDecodingParameters* pParameters)
 ```   
    
 #### Parameters
@@ -247,7 +246,7 @@ delete reader;
 Set callback function to process errors generated during frame decoding.
 
 ```cpp
-int dynamsoft::dbr::CBarcodeReader::SetErrorCallback (CB_Error cbFunction, void* pUser)	
+int CBarcodeReader::SetErrorCallback (CB_Error cbFunction, void* pUser)	
 ```   
    
 #### Parameters
@@ -281,7 +280,7 @@ reader->StartFrameDecoding(2, 10, 1024, 720, 720, IPF_BINARY, "");
 Set callback function to process text results generated during frame decoding.
 
 ```cpp
-int dynamsoft::dbr::CBarcodeReader::SetTextResultCallback (CB_TextResult cbFunction, void* pUser)	
+int CBarcodeReader::SetTextResultCallback (CB_TextResult cbFunction, void* pUser)	
 ```   
    
 #### Parameters
@@ -315,7 +314,7 @@ reader->StartFrameDecoding(2, 10, 1024, 720, 720, IPF_BINARY, "");
 Set callback function to process intermediate results generated during frame decoding.
 
 ```cpp
-int dynamsoft::dbr::CBarcodeReader::SetIntermediateResultCallback (CB_IntermediateResult cbFunction, void* pUser)		
+int CBarcodeReader::SetIntermediateResultCallback (CB_IntermediateResult cbFunction, void* pUser)		
 ```   
    
 #### Parameters
@@ -356,7 +355,7 @@ reader->StartFrameDecoding(2, 10, 1024, 720, 720, IPF_BINARY, "");
 Get length of current inner frame queue.
 
 ```cpp
-int dynamsoft::dbr::CBarcodeReader::GetLengthOfFrameQueue ()	
+int CBarcodeReader::GetLengthOfFrameQueue ()	
 ```
 
 #### Return value

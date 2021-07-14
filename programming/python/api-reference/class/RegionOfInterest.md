@@ -1,7 +1,6 @@
 ---
 layout: default-layout
 title: Dynamsoft Barcode Reader Python API Reference - RegionOfInterest Class
-description: This page shows the RegionOfInterest Class of Dynamsoft Barcode Reader for Python SDK.
 keywords: RegionOfInterest, class, api reference, python
 needAutoGenerateSidebar: false
 ---

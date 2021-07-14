@@ -1,7 +1,6 @@
 ---
 layout: default-layout
 title: Dynamsoft Barcode Reader Parameter Reference for ImageParameter Object - Cost Control Parameters
-description: This page shows Dynamsoft Barcode Reader Parameter Reference for ImageParameter Object - Cost Control Parameters.
 keywords: TerminatePhase, Timeout, MaxAlgorithmThreadCount, ExpectedBarcodesCount, ImageParameter, cost control parameters, parameter reference, parameter
 needAutoGenerateSidebar: true
 needGenerateH3Content: false

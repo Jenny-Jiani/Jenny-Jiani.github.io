@@ -1,14 +1,13 @@
 ---
 layout: default-layout
 title: Dynamsoft Barcode Reader JavaScript API Reference - BarcodeReader Initialize and Destroy Methods
-description: This page shows BarcodeReader Initialize and Destroy methods of Dynamsoft Barcode Reader JavaScript SDK.
 keywords: createInstance, destroy, detectEnvironment, isLoaded, loadWasm, initialize and destroy methods, BarcodeReader, api reference, javascript, js
 needAutoGenerateSidebar: true
 needGenerateH3Content: false
 ---
 
 
-# JavaScript API Reference - `BarcodeReader` Initialize and Destroy Methods
+# Javascript API Reference - `BarcodeReader` Initialize and Destroy Methods
 
 | Method               | Description |
 |----------------------|-------------|
@@ -28,17 +27,21 @@ Create a `BarcodeReader` object.
 createInstance() returns Promise
 ```
 
-### Return Value
+#### Return Value
 
 <code>Promise<<a href="../#barcodereader">BarcodeReader</a>></code>
 
-### Sample
+#### Sample
 
 ```javascript
-let reader = await Dynamsoft.DBR.BarcodeReader.createInstance();
+let reader = await Dynamsoft.BarcodeReader.createInstance();
 ```
 
 [Read barcodes from live camera](https://demo.dynamsoft.com/dbr_wasm/barcode_reader_javascript.html)
+
+
+&nbsp;
+
 
 ## destroy
 
@@ -48,9 +51,14 @@ Destroy the `BarcodeReader` object. Equivalent to the previous method `deleteIns
 destroy() returns Promise
 ```
 
-### Return Value
+
+#### Return Value
 
 `Promise<any>`
+
+
+&nbsp;
+
 
 ## detectEnvironment
 
@@ -60,13 +68,19 @@ Detect the current device environment.
 detectEnvironment() returns Promise
 ```
 
-### Return Value
+
+#### Return Value
 
 `Promise<any>`
 
-### Sample
+
+#### Sample
 
 [Read barcodes from live camera](https://demo.dynamsoft.com/dbr_wasm/barcode_reader_javascript.html)
+
+
+
+&nbsp;
 
 ## isLoaded
 
@@ -76,15 +90,19 @@ Check if the decoding module is loaded.
 isLoaded() returns Boolean
 ```
 
-### Return Value
+
+#### Return Value
 
 `Boolean`
 
-### Sample
 
+#### Sample
 ```javascript
-Dynamsoft.DBR.BarcodeReader.isLoaded()
+Dynamsoft.BarcodeReader.isLoaded()
 ```
+
+
+&nbsp;
 
 ## loadWasm
 
@@ -94,10 +112,12 @@ Manually load and compile the decoding module. This method can be used to preloa
 loadWasm() returns Promise
 ```
 
-### Return Value
+
+#### Return Value
 
 `Promise<void>`
 
-### Sample
+
+#### Sample
 
 [Read barcodes from live camera](https://demo.dynamsoft.com/dbr_wasm/barcode_reader_javascript.html)

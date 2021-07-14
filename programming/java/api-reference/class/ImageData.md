@@ -1,7 +1,6 @@
 ---
 layout: default-layout
 title: Dynamsoft Barcode Reader Java API Reference - ImageData Class
-description: This page shows the ImageData Class of Dynamsoft Barcode Reader for Java SDK API Reference.
 keywords: ImageData, class, api reference, java
 needAutoGenerateSidebar: false
 ---
@@ -25,31 +24,31 @@ Stores the image data.
 ### bytes
 The image data content in a byte array. 
 ```java
-byte[] com.dynamsoft.dbr.ImageData.bytes
+byte[] com.dynamsoft.barcode.ImageData.bytes
 ```
 
 ### width
 The width of the image in pixels.  
 ```java
-int com.dynamsoft.dbr.ImageData.width
+int com.dynamsoft.barcode.ImageData.width
 ```
 
 ### height
 The height of the image in pixels.  
 ```java
-int com.dynamsoft.dbr.ImageData.height
+int com.dynamsoft.barcode.ImageData.height
 ```
 
 ### stride
 The stride (or scan width) of the image. 
 ```java
-int com.dynamsoft.dbr.ImageData.stride
+int com.dynamsoft.barcode.ImageData.stride
 ```
 
 ### format
 The image pixel format used in the image byte array. 
 ```java
-int com.dynamsoft.dbr.ImageData.format
+int com.dynamsoft.barcode.ImageData.format
 ```
   
 

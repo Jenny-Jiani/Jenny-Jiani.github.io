@@ -1,7 +1,6 @@
 ---
 layout: default-layout
 title: Dynamsoft Barcode Reader .NET API Reference - OneDCodeDetails Class
-description: This page shows the OneDCodeDetails Class of Dynamsoft Barcode Reader for .NET SDK.
 keywords: OneDCodeDetails, class, api reference, .Net
 needAutoGenerateSidebar: false
 ---
@@ -9,7 +8,7 @@ needAutoGenerateSidebar: false
 # OneDCodeDetails
 Stores the OneD code details.
 
-```csharp
+```C#
 public class OneDCodeDetails
 ```  
   
@@ -29,27 +28,27 @@ public class OneDCodeDetails
 ### ModuleSize
 The barcode module size (the minimum bar width in pixel).
 
-```csharp
-int Dynamsoft.DBR.OneDCodeDetails.ModuleSize
+```C#
+int Dynamsoft.Barcode.OneDCodeDetails.ModuleSize
 ```
 
 ### StartCharsBytes
 The start chars in a byte array.
 
-```csharp
-byte[] Dynamsoft.DBR.OneDCodeDetails.StartCharsBytes
+```C#
+byte[] Dynamsoft.Barcode.OneDCodeDetails.StartCharsBytes
 ```
 
 ### StopCharsBytes
 The stop chars in a byte array.
 
-```csharp
-byte[] Dynamsoft.DBR.OneDCodeDetails.StopCharsBytes
+```C#
+byte[] Dynamsoft.Barcode.OneDCodeDetails.StopCharsBytes
 ```
 
 ### CheckDigitBytes
 The check digit chars in a byte array.
 
-```csharp
-byte[] Dynamsoft.DBR.OneDCodeDetails.CheckDigitBytes
+```C#
+byte[] Dynamsoft.Barcode.OneDCodeDetails.CheckDigitBytes
 ```

@@ -1,14 +1,13 @@
 ---
 layout: default-layout
 title: Dynamsoft Barcode Reader JavaScript API Reference - BarcodeReader Result Methods
-description: This page shows BarcodeReader Result methods of Dynamsoft Barcode Reader JavaScript SDK.
 keywords: getIntermediateResults, result methods, BarcodeReader, api reference, javascript, js
 needAutoGenerateSidebar: true
 needGenerateH3Content: false
 ---
 
 
-# JavaScript API Reference - `BarcodeReader` Result Methods
+# Javascript API Reference - `BarcodeReader` Result Methods
 
 | Method             | Description |
 |----------------------|-------------|
@@ -26,15 +25,11 @@ The method is only supported in the **full feature edition**.
 getIntermediateResults() returns Promise
 ```
 
-### Return Value
+
+#### Return Value
 
 `Promise<any>`
 
-### Sample
+#### Sample
 
-```javascript
-    settings.intermediateResultTypes = 0X3fff;
-    await reader.updateRuntimeSettings(settings);
-    let cvs = await reader.getIntermediateCanvas(); //all images
-    let irtresults = await reader.getIntermediateResults(); // all intermediate results
-```
+[Read barcodes from live camera](https://demo.dynamsoft.com/dbr_wasm/barcode_reader_javascript.html)

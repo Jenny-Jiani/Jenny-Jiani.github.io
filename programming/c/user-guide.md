@@ -1,32 +1,28 @@
 ---
 layout: default-layout
 title: Dynamsoft Barcode Reader for C Language - User Guide
-description: This is the user guide of Dynamsoft Barcode Reader for C Language.
 keywords: user guide, c
 needAutoGenerateSidebar: true
-needGenerateH3Content: false
-noTitleIndex: true
+needGenerateH3Content: true
 ---
 
 
-# User Guide for C Language
+# User Guide for Windows Edition - C
 
 ## System Requirements
 
 - Operating systems:
-   - Windows: 7, 8, 10, 2003, 2008, 2008 R2, 2012;
-   - Linux x64: Ubuntu 14.04.4+ LTS, Debian 8+, etc;  
-   - Linux arm 32bit;
-   - Linux arm 64bit (contact us to get the SDK);
-   - macOS 64bit: 10.12+ (contact us to get the SDK).
+   - Windows 7, 8, 10.
+   - Windows Server 2003, 2008, 2008 R2, 2012.
+  
+- Environment: Visual Studio 2008 and above.  
 
 
 &nbsp; 
 
    
 ## Installation
-
-You can download Dynamsoft Barcode Reader SDK from the [Dynamsoft website](https://www.dynamsoft.com/Downloads/Dynamic-Barcode-Reader-Download.aspx) and run the setup program. The trial installer includes a free trial license valid for 30 days.   
+To install Dynamsoft Barcode Reader Windows Edition on your development machine, you can download the SDK from the [Dynamsoft website](https://www.dynamsoft.com/Downloads/Dynamic-Barcode-Reader-Download.aspx) and run the setup program. The trial installer includes a free trial license valid for 30 days.   
    
 After installation, you can find samples for supported platforms in the **Samples** folder under the installation folder.  
 
@@ -39,7 +35,6 @@ After installation, you can find samples for supported platforms in the **Sample
 2. Add Dynamsoft Barcode Reader headers and libs in `BarcodeReadDemo_C.c`.   
    ```c
     #include <stdio.h>
-    #include "<relative path>/DynamsoftCommon.h"
     #include "<relative path>/DynamsoftBarcodeReader.h"
     
     #ifdef _WIN64
@@ -49,7 +44,7 @@ After installation, you can find samples for supported platforms in the **Sample
     #endif
    ```
    
-   Please replace `<relative path>` in the code with the relative path to the `BarcodeReadDemo_C.c` file. Typically, The `DynamsoftBarcodeReader.h` file can be found in `DBR-C_CPP-{version number}\DynamsoftBarcodeReader\Include\`, and the LIB files can be found in `DBR-C_CPP-{version number}\DynamsoftBarcodeReader\Lib\`.
+   Please replace `<relative path>` in the code with the relative path to the `BarcodeReadDemo_C.c` file. Typically, The `DynamsoftBarcodeReader.h` file can be found in `[INSTALLATION FOLDER]\Components\C_C++\Include\`, and the LIB files can be found in `[INSTALLATION FOLDER]\Components\C_C++\Lib\`.   
  
 3. Update the main function in `BarcodeReadDemo_C.c`.   
    ```c
@@ -105,9 +100,10 @@ After installation, you can find samples for supported platforms in the **Sample
    Please update `<your image file full path>` and `<your license key here>` in the code accordingly.   
    
 4. Run the project.   
-
-   Build the application and copy the related DLL files to the same folder as the EXE file. The DLLs can be found in `DBR-C_CPP-{version number}\DynamsoftBarcodeReader\Lib\{Platform}\`.
-
+   Build the application and copy the related DLL files to the same folder as the EXE file. The DLLs can be found in `[INSTALLATION FOLDER]\Components\C_C++\Redist\`.
+   - For x86 mode, required DLLs are: x86\DynamsoftBarcodeReaderx86.dll,x86\vcomp110.dll,x86\DynamicPdf.dll (for decoding barcodes from PDF files), x86\DynamsoftLicClientx86.dll.   
+   - For x64 mode, required DLLs are: x64\DynamsoftBarcodeReaderx64.dll, x64\vcomp110.dll, x64\DynamicPdfx64.dll (for decoding barcodes from PDF files), x64\DynamsoftLicClientx64.dll.
+   
    To test, you can open the Command Prompt and execute the EXE file with a barcode image.
    
 To deploy your application, make sure the DLLs are in the same folder as the EXE file. See the [Distribution](#distribution) section for more details.   
@@ -255,7 +251,7 @@ DBR_DestroyInstance(hBarcode);
 ```  
 
 Below is a template for your reference. To learn more about the APIs, you can check out [`PublicRuntimeSettings`]({{ site.structs }}PublicRuntimeSettings.html) Struct.  
-```json
+```c
 {
    "ImageParameter" : {
       "BarcodeFormatIds" : [ "BF_ALL" ],
@@ -269,6 +265,7 @@ Below is a template for your reference. To learn more about the APIs, you can ch
             "ThreshValueCoefficient" : 10
          }
       ],
+      "DeblurLevel" : 9,
       "Description" : "",
       "ExpectedBarcodesCount" : 0,
       "GrayscaleTransformationModes" : [
@@ -327,31 +324,12 @@ Below is a template for your reference. To learn more about the APIs, you can ch
    "Version" : "3.0"
 }
 ```
-## How to Distribute
 
-Distribute the required library files with the applications using the Dynamsoft Barcode Reader SDK. The distribution files can be found under:
+&nbsp; 
 
-`DBR-C_CPP-{version number}\DynamsoftBarcodeReader\Lib\{Platform}\`
 
-## How to Upgrade
 
-### From version 7.x
-
-You need to replace the old assembly files with the ones in the latest version. Download the latest version [here](https://www.dynamsoft.com/Downloads/Dynamic-Barcode-Reader-Download.aspx).
-
-Your previous SDK license for version 7.x is not compatible with the version 8.x. Please [contact us](https://www.dynamsoft.com/Company/Contact.aspx) to upgrade your license.
-
-After you upgraded your license to version 8.x:
-
-- If you were using `DBR_InitLicense`, please replace the old license with the newly generated one.
-
-- If you were using `DBR_InitLicenseFromServer` to connect to Dynamsoft server for license verification, then no need to change the license key. But please make sure the device has Internet connection.
-
-- If you were using `DBR_InitLicenseFromServer` + `DBR_InitLicenseFromLicenseContent` to connect to Dynamsoft server once and use the SDK offline, please follow [these steps](../../license-activation/set-full-license-7.md#connect-once) to re-register the device.
-
-- If you were using `DBR_InitLicenseFromLicenseContent` to use the SDK offline, please follow [these steps](../../license-activation/set-full-license-7.md#offline) to re-register the device.
-
-### From version 6.x
-
-We made some structural updates in the new version. To upgrade from 6.x to 8.x, we recommend you to review our sample code and re-write the barcode scanning module.
-
+## Useful Links
+- [Licensing and Distributing]()
+- [How-to Guides]({{ site.how_to }})
+- [FAQs]({{ site.faqs }})

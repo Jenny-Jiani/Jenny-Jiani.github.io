@@ -1,7 +1,6 @@
 ---
 layout: default-layout
 title: Dynamsoft Barcode Reader Python API Reference - Class
-description: This page shows all Classes of Dynamsoft Barcode Reader for Python SDK.
 keywords: class, api reference, python
 needAutoGenerateSidebar: false
 breadcrumbText: Class
@@ -13,7 +12,6 @@ breadcrumbText: Class
 - [`BarcodeReaderError`](BarcodeReaderError.md)	
 - [`Contour`](Contour.md)	 
 - [`DataMatrixDetailedResult`](DataMatrixDetailedResult.md)	 
-- [`DMLTSConnectionParameters`](DMLTSConnectionParameters.md)	
 - [`ExtendedResult`](ExtendedResult.md)	
 - [`FrameDecodingParameters`](FrameDecodingParameters.md)	
 - [`ImageData`](ImageData.md)	 

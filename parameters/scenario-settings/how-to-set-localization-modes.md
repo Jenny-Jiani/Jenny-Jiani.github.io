@@ -1,110 +1,110 @@
 ---   
 layout: default-layout
-description: This article introduces how to use different localization modes to obtain the best barcode localization results for further decoding.
-title: How to use different localization modes
-keywords: localization, barcode area
+description: 本文介绍如何在不同场景下选择合适的定位模式，来得到最优的码区定位结果
+title: 码区定位
+keywords: localization,barcode area
 needAutoGenerateSidebar: false
 ---
 
-# How to use different localization modes
+# 如何使用不同的定位模式来获得最优的码区定位结果
 
-DBR provides a few localization modes to localize the barcode area. This article will introduce how to select the appropriate localization mode in different scenarios to obtain the best barcode localization results for further decoding.
+DBR提供了多种定位模式来定位码区，不同模式有其自身的适用场景和特点，本文会详细介绍如何在不同场景下选择合适的定位模式，来得到最优的码区定位结果。
 
 ## LM_CONNECTED_BLOCKS
 
-Localizes barcodes by searching for connected blocks. This is optimized for clear images with obvious connected blocks, as shown below:
+基于联通块的定位模式，该模式使用图像的联通块信息进行定位，所以需要图像中存在码区特征明显的联通块，通常适用于图像清晰、码区粘连不严重的情况。如下图
 
 ![original-barcode][1]
 
-The image has clear connected blocks, which are highlighted below: 
+该图像的联通块信息清晰、码条特征明显，绘制在图上后，如下
 
 ![original-barcode-contours][5]
 
 ## LM_LINES
 
-Localizes barcodes by searching for groups of lines. It is optimized for images with obvious straight lines. Compared with the LM_CONNECTED_BLOCKS mode, it can handle the situation where some bars (or lines) of the barcode stick to each other.
-
-As shown in the image below, the connected blocks are destroyed because of the existence of two extra lines, which cannot be found by using LM_CONNECTED_BLOCKS.
+基于直线的定位模式，该模式使用图像中的直线数据进行码区定位。适用于码区直线特征明显的图像，相比LM_CONNECTED_BLOCKS模式，可以很好的处理码区发生粘连的情况。如下图，因为2条污染的存在，图片的联通块信息被破坏，无法体现出码条特征
 
 ![contaminated-barcode][2]
 
-But it still has obvious straight line characteristics, as shown in the image below. In this case, using LM_LINES is able to localize the barcode.
+但是图像的直线信息依然能体现出码条特征，如下图
 
 ![contaminated-barcode-lines][7]
 
+像这种情况，使用LM_LINES即可完成码区的定位。
+
 ## LM_STATISTICS
 
-Localizes barcodes based on colour statistics. This mode is suitable for scenarios where the barcode area is severely damaged. For example, the original image is very large but the barcode area is small, so the barcode area may be severely damaged after image binarization, as shown in the image below:
+基于颜色统计的定位模式，适用于码区破坏严重，联通块和直线都无法体现出码区特征的场景。例如原始图像较大，但是码区很小，这样图像二值化后码区特征可能会破坏严重，如下图
 
 <img src ="./assets/how-to-set-localization-modes/small-qrcode.png" width = "200" height = "214" alt="small-qrcode"/>
 
-After binarization, the position patterns is damaged, as shown below:
+该图二值化后码区的定位角块破坏严重，如下所示：
 
 ![contaminated-barcode-lines][9]
 
-There are obvious black and white contrast near the barcode area, so the barcode can be successfully localized using LM_STATISTICS mode.
+因其码区附近有比较明显的黑白特征，使用LM_STATISTICS可以成功定位到
 
 ## LM_SCAN_DIRECTLY
 
-Localizes barcodes based on the direct scanning mode. It is the fastest among all localization modes, but it requires high barcode image quality, and the direction of the barcode must be horizontal or vertical. This mode is recommended in the real-time video scanning scenarios.
+基于直接扫描的定位模式，通过在图片上扫描来寻找码区，速度在所有定位模式中最快，但也需要码区清晰度较高，码区的方向也只能是水平或竖直，倾斜方向成功率较低。适用于速度敏感场景。例如视频交互场景，利用摄像头扫码识别，每一帧的图像处理耗时不可过长，同时某些不清晰的图像帧并不会影响整体效果。
 
-There are two additional argument parameters ScanStride and ScanDirection in this mode:
-
+该模式下还有两个额外的argment参数ScanStride和ScanDirection。
 - ScanStride   
-
- Sets the interval between adjacent scan lines. The unit is pixel. The default value is 0, which means that DBR automatically calculates the interval. The smaller the value is, the more likely it is to locate the code area, but it will also increase the time.
-
+设置相邻扫描线的间隔，单位为像素，默认值为0，0代表DBR自动计算间隔。该值设置越小越可能定位码区，但也会增加花费的时间。
 - ScanDirection   
-
- Sets the scan direction, the allowed values are 0, 1, 2. The default value is 0, which means scanning in both horizontal and vertical directions. 1 means scanning only in the vertical direction, and 2 means scanning only in the horizontal direction. Setting the appropriate scanning direction can decrease the processing speed.
+设置扫描方向，取值为0，1，2，默认值为0，0代表水平和垂直方向都进行扫描，1为只对垂直方向进行扫描，2为只对水平方向进行扫描。减少尝试的扫描方向，可以提高DBR的处理速度
 
 ## LM_STATISTICS_MARKS
 
-Localizes barcodes by dot matrix information. This mode is only applicable to DPM Code and DotCode. Below is a sample image of DotCode:
+基于图像点阵信息进行码区定位，该模式仅适用于DPM Code和Dotcode。如果你需要处理DPM或者DotCode，那么需要配置该模式。下图是一个典型的Dotcode
 
 ![dotcode][3]
 
-## LM_STATISTICS_POSTAL_CODE
+## LM_STATISTICS_POSTAL_CODE：
 
-Localizes barcodes by statistics, connected blocks and straight lines. This mode is only applicable to Postal Code. Below is a sample image of Postal Code:
+基于统计连通块和直线来定位PostalCode，该模式仅适用于PostalCode。PostalCode例图如下
 
 ![postalcode][4]
 
 ## LM_CENTRE
 
-Localizes barcodes from centre. This mode uses the central area of the image as the suspected code area and then try to localize and decode.
+中心定位，该模式以图像中心区域为码区疑似区，尝试进行定位解码。
 
-## Use intermediate results to obtain the localization result
+## 利用中间结果观察定位数据
 
-If DBR successfully localizes the barcode zone, you can use the intermediate result IRT_TYPED_BARCODE_ZONE to obtain the localization result. The localization result includes "angle" (the angle of the barcode zone), "barcodeFormat" (barcode format), "confidence" (the confidence value of the barcode zone), "moduleSize" (barcode module size), "pageNumber" (0-based page number), "terminatePhase" (terminate phase), "x1y1x2y2x3y3x4y4" (the coordinates of the barcode zone).
+如果DBR成功定位到码区，可以利用中间结果IRT_TYPED_BARCODE_ZONE来观察定位结果。定位结果的信息包括："angle"（码区角度）,"barcodeFormat"（条码类型）,"confidence"（码区定位分数）,
+"moduleSize"（码条modulesize）,"pageNumber"（位于第几页）,"terminatePhase"（终止阶段）,
+"x1y1x2y2x3y3x4y4"（码区定位点坐标）。
 
-## Example
+## 配置示例
 
-Code snippet in C++:
+下面演示在RuntimeSetting和Json配置定位模式
+
+示例程序：
 
 ```cpp
     char sError[512];
     CBarcodeReader* reader = new CBarcodeReader();
-    reader->InitLicense("Insert your license here");
+    reader->InitLicense("填入Lisence");
     PublicRuntimeSettings* runtimeSettings = new PublicRuntimeSettings();
-    reader->GetRuntimeSettings(runtimeSettings);          // Get the current runtime settings
-    runtimeSettings->localizationModes[0] = LM_LINES;     // Only use LM_LINES as the localization mode
+    reader->GetRuntimeSettings(runtimeSettings);          //取出当前的模板参数    
+    runtimeSettings->localizationModes[0] = LM_LINES;     //只使用LM_LINES一种定位模式
     runtimeSettings->localizationModes[1] = LM_SKIP;
     runtimeSettings->localizationModes[2] = LM_SKIP;
     runtimeSettings->localizationModes[3] = LM_SKIP;
     reader->UpdateRuntimeSettings(runtimeSettings);
-    reader->DecodeFile("Insert the image file path here", "");// Start decoding
+    reader->DecodeFile("填入图片路径", "");                //解码    
     TextResultArray* result = NULL;
-    reader->GetAllTextResults(&result);                   // Get results
+    reader->GetAllTextResults(&result);                   //获得解码结果
     int icount = result->resultsCount;
-    dynamsoft::dbr::CBarcodeReader::FreeTextResults(&result);
+    CBarcodeReader::FreeTextResults(&result);
     delete runtimeSettings;
     delete reader;
 ```
 
-Example JSON template:
+示例Json模板：
 
-```json
+```javascript
 {
     "ImageParameter": {
         "Name": "ImageParameter1", 

@@ -1,7 +1,6 @@
 ---
 layout: default-layout
 title: Dynamsoft Barcode Reader .NET API Reference - LineSegment Class
-description: This page shows the LineSegment Class of Dynamsoft Barcode Reader for .NET SDK.
 keywords: LineSegment, class, api reference, .Net
 needAutoGenerateSidebar: false
 ---
@@ -9,7 +8,7 @@ needAutoGenerateSidebar: false
 # LineSegment
 Stores line segment data.
 
-```csharp
+```C#
 public class LineSegment
 ```  
   
@@ -27,15 +26,15 @@ public class LineSegment
 ### StartPoint
 The start point of the line segment.   
 
-```csharp
-Point Dynamsoft.DBR.LineSegment.StartPoint
+```C#
+Point Dynamsoft.Barcode.LineSegment.StartPoint
 ```
 
 ### EndPoint
 The end point of the line segment.
 
-```csharp
-Point Dynamsoft.DBR.LineSegment.EndPoint
+```C#
+Point Dynamsoft.Barcode.LineSegment.EndPoint
 ```
 
 ### LinesConfidenceCoefficients
@@ -45,6 +44,6 @@ The confidence coefficients for lines. There are 4 coefficients in this set:
 3. linesConfidenceCoefficients\[2\] is average negative amplitude;   
 4. linesConfidenceCoefficients\[3\] is max negative amplitude.
 
-```csharp
-byte[] Dynamsoft.DBR.LineSegment.LinesConfidenceCoefficients
+```C#
+byte[] Dynamsoft.Barcode.LineSegment.LinesConfidenceCoefficients
 ```

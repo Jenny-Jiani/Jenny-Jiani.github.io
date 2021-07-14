@@ -1,7 +1,6 @@
 ---
 layout: default-layout
 title: Dynamsoft Barcode Reader Python API Reference - ExtendedResult Class
-description: This page shows the ExtendedResult Class of Dynamsoft Barcode Reader for Python SDK.
 keywords: ExtendedResult, class, api reference, python
 needAutoGenerateSidebar: false
 ---

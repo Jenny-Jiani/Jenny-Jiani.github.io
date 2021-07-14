@@ -1,7 +1,6 @@
 ---
 layout: default-layout
 title: Dynamsoft Barcode Reader Parameter Reference for ImageParameter Object - TextResultOrderModes 
-description: This page shows Dynamsoft Barcode Reader Parameter Reference for ImageParameter Object - TextResultOrderModes.
 keywords: TextResultOrderModes, ImageParameter, image process control parameters, parameter reference, parameter 
 needAutoGenerateSidebar: false
 ---
@@ -21,7 +20,7 @@ needAutoGenerateSidebar: false
 ## TextResultOrderModes
 
 ### Mode Properties
-`TextResultOrderModes` is a parameter deciding the order of the text results returned. It consists of one or more `TextResultOrderMode` items. The array index represents the priority of the item. The smaller index is, the higher priority is.
+`TextResultOrderModes` is a parameter deciding the order of the text results returned. It consisits of one or more `TextResultOrderMode` items. The array index represents the priority of the item. The smaller index is, the higher priority is.
 
 | Value Type | Value Range | Default Value |
 | ---------- | ----------- | ------------- |

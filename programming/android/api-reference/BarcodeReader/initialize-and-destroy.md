@@ -1,8 +1,7 @@
 ---
 layout: default-layout
 title: Dynamsoft Barcode Reader Android API Reference - BarcodeReader initialization and Destroy
-description: This page shows BarcodeReader initialization and Destroy methods of Dynamsoft Barcode Reader for Android SDK.
-keywords: destroy, BarcodeReader, initialization and destroy, api reference, android
+keywords: ddestroy, BarcodeReader, initialization and destroy, api reference, android
 needAutoGenerateSidebar: true
 ---
 
@@ -15,48 +14,61 @@ needAutoGenerateSidebar: true
 
 ---
 
-## BarcodeReader Initialization
 
-Initialization of `BarcodeReader` object without a license.
 
-```java
-com.dynamsoft.dbr.BarcodeReader.BarcodeReader() throws BarcodeReaderException
-```
 
-Initialization of `BarcodeReader` with a license.
+
+## BarcodeReader
+
+Initialization of `BarcodeReader` object.
 
 ```java
-com.dynamsoft.dbr.BarcodeReader.BarcodeReader(String license)	throws Exception
+com.dynamsoft.barcode.BarcodeReader.BarcodeReader() throws BarcodeReaderException
 ```
 
-### Exceptions
-
+#### Exceptions
 [`BarcodeReaderException`](../class/BarcodeReaderException.md)
 
 
-### Remarks
+#### Remarks
+If you initialize DynamsoftBarcodeReader by this method without license, the decoding results maybe unreliable.
 
-If you initialize DynamsoftBarcodeReader without a license, the decoding results may be unreliable.
 
-### Code Snippet
-
+#### Code Snippet
 ```java
 BarcodeReader reader = new BarcodeReader();
 ```
 
+&nbsp;
+
+Initialization of `BarcodeReader` with license.
+
 ```java
-BarcodeReader reader = new BarcodeReade("t0260NwAAAHV***************");
+com.dynamsoft.barcode.BarcodeReader.BarcodeReader(String license)	throws Exception
 ```
+
+#### Exceptions
+[`BarcodeReaderException`](../class/BarcodeReaderException.md)
+
+
+#### Code Snippet
+```java
+BarcodeReader reader = new BarcodeReader("t0260NwAAAHV***************");
+```
+
+
+&nbsp;
 
 ## Destroy
 
 ```java
-void com.dynamsoft.dbr.BarcodeReader.destroy()	
+void com.dynamsoft.barcode.BarcodeReader.destroy()	
 ```
 
-### Code Snippet
 
+#### Code Snippet
 ```java
 BarcodeReader reader = new BarcodeReader("t0260NwAAAHV***************");
 reader.destroy();
 ```
+

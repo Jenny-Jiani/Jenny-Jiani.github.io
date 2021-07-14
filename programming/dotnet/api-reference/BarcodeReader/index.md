@@ -1,7 +1,6 @@
 ---
 layout: default-layout
 title: Dynamsoft Barcode Reader .NET API Reference - BarcodeReader Methods
-description: This page shows BarcodeReader methods of Dynamsoft Barcode Reader for .NET SDK.
 keywords: methods, BarcodeReader, api reference, .Net
 needAutoGenerateSidebar: false
 breadcrumbText: BarcodeReader Methods
@@ -28,9 +27,7 @@ breadcrumbText: BarcodeReader Methods
   | [`DecodeBuffer`](decode.md#decodebuffer) | Decodes barcodes from the memory buffer containing image pixels in defined format. |
   | [`DecodeBase64String`](decode.md#decodebase64string) | Decodes barcodes from a base64 encoded string. |
   | [`DecodeBitmap`](decode.md#decodebitmap) | Decodes barcode from a bitmap. |
-  | [`InitIntermediateResult`](decode.md#initintermediateresult) | Inits an intermediateResult struct with default values. |
-  | [`DecodeIntermediateResults`](decode.md#decodeintermediateresults) | Decodes barcode from intermediate results. |
-  
+   
    
 &nbsp; 
    
@@ -71,8 +68,6 @@ breadcrumbText: BarcodeReader Methods
   | [`InitLicenseFromServer`](license.md#initlicensefromserver) | Initializes license and connect to the specified server for online verification. |
   | [`InitLicenseFromLicenseContent`](license.md#initlicensefromlicensecontent) | Initializes license from the license content on client machine for offline verification. |
   | [`OutputLicenseToString`](license.md#outputlicensetostring) | Outputs the license content as an encrypted string from the license server to be used for offline license verification.|
-  | [`InitLTSConnectionParameters`](license.md#initltsconnectionparameters) | Initializes a DMLTSConnectionParameters struct with default values. |
-  | [`InitLicenseFromLTS`](license.md#initlicensefromlts) | Initializes the barcode reader license and connects to the specified server for online verification. |
    
    
 &nbsp; 

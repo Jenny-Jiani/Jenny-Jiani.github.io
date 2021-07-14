@@ -1,7 +1,6 @@
 ---
 layout: default-layout
 title: Dynamsoft Barcode Reader Parameter Reference for RegionDefinition Object - Content Organization Control Parameters
-description: This article shows Dynamsoft Barcode Reader Parameter Reference for RegionDefinition Object - Content Organization Control Parameters.
 keywords: Name, FormatSpecificationNameArray, RegionDefinition, content organization control parameters, parameter reference, parameter 
 needAutoGenerateSidebar: true
 needGenerateH3Content: false
@@ -20,7 +19,7 @@ needGenerateH3Content: false
 ## Name
 The name of the RegionDefinition object. 
 
-**Remarks**    
+**Remark**    
 It must be a unique name.
 
 ### As Json Parameter
@@ -42,7 +41,7 @@ It must be a unique name.
 ## FormatSpecificationNameArray
 The names of the referenced FormatSpecification object(s).
 
-**Remarks**   
+**Remark**   
 An array item is a name of any available `FormatSpecifications`.   
 
 ### As Json Parameter

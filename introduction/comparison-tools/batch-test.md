@@ -1,7 +1,6 @@
 ---
 layout: default-layout
 title: Dynamsoft Barcode Reader Comparison Tools - Batch Test
-description: This page shows how to test barcode reading performance.
 keywords: batch test, comparison tools
 needAutoGenerateSidebar: true
 ---

@@ -1,7 +1,6 @@
 ---
 layout: default-layout
 title: Dynamsoft Barcode Reader Java API Reference - LineSegment Class
-description: This page shows the LineSegment Class of Dynamsoft Barcode Reader for Java SDK API Reference.
 keywords: LineSegment, class, api reference, java
 needAutoGenerateSidebar: false
 ---
@@ -23,13 +22,13 @@ Stores line segment data.
 ### startPoint
 The start point of the line segment.   
 ```java
-Point com.dynamsoft.dbr.LineSegment.startPoint
+Point com.dynamsoft.barcode.LineSegment.startPoint
 ```
 
 ### endPoint
 The end point of the line segment.
 ```java
-Point com.dynamsoft.dbr.LineSegment.endPoint
+Point com.dynamsoft.barcode.LineSegment.endPoint
 ```
 
 ### linesConfidenceCoefficients
@@ -39,5 +38,5 @@ The confidence coefficients for lines. There are 4 coefficients in this set:
 3. linesConfidenceCoefficients\[2\] is average negative amplitude;   
 4. linesConfidenceCoefficients\[3\] is max negative amplitude.
 ```java
-byte[] com.dynamsoft.dbr.LineSegment.linesConfidenceCoefficients
+byte[] com.dynamsoft.barcode.LineSegment.linesConfidenceCoefficients
 ```

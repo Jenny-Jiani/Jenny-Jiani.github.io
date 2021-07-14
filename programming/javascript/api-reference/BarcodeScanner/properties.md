@@ -1,14 +1,13 @@
 ---
 layout: default-layout
 title: Dynamsoft Barcode Reader JavaScript API Reference - BarcodeScanner Properties
-description: This page shows BarcodeScanner Properties of Dynamsoft Barcode Reader JavaScript SDK.
 keywords: bPlaySoundOnSuccessfulRead, barcodeFillStyle, barcodeLineWidth, barcodeStrokeStyle, regionMaskFillStyle, regionMaskLineWidth, regionMaskStrokeStyle, onFrameRead, onPlayed, onUnduplicatedRead, properties, BarcodeScanner, api reference, javascript, js
 needAutoGenerateSidebar: true
 needGenerateH3Content: false
 ---
 
 
-# JavaScript API Reference - `BarcodeScanner` Properties
+# Javascript API Reference - `BarcodeScanner` Properties
 
 | Property             | Description |
 |----------------------|-------------|
@@ -21,7 +20,11 @@ needGenerateH3Content: false
 | [`regionMaskStrokeStyle`](#regionmaskstrokestyle) | Set the style of the region border. | 
 | [`onFrameRead`](#onframeread) | Triggered a frame has been scanned. | 
 | [`onPlayed`](#onplayed) | Triggered when the camera video stream is played. | 
-| [`onUnduplicatedRead`](#onunduplicatedread) | Triggered when a new, unduplicated barcode is found. | 
+| [`onUnduplicatedRead`](#onunduplicatedread) | Triggered when a new, upduplicated barcode is found. | 
+
+&nbsp;
+
+
 
 ### Inherited Properties From `BarcodeReader`
 
@@ -31,11 +34,9 @@ needGenerateH3Content: false
 | `bDestroyed` | Indicates whether a `BarcodeScanner` object has been destroyed. | 
 | `bSaveOriCanvas` | If set to `true`, save the original image to canvas. | 
 | `oriCanvas` | The original canvas element. | 
-| [`licenseServer`](../BarcodeReader/properties.md#licenseServer) | The license server(s) used for authentication and tracking. |
-| [`handshakeCode`](../BarcodeReader/properties.md#handshakeCode) | The handshake code to interact with license server(s). |
-| [`sessionPassword`](../BarcodeReader/properties.md#sessionPassword) | The session password used for authentication associated with the handshake code. |
 
 ---
+
 
 ## bPlaySoundOnSuccessfulRead
 
@@ -53,6 +54,10 @@ scanner.bPlaySoundOnSuccessfulRead = "frame";
 scanner.bPlaySoundOnSuccessfulRead = "unduplicated";
 ```
 
+
+&nbsp;
+
+
 ## barcodeFillStyle
 
 Set the style used when filling in the located barcode.
@@ -61,12 +66,15 @@ Set the style used when filling in the located barcode.
 barcodeFillStyle = "rgba(red, green, blue, alpha)"
 ```
 
-### Property Values
 
-- `red` *number*  
-- `green` *number*  
-- `blue` *number*  
-- `alpha` *number*
+#### Property Values
+
+`red` *number*  
+`green` *number*  
+`blue` *number*  
+`alpha` *number*
+
+&nbsp;
 
 ## barcodeStrokeStyle
 
@@ -76,12 +84,14 @@ Set the style of the located barcode border.
 barcodeStrokeStyle = "rgba(red, green, blue, alpha)"
 ```
 
-### Property Values
+#### Property Values
 
-- `red` *number*  
-- `green` *number*  
-- `blue` *number*  
-- `alpha` *number*
+`red` *number*  
+`green` *number*  
+`blue` *number*  
+`alpha` *number*
+
+&nbsp;
 
 ## regionMaskFillStyle
 
@@ -91,12 +101,15 @@ Set the style used when filling the mask beyond the region.
 regionMaskFillStyle = "rgba(red, green, blue, alpha)"
 ```
 
-### Property Values
 
-- `red` *number*  
-- `green` *number*  
-- `blue` *number*  
-- `alpha` *number*
+#### Property Values
+
+`red` *number*  
+`green` *number*  
+`blue` *number*  
+`alpha` *number*
+
+&nbsp;
 
 ## regionMaskStrokeStyle
 
@@ -106,31 +119,37 @@ Set the style of the region border.
 regionMaskStrokeStyle = "rgb(red, green, blue)"
 ```
 
-### Property Values
+#### Property Values
 
-- `red` *number*  
-- `green` *number*  
-- `blue` *number*  
+`red` *number*  
+`green` *number*  
+`blue` *number*  
+
+
+
+&nbsp;
 
 ## onFrameRead
 
 This event is triggered when a single frame has been scanned. The results object contains all the barcode results that the reader was able to decode.
 
-### Type Declaration
+#### Type Declaration
 
 ```javascript
 (results: TextResult[]): void
 ```
 
-### Parameters
+
+#### Parameters
 
 `results` [*`TextResult`*](interfaces.md#textresult)[]
 
-### Return Value
+#### Return Value
 
 `void`
 
-### Sample
+
+#### Sample
 
 ```javascript
 scanner.onFrameRead = results => {
@@ -141,48 +160,57 @@ scanner.onFrameRead = results => {
 ```
 [Read barcodes from live camera](https://demo.dynamsoft.com/dbr_wasm/barcode_reader_javascript.html)
 
+
+&nbsp;
+
 ## onPlayed
 
 This event is triggered the camera video stream is played.
 
-### Type Declaration
+#### Type Declaration
 
 ```javascript
 (info: ScannerPlayCallbackInfo): void
 ```
 
-### Parameters
+
+#### Parameters
 
 `info` [*`ScannerPlayCallbackInfo`*](interfaces.md#scannerplaycallbackinfo)
 
-### Return Value
+#### Return Value
 
 `void`
 
-### Sample
+
+#### Sample
 
 [Read barcodes from live camera](https://demo.dynamsoft.com/dbr_wasm/barcode_reader_javascript.html)
+
+
+&nbsp;
 
 ## onUnduplicatedRead
 
 This event is triggered when a new, unduplicated barcode is found. `txt` holds the barcode text result. `result` contains the actual barcode result, including the text result. Old barcodes will be remembered for [`duplicateForgetTime`](interfaces.md#scansettings).
 
-### Type Declaration
+#### Type Declaration
 
 ```javascript
 (txt: string, result: TextResult): void
 ```
 
-### Parameters
 
-- `txt` *string*   
-- `result` [*`TextResult`*](../global-interfaces.md#textresult)[]
+#### Parameters
+`txt` *string*   
+`result` [*`TextResult`*](../global-interfaces.md#textresult)[]
 
-### Return Value
+#### Return Value
 
 `void`
 
-### Sample
+
+#### Sample
 
 ```javascript
 scanner.onUnduplicatedRead = (txt, result) => {
@@ -190,5 +218,7 @@ scanner.onUnduplicatedRead = (txt, result) => {
     console.log(result);
 };
 ```
-
 [Read barcodes from live camera](https://demo.dynamsoft.com/dbr_wasm/barcode_reader_javascript.html)
+
+
+&nbsp;

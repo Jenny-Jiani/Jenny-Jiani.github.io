@@ -16,7 +16,7 @@ The default configuration of `DBR` can handle most common scenarios. However, th
 
 - `IPM_GRAY_EQUALIZE`
 
-Gray-level equalization, which is used to enhance the contrast of an image. The sample image below demonstrates the effect, before and after grayscale equalization. The colours of the DataMatrix code on the original image (left) is too similar to the background color, which would makes decoding, as is, more difficult. The picture on the right is the result of preprocessing through `IPM_GRAY_EQUALIZE`. The DataMatrix becomes much more pronounced, which will make the subsequent decoding process much easier.
+Gray-level equalization, which is used to enhance the contrast of an image. The sample image below demonstrates the effect, before and after grayscale equalization. The colours of the Datamatrix code on the original image (left) is too similar to the background color, which would makes decoding, as is, more difficult. The picture on the right is the result of preprocessing through `IPM_GRAY_EQUALIZE`. The Datamatrix becomes much more pronounced, which will make the subsequent decoding process much easier.
 
 ![Before Equalizing][1]![After Equalizing][2]
 
@@ -74,7 +74,7 @@ reader->SetModeArgument("ImagePreprocessingModes", 3, "MorphOperationKernelSizeY
 reader->DecodeFile("file-path", "");
 TextResultArray* paryResult = NULL;    
 reader->GetAllTextResults(&paryResult);
-dynamsoft::dbr::CBarcodeReader::FreeTextResults(&paryResult);    
+CBarcodeReader::FreeTextResults(&paryResult);    
 delete runtimeSettings;    
 delete reader; 
 ```

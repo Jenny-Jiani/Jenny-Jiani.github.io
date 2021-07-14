@@ -1,7 +1,6 @@
 ---
 layout: default-layout
 title: Dynamsoft Barcode Reader .NET API Reference - DataMatrixDetails Class
-description: This page shows the DataMatrixDetails Class of Dynamsoft Barcode Reader for .NET SDK.
 keywords: DataMatrixDetails, class, api reference, .Net
 needAutoGenerateSidebar: false
 ---
@@ -10,7 +9,7 @@ needAutoGenerateSidebar: false
 # DataMatrixDetails
 Stores the DataMatrix details.
 
-```csharp
+```C#
 public class DataMatrixDetails
 ```  
 
@@ -31,42 +30,42 @@ public class DataMatrixDetails
 ### ModuleSize
 The barcode module size (the minimum bar width in pixel).
 
-```csharp
-int Dynamsoft.DBR.DataMatrixDetails.ModuleSize
+```C#
+int Dynamsoft.Barcode.DataMatrixDetails.ModuleSize
 ```
 
 ### Rows
 The row count of the barcode.
 
-```csharp
-int Dynamsoft.DBR.DataMatrixDetails.Rows
+```C#
+int Dynamsoft.Barcode.DataMatrixDetails.Rows
 ```
 
 ### Columns
 The column count of the barcode.
 
-```csharp
-int Dynamsoft.DBR.DataMatrixDetails.Columns
+```C#
+int Dynamsoft.Barcode.DataMatrixDetails.Columns
 ```
 
 ### DataRegionRows 
 The data region row count of the barcode.
 
-```csharp
-int Dynamsoft.DBR.DataMatrixDetails.DataRegionRows
+```C#
+int Dynamsoft.Barcode.DataMatrixDetails.DataRegionRows
 ```
 
 ### DataRegionColumns
 The data region column count of the barcode.
 
-```csharp
-int Dynamsoft.DBR.DataMatrixDetails.DataRegionColumns
+```C#
+int Dynamsoft.Barcode.DataMatrixDetails.DataRegionColumns
 ```
 
 ### DataRegionNumber
 The data region count.
 
-```csharp
-int Dynamsoft.DBR.DataMatrixDetails.DataRegionNumber
+```C#
+int Dynamsoft.Barcode.DataMatrixDetails.DataRegionNumber
 ```
 

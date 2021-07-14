@@ -1,14 +1,13 @@
 ---
 layout: default-layout
 title: Dynamsoft Barcode Reader JavaScript API Reference - BarcodeScanner Runtime Settings Methods
-description: This page shows BarcodeScanner Runtime Settings Methods of Dynamsoft Barcode Reader JavaScript SDK.
 keywords: updateRuntimeSettings, runtime settings methods, BarcodeScanner, api reference, javascript, js
 needAutoGenerateSidebar: true
 needGenerateH3Content: false
 ---
 
 
-# JavaScript API Reference - `BarcodeScanner` Runtime Settings Methods
+# Javascript API Reference - `BarcodeScanner` Runtime Settings Methods
 
 | Method               | Description |
 |----------------------|-------------|
@@ -18,23 +17,22 @@ needGenerateH3Content: false
 
 ## updateRuntimeSettings
 
-Update the runtime settings with a given object or use the string `single`, `speed`, `balance`, or `coverage` to use our preset settings for `BarcodeScanner`. From v8.0, the default setting is `single`. Overrides [`BarcodeReader.UpdateRuntimeSettings`](../../BarcodeReader/methods/parameter-and-runtime-settings.md#updateruntimesettings).
-
-`single` mode has been optimized to read one barcode at a time quickly. This mode performs faster than `speed` mode in this scenario. 
+Update the runtime settings with a given object or use the string `speed`, `balance`, or `coverage` to use our preset settings for `BarcodeScanner`. The default setting is `speed`. Overrides [`BarcodeReader.UpdateRuntimeSettings`](../../BarcodeReader/methods/parameter-and-runtime-settings.md#updateruntimesettings).
 
 ```javascript
 updateRuntimeSettings(settings) returns Promise
 ```
 
-### Parameters
+#### Parameters
 
-`settings` [*RuntimeSettings*](../../global-interfaces.md#runtimesettings) | *string* 
+`settings` [*RuntimeSettings*](../interfaces.md#runtimesettings) | *string* 
 
-### Return Value
+#### Return Value
 
 `Promise<void>`
 
-### Sample
+
+#### Sample
 
 ```javascript
 await scanner.updateRuntimeSettings('balance');

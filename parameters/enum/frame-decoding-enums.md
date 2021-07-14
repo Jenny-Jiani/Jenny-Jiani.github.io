@@ -1,7 +1,6 @@
 ---
 layout: default-layout
 title: Dynamsoft Barcode Reader Enumerations - Frame Decoding Enumerations
-description: This article shows Frame Decoding Enumerations of Dynamsoft Barcode Reader.
 keywords: ClarityCalculationMethod, ClarityFilterMode, frame decoding enumeration, enumeration
 needAutoGenerateSidebar: true
 needGenerateH3Content: false
@@ -25,7 +24,7 @@ Describes the clarity calculation method.
 | Language | Declaration |
 | -------- | ----------- |
 | C / C++ | `enum ClarityCalculationMethod` |
-| .Net | `enum Dynamsoft.DBR.EnumClarityCalculationMethod` |
+| .Net | `enum Dynamsoft.Barcode.EnumClarityCalculationMethod` |
 | JavaScript | `Dynamsoft.EnumClarityCalculationMethod` |
 | Python | `class EnumClarityCalculationMethod(IntEnum)` |
 | Java / Android | `class EnumClarityCalculationMethod` |
@@ -51,7 +50,7 @@ Describes the clarity filter mode
 | Language | Declaration |
 | -------- | ----------- |
 | C / C++ | `enum ClarityFilterMode` |
-| .Net | `enum Dynamsoft.DBR.EnumClarityFilterMode` |
+| .Net | `enum Dynamsoft.Barcode.EnumClarityFilterMode` |
 | JavaScript | `Dynamsoft.EnumClarityFilterMode` |
 | Python | `class EnumClarityFilterMode(IntEnum)` |
 | Java / Android | `class EnumClarityFilterMode` |

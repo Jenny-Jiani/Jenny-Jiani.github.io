@@ -1,7 +1,6 @@
 ---
 layout: default-layout
 title: Dynamsoft Barcode Reader for C & C++ - Main Page
-description: This is the main page of Dynamsoft Barcode Reader for C & C++ Language.
 keywords: c, c++
 needAutoGenerateSidebar: false
 breadcrumbText: C & C++
@@ -22,6 +21,3 @@ The C Language and C++ documentation mainly consists of two parts. One is the [U
 - [Struct]({{ site.structs }})
 
 ## Samples and Demos
-
-- <a href="https://demo.dynamsoft.com/DBR/BarcodeReaderDemo.aspx" target="_blank">Online Demo</a>
-- <a href="https://www.dynamsoft.com/Downloads/Dynamic-Barcode-Reader-Sample-Download.aspx?Tag=c%2fc%2b%2b#gallery" target="_blank">Code Gallery - C/C++</a>

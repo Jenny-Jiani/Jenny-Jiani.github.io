@@ -1,7 +1,6 @@
 ---
 layout: default-layout
 title: Dynamsoft Barcode Reader C Language API Reference - License Methods
-description: This page shows the license methods of Dynamsoft Barcode Reader for C Language.
 keywords: DBR_InitLicense, DBR_InitLicenseFromServer, DBR_InitLicenseFromLicenseContent, DBR_OutputLicenseToString, DBR_OutputLicenseToStringPtr, DBR_FreeLicenseString, license methods, api reference, c
 needAutoGenerateSidebar: true
 ---
@@ -16,8 +15,6 @@ needAutoGenerateSidebar: true
   | [`DBR_OutputLicenseToString`](#dbr_outputlicensetostring) | Output the license content to a string from the license server. |
   | [`DBR_OutputLicenseToStringPtr`](#dbr_outputlicensetostringptr) | Output the license content to a string from the license server. |
   | [`DBR_FreeLicenseString`](#dbr_freelicensestring) | Free memory allocated for the license string. |
-  | [`DBR_InitLTSConnectionParameters`](#dbr_initltsconnectionparameters) | Initializes a DM_LTSConnectionParameters struct with default values. |
-  | [`DBR_InitLicenseFromLTS`](#dbr_initlicensefromlts) | Initializes the barcode reader license and connects to the specified server for online verification. |
   
   
   ---
@@ -39,7 +36,7 @@ DBR_API int DBR_InitLicense (void* barcodeReader, const char* pLicense)
 
 #### Return value
 Returns error code (returns 0 if the function operates successfully).    
-*You can call [`DBR_GetErrorString`](status-retrieval.md#dbr_geterrorstring) to get detailed error message.*
+*You can call [`DBR_GetErrorString`](status-retrieval.md#DBR_GetErrorString) to get detailed error message.*
 
 #### Code Snippet
 ```c
@@ -68,7 +65,7 @@ DBR_API int DBR_InitLicenseFromServer (void* barcodeReader, const char* pLicense
 
 #### Return value
 Returns error code (returns 0 if the function operates successfully).    
-*You can call [`DBR_GetErrorString`](status-retrieval.md#dbr_geterrorstring) to get detailed error message.*
+*You can call [`DBR_GetErrorString`](status-retrieval.md#DBR_GetErrorString) to get detailed error message.*
 
 &nbsp;
 
@@ -90,7 +87,7 @@ DBR_API int DBR_InitLicenseFromLicenseContent (void* barcodeReader, const char* 
 
 #### Return value
 Returns error code (returns 0 if the function operates successfully).    
-*You can call [`DBR_GetErrorString`](status-retrieval.md#dbr_geterrorstring) to get detailed error message.*
+*You can call [`DBR_GetErrorString`](status-retrieval.md#DBR_GetErrorString) to get detailed error message.*
 
 &nbsp;
 
@@ -112,7 +109,7 @@ DBR_API int DBR_OutputLicenseToString (void* barcodeReader, char content[], int 
 
 #### Return value
 Returns error code (returns 0 if the function operates successfully).    
-*You can call [`DBR_GetErrorString`](status-retrieval.md#dbr_geterrorstring) to get detailed error message.*
+*You can call [`DBR_GetErrorString`](status-retrieval.md#DBR_GetErrorString) to get detailed error message.*
 
 #### Remark
 [`DBR_InitLicenseFromServer`](#dbr_initlicensefromserver) has to be successfully called before calling this method.
@@ -137,7 +134,7 @@ DBR_API int DBR_OutputLicenseToStringPtr (void* barcodeReader, char** content)
 
 #### Return value
 Returns error code (returns 0 if the function operates successfully).    
-*You can call [`DBR_GetErrorString`](status-retrieval.md#dbr_geterrorstring) to get detailed error message.*
+*You can call [`DBR_GetErrorString`](status-retrieval.md#DBR_GetErrorString) to get detailed error message.*
 
 #### Remark
 [`DBR_InitLicenseFromServer`](#dbr_initlicensefromserver) has to be successfully called before calling this method.
@@ -160,60 +157,4 @@ DBR_API void DBR_FreeLicenseString (char** content)
 
 #### Remark
 [`DBR_OutputLicenseToStringPtr`](#dbr_outputlicensetostringptr) has to be successfully called before calling this method.
-
-
-&nbsp;
-
-
-## DBR_InitLTSConnectionParameters
-Initializes a DM_LTSConnectionParameters struct with default values.
-
-```c
-DBR_API int DBR_InitLTSConnectionParameters (DM_LTSConnectionParameters *pLTSConnectionParameters)
-```   
-
-#### Parameters
-`[in, out] pLTSConnectionParameters` The struct of [`DM_LTSConnectionParameters`]({{ site.structs }}DMLTSConnectionParameters.html).   
-
-#### Return value
-Returns error code (returns 0 if the function operates successfully).    
-*You can call [`DBR_GetErrorString`](status-retrieval.md#dbr_geterrorstring) to get detailed error message.*
-
-#### Code Snippet
-```c
-char errorBuf[512];
-DMLTSConnectionParameters paramters;
-DBR_InitLTSConnectionParameters(&paramters);
-paramters.handshakeCode = "Your handshake code";
-DBR_InitLicenseFromLTS(&paramters, errorBuf, 512);
-```
-
-&nbsp;
-
-## DBR_InitLicenseFromLTS
-Initializes the barcode reader license and connects to the specified server for online verification.
-
-```c
-DBR_API int DBR_InitLicenseFromLTS(DM_LTSConnectionParameters *pLTSConnectionParameters, char errorMsgBuffer[], const int errorMsgBufferLen)
-```   
-
-#### Parameters
-`[in] pLTSConnectionParameters` The struct [`DM_LTSConnectionParameters`]({{ site.structs }}DMLTSConnectionParameters.html) with customized settings.   
-`[in, out] errorMsgBuffer` The buffer is allocated by caller and the recommending length is 256. The error message will be copied to the buffer.  
-`[in]	errorMsgBufferLen` The length of allocated buffer.  
-
-#### Return value
-Returns error code (returns 0 if the function operates successfully).    
-*You can call [`DBR_GetErrorString`](status-retrieval.md#dbr_geterrorstring) to get detailed error message.*
-
-#### Code Snippet
-```c
-char errorBuf[512];
-DMLTSConnectionParameters paramters;
-DBR_InitLTSConnectionParameters(&paramters);
-paramters.handshakeCode = "Your handshake code";
-DBR_InitLicenseFromLTS(&paramters, errorBuf, 512);
-```
-
-&nbsp;
 

@@ -1,7 +1,6 @@
 ---
 layout: default-layout
 title: Dynamsoft Barcode Reader Parameter Reference for RegionDefinition Object - Image Process Control Parameters
-description: This article shows Dynamsoft Barcode Reader Parameter Reference for RegionDefinition Object - Image Process Control Parameters.
 keywords: Top, Left, Right, Bottom, MeasuredByPercentage, RegionDefinition, image process control parameters, parameter reference, parameter 
 needAutoGenerateSidebar: true
 needGenerateH3Content: false
@@ -157,7 +156,7 @@ The bottom-most coordinate or percentage of the region.
 ## MeasuredByPercentage
 Sets whether or not to use percentages to measure the Region size
 
-**Remarks**   
+**Remark**   
 When it’s set to 1, the values of [Top](#top), [Left](#left), [Right](#right), [Bottom](#bottom) indicates the percentage (from 0 to 100). Otherwise, they refer to the coordinates.   
 - 0: not by percentage
 - 1: by percentage

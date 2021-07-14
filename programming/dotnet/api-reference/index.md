@@ -1,7 +1,6 @@
 ---
 layout: default-layout
 title: Dynamsoft Barcode Reader .NET API Reference - Main Page
-description: This is the main page of Dynamsoft Barcode Reader for .NET SDK API Reference.
 keywords: api reference, .Net
 needAutoGenerateSidebar: false
 breadcrumbText: API Reference
@@ -42,8 +41,6 @@ breadcrumbText: API Reference
   | [`DecodeBuffer`](BarcodeReader/decode.md#decodebuffer) | Decodes barcodes from the memory buffer containing image pixels in defined format. |
   | [`DecodeBase64String`](BarcodeReader/decode.md#decodebase64string) | Decodes barcodes from a base64 encoded string. |
   | [`DecodeBitmap`](BarcodeReader/decode.md#decodebitmap) | Decodes barcode from a bitmap. |
-  | [`InitIntermediateResult`](BarcodeReader/decode.md#initintermediateresult) | Inits an intermediateResult struct with default values. |
-  | [`DecodeIntermediateResults`](BarcodeReader/decode.md#decodeintermediateresults) | Decodes barcode from intermediate results. |
    
    
 &nbsp; 
@@ -85,8 +82,6 @@ breadcrumbText: API Reference
   | [`InitLicenseFromServer`](BarcodeReader/license.md#initlicensefromserver) | Initializes license and connect to the specified server for online verification. |
   | [`InitLicenseFromLicenseContent`](BarcodeReader/license.md#initlicensefromlicensecontent) | Initializes license from the license content on client machine for offline verification. |
   | [`OutputLicenseToString`](BarcodeReader/license.md#outputlicensetostring) | Outputs the license content as an encrypted string from the license server to be used for offline license verification.|
-  | [`InitLTSConnectionParameters`](BarcodeReader/license.md#initltsconnectionparameters) | Initializes a DMLTSConnectionParameters struct with default values. |
-  | [`InitLicenseFromLTS`](BarcodeReader/license.md#initlicensefromlts) | Initializes the barcode reader license and connects to the specified server for online verification. |
    
    
 &nbsp; 
@@ -190,7 +185,6 @@ breadcrumbText: API Reference
 - [`AztecDetails`](class/AztecDetails.md)	 
 - [`BarcodeReaderException`](class/BarcodeReaderException.md)	
 - [`Contour`](class/Contour.md)	 
-- [`DMLTSConnectionParameters`](class/DMLTSConnectionParameters.md)		
 - [`DataMatrixDetails`](class/DataMatrixDetails.md)	 
 - [`ExtendedResult`](class/ExtendedResult.md)	
 - [`FrameDecodingParameters`](class/FrameDecodingParameters.md)	
@@ -220,13 +214,8 @@ breadcrumbText: API Reference
 - [`ColourClusteringMode`]({{ site.enumerations }}parameter-mode-enums.html#colourclusteringmode)	
 - [`ColourConversionMode`]({{ site.enumerations }}parameter-mode-enums.html#colourconversionmode)	
 - [`ConflictMode`]({{ site.enumerations }}parameter-mode-enums.html#conflictmode)	
-- [`DeblurMode`]({{ site.enumerations }}parameter-mode-enums.html#deblurmode)
-- [`DeformationResistingMode`]({{ site.enumerations }}parameter-mode-enums.html#deformationresistingmode)
-- [`DM_ChargeWay`]({{ site.enumerations }}other-enums.html#dm_chargeway)
-- [`DM_DeploymentType`]({{ site.enumerations }}other-enums.html#dm_deploymenttype)
-- [`DM_LicenseModule`]({{ site.enumerations }}other-enums.html#dm_licensemodule)
-- [`DM_UUIDGenerationMethod`]({{ site.enumerations }}other-enums.html#dm_uuidgenerationmethod)
-- [`DPMCodeReadingMode`]({{ site.enumerations }}parameter-mode-enums.html#dpmcodereadingmode)
+- [`DeformationResistingMode`]({{ site.enumerations }}parameter-mode-enums.html#deformationresistingmode)	
+- [`DPMCodeReadingMode`]({{ site.enumerations }}parameter-mode-enums.html#dpmcodereadingmode)	
 - [`GrayscaleTransformationMode`]({{ site.enumerations }}parameter-mode-enums.html#grayscaletransformationmode)	
 - [`ImagePixelFormat`]({{ site.enumerations }}other-enums.html#imagepixelformat)	
 - [`ImagePreprocessingMode`]({{ site.enumerations }}parameter-mode-enums.html#imagepreprocessingmode)	

@@ -1,7 +1,6 @@
 ---
 layout: default-layout
 title: Dynamsoft Barcode Reader .NET API Reference - Contour Class
-description: This page shows the Contour Class of Dynamsoft Barcode Reader for .NET SDK.
 keywords: Contour, class, api reference, .Net
 needAutoGenerateSidebar: false
 ---
@@ -10,7 +9,7 @@ needAutoGenerateSidebar: false
 # Contour
 Stores the contour information.
 
-```csharp
+```C#
 public class Contour
 ```  
 
@@ -26,6 +25,6 @@ public class Contour
 ### Points
 The points array.
 
-```csharp
-Point[] Dynamsoft.DBR.Contour.Points
+```C#
+Point[] Dynamsoft.Barcode.Contour.Points
 ```  

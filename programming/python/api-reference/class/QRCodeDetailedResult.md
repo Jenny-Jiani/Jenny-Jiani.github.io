@@ -1,7 +1,6 @@
 ---
 layout: default-layout
 title: Dynamsoft Barcode Reader Python API Reference - QRCodeDetailedResult Class
-description: This page shows the QRCodeDetailedResult Class of Dynamsoft Barcode Reader for Python SDK.
 keywords: QRCodeDetailedResult, class, api reference, python
 needAutoGenerateSidebar: false
 ---

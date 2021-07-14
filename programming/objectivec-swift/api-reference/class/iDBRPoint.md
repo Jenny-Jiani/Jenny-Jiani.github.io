@@ -1,14 +1,12 @@
 ---
 layout: default-layout
 title: Dynamsoft Barcode Reader Objective-C & Swift API Reference - iDBRPoint Class
-description: This page shows the iDBRPoint Class of Dynamsoft Barcode Reader for iOS SDK.
 keywords: iDBRPoint, class, api reference, objective-c, oc, swift
 needAutoGenerateSidebar: false
 ---
 
 
 # iDBRPoint
-
 Stores an x- and y-coordinate pair in two-dimensional space.
 
 ## Typedefs
@@ -28,17 +26,14 @@ Stores an x- and y-coordinate pair in two-dimensional space.
 
 
 ### x
-
 The X coordinate of the point.
-
 ```objc
 NSInteger x
 ```
 
+
 ### y
-
 The Y coordinate of the point.
-
 ```objc
 NSInteger y
 ```

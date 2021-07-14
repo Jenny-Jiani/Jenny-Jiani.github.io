@@ -1,7 +1,6 @@
 ---
 layout: default-layout
 title: Dynamsoft Barcode Reader .NET API Reference - BarcodeReader Status Retrieval Methods
-description: This page shows BarcodeReader status retrieval methods of Dynamsoft Barcode Reader for .NET SDK.
 keywords: GetVersion, status retrieval methods, BarcodeReader, api reference, .Net
 needAutoGenerateSidebar: true
 ---
@@ -19,15 +18,15 @@ needAutoGenerateSidebar: true
 
 Get version information of SDK.
 
-```csharp
-string Dynamsoft.DBR.BarcodeReader.GetVersion()
+```C#
+string Dynamsoft.Barcode.BarcodeReader.GetVersion()
 ```
 
 #### Return value
 The version info string. 
 
 #### Code Snippet
-```csharp
+```C#
 BarcodeReader reader = new BarcodeReader();
 string version = reader.GetVersion();
 ```

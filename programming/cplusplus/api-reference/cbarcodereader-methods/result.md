@@ -1,7 +1,6 @@
 ---
 layout: default-layout
 title: Dynamsoft Barcode Reader C++ API Reference - CBarcodeReader Result Methods
-description: This page shows CBarcodeReader Result methods of Dynamsoft Barcode Reader for C++ Language.
 keywords: GetAllTextResults, FreeTextResults, GetIntermediateResults, FreeIntermediateResults, result methods, CBarcodeReader, api reference, c++
 needAutoGenerateSidebar: true
 ---
@@ -28,7 +27,7 @@ needAutoGenerateSidebar: true
 Get all recognized barcode results.
 
 ```cpp
-int dynamsoft::dbr::CBarcodeReader::GetAllTextResults (TextResultArray** pResults)	
+int CBarcodeReader::GetAllTextResults (TextResultArray** pResults)	
 ```   
    
 #### Parameters
@@ -45,7 +44,7 @@ reader->InitLicense("t0260NwAAAHV***************");
 TextResultArray* pResults;
 int errorCode = reader->DecodeFile("C:\\Program Files (x86)\\Dynamsoft\\{Version number}\\Images\\AllSupportedBarcodeTypes.tif", "");
 reader->GetAllTextResults(&pResults);
-dynamsoft::dbr::CBarcodeReader::FreeTextResults(&pResults);
+CBarcodeReader::FreeTextResults(&pResults);
 delete reader;
 ```
 
@@ -59,7 +58,7 @@ delete reader;
 Free memory allocated for text results.
 
 ```cpp
-static void dynamsoft::dbr::CBarcodeReader::FreeTextResults (TextResultArray** pResults)
+static void CBarcodeReader::FreeTextResults (TextResultArray** pResults)
 ```   
    
 #### Parameters
@@ -72,7 +71,7 @@ reader->InitLicense("t0260NwAAAHV***************");
 TextResultArray* pResults;
 int errorCode = reader->DecodeFile("C:\\Program Files (x86)\\Dynamsoft\\{Version number}\\Images\\AllSupportedBarcodeTypes.tif", "");
 reader->GetAllTextResults(&pResults);
-dynamsoft::dbr::CBarcodeReader::FreeTextResults(&pResults);
+CBarcodeReader::FreeTextResults(&pResults);
 delete reader;
 ```
 
@@ -86,7 +85,7 @@ delete reader;
 Get intermediate results containing the original image, the colour clustered image, the binarized Image, contours, Lines, TextBlocks, etc.
 
 ```cpp
-int dynamsoft::dbr::CBarcodeReader::GetIntermediateResults (IntermediateResultArray** pResults) 
+int CBarcodeReader::GetIntermediateResults (IntermediateResultArray** pResults) 
 ```   
    
 #### Parameters
@@ -108,7 +107,7 @@ reader->UpdateRuntimeSettings(pSettings, errorMessage, 256);
 reader->DecodeFile("C:\\Program Files (x86)\\Dynamsoft\\{Version number}\\Images\\AllSupportedBarcodeTypes.tif", "");
 IntermediateResultArray* pResults = NULL;
 reader->GetIntermediateResults(&pResults);
-dynamsoft::dbr::CBarcodeReader::FreeIntermediateResults(&pResults);
+CBarcodeReader::FreeIntermediateResults(&pResults);
 delete pSettings;
 delete reader;
 ```
@@ -124,7 +123,7 @@ delete reader;
 Free memory allocated for the intermediate results.
 
 ```cpp
-static void dynamsoft::dbr::CBarcodeReader::FreeIntermediateResults (IntermediateResultArray** pResults)
+static void CBarcodeReader::FreeIntermediateResults (IntermediateResultArray** pResults)
 ```   
    
 #### Parameters
@@ -142,7 +141,7 @@ reader->UpdateRuntimeSettings(pSettings, errorMessage, 256);
 reader->DecodeFile("C:\\Program Files (x86)\\Dynamsoft\\{Version number}\\Images\\AllSupportedBarcodeTypes.tif", "");
 IntermediateResultArray* pResults = NULL;
 reader->GetIntermediateResults(&pResults);
-dynamsoft::dbr::CBarcodeReader::FreeIntermediateResults(&pResults);
+CBarcodeReader::FreeIntermediateResults(&pResults);
 delete pSettings;
 delete reader;
 ```

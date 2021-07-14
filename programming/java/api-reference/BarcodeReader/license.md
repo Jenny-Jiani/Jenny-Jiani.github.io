@@ -1,7 +1,6 @@
 ---
 layout: default-layout
 title: Dynamsoft Barcode Reader Java API Reference - BarcodeReader License Methods
-description: This page shows BarcodeReader license methods of Dynamsoft Barcode Reader for Java SDK API Reference.
 keywords: initLicense, initLicenseFromServer, initLicenseFromLicenseContent, outputLicenseToString, license methods, BarcodeReader, api reference, java
 needAutoGenerateSidebar: true
 ---
@@ -11,12 +10,10 @@ needAutoGenerateSidebar: true
 
   | Method               | Description |
   |----------------------|-------------|
-  | [`initLicense`](#initlicense) | Reads product key and activate the SDK. |
-  | [`initLicenseFromServer`](#initlicensefromserver) | Initializes license and connect to the specified server for online verification. |
-  | [`initLicenseFromLicenseContent`](#initlicensefromlicensecontent) | Initializes license from the license content on client machine for offline verification. |
-  | [`outputLicenseToString`](#outputlicensetostring) | Outputs the license content to a string from the license server. |
-  | [`initLTSConnectionParameters`](#initltsconnectionparameters) | Initializes a DMLTSConnectionParameters struct with default values. |
-  | [`initLicenseFromLTS`](#initlicensefromlts) | Initializes the barcode reader license and connects to the specified server for online verification. |
+  | [`initLicense`](#initlicense) | Read product key and activate the SDK. |
+  | [`initLicenseFromServer`](#initlicensefromserver) | Initialize license and connect to the specified server for online verification. |
+  | [`initLicenseFromLicenseContent`](#initlicensefromlicensecontent) | Initialize license from the license content on client machine for offline verification. |
+  | [`outputLicenseToString`](#outputlicensetostring) | Output the license content to a string from the license server. |
 
   ---
 
@@ -28,7 +25,7 @@ needAutoGenerateSidebar: true
 Read product key and activate the SDK.
 
 ```java
-void com.dynamsoft.dbr.BarcodeReader.initLicense(String license) throws BarcodeReaderException
+void com.dynamsoft.barcode.BarcodeReader.initLicense(String license) throws BarcodeReaderException
 ```   
    
 #### Parameters
@@ -56,7 +53,7 @@ reader.destroy();
 Initialize the license and connect to the specified server for online verification.
 
 ```java
-void com.dynamsoft.dbr.BarcodeReader.initLicenseFromServer(String licenseServer, String licenseKey)	throws BarcodeReaderException
+void com.dynamsoft.barcode.BarcodeReader.initLicenseFromServer(String licenseServer, String licenseKey)	throws BarcodeReaderException
 ```   
    
 #### Parameters
@@ -85,7 +82,7 @@ reader.destroy();
 Initialize barcode reader license from the license content on the client machine for offline verification.
 
 ```java
-void com.dynamsoft.dbr.BarcodeReader.initLicenseFromLicenseContent(String licenseKey, String licenseContent) throws BarcodeReaderException
+void com.dynamsoft.barcode.BarcodeReader.initLicenseFromLicenseContent(String licenseKey, String licenseContent) throws BarcodeReaderException
 ```   
 
 #### Parameters
@@ -115,7 +112,7 @@ reader.destroy();
 Output the license content as an encrypted string from the license server to be used for offline license verification.
 
 ```java
-String com.dynamsoft.dbr.BarcodeReader.outputLicenseToString() throws BarcodeReaderException
+String com.dynamsoft.barcode.BarcodeReader.outputLicenseToString() throws BarcodeReaderException
 ```   
    
 #### Return value
@@ -140,48 +137,3 @@ reader.destroy();
 &nbsp;
 
 
-## initLTSConnectionParameters
-
-Initializes a DMLTSConnectionParameters struct with default values.
-
-```java
-DMLTSConnectionParameters com.dynamsoft.dbr.BarcodeReader.initLTSConnectionParameters() throws BarcodeReaderException
-```
-   
-### Code Snippet
-
-```java
-BarcodeReader reader = new BarcodeReader();
-DMLTSConnectionParameters info = reader.initLTSConnectionParameters();
-info.handShakeCode = "*****-hs-****";
-info.sessionPassword = "******";
-reader.initLicenseFromLTS(info);
-```
-
-&nbsp;
-
-
-## initLicenseFromLTS
-
-Initializes the barcode reader license and connects to the specified server for online verification.
-
-```java
-void com.dynamsoft.dbr.BarcodeReader.initLicenseFromLTS(DMLTSConnectionParameters ltsInfo) throws BarcodeReaderException
-```
-
-### Parameters
-
-- `ltsInfo`: The struct DMLTSConnectionParameters with customized settings.  
-
-
-### Code Snippet
-
-```java
-BarcodeReader reader = new BarcodeReader();
-DMLTSConnectionParameters info = reader.initLTSConnectionParameters();
-info.handShakeCode = "*****-hs-****";
-info.sessionPassword = "******";
-reader.initLicenseFromLTS(info);
-```
-
-&nbsp;

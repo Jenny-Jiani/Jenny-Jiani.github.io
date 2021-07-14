@@ -1,7 +1,6 @@
 ---
 layout: default-layout
 title: Dynamsoft Barcode Reader Python API Reference - BarcodeReader Video Methods
-description: This page shows Video methods of Dynamsoft Barcode Reader for Python SDK.
 keywords: start_video_mode, append_video_frame, stop_video_mode, init_frame_decoding_parameters, get_length_of_frame_queue, video methods, BarcodeReader, api reference, python
 needAutoGenerateSidebar: true
 ---
@@ -30,25 +29,28 @@ needAutoGenerateSidebar: true
 
   ---
 
+
+
 ## start_video_mode
 
 Starts a new thread to decode barcodes from the inner frame queue. 
 
+
 ```python
 BarcodeReader.start_video_mode(frame_decoding_parameters, call_back_func, template_name="")
-```
-
-### Parameters
-
+```   
+   
+#### Parameters
 `[in] frame_decoding_parameters` <*class FrameDecodingParameters*> : The frame decoding parameters. You can get it by init_frame_decoding_parameters(), then modify its parameters' value.  
 `[in] call_back_func` <*function pointer*> : Sets callback function to process text results generated during frame decoding.   
 `[in] template_name` <><*str*> : The template name.  
 
-### Exception
 
+#### Exception
 [`BarcodeReaderError`](../class/BarcodeReaderError.md) : If error happens, this function will throw a BarcodeReaderError exception that can report the detailed error message.
 
-### Code Snippet
+
+#### Code Snippet
 
 ```python
 import cv2
@@ -155,6 +157,10 @@ read_barcode()
 
 print("-------------------over------------------------")
 ```
+
+
+&nbsp; 
+
 
 ## append_video_frame
 
@@ -162,18 +168,15 @@ Appends a frame image buffer to the inner frame queue.
 
 ```python
 BarcodeReader.append_video_frame(video_frame)
-```
-
-### Parameters
-
+```   
+   
+#### Parameters
 `[in] video_frame` : Gets by opencv.
 
-### Return value
+#### Return value
+Current frame id.
 
-Current frame ID.
-
-### Code Snippet
-
+#### Code Snippet
 ```python
 import cv2
 from dbr import *
@@ -279,6 +282,10 @@ read_barcode()
 
 print("-------------------over------------------------")
 ```
+
+
+&nbsp; 
+
 
 ## stop_video_mode
 
@@ -288,12 +295,10 @@ Stop the frame decoding thread created by [`start_video_mode`](#start_video_mode
 BarcodeReader.stop_video_mode()
 ``` 
 
-### Exception
-
+#### Exception
 [`BarcodeReaderError`](../class/BarcodeReaderError.md) : If error happens, this function will throw a BarcodeReaderError exception that can report the detailed error message.
 
-### Code Snippet
-
+#### Code Snippet
 ```python
 import cv2
 from dbr import *
@@ -400,17 +405,23 @@ read_barcode()
 print("-------------------over------------------------")
 ```
 
+&nbsp; 
+
+
 ## init_frame_decoding_parameters
 
 Initialize frame decoding parameters with default values.
 
 ```python
 BarcodeReader.init_frame_decoding_parameters()
-```
-
-### Return value
-
+```   
+   
+#### Return value
 `frame_decoding_parameters` <*class FrameDecodingParameters*> : The frame decoding parameters.
+
+
+&nbsp; 
+
 
 ## get_length_of_frame_queue
 
@@ -420,6 +431,5 @@ Gets current length of the inner frame queue.
 BarcodeReader.get_length_of_frame_queue()	
 ```
 
-### Return value
-
+#### Return value
 Returns the length of the inner frame queue.

@@ -1,19 +1,18 @@
 ---
 layout: default-layout
 title: Dynamsoft Barcode Reader JavaScript API Reference - Global Interfaces
-description: This page shows Global Interfaces of Dynamsoft Barcode Reader JavaScript SDK.
 keywords: BarcodeReaderException, FurtherModes, LocalizationResult, RegionDefinition, RuntimeSettings, TextResult, global interfaces, api reference, javascript, js
 needAutoGenerateSidebar: true
 needGenerateH3Content: false
 ---
 
 
-# JavaScript API Reference - Global Interfaces
+# Javascript API Reference - Global Interfaces
 
 | Interface            | Description |
 |----------------------|-------------|
 | [`BarcodeReaderException`](#barcodereaderexception) | Exceptions raised for Barcode Reader errors. |
-| [`FurtherModes`](#furthermodes) | Stores additional modes. |
+| [`FurtherModes`](#furthermodes) | Stores addtional modes. |
 | [`LocalizationResult`](#localizationresult) | Stores the localization result of the detected barcode. |
 | [`RegionDefinition`](#regiondefinition) | Stores the barcode region information.|  
 | [`RuntimeSettings`](#runtimesettings) | Stores the barcode reading runtime settings. | 
@@ -21,11 +20,13 @@ needGenerateH3Content: false
 
 ---
 
+
 ## BarcodeReaderException
 
 Exceptions raised for Barcode Reader errors. 
 
-### Properties
+
+#### Properties
 
 | Property           | Type | Description |
 |----------------------|------|-------------|
@@ -35,14 +36,21 @@ Exceptions raised for Barcode Reader errors.
 | `name` | *string* | Error name of the current exception inherited from `Error.name`. | 
 | `stack`<sub>optional</sub> | *string* | Call stack at the time the current exception was thrown inherited from `Error.stack`. | 
 
+
+
+
+&nbsp;
+
+
 ## FurtherModes
 
 Stores the FurtherModes.
 
-### Properties
+#### Properties
 
 | Property           | Type | Description |
 |----------------------|------|-------------|
+| `accompanyingTextRecognitionModes` | [*`AccompanyingTextRecognitionMode`*]({{ site.enumerations }}parameter-mode-enums.html#accompanyingtextrecognitionmode) | Sets the mode and priority to recognize accompanying text. **Currently unsupported.** | 
 | `barcodeColourModes` | [*`BarcodeColourMode`*]({{ site.enumerations }}parameter-mode-enums.html#barcodecolourmode) | Sets the mode and priority for the barcode colour mode used to process the barcode zone. | 
 | `barcodeComplementModes` | [*`BarcodeComplementMode`*]({{ site.enumerations }}parameter-mode-enums.html#barcodecomplementmode) | Sets the mode and priority to complement the missing parts in the barcode. | 
 | `colourClusteringModes` | [*`ColourClusteringMode`*]({{ site.enumerations }}parameter-mode-enums.html#colourclusteringmode) | Sets the mode and priority for colour categorization. | 
@@ -56,11 +64,17 @@ Stores the FurtherModes.
 | `textFilterModes` | [*`TextFilterMode`*]({{ site.enumerations }}parameter-mode-enums.html#textfiltermode) | Sets the mode and priority for text filter. | 
 | `textureDetectionModes` | [*`TextureDetectionMode`*]({{ site.enumerations }}parameter-mode-enums.html#texturedetectionmode) | Sets the mode and priority for texture detection. | 
 
+
+
+
+&nbsp;
+
 ## LocalizationResult
 
 Stores the localization result of the detected barcode.
 
-### Properties
+
+#### Properties
 
 | Property         | Type | Description |
 |------------------|------|-------------|
@@ -79,13 +93,19 @@ Stores the localization result of the detected barcode.
 
 * The left-most corner of the barcode is the starting point (x1, y1). The following corner points (x2, y2), (x3, y3), (x4, y4) will be returned in the clockwise direction.
 
-![Barcode coordinates](assets/global-interfaces/DWT_BarcodeSample.png)
+
+![Barcode coordinates](https://www.dynamsoft.com/help/Barcode-Reader-JS/images/DWT_BarcodeSample.png)
+
+
+
+&nbsp;
 
 ## RegionDefinition
 
 Stores the region information.
 
-### Properties
+
+#### Properties
 
 | Property           | Type | Default Value | Description |
 |--------------------|------|---------------|-------------|
@@ -95,20 +115,23 @@ Stores the region information.
 | `regionTop` | *number* | `0` | The top-most coordinate or percentage of the region. | 
 | `regionMeasuredByPercentage` | *number \| boolean* | `0` | Set measure of region by percentage or coordinate. <br/>`0` by coordinate <br/>`1` by percentage| 
 
+
+
+&nbsp;
+
 ## RuntimeSettings
 
 Stores the barcode reading runtime settings. These settings control the barcode recognition process.  
 
-### Properties
+
+#### Properties
 
 | Property           | Type | Default Value | Description |
 |--------------------|------|---------------|-------------|
 | [`barcodeFormatIds`]({{ site.enumerations }}format-enums.html#barcodeformat) | *number* | `BF_ALL (-32505857)` | The selected barcode formats to be read from group 1 of 2. |
 | [`barcodeFormatIds_2`]({{ site.enumerations }}format-enums.html#barcodeformat_2) | *number* | `BF2_NULL (0)` | The selected barcode formats to be read from group 2 of 2.  |
-| `barcodeZoneMinDistanceToImageBorders` | *number* | `BarcodeReader`: `0` <br/>`BarcodeScanner`: `0` | Sets the minimum distance (in pixels) between the barcode zone and image borders. <br/>Value range: `[0, 0x7fffffff]` |
 | `binarizationModes` | [`EnumBinarizationMode[]`]({{ site.enumerations }}parameter-mode-enums.html#binarizationmode) | `[BM_LOCAL_BLOCK, BM_SKIP, BM_SKIP, BM_SKIP, BM_SKIP, BM_SKIP, BM_SKIP, BM_SKIP]` | The mode and priority for binarization. |
-| `deblurLevel`<sup>[1](#1-tips-and-tricks)</sup> | *number* | `BarcodeReader`: `9` <br/>`BarcodeScanner`: `0` | **deprecated** The degree of blurriness of the barcode. <br/>Value range: `[0, 9]`|
-| `deblurModes` | [`EnumDeblurMode[]`]({{ site.enumerations }}parameter-mode-enums.html#deblurmode) | `[DM_SKIP, DM_SKIP, DM_SKIP, DM_SKIP, DM_SKIP, DM_SKIP, DM_SKIP, DM_SKIP, DM_SKIP, DM_SKIP]` | Sets the mode and priority for deblurring. |
+| `deblurLevel`<sup>[1](#1-tips-and-tricks)</sup> | *number* | `BarcodeReader`: `9` <br/>`BarcodeScanner`: `0` | The degree of blurriness of the barcode. <br/>Value range: `[0, 9]`|
 | `expectedBarcodesCount`<sup>[2](#1-tips-and-tricks)</sup> | *number* | `BarcodeReader`: `512` <br/>`BarcodeScanner`: `0` | The number of barcodes expected to be detected for each image. <br/>Value range: `[0, 0x7fffffff]` |
 | [`furtherModes`](#FurtherModes) | *strong* |  | Additional modes. |
 | `intermediateResultSavingMode` | [`EnumIntermediateResultSavingMode`]({{ site.enumerations }}result-enums.html#intermediateresultsavingmode) | `IRSM_MEMORY (1)` | The mode for saving intermediate result. |
@@ -124,6 +147,7 @@ Stores the barcode reading runtime settings. These settings control the barcode 
 | `terminatePhase`<sup>[6](#1-tips-and-tricks)</sup> | [`EnumTerminatePhase`]({{ site.enumerations }}parameter-mode-enums.html#terminatephase) | `TP_BARCODE_RECOGNIZED (32)` | The phase where the algorithm stops. |
 | `textResultOrderModes` | [`EnumTextResultOrderMode[]`]({{ site.enumerations }}result-enums.html#textresultordermode) | `[TROM_CONFIDENCE, TROM_POSITION, TROM_FORMAT, TROM_SKIP, TROM_SKIP, TROM_SKIP, TROM_SKIP, TROM_SKIP]` | The mode and priority for the order of the text results returned. |
 | `timeout` | *number* | `BarcodeReader`: `100000` <br/>`BarcodeScanner`: `10000` | The maximum amount of time measured in ms to be spent searching for a barcode per page. It does not include the time taken to load/decode an image from disk into memory. <br/>Value range: `[0, 0x7fffffff]` |
+
 
 #### :+1: Tips and Tricks 
 
@@ -141,11 +165,15 @@ Stores the barcode reading runtime settings. These settings control the barcode 
 
 * `coverage` is the default setting for `BarcodeReader` and `speed` for `BarcodeScanner`. See [`updateRuntimeSettings`](BarcodeReader/methods/parameter-and-runtime-settings.md#updateRuntimeSettings)
 
+
+&nbsp;
+
 ## TextResult
 
 Stores the decoded barcode text results.
 
-### Properties
+
+#### Properties
 
 | Property           | Type | Description |
 |----------------------|------|-------------|
@@ -153,4 +181,5 @@ Stores the decoded barcode text results.
 | `barcodeFormat` | *number* \| [`EnumBarcodeFormat`]({{ site.enumerations }}format-enums.html#barcodeformat) | The barcode format. | 
 | `barcodeFormatString` | *string* | Barcode type as a string. | 
 | `barcodeText` | *string* | The barcode result text. | 
-| `localizationResult` | [`LocalizationResult`](#localizationresult) | The corresponding localization result. |
+| `localizationResult` | [`LocalizationResult`](#localizationresult) | The corresponding localization result. | 
+

@@ -1,7 +1,6 @@
 ---
 layout: default-layout
 title: Dynamsoft Barcode Reader Python API Reference - AztecDetailedResult Class
-description: This page shows the AztecDetailedResult Class of Dynamsoft Barcode Reader for Python SDK.
 keywords: AztecDetailedResult, class, api reference, python
 needAutoGenerateSidebar: false
 ---

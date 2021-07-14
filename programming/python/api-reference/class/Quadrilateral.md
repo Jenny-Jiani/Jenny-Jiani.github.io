@@ -1,7 +1,6 @@
 ---
 layout: default-layout
 title: Dynamsoft Barcode Reader Python API Reference - Quadrilateral Class
-description: This page shows the Quadrilateral Class of Dynamsoft Barcode Reader for Python SDK.
 keywords: Quadrilateral, class, api reference, python
 needAutoGenerateSidebar: false
 ---

@@ -1,14 +1,13 @@
 ---
 layout: default-layout
 title: Dynamsoft Barcode Reader JavaScript API Reference - BarcodeScanner Methods
-description: This page shows BarcodeScanner Methods of Dynamsoft Barcode Reader JavaScript SDK.
 keywords: methods, BarcodeScanner, api reference, javascript, js
 needAutoGenerateSidebar: false
 breadcrumbText: Methods
 ---
 
 
-# Dynamsoft Barcode Reader SDK - JavaScript  BarcodeScanner Methods
+# Dynamsoft Barcode Reader SDK - Javascript  BarcodeScanner Methods
 
 The `BarcodeScanner` class is used for **video** decoding.
 
@@ -20,7 +19,7 @@ The following methods are related to initializing and destroying the `BarcodeSca
 | [`createInstance`](initialize-and-destroy.md#createinstance) | Create a  `BarcodeScanner` object. |
 | [`destroy`](initialize-and-destroy.md#destroy) | Destroy the `BarcodeScanner` object. |
 | [`getUIElement`](initialize-and-destroy.md#getuielement) | Get HTML element containing the `BarcodeScanner` object. |
-| [`setUIElement`](initialize-and-destroy.md#setuielement) | Set html element containing the `BarcodeScanner` object. |
+| [`setUIElement`](initialize-and-destroy.md#setuielement) | set html element containing the `barcodescanner` object. |
 
 ## Camera Controls
 The following methods are related to controlling the camera and its settings.

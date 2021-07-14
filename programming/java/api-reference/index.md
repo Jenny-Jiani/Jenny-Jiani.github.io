@@ -1,7 +1,6 @@
 ---
 layout: default-layout
 title: Dynamsoft Barcode Reader Java API Reference - Main Page
-description: This is the main page of Dynamsoft Barcode Reader for Java SDK API Reference.
 keywords: api reference, java
 needAutoGenerateSidebar: false
 breadcrumbText: API Reference
@@ -41,9 +40,7 @@ breadcrumbText: API Reference
   | [`decodeFileInMemory`](BarcodeReader/decode.md#decodefileinmemory) | Decode barcodes from an image file in memory. |
   | [`decodeBuffer`](BarcodeReader/decode.md#decodebuffer) | Decode barcodes from raw buffer. |
   | [`decodeBase64String`](BarcodeReader/decode.md#decodebase64string) | Decode barcodes from a base64 encoded string. |
-  | [`decodeBufferedImage`](BarcodeReader/decode.md#decodeBufferedImage) | Decodes barcode from a buffered image (bitmap). |
-  | [`initIntermediateResult`](BarcodeReader/decode.md#initintermediateresult) | Inits an intermediateResult struct with default values. |
-  | [`decodeIntermediateResults`](BarcodeReader/decode.md#decodeintermediateresults) | Decodes barcode from intermediate results. |
+  | [`decodeBufferedImage`](BarcodeReader/decode.md#decodeBufferedImage) | Decodes barcode from a buffered imag (bitmap). |
    
    
 &nbsp; 
@@ -86,8 +83,6 @@ breadcrumbText: API Reference
   | [`initLicenseFromServer`](BarcodeReader/license.md#initlicensefromserver) | Initialize license and connect to the specified server for online verification. |
   | [`initLicenseFromLicenseContent`](BarcodeReader/license.md#initlicensefromlicensecontent) | Initialize license from the license content on client machine for offline verification. |
   | [`outputLicenseToString`](BarcodeReader/license.md#outputlicensetostring) | Output the license content to a string from the license server. |
-  | [`initLTSConnectionParameters`](BarcodeReader/license.md#initltsconnectionparameters) | Initializes a DMLTSConnectionParameters struct with default values. |
-  | [`initLicenseFromLTS`](BarcodeReader/license.md#initlicensefromlts) | Initializes the barcode reader license and connects to the specified server for online verification. |
    
    
 &nbsp; 
@@ -169,7 +164,6 @@ breadcrumbText: API Reference
 - [`AztecDetails`](class/AztecDetails.md)	 
 - [`BarcodeReaderException`](class/BarcodeReaderException.md)	
 - [`Contour`](class/Contour.md)	 
-- [`DMLTSConnectionParameters`](class/DMLTSConnectionParameters.md)		
 - [`DataMatrixDetails`](class/DataMatrixDetails.md)	 
 - [`ExtendedResult`](class/ExtendedResult.md)	
 - [`FrameDecodingParameters`](class/FrameDecodingParameters.md)
@@ -204,12 +198,7 @@ breadcrumbText: API Reference
 - [`EnumColourClusteringMode`]({{ site.enumerations }}parameter-mode-enums.html#colourclusteringmode)	
 - [`EnumColourConversionMode`]({{ site.enumerations }}parameter-mode-enums.html#colourconversionmode)	
 - [`EnumConflictMode`]({{ site.enumerations }}parameter-mode-enums.html#conflictmode)	
-- [`EnumDeblurMode`]({{ site.enumerations }}parameter-mode-enums.html#deblurmode)	
 - [`EnumDeformationResistingMode`]({{ site.enumerations }}parameter-mode-enums.html#deformationresistingmode)	
-- [`EnumDMChargeWay`]({{ site.enumerations }}other-enums.html#dm_chargeway)	
-- [`EnumDMDeploymentType`]({{ site.enumerations }}other-enums.html#dm_deploymenttype)	
-- [`EnumDMLicenseModule`]({{ site.enumerations }}other-enums.html#dm_licensemodule)	
-- [`EnumDMUUIDGenerationMethod`]({{ site.enumerations }}other-enums.html#dm_uuidgenerationmethod)	
 - [`EnumDPMCodeReadingMode`]({{ site.enumerations }}parameter-mode-enums.html#dpmcodereadingmode)	
 - [`EnumGrayscaleTransformationMode`]({{ site.enumerations }}parameter-mode-enums.html#grayscaletransformationmode)	
 - [`EnumImagePixelFormat`]({{ site.enumerations }}other-enums.html#imagepixelformat)	

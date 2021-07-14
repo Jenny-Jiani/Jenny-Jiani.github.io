@@ -1,7 +1,6 @@
 ---
 layout: default-layout
 title: Dynamsoft Barcode Reader Python API Reference - BarcodeReaderError Class
-description: This page shows the BarcodeReaderError Class of Dynamsoft Barcode Reader for Python SDK.
 keywords: BarcodeReaderError, class, api reference, python
 needAutoGenerateSidebar: false
 ---

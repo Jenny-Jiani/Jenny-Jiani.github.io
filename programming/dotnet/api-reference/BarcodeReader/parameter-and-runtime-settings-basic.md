@@ -1,7 +1,6 @@
 ---
 layout: default-layout
 title: Dynamsoft Barcode Reader .NET API Reference - BarcodeReader Parameter and Runtime Settings Basic Methods
-description: This page shows BarcodeReader basic Runtime Settings methods of Dynamsoft Barcode Reader for .NET SDK.
 keywords: SetModeArgument, GetModeArgument, GetRuntimeSettings, UpdateRuntimeSettings, ResetRuntimeSettings, parameter and runtime settings basic methods, BarcodeReader, api reference, .Net
 needAutoGenerateSidebar: true
 ---
@@ -26,37 +25,38 @@ needAutoGenerateSidebar: true
 Sets the optional argument for a specified mode in Modes parameters. 
 
 
-```csharp
-EnumErrorCode Dynamsoft.DBR.BarcodeReader.SetModeArgument(string modesName, int index, string argumentName, string argumentValue, out string errorMessage)
+```C#
+EnumErrorCode Dynamsoft.Barcode.BarcodeReader.SetModeArgument(string modesName, int index, string argumentName, string argumentValue, out string errorMessage)
 ```   
 #### Parameters
-`[in]	modesName` <*string*> : The mode parameter name to set argument.  
-`[in]	index` <*int*> : The array index of mode parameter to indicate a specific mode.  
-`[in]	argumentName` <*string*> : The name of the argument to set.  
-`[in]	argumentValue` <*string*> : The value of the argument to set.  
-`[in,out]	errorMessage` <*string*> : The error message.
+`[in]	modesName` The mode parameter name to set argument.  
+`[in]	index` The array index of mode parameter to indicate a specific mode.  
+`[in]	argumentName` The name of the argument to set.  
+`[in]	argumentValue` The value of the argument to set.  
+`[in,out]	errorMessage` The error message.
 
 #### Return value
 Returns error code.
 
 #### Remark
 Check follow link for available modes and arguments:
-- [`EnumBarcodeColourModes`]({{ site.parameters_reference }}image-parameter/BarcodeColourModes.html#barcodecolourmodes)
-- [`EnumBinarizationModes`]({{ site.parameters_reference }}image-parameter/BinarizationModes.html#binarizationmodes)
-- [`EnumColourClusteringModes`]({{ site.parameters_reference }}image-parameter/ColourClusteringModes.html#colourclusteringmodes)
-- [`EnumColourConversionModes`]({{ site.parameters_reference }}image-parameter/ColourConversionModes.html#colourconversionmodes)
-- [`EnumDeformationResistingModes`]({{ site.parameters_reference }}image-parameter/DeformationResistingModes.html#deformationresistingmodes)
-- [`EnumImagePreprocessingModes`]({{ site.parameters_reference }}image-parameter/ImagePreprocessingModes.html#imagepreprocessingmodes)
-- [`EnumIntermediateResultSavingMode`]({{ site.parameters_reference }}image-parameter/IntermediateResultSavingMode.html#intermediateresultsavingmode)
-- [`EnumLocalizationModes`]({{ site.parameters_reference }}image-parameter/LocalizationModes.html#localizationmodes)
-- [`EnumRegionPredetectionModes`]({{ site.parameters_reference }}image-parameter/RegionPredetectionModes.html#regionpredetectionmodes)
-- [`EnumScaleUpModes`]({{ site.parameters_reference }}image-parameter/ScaleUpModes.html#scaleupmodes)
-- [`EnumTextAssistedCorrectionMode`]({{ site.parameters_reference }}image-parameter/TextAssistedCorrectionMode.html#textassistedcorrectionmode)
-- [`EnumTextFilterModes`]({{ site.parameters_reference }}image-parameter/TextFilterModes.html#textfiltermodes)
-- [`EnumTextureDetectionModes`]({{ site.parameters_reference }}image-parameter/TextureDetectionModes.html#texturedetectionmodes) 
+- [`AccompanyingTextRecognitionModes`]({{ site.parameters_reference }}image-parameter/AccompanyingTextRecognitionModes.html#accompanyingtextrecognitionmodes)
+- [`BarcodeColourModes`]({{ site.parameters_reference }}image-parameter/BarcodeColourModes.html#barcodecolourmodes)
+- [`BinarizationModes`]({{ site.parameters_reference }}image-parameter/BinarizationModes.html#binarizationmodes)
+- [`ColourClusteringModes`]({{ site.parameters_reference }}image-parameter/ColourClusteringModes.html#colourclusteringmodes)
+- [`ColourConversionModes`]({{ site.parameters_reference }}image-parameter/ColourConversionModes.html#colourconversionmodes)
+- [`DeformationResistingModes`]({{ site.parameters_reference }}image-parameter/DeformationResistingModes.html#deformationresistingmodes)
+- [`ImagePreprocessingModes`]({{ site.parameters_reference }}image-parameter/ImagePreprocessingModes.html#imagepreprocessingmodes)
+- [`IntermediateResultSavingMode`]({{ site.parameters_reference }}image-parameter/IntermediateResultSavingMode.html#intermediateresultsavingmode)
+- [`LocalizationModes`]({{ site.parameters_reference }}image-parameter/LocalizationModes.html#localizationmodes)
+- [`RegionPredetectionModes`]({{ site.parameters_reference }}image-parameter/RegionPredetectionModes.html#regionpredetectionmodes)
+- [`ScaleUpModes`]({{ site.parameters_reference }}image-parameter/ScaleUpModes.html#scaleupmodes)
+- [`TextAssistedCorrectionMode`]({{ site.parameters_reference }}image-parameter/TextAssistedCorrectionMode.html#textassistedcorrectionmode)
+- [`TextFilterModes`]({{ site.parameters_reference }}image-parameter/TextFilterModes.html#textfiltermodes)
+- [`TextureDetectionModes`]({{ site.parameters_reference }}image-parameter/TextureDetectionModes.html#texturedetectionmodes) 
 
 #### Code Snippet
-```csharp
+```C#
 BarcodeReader reader = new BarcodeReader();
 reader.ProductKeys = "t0260NwAAAHV***************";
 PublicRuntimeSettings settings =  reader.GetRuntimeSettings();
@@ -75,39 +75,40 @@ reader.Dispose();
 
 Get argument value for the specified mode parameter.
 
-```csharp
-EnumErrorCode Dynamsoft.DBR.BarcodeReader.GetModeArgument(string modesName, int index, string argumentName, out string argumentValue, out string errorMessage)
+```C#
+EnumErrorCode Dynamsoft.Barcode.BarcodeReader.GetModeArgument(string modesName, int index, string argumentName, out string argumentValue, out string errorMessage)
 ```   
    
 #### Parameters  
-`[in]	modesName` <*string*> : The mode parameter name to get argument.  
-`[in]	index` <*int*> : The array index of mode parameter to indicate a specific mode.  
-`[in]	argumentName` <*string*> : The name of the argument to get.  
-`[in,out]	argumentValue` <*string*> : The value of the argument to get.  
-`[in,out]	errorMessage` <*Optional*><*string*> : The error message.
+`[in]	modesName` The mode parameter name to get argument.  
+`[in]	index` The array index of mode parameter to indicate a specific mode.  
+`[in]	argumentName` The name of the argument to get.  
+`[in,out]	argumentValue` The value of the argument to get.  
+`[in,out]	errorMessage`<sub>Optional</sub> The error message.
 
 #### Return value
 Returns error code.
 
 #### Remark
 Check follow link for available modes and arguments:
-- [`EnumBarcodeColourModes`]({{ site.parameters_reference }}image-parameter/BarcodeColourModes.html#barcodecolourmodes)
-- [`EnumBinarizationModes`]({{ site.parameters_reference }}image-parameter/BinarizationModes.html#binarizationmodes)
-- [`EnumColourClusteringModes`]({{ site.parameters_reference }}image-parameter/ColourClusteringModes.html#colourclusteringmodes)
-- [`EnumColourConversionModes`]({{ site.parameters_reference }}image-parameter/ColourConversionModes.html#colourconversionmodes)
-- [`EnumDeformationResistingModes`]({{ site.parameters_reference }}image-parameter/DeformationResistingModes.html#deformationresistingmodes)
-- [`EnumImagePreprocessingModes`]({{ site.parameters_reference }}image-parameter/ImagePreprocessingModes.html#imagepreprocessingmodes)
-- [`EnumIntermediateResultSavingMode`]({{ site.parameters_reference }}image-parameter/IntermediateResultSavingMode.html#intermediateresultsavingmode)
-- [`EnumLocalizationModes`]({{ site.parameters_reference }}image-parameter/LocalizationModes.html#localizationmodes)
-- [`EnumRegionPredetectionModes`]({{ site.parameters_reference }}image-parameter/RegionPredetectionModes.html#regionpredetectionmodes)
-- [`EnumScaleUpModes`]({{ site.parameters_reference }}image-parameter/ScaleUpModes.html#scaleupmodes)
-- [`EnumTextAssistedCorrectionMode`]({{ site.parameters_reference }}image-parameter/TextAssistedCorrectionMode.html#textassistedcorrectionmode)
-- [`EnumTextFilterModes`]({{ site.parameters_reference }}image-parameter/TextFilterModes.html#textfiltermodes)
-- [`EnumTextureDetectionModes`]({{ site.parameters_reference }}image-parameter/TextureDetectionModes.html#texturedetectionmodes)  
+- [`AccompanyingTextRecognitionModes`]({{ site.parameters_reference }}image-parameter/AccompanyingTextRecognitionModes.html#accompanyingtextrecognitionmodes)
+- [`BarcodeColourModes`]({{ site.parameters_reference }}image-parameter/BarcodeColourModes.html#barcodecolourmodes)
+- [`BinarizationModes`]({{ site.parameters_reference }}image-parameter/BinarizationModes.html#binarizationmodes)
+- [`ColourClusteringModes`]({{ site.parameters_reference }}image-parameter/ColourClusteringModes.html#colourclusteringmodes)
+- [`ColourConversionModes`]({{ site.parameters_reference }}image-parameter/ColourConversionModes.html#colourconversionmodes)
+- [`DeformationResistingModes`]({{ site.parameters_reference }}image-parameter/DeformationResistingModes.html#deformationresistingmodes)
+- [`ImagePreprocessingModes`]({{ site.parameters_reference }}image-parameter/ImagePreprocessingModes.html#imagepreprocessingmodes)
+- [`IntermediateResultSavingMode`]({{ site.parameters_reference }}image-parameter/IntermediateResultSavingMode.html#intermediateresultsavingmode)
+- [`LocalizationModes`]({{ site.parameters_reference }}image-parameter/LocalizationModes.html#localizationmodes)
+- [`RegionPredetectionModes`]({{ site.parameters_reference }}image-parameter/RegionPredetectionModes.html#regionpredetectionmodes)
+- [`ScaleUpModes`]({{ site.parameters_reference }}image-parameter/ScaleUpModes.html#scaleupmodes)
+- [`TextAssistedCorrectionMode`]({{ site.parameters_reference }}image-parameter/TextAssistedCorrectionMode.html#textassistedcorrectionmode)
+- [`TextFilterModes`]({{ site.parameters_reference }}image-parameter/TextFilterModes.html#textfiltermodes)
+- [`TextureDetectionModes`]({{ site.parameters_reference }}image-parameter/TextureDetectionModes.html#texturedetectionmodes)   
 
 
 #### Code Snippet
-```csharp
+```C#
 BarcodeReader reader = new BarcodeReader();
 reader.ProductKeys = "t0260NwAAAHV***************";
 PublicRuntimeSettings settings =  reader.GetRuntimeSettings();
@@ -128,8 +129,8 @@ reader.Dispose();
 
 Gets current settings and save it into a struct. 
 
-```csharp
-PublicRuntimeSettings Dynamsoft.DBR.BarcodeReader.GetRuntimeSettings()
+```C#
+PublicRuntimeSettings Dynamsoft.Barcode.BarcodeReader.GetRuntimeSettings()
 ```
 
 
@@ -141,15 +142,12 @@ The struct of template settings.
 [`BarcodeReaderException`](../class/BarcodeReaderException.md) The exception thrown by Dynamsoft Barcode Reader.  
 
 #### Code Snippet
-```csharp
+```C#
 BarcodeReader reader = new BarcodeReader();
 reader.ProductKeys = "t0260NwAAAHV***************";
 PublicRuntimeSettings settings =  reader.GetRuntimeSettings();
 reader.Dispose();
 ```
-
-#### See Also
-[`PublicRuntimeSettings`](../struct/PublicRuntimeSettings.md)
 
 
 &nbsp;
@@ -159,18 +157,18 @@ reader.Dispose();
 
 Update runtime settings with a given struct. 
 
-```csharp
-void Dynamsoft.DBR.BarcodeReader.UpdateRuntimeSettings(PublicRuntimeSettings settings)
+```C#
+void Dynamsoft.Barcode.BarcodeReader.UpdateRuntimeSettings(PublicRuntimeSettings settings)
 ```   
    
 #### Parameters
-`[in]	settings` <*[PublicRuntimeSettings](../struct/PublicRuntimeSettings.md)*> : The struct of template settings.    
+`[in]	settings` The struct of template settings.    
  
 #### Exceptions
 [`BarcodeReaderException`](../class/BarcodeReaderException.md) The exception thrown by Dynamsoft Barcode Reader.  
 
 #### Code Snippet
-```csharp
+```C#
 BarcodeReader reader = new BarcodeReader();
 reader.ProductKeys = "t0260NwAAAHV***************";
 PublicRuntimeSettings settings =  reader.GetRuntimeSettings();
@@ -180,9 +178,6 @@ reader.UpdateRuntimeSettings(settings);
 reader.Dispose();
 ```
 
-#### See Also
-[`PublicRuntimeSettings`](../struct/PublicRuntimeSettings.md)
-
 
 &nbsp;
 
@@ -191,12 +186,12 @@ reader.Dispose();
 
 Reset all parameters to default values.
 
-```csharp
-void Dynamsoft.DBR.BarcodeReader.ResetRuntimeSettings() 
+```C#
+void Dynamsoft.Barcode.BarcodeReader.ResetRuntimeSettings() 
 ```   
 
 #### Code Snippet
-```csharp
+```C#
 BarcodeReader reader = new BarcodeReader();
 reader.ProductKeys = "t0260NwAAAHV***************";
 PublicRuntimeSettings settings =  reader.GetRuntimeSettings();

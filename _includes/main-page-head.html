@@ -1,30 +1,34 @@
-<div class="crumbs-nav" style="float: left;">
-    <div id="crumbs">
-        <ul>
-            {%- include liquid_breadcrumb.html -%}
-        </ul>
+<div class="col-xs-12 col-md-12 col-lg-9 col-xl-10">
+    <div>
+        <div id="crumbs">
+            <ul>
+                {%- include liquid_breadcrumb.html -%}
+            </ul>
+        </div>
+        {%- comment -%}
+            {%- include liquid_autoGenerateHistoryList.html -%}
+        {%- endcomment -%}
     </div>
-    {%- comment -%}
-        {%- include liquid_autoGenerateHistoryList.html -%}
-    {%- endcomment -%}
 </div>
-<div class="editLink" style="float: right;">
-    {% capture sourceCodeUrl %}		
-        {% if page.url contains '.html' %}		
-            {{ page.url | strip | replace: '.html', '.md'}}		
-        {% else %}
-            {{ page.url	| strip }}index.md
-        {% endif %}
-    {% endcapture %}
-    {%- if page.category -%}
-        {%- if page.category == 'js-repo' -%}
-            <a href="{{ site.repositoryUrlJS }}{{ sourceCodeUrl | strip }}" class="editLinkColour">Edit<img src="{{ site.edit_icon }}" width="20px" height="15px" style="vertical-align: middle; margin-left: 5px; margin-top: -3px;" /></a>
-        {%- elsif page.category == 'mobile-repo' -%}
-            <a href="{{ site.repositoryUrlMobile }}{{ sourceCodeUrl | strip }}" class="editLinkColour">Edit<img src="{{ site.edit_icon }}" width="20px" height="15px" style="vertical-align: middle; margin-left: 5px; margin-top: -3px;" /></a>
+<div class="col-xs-12 col-md-12 col-lg-3 col-xl-2">
+    <div>
+        {% capture sourceCodeUrl %}		
+            {% if page.url contains '.html' %}		
+                {{ page.url | strip | replace: '.html', '.md'}}		
+            {% else %}
+                {{ page.url	| strip }}index.md
+            {% endif %}
+        {% endcapture %}
+        {%- if page.category -%}
+            {%- if page.category == 'js-repo' -%}
+                <a href="{{ site.repositoryUrlJS }}{{ sourceCodeUrl | strip }}" class="editLinkColour">Edit<img src="{{ site.edit_icon }}" width="20px" height="15px" style="vertical-align: middle; margin-left: 5px; margin-top: -3px;" /></a>
+            {%- elsif page.category == 'mobile-repo' -%}
+                <a href="{{ site.repositoryUrlMobile }}{{ sourceCodeUrl | strip }}" class="editLinkColour">Edit<img src="{{ site.edit_icon }}" width="20px" height="15px" style="vertical-align: middle; margin-left: 5px; margin-top: -3px;" /></a>
+            {%- else -%}
+                <a href="{{ site.repositoryUrl }}{{ sourceCodeUrl | strip }}" class="editLinkColour">Edit<img src="{{ site.edit_icon }}" width="20px" height="15px" style="vertical-align: middle; margin-left: 5px; margin-top: -3px;" /></a>
+            {%- endif -%}
         {%- else -%}
             <a href="{{ site.repositoryUrl }}{{ sourceCodeUrl | strip }}" class="editLinkColour">Edit<img src="{{ site.edit_icon }}" width="20px" height="15px" style="vertical-align: middle; margin-left: 5px; margin-top: -3px;" /></a>
         {%- endif -%}
-    {%- else -%}
-        <a href="{{ site.repositoryUrl }}{{ sourceCodeUrl | strip }}" class="editLinkColour">Edit<img src="{{ site.edit_icon }}" width="20px" height="15px" style="vertical-align: middle; margin-left: 5px; margin-top: -3px;" /></a>
-    {%- endif -%}
+    </div>
 </div>

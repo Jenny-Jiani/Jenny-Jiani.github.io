@@ -1,7 +1,6 @@
 ---
 layout: default-layout
 title: Dynamsoft Barcode Reader Objective-C & Swift API Reference - Parameter and Runtime Settings Basic Methods
-description: This page shows basic Runtime Settings methods of Dynamsoft Barcode Reader for iOS SDK.
 keywords: setModeArgument, getModeArgument, getRuntimeSettings, updateRuntimeSettings, resetRuntimeSettings, parameter and runtime settings basic methods, api reference, objective-c, oc, swift
 needAutoGenerateSidebar: true
 ---
@@ -18,9 +17,14 @@ needAutoGenerateSidebar: true
 
 ---
 
-## setModeArgument
 
+
+
+
+
+## setModeArgument
 Sets the optional argument for a specified mode in Modes parameters.
+
 
 ```objc
 -(void)setModeArgument:(NSString* _Nonnull)modeName
@@ -30,17 +34,17 @@ Sets the optional argument for a specified mode in Modes parameters.
                     error:(NSError* _Nullable * _Nullable)error;
 ```   
    
-### Parameters
-
+#### Parameters
 `[in] modesName` The mode parameter name to set argument.  
 `[in] index` The array index of mode parameter to indicate a specific mode.  
 `[in] argumentName` The name of the argument to set.  
 `[in] argumentValue` The value of the argument to set.  
 `[in,out] error` Input a pointer to an error object. If an error occurs, this pointer is set to an actual error object containing the error information. You may specify nil for this parameter if you do not want the error information.
-    
-### Remark
-
+  
+  
+#### Remark
 Check follow link for available modes and arguments:
+- [`AccompanyingTextRecognitionModes`]({{ site.parameters_reference }}image-parameter/AccompanyingTextRecognitionModes.html#accompanyingtextrecognitionmodes)
 - [`BarcodeColourModes`]({{ site.parameters_reference }}image-parameter/BarcodeColourModes.html#barcodecolourmodes)
 - [`BinarizationModes`]({{ site.parameters_reference }}image-parameter/BinarizationModes.html#binarizationmodes)
 - [`ColourClusteringModes`]({{ site.parameters_reference }}image-parameter/ColourClusteringModes.html#colourclusteringmodes)
@@ -55,10 +59,8 @@ Check follow link for available modes and arguments:
 - [`TextFilterModes`]({{ site.parameters_reference }}image-parameter/TextFilterModes.html#textfiltermodes)
 - [`TextureDetectionModes`]({{ site.parameters_reference }}image-parameter/TextureDetectionModes.html#texturedetectionmodes) 
 
-### Code Snippet
-
+#### Code Snippet
 Objective-C:
-
 ```objc
 DynamsoftBarcodeReader *barcodeReader;
 barcodeReader = [[DynamsoftBarcodeReader alloc] initWithLicense:@"t0260NwAAAHV***************"];
@@ -72,7 +74,6 @@ settings.binarizationModes = mArray;
 [barcodeReader setModeArgument:@"BinarizationModes" index:0 argumentName:@"EnableFillBinaryVacancy" argumentValue:"1" error:&error];
 ```
 Swift:
-
 ```Swift
 let error: NSError? = NSError()
 let mArray: NSMutableArray? = NSMutableArray()
@@ -85,8 +86,13 @@ barcodeReader.updateRuntimeSettings(settings: settings, error: nil)
 barcodeReader.setModeArgument(modeName: "BinarizationModes", index: 0, argumentName: "EnableFillBinaryVacancy", argumentValue: "1", error: &error)
 ```
 
-## getModeArgument
+&nbsp;
 
+
+
+
+
+## getModeArgument
 Gets the optional argument for a specified mode in Modes parameters.
 
 ```objc
@@ -96,20 +102,18 @@ Gets the optional argument for a specified mode in Modes parameters.
                             error:(NSError* _Nullable * _Nullable)error;
 ```   
    
-### Parameters 
-
+#### Parameters 
 `[in] modesName` The mode parameter name to get argument.  
 `[in] index` The array index of mode parameter to indicate a specific mode.  
 `[in] argumentName` The name of the argument to get.  
 `[in,out] error` Input a pointer to an error object. If an error occurs, this pointer is set to an actual error object containing the error information. You may specify nil for this parameter if you do not want the error information.
 
-### Return value
-
+#### Return value
 the optional argument for a specified mode
 
-### Remark
-
+#### Remark
 Check follow link for available modes and arguments:
+- [`AccompanyingTextRecognitionModes`]({{ site.parameters_reference }}image-parameter/AccompanyingTextRecognitionModes.html#accompanyingtextrecognitionmodes)
 - [`BarcodeColourModes`]({{ site.parameters_reference }}image-parameter/BarcodeColourModes.html#barcodecolourmodes)
 - [`BinarizationModes`]({{ site.parameters_reference }}image-parameter/BinarizationModes.html#binarizationmodes)
 - [`ColourClusteringModes`]({{ site.parameters_reference }}image-parameter/ColourClusteringModes.html#colourclusteringmodes)
@@ -124,10 +128,8 @@ Check follow link for available modes and arguments:
 - [`TextFilterModes`]({{ site.parameters_reference }}image-parameter/TextFilterModes.html#textfiltermodes)
 - [`TextureDetectionModes`]({{ site.parameters_reference }}image-parameter/TextureDetectionModes.html#texturedetectionmodes) 
 
-### Code Snippet
-
+#### Code Snippet
 Objective-C:
-
 ```objc
 DynamsoftBarcodeReader *barcodeReader;
 barcodeReader = [[DynamsoftBarcodeReader alloc] initWithLicense:@"t0260NwAAAHV***************"];
@@ -143,7 +145,6 @@ settings.binarizationModes = mArray;
 argumentValue = [barcodeReader getModeArgument:@"BinarizationModes" index:0 argumentName:@"EnableFillBinaryVacancy" error:&error];
 ```
 Swift:
-
 ```Swift
 let error: NSError? = NSError()
 let mArray: NSMutableArray? = NSMutableArray()
@@ -157,26 +158,27 @@ barcodeReader.setModeArgument(modeName: "BinarizationModes", index: 0, argumentN
 let argumentValue = barcodeReader.getModeArgument(modeName: "BinarizationModes", index: 0, argumentName: "EnableFillBinaryVacancy", error: &error)
 ```
 
-## getRuntimeSettings
+&nbsp;
 
+
+
+
+
+## getRuntimeSettings
 Get current settings and save them into a [`iPublicRuntimeSettings`](../class/iPublicRuntimeSettings.md) struct.
 
 ```objc
 - (iPublicRuntimeSettings* _Nullable)getRuntimeSettings:(NSError* _Nullable * _Nullable)error;
 ```   
    
-### Parameters
-
+#### Parameters
 `[in,out]	error` Input a pointer to an error object. If an error occurs, this pointer is set to an actual error object containing the error information. You may specify nil for this parameter if you do not want the error information.
 
-### Return value
-
+#### Return value
 A DBRPublicRuntimeSettings storing current runtime settings.
 
-### Code Snippet
-
+#### Code Snippet
 Objective-C:
-
 ```objc
 DynamsoftBarcodeReader *barcodeReader;
 barcodeReader = [[DynamsoftBarcodeReader alloc] initWithLicense:@"t0260NwAAAHV***************"];
@@ -184,15 +186,19 @@ NSError __autoreleasing * _Nullable error;
 [barcodeReader getRuntimeSettings:&error];
 ```
 Swift:
-
 ```Swift
 let error: NSError? = NSError()
 let barcodeReader = DynamsoftBarcodeReader.init(license: "t0260NwAAAHV***************")
 let licenseString = barcodeReader.getRuntimeSettings(error: &error)
 ```
 
-## updateRuntimeSettings
+&nbsp;
 
+
+
+
+
+## updateRuntimeSettings
 Update runtime settings with a given [`iPublicRuntimeSettings`](../class/iPublicRuntimeSettings.md) struct.
 
 ```objc
@@ -200,15 +206,13 @@ Update runtime settings with a given [`iPublicRuntimeSettings`](../class/iPublic
                         error:(NSError* _Nullable * _Nullable)error;
 ```   
    
-### Parameters
-
+#### Parameters
 `[in] settings` The struct of template settings.  
 `[in,out] error` Input a pointer to an error object. If an error occurs, this pointer is set to an actual error object containing the error information. You may specify nil for this parameter if you do not want the error information.
 
-### Code Snippet
 
+#### Code Snippet
 Objective-C:
-
 ```objc
 DynamsoftBarcodeReader *barcodeReader;
 barcodeReader = [[DynamsoftBarcodeReader alloc] initWithLicense:@"t0260NwAAAHV***************"];
@@ -218,7 +222,6 @@ iPublicRuntimeSettings *settings;
 [barcodeReader updateRuntimeSettings:settings error:&error];
 ```
 Swift:
-
 ```Swift
 let error: NSError? = NSError()
 let barcodeReader = DynamsoftBarcodeReader.init(license: "t0260NwAAAHV***************")
@@ -226,22 +229,26 @@ let settings = barcodeReader.getRuntimeSettings(error: nil)
 barcodeReader.updateRuntimeSettings(settings: settings, error: &error)
 ```
 
-## resetRuntimeSettings
+&nbsp;
 
+
+
+
+
+## resetRuntimeSettings
 Reset all parameters to default values.
+
 
 ```objc
 - (void)resetRuntimeSettings:(NSError* _Nullable * _Nullable)error;
 ```   
    
-### Parameters
-
+#### Parameters
 `[in,out] error` Input a pointer to an error object. If an error occurs, this pointer is set to an actual error object containing the error information. You may specify nil for this parameter if you do not want the error information.
 
-### Code Snippet
 
+#### Code Snippet
 Objective-C:
-
 ```objc
 DynamsoftBarcodeReader *barcodeReader;
 barcodeReader = [[DynamsoftBarcodeReader alloc] initWithLicense:@"t0260NwAAAHV***************"];
@@ -250,7 +257,6 @@ NSError __autoreleasing * _Nullable error;
 [barcodeReader resetRuntimeSettings:&error];
 ```
 Swift:
-
 ```Swift
 let error: NSError? = NSError()
 let barcodeReader = DynamsoftBarcodeReader.init(license: "t0260NwAAAHV***************")

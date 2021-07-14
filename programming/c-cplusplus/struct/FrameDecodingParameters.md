@@ -1,7 +1,6 @@
 ---
 layout: default-layout
 title: Dynamsoft Barcode Reader C & C++ Struct - FrameDecodingParameters
-description: This page shows the FrameDecodingParameters struct of Dynamsoft Barcode Reader for C & C++ Language.
 keywords: FrameDecodingParameters, struct, c, c++
 needAutoGenerateSidebar: false
 ---
@@ -128,7 +127,7 @@ float tagFrameDecodingParameters::threshold
 - **Default value**   
     0.1
     
-- **Remarks**  
+- **Remark**  
     The SDK will calculate an inner indicator for each frame from [`AppendFrame`]({{ site.cpp_methods }}video.html#appendframe) or  [`DBR_AppendFrame`]({{ site.c_methods }}video.html#dbr_appendframe), if the change rate of the indicators between the current frame and the history frames is larger than the given threshold, the current frame will not be added to the inner frame queue waiting for decoding.
 
 ### fps
@@ -142,7 +141,7 @@ int tagFrameDecodingParameters::fps
 - **Default value**   
     0  
     
-- **Remarks**  
+- **Remark**  
     0 means the frequency will be calculated automatically by the SDK.
 
 ### autoFilter
@@ -156,7 +155,7 @@ int tagFrameDecodingParameters::autoFilter
 - **Default value**   
     1  
     
-- **Remarks**  
+- **Remark**  
     0: Diable filtering frames automatically. 1: Enable filtering frames automatically. 
     
 

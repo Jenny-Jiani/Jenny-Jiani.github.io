@@ -38,7 +38,7 @@ The following code snippet illustrate how to save intermediate results in memory
  IntermediateResultArray *iResults = NULL;
  reader->GetIntermediateResults(&iResults);//Get intermediate results
  int rCount = iResults->resultsCount;
- for (int i = 0; i < rCount; i++) //Recursion the intermediate results
+ for (int i = 0; i < rCount; i++) //Recursion the intermediate reuslts
     {
         if(iResults->results[i]->dataType == IMRDT_IMAGE)
         {
@@ -131,8 +131,8 @@ The following code snippet illustrate how to save intermediate results in memory
         }
     }
 
-    dynamsoft::dbr::CBarcodeReader::FreeTextResults(&result);
-    dynamsoft::dbr::CBarcodeReader::FreeIntermediateResults(&iResults);
+    CBarcodeReader::FreeTextResults(&result);
+    CBarcodeReader::FreeIntermediateResults(&iResults);
     delete runtimeSettings;
     delete reader;
 }
@@ -142,7 +142,7 @@ When using IRSM_FILESYSTEMto save the intermediate results, the user should also
 
 The following illustrates how to set the IRSM_FILESYSTEM to save the intermediate results in JSON:
 
-```json
+```javascript
 {
     "ImageParameter": {
         "Name": "ImageParameter1", 
@@ -202,7 +202,7 @@ Users who use [`GrayscaleTransformationModes`]({{ site.parameters_reference }}im
 
 JSON template
 
-```json
+```javascript
 {
     "ImageParameter": {
         "Name": "ImageParameter1", 
@@ -235,7 +235,7 @@ We could set the RegionPredetectionModes to RPM_GENERAL_HSV_CONTRAST to detect y
 
 JSON template:
 
-```json
+```javascript
 {
    "resultType" : 8192,
    "results" : [
@@ -255,7 +255,7 @@ Predetected region of interest. When using [`RegionPredetectionModes`]({{ site.p
 
 JSON template
 
-```json
+```javascript
 {
    "resultType" : 16,
    "results" : [
@@ -272,7 +272,7 @@ JSON template
 
 JSON template
 
-```json
+```javascript
 {
     "ImageParameter": {
         "Name": "ImageParameter1", 
@@ -304,7 +304,7 @@ This intermediate result type is used to observe the effect of adjusting image p
 
 JSON template
 
-```json
+```javascript
 {
     "ImageParameter": {
         "Name": "ImageParameter1", 
@@ -338,7 +338,7 @@ This intermediate result type is mainly used with barcode images that contain a 
 
 JSON template
 
-```json
+```javascript
 {
    "resultType" : 128,
    "results" : [
@@ -366,7 +366,7 @@ We plot the intermediate result of the line segment as follows
 
 IRT_LINE_SEGMENT in JSON
 
-```json
+```javascript
 {
    "resultType" : 512,
    "results" : [
@@ -382,7 +382,7 @@ IRT_LINE_SEGMENT in JSON
 
 JSON template
 
-```json
+```javascript
 {
     "ImageParameter": {
         "Name": "ImageParameter1", 
@@ -414,7 +414,7 @@ We draw the connected block to the image. Effect is as follows:
 
 IRT_CONTOUR in JSON
 
-```json
+```javascript
 {
    "resultType" : 256,
    "results" : [
@@ -431,7 +431,7 @@ IRT_CONTOUR in JSON
 
 JSON template
 
-```json
+```javascript
 {
     "ImageParameter": {
         "Name": "ImageParameter1", 
@@ -465,7 +465,7 @@ The barcode localization result is formatted as follows in the JSON file
             "angle" : 180,                           //Barcode angle
             "barcodeFormat" : 2047,                  //Barcode format
             "confidence" : 100,                      //Barcode confidence
-            "moduleSize" : 3,                        //Module size
+            "moduleSize" : 3,                        //Modulesize
             "pageNumber" : 0,                        //Page number
             "terminatePhase" : 8,                    //Terminate Phase
             "x1y1x2y2x3y3x4y4" : "(548, 207)(175, 207)(175, 82)(548, 82)" //Coordinates of located barcode

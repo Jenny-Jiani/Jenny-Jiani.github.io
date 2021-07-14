@@ -1,21 +1,19 @@
 ---
 layout: default-layout
 title: Dynamsoft Barcode Reader JavaScript API Reference - BarcodeScanner
-description: This page shows the BarcodeScanner class of Dynamsoft Barcode Reader JavaScript SDK.
 keywords: BarcodeScanner, api reference, javascript, js
 needAutoGenerateSidebar: false
 breadcrumbText: BarcodeScanner
 ---
 
 
-# Dynamsoft Barcode Reader SDK - JavaScript BarcodeScanner Class
+# Dynamsoft Barcode Reader SDK - Javascript BarcodeScanner Class
 
 The `BarcodeScanner` class is used for **video** decoding.
 
 ## `BarcodeScanner` Methods
 
 ### Initialize and Destroy
-
 The following methods are related to initializing and destroying the `BarcodeScanner` object.
 
 | Method               | Description |
@@ -23,10 +21,9 @@ The following methods are related to initializing and destroying the `BarcodeSca
 | [`createInstance`](methods/initialize-and-destroy.md#createinstance) | Create a  `BarcodeScanner` object. |
 | [`destroy`](methods/initialize-and-destroy.md#destroy) | Destroy the `BarcodeScanner` object. |
 | [`getUIElement`](methods/initialize-and-destroy.md#getuielement) | Get HTML element containing the `BarcodeScanner` object. |
-| [`setUIElement`](methods/initialize-and-destroy.md#setuielement) | Set html element containing the `BarcodeScanner` object. |
+| [`setUIElement`](methods/initialize-and-destroy.md#setuielement) | set html element containing the `barcodescanner` object. |
 
-### Camera Control
-
+### Camera Controls
 The following methods are related to controlling the camera and its settings.
 
 | Method               | Description |
@@ -46,7 +43,6 @@ The following methods are related to controlling the camera and its settings.
 | [`resumeScan`](methods/camera-controls.md#resumescan) | Resume the video decoding process. |
 
 ### Capture Settings
-
 The following methods are related to the camera's capture settings.
 
 | Method               | Description |
@@ -65,8 +61,8 @@ The following methods are related to the camera's capture settings.
 | [`turnOffTorch`](methods/capture-settings.md#turnofftorch) | Turn off the torch/flashlight. |
 | [`turnOnTorch`](methods/capture-settings.md#turnontorch) | Turn on the torch/flashlight. |
 
-### Runtime Settings
 
+### Runtime Settings
 The following methods are related to customizing runtime settings.
 
 | Method               | Description |
@@ -75,7 +71,6 @@ The following methods are related to customizing runtime settings.
 
 
 ### Inherited Methods
-
 The following methods are inherited from the `BarcodeReader` class. 
 
 * [`detectEnvironment`](../BarcodeReader/methods/initialize-and-destroy.md#detectenvironment) 
@@ -90,7 +85,7 @@ The following methods are inherited from the `BarcodeReader` class.
 
 | Property             | Description |
 |----------------------|-------------|
-| `bPlaySoundOnSuccessfulRead` | If set to `true`, a sound will be played when a barcode is read successfully. You can change the sound using [`soundOnSuccessfulRead`](accessors.md#soundonsuccessfulread)|
+| `bPlaySoundOnSuccessfulRead` | If set to `true`, a sound will be played when a barcode is read successfully. |
 | [`barcodeFillStyle`](properties.md#barcodefillstyle) | Set the style used when filling in located barcode. | 
 | `barcodeLineWidth` | Set the width of the located barcode border. | 
 | [`barcodeStrokeStyle`](properties.md#barcodestrokestyle) | Set the style of the located barcode border. | 
@@ -99,30 +94,26 @@ The following methods are inherited from the `BarcodeReader` class.
 | [`regionMaskStrokeStyle`](properties.md#regionmaskstrokestyle) | Set the style of the region border. | 
 | [`onFrameRead`](properties.md#onframeread) | Triggered a frame has been scanned. | 
 | [`onPlayed`](properties.md#onplayed) | Triggered when the camera video stream is played. | 
-| [`onUnduplicatedRead`](properties.md#onunduplicatedread) | Triggered when a new, unduplicated barcode is found. | 
+| [`onUnduplicatedRead`](properties.md#onunduplicatedread) | Triggered when a new, upduplicated barcode is found. | 
 
 ### Inherited Properties
-
 The following properties are inherited from the `BarcodeReader` class.
 
 * [`_bUseFullFeature`](../BarcodeReader/properties.md#_busefullfeature)  
 * `bDestroyed`
 * `bSaveOriCanvas`
 * `oriCanvas`
-* [`licenseServer`](../BarcodeReader/properties.md#licenseServer)
-* [`handshakeCode`](../BarcodeReader/properties.md#handshakeCode)
-* [`sessionPassword`](../BarcodeReader/properties.md#sessionPassword)
+
 
 ## `BarcodeScanner` Accessors
 
 | Accessors            | Description |
 |----------------------|-------------|
 | [`singleFrameMode`](accessors.md#singleframemode) | If set to `true`, single video frames will be used instead of a continuous video stream. | 
-| [`soundOnSuccessfulRead`](accessors.md#soundonsuccessfulread) | Get or set the sound to play when a barcode is read successfully. | 
+| [`soundOnSuccessfullRead`](accessors.md#soundonsuccessfullread) | Get or set the sound to play when a barcode is read successfully. | 
 | [`defaultUIElementURL`](accessors.md#defaultuielementurl) | Get or set the default scanner UI. | 
 
 ### Inherited Accessors
-
 The following accessors are inherited from the `BarcodeReader` class.
 
 * [`engineResourcePath`](../BarcodeReader/accessors.md#engineresourcepath) 
@@ -137,3 +128,5 @@ The following accessors are inherited from the `BarcodeReader` class.
 | [`ScanSettings`](interfaces.md#scansettings) | Configures the video stream settings. |
 | [`ScannerPlayCallbackInfo`](interfaces.md#scannerplaycallbackinfo) | Stores the height and width constraints of the video stream. |
 | [`VideoDeviceInfo`](interfaces.md#videodeviceinfo) | Stores the video device information. | 
+
+

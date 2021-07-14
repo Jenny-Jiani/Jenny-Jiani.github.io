@@ -1,7 +1,6 @@
 ---
 layout: default-layout
 title: Dynamsoft Barcode Reader Parameter Reference - RegionDefinition Object
-description: This article shows RegionDefinition Object of Dynamsoft Barcode Reader.
 keywords: parameter reference, parameters, RegionDefinition
 needAutoGenerateSidebar: true
 needGenerateH3Content: true

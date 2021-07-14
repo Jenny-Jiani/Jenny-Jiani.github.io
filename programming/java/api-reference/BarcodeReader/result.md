@@ -1,7 +1,6 @@
 ---
 layout: default-layout
 title: Dynamsoft Barcode Reader Java API Reference - BarcodeReader Result Methods
-description: This page shows BarcodeReader Result methods of Dynamsoft Barcode Reader for Java SDK API Reference.
 keywords: getIntermediateResults, result methods, BarcodeReader, api reference, java
 needAutoGenerateSidebar: true
 ---
@@ -23,7 +22,7 @@ needAutoGenerateSidebar: true
 Get intermediate results containing the original image, the colour clustered image, the binarized Image, contours, Lines, TextBlocks, etc.
 
 ```java
-IntermediateResult[] com.dynamsoft.dbr.BarcodeReader.getIntermediateResults() throws BarcodeReaderException 
+IntermediateResult[] com.dynamsoft.barcode.BarcodeReader.getIntermediateResults() throws BarcodeReaderException 
 ```   
 
 #### Return value

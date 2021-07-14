@@ -1,7 +1,6 @@
 ---
 layout: default-layout
 title: Dynamsoft Barcode Reader Python API Reference - BarcodeReader Parameter and Runtime Settings Advanced Methods
-description: This page shows BarcodeReader advanced Runtime Settings methods of Dynamsoft Barcode Reader for Python SDK.
 keywords: init_runtime_settings_with_file, init_runtime_settings_with_string, append_template_file_to_runtime_settings, append_template_string_to_runtime_settings, get_all_template_names, output_settings_to_json_file, output_settings_to_json_string, parameter and runtime settings advanced methods, BarcodeReader, api reference, python
 needAutoGenerateSidebar: true
 ---
@@ -20,6 +19,7 @@ needAutoGenerateSidebar: true
 
   ---
 
+
 ## init_runtime_settings_with_file
 
 Initialize runtime settings with the settings in a given JSON file.
@@ -28,16 +28,14 @@ Initialize runtime settings with the settings in a given JSON file.
 BarcodeReader.init_runtime_settings_with_file(json_file, conflict_mode=EnumConflictMode.CM_OVERWRITE)
 ```
 
-### Parameters
+#### Parameters
+`[in]	json_file` <*str*> : The path of the settings file.  
+`[in]	conflict_mode` <*optional*><*class EnumConflictMode*> : The parameter setting mode, which decides to inherit parameters from previous template setting or overwrite previous settings and replace by new template.   
 
-- `[in]	json_file` <*str*> : The path of the settings file.  
-- `[in]	conflict_mode` <*optional*><*class EnumConflictMode*> : The parameter setting mode, which decides to inherit parameters from previous template setting or overwrite previous settings and replace by new template.   
-
-### Return value
-
+#### Return value
 `error` <*tuple*> : error_code = error[0], error_message = error[1], if error_code != EnumErrorCode.DBR_OK, you can get the detailed error message by error_message.
 
-### Code Snippet
+#### Code Snippet
 
 ```python
 from dbr import *
@@ -49,24 +47,26 @@ if error[0] != 0:
     print(error[1])
 ```
 
+
+&nbsp; 
+
+
 ## init_runtime_settings_with_string
 
 Initialize runtime settings with the settings in given JSON string. 
 
 ```python
 BarcodeReader.init_runtime_settings_with_string(json_string, conflict_mode=EnumConflictMode.CM_OVERWRITE)
-```
+```   
+   
+#### Parameters
+`[in]	json_string` <*str*> : A JSON string that represents the content of the settings. 
+`[in]	conflict_mode` <*optional*><*class EnumConflictMode*> : The parameter setting mode, which decides to inherit parameters from previous template setting or overwrite previous settings and replace by new template.    
 
-### Parameters
-
-- `[in]	json_string` <*str*> : A JSON string that represents the content of the settings. 
-- `[in]	conflict_mode` <*optional*><*class EnumConflictMode*> : The parameter setting mode, which decides to inherit parameters from previous template setting or overwrite previous settings and replace by new template.    
-
-### Return value
-
+#### Return value
 `error` <*tuple*> : error_code = error[0], error_message = error[1], if error_code != EnumErrorCode.DBR_OK, you can get the detailed error message by error_message.
 
-### Code Snippet
+#### Code Snippet
 
 ```python
 from dbr import *
@@ -77,6 +77,10 @@ error = reader.init_runtime_settings_with_string('{"Version":"3.0", "ImageParame
 if error[0] != 0:
     print(error[1])
 ```
+
+
+&nbsp; 
+
 
 ## append_template_file_to_runtime_settings
 
@@ -119,19 +123,16 @@ Append a new template string to the current runtime settings.
 
 ```python
 BarcodeReader.append_template_string_to_runtime_settings(json_string, conflict_mode) 
-```
+```   
 
-### Parameters
+#### Parameters
+`[in]	json_string` <*str*> : A JSON string that represents the content of the settings.   
+`[in]	conflict_mode` <*class EnumConflictMode*> : The parameter setting mode, which decides to inherit parameters from previous template setting or overwrite previous settings and replace by new template. 
 
-- `[in]	json_string` <*str*> : A JSON string that represents the content of the settings.   
-- `[in]	conflict_mode` <*class EnumConflictMode*> : The parameter setting mode, which decides to inherit parameters from previous template setting or overwrite previous settings and replace by new template. 
-
-### Return value
-
+#### Return value
 `error` <*tuple*> : error_code = error[0], error_message = error[1], if error_code != EnumErrorCode.DBR_OK, you can get the detailed error message by error_message.
 
-### Code Snippet
-
+#### Code Snippet
 ```python
 from dbr import *
 reader = BarcodeReader()
@@ -147,20 +148,21 @@ if error[0] != 0:
     print(error[1])
 ```
 
-## get_all_template_names
 
+&nbsp; 
+
+
+## get_all_template_names
 Gets all parameter template names. 
 
 ```python
 BarcodeReader.get_all_template_names()
 ```  
-
-### Return value
-
+   
+#### Return value
 `template_names` <*list[str]*> : all parameter template names
 
-### Code Snippet
-
+#### Code Snippet
 ```python
 from dbr import *
 reader = BarcodeReader()
@@ -181,24 +183,24 @@ for i, template_name in range(len(template_names)), template_names:
     print("{0} : {1}".format(i+1, template_name))
 ```
 
-## output_settings_to_json_file
 
+&nbsp; 
+
+
+## output_settings_to_json_file
 Output runtime settings to a settings file (JSON file).
 
 ```python
 BarcodeReader.output_settings_to_json_filesave_file_path)
-```
-
-### Parameters
-
+```   
+   
+#### Parameters
 `[in]	save_file_path` <*str*> : The path of the output file which stores current settings.   
 
-### Return value
-
+#### Return value
 `error` <*tuple*> : error_code = error[0], error_message = error[1], if error_code != EnumErrorCode.DBR_OK, you can get the detailed error message by error_message.
 
-### Code Snippet
-
+#### Code Snippet
 ```python
 from dbr import *
 reader = BarcodeReader()
@@ -211,20 +213,21 @@ else:
     error = reader.output_settings_to_json_file(r'template_output.json')
 ```
 
-## output_settings_to_json_string
 
+&nbsp; 
+
+
+## output_settings_to_json_string
 Output runtime settings to a string.
 
 ```python
 BarcodeReader.output_settings_to_json_string()
-```
-
-### Return value
-
+```   
+    
+#### Return value
 `settings_string` <*str*> : The output string which stores the contents of current settings.
 
-### Code Snippet
-
+#### Code Snippet
 ```python
 from dbr import *
 reader = BarcodeReader()

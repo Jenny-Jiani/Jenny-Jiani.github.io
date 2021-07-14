@@ -48,7 +48,7 @@ You can set the angle, width, height, and text length requirements that the deco
 
 You can use [`BarcodeTextRegExPattern`]({{ site.parameters_reference }}format-specification/format-control.html#barcodetextregexpattern) to specify the regular expression requirements that must be met when `DBR` returns the result text. The default value is empty which means there is no limitation.
 
-For example, if we set [`BarcodeTextRegExPattern`]({{ site.parameters_reference }}format-specification/format-control.html#barcodetextregexpattern) as "[0-9]\d{4,11}", then the result text should be 5 to 12 digits. If the result is 123456 which matches the expression, it will be returned. If it is 123 which has only 3 digits or a123456 which has a letter in it, they don 't match the expression and will not be returned.
+For example, if we set [`BarcodeTextRegExPattern`]({{ site.parameters_reference }}format-specification/format-control.html#barcodetextregexpattern) as ”[0-9]\d{4,11}”, then the result text should be 4 to 11 digits. If the result is 123456 which matches the expression, it will be returned. If it is 123 which has only 3 digits or a123456 which has a letter in it, they don’t match the expression and will not be returned.
 
 For more info, check out About Regular [Expression](https://docs.microsoft.com/en-us/previous-versions/visualstudio/visual-studio-2010/28hw3sce(v=vs.100))
 
@@ -71,7 +71,7 @@ for(int j = 0; j < iCount; j++)
     LocalizationResult* pLocRes = pBarcode->localizationResult;  
     printf("confidence:%d\n",pLocRes->confidence);
 }  
-dynamsoft::dbr::CBarcodeReader::FreeTextResults(&pResult);     
+CBarcodeReader::FreeTextResults(&pResult);     
 delete reader;  
 ```
 
@@ -111,7 +111,7 @@ reader->GetRuntimeSettings(runtimeSettings);
 runtimeSettings->returnBarcodeZoneClarity = 1;
 char sError[512];  
 reader->UpdateRuntimeSettings(runtimeSettings, sError, 512);
-reader->DecodeFile("FILE-PATH", "");
+reader->DecodeFile("FILE-PATH", ", "");
 TextResultArray* pResult = NULL;     
 reader->GetAllTextResults(&pResult); 
 int iCount = pResult->resultsCount;  
@@ -121,14 +121,14 @@ for(int j = 0; j < iCount; j++)
     ExtendResult* pExResult = pBarcode->result[0];  
     printf("clarity:%d\n", pExResult->clarity);
 }  
-dynamsoft::dbr::CBarcodeReader::FreeTextResults(&pResult);
+CBarcodeReader::FreeTextResults(&pResult);
 delete runtimeSettings;
 delete reader;
 ```
 
 ## Sample template
 
-```json
+```javascript
 {
     "Version": "3.0", 
     "ImageParameter": {
@@ -155,14 +155,14 @@ delete reader;
         "BarcodeFormatIds": [
             "BF_CODE_39"
         ], 
-        "BarcodeTextRegExPattern": "[0-9]{4}", //Limit the result to be a 4-digit string
+	    "BarcodeTextRegExPattern": "[0-9]\\d{4}", //Limit the result to be a 4-digit string
         "BarcodeHeightRangeArray": [
             {
                 "MaxValue": 500, 
                 "MinValue": 0
             }
         ], // Limit the resulting barcode height to 0~500 px
-        "BarcodeWidthRangeArray": [
+        "BarcideWidthRangeArray": [
             {
                 "MaxValue": 200, 
                 "MinValue": 100

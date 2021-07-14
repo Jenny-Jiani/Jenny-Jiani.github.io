@@ -1,7 +1,6 @@
 ---
 layout: default-layout
 title: Dynamsoft Barcode Reader C & C++ Struct - Main Page
-description: This page shows all Structs of Dynamsoft Barcode Reader for C & C++ Language.
 keywords: struct, c, c++
 needAutoGenerateSidebar: false
 breadcrumbText: Struct
@@ -16,7 +15,6 @@ breadcrumbText: Struct
  | [`Contour`](Contour.md) | Stores the contour information. |
  | [`DBRPoint`](DBRPoint.md) | Stores an x- and y-coordinate pair in two-dimensional space. |
  | [`DataMatrixDetails`](DataMatrixDetails.md) | Stores the DataMatrix details. |	
- | [`DM_LTSConnectionParameters`](DMLTSConnectionParameters.md) | Defines a struct to configure the parameters to connect to license tracking server. |
  | [`ExtendedResult`](ExtendedResult.md) | Stores the extended result. |
  | [`FrameDecodingParameters`](FrameDecodingParameters.md) | Defines a struct to configure the frame decoding Parameters. |
  | [`FurtherModes`](FurtherModes.md) | Stores the FurtherModes. |

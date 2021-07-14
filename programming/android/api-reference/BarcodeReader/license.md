@@ -1,7 +1,6 @@
 ---
 layout: default-layout
 title: Dynamsoft Barcode Reader Android API Reference - BarcodeReader License Methods
-description: This page shows BarcodeReader license methods of Dynamsoft Barcode Reader for Android SDK.
 keywords: initLicense, initLicenseFromServer, initLicenseFromLicenseContent, outputLicenseToString, license methods, BarcodeReader, api reference, android
 needAutoGenerateSidebar: true
 ---
@@ -15,52 +14,55 @@ needAutoGenerateSidebar: true
   | [`initLicenseFromServer`](#initlicensefromserver) | Initialize license and connect to the specified server for online verification. |
   | [`initLicenseFromLicenseContent`](#initlicensefromlicensecontent) | Initialize license from the license content on client machine for offline verification. |
   | [`outputLicenseToString`](#outputlicensetostring) | Output the license content to a string from the license server. |
-  | [`initLicenseFromLTS`](#initlicensefromlts) | Initializes the barcode reader license and connects to the specified server for online verification. |
 
   ---
 
-## initLicense
 
+
+
+
+## initLicense
 Read product key and activate the SDK.
 
 ```java
-void com.dynamsoft.dbr.BarcodeReader.initLicense(String license) throws BarcodeReaderException
-```
+void com.dynamsoft.barcode.BarcodeReader.initLicense(String license) throws BarcodeReaderException
+```   
+   
+#### Parameters
+`license` The product keys.
 
-### Parameters
 
-`license`: The product keys.
-
-
-### Exceptions
-
+#### Exceptions
 [`BarcodeReaderException`](../class/BarcodeReaderException.md)
 
 
-### Code Snippet
-
+#### Code Snippet
 ```java
 BarcodeReader reader = new BarcodeReader();
 reader.initLicense("t0260NwAAAHV***************");
 reader.destroy();
 ```
 
-## initLicenseFromServer
+&nbsp;
 
+
+
+
+
+## initLicenseFromServer
 Initialize the license and connect to the specified server for online verification.
 
 ```java
-void com.dynamsoft.dbr.BarcodeReader.initLicenseFromServer(String licenseServer, String licenseKey, DBRServerLicenseVerificationListener dbrServerLicenseVerificationListener)
-```
+void com.dynamsoft.barcode.BarcodeReader.initLicenseFromServer(String licenseServer, String licenseKey, DBRServerLicenseVerificationListener dbrServerLicenseVerificationListener)
+```   
    
-### Parameters
+#### Parameters
+`licenseServer` The URL of the license server.  
+`licenseKey` The license key.
+`dbrServerLicenseVerificationListener` The delegate to handle callback when license server returns.
 
-- `licenseServer`: The URL of the license server.  
-- `licenseKey`: The license key.
-- `dbrServerLicenseVerificationListener`: The delegate to handle callback when license server returns.
 
-### Code Snippet
-
+#### Code Snippet
 ```java
 BarcodeReader reader = new BarcodeReader("t0260NwAAAHV***************");
 reader.initLicenseFromServer("", "C087****",  new DBRServerLicenseVerificationListener() {
@@ -71,88 +73,69 @@ reader.initLicenseFromServer("", "C087****",  new DBRServerLicenseVerificationLi
 reader.destroy();
 ```
 
-## initLicenseFromLicenseContent
+&nbsp;
 
+
+
+
+
+
+## initLicenseFromLicenseContent
 Initialize barcode reader license from the license content on the client machine for offline verification.
 
 ```java
-void com.dynamsoft.dbr.BarcodeReader.initLicenseFromLicenseContent(String licenseKey, String licenseContent) throws BarcodeReaderException
+void com.dynamsoft.barcode.BarcodeReader.initLicenseFromLicenseContent(String licenseKey, String licenseContent) throws BarcodeReaderException
 ```   
 
-### Parameters
+#### Parameters
+`licenseKey` The license key.  
+`licenseContent` An encrypted string representing the license content (quota, expiration date, barcode type, etc.) obtained from the method [`OutputLicenseToString`](#outputlicensetostring).
 
-- `licenseKey`: The license key.  
-- `licenseContent`: An encrypted string representing the license content (quota, expiration date, barcode type, etc.) obtained from the method [`OutputLicenseToString`](#outputlicensetostring).
 
-### Exceptions
-
+#### Exceptions
 [`BarcodeReaderException`](../class/BarcodeReaderException.md)
 
-### Code Snippet
 
+#### Code Snippet
 ```java
 BarcodeReader reader = new BarcodeReader("t0260NwAAAHV***************");
 reader.initLicenseFromLicenseContent("t0260NwAAAHV***************", "C087****");
 reader.destroy();
 ```
 
-## outputLicenseToString
+&nbsp;
 
+
+
+
+
+
+## outputLicenseToString
 Output the license content as an encrypted string from the license server to be used for offline license verification.
 
 ```java
-String com.dynamsoft.dbr.BarcodeReader.outputLicenseToString() throws BarcodeReaderException
-```
+String com.dynamsoft.barcode.BarcodeReader.outputLicenseToString() throws BarcodeReaderException
+```   
    
-### Return value
-
+#### Return value
 The output string which stores the contents of license.
 
-### Exceptions
 
+#### Exceptions
 [`BarcodeReaderException`](../class/BarcodeReaderException.md)
 
-### Remark
 
+#### Remark
 [`InitLicenseFromServer`](#initlicensefromserver) has to be successfully called before calling this method.
 
-### Code Snippet
 
+#### Code Snippet
 ```java
 BarcodeReader reader = new BarcodeReader("t0260NwAAAHV***************");
 reader.initLicenseFromLicenseContent("t0260NwAAAHV***************", "C087****");
 String licenseInfo = reader.outputLicenseToString();
 reader.destroy();
 ```
+&nbsp;
 
-## initLicenseFromLTS
-
-Initializes the barcode reader license and connects to the specified server for online verification.
-
-```java
-void com.dynamsoft.dbr.BarcodeReader.initLicenseFromLTS(DMLTSConnectionParameters ltsInfo, DBRLTSLicenseVerificationListener listener)
-```
-
-### Parameters
-
-- `ltsInfo`: The struct DMLTSConnectionParameters with customized settings.  
-- `listener`: The delegate to handle callback when license server returns.
-
-
-### Code Snippet
-
-```java
-BarcodeReader reader = new BarcodeReader();
-DMLTSConnectionParameters info = new DMLTSConnectionParameters();
-info.handShakeCode = "*****-hs-****";
-info.sessionPassword = "******";
-reader.initLicenseFromLTS(info, new DBRLTSLicenseVerificationListener() {
-   @Override
-   public void LTSLicenseVerificationCallback(boolean b, Exception e) {
-      if (!b && e != null) {
-         e.printStackTrace();
-      }
-   }
-}
-   ```
 

@@ -1,7 +1,6 @@
 ---
 layout: default-layout
 title: Dynamsoft Barcode Reader How-to Guides - Turn On or Turn Off Text Filter
-description: This page shows how to turn on/off Text Filter.
 keywords: text filter, TextFilterModes, how-to guides
 needAutoGenerateSidebar: false
 ---

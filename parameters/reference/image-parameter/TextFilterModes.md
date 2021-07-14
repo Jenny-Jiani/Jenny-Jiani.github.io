@@ -1,7 +1,6 @@
 ---
 layout: default-layout
 title: Dynamsoft Barcode Reader Parameter Reference for ImageParameter Object - TextFilterModes 
-description: This page shows Dynamsoft Barcode Reader Parameter Reference for ImageParameter Object - TextFilterModes.
 keywords: TextFilterModes, ImageParameter, image process control parameters, parameter reference, parameter 
 needAutoGenerateSidebar: false
 ---
@@ -10,13 +9,13 @@ needAutoGenerateSidebar: false
 
  | Parameter Name | Description |
  | -------------- | ----------- | 
+ | [`ImageParameter.AccompanyingTextRecognitionModes`](AccompanyingTextRecognitionModes.md#accompanyingtextrecognitionmodes) | Sets the mode and priority to recognize accompanying text. |
  | [`ImageParameter.BarcodeColourModes`](BarcodeColourModes.md#barcodecolourmodes) | Sets the mode and priority for the barcode colour mode used to process the barcode zone. |
  | [`ImageParameter.BarcodeComplementModes`](BarcodeComplementModes.md#barcodecomplementmodes) | Sets the mode and priority to complement the missing parts in the barcode. |
  | [`ImageParameter.BinarizationModes`](BinarizationModes.md#binarizationmodes) | 	Sets the mode and priority for binarization. |
  | [`ImageParameter.ColourClusteringModes`](ColourClusteringModes.md#colourclusteringmodes) | Sets the mode and priority for colour categorization. Not supported yet. |
  | [`ImageParameter.ColourConversionModes`](ColourConversionModes.md#colourconversionmodes) | Sets the mode and priority for converting a colour image to a grayscale image. |
  | [`ImageParameter.DeblurLevel`](image-process-control.md#deblurlevel) | Sets the degree of blurriness of the barcode. |
- | [`ImageParameter.DeblurModes`](DeblurModes.md#deblurmodes) | Sets the mode and priority for deblurring. |
  | [`ImageParameter.DeformationResistingModes`](DeformationResistingModes.md#deformationresistingmodes) | Sets the mode and priority for deformation resisting. |
  | [`ImageParameter.DPMCodeReadingModes`](DPMCodeReadingModes.md#dpmcodereadingmodes) | Sets the mode and priority for DPM code reading. Not support yet. |
  | [`ImageParameter.GrayscaleTransformationModes`](GrayscaleTransformationModes.md#grayscaletransformationmodes) | Sets the mode and priority for the grayscale image conversion. |
@@ -51,50 +50,28 @@ needAutoGenerateSidebar: false
 #### Mode Arguments
 - [MinImageDimension](#minimagedimension)
 - [Sensitivity](#sensitivity)
-- [LibraryFileName](#libraryfilename)
-- [LibraryParameters](#libraryparameters)
  
 ##### MinImageDimension 
 Sets the minimum image dimension (in pixels) to filter the text.
 
 
-| Value Type | Value Range | Default Value | Valid Modes | 
+| Value Type | Value Range | Default Value | Vaild Modes | 
 | ---------- | ----------- | ------------- | ----------- |
 | *int* | [65536, 0x7fffffff] | 65536 | "TFM_GENERAL_CONTOUR" |         
 
-- **Remarks**     
+- **Remark**     
   If the image dimension is larger than the given value, the library will enable the text filtering feature. Otherwise, it will skip this step when doing barcode recognition. The feature can speed up the recognition process.
 
 ##### Sensitivity 
 Sets the sensitivity used for text filtering.
 
-| Value Type | Value Range | Default Value | Valid Modes | 
+| Value Type | Value Range | Default Value | Vaild Modes | 
 | ---------- | ----------- | ------------- | ----------- |
 | *int* | [0, 9] | 0 | "TFM_GENERAL_CONTOUR" |         
 
-- **Remarks**     
+- **Remark**     
   0: automatically set by the library.   
   A larger value means the library will take more effort to filter text.
-
-
-##### LibraryFileName 
-Sets the file name of the library to load dynamically.
-
-| Value Type | Value Range | Default Value | Valid Modes | 
-| ---------- | ----------- | ------------- | ----------- |
-| *string* | A string value representing file name. | "" | All `TextFilterMode` items except TFM_SKIP and TFM_AUTO |         
-
-
-- **Remarks**     
-  - The library must be in the same place with Dynamsoft Barcode Reader Library.
-
-
-##### LibraryParameters 
-Sets the parameters passed to the library to load dynamically.
-
-| Value Type | Value Range | Default Value | Valid Modes | 
-| ---------- | ----------- | ------------- | ----------- |
-| *string* | A string value representing parameters. | "" | All `TextFilterMode` items except TFM_SKIP and TFM_AUTO |         
 
 
 ### Setting Methods
@@ -133,7 +110,7 @@ Sets the parameters passed to the library to load dynamically.
 | [`PublicRuntimeSettings`]({{ site.structs }}PublicRuntimeSettings.html)->[`furtherModes`]({{ site.structs }}PublicRuntimeSettings.html#furthermodes) | [`textFilterModes`]({{ site.structs }}FurtherModes.html#textfiltermodes) | [`TextFilterMode`]({{ site.enumerations }}parameter-mode-enums.html#textfiltermode)[8] |
 
 
-**Remarks**   
+**Remark**   
 [`GetModeArgument`]({{ site.cpp_methods }}parameter-and-runtime-settings-basic.html#getmodeargument) and [`SetModeArgument`]({{ site.cpp_methods }}parameter-and-runtime-settings-basic.html#setmodeargument) need to be called for getting or setting the value of [arguments](#mode-arguments).
 
 

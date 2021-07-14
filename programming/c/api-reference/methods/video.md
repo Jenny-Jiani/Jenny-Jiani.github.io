@@ -1,7 +1,6 @@
 ---
 layout: default-layout
 title: Dynamsoft Barcode Reader C Language API Reference - Video Methods
-description: This page shows video methods of Dynamsoft Barcode Reader for C Language.
 keywords: DBR_StartFrameDecoding, DBR_StartFrameDecodingEx, DBR_AppendFrame, DBR_StopFrameDecoding, DBR_InitFrameDecodingParameters, DBR_SetErrorCallback, DBR_SetTextResultCallback, DBR_SetIntermediateResultCallback, DBR_GetLengthOfFrameQueue, video methods, api reference, c
 needAutoGenerateSidebar: true
 ---
@@ -154,8 +153,7 @@ DBR_DestroyInstance(barcodeReader);
 
 
 
-## DBR_StopFrameDecoding
-
+# DBR_StopFrameDecoding
 Stops the frame decoding thread created by [`DBR_StartFrameDecoding`](#dbr_startframedecoding) or [`DBR_StartFrameDecodingEx`](#dbr_startframedecodingex).
 
 ```c
@@ -187,8 +185,7 @@ DBR_DestroyInstance(barcodeReader);
 
 
 
-## DBR_InitFrameDecodingParameters
-
+# DBR_InitFrameDecodingParameters
 Initialize frame decoding parameters with default values.
 
 ```c

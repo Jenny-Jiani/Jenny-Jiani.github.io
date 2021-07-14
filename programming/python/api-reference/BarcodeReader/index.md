@@ -1,7 +1,6 @@
 ---
 layout: default-layout
 title: Dynamsoft Barcode Reader Python API Reference - BarcodeReader Methods
-description: This page shows BarcodeReader Methods of Dynamsoft Barcode Reader for Python SDK.
 keywords: methods, BarcodeReader, api reference, python
 needAutoGenerateSidebar: false
 breadcrumbText: BarcodeReader Methods
@@ -16,6 +15,10 @@ breadcrumbText: BarcodeReader Methods
   |----------------------|-------------|
   | [`BarcodeReader`](constructor-and-destructor.md#barcodereader) | Constructor of `BarcodeReader` object.|
 
+   
+&nbsp; 
+   
+   
 ## Decode
    
   | Method               | Description |
@@ -23,10 +26,12 @@ breadcrumbText: BarcodeReader Methods
   | [`decode_file`](decode.md#decode_file) | Decodes barcodes from a specified image file. |
   | [`decode_buffer`](decode.md#decode_buffer) | Decodes barcodes from the memory buffer containing image pixels in defined format.  |
   | [`decode_file_stream`](decode.md#decode_file_stream) | Decodes barcodes from an image file in memory. |
-  | [`decode_buffer_manually`](decode.md#decode_buffer_manually) | Decodes barcodes from the memory buffer containing image pixels in defined format. |
-  | [`init_intermediate_result`](decode.md#initintermediateresult) | Inits an intermediateResult struct with default values. |
-  | [`decode_intermediate_results`](decode.md#decodeintermediateresults) | Decodes barcode from intermediate results. |
-
+   
+   
+&nbsp; 
+   
+   
+   
 ## Parameter and Runtime Settings
 
 ### Basic
@@ -50,7 +55,11 @@ breadcrumbText: BarcodeReader Methods
   | [`get_all_template_names`](parameter-and-runtime-settings-advanced.md#get_all_template_names) | Gets the parameter templates name array. |
   | [`output_settings_to_json_file`](parameter-and-runtime-settings-advanced.md#output_settings_to_json_file) | Outputs runtime settings to a settings file (JSON file). |
   | [`output_settings_to_json_string`](parameter-and-runtime-settings-advanced.md#output_settings_to_json_string) | Outputs runtime settings to a string. |
+   
+      
+&nbsp; 
 
+   
 ## License
   
   | Method               | Description |
@@ -59,9 +68,11 @@ breadcrumbText: BarcodeReader Methods
   | [`init_license_from_server`](license.md#init_license_from_server) | Initializes license and connect to the specified server for online verification. |
   | [`init_license_from_license_content`](license.md#init_license_from_license_content) | Initializes license from the license content on client machine for offline verification. |
   | [`output_license_to_string`](license.md#output_license_to_string) | Outputs the license content as an encrypted string from the license server to be used for offline license verification.|
-  | [`init_lts_connection_parameters`](license.md#init_lts_connection_parameters) | Initializes a DMLTSConnectionParameters struct with default values. |
-  | [`init_license_from_lts`](license.md#init_license_from_lts) | Initializes the barcode reader license and connects to the specified server for online verification. |
-
+   
+   
+&nbsp; 
+   
+   
 ## Video
 
 ### Decode
@@ -84,6 +95,10 @@ breadcrumbText: BarcodeReader Methods
    | Method               | Description |
    |----------------------|-------------|
    | [`get_length_of_frame_queue`](video.md#get_length_of_frame_queue) | Gets length of current inner frame queue. |
+ 
+   
+&nbsp; 
+
 
 ## `BarcodeReader` Attributes
   
@@ -91,10 +106,5 @@ breadcrumbText: BarcodeReader Methods
   |----------------------|-------------|
   | `version`  | dbr-python version |
   | `dbr_version`  | Dynamsoft Barcode Reader version |
-
-
-## Result
   
-  | Method               | Description |
-  |----------------------|-------------|
-  | [`get_intermediate_results`](result.md#get_intermediate_results) | Get intermediate results.  |
+   

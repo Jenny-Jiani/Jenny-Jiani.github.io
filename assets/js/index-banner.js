@@ -1,6 +1,5 @@
 function GenerateContentByHead(needh3 = true) {
     var titleList, appendHtml='<ul>';
-    needh3 = true
     if (needh3) {
         titleList = document.querySelectorAll('.content h2, .content h3');
     } else {
@@ -32,33 +31,6 @@ function GenerateContentByHead(needh3 = true) {
     if ($('#AutoGenerateSidebar').length != 0) {
         $('#AutoGenerateSidebar').append(appendHtml);
     }
-    // var h2_list = $('.content h2');
-    // if (h2_list.length > 0) {
-    //     var appendContent = '<ul>';
-    //     for (var i = 0; i < h2_list.length; i++) {
-    //         var curH2Text = $(h2_list[i]).text();
-    //         var curH2Href =  $(h2_list[i]).attr("id");
-    //         var curliContent = '<li style="list-style-image: none; list-style-type: circle;"><a href="#' + curH2Href + '" class="otherLinkColour">' + curH2Text + '</a>';
-    //         if (needh3) {
-    //             var h3_list = $(h2_list[i]).nextUntil(h2_list[i + 1], "h3");
-    //             if (h3_list.length > 0) {
-    //                 curliContent += '<ul name="listLevel2">';
-    //                 for (var j = 0; j < h3_list.length; j++) {
-    //                     var curH3Text = $(h3_list[j]).text();
-    //                     var curH3Href = $(h3_list[j]).attr("id");
-    //                     curliContent += '<li style="list-style-image: none; list-style-type: disc;"><a href="#' + curH3Href + '" class="otherLinkColour">' + curH3Text + '</a></li>';
-    //                 }
-    //                 curliContent += '</ul>'
-    //             }
-    //         }
-    //         curliContent += '</li>'
-    //         appendContent += curliContent;
-    //     }
-    //     appendContent += '</ul>'
-    //     if ($('#AutoGenerateSidebar').length != 0) {
-    //         $('#AutoGenerateSidebar').append(appendContent);
-    //     }
-    // }
 }
 
 function FullTreeMenuList(generateDocHead, needh3 = true) {
@@ -111,7 +83,7 @@ function FullTreeMenuList(generateDocHead, needh3 = true) {
                         }
                     }
                     else {
-                        HighlightCurrentListForFullTree("fullTreeMenuListContainer", false, ($(liAry[i]).children("a"))[0].href);
+                        //HighlightCurrentListForFullTree("fullTreeMenuListContainer", false, ($(liAry[i]).children("a"))[0].href);
                     }
                     event.stopPropagation();
                 }
@@ -153,115 +125,116 @@ function HighlightCurrentListForFullTree(searchListId, firstTime, searchUrl = do
             searchUrl = searchUrl.substring(0, searchUrl.indexOf("/#") + 1 );
         }
         var foundCurList = false;
+        var bestMatchList = -1;
 
-        for (var iter = 0; iter < 2; iter++) {
-            if (iter == 1) {
-                if (firstTime && !foundCurList && searchUrl.indexOf("#") != -1) {
-                    searchUrl = searchUrl.substring(0, searchUrl.indexOf("#"));
+        for (var i = 0, len = listAry.length; i < len; i++) {
+            var curLi = listAry[i];
+            var curListATag =  $(curLi).children("a");
+            if (curListATag.length > 0 && curListATag[0].getAttribute("href") != null) {
+                var returnVal = UrlSearch(searchUrl, curListATag[0].href);
+                if (returnVal == 1) {
+                    bestMatchList = i;
+                    break;               
                 }
                 else {
-                    continue;
-                }  
-            }
-            for (var i = 0, len = listAry.length; i < len; i++) {
-                var curLi = listAry[i];
-                var curListATag =  $(curLi).children("a");
-                if (curListATag.length > 0 && curListATag[0].getAttribute("href") != null) {
-                    if (UrlSearch(searchUrl, curListATag[0].href)) {
-                        foundCurList = true;
-                        curListATag[0].style.color = '#fe8e14';
-                        curListATag[0].className = "otherLinkColour activeLink"
-
-                        // if (needGenerateDocHead) {
-                        //     curLi.id = "sidelistDocContent";
-                        // }
-
-                        if (firstTime) {
-                            var crumbul = $($('#crumbs')).children("ul")
-                            if (crumbul.length != 0) {
-                                var parentsLi = $(curLi).parents("li");
-                                var appendText = "";
-                                if (parentsLi.length > 0) {
-                                    for (var j = parentsLi.length - 1; j >= 0 ; j--) {
-                                        var tmpATag = $(parentsLi[j]).children("a");
-                                        if (tmpATag.length > 0) {
-                                            appendText += '<li><a class="bluelink" href = "' + tmpATag[0].href + '">'+ tmpATag[0].textContent + '</a></li>';
-                                        }
-                                    }
-                                }
-
-                                var childUl = $(curLi).children("ul");
-                                if (childUl.length > 0) {
-                                    appendText += '<li><a class="bluelink" href = "' + curListATag[0].href + '">'+ curListATag[0].textContent + '</a></li>';
-                                }
-                                else {
-                                    appendText += '<li id="breadcrumbLastNode">' + curListATag[0].textContent + '</li>'
-                                }
-                                $(crumbul[0]).append(appendText);
-                            }
-                            var parentsUL = $(curLi).parents("ul");
-                            for (var j = 0, lenUL = parentsUL.length; j < lenUL; j++) {
-                                var curUL =  parentsUL[j];
-                                if (curUL.style.display != "block") {
-                                    curUL.style.display = "block";
-                                }
-                                var curULChildrenListAry = $(curUL).children("li");
-                                for (var k = 0, lenChildLi = curULChildrenListAry.length; k < lenChildLi; k++) {
-                                    var curULTag = $(curULChildrenListAry[k]).children("ul");
-                                    if (curULTag.length > 0) {
-                                        if (curULTag[0].style.display != "block") {
-                                            curULChildrenListAry[k].className = "collapseListStyle"
-                                            // curULChildrenListAry[k].style.listStyleImage = "url('/assets/img-icon/collapse-list.png')";  
-                                        }
-                                        else {
-                                            curULChildrenListAry[k].className = "expandListStyle"
-                                            // curULChildrenListAry[k].style.listStyleImage = "url('/assets/img-icon/expand-list.png')";
-                                        }
-                                    }
-                                }
-                            }
-    
-                            var childUL = $(curLi).children("ul");
-                            if (childUL.length > 0) {
-                                curLi.className = "expandListStyle"
-                                // curLi.style.listStyleImage = "url('/assets/img-icon/expand-list.png')";
-                                if (childUL[0].style.display != "block") {
-                                    childUL[0].style.display = "block";
-                                }
-                                curListATag[0].removeAttribute("href");
-
-                                var childrenLi = $(childUL[0]).children("li");
-                                for (var j = 0; j < childrenLi.length; j++) {
-                                    var curULTag = $(childrenLi[j]).children("ul");
-                                    if (curULTag.length > 0) {
-                                        if (curULTag[0].style.display != "block") {
-                                            childrenLi[j].className = "collapseListStyle"
-                                            // childrenLi[j].style.listStyleImage = "url('/assets/img-icon/collapse-list.png')";  
-                                        }
-                                        else {
-                                            childrenLi[j].className = "expandListStyle"
-                                            // childrenLi[j].style.listStyleImage = "url('/assets/img-icon/expand-list.png')";
-                                        }
-                                    }
-                                }
-                            }
-                            var parentsLi = $(curLi).parents("li");
-                            for (var j = 0, lenLi = parentsLi.length; j < lenLi; j++) {
-                                parentsLi[j].className = "expandListStyle"
-                                // parentsLi[j].style.listStyleImage = "url('/assets/img-icon/expand-list.png')";
-                            }
-
-                            break;
-                        }               
+                    if (returnVal == 0) {
+                        bestMatchList = i;
                     }
-                    else if (!firstTime) {
+                    
+                    if (!firstTime) {
                         curListATag[0].style.fontWeight = 'normal';
                     }
                 }
             }
         }
+
+        if (bestMatchList != -1) {
+            var curLi = listAry[bestMatchList];
+            var curListATag =  $(curLi).children("a");
+
+            foundCurList = true;
+            curListATag[0].style.color = '#fe8e14';
+            curListATag[0].className = "otherLinkColour activeLink"
+
+            if (firstTime) {
+                var crumbul = $($('#crumbs')).children("ul")
+                if (crumbul.length != 0) {
+                    var parentsLi = $(curLi).parents("li");
+                    var appendText = "";
+                    if (parentsLi.length > 0) {
+                        for (var j = parentsLi.length - 1; j >= 0 ; j--) {
+                            var tmpATag = $(parentsLi[j]).children("a");
+                            if (tmpATag.length > 0) {
+                                appendText += '<li><a class="bluelink" href = "' + tmpATag[0].href + '">'+ tmpATag[0].textContent + '</a></li>';
+                            }
+                        }
+                    }
+
+                    var childUl = $(curLi).children("ul");
+                    if (childUl.length > 0) {
+                        appendText += '<li><a class="bluelink" href = "' + curListATag[0].href + '">'+ curListATag[0].textContent + '</a></li>';
+                    }
+                    else {
+                        appendText += '<li id="breadcrumbLastNode">' + curListATag[0].textContent + '</li>'
+                    }
+                    $(crumbul[0]).append(appendText);
+                }
+                var parentsUL = $(curLi).parents("ul");
+                for (var j = 0, lenUL = parentsUL.length; j < lenUL; j++) {
+                    var curUL =  parentsUL[j];
+                    if (curUL.style.display != "block") {
+                        curUL.style.display = "block";
+                    }
+                    var curULChildrenListAry = $(curUL).children("li");
+                    for (var k = 0, lenChildLi = curULChildrenListAry.length; k < lenChildLi; k++) {
+                        var curULTag = $(curULChildrenListAry[k]).children("ul");
+                        if (curULTag.length > 0) {
+                            if (curULTag[0].style.display != "block") {
+                                curULChildrenListAry[k].className = "collapseListStyle"
+                                // curULChildrenListAry[k].style.listStyleImage = "url('/assets/img-icon/collapse-list.png')";  
+                            }
+                            else {
+                                curULChildrenListAry[k].className = "expandListStyle"
+                                // curULChildrenListAry[k].style.listStyleImage = "url('/assets/img-icon/expand-list.png')";
+                            }
+                        }
+                    }
+                }
+
+                var childUL = $(curLi).children("ul");
+                if (childUL.length > 0) {
+                    curLi.className = "expandListStyle"
+                    // curLi.style.listStyleImage = "url('/assets/img-icon/expand-list.png')";
+                    if (childUL[0].style.display != "block") {
+                        childUL[0].style.display = "block";
+                    }
+                    curListATag[0].removeAttribute("href");
+
+                    var childrenLi = $(childUL[0]).children("li");
+                    for (var j = 0; j < childrenLi.length; j++) {
+                        var curULTag = $(childrenLi[j]).children("ul");
+                        if (curULTag.length > 0) {
+                            if (curULTag[0].style.display != "block") {
+                                childrenLi[j].className = "collapseListStyle"
+                                // childrenLi[j].style.listStyleImage = "url('/assets/img-icon/collapse-list.png')";  
+                            }
+                            else {
+                                childrenLi[j].className = "expandListStyle"
+                                // childrenLi[j].style.listStyleImage = "url('/assets/img-icon/expand-list.png')";
+                            }
+                        }
+                    }
+                }
+                var parentsLi = $(curLi).parents("li");
+                for (var j = 0, lenLi = parentsLi.length; j < lenLi; j++) {
+                    parentsLi[j].className = "expandListStyle"
+                    // parentsLi[j].style.listStyleImage = "url('/assets/img-icon/expand-list.png')";
+                }
+            }
+        }
     }
 }
+
 
 function UrlSearch(docUrl, listUrl) {
     docUrl = docUrl.toLowerCase();
@@ -273,59 +246,52 @@ function UrlSearch(docUrl, listUrl) {
     var docUrlWithParam = getUrlVars(docUrl)["src"];
     var listUrlWithParam = getUrlVars(listUrl)["src"];
     
+    if (docUrlWithParam != undefined && listUrlWithParam != undefined && docUrlWithParam != listUrlWithParam) {
+        return -1;
+    }
+
     var tmpExp = new RegExp('programming/c-cplusplus/$')
-    if (tmpExp.exec(docUrl) != null){
+    if (tmpExp.exec(docUrl) != null) {
         docUrl = docUrl.substring(0, docUrl.indexOf("c-cplusplus/"));
     }
     
+    var docUrlAnchor;
+    var listUrlAnchor;
+
+    if (docUrl.indexOf("#") != -1) {
+        docUrlAnchor = docUrl.substring(docUrl.indexOf("#") + 1);
+        docUrl = docUrl.substring(0, docUrl.indexOf("#"));
+    }
+    if (listUrl.indexOf("#") != -1) {
+        listUrlAnchor = listUrl.substring(listUrl.indexOf("#") + 1);
+        listUrl = listUrl.substring(0, listUrl.indexOf("#"));
+    }
+    
+
     if (docUrl.indexOf("?") != -1) {
           docUrl = docUrl.substring(0, docUrl.indexOf("?"));
     }
     if (listUrl.indexOf("?") != -1) {
           listUrl = listUrl.substring(0, listUrl.indexOf("?"));
     }  
-     
-    if (docUrlWithParam != undefined && listUrlWithParam != undefined) {
-        if (docUrlWithParam != listUrlWithParam) {
-            return false;
+    
+
+    var regExp = new RegExp('^' + listUrl + '$');
+    if (regExp.exec(docUrl) != null) {
+        if (docUrlAnchor == listUrlAnchor || docUrlAnchor == undefined) {
+            return 1;
         }
-        else {
-            var regExp = new RegExp(listUrl + '$');
-            if (regExp.exec(docUrl) != null) {
-                return true;
-            }
-            else if (docUrl.indexOf("#") == -1 && listUrl.indexOf("#") != -1){
-                listUrl = listUrl.substring(0, listUrl.indexOf("#"));
-                regExp = new RegExp(listUrl + '$');
-                if (regExp.exec(docUrl) != null) {
-                        return true;
-                }
-                else {
-                    return false;
-                }
-            }
-            else {
-                return false;
-            }
+        else if (docUrlAnchor != undefined && listUrlAnchor == undefined) {
+            return 0;
         }
     }
     else {
-        var regExp = new RegExp(listUrl + '$');
+        regExp = new RegExp('^' + listUrl);
         if (regExp.exec(docUrl) != null) {
-            return true;
-        }
-        else if (docUrl.indexOf("#") == -1 && listUrl.indexOf("#") != -1){
-            listUrl = listUrl.substring(0, listUrl.indexOf("#"));
-            regExp = new RegExp(listUrl + '$');
-            if (regExp.exec(docUrl) != null) {
-                    return true;
-            }
-            else {
-                return false;
-            }
+            return 0;
         }
         else {
-            return false;
+            return -1;
         }
     }
 }

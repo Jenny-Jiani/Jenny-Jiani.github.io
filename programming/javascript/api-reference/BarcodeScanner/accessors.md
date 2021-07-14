@@ -1,20 +1,21 @@
 ---
 layout: default-layout
 title: Dynamsoft Barcode Reader JavaScript API Reference - BarcodeScanner Accessors
-description: This page shows BarcodeScanner Accessors of Dynamsoft Barcode Reader JavaScript SDK.
-keywords: defaultUIElementURL, singleFrameMode, soundOnSuccessfulRead, accessors, BarcodeScanner, api reference, javascript, js
+keywords: defaultUIElementURL, singleFrameMode, soundOnSuccessfullRead, accessors, BarcodeScanner, api reference, javascript, js
 needAutoGenerateSidebar: true
 needGenerateH3Content: false
 ---
 
 
-# JavaScript API Reference - `BarcodeScanner` Accessors
+# Javascript API Reference - `BarcodeScanner` Accessors
 
 | Accessors            | Description |
 |----------------------|-------------|
 | [`defaultUIElementURL`](#defaultuielementurl) | Get or set the default scanner UI. | 
 | [`singleFrameMode`](#singleframemode) | If set to `true`, single video frames will be used instead of a continuous video stream. | 
-| [`soundOnSuccessfulRead`](#soundonsuccessfulread) | Get or set the sound to play when a barcode is read successfully. | 
+| [`soundOnSuccessfullRead`](#soundonsuccessfullread) | Get or set the sound to play when a barcode is read successfully. | 
+
+&nbsp;
 
 ### Inherited Accessors from `BarcodeReader` 
 
@@ -23,66 +24,129 @@ needGenerateH3Content: false
 | [`engineResourcePath`](../BarcodeReader/accessors.md#engineresourcepath) | Get or set the engine (WASM) location. | 
 | [`productKeys`](../BarcodeReader/accessors.md#productkeys) | Get or set the Dynamsoft Barcode Reader SDK product keys. | 
 | [`version`](../BarcodeReader/accessors.md#version) | Get current version. |
-| [`licenseServer`](../BarcodeReader/accessors.md#licenseserver) | Gets or sets the URL of the license tracking server. | 
-| [`handshakeCode`](../BarcodeReader/accessors.md#handshakecode) | Gets or sets the handshake code. | 
-| [`sessionPassword`](../BarcodeReader/accessors.md#sessionpassword) | Gets or sets the session password of the handshake code set in license tracking server. | 
+
+
+&nbsp;
 
 ## defaultUIElementURL
 
-Get or set the default scanner UI. The default scanner UI is defined in the file `dist/dbr.scanner.html`. Follow [these steps](../../user-guide/basic-customizations.md#customizing-the-ui) to customize the UI. 
+Get or set the default scanner UI. The default scanner UI is defined in the file `dist/dbr.scanner.html`. Follow [these steps](https://www.dynamsoft.com/help/Barcode-Reader-wasm/index.html#customizing-the-ui) to customize the UI. 
 
+### get
 ```javascript
-defaultUIElementURL = 'url'
+defaultUIElementURL() returns string
 ```
 
-### Property Value
+#### Return Value
 
-`url` *string*  
+`string`
 
-### :+1: Tips and Tricks 
+
+### set
+```javascript
+defaultUIElementURL(value) returns void
+```
+
+#### Parameters
+
+`value` *string*  
+
+#### Return Value
+
+`void`
+
+
+#### Sample
+
+[Read barcodes from live camera](https://demo.dynamsoft.com/dbr_wasm/barcode_reader_javascript.html)
+
+
+#### :+1: Tips and Tricks 
 
 * Be sure to set `defaultUIElementURL` before you call `createInstance`.
+
+
+
+&nbsp;
 
 ## singleFrameMode
 
 Get or set the camera mode. If `true`, single video frames will be used instead of a continuous video stream. It's especially useful for cameras that lack webcam access (lack of WebRTC support, e.g. Chrome on iOS).
 
+### get
 ```javascript
-singleFrameMode = bool;
-``` 
+singleFrameMode() returns Boolean
+```
 
-### Property Value
+#### Return Value
 
-`bool` *boolean* 
+`Boolean`
 
-### Sample
+
+### set
+```javascript
+singleFrameMode(value) returns void
+```
+
+#### Parameters
+
+`value` *Boolean*  
+
+#### Return Value
+
+`void`
+
+
+#### Sample
 
 ```javascript
-let scanner = await Dynamsoft.DBR.BarcodeScanner.createInstance();
+let scanner = await Dynamsoft.BarcodeScanner.createInstance();
 scanner.singleFrameMode = true; // use singleFrameMode anyway
 scanner.show();
 ```
 
-### :+1: Tips and Tricks 
+
+#### :+1: Tips and Tricks 
 
 * `singleFrameMode` is based on WebRTC support, not actual camera connection. In other words, if a browser supports WebRTC, it won't be using `singleFrameMode` by default even when there is no camera attached.
 
 * By default, when the default UI is used, a camera icon will appear for the `singleFrameMode` which is defined by a SVG (`className` is `dbrScanner-bg-camera`). If you have customized the UI, you will have to provide your own UI implementation for this mode.
 
-## soundOnSuccessfulRead
+
+
+&nbsp;
+
+## soundOnSuccessfullRead
 
 Get or set the sound played when a barcode is read successfully. 
 
+### get
 ```javascript
-soundOnSuccessfulRead = audio
+soundOnSuccessfullRead() returns HTMLAudioElement
 ```
 
-### Property Value
+#### Return Value
 
-`audio` *HTMLAudioElement*  
+`HTMLAudioElement`
 
-### Sample
+
+### set
+```javascript
+soundOnSuccessfullRead(value) returns void
+```
+
+#### Parameters
+
+`value` *HTMLAudioElement*  
+
+#### Return Value
+
+`void`
+
+
+#### Sample
 
 ```javascript
-scanner.soundOnSuccessfulRead = new Audio("./pi.mp3");
+scanner.soundOnSuccessfullRead = new Audio("./pi.mp3");
 ```
+

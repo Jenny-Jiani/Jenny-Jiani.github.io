@@ -1,15 +1,14 @@
 ---
 layout: default-layout
 title: Dynamsoft Barcode Reader Android API Reference - QRCodeDetails Class
-description: This page shows the QRCodeDetails Class of Dynamsoft Barcode Reader for Android SDK.
 keywords: QRCodeDetails, class, api reference, android
 needAutoGenerateSidebar: false
 ---
 
 
 # QRCodeDetails
-
 Stores the QRCode details.  
+  
 
 ## Attributes
   
@@ -24,50 +23,38 @@ Stores the QRCode details.
 
 
 ### moduleSize
-
-The barcode module size (the minimum bar width in pixels). 
-
+The barcode module size (the minimum bar width in pixel).  
 ```java
-int com.dynamsoft.dbr.QRCodeDetails.moduleSize
+int com.dynamsoft.barcode.QRCodeDetails.moduleSize
 ```
 
 ### rows
-
 The row count of the barcode.  
-
 ```java
-int com.dynamsoft.dbr.QRCodeDetails.rows
+int com.dynamsoft.barcode.QRCodeDetails.rows
 ```
 
 ### columns
-
 The column count of the barcode. 
-
 ```java
-int com.dynamsoft.dbr.QRCodeDetails.columns
+int com.dynamsoft.barcode.QRCodeDetails.columns
 ```
 
 ### errorCorrectionLevel
-
 The error correction level of the barcode.  
-
 ```java
-int com.dynamsoft.dbr.QRCodeDetails.errorCorrectionLevel
+int com.dynamsoft.barcode.QRCodeDetails.errorCorrectionLevel
 ```
 
 ### version
-
 The version of the QR Code.
-
 ```java
-int com.dynamsoft.dbr.QRCodeDetails.version
+int com.dynamsoft.barcode.QRCodeDetails.version
 ```
 
 ### model
-
 Number of the models.
-
 ```java
-int com.dynamsoft.dbr.QRCodeDetails.model
+int com.dynamsoft.barcode.QRCodeDetails.model
 ```
 

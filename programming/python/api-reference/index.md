@@ -1,7 +1,6 @@
 ---
 layout: default-layout
 title: Dynamsoft Barcode Reader Python API Reference - Main Page
-description: This is the main page of Dynamsoft Barcode Reader for Python SDK API Reference.
 keywords: api reference, python
 needAutoGenerateSidebar: false
 breadcrumbText: API Reference
@@ -38,9 +37,6 @@ breadcrumbText: API Reference
   | [`decode_file`](BarcodeReader/decode.md#decode_file) | Decodes barcodes from a specified image file. |
   | [`decode_buffer`](BarcodeReader/decode.md#decode_buffer) | Decodes barcodes from the memory buffer containing image pixels in defined format.  |
   | [`decode_file_stream`](BarcodeReader/decode.md#decode_file_stream) | Decodes barcodes from an image file in memory. |
-  | [`decode_buffer_manually`](BarcodeReader/decode.md#decode_buffer_manually) | Decodes barcodes from the memory buffer containing image pixels in defined format. |
-  | [`init_intermediate_result`](BarcodeReader/decode.md#init_intermediateresult) | Inits an intermediateResult struct with default values. |
-  | [`decode_intermediate_results`](BarcodeReader/decode.md#decode_intermediateresults) | Decodes barcode from intermediate results. |
    
    
 &nbsp; 
@@ -83,8 +79,6 @@ breadcrumbText: API Reference
   | [`init_license_from_server`](BarcodeReader/license.md#init_license_from_server) | Initializes license and connect to the specified server for online verification. |
   | [`init_license_from_license_content`](BarcodeReader/license.md#init_license_from_license_content) | Initializes license from the license content on client machine for offline verification. |
   | [`output_license_to_string`](BarcodeReader/license.md#output_license_to_string) | Outputs the license content as an encrypted string from the license server to be used for offline license verification.|
-  | [`init_lts_connection_parameters`](BarcodeReader/license.md#init_lts_connection_parameters) | Initializes a DMLTSConnectionParameters struct with default values. |
-  | [`init_license_from_lts`](BarcodeReader/license.md#init_license_from_lts) | Initializes the barcode reader license and connects to the specified server for online verification. |
    
    
 &nbsp; 
@@ -154,7 +148,6 @@ breadcrumbText: API Reference
 - [`RegionOfInterest`](class/RegionOfInterest.md)	 
 - [`SamplingImageData`](class/SamplingImageData.md)	 
 - [`TextResult`](class/TextResult.md)	
-- [`DMLTSConnectionParameters`](class/DMLTSConnectionParameters.md)
 
 
 
@@ -170,12 +163,7 @@ breadcrumbText: API Reference
 - [`ColourClusteringMode`]({{ site.enumerations }}parameter-mode-enums.html#colourclusteringmode)	
 - [`ColourConversionMode`]({{ site.enumerations }}parameter-mode-enums.html#colourconversionmode)	
 - [`ConflictMode`]({{ site.enumerations }}parameter-mode-enums.html#conflictmode)	
-- [`DeblurMode`]({{ site.enumerations }}parameter-mode-enums.html#deblurmode)
-- [`DeformationResistingMode`]({{ site.enumerations }}parameter-mode-enums.html#deformationresistingmode)
-- [`DMChargeWay`]({{ site.enumerations }}other-enums.html#dm_chargeway)
-- [`DMDeploymentType`]({{ site.enumerations }}other-enums.html#dm_deploymenttype)
-- [`DMLicenseModule`]({{ site.enumerations }}other-enums.html#dm_licensemodule)
-- [`DMUUIDGenerationMethod`]({{ site.enumerations }}other-enums.html#dm_uuidgenerationmethod)
+- [`DeformationResistingMode`]({{ site.enumerations }}parameter-mode-enums.html#deformationresistingmode)	
 - [`DPMCodeReadingMode`]({{ site.enumerations }}parameter-mode-enums.html#dpmcodereadingmode)	
 - [`GrayscaleTransformationMode`]({{ site.enumerations }}parameter-mode-enums.html#grayscaletransformationmode)	
 - [`ImagePixelFormat`]({{ site.enumerations }}other-enums.html#imagepixelformat)	

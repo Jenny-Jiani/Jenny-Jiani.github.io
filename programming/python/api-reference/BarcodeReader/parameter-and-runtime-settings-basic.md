@@ -1,7 +1,6 @@
 ---
 layout: default-layout
 title: Dynamsoft Barcode Reader Python API Reference - BarcodeReader Parameter and Runtime Settings Basic Methods
-description: This page shows BarcodeReader basic Runtime Settings methods of Dynamsoft Barcode Reader for Python SDK.
 keywords: set_mode_argument, get_mode_argument, get_runtime_settings, update_runtime_settings, reset_runtime_settings, parameter and runtime settings basic methods, BarcodeReader, api reference, python
 needAutoGenerateSidebar: true
 ---
@@ -19,29 +18,30 @@ needAutoGenerateSidebar: true
 
   ---
 
+
+
 ## set_mode_argument
 
 Sets the optional argument for a specified mode in Modes parameters. 
 
+
 ```python
 BarcodeReader.set_mode_argument(modes_name, index, argument_name, argument_value)
-```
+```   
 
-### Parameters
+#### Parameters
+`[in]	modes_name` <*str*> : The mode(s) parameter name to set argument.  
+`[in]	index` <*int*> : The array index of modes parameter to indicate a specific mode.   
+`[in]	argument_name` <*str*> : The name of the argument to set.  
+`[in]	argument_value` <*str*> : The value of the argument to set.  
 
-- `[in]	modes_name` <*str*> : The mode(s) parameter name to set argument.  
-- `[in]	index` <*int*> : The array index of modes parameter to indicate a specific mode.   
-- `[in]	argument_name` <*str*> : The name of the argument to set.  
-- `[in]	argument_value` <*str*> : The value of the argument to set.  
 
-### Return value
-
+#### Return value
 `error` <*tuple*> : error_code = error[0], error_message = error[1], if error_code != EnumErrorCode.DBR_OK, you can get the detailed error message by error_message.
 
-### Remark
-
+#### Remark
 Check follow link for available modes and arguments:
-
+- [`AccompanyingTextRecognitionModes`]({{ site.parameters_reference }}image-parameter/AccompanyingTextRecognitionModes.html#accompanyingtextrecognitionmodes)
 - [`BarcodeColourModes`]({{ site.parameters_reference }}image-parameter/BarcodeColourModes.html#barcodecolourmodes)
 - [`BinarizationModes`]({{ site.parameters_reference }}image-parameter/BinarizationModes.html#binarizationmodes)
 - [`ColourClusteringModes`]({{ site.parameters_reference }}image-parameter/ColourClusteringModes.html#colourclusteringmodes)
@@ -56,8 +56,7 @@ Check follow link for available modes and arguments:
 - [`TextFilterModes`]({{ site.parameters_reference }}image-parameter/TextFilterModes.html#textfiltermodes)
 - [`TextureDetectionModes`]({{ site.parameters_reference }}image-parameter/TextureDetectionModes.html#texturedetectionmodes) 
 
-### Code Snippet
-
+#### Code Snippet
 ```python
 from dbr import *
 reader = BarcodeReader()
@@ -74,32 +73,32 @@ except BarcodeReaderError as e:
     print(e)
 ```
 
+
+&nbsp;
+
+
 ## get_mode_argument
 
 Get argument value for the specified mode parameter.
 
 ```python
 BarcodeReader.get_mode_argument(modes_name, index, argument_name)
-```
+```   
+   
+#### Parameters  
+`[in]	modes_name` <*str*> : The mode(s) parameter name to get argument.  
+`[in]	index` <*int*> : The array index of modes parameter to indicate a specific mode.   
+`[in]	argument_name` <*str*> : The name of the argument to get.  
 
-### Parameters  
-
-- `[in]	modes_name` <*str*> : The mode(s) parameter name to get argument.  
-- `[in]	index` <*int*> : The array index of modes parameter to indicate a specific mode.   
-- `[in]	argument_name` <*str*> : The name of the argument to get.  
-
-### Return value
-
+#### Return value
 `argument_value` <*str*> : The value of the argument to get.
 
-### Exception
-
+#### Exception
 [`BarcodeReaderError`](../class/BarcodeReaderError.md) : If error happens, this function will throw a BarcodeReaderError exception that can report the detailed error message.
 
-### Remark
-
+#### Remark
 Check follow link for available modes and arguments:
-
+- [`AccompanyingTextRecognitionModes`]({{ site.parameters_reference }}image-parameter/AccompanyingTextRecognitionModes.html#accompanyingtextrecognitionmodes)
 - [`BarcodeColourModes`]({{ site.parameters_reference }}image-parameter/BarcodeColourModes.html#barcodecolourmodes)
 - [`BinarizationModes`]({{ site.parameters_reference }}image-parameter/BinarizationModes.html#binarizationmodes)
 - [`ColourClusteringModes`]({{ site.parameters_reference }}image-parameter/ColourClusteringModes.html#colourclusteringmodes)
@@ -112,10 +111,10 @@ Check follow link for available modes and arguments:
 - [`ScaleUpModes`]({{ site.parameters_reference }}image-parameter/ScaleUpModes.html#scaleupmodes)
 - [`TextAssistedCorrectionMode`]({{ site.parameters_reference }}image-parameter/TextAssistedCorrectionMode.html#textassistedcorrectionmode)
 - [`TextFilterModes`]({{ site.parameters_reference }}image-parameter/TextFilterModes.html#textfiltermodes)
-- [`TextureDetectionModes`]({{ site.parameters_reference }}image-parameter/TextureDetectionModes.html#texturedetectionmodes)
+- [`TextureDetectionModes`]({{ site.parameters_reference }}image-parameter/TextureDetectionModes.html#texturedetectionmodes)   
 
-### Code Snippet
 
+#### Code Snippet
 ```python
 from dbr import *
 reader = BarcodeReader()
@@ -132,6 +131,10 @@ except BarcodeReaderError as e:
     print(e)
 ```
 
+
+&nbsp;
+
+
 ## get_runtime_settings
 
 Gets current settings and save it into a PublicRuntimeSetting object. 
@@ -140,12 +143,12 @@ Gets current settings and save it into a PublicRuntimeSetting object.
 BarcodeReader.get_runtime_settings()
 ```
 
-### Return value
 
+#### Return value
 `runtime_settings` <*class PublicRuntimeSetting*> : The PublicRuntimeSetting object of current runtime settings.
 
-### Code Snippet
 
+#### Code Snippet
 ```python
 from dbr import *
 reader = BarcodeReader()
@@ -155,24 +158,25 @@ print(settings.barcode_format_ids)
 print(settings.excepted_barcodes_count)
 ```
 
+
+&nbsp;
+
+
 ## update_runtime_settings
 
 Update runtime settings with a given PublicRuntimeSetting object. 
 
 ```python
 BarcodeReader.update_runtime_settings(settings)
-```
-
-### Parameters
-
+```   
+   
+#### Parameters
 `[in]	settings` <*class PublicRuntimeSetting*> : a PublicRuntimeSetting object.    
  
-### Exception
-
+#### Exception
 [`BarcodeReaderError`](../class/BarcodeReaderError.md) : If error happens, this function will throw a BarcodeReaderError exception that can report the detailed error message.
 
-### Code Snippet
-
+#### Code Snippet
 ```python
 from dbr import *
 reader = BarcodeReader()
@@ -189,16 +193,19 @@ except BarcodeReaderError as e:
     print(e)
 ```
 
+
+&nbsp;
+
+
 ## reset_runtime_settings
 
 Reset all parameters to default values.
 
 ```python
 BarcodeReader.reset_runtime_settings() 
-```
+```   
 
-### Code Snippet
-
+#### Code Snippet
 ```python
 from dbr import *
 reader = BarcodeReader()

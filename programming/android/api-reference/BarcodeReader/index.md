@@ -1,7 +1,6 @@
 ---
 layout: default-layout
 title: Dynamsoft Barcode Reader Android API Reference - BarcodeReader Methods
-description: This page shows BarcodeReader methods of Dynamsoft Barcode Reader for Android SDK.
 keywords: methods, BarcodeReader, api reference, android
 needAutoGenerateSidebar: false
 breadcrumbText: BarcodeReader Methods
@@ -10,28 +9,35 @@ breadcrumbText: BarcodeReader Methods
 # Dynamsoft Barcode Reader SDK - Android BarcodeReader Methods
 
 ## Initialize and Destroy
-
+   
   | Method               | Description |
   |----------------------|-------------|
   | [`BarcodeReader`](initialize-and-destroy.md#barcodereader) | Initialization of `BarcodeReader` object.|
   | [`destroy`](initialize-and-destroy.md#destroy) | Destroys an instance of `BarcodeReader` object.|
-
+   
+   
+&nbsp; 
+   
+   
 ## Decode
-
+   
   | Method               | Description |
   |----------------------|-------------|
   | [`decodeFile`](decode.md#decodefile) | Decode barcodes from a specified image file. |
   | [`decodeFileInMemory`](decode.md#decodefileinmemory) | Decode barcodes from an image file in memory. |
   | [`decodeBuffer`](decode.md#decodebuffer) | Decode barcodes from raw buffer. |
   | [`decodeBase64String`](decode.md#decodebase64string) | Decode barcodes from a base64 encoded string. |
-  | [`decodeBufferedImage`](decode.md#decodeBufferedImage) | Decodes barcode from a buffered image (bitmap). |
-  | [`initIntermediateResult`](decode.md#initintermediateresult) | Inits an intermediateResult struct with default values. |
-  | [`decodeIntermediateResults`](decode.md#decodeintermediateresults) | Decodes barcode from intermediate results. |
-
+  | [`decodeBufferedImage`](decode.md#decodeBufferedImage) | Decodes barcode from a buffered imag (bitmap). |
+   
+   
+&nbsp; 
+   
+   
+   
 ## Parameter and Runtime Settings
 
 ### Basic
-
+   
   | Method               | Description |
   |----------------------|-------------|
   | [`setModeArgument`](parameter-and-runtime-settings-basic.md#setmodeargument) | Set argument value for the specified mode parameter. |
@@ -51,33 +57,48 @@ breadcrumbText: BarcodeReader Methods
   | [`getAllParameterTemplateNames`](parameter-and-runtime-settings-advanced.md#getallparametertemplatenames) | Gets the parameter templates name array. |
   | [`outputSettingsToFile`](parameter-and-runtime-settings-advanced.md#outputsettingstofile) | Output runtime settings to a settings file (JSON file). |
   | [`outputSettingsToString`](parameter-and-runtime-settings-advanced.md#outputsettingstostring) | Output runtime settings to a string. |
+   
+      
+&nbsp; 
 
+   
 ## License
-
+  
   | Method               | Description |
   |----------------------|-------------|
   | [`initLicense`](license.md#initlicense) | Read product key and activate the SDK. |
   | [`initLicenseFromServer`](license.md#initlicensefromserver) | Initialize license and connect to the specified server for online verification. |
   | [`initLicenseFromLicenseContent`](license.md#initlicensefromlicensecontent) | Initialize license from the license content on client machine for offline verification. |
   | [`outputLicenseToString`](license.md#outputlicensetostring) | Output the license content to a string from the license server. |
-  | [`initLicenseFromLTS`](license.md#initlicensefromlts) | Initializes the barcode reader license and connects to the specified server for online verification. |
-
+   
+   
+&nbsp; 
+   
+   
 ## Result
-
+   
   | Method               | Description |
   |----------------------|-------------|
   | [`getIntermediateResults`](result.md#getintermediateresults) | Get intermediate results. |
    
-## Status Retrieval
+      
+&nbsp; 
 
+   
+## Status Retrieval
+   
   | Method               | Description |
   |----------------------|-------------|
   | [`getVersion`](status-retrieval.md#getversion) | Get version information of SDK.|
    
+      
+&nbsp; 
+
+   
 ## Video
 
 ### Decode
-
+    
    | Method               | Description |
    |----------------------|-------------|
    | [`startFrameDecoding`](video.md#startframedecoding) | Decode barcodes from inner frame queue. |
@@ -86,13 +107,13 @@ breadcrumbText: BarcodeReader Methods
    | [`stopFrameDecoding`](video.md#stopframedecoding) | Stop thread used for frame decoding. |
 
 ### Parameter
-
+   
    | Method               | Description |
    |----------------------|-------------|
    | [`initFrameDecodingParameters`](video.md#initframedecodingparameters) | Initialize frame decoding parameter. |
 
 ### Callback
-
+   
    | Method               | Description |
    |----------------------|-------------|
    | [`setErrorCallback`](video.md#seterrorcallback) | Set callback interface to process errors generated during frame decoding. |
@@ -100,7 +121,8 @@ breadcrumbText: BarcodeReader Methods
    | [`setIntermediateResultCallback`](video.md#setintermediateresultcallback) | Set callback interface to process intermediate results generated during frame decoding. |
 
 ### Status retrieval
-
+   
    | Method               | Description |
    |----------------------|-------------|
    | [`getLengthOfFrameQueue`](video.md#getlengthofframequeue) | Get length of current inner frame queue. |
+ 

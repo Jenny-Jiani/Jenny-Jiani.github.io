@@ -1,14 +1,12 @@
 ---
 layout: default-layout
 title: Dynamsoft Barcode Reader Android API Reference - FrameDecodingParameters Class
-description: This page shows the FrameDecodingParameters Class of Dynamsoft Barcode Reader for Android SDK.
 keywords: FrameDecodingParameters, class, api reference, android
 needAutoGenerateSidebar: false
 ---
 
 
 # FrameDecodingParameters
-
 Defines a struct to configure the frame decoding Parameters.  
 
 
@@ -31,13 +29,10 @@ Defines a struct to configure the frame decoding Parameters.
 
 
 ### maxQueueLength
-
 The maximum number of frames waiting for decoding.
-
 ```java
-int com.dynamsoft.dbr.FrameDecodingParameters.maxQueueLength
+int com.dynamsoft.barcode.FrameDecodingParameters.maxQueueLength
 ```
-
 - **Value range**   
     [0,0x7fffffff]   
       
@@ -45,13 +40,10 @@ int com.dynamsoft.dbr.FrameDecodingParameters.maxQueueLength
     3
 
 ### maxResultQueueLength
-
 The maximum number of frames waiting results (text result/localization result) will be kept for further reference.  
-
 ```java
-int com.dynamsoft.dbr.FrameDecodingParameters.maxResultQueueLength
+int com.dynamsoft.barcode.FrameDecodingParameters.maxResultQueueLength
 ```
-
 - **Value range**   
     [0,0x7fffffff]   
       
@@ -59,13 +51,10 @@ int com.dynamsoft.dbr.FrameDecodingParameters.maxResultQueueLength
     10  
 
 ### width
-
 The width of the frame image in pixels. 
-
 ```java
-int com.dynamsoft.dbr.FrameDecodingParameters.width
+int com.dynamsoft.barcode.FrameDecodingParameters.width
 ```
-
 - **Value range**   
     [0,0x7fffffff]   
       
@@ -73,13 +62,10 @@ int com.dynamsoft.dbr.FrameDecodingParameters.width
     0  
 
 ### height
-
 The height of the frame image in pixels.
-
 ```java
-int com.dynamsoft.dbr.FrameDecodingParameters.height
+int com.dynamsoft.barcode.FrameDecodingParameters.height
 ```
-
 - **Value range**   
     [0,0x7fffffff]   
       
@@ -87,13 +73,10 @@ int com.dynamsoft.dbr.FrameDecodingParameters.height
     0  
 
 ### stride
-
 The stride (or scan width) of the frame image.
-
 ```java
-int com.dynamsoft.dbr.FrameDecodingParameters.stride
+int com.dynamsoft.barcode.FrameDecodingParameters.stride
 ```
-
 - **Value range**   
     [0,0x7fffffff]   
       
@@ -101,13 +84,10 @@ int com.dynamsoft.dbr.FrameDecodingParameters.stride
     0 
       
 ### imagePixelFormat
-
 The image pixel format used in the image byte array.
-
 ```java
-int com.dynamsoft.dbr.FrameDecodingParameters.imagePixelFormat
+int com.dynamsoft.barcode.FrameDecodingParameters.imagePixelFormat
 ```
-
 - **Value range**   
     A value of [`EnumImagePixelFormat`]({{ site.enumerations }}other-enums.html#imagepixelformat) Enumeration items.
       
@@ -116,15 +96,12 @@ int com.dynamsoft.dbr.FrameDecodingParameters.imagePixelFormat
     
 - **See also**  
     [`EnumImagePixelFormat`]({{ site.enumerations }}other-enums.html#imagepixelformat)
-
+      
 ### region
-
 The region definition of the frame to calculate the internal indicator.  
-
 ```java
-RegionDefinition com.dynamsoft.dbr.FrameDecodingParameters.region
+RegionDefinition com.dynamsoft.barcode.FrameDecodingParameters.region
 ```
-
 - **Default value**  
     `{ regionLeft = 0, regionRight = 100, regionTop = 0, regionBottom = 100, regionMeasuredByPercentage = 1 }`
       
@@ -132,63 +109,53 @@ RegionDefinition com.dynamsoft.dbr.FrameDecodingParameters.region
     [`RegionDefinition`](RegionDefinition.md)
      
 ### threshold
-
 The threshold used for filtering frames.
-
 ```java
-float com.dynamsoft.dbr.FrameDecodingParameters.threshold
+float com.dynamsoft.barcode.FrameDecodingParameters.threshold
 ```
 - **Value range**   
     [0, 1]
       
 - **Default value**   
     0.1
-
-- **Remarks**  
+    
+- **Remark**  
     The SDK will calculate an inner indicator for each frame from [`appendFrame`](../BarcodeReader/video.md#appendframe), if the change rate of the indicators between the current frame and the history frames is larger than the given threshold, the current frame will not be added to the inner frame queue waiting for decoding.
 
 ### fps
-
 The frequency of calling [`appendFrame`](../BarcodeReader/video.md#appendframe) per second.
-
 ```java
-int com.dynamsoft.dbr.FrameDecodingParameters.fps
+int com.dynamsoft.barcode.FrameDecodingParameters.fps
 ```
-
 - **Value range**   
     [0,0x7fffffff]
       
 - **Default value**   
     0  
     
-- **Remarks**  
+- **Remark**  
     0 means the frequency will be calculated automatically by the SDK.
 
 ### autoFilter
-
 Sets whether to filter frames automatically.
-
 ```java
-int com.dynamsoft.dbr.FrameDecodingParameters.autoFilter
+int com.dynamsoft.barcode.FrameDecodingParameters.autoFilter
 ```
-
 - **Value range**   
     [0,1]
       
 - **Default value**   
     1  
     
-- **Remarks**  
+- **Remark**  
     0: Diable filtering frames automatically. 1: Enable filtering frames automatically. 
+    
 
 ### clarityCalculationMethod
-
 Sets the method used for calculating the clarity of the frames.
-
 ```java
-int com.dynamsoft.dbr.FrameDecodingParameters.clarityCalculationMethod
+int com.dynamsoft.barcode.FrameDecodingParameters.clarityCalculationMethod
 ```
-
 - **Value range**   
     Any one of the [`EnumClarityCalculationMethod`]({{ site.enumerations }}frame-decoding-enums.html#claritycalculationmethod) Enumeration items.   
       
@@ -197,15 +164,13 @@ int com.dynamsoft.dbr.FrameDecodingParameters.clarityCalculationMethod
     
 - **See also**  
     [`EnumClarityCalculationMethod`]({{ site.enumerations }}frame-decoding-enums.html#claritycalculationmethod)    
+    
 
 ### clarityFilterMode
-
 Sets the mode used for filtering frames by calculated clarity.
-
 ```java
-int com.dynamsoft.dbr.FrameDecodingParameters.clarityFilterMode
+int com.dynamsoft.barcode.FrameDecodingParameters.clarityFilterMode
 ```
-
 - **Value range**   
     Any one of the [`EnumClarityFilterMode`]({{ site.enumerations }}frame-decoding-enums.html#clarityfiltermode) Enumeration items.   
       

@@ -1,7 +1,6 @@
 ---
 layout: default-layout
 title: Dynamsoft Barcode Reader Parameter Reference for RegionDefinition Object - Cost Control Parameters
-description: This article shows Dynamsoft Barcode Reader Parameter Reference for RegionDefinition Object - Cost Control Parameters.
 keywords: ExpectedBarcodesCount, RegionDefinition, cost control parameters, parameter reference, parameter 
 needAutoGenerateSidebar: true
 needGenerateH3Content: false

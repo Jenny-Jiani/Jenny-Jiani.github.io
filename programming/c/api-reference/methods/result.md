@@ -1,7 +1,6 @@
 ---
 layout: default-layout
 title: Dynamsoft Barcode Reader C Language API Reference - Result Methods
-description: This page shows result methods of Dynamsoft Barcode Reader for C Language.
 keywords: DBR_GetAllTextResults, DBR_FreeTextResults, DBR_GetIntermediateResults, DBR_FreeIntermediateResults, result methods, api reference, c
 needAutoGenerateSidebar: true
 ---

@@ -1,7 +1,6 @@
 ---
 layout: default-layout
 title: Dynamsoft Barcode Reader .NET API Reference - Quadrilateral Class
-description: This page shows the Quadrilateral Class of Dynamsoft Barcode Reader for .NET SDK.
 keywords: Quadrilateral, class, api reference, .Net
 needAutoGenerateSidebar: false
 ---
@@ -10,7 +9,7 @@ needAutoGenerateSidebar: false
 # Quadrilateral
 Stores the quadrilateral.  
 
-```csharp
+```C#
 public class Quadrilateral 
 ```  
   
@@ -27,8 +26,8 @@ public class Quadrilateral
 ### Points
 Four vertexes in a clockwise direction of a quadrilateral. Index 0 represents the left-most vertex. 
 
-```csharp
-Point[] Dynamsoft.DBR.Quadrilateral.Points
+```C#
+Point[] Dynamsoft.Barcode.Quadrilateral.Points
 ```
 
 

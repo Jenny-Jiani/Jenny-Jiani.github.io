@@ -1,14 +1,13 @@
 ---
 layout: default-layout
 title: Dynamsoft Barcode Reader JavaScript API Reference - BarcodeScanner Capture Settings
-description: This page shows BarcodeScanner Capture Settings of Dynamsoft Barcode Reader JavaScript SDK.
 keywords: getCapabilities, getResolution, setResolution, getScanSettings, updateScanSettings, getVideoSettings, updateVideoSettings, setColorTemperature, setExposureCompensation, setFrameRate, setZoom, turnOffTorch, turnOnTorch, capture settings, BarcodeScanner, api reference, javascript, js
 needAutoGenerateSidebar: true
 needGenerateH3Content: false
 ---
 
 
-# JavaScript API Reference - `BarcodeScanner` Capture Settings
+# Javascript API Reference - `BarcodeScanner` Capture Settings
 
 | Method               | Description |
 |----------------------|-------------|
@@ -36,11 +35,13 @@ Get the camera capabilities. Chrome only. Camera must be open before use.
 getCapabilities() returns MediaTrackCapabilities
 ```
 
-### Return Value
+
+#### Return Value
 
 `MediaTrackCapabilities`
 
-### Example
+
+#### Example
 
 ```javascript
 > scanner.getCapabilities()
@@ -63,16 +64,20 @@ getCapabilities() returns MediaTrackCapabilities
   }
  ```
 
-### :+1: Tips and Tricks 
 
-Check out the following APIs to modify your device capabilities (if supported).
+#### :+1: Tips and Tricks 
 
-- [`setColorTemperature`](#setcolortemperature) - Adjust the video colour temperature.  
-- [`setExposureCompensation`](#setexposurecompensation) - Adjust the video exposure level.  
-- [`setFrameRate`](#setframerate) - Adjust the video frame rate.  
-- [`setZoom`](#setzoom) - Adjust the video zoom ratio.  
-- [`turnOffTorch`](#turnofftorch) - Turn off the torch/flashlight.  
-- [`turnOnTorch`](#turnontorch) -Turn on the torch/flashlight. 
+* Check out the following APIs to modify your device capabilities, if supported.   
+[`setColorTemperature`](#setcolortemperature) - Adjust the video colour temperature.  
+[`setExposureCompensation`](#setexposurecompensation) - Adjust the video exposure level.  
+[`setFrameRate`](#setframerate) - Adjust the video frame rate.  
+[`setZoom`](#setzoom) - Adjust the video zoom ratio.  
+[`turnOffTorch`](#turnofftorch) - Turn off the torch/flashlight.  
+[`turnOnTorch`](#turnontorch) -Turn on the torch/flashlight. 
+
+
+
+&nbsp;
 
 ## getResolution
 
@@ -82,11 +87,13 @@ Get current video resolution.
 getResolution() returns number[]
 ```
 
-### Return Value
+
+#### Return Value
 
 `number[]`
 
-### Sample
+
+#### Sample
 
 ```javascript
 let rsl = await scanner.getResolution();
@@ -94,6 +101,10 @@ console.log(rsl.width + " x " + rsl.height);
 ```
 
 [Read barcodes from live camera](https://demo.dynamsoft.com/dbr_wasm/barcode_reader_javascript.html)
+
+
+&nbsp;
+
 
 ## setResolution
 
@@ -103,20 +114,23 @@ Set the camera resolution.
 setResolution(width, height) returns Promise
 ```
 
-### Parameters
 
-- `width` *number* | *number[]*
-- `height` *number*  
+#### Parameters
+`width` *number* | *number[]*
+`height` *number*  
 
-### Return Value
+#### Return Value
 
 <code>Promise<<a href="../interfaces.html#scannerplaycallbackinfo">ScannerPlayCallbackInfo</a>></code>
 
-### Sample
 
-```javascript
-await scanner.setResolution(width, height);
-```
+#### Sample
+
+[Read barcodes from live camera](https://demo.dynamsoft.com/dbr_wasm/barcode_reader_javascript.html)
+
+
+&nbsp;
+
 
 ## getScanSettings
 
@@ -126,18 +140,17 @@ Get current scan settings of `BarcodeScanner` and saves it into a struct.
 getScanSettings() returns Promise
 ```
 
-### Return Value
+
+#### Return Value
 
 <code>Promise<<a href="../interfaces.html#scansettings">ScanSettings</a>></code>
 
-### Sample
+#### Sample
 
-```javascript
-  let scanSettings = await scanner.getScanSettings();
-  scanSettings.intervalTime = 50;
-  scanSettings.duplicateForgetTime = 1000;
-  await scanner.updateScanSettings(scanSettings);
-```
+[Read barcodes from live camera](https://demo.dynamsoft.com/dbr_wasm/barcode_reader_javascript.html)
+
+
+&nbsp;
 
 ## updateScanSettings
 
@@ -147,21 +160,22 @@ Modify and update scan settings.
 updateScanSettings(settings) returns Promise
 ```
 
-### Parameters
+
+#### Parameters
 `settings` [*`ScanSettings`*](../interfaces.md#scansettings)
 
-### Return Value
+
+#### Return Value
 
 `Promise<void>`
 
-### Sample
+#### Sample
 
-```javascript
-  let scanSettings = await scanner.getScanSettings();
-  scanSettings.intervalTime = 50;
-  scanSettings.duplicateForgetTime = 1000;
-  await scanner.updateScanSettings(scanSettings);
-```
+[Read barcodes from live camera](https://demo.dynamsoft.com/dbr_wasm/barcode_reader_javascript.html)
+
+
+
+&nbsp;
 
 
 ## getVideoSettings
@@ -172,13 +186,18 @@ Get current video settings of `BarcodeScanner` and saves it into a struct.
 getVideoSettings() returns MediaStreamConstraints
 ```
 
-### Return Value
+
+#### Return Value
 
 `MediaStreamConstraints`
 
-### Sample
+#### Sample
 
 [Read barcodes from live camera](https://demo.dynamsoft.com/dbr_wasm/barcode_reader_javascript.html)
+
+
+&nbsp;
+
 
 ## updateVideoSettings
 
@@ -188,14 +207,16 @@ Modify and update video settings.
 updateVideoSettings(MediaStreamConstraints) returns Promise
 ```
 
-### Parameters
+
+#### Parameters
 `MediaStreamConstraints` *any*
 
-### Return Value
+
+#### Return Value
 
 <code>Promise<<a href="../interfaces.html#scannerplaycallbackinfo">ScannerPlayCallbackInfo</a> | void></code>
 
-### Sample
+#### Sample
 
 ```javascript
 await scanner.updateVideoSettings({ 
@@ -208,6 +229,9 @@ await scanner.updateVideoSettings({
 
 [Read barcodes from live camera](https://demo.dynamsoft.com/dbr_wasm/barcode_reader_javascript.html)
 
+
+&nbsp;
+
 ## setColorTemperature
 
 Adjust the video colour temperature. Chrome only. Camera must be open before use. Check if this capability is supported by the camera using [`getCapabilities`](#getcapabilities).
@@ -216,17 +240,23 @@ Adjust the video colour temperature. Chrome only. Camera must be open before use
 setColorTemperature(value) returns Promise
 ```
 
-### Parameters
+
+#### Parameters
 
 `value` *number*  
 
-### Return Value
+#### Return Value
 
 `Promise<void>`
 
-### Sample
+
+#### Sample
 
 [Read barcodes from live camera](https://demo.dynamsoft.com/dbr_wasm/barcode_reader_javascript.html)
+
+
+
+&nbsp;
 
 ## setExposureCompensation
 
@@ -236,17 +266,25 @@ Adjust the video exposure level. Chrome only. Camera must be open before use. Ch
 setExposureCompensation(value) returns Promise
 ```
 
-### Parameters
+
+#### Parameters
 
 `value` *number*  
 
-### Return Value
+
+#### Return Value
 
 `Promise<void>`
 
-### Sample
+
+#### Sample
 
 [Read barcodes from live camera](https://demo.dynamsoft.com/dbr_wasm/barcode_reader_javascript.html)
+
+
+
+&nbsp;
+
 
 ## setFrameRate
 
@@ -256,19 +294,23 @@ Adjust the video frame rate. Chrome only. Camera must be open before use. Check 
 setFrameRate(value) returns Promise
 ```
 
-### Parameters
+
+#### Parameters
 
 `value` *number*  
 
-### Return Value
+#### Return Value
 
 `Promise<void>`
 
-### Sample
 
-```javascript
-await scanner.setFrameRate(10);
-```
+#### Sample
+
+[Read barcodes from live camera](https://demo.dynamsoft.com/dbr_wasm/barcode_reader_javascript.html)
+
+
+&nbsp;
+
 
 ## setZoom
 
@@ -278,19 +320,25 @@ Adjust the video zoom ratio. Chrome only. Camera must be open before use. Check 
 setZoom(value) returns Promise
 ```
 
-### Parameters
+
+#### Parameters
 
 `value` *number*  
 
-### Return Value
+
+#### Return Value
 
 `Promise<void>`
 
-### Sample
 
-```javascript
-await scanner.setZoom(400);
-```
+#### Sample
+
+[Read barcodes from live camera](https://demo.dynamsoft.com/dbr_wasm/barcode_reader_javascript.html)
+
+
+
+&nbsp;
+
 
 ## turnOffTorch
 
@@ -300,13 +348,19 @@ Turn off the torch/flashlight. Chrome only. Camera must be open before use. Chec
 turnOffTorch() returns Promise
 ```
 
-### Return Value
+
+#### Return Value
 
 `Promise<void>`
 
-### Sample
+
+#### Sample
 
 [Read barcodes from live camera](https://demo.dynamsoft.com/dbr_wasm/barcode_reader_javascript.html)
+
+
+&nbsp;
+
 
 ## turnOnTorch
 
@@ -316,10 +370,18 @@ Turn on the torch/flashlight. Chrome only. Camera must be open before use. Check
 turnOnTorch() returns Promise
 ```
 
-### Return Value
+
+#### Return Value
 
 `Promise<void>`
 
-### Sample
+
+#### Sample
 
 [Read barcodes from live camera](https://demo.dynamsoft.com/dbr_wasm/barcode_reader_javascript.html)
+
+
+
+
+
+

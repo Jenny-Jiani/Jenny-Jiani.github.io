@@ -1,14 +1,13 @@
 ---
 layout: default-layout
 title: Dynamsoft Barcode Reader JavaScript API Reference - Main Page
-description: This is the main page of Dynamsoft Barcode Reader JavaScript SDK API Reference.
 keywords: api reference, javascript, js
 needAutoGenerateSidebar: false
 breadcrumbText: API Reference
 ---
 
 
-# Dynamsoft Barcode Reader SDK - JavaScript API Reference
+# Dynamsoft Barcode Reader SDK - Javascript API Reference
 
 [BarcodeReader](#barcodereader)  -- Decode barcodes from images
    * [Methods](#barcodereader-methods)  
@@ -36,7 +35,6 @@ The `BarcodeReader` class is used for **image** decoding.
 ### `BarcodeReader` Methods
 
 #### Initialize and Destroy
-
 The following methods are related to initializing and destroying the `BarcodeReader` object.
 
 | Method               | Description |
@@ -48,7 +46,6 @@ The following methods are related to initializing and destroying the `BarcodeRea
 | [`loadWasm`](BarcodeReader/methods/initialize-and-destroy.md#loadwasm) | Manually load and compile the decoding WASM module. |
 
 #### Decode
-
 The following methods are related to decoding barcodes.
 
 | Method               | Description |
@@ -59,7 +56,6 @@ The following methods are related to decoding barcodes.
 | [`decodeUrl`](BarcodeReader/methods/decode.md#decodeurl) | Decode barcodes from a URL. |
 
 #### Parameter and Runtime Settings
-
 The following methods are related to customizing mode and runtime settings.
 
 | Method               | Description |
@@ -96,7 +92,6 @@ The `BarcodeScanner` class is used for **video** decoding.
 ### `BarcodeScanner` Methods
 
 #### Initialize and Destroy
-
 The following methods are related to initializing and destroying the `BarcodeScanner` object.
 
 | Method               | Description |
@@ -107,7 +102,6 @@ The following methods are related to initializing and destroying the `BarcodeSca
 | [`setUIElement`](BarcodeScanner/methods/initialize-and-destroy.md#setuielement) | set html element containing the `barcodescanner` object. |
 
 #### Camera Controls
-
 The following methods are related to controlling the camera and its settings.
 
 | Method               | Description |
@@ -127,7 +121,6 @@ The following methods are related to controlling the camera and its settings.
 | [`resumeScan`](BarcodeScanner/methods/camera-controls.md#resumescan) | Resume the video decoding process. |
 
 #### Capture Settings
-
 The following methods are related to the camera's capture settings.
 
 | Method               | Description |
@@ -146,8 +139,8 @@ The following methods are related to the camera's capture settings.
 | [`turnOffTorch`](BarcodeScanner/methods/capture-settings.md#turnofftorch) | Turn off the torch/flashlight. |
 | [`turnOnTorch`](BarcodeScanner/methods/capture-settings.md#turnontorch) | Turn on the torch/flashlight. |
 
-#### Runtime Settings
 
+#### Runtime Settings
 The following methods are related to customizing runtime settings.
 
 | Method               | Description |
@@ -156,7 +149,6 @@ The following methods are related to customizing runtime settings.
 
 
 #### Inherited Methods
-
 The following methods are inherited from the `BarcodeReader` class. 
 
 * [`detectEnvironment`](BarcodeReader/methods/initialize-and-destroy.md#detectenvironment) 
@@ -180,10 +172,9 @@ The following methods are inherited from the `BarcodeReader` class.
 | [`regionMaskStrokeStyle`](BarcodeScanner/properties.md#regionmaskstrokestyle) | Set the style of the region border. | 
 | [`onFrameRead`](BarcodeScanner/properties.md#onframeread) | Triggered a frame has been scanned. | 
 | [`onPlayed`](BarcodeScanner/properties.md#onplayed) | Triggered when the camera video stream is played. | 
-| [`onUnduplicatedRead`](BarcodeScanner/properties.md#onunduplicatedread) | Triggered when a new, unduplicated barcode is found. | 
+| [`onUnduplicatedRead`](BarcodeScanner/properties.md#onunduplicatedread) | Triggered when a new, upduplicated barcode is found. | 
 
 #### Inherited Properties
-
 The following properties are inherited from the `BarcodeReader` class.
 
 * [`_bUseFullFeature`](BarcodeReader/properties.md#_busefullfeature)  
@@ -191,16 +182,16 @@ The following properties are inherited from the `BarcodeReader` class.
 * `bSaveOriCanvas`
 * `oriCanvas`
 
+
 ### `BarcodeScanner` Accessors
 
 | Accessors            | Description |
 |----------------------|-------------|
 | [`singleFrameMode`](BarcodeScanner/accessors.md#singleframemode) | If set to `true`, single video frames will be used instead of a continuous video stream. | 
-| [`soundOnSuccessfulRead`](BarcodeScanner/accessors.md#soundonsuccessfulread) | Get or set the sound to play when a barcode is read successfully. | 
+| [`soundOnSuccessfullRead`](BarcodeScanner/accessors.md#soundonsuccessfullread) | Get or set the sound to play when a barcode is read successfully. | 
 | [`defaultUIElementURL`](BarcodeScanner/accessors.md#defaultuielementurl) | Get or set the default scanner UI. | 
 
 #### Inherited Accessors
-
 The following accessors are inherited from the `BarcodeReader` class.
 
 * [`engineResourcePath`](BarcodeReader/accessors.md#engineresourcepath) 
@@ -223,15 +214,17 @@ The following accessors are inherited from the `BarcodeReader` class.
 | Interface            | Description |
 |----------------------|-------------|
 | [`BarcodeReaderException`](global-interfaces.md#barcodereaderexception) | Exceptions raised for Barcode Reader errors. |
-| [`FurtherModes`](global-interfaces.md#furthermodes) | Stores additional modes. |
+| [`FurtherModes`](global-interfaces.md#furthermodes) | Stores addtional modes. |
 | [`LocalizationResult`](global-interfaces.md#localizationresult) | Stores the localization result of the detected barcode. |
 | [`RegionDefinition`](global-interfaces.md#regiondefinition) | Stores the barcode region information.|  
 | [`RuntimeSettings`](global-interfaces.md#runtimesettings) | Stores the barcode reading runtime settings. | 
 | [`TextResult`](global-interfaces.md#textresult) | Stores the decoded barcode text results. | 
 
+
 ---
 ## Enumerations
 
+* [`EnumAccompanyingTextRecognitionMode`]({{ site.enumerations }}parameter-mode-enums.html#accompanyingtextrecognitionmode)	
 * [`EnumBarcodeColourMode`]({{ site.enumerations }}parameter-mode-enums.html#barcodecolourmode)
 * [`EnumBarcodeComplementMode`]({{ site.enumerations }}parameter-mode-enums.html#barcodecomplementmode)
 * [`EnumBarcodeFormat`]({{ site.enumerations }}format-enums.html#barcodeformat)
@@ -239,11 +232,7 @@ The following accessors are inherited from the `BarcodeReader` class.
 * [`EnumBinarizationMode`]({{ site.enumerations }}parameter-mode-enums.html#binarizationmode)
 * [`EnumColourClusteringMode`]({{ site.enumerations }}parameter-mode-enums.html#colourclusteringmode)
 * [`EnumColourConversionMode`]({{ site.enumerations }}parameter-mode-enums.html#colourconversionmode)
-* [`EnumDeblurMode`]({{ site.enumerations }}parameter-mode-enums.html#deblurmode)
 * [`EnumDeformationResistingMode`]({{ site.enumerations }}parameter-mode-enums.html#deformationresistingmode)
-* [`EnumDMChargeWay`]({{ site.enumerations }}other-enums.html#dm_chargeway)
-* [`EnumDMLicenseModule`]({{ site.enumerations }}other-enums.html#dm_licensemodule)
-* [`EnumDMUUIDGenerationMethod`]({{ site.enumerations }}other-enums.html#dm_uuidgenerationmethod)
 * [`EnumDPMCodeReadingMode`]({{ site.enumerations }}parameter-mode-enums.html#dpmcodereadingmode)
 * [`EnumErrorCode`]({{ site.enumerations }}error-code.html)
 * [`EnumGrayscaleTransformationMode`]({{ site.enumerations }}parameter-mode-enums.html#grayscaletransformationmode)
@@ -262,3 +251,5 @@ The following accessors are inherited from the `BarcodeReader` class.
 * [`EnumTextFilterMode`]({{ site.enumerations }}parameter-mode-enums.html#textfiltermode)
 * [`EnumTextResultOrderMode`]({{ site.enumerations }}result-enums.html#textresultordermode)
 * [`EnumTextureDetectionMode`]({{ site.enumerations }}parameter-mode-enums.html#texturedetectionmode)
+
+

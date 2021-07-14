@@ -1,13 +1,12 @@
 ---
 layout: default-layout
-title: Dynamsoft Barcode Reader How-to Guides - Read Barcodes with Different Colours
-description: This page shows how to read barcodes with different colours.
+title: Dynamsoft Barcode Reader How-to Guides - Read Barcodes with Different Colors
 keywords: colour mode, colourful barcode, how-to guides
 needAutoGenerateSidebar: false
 ---
 
 
-# How-to Guides - Read Barcodes with Different Colours
+# How-to Guides - Read Barcodes with Different Colors
 
 Common barcodes are black and white. However, some barcodes could be in different colors such as the below left barcode. Also, in some cases, a QR code may appear with an image or a logo inside as shown below right. Dynamsoft can decode such special barcodes as well.   
 

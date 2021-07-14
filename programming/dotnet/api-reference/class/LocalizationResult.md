@@ -1,7 +1,6 @@
 ---
 layout: default-layout
 title: Dynamsoft Barcode Reader .NET API Reference - LocalizationResult Class
-description: This page shows the LocalizationResult Class of Dynamsoft Barcode Reader for .NET SDK.
 keywords: LocalizationResult, class, api reference, .Net
 needAutoGenerateSidebar: false
 ---
@@ -10,7 +9,7 @@ needAutoGenerateSidebar: false
 # LocalizationResult
 Stores the localization result.
 
-```csharp
+```C#
 public class LocalizationResult
 ```  
   
@@ -21,10 +20,10 @@ public class LocalizationResult
   
 | Attribute | Type |
 |---------- | ---- |
-| [`TerminatePhase`](#terminatephase) | [`EnumTerminatePhase`]({{ site.enumerations }}parameter-mode-enums.html#terminatephase) |
-| [`BarcodeFormat`](#barcodeformat) | [`EnumBarcodeFormat`]({{ site.enumerations }}format-enums.html#barcodeformat) |
+| [`TerminatePhase`](#terminatephase) | [`TerminatePhase`]({{ site.enumerations }}parameter-mode-enums.html#terminatephase) |
+| [`BarcodeFormat`](#barcodeformat) | [`BarcodeFormat`]({{ site.enumerations }}format-enums.html#barcodeformat) |
 | [`BarcodeFormatString`](#barcodeformatstring) | *string* |
-| [`BarcodeFormat_2 `](#barcodeformat_2 ) | [`EnumBarcodeFormat_2`]({{ site.enumerations }}format-enums.html#barcodeformat_2) |
+| [`BarcodeFormat_2 `](#barcodeformat_2 ) | [`BarcodeFormat_2`]({{ site.enumerations }}format-enums.html#barcodeformat_2) |
 | [`BarcodeFormatString_2`](#barcodeformatstring_2) | *string* |
 | [`ResultPoints`](#resultpoints) | *Point[ ]* |
 | [`Angle`](#angle) | *int* |
@@ -32,7 +31,7 @@ public class LocalizationResult
 | [`PageNumber`](#pagenumber) | *int* |
 | [`RegionName`](#regionname) | *string* |
 | [`DocumentName`](#documentname)| *string* |
-| [`ResultCoordinateType`](#resultcoordinatetype) | [`EnumResultCoordinateType`]({{ site.parameters_reference }}image-parameter/result-control.html#resultcoordinatetype) |
+| [`ResultCoordinateType`](#resultcoordinatetype) | [`ResultCoordinateType`]({{ site.parameters_reference }}image-parameter/result-control.html#resultcoordinatetype) |
 | [`AccompanyingTextBytes`](#accompanyingtextbytes) | *byte[ ]* |
 | [`Confidence`](#confidence) | *int* |
 
@@ -40,97 +39,97 @@ public class LocalizationResult
 ### TerminatePhase
 The terminate phase of localization result.
 
-```csharp
-EnumTerminatePhase Dynamsoft.DBR.LocalizationResult.TerminatePhase
+```C#
+EnumTerminatePhase Dynamsoft.Barcode.LocalizationResult.TerminatePhase
 ```
 
 ### BarcodeFormat
 Barcode type in BarcodeFormat group 1.
 
-```csharp
-EnumBarcodeFormat Dynamsoft.DBR.LocalizationResult.BarcodeFormat
+```C#
+EnumBarcodeFormat Dynamsoft.Barcode.LocalizationResult.BarcodeFormat
 ```
 
 ### BarcodeFormatString
 Barcode type in BarcodeFormat group 1 as string.
 
-```csharp
-string Dynamsoft.DBR.LocalizationResult.BarcodeFormatString
+```C#
+string Dynamsoft.Barcode.LocalizationResult.BarcodeFormatString
 ```
 
 ### BarcodeFormat_2
 Barcode type in BarcodeFormat group 2.
 
-```csharp
-EnumBarcodeFormat_2 Dynamsoft.DBR.LocalizationResult.BarcodeFormat_2
+```C#
+EnumBarcodeFormat_2 Dynamsoft.Barcode.LocalizationResult.BarcodeFormat_2
 ```
 
 ### BarcodeFormatString_2
 Barcode type in BarcodeFormat group 2 as string.
 
-```csharp
-string Dynamsoft.DBR.LocalizationResult.BarcodeFormatString_2
+```C#
+string Dynamsoft.Barcode.LocalizationResult.BarcodeFormatString_2
 ```
 
 ### ResultPoints
 The array which stores the coordinates of four result points. 
 
-```csharp
-Point[] Dynamsoft.DBR.LocalizationResult.ResultPoints
+```C#
+Point[] Dynamsoft.Barcode.LocalizationResult.ResultPoints
 ```
 
 ### Angle
 The angle of a barcode. Values range is from 0 to 360.
 
-```csharp
-int Dynamsoft.DBR.LocalizationResult.Angle
+```C#
+int Dynamsoft.Barcode.LocalizationResult.Angle
 ```
 
 ### ModuleSize
 The barcode module size (the minimum bar width in pixel).
 
-```csharp
-int Dynamsoft.DBR.LocalizationResult.ModuleSize
+```C#
+int Dynamsoft.Barcode.LocalizationResult.ModuleSize
 ```
 
 ### PageNumber
 The page number the barcode located in. The index is 0-based.
 
-```csharp
-int Dynamsoft.DBR.LocalizationResult.PageNumber
+```C#
+int Dynamsoft.Barcode.LocalizationResult.PageNumber
 ```
 
 ### RegionName
 The region name the barcode located in.
 
-```csharp
-string Dynamsoft.DBR.LocalizationResult.RegionName
+```C#
+string Dynamsoft.Barcode.LocalizationResult.RegionName
 ```
 
 ### DocumentName
 The document name.
 
-```csharp
-string Dynamsoft.DBR.LocalizationResult.DocumentName
+```C#
+string Dynamsoft.Barcode.LocalizationResult.DocumentName
 ```
 
 ### ResultCoordinateType
 The coordinate type.
 
-```csharp
-EnumResultCoordinateType Dynamsoft.DBR.LocalizationResult.ResultCoordinateType
+```C#
+EnumResultCoordinateType Dynamsoft.Barcode.LocalizationResult.ResultCoordinateType
 ```
 
 ### AccompanyingTextBytes
 The accompanying text content in a byte array.
 
-```csharp
-byte[] Dynamsoft.DBR.LocalizationResult.AccompanyingTextBytes
+```C#
+byte[] Dynamsoft.Barcode.LocalizationResult.AccompanyingTextBytes
 ```
 
 ### Confidence
 The confidence of the localization result.
 
-```csharp
-int Dynamsoft.DBR.LocalizationResult.Confidence
+```C#
+int Dynamsoft.Barcode.LocalizationResult.Confidence
 ```

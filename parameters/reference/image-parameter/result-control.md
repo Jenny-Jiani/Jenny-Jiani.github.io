@@ -1,7 +1,6 @@
 ---
 layout: default-layout
 title: Dynamsoft Barcode Reader Parameter Reference for ImageParameter Object - Result Control Parameters 
-description: This page shows Dynamsoft Barcode Reader Parameter Reference for ImageParameter Object - Result Control Parameters.
 keywords: IntermediateResultTypes, IntermediateResultSavingMode, ResultCoordinateType, TextResultOrderModes, ReturnBarcodeZoneClarity, ImageParameter, result control parameters, parameter reference, parameter 
 needAutoGenerateSidebar: true
 needGenerateH3Content: false
@@ -26,7 +25,7 @@ Sets which types of intermediate result to be kept for further reference. Interm
 
 | Json Object |	Json Parameter Name | Value Type | Value Range | Default Value |
 | ----------- | ------------------- | ---------- | ----------- | ------------- |
-| ImageParameter | IntermediateResultTypes | *string Array* | An array item can be any one of the [`IntermediateResultTypes` Enumeration]({{ site.enumerations }}result-enums.html#intermediateresulttype) items | `null` |
+| ImageParameter | IntermediateResultTypes | *string Aarry* | An array item can be any one of the [`IntermediateResultTypes` Enumeration]({{ site.enumerations }}result-enums.html#intermediateresulttype) items | `null` |
 
 **Json Parameter Example**   
 ```

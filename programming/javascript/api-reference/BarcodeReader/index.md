@@ -1,21 +1,19 @@
 ---
 layout: default-layout
 title: Dynamsoft Barcode Reader JavaScript API Reference - BarcodeReader
-description: This page shows the BarcodeReader Class of Dynamsoft Barcode Reader JavaScript SDK.
 keywords: BarcodeReader, api reference, javascript, js
 needAutoGenerateSidebar: false
 breadcrumbText: BarcodeReader
 ---
 
 
-# Dynamsoft Barcode Reader SDK - JavaScript BarcodeReader Class
+# Dynamsoft Barcode Reader SDK - Javascript BarcodeReader Class
 
 The `BarcodeReader` class is used for **image** decoding.
 
 ## `BarcodeReader` Methods
 
 ### Initialize and Destroy
-
 The following methods are related to initializing and destroying the `BarcodeReader` object.
 
 | Method               | Description |
@@ -27,7 +25,6 @@ The following methods are related to initializing and destroying the `BarcodeRea
 | [`loadWasm`](methods/initialize-and-destroy.md#loadwasm) | Manually load and compile the decoding WASM module. |
 
 ### Decode
-
 The following methods are related to decoding barcodes.
 
 | Method               | Description |
@@ -38,7 +35,6 @@ The following methods are related to decoding barcodes.
 | [`decodeUrl`](methods/decode.md#decodeurl) | Decode barcodes from a URL. |
 
 ### Parameter and Runtime Settings
-
 The following methods are related to customizing mode and runtime settings.
 
 | Method               | Description |

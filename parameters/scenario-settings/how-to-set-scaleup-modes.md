@@ -50,7 +50,7 @@ The barcode image is a bit blurry and the module size of the barcode is only 2px
 
 ``` C++
 CBarcodeReader* reader = new CBarcodeReader();
-reader->InitLicense("Insert your license here");
+reader->InitLicense("这里填入你的License");
 
 PublicRuntimeSettings* runtimeSettings = new PublicRuntimeSettings();
 reader->GetRuntimeSettings(runtimeSettings); // Get the current runtime settings
@@ -61,7 +61,7 @@ reader->UpdateRuntimeSettings(runtimeSettings, sError, 512); // Update runtime s
 reader->SetModeArgument("scaleUpModes", 0, "AcuteAngleWithXThreshold", "0"); 
 reader->SetModeArgument("scaleUpModes", 0, "ModuleSizeThreshold", "4"); 
 reader->SetModeArgument("scaleUpModes", 0, "TargetModuleSize", "4"); 
-reader->DecodeFile("Insert your file path here", "") // Start decoding
+reader->DecodeFile("这里填入你的文件路径", "") // Start decoding
 
 TextResultArray* paryResult = NULL;
 reader->GetAllTextResults(&paryResult); // Get results
@@ -71,7 +71,7 @@ for (int i = 0; i < iCount; i++)
     printf("Text: %s", paryResult->results[i]->barcodeText); // Print results
 }
 
-dynamsoft::dbr::CBarcodeReader::FreeTextResults(&paryResult);
+CBarcodeReader::FreeTextResults(&paryResult);
 delete runtimeSettings;
 delete reader;
 ```
@@ -110,7 +110,7 @@ for (int i = 0; i < iCount; i++)
     printf("Text: %s", paryResult->results[i]->barcodeText); // Print results
 }
 
-dynamsoft::dbr::CBarcodeReader::FreeTextResults(&paryResult);
+CBarcodeReader::FreeTextResults(&paryResult);
 delete reader;
 ```
 

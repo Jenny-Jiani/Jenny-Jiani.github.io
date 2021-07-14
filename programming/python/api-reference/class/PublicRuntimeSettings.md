@@ -1,7 +1,6 @@
 ---
 layout: default-layout
 title: Dynamsoft Barcode Reader Python API Reference - PublicRuntimeSetting Class
-description: This page shows the PublicRuntimeSetting Class of Dynamsoft Barcode Reader for Python SDK.
 keywords: PublicRuntimeSetting, class, api reference, python
 needAutoGenerateSidebar: false
 ---
@@ -26,12 +25,10 @@ class PublicRuntimeSetting
 | [`barcode_format_ids_2`](#barcode_format_ids_2) | *int* |
 | [`barcode_colour_modes`](#barcode_colour_modes) | list[ [`EnumBarcodeColourMode`]({{ site.enumerations }}parameter-mode-enums.html#barcodecolourmode) ] |
 | [`barcode_complement_modes`](#barcode_complement_modes) | list[ [`EnumBarcodeComplementMode`]({{ site.enumerations }}parameter-mode-enums.html#barcodecomplementmode) ] |
-| [`barcode_zone_min_distance_to_image_borders`](#barcode_zone_min_distance_to_image_borders) | *int* |
 | [`binarization_modes`](#binarization_modes) | list[ [`EnumBinarizationMode`]({{ site.enumerations }}parameter-mode-enums.html#binarizationmode) ] |
 | [`colour_clustering_modes`](#colour_clustering_modes) | list[ [`EnumColourClusteringMode`]({{ site.enumerations }}parameter-mode-enums.html#colourclusteringmode) ] |
 | [`colour_conversion_modes`](#colour_conversion_modes) | list[ [`EnumColourConversionMode`]({{ site.enumerations }}parameter-mode-enums.html#colourconversionmode) ] |
 | [`deblur_level`](#deblurlevel) | *int* |
-| [`deblur_modes`](#deblur_modes) | list[ [`EnumDeblurMode`]({{ site.enumerations }}parameter-mode-enums.html#deblurmode) ] |
 | [`deformation_resisting_modes`](#deformation_resisting_modes) | list[ [`EnumDeformationResistingMode`]({{ site.enumerations }}parameter-mode-enums.html#deformationresistingmode) ] |
 | [`dpm_code_reading_modes`](#dpm_code_reading_modes) | list[ [`EnumDPMCodeReadingMode`]({{ site.enumerations }}parameter-mode-enums.html#dpmcodereadingmode) ] |
 | [`expected_barcodes_count`](#expected_barcodes_count) | *int* |
@@ -76,7 +73,7 @@ PublicRuntimeSetting.accompanying_text_recognition_modes
 - **Default value**   
     [EnumAccompanyingTextRecognitionMode.ATRM_SKIP, EnumAccompanyingTextRecognitionMode.ATRM_SKIP, EnumAccompanyingTextRecognitionMode.ATRM_SKIP, EnumAccompanyingTextRecognitionMode.ATRM_SKIP, EnumAccompanyingTextRecognitionMode.ATRM_SKIP, EnumAccompanyingTextRecognitionMode.ATRM_SKIP, EnumAccompanyingTextRecognitionMode.ATRM_SKIP, EnumAccompanyingTextRecognitionMode.ATRM_SKIP]
     
-- **Remarks**   
+- **Remark**   
     The list index represents the priority of the item. The smaller index is, the higher priority is.
       
 
@@ -93,7 +90,7 @@ PublicRuntimeSetting.barcode_format_ids
 - **Default value**   
     EnumBarcodeFormat.BF_ALL
     
-- **Remarks**   
+- **Remark**   
     If the barcode type(s) are certain, specifying the barcode type(s) to be read will speed up the recognition process.
 
 ### barcode_format_ids_2
@@ -109,7 +106,7 @@ PublicRuntimeSetting.barcode_format_ids_2
 - **Default value**   
     EnumBarcodeFormat_2.BF2_NULL
     
-- **Remarks**   
+- **Remark**   
     If the barcode type(s) are certain, specifying the barcode type(s) to be read will speed up the recognition process.    
 
 ### barcode_colour_modes
@@ -125,7 +122,7 @@ PublicRuntimeSetting.barcode_colour_modes
 - **Default value**   
     [EnumBarcodeColourMode.BICM_DARK_ON_LIGHT, EnumBarcodeColourMode.BICM_SKIP, EnumBarcodeColourMode.BICM_SKIP, EnumBarcodeColourMode.BICM_SKIP, EnumBarcodeColourMode.BICM_SKIP, EnumBarcodeColourMode.BICM_SKIP, EnumBarcodeColourMode.BICM_SKIP, EnumBarcodeColourMode.BICM_SKIP]
     
-- **Remarks**   
+- **Remark**   
     The list index represents the priority of the item. The smaller index is, the higher priority is.
 
 ### barcode_complement_modes
@@ -141,23 +138,8 @@ PublicRuntimeSetting.barcode_complement_modes
 - **Default value**   
     [EnumBarcodeComplementMode.BCM_SKIP, EnumBarcodeComplementMode.BCM_SKIP, EnumBarcodeComplementMode.BCM_SKIP, EnumBarcodeComplementMode.BCM_SKIP, EnumBarcodeComplementMode.BCM_SKIP, EnumBarcodeComplementMode.BCM_SKIP, EnumBarcodeComplementMode.BCM_SKIP, EnumBarcodeComplementMode.BCM_SKIP]
     
-- **Remarks**   
+- **Remark**   
     The list index represents the priority of the item. The smaller index is, the higher priority is.
-
-### barcode_zone_min_distance_to_image_borders
-Sets the minimum distance (in pixels) between the barcode zone and image borders.
-```python
-PublicRuntimeSetting.barcode_zone_min_distance_to_image_borders
-```
-- **Value range**   
-    [0, 0x7fffffff]
-      
-- **Default value**   
-    0
-    
-- **Remarks**   
-    0: means no limitation on the distance. 
-
 
 ### binarization_modes
 Sets the mode and priority for binarization.
@@ -172,7 +154,7 @@ PublicRuntimeSetting.binarization_modes
 - **Default value**   
     [EnumBinarizationMode.BM_LOCAL_BLOCK, EnumBinarizationMode.BM_SKIP, EnumBinarizationMode.BM_SKIP, EnumBinarizationMode.BM_SKIP, EnumBinarizationMode.BM_SKIP, EnumBinarizationMode.BM_SKIP, EnumBinarizationMode.BM_SKIP, EnumBinarizationMode.BM_SKIP]
     
-- **Remarks**   
+- **Remark**   
     The list index represents the priority of the item. The smaller index is, the higher priority is.
 
 ### colour_clustering_modes
@@ -188,7 +170,7 @@ PublicRuntimeSetting.colour_clustering_modes
 - **Default value**   
     [EnumColourClusteringMode.CCM_SKIP, EnumColourClusteringMode.CCM_SKIP, EnumColourClusteringMode.CCM_SKIP, EnumColourClusteringMode.CCM_SKIP, EnumColourClusteringMode.CCM_SKIP, EnumColourClusteringMode.CCM_SKIP, EnumColourClusteringMode.CCM_SKIP, EnumColourClusteringMode.CCM_SKIP]
     
-- **Remarks**   
+- **Remark**   
     The list index represents the priority of the item. The smaller index is, the higher priority is.
 
 ### colour_conversion_modes
@@ -204,7 +186,7 @@ PublicRuntimeSetting.colour_conversion_modes
 - **Default value**   
     [EnumColourConversionMode.CICM_GENERAL, EnumColourConversionMode.CICM_SKIP, EnumColourConversionMode.CICM_SKIP, EnumColourConversionMode.CICM_SKIP, EnumColourConversionMode.CICM_SKIP, EnumColourConversionMode.CICM_SKIP, EnumColourConversionMode.CICM_SKIP, EnumColourConversionMode.CICM_SKIP]
     
-- **Remarks**   
+- **Remark**   
     The list index represents the priority of the item. The smaller index is, the higher priority is.
 
 ### deblur_level
@@ -220,26 +202,8 @@ PublicRuntimeSettings.deblur_level
 - **Default value**   
     9
     
-- **Remarks**   
+- **Remark**   
     If you have a blurry image, you can set this property to a larger value. The higher the value set, the more effort the library will spend to decode images, but it may also slow down the recognition process.
-
-
-### deblur_modes
-Sets the mode and priority for deblurring.
-
-```python
-PublicRuntimeSetting.deblur_modes
-```
-
-- **Value range**   
-    Each list item can be any one of the [`EnumDeblurMode`]({{ site.enumerations }}parameter-mode-enums.html#deblurmode) Enumeration items.
-      
-- **Default value**   
-    [EnumDeblurMode.DM_SKIP, EnumDeblurMode.DM_SKIP, EnumDeblurMode.DM_SKIP, EnumDeblurMode.DM_SKIP, EnumDeblurMode.DM_SKIP, EnumDeblurMode.DM_SKIP, EnumDeblurMode.DM_SKIP, EnumDeblurMode.DM_SKIP, EnumDeblurMode.DM_SKIP, EnumDeblurMode.DM_SKIP]
-    
-- **Remarks**   
-    The list index represents the priority of the item. The smaller index is, the higher priority is.
-
 
 ### deformation_resisting_modes
 Sets the mode and priority for deformation resisting.
@@ -254,7 +218,7 @@ PublicRuntimeSetting.deformation_resisting_modes
 - **Default value**   
     [EnumDeformationResistingMode.DRM_SKIP, EnumDeformationResistingMode.DRM_SKIP, EnumDeformationResistingMode.DRM_SKIP, EnumDeformationResistingMode.DRM_SKIP, EnumDeformationResistingMode.DRM_SKIP, EnumDeformationResistingMode.DRM_SKIP, EnumDeformationResistingMode.DRM_SKIP, EnumDeformationResistingMode.DRM_SKIP]
     
-- **Remarks**   
+- **Remark**   
     The list index represents the priority of the item. The smaller index is, the higher priority is.
 
 ### dpm_code_reading_modes
@@ -270,7 +234,7 @@ PublicRuntimeSetting.dpm_code_reading_modes
 - **Default value**   
     [EnumDeformationResistingMode.DRM_SKIP, EnumDeformationResistingMode.DRM_SKIP, EnumDeformationResistingMode.DRM_SKIP, EnumDeformationResistingMode.DRM_SKIP, EnumDeformationResistingMode.DRM_SKIP, EnumDeformationResistingMode.DRM_SKIP, EnumDeformationResistingMode.DRM_SKIP, EnumDeformationResistingMode.DRM_SKIP]
     
-- **Remarks**   
+- **Remark**   
     The list index represents the priority of the item. The smaller index is, the higher priority is.
 
 ### expected_barcodes_count
@@ -286,7 +250,7 @@ PublicRuntimeSettings.expected_barcodes_count
 - **Default value**   
     0
     
-- **Remarks**   
+- **Remark**   
     - 0: means Unknown and it will find at least one barcode.
     - 1: try to find one barcode. If one barcode is found, the library will stop the localization process and perform barcode decoding.
     - n: try to find n barcodes. If the library only finds m \(m\<n\) barcode, it will try different algorithms till n barcodes are found or all algorithms are tried.
@@ -304,7 +268,7 @@ PublicRuntimeSetting.grayscale_transformation_modes
 - **Default value**   
     [EnumGrayscaleTransformationMode.GTM_ORIGINAL, EnumGrayscaleTransformationMode.GTM_SKIP, EnumGrayscaleTransformationMode.GTM_SKIP, EnumGrayscaleTransformationMode.GTM_SKIP, EnumGrayscaleTransformationMode.GTM_SKIP, EnumGrayscaleTransformationMode.GTM_SKIP, EnumGrayscaleTransformationMode.GTM_SKIP, EnumGrayscaleTransformationMode.GTM_SKIP]
     
-- **Remarks**   
+- **Remark**   
     The list index represents the priority of the item. The smaller index is, the higher priority is.
 
 ### intermediate_result_saving_mode
@@ -346,7 +310,7 @@ PublicRuntimeSetting.localization_modes
 - **Default value**   
     [EnumLocalizationMode.LM_CONNECTED_BLOCKS, EnumLocalizationMode.LM_SCAN_DIRECTLY, EnumLocalizationMode.LM_STATISTICS, EnumLocalizationMode.LM_LINES, EnumLocalizationMode.LM_SKIP, EnumLocalizationMode.LM_SKIP, EnumLocalizationMode.LM_SKIP, EnumLocalizationMode.LM_SKIP]
     
-- **Remarks**   
+- **Remark**   
     The list index represents the priority of the item. The smaller index is, the higher priority is.
 
 
@@ -363,7 +327,7 @@ PublicRuntimeSetting.max_algorithm_thread_count
 - **Default value**   
     4
     
-- **Remarks**   
+- **Remark**   
     To keep a balance between speed and quality, the library concurrently runs four different threads for barcode decoding by default.
 
 ### min_barcode_text_length
@@ -379,7 +343,7 @@ PublicRuntimeSetting.min_barcode_text_length
 - **Default value**   
     0
     
-- **Remarks**   
+- **Remark**   
     0: means no limitation on the barcode text length.
 
 ### min_result_confidence
@@ -395,7 +359,7 @@ PublicRuntimeSetting.min_result_confidence
 - **Default value**   
     0
     
-- **Remarks**   
+- **Remark**   
     0: means no limitation on the result confidence.
       
 ### pdf_raster_dpi
@@ -411,7 +375,7 @@ PublicRuntimeSetting.pdf_raster_dpi
 - **Default value**   
     300
     
-- **Remarks**   
+- **Remark**   
     When decoding barcodes from a PDF file using the DecodeFile method, the library will convert the PDF file to image(s) first, then perform barcode recognition.
     
 ### pdf_reading_mode
@@ -485,7 +449,7 @@ PublicRuntimeSetting.region_predetection_modes
     [EnumRegionPredetectionMode.RPM_GENERAL, EnumRegionPredetectionMode.RPM_SKIP, EnumRegionPredetectionMode.RPM_SKIP, EnumRegionPredetectionMode.RPM_SKIP, EnumRegionPredetectionMode.RPM_SKIP, EnumRegionPredetectionMode.RPM_SKIP, EnumRegionPredetectionMode.RPM_SKIP, EnumRegionPredetectionMode.RPM_SKIP]
 
     
-- **Remarks**   
+- **Remark**   
     The list index represents the priority of the item. The smaller index is, the higher priority is.If the image is large and the barcode on the image is very small, it is recommended to enable region predetection to speed up the localization process and recognition accuracy.
 
 ### region_right
@@ -555,7 +519,7 @@ PublicRuntimeSetting.scale_down_threshold
 - **Default value**   
     2300
     
-- **Remarks**   
+- **Remark**   
     If the shorter edge size is larger than the given threshold value, the library will calculate the required height and width of the barcode image and shrink the image to that size before localization. Otherwise, the library will perform barcode localization on the original image.
 
 ### scale_up_modes
@@ -571,7 +535,7 @@ PublicRuntimeSetting.scale_up_modes
 - **Default value**   
     [EnumScaleUpMode.SUM_AUTO, EnumScaleUpMode.SUM_SKIP, EnumScaleUpMode.SUM_SKIP, EnumScaleUpMode.SUM_SKIP, EnumScaleUpMode.SUM_SKIP, EnumScaleUpMode.SUM_SKIP, EnumScaleUpMode.SUM_SKIP, EnumScaleUpMode.SUM_SKIP]
     
-- **Remarks**   
+- **Remark**   
     The array index represents the priority of the item. The smaller the index, the higher the priority.   
 
 ### terminate_phase
@@ -600,7 +564,7 @@ PublicRuntimeSetting.texture_detection_modes
 - **Default value**   
     [EnumTextureDetectionMode.TDM_GENERAL_WIDTH_CONCENTRATION, EnumTextureDetectionMode.TDM_SKIP, EnumTextureDetectionMode.TDM_SKIP, EnumTextureDetectionMode.TDM_SKIP, EnumTextureDetectionMode.TDM_SKIP, EnumTextureDetectionMode.TDM_SKIP, EnumTextureDetectionMode.TDM_SKIP, EnumTextureDetectionMode.TDM_SKIP]
     
-- **Remarks**   
+- **Remark**   
     The array index represents the priority of the item. The smaller the index, the higher the priority.  
 
 ### text_assisted_correction_mode
@@ -629,7 +593,7 @@ PublicRuntimeSetting.text_filter_modes
 - **Default value**   
     [EnumTextFilterMode.TFM_GENERAL_CONTOUR, EnumTextFilterMode.TFM_SKIP, EnumTextFilterMode.TFM_SKIP, EnumTextFilterMode.TFM_SKIP, EnumTextFilterMode.TFM_SKIP, EnumTextFilterMode.TFM_SKIP, EnumTextFilterMode.TFM_SKIP, EnumTextFilterMode.TFM_SKIP]
     
-- **Remarks**   
+- **Remark**   
     The array index represents the priority of the item. The smaller the index, the higher the priority. If the image contains a lot of text, you can enable text filter to speed up the localization process.
 
 ### text_result_order_modes
@@ -645,7 +609,7 @@ PublicRuntimeSetting.text_result_order_modes
 - **Default value**   
     [EnumTextResultOrderMode.TROM_CONFIDENCE, EnumTextResultOrderMode.TROM_POSITION, EnumTextResultOrderMode.TROM_FORMAT, EnumTextResultOrderMode.TROM_SKIP, EnumTextResultOrderMode.TROM_SKIP, EnumTextResultOrderMode.TROM_SKIP, EnumTextResultOrderMode.TROM_SKIP, EnumTextResultOrderMode.TROM_SKIP]
     
-- **Remarks**   
+- **Remark**   
     The array index represents the priority of the item. The smaller the index, the higher the priority.
 
 ### timeout
@@ -661,5 +625,5 @@ PublicRuntimeSetting.timeout
 - **Default value**   
     10000
 
-- **Remarks**   
+- **Remark**   
     If you want to stop reading barcodes after a certain period of time, you can use this parameter to set a timeout.

@@ -1,7 +1,6 @@
 ---
 layout: default-layout
 title: Dynamsoft Barcode Reader C Language API Reference - Decode Methods
-description: This page shows the Decode methods of Dynamsoft Barcode Reader for C Language.
 keywords: DBR_DecodeFile, DBR_DecodeFileInMemory, DBR_DecodeBuffer, DBR_DecodeBase64String, DBR_DecodeDIB, decode methods, api reference, c
 needAutoGenerateSidebar: true
 ---
@@ -16,8 +15,6 @@ needAutoGenerateSidebar: true
   | [`DBR_DecodeBuffer`](#dbr_decodebuffer) | Decode barcodes from raw buffer. |
   | [`DBR_DecodeBase64String`](#dbr_decodebase64string) | Decode barcodes from a base64 encoded string. |
   | [`DBR_DecodeDIB`](#dbr_decodedib) | Decode barcode from a handle of device-independent bitmap (DIB). | 
-  | [`DBR_InitIntermediateResult`](#dbr_initintermediateresult) | Inits an intermediateResult struct with default values. |
-  | [`DBR_DecodeIntermediateResults`](#dbr_decodeintermediateresults) | Decodes barcode from intermediate results. |
   
 ---
  
@@ -39,7 +36,7 @@ DBR_API int DBR_DecodeFile (void* barcodeReader, const char* pFileName, const ch
 
 #### Return value
 Returns error code (returns 0 if the function operates successfully).    
-*You can call [`DBR_GetErrorString`](status-retrieval.md#dbr_geterrorstring) to get detailed error message.*
+*You can call [`DBR_GetErrorString`](status-retrieval.md#DBR_GetErrorString) to get detailed error message.*
 
 #### Code Snippet
 ```c
@@ -70,7 +67,7 @@ DBR_API int DBR_DecodeFileInMemory (void* barcodeReader, const unsigned char* pF
 
 #### Return value
 Returns error code (returns 0 if the function operates successfully).    
-*You can call [`DBR_GetErrorString`](status-retrieval.md#dbr_geterrorstring) to get detailed error message.*
+*You can call [`DBR_GetErrorString`](status-retrieval.md#DBR_GetErrorString) to get detailed error message.*
 
 #### Code Snippet
 ```c
@@ -107,7 +104,7 @@ DBR_API int DBR_DecodeBuffer (void* barcodeReader, const unsigned char* pBufferB
 
 #### Return value
 Returns error code (returns 0 if the function operates successfully).    
-*You can call [`DBR_GetErrorString`](status-retrieval.md#dbr_geterrorstring) to get detailed error message.*
+*You can call [`DBR_GetErrorString`](status-retrieval.md#DBR_GetErrorString) to get detailed error message.*
 
 #### Code Snippet
 ```c
@@ -142,7 +139,7 @@ DBR_API int DBR_DecodeBase64String (void* barcodeReader, const char* pBase64Stri
 
 #### Return value
 Returns error code (returns 0 if the function operates successfully).    
-*You can call [`DBR_GetErrorString`](status-retrieval.md#dbr_geterrorstring) to get detailed error message.*
+*You can call [`DBR_GetErrorString`](status-retrieval.md#DBR_GetErrorString) to get detailed error message.*
 
 #### Code Snippet
 ```c
@@ -177,7 +174,7 @@ DBR_API int DBR_DecodeDIB (void* barcodeReader, const HANDLE hDIB, const char* p
 
 #### Return value
 Returns error code (returns 0 if the function operates successfully).    
-*You can call [`DBR_GetErrorString`](status-retrieval.md#dbr_geterrorstring) to get detailed error message.*
+*You can call [`DBR_GetErrorString`](status-retrieval.md#DBR_GetErrorString) to get detailed error message.*
 
 #### Code Snippet
 ```c
@@ -188,75 +185,3 @@ GetDIBFromImage("C:\\Program Files (x86)\\Dynamsoft\\{Version number}\\Images\\A
 int errorCode = DBR_DecodeDIB(barcodeReader, pDIB, "");
 DBR_DestroyInstance(barcodeReader);
 ```
-
-
-&nbsp;
-
-
-## DBR_InitIntermediateResult
-Inits an intermediateResult struct with default values.
-
-```c
-DBR_API int DBR_InitIntermediateResult (IntermediateResultType intermediateResultType, IntermediateResult* pIntermediateResult)	
-```   
-   
-#### Parameters
-`[in]	intermediateResultType` The type of the intermediate result to init.  
-`[in, out]	pIntermediateResult` The intermediate result struct.  
-
-#### Return value
-Returns error code (returns 0 if the function operates successfully).    
-*You can call [`DBR_GetErrorString`](status-retrieval.md#dbr_geterrorstring) to get detailed error message.*
-
-#### Code Snippet
-```c
-IntermediateResult imResult;
-DBR_InitIntermediateResult(IRT_ORIGINAL_IMAGE, &imResult);
-```
-
-
-&nbsp;
-
-
-
-## DBR_DecodeIntermediateResults
-Decodes barcode from intermediate results.
-
-```c
-DBR_API int DBR_DecodeIntermediateResults (void* barcodeReader, const IntermediateResultArray *pIntermediateResultArray, const char* pTemplateName)	
-```   
-   
-#### Parameters
-`[in] barcodeReader` Handle of the barcode reader instance.  
-`[in]	pIntermediateResultArray` The intermediate result array for decoding.  
-`[in]	pTemplateName` The template name.
-
-#### Return value
-Returns error code (returns 0 if the function operates successfully).    
-*You can call [`DBR_GetErrorString`](status-retrieval.md#dbr_geterrorstring) to get detailed error message.*
-
-#### Code Snippet
-```c
-void * handle = DBR_CreateInstance();
-char errorBuf[512];
-char fileName[] = "Your barcode file";
-PublicRuntimeSettings settings;
-DBR_GetRuntimeSettings(handle, &settings);
-settings.intermediateResultTypes = IRT_ORIGINAL_IMAGE;
-DBR_UpdateRuntimeSettings(handle, &settings, errorBuf, 512);
-DBR_DecodeFile(handle, fileName, "");
-IntermediateResultArray * imResults = NULL;
-DBR_GetIntermediateResults(handle, &imResults);
-DBR_DecodeIntermediateResults(handle, imResults, "");
-TextArray * results = NULL;
-DBR_GetAllTextResults(handle, &results);
-DBR_FreeTextResults(&results);
-DBR_DestroyInstance(barcodeReader);
-```
-
-&nbsp;
-
-
-
-
-

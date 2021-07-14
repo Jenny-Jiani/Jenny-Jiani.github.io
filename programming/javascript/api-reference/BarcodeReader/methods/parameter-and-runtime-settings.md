@@ -1,14 +1,13 @@
 ---
 layout: default-layout
 title: Dynamsoft Barcode Reader JavaScript API Reference - BarcodeReader Parameter and Runtime Settings Methods
-description: This page shows BarcodeReader Parameter and Runtime Settings methods of Dynamsoft Barcode Reader JavaScript SDK.
 keywords: getModeArgument, setModeArgument, getRuntimeSettings, resetRuntimeSettings, updateRuntimeSettings, parameter and runtime settings methods, BarcodeReader, api reference, javascript, js
 needAutoGenerateSidebar: true
 needGenerateH3Content: false
 ---
 
 
-# JavaScript API Reference - `BarcodeReader` Parameter and Runtime Settings Methods
+# Javascript API Reference - `BarcodeReader` Parameter and Runtime Settings Methods
 
 | Method               | Description |
 |----------------------|-------------|
@@ -28,54 +27,58 @@ Get the argument value for the specified mode parameter.
 getModeArgument(modeName, index, argumentName) returns Promise
 ```
 
-### Parameters
+#### Parameters
 
 `modeName` *string*  
 `index` *number*  
 `argumentName` *string*
 
-### Return Value
+#### Return Value
 
 `Promise<string>`
 
-### Sample
+#### Sample
 
-```javascript
-    let argumentValue = await reader.getModeArgument("BinarizationModes", 0, "EnableFillBinaryVacancy");
-```
+[Read barcodes from live camera](https://demo.dynamsoft.com/dbr_wasm/barcode_reader_javascript.html)
+
+
+&nbsp;
 
 ## setModeArgument
 
 Set the argument value for the specified mode parameter.
 
 ```javascript
-    setModeArgument(modeName, index, argumentName, argumentValue) returns Promise
+setModeArgument(modeName, index, argumentName, argumentValue) returns Promise
 ```
 
-### Parameters
 
-- `modeName` *string*  
-- `index` *number*  
-- `argumentName` *string*  
-- `argumentValue` *string*
+#### Parameters
 
-### Return Value
+`modeName` *string*  
+`index` *number*  
+`argumentName` *string*  
+`argumentValue` *string*
+
+#### Return Value
 
 `Promise<void>`
 
-### Sample
 
+#### Sample
 ```javascript
 await reader.setModeArgument("BinarizationModes", 0, "EnableFillBinaryVacancy", "1");
 ```
 
 [Read barcodes from live camera](https://demo.dynamsoft.com/dbr_wasm/barcode_reader_javascript.html)
 
-### :+1: Tips and Tricks 
+#### :+1: Tips and Tricks 
 
-* Check out our [list of modes and arguments](../../../../../parameters/enum/parameter-mode-enums.md). 
-
+* Check out our [list of modes and arguments](https://www.dynamsoft.com/help/Barcode-Reader/_modes_argument.html).  
 Note: Javascript Edition may not support all available modes listed. 
+
+
+&nbsp;
 
 ## getRuntimeSettings
 
@@ -85,36 +88,41 @@ Get the current runtime settings.
 getRuntimeSettings() returns Promise
 ```
 
-### Return Value
-
-Promise<[RuntimeSettings](../../global-interfaces.md#runtimesettings)>
 
 
-### Sample
+#### Return Value
 
-```javascript
-    let settings = await reader.getRuntimeSettings();
-    settings.expectedBarcodesCount = 5;
-    await reader.updateRuntimeSettings(settings);
-```
+<code>Promise<<a href="/global-interfaces.md#RuntimeSettings">RuntimeSettings</a>></code>
+
+
+#### Sample
+
+[Read barcodes from live camera](https://demo.dynamsoft.com/dbr_wasm/barcode_reader_javascript.html)
+
+
+
+&nbsp;
 
 ## resetRuntimeSettings
 
-Reset all runtime settings to `speed` mode settings. 
+Reset all runtime settings to default values.
 
 ```javascript
 resetRuntimeSettings() returns Promise
 ```
 
-### Return Value
+
+#### Return Value
 
 `Promise<void>`
 
-### Sample
 
-```javascript
-    await reader.resetRuntimeSettings();
-```
+#### Sample
+
+[Read barcodes from live camera](https://demo.dynamsoft.com/dbr_wasm/barcode_reader_javascript.html)
+
+
+&nbsp;
 
 ## updateRuntimeSettings
 
@@ -124,21 +132,23 @@ Update the runtime settings with a given object or use the string `speed`, `bala
 updateRuntimeSettings(settings) returns Promise
 ```
 
-### Parameters
 
-`settings` [*RuntimeSettings*](../../global-interfaces.md#runtimesettings) | *string* 
+#### Parameters
 
-### Return Value
+`settings` [*RuntimeSettings*](/global-interfaces.md#runtimesettings) | *string* 
+
+#### Return Value
 
 `Promise<void>`
 
-### Sample
+
+#### Sample
 
 ```javascript
-    await reader.updateRuntimeSettings('balance');
-    let settings = await reader.getRuntimeSettings();
-    settings.barcodeFormatIds = Dynamsoft.EnumBarcodeFormat.BF_ONED;
-    await reader.updateRuntimeSettings(settings);
+await reader.updateRuntimeSettings('balance');
+let settings = await reader.getRuntimeSettings();
+settings.barcodeFormatIds = Dynamsoft.EnumBarcodeFormat.BF_ONED;
+await reader.updateRuntimeSettings(settings);
 ```
 
 [Read barcodes from live camera](https://demo.dynamsoft.com/dbr_wasm/barcode_reader_javascript.html)

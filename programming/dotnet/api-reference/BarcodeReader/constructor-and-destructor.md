@@ -1,7 +1,6 @@
 ---
 layout: default-layout
 title: Dynamsoft Barcode Reader .NET API Reference - BarcodeReader Constructor and Destructor
-description: This page shows BarcodeReader Constructor and Destructor of Dynamsoft Barcode Reader for .NET SDK.
 keywords: BarcodeReader, Dispose, api reference, .Net
 needAutoGenerateSidebar: true
 ---
@@ -23,32 +22,32 @@ needAutoGenerateSidebar: true
 
 Default constructor of a `BarcodeReader` object.
 
-```csharp
-Dynamsoft.DBR.BarcodeReader.BarcodeReader()
+```C#
+Dynamsoft.Barcode.BarcodeReader.BarcodeReader()
 ```
 
 ### BarcodeReader(string productKey)
 
 Constructor with a given product key.
 
-```csharp
-Dynamsoft.DBR.BarcodeReader.BarcodeReader(string productKey)
+```C#
+Dynamsoft.Barcode.BarcodeReader.BarcodeReader(string productKey)
 ```
 
 #### Parameters
-`[in] productKey` <*string*> : Product key. 
+`[in] productKey` Product key. 
 
 ### BarcodeReader(string modulePath, string productKey)
 
 Constructor with a given product key and a given path to load DLLs.
 
-```csharp
-Dynamsoft.DBR.BarcodeReader.BarcodeReader(string modulePath, string productKey)
+```C#
+Dynamsoft.Barcode.BarcodeReader.BarcodeReader(string modulePath, string productKey)
 ```
 
 #### Parameters
-`[in] modulePath` <*string*> : The path where you store these DLLs.  
-`[in] productKey` <*string*> : Product key. 
+`[in] modulePath` The path where you store these DLLs.  
+`[in] productKey` Product key. 
 
 &nbsp;
 
@@ -59,6 +58,6 @@ Dynamsoft.DBR.BarcodeReader.BarcodeReader(string modulePath, string productKey)
 
 Destroys an instance of Dynamsoft Barcode Reader.
 
-```csharp
-void Dynamsoft.DBR.BarcodeReader.Dispose() 
+```C#
+void Dynamsoft.Barcode.BarcodeReader.Dispose() 
 ```

@@ -1,7 +1,6 @@
 ---
 layout: default-layout
 title: Dynamsoft Barcode Reader Parameter Reference for FormatSpecification Object - Content Organization Control Parameters
-description: This page shows Dynamsoft Barcode Reader Parameter Reference for FormatSpecification Object - Content Organization Control Parameters.
 keywords: Name, FormatSpecification, content organization control parameters, parameter reference, parameter
 needAutoGenerateSidebar: true
 needGenerateH3Content: false
@@ -19,7 +18,7 @@ needGenerateH3Content: false
 ## Name
 The name of the FormatSpecification object
 
-**Remarks**    
+**Remark**    
 It must be a unique name.
 
 ### As Json Parameter

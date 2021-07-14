@@ -1,28 +1,24 @@
 ---
 layout: default-layout
 title: Dynamsoft Barcode Reader Objective-C & Swift API Reference - DynamsoftBarcodeReader Class
-description: This page shows the DynamsoftBarcodeReader Class of Dynamsoft Barcode Reader for iOS SDK.
 keywords: DynamsoftBarcodeReader, class, api reference, objective-c, oc, swift
 needAutoGenerateSidebar: false
 ---
 
 
 # DynamsoftBarcodeReader
-
 - [Attributes](#attributes)
 - [Methods](#methods)
-
-  - [Initialize](#initialize)
-  - [Decode](#decode)
-  - [Parameter and Runtime Settings](#parameter-and-runtime-settings)
-  - [License related](#license-related)
-  - [Result](#result)
-  - [Video](#video)
+    * [Initialize](#initialize)
+    * [Decode](#decode)
+    * [Parameter and Runtime Settings](#parameter-and-runtime-settings)
+    * [License related](#license-related)
+    * [Result](#result)
+    * [Video](#video)
 
 Defines a class that provides functions for working with extracting barcode data. 
 
-Four methods are now supported for editing runtime settings — reset, initialize, append, and update:
-
+Four methods are now supported for editing runtime settings - reset, initialize, append, and update:
 - Reset runtime settings: resets all parameters in runtime settings to default values.
 - Initialize with template: resets runtime settings firstly and replaces all parameters in runtime settings with the values specified in the given template regardless of the current runtime settings.
 - Append template to runtime settings: appends the template and updates runtime settings; the conflicting values will be assigned by the rules in DBRPublicRuntimeSettings.
@@ -45,9 +41,7 @@ Four methods are now supported for editing runtime settings — reset, initializ
 
 
 ### license
-
 Stores the license used in DynamsoftBarcodeReader.
-
 ```objc
 NSString* license
 ```
@@ -60,6 +54,8 @@ NSString* license
   |----------------------|-------------|
   | [`init`](../api/initialize.md#init) | Create an instance of Dynamsoft Barcode Reader. |
 
+&nbsp; 
+
 
 ### Decode
 
@@ -69,6 +65,9 @@ NSString* license
   | [`decodeImage`](../api/decode.md#decodeimage) | Decode barcodes from an image file in memory. |
   | [`decodeBuffer`](../api/decode.md#decodebuffer) | Decode barcodes from raw buffer. |
   | [`decodeBase64`](../api/decode.md#decodebase64) | Decode barcodes from a base64 encoded string. |
+
+
+&nbsp; 
 
 
 ### Parameter and Runtime Settings
@@ -107,6 +106,8 @@ NSString* license
   | [`initWithLicenseFromServer`](../api/license.md#initwithlicensefromserver) | Initialize license and connect to the specified server for online verification. |
   | [`outputLicenseToString`](../api/license.md#outputlicensetostring) | Output the license content to a string from the license server. |
 
+&nbsp; 
+
 
 ### Result
    
@@ -119,7 +120,6 @@ NSString* license
 
 
 ### Video
-
 #### Decode
    
   | Method               | Description |

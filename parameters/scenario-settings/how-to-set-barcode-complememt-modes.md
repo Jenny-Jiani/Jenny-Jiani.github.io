@@ -1,7 +1,7 @@
 ---   
 layout: default-layout
-description: Decode incomplete barcodes by using BarcodeComplementModes
-title: How to set barcode complement modes
+description: Decode incomplete barcodes by using BarcodeCompletementModes
+title: How to set barcode complememt modes
 keywords: BarcodeComplementModes, damaged image
 ---
 
@@ -33,7 +33,7 @@ for (int i = 0; i < iCount; i++)
 { 
     printf("Text: %s", paryResult->results[i]->barcodeText); //print results 
 } 
-dynamsoft::dbr::CBarcodeReader::FreeTextResults(&paryResult); 
+CBarcodeReader::FreeTextResults(&paryResult); 
 delete runtimeSettings; 
 delete reader; 
 ```  

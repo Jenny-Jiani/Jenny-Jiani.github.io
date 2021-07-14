@@ -1,7 +1,6 @@
 ---
 layout: default-layout
 title: Dynamsoft Barcode Reader Java API Reference - Point Class
-description: This page shows the Point Class of Dynamsoft Barcode Reader for Java SDK API Reference.
 keywords: Point, class, api reference, java
 needAutoGenerateSidebar: false
 ---
@@ -22,12 +21,12 @@ Stores an x- and y-coordinate pair in two-dimensional space.
 ### x
 The X coordinate of the point.
 ```java
-int com.dynamsoft.dbr.Point.x
+int com.dynamsoft.barcode.Point.x
 ```
 
 
 ### y
 The Y coordinate of the point.
 ```java
-int com.dynamsoft.dbr.Point.y
+int com.dynamsoft.barcode.Point.y
 ```

@@ -18,7 +18,7 @@ When DBR is processing multi-page files (TIF or PDF), you can use the parameter 
 - An integer index values, representing a specific page;
 - Two integer index values, connected by "-" in the middle, representing a certain range of page numbers.
 
-[`Pages`]({{ site.parameters_reference }}image-parameter/image-process-control.html#pages) can only be configured in Json, for example, `{"Pages": "0,3,5,7-10"}`.
+[`Pages`]({{ site.parameters_reference }}image-parameter/image-process-control.html#pages) can only be configured in Json, for example, `{"Pages"："0,3,5,7-10"}`.
 
 In the returned decoding result, you can get the information of the corresponding barcode on the page of the file. Please refer to the following procedure:
 
@@ -36,7 +36,7 @@ for(int j = 0; j < iCount; j++)  //Loop through all returned results
     LocalizationResult* pLocRes = pBarcode->localizationResult;  
     printf("pageNumber:%d\n", pLocRes->PageNumber); //get the page number in which the barcode is located
 }  
-dynamsoft::dbr::CBarcodeReader::FreeTextResults(&pResult);        
+CBarcodeReader::FreeTextResults(&pResult);        
 delete reader; 
 ```
 

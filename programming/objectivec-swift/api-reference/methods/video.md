@@ -1,7 +1,6 @@
 ---
 layout: default-layout
 title: Dynamsoft Barcode Reader Objective-C & Swift API Reference - Video Methods
-description: This page shows Video methods of Dynamsoft Barcode Reader for iOS SDK.
 keywords: startFrameDecoding, startFrameDecodingEx, appendFrame, stopFrameDecoding, getFrameDecodingParameters, setDBRErrorDelegate, setDBRTextResultDelegate, setDBRIntermediateResultDelegate, getLengthOfFrameQueue, video methods, api reference, objective-c, oc, swift
 needAutoGenerateSidebar: true
 ---
@@ -39,8 +38,11 @@ needAutoGenerateSidebar: true
   
 ---
 
-## startFrameDecoding
 
+
+
+
+## startFrameDecoding
 Starts a new thread to decode barcodes from the inner frame queue.
 
 ```objc
@@ -54,8 +56,7 @@ Starts a new thread to decode barcodes from the inner frame queue.
             error:(NSError* _Nullable * _Nullable)error;
 ```   
    
-### Parameters
-
+#### Parameters
 `[in] maxQueueLength` The max number of frames waiting for decoding.  
 `[in] maxResultQueueLength` The max number of frames whose results (text result/localization result) will be kept.  
 `[in] width` The width of the frame image in pixels.  
@@ -65,10 +66,9 @@ Starts a new thread to decode barcodes from the inner frame queue.
 `[in] templateName` The template name.  
 `[in,out] error` Input a pointer to an error object. If an error occurs, this pointer is set to an actual error object containing the error information. You may specify nil for this parameter if you do not want the error information.
 
-### Code Snippet
 
+#### Code Snippet
 Objective-C:
-
 ```objc
 DynamsoftBarcodeReader *barcodeReader;
 barcodeReader = [[DynamsoftBarcodeReader alloc] initWithLicense:@"t0260NwAAAHV***************"];
@@ -76,15 +76,18 @@ NSError __autoreleasing * _Nullable error;
 [barcodeReader startFrameDecoding:2 maxResultQueueLength:10 width:1024 height:720 stride:720 format:EnumImagePixelFormatBinary templateName:@"" error:&error];
 ```
 Swift:
-
 ```Swift
 let barcodeReader = DynamsoftBarcodeReader.init(license: "t0260NwAAAHV***************")
 let error: NSError? = NSError()
 barcodeReader.startFrameDecoding(maxQueueLength:2, maxResultQueueLength:10, width:1024, height:720, stride:720, format:EnumImagePixelFormat.Binary, templateName:"", error:&error)
 ```
+&nbsp;
+
+
+
+
 
 ## startFrameDecodingEx
-
 Start a new thread to decode barcodes from the inner frame queue with specific frame decoding setting defined in [`iFrameDecodingParameters`](../class/iFrameDecodingParameters.md) struct.
 
 ```objc
@@ -93,16 +96,13 @@ Start a new thread to decode barcodes from the inner frame queue with specific f
                     error:(NSError* _Nullable __autoreleasing* _Nullable)error;
 ```   
 
-### Parameters
-
+#### Parameters
 `[in] parameters` The frame decoding parameters.  
 `[in] templateName` The template name.  
 `[in,out] error` Input a pointer to an error object. If an error occurs, this pointer is set to an actual error object containing the error information. You may specify nil for this parameter if you do not want the error information.
 
-### Code Snippet
-
+#### Code Snippet
 Objective-C:
-
 ```objc
 DynamsoftBarcodeReader *barcodeReader;
 barcodeReader = [[DynamsoftBarcodeReader alloc] initWithLicense:@"t0260NwAAAHV***************"];
@@ -117,7 +117,6 @@ parameters.imagePixelFormat = EnumImagePixelFormatBinary;
 [barcodeReader startFrameDecodingEx:parameters templateName:@"" error:&error];
 ```
 Swift:
-
 ```Swift
 let barcodeReader = DynamsoftBarcodeReader.init(license: "t0260NwAAAHV***************")
 let error: NSError? = NSError()
@@ -130,36 +129,35 @@ parameters?.stride = 720
 parameters?.imagePixelFormat = EnumImagePixelFormat.Binary
 barcodeReader.StartFrameDecodingEx(parameter: parameters!, templateName: "", error: &error)
 ```
+&nbsp;
+
+
+
 
 ## appendFrame
-
 Appends a frame image buffer to the inner frame queue.
 
 ```objc
 -(NSInteger)appendFrame:(NSData* _Nullable) bufferBytes;
 ```   
    
-### Parameters
-
+#### Parameters
 `[in] bufferBytes` The array of bytes which contain the image data.  
 
-### Return value
-
+#### Return value
 Returns the ID of the appended frame.
 
-### Code Snippet
-
+#### Code Snippet
 Objective-C:
-
 ```objc
 DynamsoftBarcodeReader *barcodeReader;
 barcodeReader = [[DynamsoftBarcodeReader alloc] initWithLicense:@"t0260NwAAAHV***************"];
 NSError __autoreleasing * _Nullable error;
+NSInteger *frameId;
 [barcodeReader startFrameDecoding:2 maxResultQueueLength:10 width:1024 height:720 stride:720 format:EnumImagePixelFormatBinary templateName:@"" error:&error];
-NSInteger frameId = [barcodeReader appendFrame:bufferBytes];
+frameId = [barcodeReader appendFrame:bufferBytes];
 ```
 Swift:
-
 ```Swift
 let barcodeReader = DynamsoftBarcodeReader.init(license: "t0260NwAAAHV***************")
 let error: NSError? = NSError()
@@ -167,22 +165,29 @@ barcodeReader.startFrameDecoding(maxQueueLength:2, maxResultQueueLength:10, widt
 let frameId = barcodeReader.appendFrame(bufferBytes:bufferBytes)
 ```
 
-## stopFrameDecoding
+&nbsp;
 
+
+
+
+
+
+# stopFrameDecoding
 Stops the frame decoding thread created by [`startFrameDecoding`](#startframedecoding) or [`startFrameDecodingEx`](#startframedecodingex).
 
 ```objc
 -(void)stopFrameDecoding:(NSError* _Nullable * _Nullable)error;
 ```   
-   
-### Parameters
 
+---
+   
+#### Parameters
 `[in,out] error` Input a pointer to an error object. If an error occurs, this pointer is set to an actual error object containing the error information. You may specify nil for this parameter if you do not want the error information.
 
-### Code Snippet
+---
 
+#### Code Snippet
 Objective-C:
-
 ```objc
 DynamsoftBarcodeReader *barcodeReader;
 barcodeReader = [[DynamsoftBarcodeReader alloc] initWithLicense:@"t0260NwAAAHV***************"];
@@ -191,7 +196,6 @@ NSError __autoreleasing * _Nullable error;
 [barcodeReader stopFrameDecoding:&error];
 ```
 Swift:
-
 ```Swift
 let barcodeReader = DynamsoftBarcodeReader.init(license: "t0260NwAAAHV***************")
 let error: NSError? = NSError()
@@ -199,127 +203,133 @@ barcodeReader.startFrameDecoding(maxQueueLength:2, maxResultQueueLength:10, widt
 barcodeReader.stopFrameDecoding(error:&error)
 ```
 
-## getFrameDecodingParameters
+&nbsp;
 
+
+
+
+
+# getFrameDecodingParameters
 Initialize frame decoding parameters with default values.
 
 ```objc
 -(iFrameDecodingParameters*_Nullable)getFrameDecodingParameters:(NSError* _Nullable * _Nullable)error;
 ```   
 
-### Parameters
-
+#### Parameters
 `[in,out] error` Input a pointer to an error object. If an error occurs, this pointer is set to an actual error object containing the error information. You may specify nil for this parameter if you do not want the error information. 
 
-### Return value
-
+#### Return value
 Returns frame decoding parameters.
 
-### Code Snippet
-
+#### Code Snippet
 Objective-C:
-
 ```objc
 DynamsoftBarcodeReader *barcodeReader;
 barcodeReader = [[DynamsoftBarcodeReader alloc] initWithLicense:@"t0260NwAAAHV***************"];
 iFrameDecodingParameters *parameters = [barcodeReader getFrameDecodingParameters:nil];
 ```
 Swift:
-
 ```Swift
 let barcodeReader = DynamsoftBarcodeReader.init(license: "t0260NwAAAHV***************")
 let parameters = barcodeReader.getFrameDecodingParameters(error: nil)
 ```
 
-## setDBRErrorDelegate
+&nbsp;
 
+
+
+
+
+## setDBRErrorDelegate
 Sets callback function to process errors generated during frame decoding.
 
 ```objc
 -(void)setDBRErrorDelegate:(id _Nullable)errorDelegate userData:(NSObject* _Nullable)userData;
 ```   
    
-### Parameters
-
+#### Parameters
 `[in] errorDelegate` Callback function.  
 `[in] userData` Customized arguments passed to your function.
 
-### Code Snippet
-
+#### Code Snippet
 Objective-C:
-
 ```objc
 DynamsoftBarcodeReader *barcodeReader;
 barcodeReader = [[DynamsoftBarcodeReader alloc] initWithLicense:@"t0260NwAAAHV***************"];
 [barcodeReader setDBRErrorDelegate:self userData:nil];
 ```
 Swift:
-
 ```Swift
 let barcodeReader = DynamsoftBarcodeReader.init(license: "t0260NwAAAHV***************")
 barcodeReader.setDBRErrorDelegate(errorDelegate:self, userData:nil)
 ```
 
-## setDBRTextResultDelegate
+&nbsp;
 
+
+
+
+## setDBRTextResultDelegate
 Set callback function to process text results generated during frame decoding.
 
 ```objc
 -(void)setDBRTextResultDelegate:(id _Nullable)textResultDelegate userData:(NSObject* _Nullable)userData;
 ```   
    
-### Parameters
-
+#### Parameters
 `[in] textResultDelegate` Callback function.  
 `[in] userData`Customized arguments passed to your function.
 
-### Code Snippet
 
+#### Code Snippet
 Objective-C:
-
 ```objc
 DynamsoftBarcodeReader *barcodeReader;
 barcodeReader = [[DynamsoftBarcodeReader alloc] initWithLicense:@"t0260NwAAAHV***************"];
 [barcodeReader setDBRTextResultDelegate:self userData:nil];
 ```
 Swift:
-
 ```Swift
 let barcodeReader = DynamsoftBarcodeReader.init(license: "t0260NwAAAHV***************")
 barcodeReader.setDBRTextResultDelegate(textResultDelegate:self, userData:nil)
 ```
 
-## setDBRIntermediateResultDelegate
+&nbsp;
 
+
+
+
+## setDBRIntermediateResultDelegate
 Set callback function to process intermediate results generated during frame decoding.
 
 ```objc
 -(void)setDBRIntermediateResultDelegate:(id _Nullable)intermediateResultDelegate userData:(NSObject* _Nullable)userData;	
 ```   
    
-### Parameters
-
+#### Parameters
 `[in] intermediateResultDelegate` Callback function.  
 `[in] userData` Customized arguments passed to your function.
 
-### Code Snippet
-
+#### Code Snippet
 Objective-C:
-
 ```objc
 DynamsoftBarcodeReader *barcodeReader;
 barcodeReader = [[DynamsoftBarcodeReader alloc] initWithLicense:@"t0260NwAAAHV***************"];
 [barcodeReader setDBRIntermediateResultDelegate:self userData:nil];
 ```
 Swift:
-
 ```Swift
 let barcodeReader = DynamsoftBarcodeReader.init(license: "t0260NwAAAHV***************")
 barcodeReader.setDBRIntermediateResultDelegate(intermediateResultDelegate:self, userData:nil)
 ```
 
-## getLengthOfFrameQueue
+&nbsp;
 
+
+
+
+## getLengthOfFrameQueue
 Get length of current inner frame queue.
 
 ```objc
@@ -328,23 +338,20 @@ Get length of current inner frame queue.
 
 ---
 
-### Return value
-
+#### Return value
 Returns the length of the inner frame queue.
 
 ---
 
-### Code Snippet
-
+#### Code Snippet
 Objective-C:
-
 ```objc
 DynamsoftBarcodeReader *barcodeReader;
 barcodeReader = [[DynamsoftBarcodeReader alloc] initWithLicense:@"t0260NwAAAHV***************"];
-NSInteger length = [barcodeReader getLengthOfFrameQueue];
+NSInteger *length;
+length = [barcodeReader getLengthOfFrameQueue];
 ```
 Swift:
-
 ```Swift
 let barcodeReader = DynamsoftBarcodeReader.init(license: "t0260NwAAAHV***************")
 let length = barcodeReader.getLengthOfFrameQueue()

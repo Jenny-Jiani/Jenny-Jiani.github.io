@@ -1,7 +1,6 @@
 ---
 layout: default-layout
 title: Dynamsoft Barcode Reader Enumerations - Result Enumerations
-description: This article shows Result Enumerations of Dynamsoft Barcode Reader.
 keywords: IMResultDataType, IntermediateResultSavingMode, IntermediateResultType, ResultCoordinateType, ResultType, TextResultOrderMode, result enumeration, enumeration
 needAutoGenerateSidebar: true
 needGenerateH3Content: false
@@ -30,7 +29,7 @@ Describes the intermediate result data type.
 | Language | Declaration |
 | -------- | ----------- |
 | C / C++ | `enum IMResultDataType` |
-| .Net | `enum Dynamsoft.DBR.EnumIMResultDataType` |
+| .Net | `enum Dynamsoft.Barcode.EnumIMResultDataType` |
 | JavaScript | `Dynamsoft.EnumIMResultDataType` |
 | Python | `class EnumIMResultDataType(IntEnum)` |
 | Java / Android | `class EnumIMResultDataType` |
@@ -47,7 +46,6 @@ Describes the intermediate result data type.
 | IMRDT_LOCALIZATIONRESULT | EnumIMResultDataTypeLocalizationResult | 0x08 | Specifies the `LocalizationResult`. |
 | IMRDT_REGIONOFINTEREST  | EnumIMResultDataTypeRegionOfInterest | 0x10 | Specifies the `RegionOfInterest`. |
 | IMRDT_QUADRILATERAL | EnumIMResultDataTypeQuadrilateral | 0x20 | Specifies the `Quadrilateral`. |  
-| IMRDT_REFERENCE | EnumIMResultDataTypeReference | 0x40 | Specifies the internal data format for using other Dynamsoft products, such as Dynamic Web TWAIN. |  
 
 **See also**
 - C / C++: [`ImageData`]({{ site.structs }}ImageData.html), [`Contour`]({{ site.structs }}Contour.html), [`LineSegment`]({{ site.structs }}LineSegment.html), [`LocalizationResult`]({{ site.structs }}LocalizationResult.html), [`RegionOfInterest`]({{ site.structs }}RegionOfInterest.html), [`Quadrilateral`]({{ site.structs }}Quadrilateral.html).   
@@ -68,7 +66,7 @@ Describes the intermediate result saving mode.
 | Language | Declaration |
 | -------- | ----------- |
 | C / C++ | `enum IntermediateResultSavingMode` |
-| .Net | `enum Dynamsoft.DBR.EnumIntermediateResultSavingMode` |
+| .Net | `enum Dynamsoft.Barcode.EnumIntermediateResultSavingMode` |
 | JavaScript | `Dynamsoft.EnumIntermediateResultSavingMode` |
 | Python | `class EnumIntermediateResultSavingMode(IntEnum)` |
 | Java / Android | `class EnumIntermediateResultSavingMode` |
@@ -78,10 +76,9 @@ Describes the intermediate result saving mode.
    
 | Member (except ObjC/Swift) | Member (ObjC/Swift) | Value | Description |
 | -------------------------- | ------------------- | ----- | ----------- |
-| IRSM_MEMORY | EnumIntermediateResultSavingModeMemory | 0x01 | Saves intermediate results in memory with public data format. |
+| IRSM_MEMORY | EnumIntermediateResultSavingModeMemory | 0x01 | Saves intermediate results in memory. |
 | IRSM_FILESYSTEM | EnumIntermediateResultSavingModeFileSystem | 0x02 | Saves intermediate results in file system. Check arguments of [`IntermediateResultSavingMode`]({{ site.parameters_reference }}image-parameter/IntermediateResultSavingMode.html#mode-arguments) for available argument settings. |
-| IRSM_BOTH | EnumIntermediateResultSavingModeBoth | 0x04 | Saves intermediate results using IRSM_MEMORY and IRSM_FILESYSTEM. Check arguments of [`IntermediateResultSavingMode`]({{ site.parameters_reference }}image-parameter/IntermediateResultSavingMode.html#mode-arguments) for available argument settings. |
-| IRSM_REFERENCE_MEMORY | EnumIntermediateResultSavingModeReferenceMemory | 0x08 | Saves intermediate results in memory with internal data format. |
+| IRSM_BOTH | EnumIntermediateResultSavingModeBoth | 0x04 | Saves intermediate results in both memory and file system. Check arguments of [`IntermediateResultSavingMode`]({{ site.parameters_reference }}image-parameter/IntermediateResultSavingMode.html#mode-arguments) for available argument settings. |
 
 
 
@@ -98,7 +95,7 @@ Describes the intermediate result type.
 | Language | Declaration |
 | -------- | ----------- |
 | C / C++ | `enum IntermediateResultType` |
-| .Net | `enum Dynamsoft.DBR.EnumIntermediateResultType` |
+| .Net | `enum Dynamsoft.Barcode.EnumIntermediateResultType` |
 | JavaScript | `Dynamsoft.EnumIntermediateResultType` |
 | Python | `class EnumIntermediateResultType(IntEnum)` |
 | Java / Android | `class EnumIntermediateResultType` |
@@ -139,7 +136,7 @@ Describes the result coordinate type.
 | Language | Declaration |
 | -------- | ----------- |
 | C / C++ | `enum ResultCoordinateType` |
-| .Net | `enum Dynamsoft.DBR.EnumResultCoordinateType` |
+| .Net | `enum Dynamsoft.Barcode.EnumResultCoordinateType` |
 | JavaScript | `Dynamsoft.EnumResultCoordinateType` |
 | Python | `class EnumResultCoordinateType(IntEnum)` |
 | Java / Android | `class EnumResultCoordinateType` |
@@ -168,7 +165,7 @@ Describes the extended result type.
 | Language | Declaration |
 | -------- | ----------- |
 | C / C++ | `enum ResultType` |
-| .Net | `enum Dynamsoft.DBR.EnumResultType` |
+| .Net | `enum Dynamsoft.Barcode.EnumResultType` |
 | JavaScript | `Dynamsoft.EnumResultType` |
 | Python | `class EnumResultType(IntEnum)` |
 | Java / Android | `class EnumResultType` |
@@ -199,7 +196,7 @@ Describes the text result order mode.
 | Language | Declaration |
 | -------- | ----------- |
 | C / C++ | `enum TextResultOrderMode` |
-| .Net | `enum Dynamsoft.DBR.EnumTextResultOrderMode` |
+| .Net | `enum Dynamsoft.Barcode.EnumTextResultOrderMode` |
 | JavaScript | `Dynamsoft.EnumTextResultOrderMode` |
 | Python | `class EnumTextResultOrderMode(IntEnum)` |
 | Java / Android | `class EnumTextResultOrderMode` |

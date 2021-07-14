@@ -1,13 +1,13 @@
 ---   
 layout: default-layout
-description: This article introduces two ways to modify the configuration DBR RuntimeSetting and Json template, and their syntax rules
+description: This article introduces two ways to modify the configuration: DBR RuntimeSetting and Json template, and their syntax rules
 title: How to set DBR parameters 
 keywords: DBR RuntimeSetting Json Template ImageParameter FormatSpecification
 needAutoGenerateSidebar: false
 ---
 
 # How to set DBR parameters 
-DBR provides flexible parameter configuration to meet user 's decoding requirements under different scenarios and different needs. Users can modify the configuration through RuntimeSetting and the Json template. 
+DBR provides flexible parameter configuration to meet user’s decoding requirements under different scenarios and different needs. Users can modify the configuration through RuntimeSetting and the Json template. 
 - RuntimeSetting   
 RuntimeSetting is an object that manages various parameters during runtime. If you need to dynamically change the DBR configuration when the program is running, modifying RuntimeSetting will be a good choice. RuntimeSetting only provides some common parameters for setting, the complete parameter setting can be achieved through the Json template. 
 - Json template 
@@ -30,10 +30,10 @@ reader->GetRuntimeSettings(runtimeSettings);                    //get runtime se
 runtimeSettings->barcodeFormatIds = BF_ALL ;                    //update the parameter. BF_ALL means all barcode formats    
 char sError[512];   
 reader->UpdateRuntimeSettings(runtimeSettings, sError, 512);    //update runtime settings 
-reader->DecodeFile("type your image path", "");                   //decode
+reader->DecodeFile("这里填入你的文件路径", "");                   //decode
 TextResultArray* paryResult = NULL;   
 reader->GetAllTextResults(&paryResult);                         //get the decode result   
-dynamsoft::dbr::CBarcodeReader::FreeTextResults(&paryResult);   
+CBarcodeReader::FreeTextResults(&paryResult);   
 delete runtimeSettings;   
 delete reader;  
 ```
@@ -93,10 +93,10 @@ int ret;
 char sError[512];         
 ret = reader->InitRuntimeSettingsWithFile("JsonTemplate.json",CM_OVERWRITE,
 sError,512); ///Load a template configuration 
-reader->DecodeFile("type your file path", "ImageParameter1"); //Use the configuration with the Name "IP1"    
+reader->DecodeFile("这里填入文件路径", "ImageParameter1"); //Use the configuration with the Name "IP1"    
 TextResultArray* paryResult = NULL;         
 reader->GetAllTextResults(&paryResult); //get decode result     
-dynamsoft::dbr::CBarcodeReader::FreeTextResults(&paryResult);         
+CBarcodeReader::FreeTextResults(&paryResult);         
 delete runtimeSettings;         
 delete reader;
 ```

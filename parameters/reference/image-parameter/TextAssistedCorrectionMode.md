@@ -1,7 +1,6 @@
 ---
 layout: default-layout
 title: Dynamsoft Barcode Reader Parameter Reference for ImageParameter Object - TextAssistedCorrectionMode
-description: This page shows Dynamsoft Barcode Reader Parameter Reference for ImageParameter Object - TextAssistedCorrectionMode.
 keywords: TextAssistedCorrectionMode, ImageParameter, image process control parameters, parameter reference, parameter 
 needAutoGenerateSidebar: false
 ---
@@ -10,13 +9,13 @@ needAutoGenerateSidebar: false
 
  | Parameter Name | Description |
  | -------------- | ----------- | 
+ | [`ImageParameter.AccompanyingTextRecognitionModes`](AccompanyingTextRecognitionModes.md#accompanyingtextrecognitionmodes) | Sets the mode and priority to recognize accompanying text. |
  | [`ImageParameter.BarcodeColourModes`](BarcodeColourModes.md#barcodecolourmodes) | Sets the mode and priority for the barcode colour mode used to process the barcode zone. |
  | [`ImageParameter.BarcodeComplementModes`](BarcodeComplementModes.md#barcodecomplementmodes) | Sets the mode and priority to complement the missing parts in the barcode. |
  | [`ImageParameter.BinarizationModes`](BinarizationModes.md#binarizationmodes) | 	Sets the mode and priority for binarization. |
  | [`ImageParameter.ColourClusteringModes`](ColourClusteringModes.md#colourclusteringmodes) | Sets the mode and priority for colour categorization. Not supported yet. |
  | [`ImageParameter.ColourConversionModes`](ColourConversionModes.md#colourconversionmodes) | Sets the mode and priority for converting a colour image to a grayscale image. |
  | [`ImageParameter.DeblurLevel`](image-process-control.md#deblurlevel) | Sets the degree of blurriness of the barcode. |
- | [`ImageParameter.DeblurModes`](DeblurModes.md#deblurmodes) | Sets the mode and priority for deblurring. |
  | [`ImageParameter.DeformationResistingModes`](DeformationResistingModes.md#deformationresistingmodes) | Sets the mode and priority for deformation resisting. |
  | [`ImageParameter.DPMCodeReadingModes`](DPMCodeReadingModes.md#dpmcodereadingmodes) | Sets the mode and priority for DPM code reading. Not support yet. |
  | [`ImageParameter.GrayscaleTransformationModes`](GrayscaleTransformationModes.md#grayscaletransformationmodes) | Sets the mode and priority for the grayscale image conversion. |
@@ -57,18 +56,16 @@ needAutoGenerateSidebar: false
 - [LeftTextPercentageSize](#lefttextpercentagesize)
 - [RightTextPercentageSize](#righttextpercentagesize)
 - [TopTextPercentageSize](#toptextpercentagesize)
-- [LibraryFileName](#libraryfilename)
-- [LibraryParameters](#libraryparameters)
  
 ##### BottomTextPercentageSize 
 Sets the percentage of the bottom accompanying text zone comparing to the barcode zone.
 
 
-| Value Type | Value Range | Default Value | Valid Modes | 
+| Value Type | Value Range | Default Value | Vaild Modes | 
 | ---------- | ----------- | ------------- | ----------- |
 | *int* | [0, 255] | 0 | "TACM_VERIFYING"<br>"TACM_VERIFYING_PATCHING" |         
 
-- **Remarks**     
+- **Remark**     
   255: The accompanying text zone will be detected automatically by the SDK.
 
 
@@ -76,11 +73,11 @@ Sets the percentage of the bottom accompanying text zone comparing to the barcod
 Sets the percentage of the left accompanying text zone comparing to the barcode zone.
 
 
-| Value Type | Value Range | Default Value | Valid Modes | 
+| Value Type | Value Range | Default Value | Vaild Modes | 
 | ---------- | ----------- | ------------- | ----------- |
 | *int* | [0, 255] | 0 | "TACM_VERIFYING"<br>"TACM_VERIFYING_PATCHING" |         
 
-- **Remarks**     
+- **Remark**     
   255: The accompanying text zone will be detected automatically by the SDK.
 
 
@@ -88,11 +85,11 @@ Sets the percentage of the left accompanying text zone comparing to the barcode 
 Sets the percentage of the right accompanying text zone comparing to the barcode zone.
 
 
-| Value Type | Value Range | Default Value | Valid Modes | 
+| Value Type | Value Range | Default Value | Vaild Modes | 
 | ---------- | ----------- | ------------- | ----------- |
 | *int* | [0, 255] | 0 | "TACM_VERIFYING"<br>"TACM_VERIFYING_PATCHING" |         
 
-- **Remarks**     
+- **Remark**     
   255: The accompanying text zone will be detected automatically by the SDK.
 
 
@@ -100,33 +97,12 @@ Sets the percentage of the right accompanying text zone comparing to the barcode
 Sets the percentage of the top accompanying text zone comparing to the barcode zone.
 
 
-| Value Type | Value Range | Default Value | Valid Modes | 
+| Value Type | Value Range | Default Value | Vaild Modes | 
 | ---------- | ----------- | ------------- | ----------- |
 | *int* | [0, 255] | 0 | "TACM_VERIFYING"<br>"TACM_VERIFYING_PATCHING" |         
 
-- **Remarks**     
+- **Remark**     
   255: The accompanying text zone will be detected automatically by the SDK.
-
-
-##### LibraryFileName 
-Sets the file name of the library to load dynamically.
-
-| Value Type | Value Range | Default Value | Valid Modes | 
-| ---------- | ----------- | ------------- | ----------- |
-| *string* | A string value representing file name. | "" | All `TextAssistedCorrectionMode` items except TACM_SKIP and TACM_AUTO |         
-
-
-- **Remarks**     
-  - The library must be in the same place with Dynamsoft Barcode Reader Library.
-
-
-##### LibraryParameters 
-Sets the parameters passed to the library to load dynamically.
-
-| Value Type | Value Range | Default Value | Valid Modes | 
-| ---------- | ----------- | ------------- | ----------- |
-| *string* | A string value representing parameters. | "" | All `TextAssistedCorrectionMode` items except TACM_SKIP and TACM_AUTO |         
-
 
 
 ### Setting Methods
@@ -165,7 +141,7 @@ Sets the parameters passed to the library to load dynamically.
 | [`PublicRuntimeSettings`]({{ site.structs }}PublicRuntimeSettings.html)->[`furtherModes`]({{ site.structs }}PublicRuntimeSettings.html#furthermodes) | [`textAssistedCorrectionMode`]({{ site.structs }}FurtherModes.html#textassistedcorrectionmode) | [`textAssistedCorrectionMode`]({{ site.enumerations }}parameter-mode-enums.html#textassistedcorrectionmode) |
 
 
-**Remarks**   
+**Remark**   
 [`GetModeArgument`]({{ site.cpp_methods }}parameter-and-runtime-settings-basic.html#getmodeargument) and [`SetModeArgument`]({{ site.cpp_methods }}parameter-and-runtime-settings-basic.html#setmodeargument) need to be called for getting or setting the value of [arguments](#mode-arguments).
 
 

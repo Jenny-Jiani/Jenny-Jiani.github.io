@@ -1,8 +1,7 @@
 ---
 layout: default-layout
 title: Dynamsoft Barcode Reader Parameter Reference for FormatSpecification Object - Format Control Parameters
-description: This page shows Dynamsoft Barcode Reader Parameter Reference for FormatSpecification Object - Format Control Parameters.
-keywords: AllModuleDeviation, AustralianPostEncodingTable, BarcodeAngleRangeArray, BarcodeBytesLengthRangeArray, BarcodeBytesRegExPattern, BarcodeFormatIds, BarcodeFormatIds_2, BarcodeHeightRangeArray, BarcodeTextLengthRangeArray, BarcodeTextRegExPattern, BarcodeWidthRangeArray, BarcodeZoneBarCountRangeArray, BarcodeZoneMinDistanceToImageBorders, Code128Subset, FindUnevenModuleBarcode, HeadModuleRatio, MinQuietZoneWidth, MinRatioOfBarcodeZoneWidthToHeight, MirrorMode, ModuleSizeRangeArray, MSICodeCheckDigitCalculation, RequireStartStopChars, StandardFormat, TailModuleRatio, FormatSpecification, format control parameters, parameter reference, parameter
+keywords: AllModuleDeviation, AustralianPostEncodingTable, BarcodeAngleRangeArray, BarcodeBytesLengthRangeArray, BarcodeBytesRegExPattern, BarcodeFormatIds, BarcodeFormatIds_2, BarcodeHeightRangeArray, BarcodeTextLengthRangeArray, BarcodeTextRegExPattern, BarcodeWidthRangeArray, Code128Subset, FindUnevenModuleBarcode, HeadModuleRatio, MinQuietZoneWidth, MirrorMode, ModuleSizeRangeArray, RequireStartStopChars, StanardFormat, TailModuleRatio, FormatSpecification, format control parameters, parameter reference, parameter
 needAutoGenerateSidebar: true
 needGenerateH3Content: false
 ---
@@ -11,8 +10,8 @@ needGenerateH3Content: false
 
  | Parameter Name | Description |
  | -------------- | ----------- | 
- | [`FormatSpecification.AllModuleDeviation`](format-control.md#allmoduledeviation) | Sets the module size deviation from the standard barcode module size. |
- | [`FormatSpecification.AustralianPostEncodingTable`](format-control.md#australianpostencodingtable) | Sets the encoding table used to code the Customer Information Field of Australian Post Customer Barcode. | 
+ | [`FormatSpecification.AllModuleDeviation`](format-control.md#allmoduledeviation) | Set the module size deviation from the standard barcode module size. |
+ | [`FormatSpecification.AustralianPostEncodingTable`](format-control.md#australianpostencodingtable) | Set the encoding table used to code the Customer Information Field of Australian Post Customer Barcode. | 
  | [`FormatSpecification.BarcodeAngleRangeArray`](format-control.md#barcodeanglerangearray) | Sets the range of angles (in degrees) for barcodes search. | 
  | [`FormatSpecification.BarcodeBytesLengthRangeArray`](format-control.md#barcodebyteslengthrangearray) | Sets the range of barcode bytes length for barcodes search. | 
  | [`FormatSpecification.BarcodeBytesRegExPattern`](format-control.md#barcodebytesregexpattern) | Specifies the regular express pattern of barcode byte characters. | 
@@ -22,19 +21,15 @@ needGenerateH3Content: false
  | [`FormatSpecification.BarcodeTextLengthRangeArray`](format-control.md#barcodetextlengthrangearray) |	Sets the range of barcode text length for barcodes search. | 
  | [`FormatSpecification.BarcodeTextRegExPattern`](format-control.md#barcodetextregexpattern) | Specifies the regular express pattern of barcode characters. | 
  | [`FormatSpecification.BarcodeWidthRangeArray`](format-control.md#barcodewidthrangearray) | Sets the range of barcode widths (in pixels) for barcodes search.(Hint). | 
- | [`FormatSpecification.BarcodeZoneBarCountRangeArray`](format-control.md#barcodezonebarcountrangearray) |	Sets the range of bar count of the barcode zone for barcodes search. | 
- | [`FormatSpecification.BarcodeZoneMinDistanceToImageBorders`](format-control.md#barcodezonemindistancetoimageborders) |	Sets the minimum distance (in pixels) between barcode zone and image borders. | 
- | [`FormatSpecification.Code128Subset`](format-control.md#code128subset) | Sets the code 128 subset. | 
+ | [`FormatSpecification.Code128Subset`](format-control.md#code128subset) | Set the code 128 subset. | 
  | [`FormatSpecification.FindUnevenModuleBarcode`](format-control.md#findunevenmodulebarcode) | Specifies whether to find barcodes with uneven barcode modules. Not support yet. | 
- | [`FormatSpecification.HeadModuleRatio`](format-control.md#headmoduleratio) | Sets the module count and module size ratio of the barcode head part. | 
+ | [`FormatSpecification.HeadModuleRatio`](format-control.md#headmoduleratio) | Set the module count and module size ratio of the barcode head part. | 
  | [`FormatSpecification.MinQuietZoneWidth`](format-control.md#minquietzonewidth) | The minimum width of the barcode quiet zone. | 
- | [`FormatSpecification.MinRatioOfBarcodeZoneWidthToHeight`](format-control.md#minratioofbarcodezonewidthtoheight) |	Sets the minimum ratio (width/height) of the barcode zone. | 
  | [`FormatSpecification.MirrorMode`](format-control.md#mirrormode) | Sets whether to decode mirrored barcodes. | 
  | [`FormatSpecification.ModuleSizeRangeArray`](format-control.md#modulesizerangearray) | Sets the range of module size (in pixels) for barcodes search. (Hint). |
- | [`FormatSpecification.MSICodeCheckDigitCalculation`](format-control.md#msicodecheckdigitcalculation) | Sets the scheme used for calculating a check digit of an MSI barcode. | 
  | [`FormatSpecification.RequireStartStopChars`](format-control.md#requirestartstopchars) |	Sets whether the start and stop characters are required when searching for Code 39 barcodes. |
- | [`FormatSpecification.StandardFormat`](format-control.md#standardformat) | Sets the standard barcode format. | 
- | [`FormatSpecification.TailModuleRatio`](format-control.md#tailmoduleratio) |	Sets the module count and module size ratio of the barcode tail part. | 
+ | [`FormatSpecification.StanardFormat`](format-control.md#stanardformat) | Set the standard barcode format. | 
+ | [`FormatSpecification.TailModuleRatio`](format-control.md#tailmoduleratio) |	Set the module count and module size ratio of the barcode tail part. | 
 
 
 ---
@@ -45,7 +40,7 @@ needGenerateH3Content: false
 ## AllModuleDeviation
 Set the module size deviation from the standard barcode module size.   
 
-**Remarks**   
+**Remark**   
 The unit is barcode module. For example, if the standard barcode module is 2px and AllModuleDeviation is 1, then the non-standard barcode module size is 4px.
     
 ### As Json Parameter
@@ -53,7 +48,7 @@ The unit is barcode module. For example, if the standard barcode module is 2px a
 
 | Json Object |	Json Parameter Name | Value Type | Value Range | Default Value |
 | ----------- | ------------------- | ---------- | ----------- | ------------- |
-| FormatSpecification | AllModuleDeviation | *int* | [0, 0x7fffffff] | 0 |
+| FormatSpecification | AllModuleDeviation | *int* | [0,7fffffff] | 0 |
 
 
 **Json Parameter Example**   
@@ -130,7 +125,7 @@ Sets the range of barcode bytes length for barcodes search.
 
 | Json Object |	Json Parameter Name | Value Type | Value Range | Default Value |
 | ----------- | ------------------- | ---------- | ----------- | ------------- |
-| FormatSpecification | BarcodeBytesLengthRangeArray | *JSON Object Array* | `MinValue`: [0, 0x7fffffff]<br>`MaxValue`: [0, 0x7fffffff]<br>**MaxValue >= MinValue** | `null` |
+| FormatSpecification | BarcodeBytesLengthRangeArray | *JSON Object Array* | `MinValue`: [0, 7fffffff]<br>`MaxValue`: [0, 7fffffff]<br>**MaxValue >= MinValue** | `null` |
 
 **Json Parameter Example**   
 ```
@@ -173,14 +168,14 @@ Specifies the regular express pattern of barcode byte characters.
 ## BarcodeFormatIds
 Sets which barcode format the current FormatSpecification configuration is applied to. 
 
-**Remarks**   
+**Remark**   
 If you already know the barcode type(s) before performing barcode reading, specifying the barcode type(s) to be read will speed up the recognition process.
 
 ### As Json Parameter
 
 | Json Object |	Json Parameter Name | Value Type | Value Range | Default Value |
 | ----------- | ------------------- | ---------- | ----------- | ------------- |
-| FormatSpecification | BarcodeFormatIds | *string Array* | An array item can be any one of the [`BarcodeFormat` Enumeration]({{ site.enumerations }}format-enums.html#barcodeformat) items | "BF_ALL" |
+| FormatSpecification | BarcodeFormatIds | *string Aarry* | An array item can be any one of the [`BarcodeFormat` Enumeration]({{ site.enumerations }}format-enums.html#barcodeformat) items | "BF_ALL" |
 
 **Json Parameter Example**   
 ```
@@ -198,7 +193,7 @@ If you already know the barcode type(s) before performing barcode reading, speci
 Sets which barcode format in BarcodeFormat group 2 the current FormatSpecification configuration is applied to.   
 
 
-**Remarks**   
+**Remark**   
 If the barcode type(s) are certain, specifying the barcode type(s) to be read will speed up the recognition process.    
 The barcode format our library will search for is composed of BarcodeFormat group 1 and BarcodeFormat group 2, so you need to specify the barcode format in group 1 and group 2 individually.
 
@@ -206,7 +201,7 @@ The barcode format our library will search for is composed of BarcodeFormat grou
 
 | Json Object |	Json Parameter Name | Value Type | Value Range | Default Value |
 | ----------- | ------------------- | ---------- | ----------- | ------------- |
-| FormatSpecification | BarcodeFormatIds_2 | *string Array* | An array item can be any one of the [`BarcodeFormat_2` Enumeration]({{ site.enumerations }}format-enums.html#barcodeformat_2) items | "BF2_NULL" |
+| FormatSpecification | BarcodeFormatIds_2 | *string Aarry* | An array item can be any one of the [`BarcodeFormat_2` Enumeration]({{ site.enumerations }}format-enums.html#barcodeformat_2) items | "BF2_NULL" |
 
 **Json Parameter Example**   
 ```
@@ -230,7 +225,7 @@ Sets the range of barcode heights (in pixels) to for barcodes search.
 
 | Json Object |	Json Parameter Name | Value Type | Value Range | Default Value |
 | ----------- | ------------------- | ---------- | ----------- | ------------- |
-| FormatSpecification | BarcodeHeightRangeArray | *JSON Object Array* | `MinValue`: [0, 0x7fffffff]<br>`MaxValue`: [0, 0x7fffffff]<br>**MaxValue >= MinValue** | `null` |
+| FormatSpecification | BarcodeHeightRangeArray | *JSON Object Array* | `MinValue`: [0, 7fffffff]<br>`MaxValue`: [0, 7fffffff]<br>**MaxValue >= MinValue** | `null` |
 
 **Json Parameter Example**   
 ```
@@ -259,7 +254,7 @@ Sets the range of barcode text length for barcodes search.
 
 | Json Object |	Json Parameter Name | Value Type | Value Range | Default Value |
 | ----------- | ------------------- | ---------- | ----------- | ------------- |
-| FormatSpecification | BarcodeTextLengthRangeArray | *JSON Object Array* | `MinValue`: [0, 0x7fffffff]<br>`MaxValue`: [0, 0x7fffffff]<br>**MaxValue >= MinValue** | `null` |
+| FormatSpecification | BarcodeTextLengthRangeArray | *JSON Object Array* | `MinValue`: [0, 7fffffff]<br>`MaxValue`: [0, 7fffffff]<br>**MaxValue >= MinValue** | `null` |
 
 **Json Parameter Example**   
 ```
@@ -279,7 +274,7 @@ Sets the range of barcode text length for barcodes search.
 | ------ | ------------------- | ---------- | ------------ | ------------- |
 | [`PublicRuntimeSettings`]({{ site.structs }}PublicRuntimeSettings.html | [`minBarcodeTextLength`]({{ site.structs }}PublicRuntimeSettings.html#minbarcodetextlength)) | [0,0x7fffffff] | 0 |
 
-**Remarks**   
+**Remark**   
 0: means no limitation on the barcode text length.
 
 **See Also**    
@@ -320,7 +315,7 @@ Sets the range of barcode widths (in pixels) for barcodes search.
 
 | Json Object |	Json Parameter Name | Value Type | Value Range | Default Value |
 | ----------- | ------------------- | ---------- | ----------- | ------------- |
-| FormatSpecification | BarcodeWidthRangeArray | *JSON Object Array* | `MinValue`: [0, 0x7fffffff]<br>`MaxValue`: [0, 0x7fffffff]<br>**MaxValue >= MinValue** | `null` |
+| FormatSpecification | BarcodeWidthRangeArray | *JSON Object Array* | `MinValue`: [0, 7fffffff]<br>`MaxValue`: [0, 7fffffff]<br>**MaxValue >= MinValue** | `null` |
 
 **Json Parameter Example**   
 ```
@@ -338,63 +333,8 @@ Sets the range of barcode widths (in pixels) for barcodes search.
 &nbsp;
 
 
-## BarcodeZoneBarCountRangeArray
-Sets the range of bar count of the barcode zone for barcodes search.
-
-
-### As Json Parameter
-`BarcodeZoneBarCountRangeArray` as a JSON parameter is a JSON Object array. Each JSON Object has two keys `MinValue` and `MaxValue` for setting the range of bar count of the barcode zone for barcodes search. Default values will be used if no manual settings are specified. 
-
-
-| Json Object |	Json Parameter Name | Value Type | Value Range | Default Value |
-| ----------- | ------------------- | ---------- | ----------- | ------------- |
-| FormatSpecification | BarcodeZoneBarCountRangeArray | *JSON Object Array* | `MinValue`: [1, 0x7fffffff]<br>`MaxValue`: [1, 0x7fffffff]<br>**MaxValue >= MinValue** | `null` |
-
-**Remarks**   
-- Default value for MinValue: 1
-- Default value for MaxValue: 128
-
-**Json Parameter Example**   
-```
-{
-    "BarcodeZoneBarCountRangeArray": [
-    {
-        "MinValue": 1,
-        "MaxValue": 128
-    }
-    ]
-}
-```
-
-
-&nbsp;
-
-
-
-## BarcodeZoneMinDistanceToImageBorders
-Sets the minimum distance (in pixels) between the barcode zone and image borders. If a barcode region has been set, this parameter should not be used. 
-
-    
-### As Json Parameter
-
-
-| Json Object |	Json Parameter Name | Value Type | Value Range | Default Value |
-| ----------- | ------------------- | ---------- | ----------- | ------------- |
-| FormatSpecification | BarcodeZoneMinDistanceToImageBorders | *int* | [0, 0x7fffffff] | 0 |
-
-**Json Parameter Example**   
-```
-{
-    "BarcodeZoneMinDistanceToImageBorders": 10
-}
-```
-
-
-&nbsp;
-
-
 ## Code128Subset
-Sets the subset of Code 128.
+Set the code 128 subset.
 
     
 ### As Json Parameter
@@ -428,7 +368,7 @@ Specifies whether to find barcodes with uneven barcode modules.
 | ----------- | ------------------- | ---------- | ----------- | ------------- |
 | FormatSpecification | FindUnevenModuleBarcode | *int* | [0, 1] | 1 |
 
-**Remarks**   
+**Remark**   
 - 0: do not find barcodes with uneven barcode modules.
 - 1: find barcodes with uneven barcode modules.
 
@@ -446,7 +386,7 @@ Specifies whether to find barcodes with uneven barcode modules.
 
 
 ## HeadModuleRatio
-Sets the module count and module size ratio of the barcode head part.
+Set the module count and module size ratio of the barcode head part.
 
     
 ### As Json Parameter
@@ -471,7 +411,7 @@ Sets the module count and module size ratio of the barcode head part.
 ## MinQuietZoneWidth
 The minimum width of the barcode quiet zone.
 
-**Remarks**   
+**Remark**   
 The unit is barcode module. For example, if barcode module is 2px and MinQuietZoneWidth is 4, then the width of quiet zone is 8px.
    
     
@@ -493,32 +433,6 @@ The unit is barcode module. For example, if barcode module is 2px and MinQuietZo
 
 
 
-## MinRatioOfBarcodeZoneWidthToHeight
-Sets the minimum ratio (width/height) of the barcode zone.
-
-    
-### As Json Parameter
-
-
-| Json Object |	Json Parameter Name | Value Type | Value Range | Default Value |
-| ----------- | ------------------- | ---------- | ----------- | ------------- |
-| FormatSpecification | MinRatioOfBarcodeZoneWidthToHeight | *int* | [0, 10000] | 0 |
-
-**Remarks**   
-- 0: means no limitation.
-
-**Json Parameter Example**   
-```
-{
-    "MinRatioOfBarcodeZoneWidthToHeight": 200
-}
-```
-
-
-&nbsp;
-
-
-
 
 ## MirrorMode
 Sets whether to decode mirrored barcodes.
@@ -531,9 +445,9 @@ Sets whether to decode mirrored barcodes.
 | ----------- | ------------------- | ---------- | ----------- | ------------- |
 | FormatSpecification | MirrorMode | *string* | "MM_NORMAL"<br>"MM_MIRROR"<br>"MM_BOTH" | `null` |
 
-**Remarks**   
+**Remark**   
 - "MM_NORMAL": Doesn't decode mirror barcodes.
-- "MM_MIRROR": Decodes mirror barcodes only.
+- "MM_MIRROR": Decodes only mirror barcodes.
 - "MM_BOTH": Decodes both normal and mirror barcodes.
 
 **Json Parameter Example**   
@@ -556,7 +470,7 @@ Sets the range of module size (in pixels) for barcodes search.
 
 | Json Object |	Json Parameter Name | Value Type | Value Range | Default Value |
 | ----------- | ------------------- | ---------- | ----------- | ------------- |
-| FormatSpecification | ModuleSizeRangeArray | *JSON Object Array* | `MinValue`: [0, 0x7fffffff]<br>`MaxValue`: [0, 0x7fffffff]<br>**MaxValue >= MinValue** | `null` |
+| FormatSpecification | ModuleSizeRangeArray | *JSON Object Array* | `MinValue`: [0, 7fffffff]<br>`MaxValue`: [0, 7fffffff]<br>**MaxValue >= MinValue** | `null` |
 
 **Json Parameter Example**   
 ```
@@ -567,30 +481,6 @@ Sets the range of module size (in pixels) for barcodes search.
         "MaxValue": 20
     }
     ]
-}
-```
-
-
-&nbsp;
-
-## MSICodeCheckDigitCalculation
-Sets the scheme used for calculating a check digit of an MSI barcode.
-
-    
-### As Json Parameter
-
-
-| Json Object |	Json Parameter Name | Value Type | Value Range | Default Value |
-| ----------- | ------------------- | ---------- | ----------- | ------------- |
-| FormatSpecification | MSICodeCheckDigitCalculation | *string* | "MSICCDC_NO_CHECK_DIGIT"<br>"MSICCDC_MOD_10"<br>"MSICCDC_MOD_11"<br>"MSICCDC_MOD_1110"<br>"MSICCDC_MOD_1010" | `null` |
-
-**Remarks**   
-If this parameter is not set, MSICCDC_MOD_10 will be used by default.
-
-**Json Parameter Example**   
-```
-{
-    "MSICodeCheckDigitCalculation": "MSICCDC_MOD_10"
 }
 ```
 
@@ -609,7 +499,7 @@ Sets whether the start and stop characters are required when searching for Code 
 | ----------- | ------------------- | ---------- | ----------- | ------------- |
 | FormatSpecification | RequireStartStopChars | *int* | [0, 1] | 1 |
 
-**Remarks**   
+**Remark**   
 - 0: start and stop characters are not required.
 - 1: start and stop characters are required.
 
@@ -625,7 +515,7 @@ Sets whether the start and stop characters are required when searching for Code 
 &nbsp;
 
 
-## StandardFormat
+## StanardFormat
 Set the standard barcode format.
 
     
@@ -634,7 +524,7 @@ Set the standard barcode format.
 
 | Json Object |	Json Parameter Name | Value Type | Value Range | Default Value |
 | ----------- | ------------------- | ---------- | ----------- | ------------- |
-| FormatSpecification | StandardFormat | Any one of the [`BarcodeFormat`]({{ site.enumerations }}format-enums.html#barcodeformat) or [`BarcodeFormat_2`]({{ site.enumerations }}format-enums.html#barcodeformat_2) Enumeration items. | N/A | "" |
+| FormatSpecification | StanardFormat | Any one of the [`BarcodeFormat`]({{ site.enumerations }}format-enums.html#barcodeformat) or [`BarcodeFormat_2`]({{ site.enumerations }}format-enums.html#barcodeformat_2) Enumeration items. | N/A | "" |
 
 
 **Json Parameter Example**   

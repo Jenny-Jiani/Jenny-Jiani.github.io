@@ -1,7 +1,6 @@
 ---
 layout: default-layout
 title: Dynamsoft Barcode Reader Introduction - Overview
-description: This is the overview page of Dynamsoft Barcode Reader Introduction.
 keywords: overview
 needAutoGenerateSidebar: true
 needGenerateH3Content: true
@@ -14,21 +13,20 @@ Dynamsoft Barcode Reader (DBR) is a software development kit (SDK) with highly c
 
 ## Barcode Formats
 
-As of v8.0, DBR currently supports the following barcode formats:  
+As of v7.4, DBR currently supports the following barcode formats:  
 
-| 1D/Linear Barcodes       | 2D Barcodes         | GS1 DataBar             | Postal Codes          | Other Types         |     
+| 1D/Linear Barcodes       | 2D Barcodes         | GS1 DataBar             | Postal Codes          | Other Type         |     
 |--------------------------|---------------------|-------------------------| --------------------- | ------------------ |
 | Code 39/Code 39 Extended | QR Code             | Omnidirectional         | USPS Intelligent Mail | GS1 Composite Code |     
 | Code 93                  | Micro QR Code       | Truncated               | Postnet               | Patch Code         |    
-| Code 128                 | Data Matrix         | Stacked                 | Planet                | |
+| Code 128                 | Data Matrix         | Stacked                 | Planet                | Dotcode            |
 | Codabar                  | PDF417              | Stacked Omnidirectional | Australian Post       | | 
 | Interleaved 2 of 5       | Micro PDF417        | Limited                 | UK Royal Mail         | |
 | EAN-8                    | Aztec Code          | Expanded                |                       | |
 | EAN-13                   | MaxiCode (mode 2-5) | Expanded Stacked        |                       | | 
-| UPC-A                    | DotCode             |                         |                       | | 
+| UPC-A                    |                     |                         |                       | | 
 | UPC-E                    |                     |                         |                       | |
-| Industrial 2 of 5        |                     |                         |                       | |    
-| MSI (Modified Plessey)   |                     |                         |                       | |    
+| Industrial 2 of 5        |                     |                         |                       | |       
 
 &nbsp;
 

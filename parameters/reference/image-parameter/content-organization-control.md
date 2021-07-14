@@ -1,7 +1,6 @@
 ---
 layout: default-layout
 title: Dynamsoft Barcode Reader Parameter Reference for ImageParameter Object - Content Organization Control Parameters
-description: This page shows Dynamsoft Barcode Reader Parameter Reference for ImageParameter Object - Content Organization Control Parameters.
 keywords: Name, Description, FormatSpecificationNameArray, RegionDefinitionNameArray, ImageParameter, content organization control parameters, parameter reference, parameter
 needAutoGenerateSidebar: true
 needGenerateH3Content: false
@@ -22,7 +21,7 @@ needGenerateH3Content: false
 ## Name
 The name of the ImageParameter object.  
 
-**Remarks**    
+**Remark**    
 It must be a unique name.
 
 ### As Json Parameter
@@ -71,7 +70,7 @@ The description of the ImageParameter object.
 ## FormatSpecificationNameArray
 The names of the referenced FormatSpecification object(s). 
 
-**Remarks**   
+**Remark**   
 An array item is a name of any available `FormatSpecifications`.   
 
 ### As Json Parameter
@@ -101,7 +100,7 @@ An array item is a name of any available `FormatSpecifications`.
 ## RegionDefinitionNameArray
 The names of the referenced RegionDefinition object(s). 
 
-**Remarks**   
+**Remark**   
 An array item is a name of any available `RegionDefinitions`.    
 
 ### As Json Parameter

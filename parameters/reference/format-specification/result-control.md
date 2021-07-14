@@ -1,7 +1,6 @@
 ---
 layout: default-layout
 title: Dynamsoft Barcode Reader Parameter Reference for FormatSpecification Object - Result Control Parameters
-description: This page shows Dynamsoft Barcode Reader Parameter Reference for FormatSpecification Object - Result Control Parameters.
 keywords: MinResultConfidence, ReturnPartialBarcodeValue, FormatSpecification, result control parameters, parameter reference, parameter
 needAutoGenerateSidebar: true
 needGenerateH3Content: false
@@ -20,7 +19,7 @@ needGenerateH3Content: false
 ## MinResultConfidence
 The minimum confidence of the result.   
 
-**Remarks**   
+**Remark**   
 0: means no limitation on the confidence. 
 
 ### As Json Parameter
@@ -57,7 +56,7 @@ Sets whether or not to return partial barcode value(s).
 **Not support yet.**    
 &nbsp;
 
-**Remarks**   
+**Remark**   
 0: do not return partial barcode value(s).   
 1: return partial barcode value(s).
 
