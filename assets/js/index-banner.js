@@ -65,10 +65,10 @@ function FullTreeMenuList(generateDocHead, needh3 = true) {
     var navWrap = document.getElementById("fullTreeMenuListContainer");
     if (navWrap != null) {
         HighlightCurrentListForFullTree("fullTreeMenuListContainer", true, document.URL, generateDocHead);
-        // if (generateDocHead) {
-        //     GenerateContentByHead(needh3);
-        //     //GenerateContentByHead(false);
-        // }
+        if (generateDocHead) {
+            GenerateContentByHead(needh3);
+            //GenerateContentByHead(false);
+        }
 
         navWrap = document.getElementById("fullTreeMenuListContainer");
         var liAry = navWrap.getElementsByTagName("li");
