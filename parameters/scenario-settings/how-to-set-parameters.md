@@ -1,6 +1,6 @@
 ---   
 layout: default-layout
-description: This article introduces two ways to modify the configuration: DBR RuntimeSetting and Json template, and their syntax rules
+description: This article introduces two ways to modify the configuration DBR RuntimeSetting and Json template, and their syntax rules
 title: How to set DBR parameters 
 keywords: DBR RuntimeSetting Json Template ImageParameter FormatSpecification
 needAutoGenerateSidebar: false

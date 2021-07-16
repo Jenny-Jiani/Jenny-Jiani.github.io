@@ -6,6 +6,8 @@ $(document).ready(function(){
     var sd = $(window).scrollTop()
     if(sd > 0) {
         realFunc()
+    } else {
+        $('#AutoGenerateSidebar a').eq(0).addClass('active')
     }
 
     $(window).resize(function() {
@@ -24,16 +26,16 @@ $(document).ready(function(){
         }
         var menuHeight = $('#overall-header').height() + subHeight;
         $('#sideBarCnt').css({'width': $('.sideBar').width() + 'px'});
-        $('.container .head').css({'width': $('.docContainer').width() + 'px'});
+        // $('.container .head').css({'width': $('.docContainer').width() + 'px'});
         $('#fullTreeMenuListContainer').css({'height': 'calc(100vh - '+(menuHeight + 120) +'px)'});
-        $('.rightSideMenu').css({'height': 'calc(100vh - '+ (menuHeight)+'px)'});
+        // $('.rightSideMenu').css({'height': 'calc(100vh - '+ (menuHeight)+'px)'});
         $('.rightSideMenu').css({'padding-top': $('#docHead').outerHeight()+'px'});
         $('.docContainer .markdown-body').css({'margin-top': ($('#docHead').outerHeight() + 0) + 'px'});
         if (breakpoint() == 'lg') {
             $('.history').css({'width': $('#txtSearch').outerWidth() + 'px'});
             $('.history').removeClass('history-absolute');
         } else {
-            $('.history').css({'width': '200px'});
+            $('.history').css({'width': '140px'});
             $('.history').addClass('history-absolute');
         }
         if ($(window).outerWidth() > 1680) {
@@ -57,6 +59,15 @@ $(document).ready(function(){
                 $('.markdown-body h4').css({'margin-top': -$('#docHead').outerHeight() - 90 + 'px'})
                 $('.markdown-body h5').css({'padding-top': $('#docHead').outerHeight() + 90 + 'px'})
                 $('.markdown-body h5').css({'margin-top': -$('#docHead').outerHeight() - 90 + 'px'})
+            } else {
+                $('.markdown-body h2').css({'padding-top': '90px'})
+                $('.markdown-body h2').css({'margin-top': '-60px'})
+                $('.markdown-body h3').css({'padding-top': '90px'})
+                $('.markdown-body h3').css({'margin-top': '-90px'})
+                $('.markdown-body h4').css({'padding-top': '90px'})
+                $('.markdown-body h4').css({'margin-top': '-90px'})
+                $('.markdown-body h5').css({'padding-top': '90px'})
+                $('.markdown-body h5').css({'margin-top': '-90px'})
             }
         }
         
@@ -115,6 +126,22 @@ $(document).ready(function(){
             $('#docHead').css({'top': 'unset'});
             $('.sideBar').css({'padding-top': '20px!important'});
         }
+
+        // right menu active link
+        var title = document.querySelectorAll('.markdown-body h2, .markdown-body h3');
+        var rightNavItem = $('#AutoGenerateSidebar a');
+        var flag = false
+        for(i=0; i<title.length; i++){
+            if($(title[i]).offset().top - 100 <= sd) {
+                flag = true
+                $('#AutoGenerateSidebar a').removeClass("active");
+                $(rightNavItem[i]).addClass("active");
+            }
+        }
+        if (!flag) {
+            $('#AutoGenerateSidebar a').removeClass("active");
+            $(rightNavItem[0]).addClass("active");
+        }
     }
 
     $('.sideBarIcon').click(function() {
@@ -160,6 +187,10 @@ $(document).ready(function(){
 
     $('.copy-prefix + p a').on('click', function() {
         copy($(this).parent().find('+ div code').text())
+    })
+
+    $('.rightMenuControlBtn').on('click', function() {
+        $('.docContainer .main, .rightSideMenu, .markdown-body').toggleClass('showRightSideMenu')
     })
 })
 
