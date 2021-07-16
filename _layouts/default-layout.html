@@ -17,11 +17,11 @@
                         <input id="txtSearch" class="search" type="text">
                     </div>
                     <ul class="mainPage" id="fullTreeMenuListContainer" name="listLevel1">
-                        {%- include sidelist-introduction.html -%}
+                        <!-- {%- include sidelist-introduction.html -%}
                         {%- include sidelist-programming.html -%}
                         {%- include sidelist-parameters.html -%}
                         {%- include sidelist-enhancement.html -%}
-                        {%- include sidelist-license_activation.html -%}
+                        {%- include sidelist-license_activation.html -%} -->
                     </ul>
                 </div>
             </div>
@@ -69,6 +69,8 @@
     <div id="footerWrapper">
         {%- include page_footer.html -%}
     </div>
+
+    <iframe id="sideBarIframe" src="{{ site.assets }}/includes/Hide_Tree_Page.html" allow="" height="0" frameborder="0"></iframe>
 
     <script type="text/javascript">anchors.add();</script>
 
