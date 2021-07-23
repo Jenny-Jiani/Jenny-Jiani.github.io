@@ -1,4 +1,4 @@
-$(document).ready(function(){ 
+$(document).ready(function(){
     init();
     $('.markdown-body .sample-code-prefix + blockquote > ul > li:first-child').addClass('on')
     $('.markdown-body .sample-code-prefix + blockquote > ol > li:first-child').addClass('on')
@@ -54,7 +54,7 @@ $(document).ready(function(){
                 $('.markdown-body h2').css({'padding-top': $('#docHead').outerHeight() + 90 + 'px'})
                 $('.markdown-body h2').css({'margin-top': -$('#docHead').outerHeight() - 60 + 'px'})
                 $('.markdown-body h3').css({'padding-top': $('#docHead').outerHeight() + 90 + 'px'})
-                $('.markdown-body h3').css({'margin-top': -$('#docHead').outerHeight() - 90 + 'px'})
+                $('.markdown-body h3').css({'margin-top': -$('#docHead').outerHeight() - 60 + 'px'})
                 $('.markdown-body h4').css({'padding-top': $('#docHead').outerHeight() + 90 + 'px'})
                 $('.markdown-body h4').css({'margin-top': -$('#docHead').outerHeight() - 90 + 'px'})
                 $('.markdown-body h5').css({'padding-top': $('#docHead').outerHeight() + 90 + 'px'})
@@ -63,7 +63,7 @@ $(document).ready(function(){
                 $('.markdown-body h2').css({'padding-top': '90px'})
                 $('.markdown-body h2').css({'margin-top': '-60px'})
                 $('.markdown-body h3').css({'padding-top': '90px'})
-                $('.markdown-body h3').css({'margin-top': '-90px'})
+                $('.markdown-body h3').css({'margin-top': '-60px'})
                 $('.markdown-body h4').css({'padding-top': '90px'})
                 $('.markdown-body h4').css({'margin-top': '-90px'})
                 $('.markdown-body h5').css({'padding-top': '90px'})
