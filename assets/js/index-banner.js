@@ -545,9 +545,7 @@ function UsefulRecord(isUseful) {
     else {
         $.get("https://www.dynamsoft.com/Secure/Rate.ashx?paper="+encodeUrl+"&product=DBR-Doc&rate=1")
     }
-    
     var feedbackTag = document.getElementById("feedbackFooter");
-
     if(feedbackTag!=null) {
         feedbackTag.innerHTML = "Thanks!";
     }

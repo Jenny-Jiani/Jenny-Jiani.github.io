@@ -163,7 +163,7 @@ function init(isFirstInit=false) {
         }
     }
 
-    isFirstInit && document.addEventListener('scroll', realFunc);
+    // isFirstInit && document.addEventListener('scroll', realFunc);
 }
 
 
