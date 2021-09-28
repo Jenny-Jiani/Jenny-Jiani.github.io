@@ -3,7 +3,7 @@ $(document).ready(function(){
     $('.markdown-body .sample-code-prefix + blockquote > ul > li:first-child').addClass('on')
     $('.markdown-body .sample-code-prefix + blockquote > ol > li:first-child').addClass('on')
 
-    var sd = $(window).scrollTop()
+    var sd = $(document).scrollTop()
     if(sd > 0) {
         realFunc()
     } else {
@@ -34,81 +34,7 @@ $(document).ready(function(){
         realFunc()
     })
 
-    window.addEventListener('scroll', realFunc);
 
-    function realFunc() {
-        $('.rightSideMenu').css({'padding-top': $('#docHead').outerHeight()+'px'});
-        if (breakpoint() == 'lg') {
-            var subHeight = 0;
-            if ($('.subHeadWrapper').length > 0) {
-                subHeight = $('.subHeadWrapper').height();
-            } else {
-                subHeight = $('.productMenu').height();
-            }
-            var menuHeight = $('#overall-header').height() + subHeight;
-            var sd = $(window).scrollTop();
-            var dcHeight = $('.docContainer').height() + menuHeight - sd;
-            var clientHeight = document.body.clientHeight;
-            if (sd >= $('#overall-header').height()) {
-                // head and sidebar fixed
-                if ($('.subHeadWrapper').length > 0) {
-                    $('.subHeadWrapper').css({'top': '0px'});
-                    $('#docHead').css({'top': ($('.subHeadWrapper').height() + 1) + 'px'});
-                    $('.history').css({'top': '119px'})
-                } else if ($('.productMenu').length > 0) {
-                    $('.productMenu').css({'top': '0px'});
-                    $('#docHead').css({'top': ($('.productMenu').height()) + 'px'});
-                    $('.history').css({'top': '119px'})
-                } else {
-                    $('#docHead').css({'top': '0px'});
-                    $('.history').css({'top': '30px'})
-                }
-                $('.sideBar #sideBarCnt').addClass('sidebar-fixed');
-                $('.rightSideMenu').addClass('rsm-fixed');
-            } else {
-                // head and sidebar fixed
-                if ($('.subHeadWrapper').length > 0) {
-                    $('.subHeadWrapper').css({'top': ($('#overall-header').height()-sd) + 'px'});
-                    $('.sideBar').css({'padding-top': $('.subHeadWrapper').height() + 42 + 'px!important'});
-                    $('.history').css({'top': ($('#overall-header').height() + $('.subHeadWrapper').height() + 30 +  - sd) + 'px'})
-                } else if ($('.productMenu').length > 0) {
-                    $('.productMenu').css({'top': ($('#overall-header').height()-sd) + 'px'});
-                    $('.sideBar').css({'padding-top': $('.productMenu').height() + 42 + 'px!important'});
-                    $('.history').css({'top': ($('#overall-header').height() + $('.productMenu').height() + 30 +  - sd) + 'px'})
-                } else {
-                    $('.sideBar').css({'padding-top':  + '42px!important'});
-                    $('.history').css({'top': ($('#overall-header').height() + 30 +  - sd) + 'px'})
-                }
-                $('#docHead').css({'top': (menuHeight-sd)+1 + 'px'});
-                $('.sideBar #sideBarCnt').removeClass('sidebar-fixed');
-                $('.rightSideMenu').removeClass('rsm-fixed');
-            }
-        } else {
-            $('.subHeadWrapper').css({'top': 'unset'});
-            $('.productMenu').css({'top': 'unset'});
-            $('#docHead').css({'top': 'unset'});
-            $('.sideBar').css({'padding-top': '20px!important'});
-        }
-
-        // right menu active link
-        var title = document.querySelectorAll('.markdown-body h2');
-        if ($('#fullTreeMenuListContainer').hasClass('needh3')) {
-            title = document.querySelectorAll('.markdown-body h2, .markdown-body h3');
-        }
-        var rightNavItem = $('#AutoGenerateSidebar a');
-        var flag = false
-        for(i=0; i<title.length; i++){
-            if($(title[i]).offset().top - 100 <= sd) {
-                flag = true
-                $('#AutoGenerateSidebar a').removeClass("active");
-                $(rightNavItem[i]).addClass("active");
-            }
-        }
-        if (!flag) {
-            $('#AutoGenerateSidebar a').removeClass("active");
-            $(rightNavItem[0]).addClass("active");
-        }
-    }
 
     $('.sideBarIcon').click(function() {
         $(".sideBar").toggleClass('hide-sm');
@@ -183,7 +109,7 @@ function copy(data) {
     oInput.remove()
 }
 
-function init() {
+function init(isFirstInit=false) {
     var subHeight = 0;
     if ($('.subHeadWrapper').length > 0) {
         subHeight = $('.subHeadWrapper').height();
@@ -237,6 +163,83 @@ function init() {
         }
     }
 
+    isFirstInit && document.addEventListener('scroll', realFunc);
+}
+
+
+
+function realFunc() {
+    $('.rightSideMenu').css({'padding-top': $('#docHead').outerHeight()+'px'});
+    if (breakpoint() == 'lg') {
+        var subHeight = 0;
+        if ($('.subHeadWrapper').length > 0) {
+            subHeight = $('.subHeadWrapper').height();
+        } else {
+            subHeight = $('.productMenu').height();
+        }
+        var menuHeight = $('#overall-header').height() + subHeight;
+        var sd = $(document).scrollTop();
+        var dcHeight = $('.docContainer').height() + menuHeight - sd;
+        var clientHeight = document.body.clientHeight;
+        if (sd >= $('#overall-header').height()) {
+            // head and sidebar fixed
+            if ($('.subHeadWrapper').length > 0) {
+                $('.subHeadWrapper').css({'top': '0px'});
+                $('#docHead').css({'top': ($('.subHeadWrapper').height() + 1) + 'px'});
+                $('.history').css({'top': '119px'})
+            } else if ($('.productMenu').length > 0) {
+                $('.productMenu').css({'top': '0px'});
+                $('#docHead').css({'top': ($('.productMenu').height()) + 'px'});
+                $('.history').css({'top': '119px'})
+            } else {
+                $('#docHead').css({'top': '0px'});
+                $('.history').css({'top': '30px'})
+            }
+            $('.sideBar #sideBarCnt').addClass('sidebar-fixed');
+            $('.rightSideMenu').addClass('rsm-fixed');
+        } else {
+            // head and sidebar fixed
+            if ($('.subHeadWrapper').length > 0) {
+                $('.subHeadWrapper').css({'top': ($('#overall-header').height()-sd) + 'px'});
+                $('.sideBar').css({'padding-top': $('.subHeadWrapper').height() + 42 + 'px!important'});
+                $('.history').css({'top': ($('#overall-header').height() + $('.subHeadWrapper').height() + 30 +  - sd) + 'px'})
+            } else if ($('.productMenu').length > 0) {
+                $('.productMenu').css({'top': ($('#overall-header').height()-sd) + 'px'});
+                $('.sideBar').css({'padding-top': $('.productMenu').height() + 42 + 'px!important'});
+                $('.history').css({'top': ($('#overall-header').height() + $('.productMenu').height() + 30 +  - sd) + 'px'})
+            } else {
+                $('.sideBar').css({'padding-top':  + '42px!important'});
+                $('.history').css({'top': ($('#overall-header').height() + 30 +  - sd) + 'px'})
+            }
+            $('#docHead').css({'top': (menuHeight-sd)+1 + 'px'});
+            $('.sideBar #sideBarCnt').removeClass('sidebar-fixed');
+            $('.rightSideMenu').removeClass('rsm-fixed');
+        }
+    } else {
+        $('.subHeadWrapper').css({'top': 'unset'});
+        $('.productMenu').css({'top': 'unset'});
+        $('#docHead').css({'top': 'unset'});
+        $('.sideBar').css({'padding-top': '20px!important'});
+    }
+
+    // right menu active link
+    var title = document.querySelectorAll('.markdown-body h2');
+    if ($('#fullTreeMenuListContainer').hasClass('needh3')) {
+        title = document.querySelectorAll('.markdown-body h2, .markdown-body h3');
+    }
+    var rightNavItem = $('#AutoGenerateSidebar a');
+    var flag = false
+    for(i=0; i<title.length; i++){
+        if($(title[i]).offset().top - 100 <= sd) {
+            flag = true
+            $('#AutoGenerateSidebar a').removeClass("active");
+            $(rightNavItem[i]).addClass("active");
+        }
+    }
+    if (!flag) {
+        $('#AutoGenerateSidebar a').removeClass("active");
+        $(rightNavItem[0]).addClass("active");
+    }
 }
 
 function initFoldPanel() {

@@ -75,13 +75,13 @@ function FullTreeMenuList(generateDocHead, needh3 = true, pageStartVer = undefin
                 hiddenLayout[i].style.visibility = "visible";
             }
             
-            init();
+            init(true);
             initFoldPanel();
 
             var treeHeight = $('#fullTreeMenuListContainer')[0].clientHeight;
             var treeOffsetTop = $('#fullTreeMenuListContainer').offset().top;
-            var nodeOffsetTop = $('#fullTreeMenuListContainer .activeLink').offset().top;
-            var lineHeight = $('#fullTreeMenuListContainer .activeLink')[0].offsetHeight;
+            var nodeOffsetTop = $('#fullTreeMenuListContainer .activeLink').length>0?$('#fullTreeMenuListContainer .activeLink').offset().top:0;
+            var lineHeight = $('#fullTreeMenuListContainer .activeLink').length>0?$('#fullTreeMenuListContainer .activeLink')[0].offsetHeight:0;
             if (nodeOffsetTop > treeHeight + treeOffsetTop - lineHeight) {
                 $('#fullTreeMenuListContainer').scrollTop(nodeOffsetTop - treeOffsetTop - lineHeight);
             }
@@ -185,13 +185,13 @@ function FullTreeMenuList(generateDocHead, needh3 = true, pageStartVer = undefin
                             hiddenLayout[i].style.visibility = "visible";
                         }
                         
-                        init();
+                        init(true);
                         initFoldPanel();
 
                         var treeHeight = $('#fullTreeMenuListContainer')[0].clientHeight;
                         var treeOffsetTop = $('#fullTreeMenuListContainer').offset().top;
-                        var nodeOffsetTop = $('#fullTreeMenuListContainer .activeLink').offset().top;
-                        var lineHeight = $('#fullTreeMenuListContainer .activeLink')[0].offsetHeight;
+                        var nodeOffsetTop = $('#fullTreeMenuListContainer .activeLink').length>0?$('#fullTreeMenuListContainer .activeLink').offset().top:0;
+                        var lineHeight = $('#fullTreeMenuListContainer .activeLink').length>0?$('#fullTreeMenuListContainer .activeLink')[0].offsetHeight:0;
                         if (nodeOffsetTop > treeHeight + treeOffsetTop - lineHeight) {
                             $('#fullTreeMenuListContainer').scrollTop(nodeOffsetTop - treeOffsetTop - lineHeight);
                         }
