@@ -1,383 +1,300 @@
 ---
 layout: default-layout
-title: Dynamsoft Barcode Reader for Objective-C & Swift - User Guide
-keywords: user guide, objective-c, oc, swift
+title: Dynamsoft Label Recognizer - Objective-C & Swift User Guide
+description: This is the user guide page of Dynamsoft Label Recognizer for iOS SDK.
+keywords: iOS, swift, objective-c, user guide
 needAutoGenerateSidebar: true
 needGenerateH3Content: true
 ---
 
+# User Guide - iOS
 
-# User Guide for Objective-C & Swift
-
-## System Requirements
+## Requirements
 
 - Operating systems:
    - macOS 10.11 and above.
    - iOS 9.0 and above. 
 - Environment: Xcode 7.1 - 11.5 and above.  
 
-- Recommend: macOS 10.15.4 and Xcode 11.5.
+- Recommended: macOS 10.15.4+, Xcode 11.5+, iOS 11+
 
-&nbsp; 
 
-   
 ## Installation
-To install Dynamsoft Barcode Reader iOS Edition on your development machine, you can download the SDK from the [Dynamsoft website](https://www.dynamsoft.com/Downloads/Dynamic-Barcode-Reader-Download.aspx) and run the setup program. The trial installer includes a free trial license valid for 30 days.   
+
+If you don’t have SDK yet, please download the Dynamsoft Label Recognizer(DLR) SDK from the <a href="https://www.dynamsoft.com/label-recognition/downloads/?utm_source=docs" target="_blank">Dynamsoft website</a> and unzip the package. After decompression, the root directory of the DLR installation package is `DynamsoftLabelRecognizer`, which is represented by `[INSTALLATION FOLDER]`.
+
+## Build Your First Application
+
+The following sample will demonstrate how to take a picture and recognize it.
+>Note: 
+>1.The following steps are completed in XCode 12.2
+<!-- >2.You can download the entire source code from [Here]. -->
+
+### Create a New Project 
+
+1. Open XCode and select New Project… in the File > New > New Project… menu to create a new project.
+
+2. Choose the correct template for your project. In this sample, we’ll use `iOS > App`.
+
+3. When prompted, choose your product name (`DLRiOSSample`), Interface (`StoryBoard`), Language (`Swift` or `Objective-C`)
+
+4. Click on the Next button and select the location to save the project.
+
+5. Click on the Create button to finish.
+
+### Include the Library
+
+1. Add the Dynamsoft Label Recognizer framework to your project.
+    - Drag and drop the frameworks(`[INSTALLATION FOLDER]\DynamsoftCore.framework` and `[INSTALLATION FOLDER]\DynamsoftLabelRecognizer.framework`) into your Xcode project. Make sure to check `Copy items if needed` and `Create groups` to copy the framework into your project's folder.
+    - Click on the project, go to the `General` > `Frameworks, Libraries, and Embedded Content`, set the embed type to `Embed & Sign`.
    
-After installation, you can find samples for supported platforms in the **Samples** folder under the installation folder.  
+2. Import the framework in the file `ViewController.m`
+    
+    - Objective-C
 
+    ```objc
+    #import <DynamsoftLabelRecognizer/DynamsoftLabelRecognizer.h>
+    ```
+    - Swift
 
-&nbsp; 
+    ```Swift
+    import DynamsoftLabelRecognizer
+    ```       
 
+### Initialize the Dynamsoft Label Recognizer
 
-## Getting Started: HelloWorld
-To build a Hello World app that reads barcodes from an image, you can follow the steps below:
-1. Create a new iOS project in Xcode.
-2. Add the barcode reader framework to your project
-   (1).Unzip the downloaded ZIP file `dbr-ios-{version number}.zip` and you'll see `DynamsoftBarcodeReader.framework`.
-   (2).Drag and drop the framework into your Xcode project. Make sure to check Copy items if needed and Create groups to copy the framework into your project's folder.
-   
-3. Add the required `.tbd/.dylib` file to your project.
-   Go to the `Build Phases` tab of your Xcode project, under `Link Binary with Libraries` section, click + button. Search for the file `libc++.tbd`, select it and click Add button. Then the libc++.tbd file will be copied to your project.
+1. Initialize the license connection parameters.
 
-4. Import the framework's header.   
-   Objective-C:
-   ```objc
-   #import <DynamsoftBarcodeSDK/DynamsoftBarcodeSDK.h>
-   ```
+    - Objective-C
 
-   Swift:
-   ```Swift
-   import DynamsoftBarcodeReader
-   ```   
-5. Add code for barcode scanning
-   After setting up the basic project, you can now move on to coding.
-   The following code demonstrates initializing DynamsoftBarcodeReader and starting the barcode recognition process.
-   Objective-C:
-   ```objc
-    #import "ViewController.h"
-    #import <DynamsoftBarcodeReader/DynamsoftBarcodeReader.h>
+    ```objc
+    [DynamsoftLabelRecognizer initLicense:@"DLS2eyJvcmdhbml6YXRpb25JRCI6IjIwMDAwMSIsInByb2R1Y3RzIjoyfQ==" verificationDelegate:self];
+    ```
+    - Swift
 
-    @interface ViewController ()
-    @end
-    @implementation ViewController
+    ```swift
+    DynamsoftLabelRecognizer.initLicense("DLS2eyJvcmdhbml6YXRpb25JRCI6IjIwMDAwMSIsInByb2R1Y3RzIjoyfQ==",verificationDelegate:self)
+    ```       
 
-    - (void)viewDidLoad {
-        [super viewDidLoad];
-        // Do any additional setup after loading the view, typically from a nib.
-        // Create and initialize a DynamsoftBarcodeReader.
-        DynamsoftBarcodeReader *dbr;
-        // Please replace "t0068MgAAAIe***inVNj14D4=" with your own license.
-        // Note: If you do not have a valid license for the SDK, some characters of the barcode 
-        // results will be replaced with "***".
-        dbr = [[DynamsoftBarcodeReader alloc] initWithLicense:@"t0068MgAAAIe***inVNj14D4="];
-        UIImage *image =[UIImage imageNamed:@"Put your license file here"];
-        NSError* error = nil;
-        NSArray* readResult = [dbr decodeImage:image withTemplate:@"" error:&error];
-        if (error.code != 0){
-                NSLog(@"%@", error);
-         }
-         else
-         {
-            if (readResult.count > 0)
-            {
-               for(int i = 0; i< readResult.count;i++){
-                  iTextResult* result = readResult[i];
-                  NSLog(@"Barcode %d: %@", i, result.barcodeText);
-               }
+    >Note:
+    >- Network connection is required for the license to work.
+    >- "DLS2***" is a default 7-day trial license used in the sample.
+    >- If the license has expired, please request a trial license through the <a href="https://www.dynamsoft.com/customer/license/trialLicense?utm_source=docs" target="_blank">customer portal</a>.
+
+2. Create an instance of Dynamsoft Label Recognizer
+
+    - Objective-C
+
+    ```objc
+    DynamsoftLabelRecognizer *dlr = [[DynamsoftLabelRecognizer alloc] init];
+    ```
+
+    - Swift
+
+    ```swift
+    let dlr = DynamsoftLabelRecognition.init()
+    ```
+
+### Recognizing and Output Results
+
+1. Recognizing text
+    
+    - Objective-C
+
+    ```objc
+    NSError* error = [[NSError alloc] init];
+    NSArray<iDLRResult*>* results = [dlr recognizeByImage:self.imgView.image templateName:@"" error:&error];
+    ```
+
+    - Swift
+
+    ```swift
+    var error : NSError? = NSError()
+    let results = dlr.recognizeByBuffer(image: imgView.image!, templateName: "", error: &error)
+    ```
+
+    >The variable `data` represents the temporary photo taken by camera app, which will be explained later.
+
+2. Get and output the recognition results
+
+    - Objective-C
+
+    ```objc
+    NSString* msgText = @"";
+    
+    if (results.count > 0) {
+        for (NSInteger i = 0; i < [results count]; i++) {
+            for (iDLRLineResult* lineResult in results[i].lineResults) {
+                msgText = [msgText stringByAppendingString:[NSString stringWithFormat:@"\nValue: %@\n",lineResult.text]];
             }
-            else
-            {
-               NSLog(@"%@: no barcode found.",image);
-            }
-         }
-      }
-
-   - (void)didReceiveMemoryWarning {
-      // Dispose of any resources that can be recreated.
-      [super didReceiveMemoryWarning];
-   }
-
-   @end
-   ```
-   
-   Swift:
-   ```Swift
-   import UIKit
-   import DynamsoftBarcodeReader
-
-   class ViewController: UIViewController {
-      override func viewDidLoad() {
-         super.viewDidLoad()
-         do {
-            /*
-               Create and initialize a DynamsoftBarcodeReader.
-               Please replace "t0068MgAAAIe***inVNj14D4=" with your own license.
-               Note: If you do not have a valid license for the SDK, some characters of the barcode
-               results will be replaced with "***". 
-            */
-            let reader = DynamsoftBarcodeReader.init(license: "t0068MgAAAIe***inVNj14D4=")
-            guard let uiImage = UIImage.init(named: "Put your license file here") else { return }
-            let results = try reader.decode(uiImage, withTemplate: "")
-            let count = results.count;
-            if (count > 0) {
-               for i in 0..<count {
-                  print("Barcode",String(i),": ",results[i].barcodeText);
-               }
-            } 
-            else {
-               print("no barcode found")
-            }
-         } 
-         catch {
-            print(error)
-         }
-      }
-   }
-   ```
-&nbsp; 
-
-
-## Decoding Methods
-The SDK provides multiple decoding methods that support reading barcodes from different sources, including static images,
-video stream, files in memory, base64 string, bitmap, etc. Here is a list of all decoding methods:
-- [decodeFile](api-reference/methods/decode.md#decodefilewithname): Reads barcodes from a specified file (BMP, JPEG, PNG, GIF, TIFF or PDF).   
-- [decodebase64](api-reference/methods/decode.md#decodebase64): Reads barcodes from a base64 encoded string of a file.  
-- [decodeBuffer](api-reference/methods/decode.md#decodebuffer): Reads barcodes from raw buffer.
-- [decodeImage](api-reference/methods/decode.md#decodeimage): Decodes barcodes from an image file in memory.   
-   
-You can find more samples in more programming languages at [Code Gallery](https://www.dynamsoft.com/Downloads/Dynamic-Barcode-Reader-Sample-Download.aspx).
-
-
-&nbsp; 
-
-
-## Barcode Reading Settings
-Calling the [decoding methods](#decoding-methods) directly will use the default scanning modes and it will satisfy most of the needs. The SDK also allows you to adjust the scanning settings to optimize the scanning performance for different usage scenarios.   
-   
-There are two ways to change the barcode reading settings - using the PublicRuntimeSettings Struct or template. For new
-developers, We recommend you to start with the PublicRuntimeSettings struct; For those who are experienced with the SDK,
-you may use a template which is more flexible and easier to update.   
-
-- [Use iPublicRuntimeSettings Struct to Change Settings](#use-publicruntimesettings-struct-to-change-settings)   
-- [Use A Template to Change Settings](#use-a-template-to-change-settings)   
-
-### Use PublicRuntimeSettings struct to change settings
-Here are some common scanning settings you might find helpful:   
-- [Specify Barcode Type to Read](#specify-barcode-type-to-read)   
-- [Specify Maximum Barcode Count](#specify-maximum-barcode-count)   
-- [Specify a Scan Region](#specify-a-scan-region)  
-
-For more scanning settings guide, check out the [How To](#how-to-guides) section.
-
-#### Specify Barcode Type to Read
-By default, the SDK will read all the supported barcode formats except Postal Codes and Dotcode from the image. (See [Product Overview]() for the full supported barcode list.)   
-
-If your full license only covers some barcode formats, you can use `BarcodeFormatIds` and `BarcodeFormatIds_2` to specify the barcode format(s). Check out [`EnumBarcodeFormat`]({{ site.enumerations }}format-enums.html#barcodeformat) and [`EnumBarcodeFormat_2`]({{ site.enumerations }}format-enums.html#barcodeformat_2).   
-
-For example, to enable only 1D barcode reading, you can use the following code:   
-Objective-C:
-```objc
-NSError __autoreleasing * _Nullable error;
-DynamsoftBarcodeReader *dbr;
-// Initialize license prior to any decoding. replace "t0068MgAAAIeGN7Q***MMQ+inVNj14D4=" with your own license.
-dbr = [[DynamsoftBarcodeReader alloc] initWithLicense:@"t0068MgAAAIeGN7Q***MMQ+inVNj14D4="];
-UIImage *image =[UIImage imageNamed:@"AllSupportedBarcodeTypes.tif"];
-iPublicRuntimeSettings* settings = [dbr getRuntimeSettings:nil];
-settings.barcodeFormatIds = EnumBarcodeFormatONED; // Set the barcode format
-[dbr updateRuntimeSettings:settings error:nil];
-NSArray* readResult = [dbr decodeImage:image withTemplate:@"" error:&error];
-if (error)
-{
-    NSLog(@"%@", error);
-}else{
-   if (readResult.count > 0)
-   {
-      for(int i = 0; i< readResult.count;i++){
-         iTextResult* result = readResult[i];
-         NSLog(@"Barcode %d: %@", i, result.barcodeText);
-      }
-   }else{
-      NSLog(@"%@: No barcode found.",image);
-   }
-}
-```
-
-Swift:
-```Swift
-// Initialize license prior to any decoding. replace "t0068MgAAAIeGN7***inVNj14D4=" with your own license.
-let reader = DynamsoftBarcodeReader.init(license: "t0068MgAAAIeGN7***inVNj14D4=")
-
-let settings = try reader.getRuntimeSettings()
-settings.barcodeFormatIds = Int(EnumBarcodeFormat.ONED.rawValue) // Set the barcode format
-reader.update(settings, error: nil)
-
-guard let uiImage = UIImage.init(named: "AllSupportedBarcodeTypes.tif") else { return }
-let results = try reader.decode(uiImage, withTemplate: "")
-let count = results.count
-if (count > 0) {
-    for i in 0..<count {
-        print("Barcode",String(i),": ",results[i].barcodeText)
+        }
+    }else{
+        msgText = error.code == 0 ? @"No data detected." : error.userInfo[NSUnderlyingErrorKey];
     }
-} else {
-    print("No barcode found.")
-}
-```
+    ```
 
-#### Specify maximum barcode count
-By default, the SDK will read as many barcodes as it can. To increase the recognition efficiency, you can use `expectedBarcodesCount` to specify the maximum number of barcodes to recognize according to your scenario.   
-Objective-C:
-```objc
-NSError __autoreleasing * _Nullable error;
-DynamsoftBarcodeReader *barcodeReader;
-// Initialize license prior to any decoding
-//Replace "<Put your license key here>" with your own license
-barcodeReader = [[DynamsoftBarcodeReader alloc] initWithLicense:@"Put your license key here"];
-iPublicRuntimeSettings* settings = [barcodeReader getRuntimeSettings:nil];
-settings.expectedBarcodesCount = 1;
-[barcodeReader updateRuntimeSettings:settings error:&error];
-```
-Swift:
-```Swift
-// Initialize license prior to any decoding. replace "t0068MgAAAIeGN7***inVNj14D4=" with your own license.
-let reader = DynamsoftBarcodeReader.init(license: "t0068MgAAAIeGN7***inVNj14D4=")
-let settings = try reader.getRuntimeSettings()
-settings.expectedBarcodesCount = 1 // Set the expected number of barcodes to be read
-reader.update(settings, error: nil)
-```
+    - Swift
 
-#### Specify a scan region
-By default, the barcode reader will search the whole image for barcodes. This can lead to poor performance especially when
-dealing with high-resolution images. You can speed up the recognition process by restricting the scanning region.   
+    ```swift
+    var msgText:String = ""
+    
+    for item in results
+    {
+        if item.lineResults!.count > 0 {
+            for lineResult in item.lineResults! {
+                msgText = "\(msgText)\nValue: \(lineResult.text ?? "nil")\n"
+            }
+        }
+    }
+    ```
 
-To specify a region, you will need to define an area. The following code shows how to create a template string and define the region.   
-Objective-C:
-```objc
-NSError __autoreleasing * _Nullable error;
-DynamsoftBarcodeReader *barcodeReader;
-// Initialize license prior to any decoding
-//Replace "<Put your license key here>" with your own license
-barcodeReader = [[DynamsoftBarcodeReader alloc] initWithLicense:@"Put your license key here"];
-iPublicRuntimeSettings* settings = [barcodeReader getRuntimeSettings:nil];
-settings.region.regionBottom = 100;
-settings.region.regionLeft = 0;
-settings.region.regionRight = 50;
-settings.region.regionTop = 0;
-settings.region.regionMeasuredByPercentage = 1; //The region is determined by percentage
-[barcodeReader updateRuntimeSettings:settings error:&error];
-```
-Swift:
-```Swift
-// Initialize license prior to any decoding. replace "t0068MgAAAIeGN7***inVNj14D4=" with your own license.
-let reader = DynamsoftBarcodeReader.init(license: "t0068MgAAAIeGN7***inVNj14D4=")
-let settings = try reader.getRuntimeSettings()
-// Set the scan region
-settings.region.regionTop = 0
-settings.region.regionLeft = 0
-settings.region.regionRight = 100
-settings.region.regionBottom = 50
-settings.region.regionMeasuredByPercentage = 1  // true
-reader.update(settings, error: nil)
-```
+    The recognition results of SDK are organized into a four-tier structure: 
+    - `iDLRResult[]` corresponds to the results of an `image`
+    - `iDLRResult` corresponds to the result of a `TextArea` (also called Label) 
+    - `iDLRLineResult` corresponds to the result of each `TextLine` in the Label
+    - `iDLRCharacterResult` corresponds to the result of each `Character` in the `TextLine`
 
-### Use A Template to Change Settings
-Besides the option of using the PublicRuntimeSettings struct, the SDK also provides [`initRuntimeSettingsWithString`](api-reference/methods/parameter-and-runtime-settings-advanced.md#initruntimesettingswithstring) and [`initRuntimeSettingsWithFile`](api-reference/methods/parameter-and-runtime-settings-advanced.md#initruntimesettingswithfile) APIs that enable you to use a template to control all the runtime settings. With a template, instead of writing many codes to modify the settings, you can manage all the runtime settings in a JSON file/string.    
-Objective-C:
-```objc
-NSError __autoreleasing * _Nullable error;
-DynamsoftBarcodeReader *barcodeReader;
-// Initialize license prior to any decoding
-//Replace "<Put your license key here>" with your own license
-barcodeReader = [[DynamsoftBarcodeReader alloc] initWithLicense:@"Put your license key here"];
-//Use a template to modify the runtime settings
-[barcodeReader initRuntimeSettingsWithString:@"{\"Version\":\"3.0\", \"ImageParameter\":{\"Name\":\"IP1\", \"BarcodeFormatIds\":[\"BF_QR_CODE\"], \"ExpectedBarcodesCount\":10}}" conflictMode:EnumConflictModeOverwrite error:&error];
-```
-Swift:
-```Swift
-// Initialize license prior to any decoding. replace "t0068MgAAAIeGN7***inVNj14D4=" with your own license.
-let barcodeReader = DynamsoftBarcodeReader.init(license: "t0068MgAAAIeGN7***inVNj14D4=")
-let error: NSError? = NSError()
-barcodeReader.initRuntimeSettingsWithString(content:"{\"Version\":\"3.0\", \"ImageParameter\":{\"Name\":\"IP1\", \"BarcodeFormatIds\":[\"BF_QR_CODE\"], \"ExpectedBarcodesCount\":10}}", conflictMode:EnumConflictMode.Overwrite, error: &error)
-```  
+    The structure is shown in the figure below:
 
-Below is a template for your reference. To learn more about the APIs, you can check out [`iPublicRuntimeSettings`](api-reference/class/iPublicRuntimeSettings.md) Struct.  
-```js
-{
-   "ImageParameter" : {
-      "BarcodeFormatIds" : [ "BF_ALL" ],
-      "BinarizationModes" : [
-         {
-            "BlockSizeX" : 0,
-            "BlockSizeY" : 0,
-            "EnableFillBinaryVacancy" : 1,
-            "ImagePreprocessingModesIndex" : -1,
-            "Mode" : "BM_LOCAL_BLOCK",
-            "ThreshValueCoefficient" : 10
-         }
-      ],
-      "DeblurLevel" : 9,
-      "Description" : "",
-      "ExpectedBarcodesCount" : 0,
-      "GrayscaleTransformationModes" : [
-         {
-            "Mode" : "GTM_ORIGINAL"
-         }
-      ],
-      "ImagePreprocessingModes" : [
-         {
-            "Mode" : "IPM_GENERAL"
-         }
-      ],
-      "IntermediateResultSavingMode" : {
-         "Mode" : "IRSM_MEMORY"
-      },
-      "IntermediateResultTypes" : [ "IRT_NO_RESULT" ],
-      "MaxAlgorithmThreadCount" : 4,
-      "Name" : "runtimesettings",
-      "PDFRasterDPI" : 300,
-      "Pages" : "",
-      "RegionDefinitionNameArray" : null,
-      "RegionPredetectionModes" : [
-         {
-            "Mode" : "RPM_GENERAL"
-         }
-      ],
-      "ResultCoordinateType" : "RCT_PIXEL",
-      "ScaleDownThreshold" : 2300,
-      "TerminatePhase" : "TP_BARCODE_RECOGNIZED",
-      "TextFilterModes" : [
-         {
-            "MinImageDimension" : 65536,
-            "Mode" : "TFM_GENERAL_CONTOUR",
-            "Sensitivity" : 0
-         }
-      ],
-      "TextResultOrderModes" : [
-         {
-            "Mode" : "TROM_CONFIDENCE"
-         },
-         {
-            "Mode" : "TROM_POSITION"
-         },
-         {
-            "Mode" : "TROM_FORMAT"
-         }
-      ],
-      "TextureDetectionModes" : [
-         {
-            "Mode" : "TDM_GENERAL_WIDTH_CONCENTRATION",
-            "Sensitivity" : 5
-         }
-      ],
-      "Timeout" : 10000
-   },
-   "Version" : "3.0"
-}
-```
+    <div align="center">
+    <img src="../assets/dlr_result2.png" alt="DLR Result Structure" width="80%"/>
+    <p>Figure 1 – DLR Result Structure</p>
+    </div> 
 
-&nbsp; 
+### Additional Auxiliary Steps
 
-## Useful Links
-- [Licensing and Distributing]()
-- [How-to Guides]({{ site.how_to }})
-- [FAQs]({{ site.faqs }})
+1. Change the class declaration and add the property `imagePickerController`
+    
+    - Objective-C
+
+    ```objc
+    @interface ViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+
+    @property (nonatomic) UIImagePickerController *imagePickerController;
+
+    @end
+    ```
+
+    - Swift
+
+    ```swift
+    class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    var imagePickerController : UIImagePickerController?
+
+    }
+    ```
+
+2. Click on the `Main.storyboard`, add three controls(one `ImageView` and two `Buttons`) 
+
+3. Select the Assistant Editor and make sure the `ViewController.m` or `ViewController.swift` is visible. 
+
+4. Ctrl and drag from the `ImageView` control to the ViewController class and create the following Outlet.
+    - Objective-C
+
+    ```objc
+    @property (weak, nonatomic) IBOutlet UIImageView *imgView;
+    ```
+
+    - Swift
+
+    ```swift
+    @IBOutlet weak var imgView: UIImageView!
+    ```
+
+5. Ctrl an drag from the Button(`Take a Photo`) to the ViewController class and create the following Action.
+    - Objective-C
+
+    ```objc
+    - (IBAction)onTakePhoto:(id)sender {
+        UIImagePickerController *imgCtrl = [[UIImagePickerController alloc]init];
+        
+        imgCtrl.sourceType = UIImagePickerControllerSourceTypeCamera;
+        imgCtrl.cameraDevice = UIImagePickerControllerCameraDeviceRear;
+        
+        imgCtrl.delegate = self;
+        
+        self.imagePickerController = imgCtrl;
+        
+        [self presentViewController:imgCtrl animated:YES completion:nil];
+    }
+    
+    - (void)imagePickerController:(UIImagePickerController *) picker
+        didFinishPickingMediaWithInfo:(NSDictionary<UIImagePickerControllerInfoKey,id> *) info{
+        [picker dismissViewControllerAnimated:YES completion:nil];
+
+        UIImage *img = [info objectForKey:UIImagePickerControllerOriginalImage];
+        self.imgView.image = img;
+    }
+    ```
+
+    - Swift
+
+    ```swift
+    @IBAction func onTakePhoto(_ sender: Any) {
+
+        imagePickerController.sourceType = .camera
+        imagePickerController.cameraDevice = .rear
+        imagePickerController.delegate = self
+        
+        present(imagePickerController, animated: true, completion: nil)
+    }
+
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        imgView.image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
+        
+        self.dismiss(animated: true, completion: nil)
+    }
+    ```
+
+4. Ctrl an drag from the Button(`Recognize Text`) to the ViewController class and create the following Action.
+    - Objective-C
+
+    ```objc
+    - (IBAction)onRecognizeText:(id)sender {
+        NSString* msgText = @"";
+
+        dispatch_async(dispatch_get_global_queue(0, 0), ^{
+            msgText = recognizeText();
+        });
+
+        dispatch_async(dispatch_get_main_queue(), ^{
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Results" message:msgText preferredStyle:UIAlertControllerStyleAlert];
+
+            [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
+            [self presentViewController:alert animated:YES completion:nil];
+        });
+    }
+    ```
+
+    - Swift
+
+    ```swift
+    @IBAction func onRecognizeText(_ sender: Any) {
+        var msgText:String = ""
+
+        DispatchQueue.global().async {
+            msgText = recognizeText()
+        }
+
+        DispatchQueue.main.async {
+            let ac = UIAlertController(title: "Results", message: msgText, preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            self.present(ac, animated: true, completion: nil)
+        }        
+    }
+    ```
+
+	>Note: The implementation of the `recognizeText` function has been explained in [Initialize the Dynamsoft Label Recognizer](#initialize-the-dynamsoft-label-recognizer) and [Recognizing and output results](#recognizing-and-output-results).
+
+
+    <!-- >Note: 
+    > - You can download the entire Objective-C source code from [here]()
+    > - You can download the entire Swift source code from [here]() -->
+
+### Build and Run the Project
+
+1. Select the device that you want to run your app on.
+
+2. Click `Build and then run the current scheme` button, then XCode installs your app on your connected device and starts it.

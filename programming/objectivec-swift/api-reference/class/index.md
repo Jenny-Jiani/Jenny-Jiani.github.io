@@ -1,31 +1,19 @@
 ---
 layout: default-layout
-title: Dynamsoft Barcode Reader Objective-C & Swift API Reference - class
-keywords: class, api reference, objective-c, oc, swift
+title: Dynamsoft Label Recognition Objective-C & Swift API Reference - Classes
+description: This page shows all Classes of Dynamsoft Label Recognition for Objective-C & Swift API Reference.
+keywords: api reference, objective-c, oc, swift
 needAutoGenerateSidebar: false
-breadcrumbText: Class
 ---
 
-# Dynamsoft Barcode Reader SDK - Objective-C & Swift Class
 
-- [`iAztecDetails`](iAztecDetails.md)	
-- [`iContour`](iContour.md)	
-- [`iDBRPoint`](iDBRPoint.md)	
-- [`iDataMatrixDetails`](iDataMatrixDetails.md)		
-- [`iExtendedResult`](iExtendedResult.md)		
-- [`iFrameDecodingParameters`](iFrameDecodingParameters.md)	
-- [`iFurtherModes`](iFurtherModes.md)		
-- [`iImageData`](iImageData.md)		
-- [`iIntermediateResult`](iIntermediateResult.md)	
-- [`iLineSegment`](iLineSegment.md)		
-- [`iLocalizationResult`](iLocalizationResult.md)		
-- [`iOneDCodeDetails`](iOneDCodeDetails.md)		
-- [`iPDF417Details`](iPDF417Details.md)		
-- [`iPublicRuntimeSettings`](iPublicRuntimeSettings.md)		
-- [`iQRCodeDetails`](iQRCodeDetails.md)
-- [`iQuadrilateral`](iQuadrilateral.md)
-- [`iRegionDefinition`](iRegionDefinition.md)		
-- [`iRegionOfInterest`](iRegionOfInterest.md)		
-- [`iSamplingImageData`](iSamplingImageData.md)		
-- [`iTextResult`](iTextResult.md)
+# Dynamsoft Label Recognition - Classes
 
+- [`iDLRLTSConnectionParameters`](dlr-lts-connection-parameters.md)
+- [`iDLRCharacterResult`](dlr-character-result.md)		
+- [`iDLRImageData`](dlr-image-data.md)		
+- [`iDLRLineResult`](dlr-line-result.md)	
+- [`iDLRQuadrilateral`](dlr-quadrilateral.md)	
+- [`iDLRReferenceRegion`](dlr-reference-region.md)	
+- [`iDLRResult`](dlr-result.md)		
+- [`iDLRRuntimeSettings`](dlr-runtime-settings.md)	

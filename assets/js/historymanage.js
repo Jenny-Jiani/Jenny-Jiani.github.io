@@ -1,63 +1,10 @@
 function UrlReplace()
 {
-    var docUrl = document.URL;    
+    var docUrl = document.URL;
     var ver = getUrlVars(docUrl)["ver"];
     var matchVer = getUrlVars(docUrl)["matchVer"];
     if (matchVer == undefined && ver != undefined) {
         RedirToGivenVersionPage(ver);
-    }
-
-    
-    var curVerFromUrl = "";
-    var tmpExp = new RegExp(/-v[0-9]+[^\/^?^#]*((\/)|(.html))/g);
-    var searchAry = tmpExp.exec(docUrl);
-    if (searchAry != null){
-        curVerFromUrl = searchAry[0].replace('-v','');
-        curVerFromUrl = curVerFromUrl.replace('.html','');
-        curVerFromUrl = curVerFromUrl.replace('/', '');
-    }
-    else{
-        curVerFromUrl = "latest"
-    }
-
-    var compatiableDiv = document.getElementById( "compatibleInfo");
-    if (ver == undefined){
-        ver = curVerFromUrl;
-        if(compatiableDiv != null){
-            compatiableDiv.style.display = "none";
-        }
-    }
-    else if (ver != curVerFromUrl){
-        var curVerTag = $(".currentVersion ");
-        var compatibleTag = $(".compatibleCurVersion")
-        if (curVerTag != null) {
-            if (ver == "latest"){
-                curVerTag[0].innerText = "latest version";
-            }
-            else{
-                curVerTag[0].innerText = "version "+ver;
-            }
-        }
-        if(compatiableDiv != null){
-            
-        }
-        if (compatiableDiv != null && compatibleTag != null && curVerFromUrl != "latest"){
-            compatiableDiv.style.display = "block";
-            compatibleTag[0].innerText = "Version "+ver;
-        }
-        else if (compatiableDiv != null){
-            compatiableDiv.style.display = "none";
-        }
-    }
-    else if (compatiableDiv != null){
-        compatiableDiv.style.display = "none";
-    }
-    
-
-    var allHerf1 = $(".docContainer .content, #docHead, #AutoGenerateSidebar, .sideBar").find("a");
-    for (var i = 0; i < allHerf1.length; i++)
-    {
-        allHerf1[i].onclick = function(){addParam(this, ver); return false;};
     }
 }
 
@@ -74,7 +21,7 @@ function RedirToGivenVersionPage(inputVer)
     var curVer = null;
     var bestVersion = null;
     if (curVerTag != null) {
-        var verText = (curVerTag[0].innerText).toLowerCase();
+        var verText = (curVerTag[0].innerHTML).toLowerCase();
         if (verText == "latest version"){
             curVer = "latest"
         }
@@ -218,7 +165,7 @@ function addParam (aTag, verText)
         return;
 
     var exp = new RegExp(/[?&]ver=[^&^#]+/gi);
-	if (exp.exec(hrefVal) != null){
+	if (exp.exec(hrefVal) != null) {
         if (aTag.target == '_blank') {
             window.open(hrefVal)
         } else {
@@ -228,15 +175,15 @@ function addParam (aTag, verText)
 	}
 	
 	var verStr = "";
-	exp = new RegExp(/[?]+([^=]+)=/gi)
-        if (exp.exec(hrefVal) != null){
+	exp = new RegExp(/[?]+([^=]+)=/gi);
+    if (exp.exec(hrefVal) != null) {
 		verStr = "&&ver=" + verText;
 	}
-	else{
+	else {
 		verStr = "?ver=" + verText;
 	}
 	
-	if (hrefVal.indexOf("#") != -1){
+	if (hrefVal.indexOf("#") != -1) {
 		var urlAry = hrefVal.split("#");
 		if (urlAry.length == 2){
             if (aTag.target == '_blank') {
@@ -283,7 +230,7 @@ function changeVersion (liTag)
 		curUrl = curUrl.substring(0, curUrl.indexOf("#"));
 	}
 	
-	curUrl = curUrl + "?ver=" + ver;
+	curUrl = curUrl + "?ver=" + ver + "&&cVer=true";
 	if (srcVal != undefined){
 		curUrl = curUrl + "&&src=" + srcVal;
 	}

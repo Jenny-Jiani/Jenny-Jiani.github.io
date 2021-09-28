@@ -3,11 +3,11 @@
 
 {%- include head.html -%}
 
-<body>
+<body class="dlrDoc">
     <div class="headWrapper">
         {%- include page_header.html -%}
     </div>
-    {%- include dbrNav.html -%}
+    {%- include dlrNav.html -%}
     <div class="sideBarIcon"><i class="fa fa-list" style="margin-right: 5px;"></i> Table of contents</div>
     <div class="container">
         <div class="row">
@@ -19,9 +19,7 @@
                     <ul class="mainPage" id="fullTreeMenuListContainer" name="listLevel1">
                         <!-- {%- include sidelist-introduction.html -%}
                         {%- include sidelist-programming.html -%}
-                        {%- include sidelist-parameters.html -%}
-                        {%- include sidelist-enhancement.html -%}
-                        {%- include sidelist-license_activation.html -%} -->
+                        {%- include sidelist-parameters.html -%} -->
                     </ul>
                 </div>
             </div>
@@ -32,7 +30,7 @@
                 <div class="main row">
                     <div class="content markdown-body headCounter col-xs-12 col-md-12 col-lg-9 col-xl-10" style="margin-bottom: 20px;">
                         <div class="dbrThanksDownloading">
-                            <p class="thanksDownloadTitle">Thanks for downloading Dynamsoft Barcode Reader <span class="editionName"></span> Package!</p>
+                            <p class="thanksDownloadTitle">Thanks for downloading Dynamsoft Label Recognizer <span class="editionName"></span> Package!</p>
                             <p style="margin-bottom: 0;">Your download will start shortly. If your download does not begin, <a class="bluelink downloadlink" href="">click here to retry</a>.</p>
                         </div>
                         {{ content }}
@@ -62,96 +60,38 @@
         <div class="container">
             <div class="col-xs-12">
                 {%- include liquid_autoGenerateHistoryList.html -%}
-                {%- include version-list.html -%}
+                {%- include auto-version-list.html -%}
             </div>
         </div>
     </div>
     <div id="footerWrapper">
         {%- include page_footer.html -%}
     </div>
+    
+    <iframe id="sideBarIframe" src="{{ site.firstLevelUrl }}/Hide_Tree_Page.html" allow="" height="0" frameborder="0"></iframe>
 
-    <iframe id="sideBarIframe" src="{{ site.assets }}/includes/Hide_Tree_Page.html" allow="" height="0" frameborder="0"></iframe>
-
-    <script type="text/javascript">anchors.add();</script>
-
-
-    <script type="text/javascript">
+    <script>anchors.add();</script>
+    
+    <script>
         UrlReplace();
     </script>
     
-    {%- if page.needAutoGenerateSidebar -%}
-    {%- unless page.needGenerateH3Content -%}
     <script type="text/javascript">
-        FullTreeMenuList(true, false);
+        FullTreeMenuList('{{ page.needAutoGenerateSidebar }}', '{{ page.needGenerateH3Content }}', '{{ page.pageStartVer }}', '{{ site.useVersionTree }}');
     </script>
-    {%- else -%}
+
+    <!-- dbr docs -->
     <script type="text/javascript">
-        FullTreeMenuList(true);
-    </script>
-    {%- endunless -%}
-    {%- else -%}
-    <script type="text/javascript">
-        FullTreeMenuList(false);
-    </script>
-    {%- endif -%}
-
-    {%- include livehelp.html -%}
-
-
-    <!-- for dbr -->
-    <script type="text/javascript">
-        function getCookie(name) {
-            var arr, reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
-            return (arr = document.cookie.match(reg)) ? unescape(arr[2]) : null;
-        }
-
-
-        $(document).ready(function(){
-            var download = getUrlParam('download');
-            if(download == 'true' && (getCookie('DynamsoftEmail') || getCookie('SourceServer') == '1')) {
-                var curHref = window.location.href.toLowerCase()
-                if (curHref.indexOf('/c/') > -1 || curHref.indexOf('/cplusplus/') > -1) {
-                    $('.editionName').html('C/C++');
-                    $('.downloadlink').attr('href', 'https://download.dynamsoft.com/dbr/dbr-c_cpp-8.4.zip');
-                    $('.dbrThanksDownloading').show();
-                    $('.downloadlink')[0].click();
-                } else if (curHref.indexOf('/dotnet/') > -1) {
-                    $('.editionName').html('.NET');
-                    $('.downloadlink').attr('href', 'https://download.dynamsoft.com/dbr/dbr-dotnet-8.4.zip');
-                    $('.dbrThanksDownloading').show();
-                    $('.downloadlink')[0].click();
-                } else if (curHref.indexOf('/java/') > -1) {
-                    $('.editionName').html('Java');
-                    $('.downloadlink').attr('href', 'https://download.dynamsoft.com/dbr/dbr-java-8.4.zip');
-                    $('.dbrThanksDownloading').show();
-                    $('.downloadlink')[0].click();
-                } else if (curHref.indexOf('/javascript/') > -1) {
-                    $('.editionName').html('Javascript');
-                    $('.downloadlink').attr('href', 'https://download.dynamsoft.com/dbr/DBR-JS-8.2.5.zip');
-                    $('.dbrThanksDownloading').show();
-                    $('.downloadlink')[0].click();
-                } else if (curHref.indexOf('/android/') > -1) {
-                    $('.editionName').html('Android');
-                    $('.downloadlink').attr('href', 'https://download.dynamsoft.com/dbr/dbr-android-8.4.zip');
-                    $('.dbrThanksDownloading').show();
-                    $('.downloadlink')[0].click();
-                } else if (curHref.indexOf('/objectivec-swift/') > -1) {
-                    $('.editionName').html('iOS');
-                    $('.downloadlink').attr('href', 'https://download.dynamsoft.com/dbr/dbr-ios-8.4.zip');
-                    $('.dbrThanksDownloading').show();
-                    $('.downloadlink')[0].click();
-                }
+        $('#txtSearch').keydown(function(e) { 
+            if (e.keyCode == 13) {
+                window.location.href = '/label-recognition/search.html?q=' + $('#txtSearch').val()
             }
-
-            $('#txtSearch').keydown(function(e) { 
-                if (e.keyCode == 13) {
-                    window.location.href = '/barcode-reader/search.html?q=' + $('#txtSearch').val();
-                }
-            })
         })
     </script>
 
-    
+
+    {%- include livehelp.html -%}
+
     <!-- Google Code for Remarketing Tag -->
     <script type="text/javascript">
         /* <![CDATA[ */

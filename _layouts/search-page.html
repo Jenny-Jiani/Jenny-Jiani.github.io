@@ -90,12 +90,15 @@
   }
   @media (min-width: 992px) {
     #searchResult td.gsc-clear-button {display:none;}
-    .docContainer { min-height: calc(100vh - 285px); }
+    .docContainer { min-height: calc(100vh - 133px); }
   }
   @media (min-width: 1200px) {
     #searchResult { width: 960px; }
     #searchResult .gsc-results .gsc-cursor-box { margin-bottom: 25px; }
     #searchResult td.gsc-clear-button {display:none;}
+  }
+  @media (min-width: 1680px) {
+    .docContainer { min-height: calc(100vh - 155px); }
   }
   @media (max-width: 991px) {
     #searchContent { min-height: calc(100vh - 325px); }
@@ -108,7 +111,67 @@
     <div class="headWrapper">
         {%- include page_header.html -%}
     </div>
-    {%- include dbrNav.html -%}
+    <div class="subHeadWrapper">
+        <div id="DLRMenu" class="productMenu">
+            <div class="container pcProductMenu">
+                <div class="row">
+                    <div class="col-12">
+                        <ul class="menuList">
+                            <li class="title">
+                                <a class="orangeLink" href="https://www.dynamsoft.com/label-recognition/overview/">Dynamsoft Label Recognition</a>
+                            </li>
+                            <li class="item overview">
+                                <a class="textUpperCase" href="https://www.dynamsoft.com/label-recognition/overview/">Overview</a>
+                            </li>
+                            <li class="item features">
+                                <a class="textUpperCase" href="https://www.dynamsoft.com/label-recognition/features/">Features</a>
+                            </li>
+                            <li class="item on">
+                                <a class="textUpperCase" href="https://www.dynamsoft.com/label-recognition/introduction/">Documentation</a>
+                            </li>
+                            <li class="item useCases">
+                                <a class="textUpperCase" href="https://www.dynamsoft.com/label-recognition/use-cases/">Use Cases</a>
+                            </li>
+                        </ul>
+                        <a href="https://www.dynamsoft.com/label-recognition/downloads/" class="downloadBtn fr textUpperCase">Download Free Trial</a>
+                    </div>
+                </div>
+            </div>
+            <div class="container mobileProductMenu">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="productLogo"><i class="dlt-logo"></i>Dynamsoft Label Recognition  <i class="icon-orange-angle"></i></div>
+                        <div id="dlrCurrentPage" class="fontOswald fr currentPage">Documentation</div>
+                    </div>
+                </div>
+            </div>
+            <div class="mobileProductDetailMenu">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <ul class="menuList">
+                                <li class="item">
+                                    <a class="textUpperCase" href="https://www.dynamsoft.com/label-recognition/overview/">Overview</a>
+                                </li>
+                                <li class="item">
+                                    <a class="textUpperCase" href="https://www.dynamsoft.com/label-recognition/features/">Features</a>
+                                </li>
+                                <li class="item">
+                                    <a class="textUpperCase" href="https://www.dynamsoft.com/label-recognition/introduction/">Documentation</a>
+                                </li>
+                                <li class="item">
+                                    <a class="textUpperCase" href="https://www.dynamsoft.com/label-recognition/use-cases/">Use Cases</a>
+                                </li>
+                                <li class="item">
+                                    <a class="orangeLink textUpperCase" href="https://www.dynamsoft.com/label-recognition/downloads/">Download Free Trial</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="sideBarIcon"><i class="fa fa-list" style="margin-right: 5px;"></i> Table of contents</div>
     <div class="container" id="searchContent">
       <div class="row">
@@ -118,12 +181,12 @@
                       <div class="row">
                           <div class="col-xs-12">
                               <h1>Search</h1>                        
-                              <script async src="https://cse.google.com/cse.js?cx=32039cdf85bc7ae2b"></script>
+                              <script async src="https://cse.google.com/cse.js?cx=53a201f66061dfc84"></script>
                               <div class="gcse-search"></div>
                           </div>
                       </div>
                   </div>
-                  <div class="content markdown-body headCounter col-xs-12" style="min-height: unset;">
+                  <div class="content markdown-body headCounter col-xs-12" style="min-height: unset;display: none;">
                       {{ content }}
                       
                   </div>
@@ -219,19 +282,21 @@
           $(".sideBar").toggleClass('hide-sm');
           $(".sideBar").toggleClass('hide-xs');
           setTimeout(function() {
+              console.log('sidebar' + $('.sideBar').width())
               $('#sideBarCnt').css({'width': $('.sideBar').width() + 'px'})
           }, 100)
       })
 
-    //   let timeInt = setInterval(function() {
-    //       var container = $('#sideBarCnt'), scrollTo = $('#sideBarCnt .activeLink');
-    //       if (scrollTo.length>0) {
-    //           container.scrollTop(
-    //               scrollTo.offset().top - container.offset().top + container.scrollTop()
-    //           );
-    //           clearInterval(timeInt)
-    //       }
-    //   }, 500)
+      let timeInt = setInterval(function() {
+          var container = $('#sideBarCnt'), scrollTo = $('#sideBarCnt .activeLink');
+          console.log(scrollTo)
+          if (scrollTo.length>0) {
+              container.scrollTop(
+                  scrollTo.offset().top - container.offset().top + container.scrollTop()
+              );
+              clearInterval(timeInt)
+          }
+      }, 500)
   
       function onSearchFinish(e) {
           var evt = window.event || e;
@@ -242,7 +307,7 @@
 
       $('#txtSearch').keydown(function(e) { 
           if (e.keyCode == 13) {
-              window.location.href = '/barcode-reader/search.html?q=' + $('#txtSearch').val()
+              window.location.href = '/label-recognition/search.html?q=' + $('#txtSearch').val()
           }
       })
 

@@ -1,31 +1,21 @@
 ---
 layout: default-layout
-title: Dynamsoft Barcode Reader Android API Reference - Class
-keywords: class, api reference, android
+title: Dynamsoft Label Recognition Android API Reference - Android Structs
+description: This page shows all Structs of Dynamsoft Label Recognition for Android API Reference.
+keywords: api reference, android
 needAutoGenerateSidebar: false
-breadcrumbText: Class
 ---
 
-# Dynamsoft Barcode Reader SDK - Android Class
 
-- [`AztecDetails`](AztecDetails.md)	 
-- [`BarcodeReaderException`](BarcodeReaderException.md)	
-- [`Contour`](Contour.md)	 
-- [`DataMatrixDetails`](DataMatrixDetails.md)	 
-- [`ExtendedResult`](ExtendedResult.md)	
-- [`FrameDecodingParameters`](FrameDecodingParameters.md)
-- [`FurtherModes`](FurtherModes.md)
-- [`ImageData`](ImageData.md)	 
-- [`IntermediateResult`](IntermediateResult.md)	
-- [`LineSegment`](LineSegment.md)	 
-- [`LocalizationResult`](LocalizationResult.md)	
-- [`OneDCodeDetails`](OneDCodeDetails.md)	
-- [`PDF417Details`](PDF417Details.md)	
-- [`PublicRuntimeSettings`](PublicRuntimeSettings.md)	
-- [`QRCodeDetails`](QRCodeDetails.md)	
-- [`Quadrilateral`](Quadrilateral.md)	 
-- [`RegionDefinition`](RegionDefinition.md)	
-- [`RegionOfInterest`](RegionOfInterest.md)	 
-- [`SamplingImageData`](SamplingImageData.md)	 
-- [`TextResult`](TextResult.md)	
+# Dynamsoft Label Recognition - Android Structs
 
+- [`DMLTSConnectionParameters`](dm-lts-connection-parameters.md)
+- [`DLRCharacterResult`](dlr-character-result.md)		
+- [`DLRImageData`](dlr-image-data.md)		
+- [`DLRLineResult`](dlr-line-result.md)	
+- [`DLRPoint`](dlr-point.md)		
+- [`DLRQuadrilateral`](dlr-quadrilateral.md)	
+- [`DLRReferenceRegion`](dlr-reference-region.md)	
+- [`DLRResult`](dlr-result.md)		
+- [`DLRRuntimeSettings`](dlr-runtime-settings.md)	
+- [`LabelRecognitionException`](label-recognition-exception.md)	

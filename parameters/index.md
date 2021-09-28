@@ -1,26 +1,16 @@
 ---
 layout: default-layout
-title: Dynamsoft Barcode Reader Parameters - Main Page
-needAutoGenerateSidebar: false
-breadcrumbText: Parameters
+title: Dynamsoft Label Recognizer Parameters - Main Page
+description: Dynamsoft Label Recognizer provides flexible APIs for you to customize the settings for different usage scenarios. 
+needAutoGenerateSidebar: true
+needGenerateH3Content: true
 ---
 
 
-# Dynamsoft Barcode Reader - Parameters
-
-## Getting Started
-
-- [Hierarchy and Work Domain of Parameters](structure-and-interfaces-of-parameters.md)
+# Dynamsoft Label Recognizer - Parameters
 
 ## Reference
 
-- [Reference of Parameters]({{ site.parameters_reference }})
+- [Reference of Parameters]({{ site.parameters-reference }})
 - [Reference of Enumerations]({{ site.enumerations }})
 
-## Customization
-
-- [Scenario Settings]({{ site.scenario_settings }})
-
-## Miscellaneous
-
-- Example Image Settings

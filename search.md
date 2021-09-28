@@ -1,6 +1,5 @@
 ---
 layout: search-page
-title: Dynamsoft Barcode Reader SDK Documentation Search
-keywords: Dynamsoft Barcode Reader SDK Documentation Search
-breadcrumbText: HomePage
+title: Dynamsoft Label Recognition SDK Documentation Search
+keywords: Dynamsoft Label Recognition SDK Documentation Search
 ---

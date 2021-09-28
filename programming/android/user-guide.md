@@ -1,301 +1,325 @@
 ---
 layout: default-layout
-title: Dynamsoft Barcode Reader for Android - User Guide
-keywords: user guide, android
+title: Dynamsoft Label Recognizer - Android User Guide
+description: This is the user guide page of Dynamsoft Label Recognizer for Android Language.
+keywords: a, user guide
 needAutoGenerateSidebar: true
 needGenerateH3Content: true
 ---
 
+# Dynamsoft Label Recognizer - Android User Guide
 
-# User Guide for Android Edition
-
-## System Requirements
+## Requirements
 
 - Operating systems:
-   - Supported OS: Android 5 or higher
-   - Supported ABI: armeabi-v7a/arm64-v8a
+   - Supported OS: Android 5 or higher (Android 7 or higher recommended)
+   - Supported ABI: armeabi-v7a, arm64-v8a, x86, x86_64
 
-
-&nbsp;
-
+- Environment: Android Studio 3.4+.
 
 ## Installation
 
-To install Dynamsoft Barcode Reader for Android on your development machine, you can download the SDK from the [Dynamsoft website](https://www.dynamsoft.com/Downloads/Dynamic-Barcode-Reader-Download.aspx) and unzip the dbr-android-{version-number}.zip.
+If you don’t have SDK yet, please download the Dynamsoft Label Recognizer(DLR) SDK from the <a href="https://www.dynamsoft.com/label-recognition/downloads/?utm_source=docs" target="_blank">Dynamsoft website</a> and unzip the package. After decompression, the root directory of the DLR installation package is `DynamsoftLabelRecognizer`, which is represented by `[INSTALLATION FOLDER]`.
 
-After decompression, you can find samples in the DBRSamples folder under the dbr-android-{version-number} folder.
+## Build Your First Application
 
-### Option 2: Build with Maven
-You can add Dynamsoft Barcode Reader like this:
-1. Add download url in your project's build.gradle. 
-   ```
-    allprojects {
-      repositories {
-         google()
-         jcenter()
-         maven {
-            url "http://download2.dynamsoft.com/maven/dbr/aar"
-         }
-      }
-   }
-   ```
-2. implement Dynamsoft Barcode Reader at dependencies in your module's build.gradle.
-   ```
-   implementation 'com.dynamsoft:dynamsoftbarcodereader:{version-number}@aar'
-   ```
-&nbsp; 
+The following sample will demonstrate how to take a picture and recognize it.
+>Note: 
+>1.The following steps are completed in Android Studio 4.2.
+<!-->2.You can download the entire source code from [Here].-->
+
+### Create a New Project 
+
+1. Open Android Studio and select New Project… in the File > New > New Project… menu to create a new project.
+
+2. Choose the correct template for your project. In this sample, we’ll use `Empty Activity`.
+
+3. When prompted, choose your app name (`DLRAndroidSample`) and set the Save location, Language, and Minimum SDK (21)
+    >Note: With minSdkVersion set to 21, your app is available on more than 94.1% of devices on the Google Play Store (last update: March 2021).
 
 
-## Getting Started: HelloWorld
-1. Create a new Android project in Android Studio.
-2. Import the DynamsoftBarcodeReaderAndroid.aar package into the new project. You can manually import the .aar file or use maven import.
-   To manually import the .aar :
-      i. Decompress the dbr-android-{version number}.zip file and you will find DynamsoftBarcodeReaderAndroid.aar in the decompressed folder.
-      ii. Put the .aar file under the directory libs in the project.
-      iii. In the project, open build.gradle(Module: app) and add the following code:
-      ```
-      repositories {
-         flatDir {
-            dirs 'libs'
-         }
-      }
-      ```
-      iv. Add .aar reference in the dependencies:
-      ```
-      implementation(name: 'DynamsoftBarcodeReaderAndroid', ext: 'aar')
-      ```
-      v. Click Sync Now. After the synchronization completes, DynamsoftBarcodeReaderAndroid.aar is added to the project.
-   Or you can use maven import the .aar file into the project.
-      i. In the new project, open build.gradle(module:app) and add the following code:
-      ```
-      allprojects {
-         repositories {
-            maven {
-               url "http://download.dynamsoft.com/maven/dbr/aar"
-            }
-         }
-      }
-      ```
-      ii. Then add .aar reference in the dependencies as below:
-      ```
-      implementation 'com.dynamsoft:dynamsoftbarcodereader:{version number}@aar'
-      ```
-      iii. Click Sync Now. After the synchronization completes, DynamsoftBarcodeReaderAndroid.aar is added to the project.
-3. Add the following code to initiate and use the Dynamsoft Barcode Reader SDK
-    ```java
-   import com.dynamsoft.barcode.BarcodeReader;
-   import com.dynamsoft.barcode.TextResult;
-   import android.util.Log;
-   public class MainActivity extends AppCompatActivity {
-      @Override
-      protected void onCreate(Bundle savedInstanceState) {
-         super.onCreate(savedInstanceState);
-         setContentView(R.layout.activity_main);
-         try {
-            BarcodeReader dbr = new BarcodeReader("your license here");
-            // Note: If you do not have a valid license for the SDK, some characters of the barcode results will be replaced with "***".
-            // Leave the template name empty ("") will use the settings from PublicRuntimeSettings.
-            TextResult[] results = dbr.decodeFile("put your file path here", "");
-            if (results.length > 0) {
-               String resultContent = "Found " + results.length + " barcode(s):\n";
-               for (int i = 0; i < results.length; i++) {
-                  resultContent += results[i].barcodeText + "\n";
-               }
-               Log.i("DBR", resultContent);
-            } else {
-               Log.i("DBR", "No barcode found");
-            }
-         } catch (Exception ex) {
-            ex.printStackTrace();
-         }
-      }
-   }
+### Include the Library
+
+There are two ways to include the Dynamsoft Label Recognizer SDK into your project：
+
+#### Local Binary Dependency
+
+1. Copy the file `[INSTALLATION FOLDER]\DynamsoftLabelRecognizerAndroid.aar` and `[INSTALLATION FOLDER]\DynamsoftCoreAndroid.aar` to the target directory `DLRAndroidSample\app\libs`
+
+2. Open the file `DLRAndroidSample\app\build.gradle`, and add reference in the dependencies:
     ```
-4. Run the project
+    dependencies {
+        implementation fileTree(dir: 'libs', include: ['*.aar'])
+    }
+    ```
+
+3. Click `Sync Now`. After the synchronization completes, the SDK is added to the project.
+
+4. import the package int the file `MainActivity.java`
+    ```java
+    import com.dynamsoft.dlr.*;
+    ```
+
+#### Remote Binary Dependency
+
+1. Open the file `DLRAndroidSample\app\build.gradle`, and add the remote repository:
+    ```
+    repositories {
+        maven {
+            url "http://download2.dynamsoft.com/maven/dc/aar"
+        }
+        maven {
+            url "http://download2.dynamsoft.com/maven/dlr/aar"
+        }
+    }
+    ```
+
+2. Add reference in the dependencies:
+    ```
+    dependencies {
+        implementation 'com.dynamsoft:dynamsoftcore:{version-number}@aar'
+        implementation 'com.dynamsoft:dynamsoftlabelrecognizer:{version-number}@aar'
+    }
+    ```
+>Note:Please replace {version-number} with the correct version number.
+
+3. Click `Sync Now`. After the synchronization completes, the SDK is added to the project.
+
+4. import the package in the file `MainActivity.java`
+    ```java
+    import com.dynamsoft.dlr.*;
+    ```
+
+### Initialize the Dynamsoft Label Recognizer
 
 
-&nbsp; 
+1. Initialize the license
 
+    ```java
+    LabelRecognizer.initLicense("DLS2eyJvcmdhbml6YXRpb25JRCI6IjIwMDAwMSIsInByb2R1Y3RzIjoyfQ==", new DLRLicenseVerificationListener() {
+        @Override
+        public void DLRLicenseVerificationCallback(boolean isSuccess, Exception error) {
+            if(!isSuccess){
+                error.printStackTrace();
+            }
+        }
+    });
+    ```    
 
-## Decoding Methods
-The SDK provides multiple decoding methods that support reading barcodes from different sources, including static images, video stream, files in memory, base64 string, bitmap, etc. Here is a list of all decoding methods:
-- [DecodeFile](api-reference/BarcodeReader/decode.md#DecodeFile): Reads barcodes from a specified file (BMP, JPEG, PNG, GIF, TIFF or PDF).
-- [DecodeBase64String](api-reference/BarcodeReader/decode.md#DecodeBase64String): Reads barcodes from a base64 encoded string of a file.  
-- [DecodeBitmap](api-reference/BarcodeReader/decode.md#DecodeBitmap): Reads barcodes from a bitmap. When handling multi-page images, it will only decode the current page.
-- [DecodeBuffer](api-reference/BarcodeReader/decode.md#DecodeBuffer): Reads barcodes from raw buffer.
-- [DecodeFileInMemory](api-reference/BarcodeReader/decode.md#DecodeFileInMemory): Decodes barcodes from an image file in memory.
+    >Note:
+    >- Network connection is required for the license to work.
+    >- "DLS2***" is a default 7-day trial license used in the sample.
+    >- If the license has expired, please request a trial license through the <a href="https://www.dynamsoft.com/customer/license/trialLicense?utm_source=docs" target="_blank">customer portal</a>.
 
-You can find more samples in more programming languages at [Code Gallery](https://www.dynamsoft.com/Downloads/Dynamic-Barcode-Reader-Sample-Download.aspx) or [Github Repositories](https://github.com/dynamsoft-dbr?q=java&type=&language=).
+2. Create an instance of Dynamsoft Label Recognizer
 
+    ```java
+    LabelRecognizer dlr = new LabelRecognizer();
+    ```
 
-&nbsp; 
+### Recognizing and Output Results
 
+1. Recognizing text
+    
+    ```java
+    DLRResult[] results = dlr.recognizeByFile(imgPath, "");
+    ```
 
-## Barcode Reading Settings
-Calling the [decoding methods](#decoding-methods) directly will use the default scanning modes and it will satisfy most of the needs. The SDK also allows you to adjust the scanning settings to optimize the scanning performance for different usage scenarios.   
-   
-There are two ways to change the barcode reading settings - using the PublicRuntimeSettings class or template. For new developers, We recommend you to start with the PublicRuntimeSettings class; For those who are experienced with the SDK, you may use a template which is more flexible and easier to update.   
+    >The variable `imgPath` represents the temporary storage location of the photos taken, which will be explained later.
 
-- [Use `PublicRuntimeSettings` class to Change Settings](#use-publicruntimesettings-class-to-change-settings)   
-- [Use A Template to Change Settings](#use-a-template-to-change-settings)   
+2. Get and output the recognition results
 
-### Use [`PublicRuntimeSettings`](api-reference/class/PublicRuntimeSettings.md) class to Change Settings
-Here are some common scanning settings you might find helpful:   
-- [Specify Barcode Type to Read](#specify-barcode-type-to-read)   
-- [Specify Maximum Barcode Count](#specify-maximum-barcode-count)   
-- [Specify a Scan Region](#specify-a-scan-region)  
+    ```java
+    if (results != null && results.length > 0) {
+        String strCurResult = "";
+        for (int i = 0; i < results.length; i++) {
+            
+            // Get result of each text area (also called label).
+            DLRResult result = results[i];
+            strCurResult += "Result " + i + ":\n";
+            for (int j = 0; j < result.lineResults.length; j++) {
 
-For more scanning settings guide, check out the [How To](#how-to-guide) section.
+                // Get the result of each text line in the label.
+                DLRLineResult lineResult = result.lineResults[j];
+                strCurResult += ">>Line Result " + j + ": " + lineResult.text + "\n";
+            }
+        }
+    }
+    ```
 
-#### Specify Barcode Type to Read
-By default, the SDK will read all the supported barcode formats except Postal Codes and Dotcode from the image. (See [Product Overview]({{ site.introduction }}overview.html) for the full supported barcode list.) 
+    The recognition results of SDK are organized into a four-tier structure: 
+    - `DLRResult[]` corresponds to the results of an `image`
+    - `DLRResult` corresponds to the result of a `TextArea` (also called Label) 
+    - `DLRLineResult` corresponds to the result of each `TextLine` in the Label
+    - `DLRCharacterResult` corresponds to the result of each `Character` in the `TextLine`
 
-If your full license only covers some barcode formats, you can use `BarcodeFormatIds` and `BarcodeFormatIds_2` to specify the barcode format(s). Check out [`BarcodeFormat`]({{ site.enumerations }}format-enums.html#barcodeformat) and [`BarcodeFormat_2`]({{ site.enumerations }}format-enums.html#barcodeformat_2).
+    The structure is shown in the figure below:
 
-For example, to enable only 1D barcode reading, you can use the following code:
+    <div align="center">
+    <img src="../assets/dlr_result2.png" alt="DLR Result Structure" width="80%"/>
+    <p>Figure 1 – DLR Result Structure</p>
+    </div> 
 
-```java
-BarcodeReader dbr = new BarcodeReader();
-dbr.initLicense("<Put your license key here>"); //Replace "<Put your license key here>" with your own license
-// Set barcodeFromatIds via PublicRuntimeSettings instance and update it to BarcodeReader instance
-PublicRuntimeSettings runtimeSettings = dbr.getRuntimeSettings();
-runtimeSettings.barcodeFormatIds = 0x7FF;// OneD barcode
-dbr.updateRuntimeSettings(runtimeSettings);
-// Replace "<Put the path of your file here>" with your own file path
-TextResult[] result = dbr.decodeFile("<Put your file path here>","");
-```
+### Additional Auxiliary Steps
 
+1. In the Project window, open app > res > layout > activity_main.xml, and add four controls (one `ImageView`, one `TextView` and two `Buttons`). The following code shows the addition code of `activity_main.xml`.
+    ```xml
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-#### Specify maximum barcode count
-By default, the SDK will read as many barcodes as it can. To increase the recognition efficiency, you can use `expectedBarcodesCount` to specify the maximum number of barcodes to recognize according to your scenario.
+        <ImageView
+            android:id="@+id/imgView"
+            android:layout_width="match_parent"
+            android:layout_height="520dp"/>
 
-```java
-BarcodeReader dbr = new BarcodeReader();
-dbr.initLicense("<Put your license key here>"); //Replace "<Put your license key here>" with your own license
-PublicRuntimeSettings rts = dbr.getRuntimeSettings();
-rts.expectedBarcodesCount = 10;
-dbr.updateRuntimeSettings(rts);
-//Replace "<Put the path of your file here>" with your own file path
-TextResult[] result = dbr.decodeFile("<Put your file path here>","");
-reader.destroy();
-```
+        <TextView
+            android:id="@+id/txtView"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="#DEEEF6"
+            android:text="Recognition Results" />
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
 
-#### Specify a scan region
-By default, the barcode reader will search the whole image for barcodes. This can lead to poor performance especially when
-dealing with high-resolution images. You can speed up the recognition process by restricting the scanning region.   
+            <Button
+                android:id="@+id/btnCapture"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Take a Photo" />
 
-To specify a region, you will need to define an area. The following code shows how to create a template string and define the region.  
+            <Button
+                android:id="@+id/btnRecognize"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Recognize Text" />
+        </LinearLayout>
+    </LinearLayout>
+    ```
 
-```java
-BarcodeReader dbr = new BarcodeReader();
-dbr.initLicense("<Put your license key here>"); //Replace "<Put your license key here>" with your own license
-PublicRuntimeSettings runtimeSettings = dbr.getRuntimeSettings();
-runtimeSettings.region.regionBottom = 100;
-runtimeSettings.region.regionLeft = 0;
-runtimeSettings.region.regionRight = 50;
-runtimeSettings.region.regionTop = 0;
-runtimeSettings.region.regionMeasuredByPercentage = 1; //The region is determined by percentage
-dbr.updateRuntimeSettings(runtimeSettings);
-//Replace "<Put the path of your file here>" with your own file path
-TextResult[] result = dbr.decodeFile("<Put your file path here>","");
-reader.destroy();
-```
+2. Add four UI variables and event response codes
 
+    ```java
+    // Click to take a photo
+    private Button btnCapture;
+    // Click to recognize thext
+    private Button btnRecognize;
+    // Display the photo taken with Camera App
+    private ImageView imgView;
+    // Display the recognition results
+    private TextView txtView;
 
-### Use A Template to Change Settings
-Besides the option of using the PublicRuntimeSettings class, the SDK also provides [`initRuntimeSettingsWithString`](api-reference/BarcodeReader/parameter-and-runtime-settings-advanced.md#InitRuntimeSettingsWithString) and [`initRuntimeSettingsWithFile`](api-reference/BarcodeReader/parameter-and-runtime-settings-advanced.md#InitRuntimeSettingsWithFile) APIs that enable you to use a template to control all the runtime settings. With a template, instead of writing many codes to modify the settings, you can manage all the runtime settings in a JSON file/string. 
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        btnCapture =(Button)findViewById(R.id.btnCapture);
+        btnRecognize =(Button)findViewById(R.id.btnRecognize);
+        imgView = (ImageView)findViewById(R.id.imgView);
+        txtView = (TextView)findViewById(R.id.txtView);
 
-```java
-BarcodeReader dbr = new BarcodeReader();
-dbr.initLicense("<Put your license key here>"); //Replace "<Put your license key here>" with your own license
-br.initRuntimeSettingsWithFile("<put your json file here>", EnumConflictMode.CM_OVERWRITE);
-//Replace "<Put the path of your file here>" with your own file path
-TextResult[] result = dbr.decodeFile("<Put your file path here>","");
-reader.destroy();
-```
+        btnCapture.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // take a photo with Camera App
+                takePhoto();
+            }
+        });
 
-Below is a template for your reference. To learn more about the APIs, you can check out [`PublicRuntimeSettings`](api-reference/class/PublicRuntimeSettings.md) Class.  
-```json
-{
-   "ImageParameter" : {
-      "BarcodeFormatIds" : [ "BF_ALL" ],
-      "BinarizationModes" : [
-         {
-            "BlockSizeX" : 0,
-            "BlockSizeY" : 0,
-            "EnableFillBinaryVacancy" : 1,
-            "ImagePreprocessingModesIndex" : -1,
-            "Mode" : "BM_LOCAL_BLOCK",
-            "ThreshValueCoefficient" : 10
-         }
-      ],
-      "DeblurLevel" : 9,
-      "Description" : "",
-      "ExpectedBarcodesCount" : 0,
-      "GrayscaleTransformationModes" : [
-         {
-            "Mode" : "GTM_ORIGINAL"
-         }
-      ],
-      "ImagePreprocessingModes" : [
-         {
-            "Mode" : "IPM_GENERAL"
-         }
-      ],
-      "IntermediateResultSavingMode" : {
-         "Mode" : "IRSM_MEMORY"
-      },
-      "IntermediateResultTypes" : [ "IRT_NO_RESULT" ],
-      "MaxAlgorithmThreadCount" : 4,
-      "Name" : "runtimesettings",
-      "PDFRasterDPI" : 300,
-      "Pages" : "",
-      "RegionDefinitionNameArray" : null,
-      "RegionPredetectionModes" : [
-         {
-            "Mode" : "RPM_GENERAL"
-         }
-      ],
-      "ResultCoordinateType" : "RCT_PIXEL",
-      "ScaleDownThreshold" : 2300,
-      "TerminatePhase" : "TP_BARCODE_RECOGNIZED",
-      "TextFilterModes" : [
-         {
-            "MinImageDimension" : 65536,
-            "Mode" : "TFM_GENERAL_CONTOUR",
-            "Sensitivity" : 0
-         }
-      ],
-      "TextResultOrderModes" : [
-         {
-            "Mode" : "TROM_CONFIDENCE"
-         },
-         {
-            "Mode" : "TROM_POSITION"
-         },
-         {
-            "Mode" : "TROM_FORMAT"
-         }
-      ],
-      "TextureDetectionModes" : [
-         {
-            "Mode" : "TDM_GENERAL_WIDTH_CONCENTRATION",
-            "Sensitivity" : 5
-         }
-      ],
-      "Timeout" : 10000
-   },
-   "Version" : "3.0"
-}
-```
+        btnRecognize.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // recognize text in the photo
+                recognizeText();
+            }
+        });
+    }
+    ```
+    >Note: The implementation of the `recognizeText` function has been explained in [Initialize the Dynamsoft Label Recognizer](#initialize-the-dynamsoft-label-recognizer) and [Recognizing and output results](#recognizing-and-output-results).
 
+3. Take a photo with the camera app.
+    ```java
+    // Uri of the captured photo
+    private Uri imgUri;
+    // The full path of the captured photo
+    private String imgPath;
 
-&nbsp; 
+    private void takePhoto() {
+        String status= Environment.getExternalStorageState();
+        if(status.equals(Environment.MEDIA_MOUNTED)) {
+            try {
+                File outputImage = new File(getExternalCacheDir(), "output_image.jpg");
+                imgPath = outputImage.getAbsolutePath();
 
+                if (outputImage.exists()) {
+                    outputImage.delete();
+                }
+                outputImage.createNewFile();
 
-## Useful Links
-- [Licensing and Distributing]()
-- [How-to Guides]({{ site.how_to }})
-- [FAQs]({{ site.faqs }})
+                if (Build.VERSION.SDK_INT >= 24) {
+                    imgUri = FileProvider.getUriForFile(this, "com.example.dlrandroidsample", outputImage);
+                } else {
+                    imgUri = Uri.fromFile(outputImage);
+                }
+
+                Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                intent.putExtra(MediaStore.EXTRA_OUTPUT, imgUri);
+                startActivityForResult(intent, Image_Capture_Code);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }   
+    ```
+
+4. Display the photo in the `ImageView` control
+    ```java
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == Image_Capture_Code && resultCode == RESULT_OK) {
+            try {
+                Bitmap bitmap = BitmapFactory.decodeStream(getContentResolver().openInputStream(imgUri));
+                imgView.setImageBitmap(bitmap);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }    
+    ```
+
+5. Config the `FileProvdier` in the file `AndroidManifest.xml`
+    ```xml
+    <provider
+        android:authorities="com.example.dlrandroidsample"
+        android:name="androidx.core.content.FileProvider"
+        android:exported="false"
+        android:grantUriPermissions="true">
+        <meta-data
+            android:name="android.support.FILE_PROVIDER_PATHS"
+            android:resource="@xml/file_paths">
+        </meta-data>
+    </provider>
+    ```
+    >Note: Make sure that the authorities string matches the second argument to `getUriForFile`. In the meta-data section of the provider definition, you can see that the provider expects eligible paths to be configured in a dedicated resource file, res/xml/file_paths.xml. Here is the content required for this particular example:
+
+    ```xml
+    <?xml version="1.0" encoding="utf-8"?>
+    <paths xmlns:android="http://schemas.android.com/apk/res/android">
+        <external-cache-path name="my_images" path="." />
+    </paths>
+    ```
+
+<!-- You can download the entire source code from [Here]. -->
+
+### Build and Run the Project
+
+1. Select the device that you want to run your app on from the target device drop-down menu in the toolbar.
+
+2. Click `Run app` button, then Android Studio installs your app on your connected device and starts it.
 

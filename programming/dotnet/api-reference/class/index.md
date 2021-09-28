@@ -1,27 +1,20 @@
 ---
 layout: default-layout
-title: Dynamsoft Barcode Reader .NET API Reference - Class
-keywords: class, api reference, .Net
+title: Dynamsoft Label Recognition .Net API Reference - .Net Structs
+description: This page shows all Structs of Dynamsoft Label Recognition for .Net API Reference.
+keywords: api reference, .Net
 needAutoGenerateSidebar: false
-breadcrumbText: Class
 ---
 
-# Dynamsoft Barcode Reader SDK - .Net Class
 
-- [`AztecDetails`](AztecDetails.md)	 
-- [`BarcodeReaderException`](BarcodeReaderException.md)	
-- [`Contour`](Contour.md)	 
-- [`DataMatrixDetails`](DataMatrixDetails.md)	 
-- [`ExtendedResult`](ExtendedResult.md)	
-- [`FrameDecodingParameters`](FrameDecodingParameters.md)	
-- [`ImageData`](ImageData.md)	 
-- [`IntermediateResult`](IntermediateResult.md)	
-- [`LineSegment`](LineSegment.md)	 
-- [`LocalizationResult`](LocalizationResult.md)	
-- [`OneDCodeDetails`](OneDCodeDetails.md)	
-- [`PDF417Details`](PDF417Details.md)	
-- [`QRCodeDetails`](QRCodeDetails.md)	
-- [`Quadrilateral`](Quadrilateral.md)	 
-- [`RegionOfInterest`](RegionOfInterest.md)	 
-- [`SamplingImageData`](SamplingImageData.md)	 
-- [`TextResult`](TextResult.md)	
+# Dynamsoft Label Recognition - .Net Structs
+
+- [`DMLTSConnectionParameters`](dm-lts-connection-parameters.md)
+- [`DLR_CharacterResult`](dlr-character-result.md)		
+- [`DLR_Exception`](label-recognition-exception.md)	
+- [`DLR_ImageData`](dlr-image-data.md)		
+- [`DLR_LineResult`](dlr-line-result.md)	
+- [`DLR_Quadrilateral`](dlr-quadrilateral.md)	
+- [`DLR_ReferenceRegion`](dlr-reference-region.md)	
+- [`DLR_Result`](dlr-result.md)		
+- [`DLR_RuntimeSettings`](dlr-runtime-settings.md)	

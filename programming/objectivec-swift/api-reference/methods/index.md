@@ -1,112 +1,58 @@
 ---
 layout: default-layout
-title: Dynamsoft Barcode Reader Objective-C & Swift API Reference - Methods
-keywords: methods, api reference, objective-c, oc, swift
+title: Dynamsoft Label Recognition Objective-C & Swift API Reference - LabelRecognition Class
+description: This page shows LabelRecognition methods of Dynamsoft Label Recognition for Objective-C & Swift API Reference.
+keywords: api reference, objective-c, oc, swift
 needAutoGenerateSidebar: false
-breadcrumbText: Methods
 ---
 
-# Dynamsoft Barcode Reader SDK - Objective-C & Swift Methods
 
-## Initialize
+# Dynamsoft Label Recognition - Objective-C & Swift Methods
+
+## General
+   
+  | Method               | Description |
+  |----------------------|-------------|
+  | [`getVersion`](general.md#getversion) | Returns the version number string for the SDK. |
+   
+&nbsp; 
+
+## Initialization
   
   | Method               | Description |
   |----------------------|-------------|
-  | [`init`](initialize.md#init) | Create an instance of Dynamsoft Barcode Reader. |
-
-
-&nbsp; 
-
-
-## Decode
-
-  | Method               | Description |
-  |----------------------|-------------|
-  | [`decodeFileWithName`](decode.md#decodefilewithname) | Decode barcodes from a specified image file. |
-  | [`decodeImage`](decode.md#decodeimage) | Decode barcodes from an image file in memory. |
-  | [`decodeBuffer`](decode.md#decodebuffer) | Decode barcodes from raw buffer. |
-  | [`decodeBase64`](decode.md#decodebase64) | Decode barcodes from a base64 encoded string. |
-
+  | [`init`](initialization.md#init) | Create an instance of Dynamsoft Label Recognition. |
+  | [`initWithLicense`](initialization.md#initWithLicense) | Sets the license and activates the SDK. |
+  | [`initLicenseFromLTS`](initialization.md#initlicensefromlts) | Initializes the label recognition license and connects to the specified server for online verification. |
 
 &nbsp; 
 
+## Setting
 
-## Parameter and Runtime Settings
-
-### Basic
-  
   | Method               | Description |
   |----------------------|-------------|
-  | [`setModeArgument`](parameter-and-runtime-settings-basic.md#setmodeargument) | Set argument value for the specified mode parameter. |
-  | [`getModeArgument`](parameter-and-runtime-settings-basic.md#getmodeargument) | Get argument value for the specified mode parameter. |
-  | [`getRuntimeSettings`](parameter-and-runtime-settings-basic.md#getruntimesettings) | Get current runtime settings. |
-  | [`updateRuntimeSettings`](parameter-and-runtime-settings-basic.md#updateruntimesettings) | Modify and update the current runtime settings. |
-  | [`resetRuntimeSettings`](parameter-and-runtime-settings-basic.md#resetruntimesettings) | Reset runtime settings to default. |
-
-### Advanced
-  
-  | Method               | Description |
-  |----------------------|-------------|
-  | [`initRuntimeSettingsWithFile`](parameter-and-runtime-settings-advanced.md#initruntimesettingswithfile) | Initialize runtime settings with the settings in a given JSON file. |
-  | [`initRuntimeSettingsWithString`](parameter-and-runtime-settings-advanced.md#initruntimesettingswithstring) | Initialize runtime settings with the settings in a given JSON string. |
-  | [`appendTplFileToRuntimeSettings`](parameter-and-runtime-settings-advanced.md#appendtplfiletoruntimesettings) | Append a new template file to the current runtime settings. |
-  | [`appendTplStringToRuntimeSettings`](parameter-and-runtime-settings-advanced.md#appendtplstringtoruntimesettings) | Append a new template string to the current runtime settings. |
-  | [`allParameterTemplateNames`](parameter-and-runtime-settings-advanced.md#allparametertemplatenames) | Get the count of the parameter templates. |
-  | [`outputSettingsToFile`](parameter-and-runtime-settings-advanced.md#outputsettingstofile) | Output runtime settings to a settings file (JSON file). |
-  | [`outputSettingsToString`](parameter-and-runtime-settings-advanced.md#outputsettingstostring) | Output runtime settings to a string. |
-
+  | [`getRuntimeSettings`](settings.md#getruntimesettings) | Gets the current settings and saves it into a class. |
+  | [`updateRuntimeSettings`](settings.md#updateruntimesettings) | Updates runtime settings with a given class. |
+  | [`resetRuntimeSettings`](settings.md#resetruntimesettings) | Resets the runtime settings. |
+  | [`appendSettingsFromString`](settings.md#appendsettingsfromstring) | Appends LabelRecognitionParameter settings in a string to the SDK object. |
+  | [`appendSettingsFromFile`](settings.md#appendsettingsfromFile) | Appends LabelRecognitionParameter settings from a file to the SDK object. |
+  | [`outputSettingsToFile`](settings.md#outputsettingstofile) | Outputs LabelRecognitionParameter settings into a file (JSON file). |
+  | [`clearAppendedSettings`](settings.md#clearappendedsettings) | Clear all appended LabelRecognitionParameter settings in the SDK object. |
+  | [`updateReferenceRegionFromBarcodeResults`](settings.md#updatereferenceregionfrombarcoderesults) | Updates reference region which is defined with source type DLR_LST_BARCODE. |
+  | [`getModeArgument`](settings.md#getmodeargument) | Get argument value for the specified mode parameter. |
+  | [`setModeArgument`](settings.md#setmodeargument) | Set argument value for the specified mode parameter. |
+  | [`appendCharacterModel`](settings.md#appendCharacterModel) | Appends CharacterModel to the SDK object. |
+  | [`eraseAllCharacterModels`](settings.md#appendCharacterModel) | Erases all CharacterModels the SDK object currently loaded. |
+  | [`eraseCharacterModelByName`](settings.md#appendCharacterModel) | Erases a name specified CharacterModel from the SDK object. |
 
 &nbsp; 
-
-
-## License
+   
+## Recognizing
    
   | Method               | Description |
   |----------------------|-------------|
-  | [`initWithLicense`](license.md#initwithlicense) | Read product key and activate the SDK. |
-  | [`initWithLicenseFromServer`](license.md#initwithlicensefromserver) | Initialize license and connect to the specified server for online verification. |
-  | [`outputLicenseToString`](license.md#outputlicensetostring) | Output the license content to a string from the license server. |
-
+  | [`recognizeByBuffer`](recognizing.md#recognizebybuffer) | Recognizes text from memory buffer containing image pixels in defined format. |
+  | [`recognizeByFile`](recognizing.md#recognizebyfile) | Recognizes text from a specified image file. |
+   
 &nbsp; 
-
-
-## Result
    
-  | Method               | Description |
-  |----------------------|-------------|
-  | [`getIntermediateResult`](result.md#getintermediateresult) | Get intermediate results. |
-
-
-&nbsp; 
-
-
-## Video
-### Decode
-   
-  | Method               | Description |
-  |----------------------|-------------|
-  | [`startFrameDecoding`](video.md#startframedecoding) | Decode barcodes from inner frame queue. |
-  | [`startFrameDecodingEx`](video.md#startframedecodingex) | Decode barcodes from inner frame queue. |
-  | [`appendFrame`](video.md#appendframe) | Append a frame image buffer to the inner frame queue. |
-  | [`stopFrameDecoding`](video.md#stopframedecoding) | Stop thread used for frame decoding. |
-
-### Parameter
-   
-  | Method               | Description |
-  |----------------------|-------------|
-  | [`getFrameDecodingParameters`](video.md#getframedecodingparameters) | Initialize frame decoding parameter. |
-
-### Delegate
-   
-  | Method               | Description |
-  |----------------------|-------------|
-  | [`setDBRErrorDelegate`](video.md#setdbrerrordelegate) | Set callback function to process errors generated during frame decoding. |
-  | [`setDBRTextResultDelegate`](video.md#setdbrtextresultdelegate) | Set callback function to process text results generated during frame decoding. |
-  | [`setDBRIntermediateResultDelegate`](video.md#setdbrintermediateresultdelegate) | Set callback function to process intermediate results generated during frame decoding. |
-
-### Status retrieval
-   
-  | Method               | Description |
-  |----------------------|-------------|
-  | [`getLengthOfFrameQueue`](video.md#getlengthofframequeue) | Get length of current inner frame queue. |
-  

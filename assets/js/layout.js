@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(document).ready(function(){ 
     init();
     $('.markdown-body .sample-code-prefix + blockquote > ul > li:first-child').addClass('on')
     $('.markdown-body .sample-code-prefix + blockquote > ol > li:first-child').addClass('on')
@@ -10,68 +10,31 @@ $(document).ready(function(){
         $('#AutoGenerateSidebar a').eq(0).addClass('active')
     }
 
+    setTimeout(function() {
+        var objs = $(".fold-panel-prefix")
+        for(var i = 0; i<objs.length; i++) {
+            var obj = $(".fold-panel-prefix").eq(i)
+            $(obj).next().find('i').css({'width': ($(obj).next().width() - 24) + 'px'})
+            $(obj).next().find('i').css({'height': $(obj).next().height() + 'px'})
+            $(obj).next().find('i').css({'line-height': $(obj).next().height() + 'px'})
+            $(obj).next().find('i').css({'opacity': 1})
+        }
+    }, 500)
+
     $(window).resize(function() {
+        var objs = $(".fold-panel-prefix")
+        for(var i = 0; i<objs.length; i++) {
+            var obj = $(".fold-panel-prefix").eq(i)
+            $(obj).next().find('i').css({'width': ($(obj).next().width() - 24) + 'px'})
+            $(obj).next().find('i').css({'height': $(obj).next().height() + 'px'})
+            $(obj).next().find('i').css({'line-height': $(obj).next().height() + 'px'})
+            console.log($(obj).next().height(), $(obj).next().width())
+        }
         init()
         realFunc()
     })
 
     window.addEventListener('scroll', realFunc);
-
-    function init() {
-        var subHeight = 0;
-        if ($('.subHeadWrapper').length > 0) {
-            subHeight = $('.subHeadWrapper').height();
-        } else {
-            subHeight = $('.productMenu').height();
-        }
-        var menuHeight = $('#overall-header').height() + subHeight;
-        $('#sideBarCnt').css({'width': $('.sideBar').width() + 'px'});
-        // $('.container .head').css({'width': $('.docContainer').width() + 'px'});
-        $('#fullTreeMenuListContainer').css({'height': 'calc(100vh - '+(menuHeight + 120) +'px)'});
-        // $('.rightSideMenu').css({'height': 'calc(100vh - '+ (menuHeight)+'px)'});
-        $('.rightSideMenu').css({'padding-top': $('#docHead').outerHeight()+'px'});
-        $('.docContainer .markdown-body').css({'margin-top': ($('#docHead').outerHeight() + 0) + 'px'});
-        if (breakpoint() == 'lg') {
-            $('.history').css({'width': $('#txtSearch').outerWidth() + 'px'});
-            $('.history').removeClass('history-absolute');
-        } else {
-            $('.history').css({'width': '140px'});
-            $('.history').addClass('history-absolute');
-        }
-        if ($(window).outerWidth() > 1680) {
-            if (breakpoint() == 'lg') {
-                $('.markdown-body h2').css({'padding-top': $('#docHead').outerHeight() + 110 + 'px'})
-                $('.markdown-body h2').css({'margin-top': -$('#docHead').outerHeight() - 80 + 'px'})
-                $('.markdown-body h3').css({'padding-top': $('#docHead').outerHeight() + 110 + 'px'})
-                $('.markdown-body h3').css({'margin-top': -$('#docHead').outerHeight() - 110 + 'px'})
-                $('.markdown-body h4').css({'padding-top': $('#docHead').outerHeight() + 110 + 'px'})
-                $('.markdown-body h4').css({'margin-top': -$('#docHead').outerHeight() - 110 + 'px'})
-                $('.markdown-body h5').css({'padding-top': $('#docHead').outerHeight() + 110 + 'px'})
-                $('.markdown-body h5').css({'margin-top': -$('#docHead').outerHeight() - 110 + 'px'})
-            }
-        } else {
-            if (breakpoint() == 'lg') {
-                $('.markdown-body h2').css({'padding-top': $('#docHead').outerHeight() + 90 + 'px'})
-                $('.markdown-body h2').css({'margin-top': -$('#docHead').outerHeight() - 60 + 'px'})
-                $('.markdown-body h3').css({'padding-top': $('#docHead').outerHeight() + 90 + 'px'})
-                $('.markdown-body h3').css({'margin-top': -$('#docHead').outerHeight() - 60 + 'px'})
-                $('.markdown-body h4').css({'padding-top': $('#docHead').outerHeight() + 90 + 'px'})
-                $('.markdown-body h4').css({'margin-top': -$('#docHead').outerHeight() - 90 + 'px'})
-                $('.markdown-body h5').css({'padding-top': $('#docHead').outerHeight() + 90 + 'px'})
-                $('.markdown-body h5').css({'margin-top': -$('#docHead').outerHeight() - 90 + 'px'})
-            } else {
-                $('.markdown-body h2').css({'padding-top': '90px'})
-                $('.markdown-body h2').css({'margin-top': '-60px'})
-                $('.markdown-body h3').css({'padding-top': '90px'})
-                $('.markdown-body h3').css({'margin-top': '-60px'})
-                $('.markdown-body h4').css({'padding-top': '90px'})
-                $('.markdown-body h4').css({'margin-top': '-90px'})
-                $('.markdown-body h5').css({'padding-top': '90px'})
-                $('.markdown-body h5').css({'margin-top': '-90px'})
-            }
-        }
-        
-    }
 
     function realFunc() {
         $('.rightSideMenu').css({'padding-top': $('#docHead').outerHeight()+'px'});
@@ -128,7 +91,10 @@ $(document).ready(function(){
         }
 
         // right menu active link
-        var title = document.querySelectorAll('.markdown-body h2, .markdown-body h3');
+        var title = document.querySelectorAll('.markdown-body h2');
+        if ($('#fullTreeMenuListContainer').hasClass('needh3')) {
+            title = document.querySelectorAll('.markdown-body h2, .markdown-body h3');
+        }
         var rightNavItem = $('#AutoGenerateSidebar a');
         var flag = false
         for(i=0; i<title.length; i++){
@@ -192,6 +158,19 @@ $(document).ready(function(){
     $('.rightMenuControlBtn').on('click', function() {
         $('.docContainer .main, .rightSideMenu, .markdown-body').toggleClass('showRightSideMenu')
     })
+
+    $('.fold-panel-prefix + * i').on('click', function() {
+        $(this).parent().find('.fa-caret-down').toggleClass('fa-caret-up')
+        if ($(this).parent().next().hasClass('fold-panel-start')) {
+            var foldPanel = $(this).parent().next();
+            while(!foldPanel.hasClass('fold-panel-end')) {
+                if (!foldPanel.hasClass('fold-panel-start')) {
+                    $(foldPanel).toggle()
+                }
+                foldPanel = $(foldPanel).next()
+            }
+        }
+    })
 })
 
 function copy(data) {
@@ -203,3 +182,72 @@ function copy(data) {
     document.execCommand("Copy");
     oInput.remove()
 }
+
+function init() {
+    var subHeight = 0;
+    if ($('.subHeadWrapper').length > 0) {
+        subHeight = $('.subHeadWrapper').height();
+    } else {
+        subHeight = $('.productMenu').height();
+    }
+    var menuHeight = $('#overall-header').height() + subHeight;
+    $('#sideBarCnt').css({'width': $('.sideBar').width() + 'px'});
+    // $('.container .head').css({'width': $('.docContainer').width() + 'px'});
+    $('#fullTreeMenuListContainer').css({'height': 'calc(100vh - '+(menuHeight + 120) +'px)'});
+    // $('.rightSideMenu').css({'height': 'calc(100vh - '+ (menuHeight)+'px)'});
+    $('.rightSideMenu').css({'padding-top': $('#docHead').outerHeight()+'px'});
+    $('.docContainer .markdown-body').css({'margin-top': ($('#docHead').outerHeight() + 0) + 'px'});
+    if (breakpoint() == 'lg') {
+        $('.history').css({'width': $('#txtSearch').outerWidth() + 'px'});
+        $('.history').removeClass('history-absolute');
+    } else {
+        $('.history').css({'width': '140px'});
+        $('.history').addClass('history-absolute');
+    }
+    if ($(window).outerWidth() > 1680) {
+        if (breakpoint() == 'lg') {
+            $('.markdown-body h2').css({'padding-top': $('#docHead').outerHeight() + 110 + 'px'})
+            $('.markdown-body h2').css({'margin-top': -$('#docHead').outerHeight() - 80 + 'px'})
+            $('.markdown-body h3').css({'padding-top': $('#docHead').outerHeight() + 110 + 'px'})
+            $('.markdown-body h3').css({'margin-top': -$('#docHead').outerHeight() - 110 + 'px'})
+            $('.markdown-body h4').css({'padding-top': $('#docHead').outerHeight() + 110 + 'px'})
+            $('.markdown-body h4').css({'margin-top': -$('#docHead').outerHeight() - 110 + 'px'})
+            $('.markdown-body h5').css({'padding-top': $('#docHead').outerHeight() + 110 + 'px'})
+            $('.markdown-body h5').css({'margin-top': -$('#docHead').outerHeight() - 110 + 'px'})
+        }
+    } else {
+        if (breakpoint() == 'lg') {
+            $('.markdown-body h2').css({'padding-top': $('#docHead').outerHeight() + 90 + 'px'})
+            $('.markdown-body h2').css({'margin-top': -$('#docHead').outerHeight() - 60 + 'px'})
+            $('.markdown-body h3').css({'padding-top': $('#docHead').outerHeight() + 90 + 'px'})
+            $('.markdown-body h3').css({'margin-top': -$('#docHead').outerHeight() - 90 + 'px'})
+            $('.markdown-body h4').css({'padding-top': $('#docHead').outerHeight() + 90 + 'px'})
+            $('.markdown-body h4').css({'margin-top': -$('#docHead').outerHeight() - 90 + 'px'})
+            $('.markdown-body h5').css({'padding-top': $('#docHead').outerHeight() + 90 + 'px'})
+            $('.markdown-body h5').css({'margin-top': -$('#docHead').outerHeight() - 90 + 'px'})
+        } else {
+            $('.markdown-body h2').css({'padding-top': '90px'})
+            $('.markdown-body h2').css({'margin-top': '-60px'})
+            $('.markdown-body h3').css({'padding-top': '90px'})
+            $('.markdown-body h3').css({'margin-top': '-60px'})
+            $('.markdown-body h4').css({'padding-top': '90px'})
+            $('.markdown-body h4').css({'margin-top': '-90px'})
+            $('.markdown-body h5').css({'padding-top': '90px'})
+            $('.markdown-body h5').css({'margin-top': '-90px'})
+        }
+    }
+
+}
+
+function initFoldPanel() {
+    var objs = $(".fold-panel-prefix")
+    for(var i = 0; i<objs.length; i++) {
+        var obj = $(".fold-panel-prefix").eq(i)
+        $(obj).next().find('i').css({'width': ($(obj).next().width() - 24) + 'px'})
+        $(obj).next().find('i').css({'height': $(obj).next().height() + 'px'})
+        $(obj).next().find('i').css({'line-height': $(obj).next().height() + 'px'})
+        console.log($(obj).next().height(), $(obj).next().width())
+    }
+    $(".fold-panel-start").nextUntil(".fold-panel-end").hide()
+}
+

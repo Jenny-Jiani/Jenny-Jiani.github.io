@@ -1,23 +1,23 @@
 ---
 layout: default-layout
-title: Dynamsoft Barcode Reader for .NET - Main Page
+title: Dynamsoft Label Recognizer for .Net - Main Page
+description: This is the main page of Dynamsoft Label Recognizer for .Net Language.
 keywords: .Net
-needAutoGenerateSidebar: false
-breadcrumbText: .NET
+needAutoGenerateSidebar: true
+needGenerateH3Content: true
 ---
 
-# Dynamsoft Barcode Reader - for .Net Documentation
-
-The .Net documentation mainly consists of two parts. One is the [User Guide](#getting-started) that provides a brief guide for how to integrate the Dynamsoft Barcode Reader to your application or run the samples. The other is the [API Reference](#api-reference) that offers the manual of interfaces used for reading barcodes.
-
-
+# .Net Documentation
 
 ## Getting Started
-- [User Guide for .NET](user-guide.md)
+
+- [User Guide](user-guide.md)
 
 ## API Reference
-- [BarcodeReader](api-reference/#barcodereader-methods)
-- [Class](api-reference/#classes)
-- [Struct](api-reference/#structs)
 
-## Samples and Demos
+- [API Reference](api-reference/index.md)
+
+## Release Notes
+
+- [Version 2.x](release-notes/dotnet-2.md)
+- [Version 1.x](release-notes/dotnet-1.md)
