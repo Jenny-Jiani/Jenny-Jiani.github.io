@@ -3,12 +3,12 @@ $(document).ready(function(){
     $('.markdown-body .sample-code-prefix + blockquote > ul > li:first-child').addClass('on')
     $('.markdown-body .sample-code-prefix + blockquote > ol > li:first-child').addClass('on')
 
-    var sd = $(document).scrollTop()
-    if(sd > 0) {
-        realFunc()
-    } else {
-        $('#AutoGenerateSidebar a').eq(0).addClass('active')
-    }
+    // var sd = $(document).scrollTop()
+    // if(sd > 0) {
+    //     realFunc()
+    // } else {
+    //     $('#AutoGenerateSidebar a').eq(0).addClass('active')
+    // }
 
     setTimeout(function() {
         var objs = $(".fold-panel-prefix")
