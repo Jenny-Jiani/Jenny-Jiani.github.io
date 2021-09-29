@@ -118,6 +118,7 @@ function init(isFirstInit=false) {
     }
     var menuHeight = $('#overall-header').height() + subHeight;
     $('#sideBarCnt').css({'width': $('.sideBar').width() + 'px'});
+    $('#fullTreeMenuListContainer').css({'min-height': 'calc(100vh - '+(menuHeight + 120) +'px)'});
     $('#fullTreeMenuListContainer').css({'max-height': 'calc(100vh - '+(menuHeight + 120) +'px)'});
     $('.rightSideMenu').css({'padding-top': $('#docHead').outerHeight()+'px'});
     $('.docContainer .markdown-body').css({'margin-top': ($('#docHead').outerHeight() + 0) + 'px'});

@@ -48,7 +48,7 @@ function FullTreeMenuList(generateDocHead, needh3 = true, pageStartVer = undefin
     }
     var verArray = SearchVersion();
     if (!useVersionTree) {
-        var allHerf1 = $(".docContainer .content, #docHead, #AutoGenerateSidebar, .sideBar").find("a");
+        var allHerf1 = $(".docContainer .content, #docHead, #AutoGenerateSidebar, .sideBar, #crumbs").find("a");
         for (var i = 0; i < allHerf1.length; i++)
         {
             allHerf1[i].onclick = function(){addParam(this, verArray[0]); return false;};
@@ -74,14 +74,13 @@ function FullTreeMenuList(generateDocHead, needh3 = true, pageStartVer = undefin
             for (var i = 0; i < hiddenLayout.length; i++) {
                 hiddenLayout[i].style.visibility = "visible";
             }
-            
-            init(true);
             initFoldPanel();
+            init();
 
             var treeHeight = $('#fullTreeMenuListContainer')[0].clientHeight;
             var treeOffsetTop = $('#fullTreeMenuListContainer').offset().top;
-            var nodeOffsetTop = $('#fullTreeMenuListContainer .activeLink').length>0?$('#fullTreeMenuListContainer .activeLink').offset().top:0;
-            var lineHeight = $('#fullTreeMenuListContainer .activeLink').length>0?$('#fullTreeMenuListContainer .activeLink')[0].offsetHeight:0;
+            var nodeOffsetTop = $('#fullTreeMenuListContainer .activeLink').length > 0 ? $('#fullTreeMenuListContainer .activeLink').offset().top : 0;
+            var lineHeight = $('#fullTreeMenuListContainer .activeLink').length > 0 ? $('#fullTreeMenuListContainer .activeLink')[0].offsetHeight : 0;
             if (nodeOffsetTop > treeHeight + treeOffsetTop - lineHeight) {
                 $('#fullTreeMenuListContainer').scrollTop(nodeOffsetTop - treeOffsetTop - lineHeight);
             }
@@ -139,7 +138,7 @@ function FullTreeMenuList(generateDocHead, needh3 = true, pageStartVer = undefin
     }
     else {
         var versionListInterval = setInterval(function() {
-            console.log('enter full tree menu list function...')
+            // console.log('enter full tree menu list function...')
             var completeTag = $('#sideBarIframe').contents().find('#complete_loading_tree');
             
             if (completeTag && completeTag.length > 0) {
@@ -148,17 +147,17 @@ function FullTreeMenuList(generateDocHead, needh3 = true, pageStartVer = undefin
                 var version_tree_list = null
                 var curPageVersion = verArray[0];
                 curPageVersion = curPageVersion == 'latest' || curPageVersion == null ? 'latest_version' : curPageVersion;
-                console.log(version_tree_list, curPageVersion);
-                version_tree_list = $('#sideBarIframe').contents().find('#version_tree_list span');
-                console.log(version_tree_list, curPageVersion);
+                // console.log(version_tree_list, curPageVersion);
+                version_tree_list = $('#sideBarIframe').contents().find('#version_tree_list ul.version-tree-container');
+                // console.log(version_tree_list, curPageVersion);
                 if (version_tree_list && version_tree_list.length > 0  && curPageVersion) {
                     for(var i = 0; i<version_tree_list.length; i++) {
-                        console.log($(version_tree_list[i]).attr('id'), 'version_tree_' + curPageVersion);
+                        // console.log($(version_tree_list[i]).attr('id'), 'version_tree_' + curPageVersion);
                         if ($(version_tree_list[i]).attr('id') == 'version_tree_' + curPageVersion) {
                             $('#fullTreeMenuListContainer').html($(version_tree_list[i]).html());
                         }
                     }
-                    var allHerf1 = $(".docContainer .content, #docHead, #AutoGenerateSidebar, .sideBar").find("a");
+                    var allHerf1 = $(".docContainer .content, #docHead, #AutoGenerateSidebar, .sideBar, #crumbs").find("a");
                     for (var i = 0; i < allHerf1.length; i++)
                     {
                         allHerf1[i].onclick = function(){addParam(this, verArray[0]); return false;};
@@ -184,14 +183,13 @@ function FullTreeMenuList(generateDocHead, needh3 = true, pageStartVer = undefin
                         for (var i = 0; i < hiddenLayout.length; i++) {
                             hiddenLayout[i].style.visibility = "visible";
                         }
-                        
-                        init(true);
                         initFoldPanel();
+                        init();
 
                         var treeHeight = $('#fullTreeMenuListContainer')[0].clientHeight;
-                        var treeOffsetTop = $('#fullTreeMenuListContainer').offset().top;
-                        var nodeOffsetTop = $('#fullTreeMenuListContainer .activeLink').length>0?$('#fullTreeMenuListContainer .activeLink').offset().top:0;
-                        var lineHeight = $('#fullTreeMenuListContainer .activeLink').length>0?$('#fullTreeMenuListContainer .activeLink')[0].offsetHeight:0;
+                        var treeOffsetTop = $('#fullTreeMenuListContainer').offset() ? $('#fullTreeMenuListContainer').offset().top : 0;
+                        var nodeOffsetTop = $('#fullTreeMenuListContainer .activeLink').length > 0 ? $('#fullTreeMenuListContainer .activeLink').offset().top : 0;
+                        var lineHeight = $('#fullTreeMenuListContainer .activeLink').length > 0 ? $('#fullTreeMenuListContainer .activeLink')[0].offsetHeight : 0;
                         if (nodeOffsetTop > treeHeight + treeOffsetTop - lineHeight) {
                             $('#fullTreeMenuListContainer').scrollTop(nodeOffsetTop - treeOffsetTop - lineHeight);
                         }
@@ -545,7 +543,9 @@ function UsefulRecord(isUseful) {
     else {
         $.get("https://www.dynamsoft.com/Secure/Rate.ashx?paper="+encodeUrl+"&product=DBR-Doc&rate=1")
     }
+    
     var feedbackTag = document.getElementById("feedbackFooter");
+
     if(feedbackTag!=null) {
         feedbackTag.innerHTML = "Thanks!";
     }
