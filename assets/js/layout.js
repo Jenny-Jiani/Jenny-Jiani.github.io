@@ -51,7 +51,13 @@ $(document).ready(function(){
             var clientHeight = document.body.clientHeight;
             if (sd >= $('#overall-header').height()) {
                 // head and sidebar fixed
-                $('#fullTreeMenuListContainer').css({'max-height': 'calc(100vh - '+(subHeight + 120) +'px)'});
+                
+                if (0 < $('#footerWrapper').offset().top - $(document).scrollTop() < $(window).height()) {
+                    $('#fullTreeMenuListContainer').css({'max-height': 'calc(100vh - '+(menuHeight + 120) +'px)'});
+                } else {
+                    $('#fullTreeMenuListContainer').css({'max-height': 'calc(100vh - '+(subHeight + 120) +'px)'});
+                }
+
                 if ($('.subHeadWrapper').length > 0) {
                     $('.subHeadWrapper').css({'top': '0px'});
                     $('#docHead').css({'top': ($('.subHeadWrapper').height() + 1) + 'px'});
