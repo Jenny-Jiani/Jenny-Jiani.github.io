@@ -52,7 +52,7 @@ $(document).ready(function(){
             if (sd >= $('#overall-header').height()) {
                 // head and sidebar fixed
                 
-                if (0 < $('#footerWrapper').offset().top - $(document).scrollTop() < $(window).height()) {
+                if ($('#footerWrapper').offset().top - $(document).scrollTop() < $(window).height()) {
                     $('#fullTreeMenuListContainer').css({'max-height': 'calc(100vh - '+(menuHeight + 120) +'px)'});
                 } else {
                     $('#fullTreeMenuListContainer').css({'max-height': 'calc(100vh - '+(subHeight + 120) +'px)'});
@@ -200,6 +200,7 @@ function init() {
     }
     var menuHeight = $('#overall-header').height() + subHeight;
     $('#sideBarCnt').css({'width': $('.sideBar').width() + 'px'});
+    $('#fullTreeMenuListContainer').css({'height': 'auto!important'});
     $('#fullTreeMenuListContainer').css({'min-height': 'calc(100vh - '+(menuHeight + 120) +'px)'});
     $('#fullTreeMenuListContainer').css({'max-height': 'calc(100vh - '+(menuHeight + 120) +'px)'});
     $('.rightSideMenu').css({'padding-top': $('#docHead').outerHeight()+'px'});
