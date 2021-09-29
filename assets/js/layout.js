@@ -118,7 +118,7 @@ function init(isFirstInit=false) {
     }
     var menuHeight = $('#overall-header').height() + subHeight;
     $('#sideBarCnt').css({'width': $('.sideBar').width() + 'px'});
-    $('#fullTreeMenuListContainer').css({'height': 'calc(100vh - '+(menuHeight + 120) +'px)'});
+    $('#fullTreeMenuListContainer').css({'max-height': 'calc(100vh - '+(menuHeight + 120) +'px)'});
     $('.rightSideMenu').css({'padding-top': $('#docHead').outerHeight()+'px'});
     $('.docContainer .markdown-body').css({'margin-top': ($('#docHead').outerHeight() + 0) + 'px'});
     if (breakpoint() == 'lg') {
@@ -164,8 +164,6 @@ function init(isFirstInit=false) {
     isFirstInit && document.addEventListener('scroll', realFunc);
 }
 
-
-
 function realFunc() {
     $('.rightSideMenu').css({'padding-top': $('#docHead').outerHeight()+'px'});
     if (breakpoint() == 'lg') {
@@ -180,7 +178,7 @@ function realFunc() {
         var dcHeight = $('.docContainer').height() + menuHeight - sd;
         var clientHeight = document.body.clientHeight;
         if (sd >= $('#overall-header').height()) {
-            // head and sidebar fixed
+            $('#fullTreeMenuListContainer').css({'max-height': 'calc(100vh - '+(subHeight + 120) +'px)'});
             if ($('.subHeadWrapper').length > 0) {
                 $('.subHeadWrapper').css({'top': '0px'});
                 $('#docHead').css({'top': ($('.subHeadWrapper').height() + 1) + 'px'});
@@ -196,6 +194,7 @@ function realFunc() {
             $('.sideBar #sideBarCnt').addClass('sidebar-fixed');
             $('.rightSideMenu').addClass('rsm-fixed');
         } else {
+            $('#fullTreeMenuListContainer').css({'max-height': 'calc(100vh - '+(menuHeight + 120) +'px)'});
             // head and sidebar fixed
             if ($('.subHeadWrapper').length > 0) {
                 $('.subHeadWrapper').css({'top': ($('#overall-header').height()-sd) + 'px'});
