@@ -202,7 +202,7 @@ function init() {
     $('#sideBarCnt').css({'width': $('.sideBar').width() + 'px'});
     $('#fullTreeMenuListContainer').css({'height': 'auto!important'});
     $('#fullTreeMenuListContainer').css({'min-height': 'calc(100vh - '+(menuHeight + 120) +'px)'});
-    $('#fullTreeMenuListContainer').css({'max-height': 'calc(100vh - '+(menuHeight + 120) +'px)'});
+    $('#fullTreeMenuListContainer').css({'max-height': 'calc(100vh - '+(menuHeight + 100) +'px)'});
     $('.rightSideMenu').css({'padding-top': $('#docHead').outerHeight()+'px'});
     $('.docContainer .markdown-body').css({'margin-top': ($('#docHead').outerHeight() + 0) + 'px'});
     if (breakpoint() == 'lg') {
