@@ -13,6 +13,7 @@ description: Dynamsoft Barcode Reader SDK Documentation Homepage
    - [A one]({{ site.ADoc }}A-one.html)
    - [A two]({{ site.ADoc }}A-two.html)
    - [A three]({{ site.ADoc }}A-three.html) 
+   - [A three]({{ site.ADoc }}A-four.html?crv=2.0) 
 
 - [B]({{ site.BDoc }})
    - [B one]({{ site.BDoc }}B-one.html)
