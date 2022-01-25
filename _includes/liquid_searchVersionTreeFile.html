@@ -1,0 +1,115 @@
+<!-- 目标路径 & validTreeFiles：所有tree_file_list -->
+
+{%- assign targetPath = include.curPath | append: include.targetRelativePath | strip -%}
+{%- assign validTreeFiles = site.data.full_tree.tree_file_list -%}
+
+<!-- 目标版本号 -->
+
+{%- assign targetVer = include.ver | strip -%}
+{%- if targetVer == "latest version" -%}
+        {%- assign targetVer = "10000" -%}
+{%- endif -%}
+
+<!-- 定义：最接近目标版本号的目录文件， 是否找到目标文件， 最接近目标版本的版本号， 差值 -->
+{%- assign nearestFile = "" -%}
+{%- assign findTargetFile = false -%}
+{%- assign nearestVer = "10000" -%}
+{%- assign nearestVerDiff = 10000 -%}
+
+<!-- 遍历 validTreeFiles：所有tree_file_list -->
+<!-- 目标是找到等于或者略大于目标版本号的文件，如果不满足，则使用当前文件 -->
+{%- for treeFile in validTreeFiles -%}
+        <!-- 当前树文件版本号 -->
+        {%- assign curTreeFileVer = "10000" -%}
+        <!-- 去掉treeFile前后空格 -->
+        {%- assign treeFile = treeFile | strip -%}
+        <!-- 定义匹配路径 = treeFile -->
+        {%- assign matchUrl = treeFile -%}
+        <!-- 如果当前树文件带有版本号 -->
+        {%- if treeFile contains '-v' -%}
+                <!-- 当前树文件版本号 = 当前遍历的treeFile的版本号 -->
+                {%- assign curTreeFileVer = treeFile |  split: '-v' | last | split: '/' | first | replace: '.html', '' | strip -%}
+                <!-- 获得不带版本号的匹配路径 -->
+                {%- assign matchUrl = treeFile | remove: '-v' | remove: curTreeFileVer | strip -%}
+        {%- endif -%}
+        <!-- 如果匹配路径 == 目标路径 -->
+        {%- if matchUrl == targetPath -%}
+                <!-- 判断版本号是否匹配 -->
+                {%- if targetVer == curTreeFileVer -%}
+                        <!-- 目标版本号 = 当前树文件版本号，文件已找到，退出循环 -->
+                        {%- assign nearestFile = treeFile -%}
+                        {%- assign findTargetFile = true -%}
+                        {%- break -%}
+                {%- else -%}
+                        <!-- 定义 版本差值，
+                                是否有效版本，
+                                needCheckSize，
+                                目标版本号数组（如 v7.6.1 => [7,6,1]）
+                                当前树版本号数组（如 v7.6.0 => [7,6,0]），
+                                minSize（初始值：目标版本号数组长度）
+                        -->
+                        {%- assign verDiff = 10000 -%}
+                        {%- assign validVer = false -%}
+                        {%- assign needCheckSize = true -%}
+                        {%- assign targetVerArray = targetVer | split:'.' -%}
+                        {%- assign curTreeFileVerArray = curTreeFileVer | split:'.' -%}
+                        {%- assign minSize = targetVerArray.size -%}
+                        <!-- 判断当前树版本号数组长度是否小于目标版本号数组长度，如果是，则将 minSize 赋值为当前树版本号数组的长度 -->
+                        {%- if curTreeFileVerArray.size < minSize -%}
+                                {%- assign minSize = curTreeFileVerArray.size -%}
+                        {%- endif -%}
+                        <!-- 遍历 版本号数组 -->
+                        {%- assign arrayMaxIndex = minSize | minus: 1 -%}
+                        {%- for i in (0..arrayMaxIndex) -%}
+                                {%- assign curVal = curTreeFileVerArray[i] | plus: 0 -%}
+                                {%- assign targetVal = targetVerArray[i] | plus: 0 -%}
+                                {%- if curVal > targetVal -%}
+                                        <!-- 计算差值， 退出循环  -->
+                                        {%- assign tmpDiff = curVal | minus: targetVal -%}
+                                        {%- if i == 0 -%}
+                                                {%- assign verDiff = tmpDiff -%}
+                                        {%- else -%}
+                                                {%- assign verDiff = tmpDiff | divided_by: 10 | divided_by: i -%}
+                                        {%- endif -%}
+                                        {%- assign validVer = true -%}    
+                                        {%- break -%}
+                                {%- elsif curVal < targetVal -%}
+                                        {%- assign needCheckSize = false -%}
+                                        <!-- Jenny 2022/1/18 新增 -->
+                                        {%- break -%}
+                                {%- endif -%}
+                        {% endfor %}
+                        <!-- 这种情况只在两个目标版本在minSize的范围内匹配值相等时出现。 如 （T=8.6， C=8.6.1） -->
+                        {%- unless validVer -%}
+                                {%- if needCheckSize and curTreeFileVerArray.size > targetVerArray.size -%}
+                                        {%- assign validVer = true -%}
+                                        {%- assign curVal = curTreeFileVerArray[minSize] | plus: 0 -%}
+                                        {%- assign verDiff = curVal | divided_by: 10 | divided_by: minSize  -%}   
+                                {%- endif -%}
+                        {% endunless %}
+                        {%- if validVer -%}
+                                {%- if findTargetFile -%}
+                                        {%- if verDiff < nearestVerDiff -%}
+                                                {%- assign nearestFile = treeFile -%}
+                                                {%- assign nearestVer = curTreeFileVer -%}
+                                                {%- assign nearestVerDiff = verDiff -%}
+                                        {%- endif -%}
+                                {%- else -%}
+                                        {%- assign nearestFile = treeFile -%}
+                                        {%- assign nearestVer = curTreeFileVer -%}
+                                        {%- assign nearestVerDiff = verDiff -%}
+                                        {%- assign findTargetFile = true -%}
+                                {%- endif -%}
+                        {%- endif -%}
+                {%- endif -%}
+        {%- endif -%}
+{%- endfor -%}
+
+{%- if findTargetFile -%}
+        {%- assign curDirPath = "" -%} 
+        {%- if nearestFile contains '/' -%}
+                {%- assign needRemoveStr = nearestFile |  split: '/' | last | strip -%}
+                {%- assign curDirPath = nearestFile | remove: needRemoveStr -%}
+        {%- endif -%}
+        {%- include {{ nearestFile }} ver=include.ver curPath=curDirPath -%}
+{%- endif -%}
