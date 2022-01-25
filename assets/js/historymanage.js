@@ -6,7 +6,6 @@ function UrlReplace()
     // matchVer: true -- 表示链接已经匹配到正确的版本号。
     var matchVer = getUrlVars(docUrl)["matchVer"];
     var crv = getUrlVars(docUrl)["crv"];
-    var iscrv = getUrlVars(docUrl)["iscrv"];
     // 如果链接没有匹配到正确的版本号，并且这是一个带版本号的链接，那么就要去跳转到正确的版本链接。
     if (matchVer == undefined && ver != undefined) {
         if (crv != undefined) {
@@ -33,13 +32,12 @@ function RedirToGivenVersionPage(inputVer, crv)
         else{
             curVer = verText.replace('version ','');
         }
-        if (curVer == inputVer){
-            console.log('0:' + curVer)
+        if (curVer == inputVer && !crv){
             return;
         }
         else {
             bestVerIndex = -1;
-            verDiff = GetVersionDiff(inputVer, curVer);
+            verDiff = !crv ? GetVersionDiff(inputVer, curVer) : GetVersionDiff(crv, curVer) ;
             bestVersion = curVer;
         }
     }
@@ -260,7 +258,6 @@ function changeVersion (liTag)
 	var curUrl = document.URL;
 	var srcVal = getUrlVars(curUrl)["src"];
     var crv = getUrlVars(curUrl)["crv"];
-    var iscrv = getUrlVars(curUrl)["iscrv"];
 	var anchorVar = undefined;
 	if (curUrl.indexOf("#") != -1){
 		anchorVar = (curUrl.split("#")).pop();
@@ -274,12 +271,12 @@ function changeVersion (liTag)
 	}
 
     // 如果是crv页面，在本页面切换版本树时，需要去找一下对应版本树的crv版本号
-    
-    if (crv!=undefined || iscrv=='true') {
+    if (crv!=undefined) {
+        curUrl = removeVersionUrl(curUrl)
         crv = getCrvPageVersion(ver, curUrl)
     }
 	
-	curUrl = curUrl + "?ver=" + ver + "&&cVer=true" + (crv!=undefined ? "&&iscrv=true&&crv=" + crv:"");
+	curUrl = curUrl + "?ver=" + ver + "&&cVer=true" + (crv!=undefined ? "&&crv=" + crv:"");
 	if (srcVal != undefined){
 		curUrl = curUrl + "&&src=" + srcVal;
 	}
@@ -291,9 +288,12 @@ function changeVersion (liTag)
 }
 
 function getCrvPageVersion(ver, curUrl) {
-    //version_tree_list:参数定义在index-banner.js
+    //version_tree_list: defined in index-banner.js
     if (version_tree_list && version_tree_list.length > 0) {
         for(var i = 0; i<version_tree_list.length; i++) {
+            if (ver == "latest") {
+                ver = "latest_version"
+            }
             if ($(version_tree_list[i]).attr('id') == 'version_tree_' + ver) {
                 var objs = $(version_tree_list[i]).find("li a")
                 for (var oi = 0; oi < objs.length; oi++) {
@@ -313,4 +313,19 @@ function getCrvPageVersion(ver, curUrl) {
         }
     }
     return undefined
+}
+
+function removeVersionUrl(curUrl) {
+    if (curUrl.indexOf("-v") > 0) {
+        var candidateVersionStr = curUrl.split("-v")
+        for(var i=1; i<candidateVersionStr.length; i++) {
+            var tmpStr = candidateVersionStr[i]
+            var tmpVer = tmpStr.split("/")[0].replace(".html", "").trim()
+            var firstChar = tmpVer.replaceAll(".", "")[0]
+            if (firstChar >= "0" && firstChar <= "9") {
+                return candidateVersionStr[0] + ".html"
+            }
+        }
+    }
+    return curUrl
 }

@@ -101,17 +101,23 @@
 	{%- endunless -%}
 	
 	{%- if tmpPageVersion == "latest version" -%}
+		<li><a href = "{{ site.firstLevelUrl }}{{ my_page.url }}" class="otherLinkColour">latest version</a></li>
+		{%- comment -%}
 		{%- if my_page.category != "common-repo" -%}
 		<li><a href = "{{ site.firstLevelUrl }}{{ my_page.url }}" class="otherLinkColour">latest version</a></li>
 		{%- else -%}
 		<li><a href = "{{ site.firstLevelUrl }}{{ my_page.url }}?iscrv=true" class="otherLinkColour">latest version</a></li>
 		{%- endif -%}
+		{%- endcomment -%}
 	{%- else -%}
+		<li><a href = "{{ site.firstLevelUrl }}{{ my_page.url }}" class="otherLinkColour">{{ "version " | append: tmpPageVersion }}</a></li>
+		{%- comment -%}
 		{%- if my_page.category != "common-repo" -%}
 		<li><a href = "{{ site.firstLevelUrl }}{{ my_page.url }}" class="otherLinkColour">{{ "version " | append: tmpPageVersion }}</a></li>
 		{%- else -%}
 		<li><a href = "{{ site.firstLevelUrl }}{{ my_page.url }}?iscrv=true" class="otherLinkColour">{{ "version " | append: tmpPageVersion }}</a></li>
 		{%- endif -%}
+		{%- endcomment -%}
 	{%- endif -%}
 
 	{%- assign historyRecode = historyRecode | append: '\nextUrlRecode\' | append: tmpPageVersion -%}
