@@ -76,17 +76,18 @@ function FilterCurrentVersionTree(treeList, curVersion) {
 function ExpandCurrentPageTree(searchListId) {
   $('#' + searchListId).find('.activeLink').parent().parents("li").removeClass("collapseListStyle").addClass("expandListStyle")
   if ($('#' + searchListId).find('.activeLink').parent()[0].dataset.ishashnode) {
-    var hashItem = location.hash
-    var compareLink = document.URL.split("?")[0] + hashItem
     var activeLinkItem = $('#' + searchListId).find('.activeLink')
     var urlItems = $(activeLinkItem).parent().find("a")
-    for(var i=0; i<urlItems.length; i++) {
-      if (urlItems[i].href==compareLink) {
-        $(urlItems[i]).addClass("activeLink")
-        $(activeLinkItem).addClass("childHashItemsLink")
+    if (document.URL.indexOf("#") > 0) {
+      var hashItem = location.hash
+      var compareLink = document.URL.split("?")[0] + hashItem
+      for(var i=0; i<urlItems.length; i++) {
+        if (urlItems[i].href==compareLink) {
+          $(urlItems[i]).addClass("activeLink")
+          $(activeLinkItem).addClass("childHashItemsLink")
+        }
       }
     }
-
     $(urlItems).on('click', function() {
       $(urlItems).removeClass("activeLink")
       $(this).addClass("activeLink")
