@@ -20,9 +20,12 @@ regenerate: true
 		{%- endif -%}
 	{%- endfor -%}
 {%- endif -%}
+{%- if site.docFullPath contains 'license-server/docs' and page.url contains 'schedule/stable' -%}
+	{%- assign excludeFlag = true -%}
+{%- endif -%}
 {%- unless excludeFlag or page.layout == "" or page.layout == "default" -%}
   <url>
-    <loc>{{page.url}}</loc> 
+    <loc>{{ site.docFullPath }}{{page.url | replace:'/index.html','/' | xml_escape}}</loc> 
   </url>
 {%- endunless -%}
 {%- endfor -%}

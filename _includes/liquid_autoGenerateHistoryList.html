@@ -42,8 +42,6 @@
 
 {%- assign historyRecode = "" -%}
 
-<!-- 寻找出页面的所有历史version页面 -->
-<!-- style="display: block; position: static;" -->
 <ul class="otherVersions" style="display: none!important;">
 {%- for my_page in site.pages -%}
 	{%- assign tmpPageVersion = "latest version" -%}
@@ -60,16 +58,14 @@
 			{%- endif -%}
 		{%- endfor -%}
 	{%- endif -%}
-			
-	{%- if curPageVersion == tmpPageVersion && my_page.category != "common-repo" -%}
+	
+	{%- if curPageVersion == tmpPageVersion -%}
 		{%- continue -%}
 	{%- endif -%}
 
-	
-
 	{%- assign needRemoveStr = "-v" | append: tmpPageVersion -%}
 	{%- assign tmpUsedToMatchUrl = my_page.url | remove: needRemoveStr -%}
-	
+
 	{%- if tmpUsedToMatchUrl contains 'index.html' -%}
 		{%- assign tmpUsedToMatchUrl = tmpUsedToMatchUrl | remove: 'index.html' -%}
 	{%- endif -%}
@@ -82,7 +78,7 @@
 			{%- endif -%}
 		{%- endfor -%}
 	{%- endif -%}
-
+	
 	{%- if tmpUsedToMatchUrl != curUsedToMatchUrl -%}
 		{%- continue -%}
 	{%- endif -%}
@@ -99,25 +95,11 @@
 	{%- unless newVer -%}
 		{%- continue -%}
 	{%- endunless -%}
-	
+
 	{%- if tmpPageVersion == "latest version" -%}
 		<li><a href = "{{ site.firstLevelUrl }}{{ my_page.url }}" class="otherLinkColour">latest version</a></li>
-		{%- comment -%}
-		{%- if my_page.category != "common-repo" -%}
-		<li><a href = "{{ site.firstLevelUrl }}{{ my_page.url }}" class="otherLinkColour">latest version</a></li>
-		{%- else -%}
-		<li><a href = "{{ site.firstLevelUrl }}{{ my_page.url }}?iscrv=true" class="otherLinkColour">latest version</a></li>
-		{%- endif -%}
-		{%- endcomment -%}
 	{%- else -%}
 		<li><a href = "{{ site.firstLevelUrl }}{{ my_page.url }}" class="otherLinkColour">{{ "version " | append: tmpPageVersion }}</a></li>
-		{%- comment -%}
-		{%- if my_page.category != "common-repo" -%}
-		<li><a href = "{{ site.firstLevelUrl }}{{ my_page.url }}" class="otherLinkColour">{{ "version " | append: tmpPageVersion }}</a></li>
-		{%- else -%}
-		<li><a href = "{{ site.firstLevelUrl }}{{ my_page.url }}?iscrv=true" class="otherLinkColour">{{ "version " | append: tmpPageVersion }}</a></li>
-		{%- endif -%}
-		{%- endcomment -%}
 	{%- endif -%}
 
 	{%- assign historyRecode = historyRecode | append: '\nextUrlRecode\' | append: tmpPageVersion -%}

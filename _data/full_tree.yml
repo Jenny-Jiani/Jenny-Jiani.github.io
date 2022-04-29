@@ -1,8 +1,259 @@
-tree_file_list:
-  - sidelist-full-tree.html
-  - sidelist-ADoc-v7.6.0.html
-  - sidelist-ADoc-v8.0.0.html
-  - sidelist-ADoc.html
-  - sidelist-BDoc-v7.5.0.html
-  - sidelist-BDoc.html
-  - sidelist-CDoc.html
+tree_list:
+  - name: About
+    path: /about/
+    startVersion:
+    endVersion:
+    childList:
+      - name: Resource 
+        path: /about/resources.html
+        startVersion:
+        endVersion:
+      - name: License
+        path: /about/license.html        
+        startVersion:
+        endVersion:
+      - name: Support
+        path: /about/getsupport.html        
+        startVersion:
+        endVersion:
+  - name: Getting Started
+    path: /getstarted/
+    startVersion:
+    endVersion:
+    childList:
+      - name: HelloWorld 
+        path: /getstarted/helloworld.html
+        startVersion:
+        endVersion:
+      - name: Hardware
+        path: /getstarted/hardware.html
+        startVersion:
+        endVersion:
+      - name: Platform
+        path: /getstarted/platform.html
+        startVersion:
+        endVersion:
+      - name: FileTypes
+        path: /getstarted/filetype.html
+        startVersion:
+        endVersion:
+  - name: Development
+    path: /indepth/development/
+    startVersion:
+    endVersion: 
+    childList:
+      - name: Angular Integration
+        path: /indepth/development/angular.html
+        startVersion:
+        endVersion:
+      - name: React Integration
+        path: /indepth/development/react.html
+        startVersion:
+        endVersion:
+      - name: Vue Integration
+        path: /indepth/development/vue.html
+        startVersion:
+        endVersion:
+      - name: Server-side Scripting
+        path: /indepth/development/Server-script.html
+        startVersion:
+        endVersion:
+      - name: Professional Service
+        path: /indepth/development/Pro-service.html
+        startVersion:
+        endVersion:
+      - name: Upgrade Guide
+        path: /indepth/development/upgrade.html
+        startVersion:
+        endVersion:
+      - name: About ActiveX
+        path: /indepth/development/activex.html
+        startVersion:
+        endVersion:
+      - name: FileTypes
+        path: /indepth/development/armmips.html
+        startVersion:
+        endVersion:
+  - name: Deployment
+    path: /indepth/deployment/
+    startVersion:
+    endVersion: 
+    childList:
+      - name: Server Setup
+        path: /indepth/deployment/server.html
+        startVersion:
+        endVersion:
+      - name: Service Setup
+        path: /indepth/deployment/service.html
+        startVersion:
+        endVersion:
+  - name: Schedule
+    path: /info/schedule/
+    startVersion:
+    endVersion: 
+    childList:
+      - name: Server Setup
+        path: /info/schedule/stable.html
+        startVersion:
+        endVersion:
+      - name: Service Setup
+        path: /info/schedule/Addon.html
+        startVersion:
+        endVersion:
+      - name: Service Setup
+        path: /info/schedule/deprecated.html
+        startVersion:
+        endVersion:
+  - name: API Reference
+    path: /info/api/
+    startVersion:
+    endVersion: 
+    childList:
+      - name: Dynamsoft_DWT
+        path: /info/api/Dynamsoft_WebTwainEnv.html
+        startVersion:
+        endVersion:
+      - name: Dynamsoft_Enum
+        path: /info/api/Dynamsoft_Enum.html
+        startVersion:
+        endVersion:
+      - name: WebTwain_Scanner
+        path: /info/api/WebTwain_Acquire.html
+        startVersion:
+        endVersion:
+      - name: WebTwain_Buffer
+        path: /info/api/WebTwain_Buffer.html
+        startVersion:
+        endVersion:
+      - name: WebTwain_Viewer
+        path: /info/api/WebTwain_Viewer.html
+        startVersion:
+        endVersion:
+      - name: WebTwain_Edit
+        path: /info/api/WebTwain_Edit.html
+        startVersion:
+        endVersion:
+      - name: WebTwain_IO
+        path: /info/api/WebTwain_IO.html
+        startVersion:
+        endVersion:
+      - name: WebTwain_Util
+        path: /info/api/WebTwain_Util.html
+        startVersion:
+        endVersion:
+      - name: Addon_BarcodeReader
+        path: /info/api/Addon_BarcodeReader.html
+        startVersion:
+        endVersion:
+      - name: Addon_Camera
+        path: /info/api/Addon_Camera.html
+        startVersion:
+        endVersion:
+      - name: Addon_OCR
+        path: /info/api/Addon_OCR.html
+        startVersion:
+        endVersion:
+      - name: Addon_OCRPro
+        path: /info/api/Addon_OCRPro.html
+        startVersion:
+        endVersion:
+      - name: Addon_PDF
+        path: /info/api/Addon_PDF.html
+        startVersion:
+        endVersion:
+      - name: Addon_Webcam
+        path: /info/api/Addon_Webcam.html
+        startVersion:
+        endVersion:
+      - name: Dynamsoft_FileUploader
+        path: /info/api/Dynamsoft_FileUploader.html
+        startVersion:
+        endVersion:
+      - name: API Appendix
+        path: /info/api/appendix.html
+        startVersion:
+        endVersion:
+  - name: FAQ
+    path: /faq/
+    startVersion:
+    endVersion: 
+    isHashNode: true
+    childList:
+      - name: SDK Download/Free Trial
+        path: /faq/#sdk-downloadfree-trial
+        startVersion:
+        endVersion:
+      - name: Capture/Image Source
+        path: /faq/#captureimage-source
+        startVersion:
+        endVersion:
+      - name: Image Viewer
+        path: /faq/#image-viewer
+        startVersion:
+        endVersion:
+      - name: Image Editing
+        path: /faq/#image-editing
+        startVersion:
+        endVersion:
+      - name: UI Customization
+        path: /faq/#ui-customization
+        startVersion:
+        endVersion:
+      - name: Document Saving
+        path: /faq/#document-saving
+        startVersion:
+        endVersion:
+      - name: Security
+        path: /faq/#security
+        startVersion:
+        endVersion:
+      - name: Addon
+        path: /faq/#addon
+        startVersion:
+        endVersion:
+      - name: Project Deployment and End-user Installation
+        path: /faq/#project-deployment-and-end-user-installation
+        startVersion:
+        endVersion:
+      - name: Error Troubleshooting
+        path: /faq/#error-troubleshooting
+        startVersion:
+        endVersion:
+      - name: Licensing and Purchase
+        path: /faq/#licensing-and-purchase
+        startVersion:
+        endVersion:
+  - name: Jenny Test
+    path: /jennytest/
+    startVersion:
+    endVersion:
+    childList:
+      - name: A
+        path: /jennytest/a.html
+        startVersion:
+        endVersion:
+      - name: B
+        path: /jennytest/b.html
+        startVersion:
+        endVersion: 17.0
+      - name: C
+        path: /test2/c.html
+        startVersion: 16.2
+        endVersion:
+  - name: Test 2 
+    path:
+    startVersion:
+    endVersion: 16.2
+    childList:
+      - name: A 
+        path: /test2/a.html
+        startVersion:
+        endVersion:
+      - name: B
+        path: /test2/b.html
+        startVersion:
+        endVersion:
+      - name: C
+        path: /test2/c.html
+        startVersion:
+        endVersion:

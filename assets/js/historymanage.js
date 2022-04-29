@@ -1,25 +1,35 @@
 function UrlReplace()
 {
     var docUrl = document.URL;
-    // 获得链接中拼接的版本号
     var ver = getUrlVars(docUrl)["ver"];
-    // matchVer: true -- 表示链接已经匹配到正确的版本号。
     var matchVer = getUrlVars(docUrl)["matchVer"];
-    var crv = getUrlVars(docUrl)["crv"];
-    // 如果链接没有匹配到正确的版本号，并且这是一个带版本号的链接，那么就要去跳转到正确的版本链接。
+    if (ver != undefined && ver != "latest") {
+        var tempVer = findNearestVersion(ver);
+        if (tempVer != ver) {
+            var replaceUrl = docUrl.replace(ver, tempVer)
+            window.location.replace(replaceUrl);
+        }
+    }
     if (matchVer == undefined && ver != undefined) {
-        if (crv != undefined) {
-            RedirToGivenVersionPage(ver, crv);
+        RedirToGivenVersionPage(ver);
+    }
+    if (ver == undefined) {
+        if(docUrl.indexOf("?") > 0) {
+            window.location.replace(docUrl + "&&ver=latest");
         } else {
-            RedirToGivenVersionPage(ver);
+            window.location.replace(docUrl + "?ver=latest");
         }
     }
 }
 
-// 链接重定向到正确的版本号页面
-function RedirToGivenVersionPage(inputVer, crv)
+function allHerfClick(_this, ver) {
+    addParam(_this, ver);
+    return false;
+}
+
+function RedirToGivenVersionPage(inputVer)
 {
-    var curVerTag = $(".currentVersion");
+    var curVerTag = $(".currentVersion ");
     var bestVerIndex = -1;
     var verDiff = -1;
     var curVer = null;
@@ -32,18 +42,17 @@ function RedirToGivenVersionPage(inputVer, crv)
         else{
             curVer = verText.replace('version ','');
         }
-        if (curVer == inputVer && !crv){
+        if (curVer == inputVer){
             return;
         }
         else {
             bestVerIndex = -1;
-            verDiff = !crv ? GetVersionDiff(inputVer, curVer) : GetVersionDiff(crv, curVer) ;
+            verDiff = GetVersionDiff(inputVer, curVer);
             bestVersion = curVer;
         }
     }
     var anchorVal = "";
     var curDocUrl = document.URL;
-    // 如果链接中有锚点，将锚点部分分离，保存在 anchorVal 中
     if (curDocUrl.indexOf("#") != -1){
 		var urlAry = curDocUrl.split("#");
 		if (urlAry.length == 2){
@@ -52,7 +61,6 @@ function RedirToGivenVersionPage(inputVer, crv)
 	}
 
     var changeVer = "";
-    // cVer: ture，需要去更改版本 
     var ifChangeVersion = getUrlVars(document.URL)["cVer"];
     if (ifChangeVersion != undefined) {
         changeVer = "&&cVer=true";
@@ -68,62 +76,35 @@ function RedirToGivenVersionPage(inputVer, crv)
             var tmpVer = null;
             if (tmpVerText == "latest version"){
                 tmpVer = "latest"
-            } else {
+            }
+            else{
                 tmpVer = tmpVerText.replace('version ','');
             }
-            if (!crv) {
-                if (tmpVer == inputVer) {
-                    var aTag = $(listAry[i]).children("a");
-                    if (aTag.length > 0) {
-                        var exp = new RegExp(/[?]+([^=]+)=/gi)
-                        if (exp.exec(aTag[0].href) != null){
-                            window.location.replace(aTag[0].href + "&&ver=" +inputVer+"&&matchVer=true" + changeVer + anchorVal);
-                            return;
-                        }
-                        else{
-                            if (getUrlVars(document.URL)["src"] != undefined){
-                                window.location.replace(aTag[0].href + "?src=" + getUrlVars(document.URL)["src"] + "&&ver=" +inputVer+"&&matchVer=true" + changeVer + anchorVal);
-                            }
-                            else{
-                                window.location.replace(aTag[0].href + "?ver=" +inputVer+"&&matchVer=true" + changeVer + anchorVal);
-                            }
-                           return;
-                        }
+            if (tmpVer == inputVer){
+                var aTag = $(listAry[i]).children("a");
+                if (aTag.length > 0) {
+                    var exp = new RegExp(/[?]+([^=]+)=/gi)
+                    if (exp.exec(aTag[0].href) != null){
+                        window.location.replace(aTag[0].href + "&&ver=" +inputVer+"&&matchVer=true" + changeVer + anchorVal);
+                        return;
                     }
-                } else {
-                    var tmpDiff = GetVersionDiff(inputVer, tmpVer);
-                    if (tmpDiff >= 0 && (tmpDiff < verDiff || verDiff < 0)){
-                        bestVerIndex = i;
-                        verDiff = tmpDiff;
-                        bestVersion = tmpVer;
+                    else{
+                    	if (getUrlVars(document.URL)["src"] != undefined){
+                    		window.location.replace(aTag[0].href + "?src=" + getUrlVars(document.URL)["src"] + "&&ver=" +inputVer+"&&matchVer=true" + changeVer + anchorVal);
+                    	}
+                    	else{
+                        	window.location.replace(aTag[0].href + "?ver=" +inputVer+"&&matchVer=true" + changeVer + anchorVal);
+                    	}
+                       return;
                     }
                 }
-            } else {
-                if (tmpVer == crv) {
-                    var aTag = $(listAry[i]).children("a");
-                    if (aTag.length > 0) {
-                        var exp = new RegExp(/[?]+([^=]+)=/gi)
-                        if (exp.exec(aTag[0].href) != null){
-                            window.location.replace(aTag[0].href + "&&ver=" +inputVer+"&&matchVer=true&&crv=" + crv + changeVer + anchorVal);
-                            return;
-                        }
-                        else{
-                            if (getUrlVars(document.URL)["src"] != undefined){
-                                window.location.replace(aTag[0].href + "?src=" + getUrlVars(document.URL)["src"] + "&&ver=" +inputVer+"&&matchVer=true&&crv=" + crv + changeVer + anchorVal);
-                            }
-                            else{
-                                window.location.replace(aTag[0].href + "?ver=" +inputVer+"&&matchVer=true&&crv=" + crv + changeVer + anchorVal);
-                            }
-                           return;
-                        }
-                    }
-                } else {
-                    var tmpDiff = GetVersionDiff(crv, tmpVer);
-                    if (tmpDiff >= 0 && (tmpDiff < verDiff || verDiff < 0)){
-                        bestVerIndex = i;
-                        verDiff = tmpDiff;
-                        bestVersion = tmpVer;
-                    }
+            }
+            else {
+                var tmpDiff = GetVersionDiff(inputVer, tmpVer);
+                if (tmpDiff >= 0 && (tmpDiff < verDiff || verDiff < 0)){
+                    bestVerIndex = i;
+                    verDiff = tmpDiff;
+                    bestVersion = tmpVer;
                 }
             }
         }
@@ -135,13 +116,15 @@ function RedirToGivenVersionPage(inputVer, crv)
         if (aTag.length > 0) {
             var exp = new RegExp(/[?]+([^=]+)=/gi)
             if (exp.exec(aTag[0].href) != null){
-                window.location.replace(aTag[0].href + "&&ver=" +inputVer+"&&matchVer=true"+ changeVer + anchorVal + (crv?"&&crv="+crv:""));
+                window.location.replace(aTag[0].href + "&&ver=" +inputVer+"&&matchVer=true"+ changeVer + anchorVal);
                 return;
-            } else {
+            }
+            else{
                 if (getUrlVars(document.URL)["src"] != undefined){
-                    window.location.replace(aTag[0].href + "?src="+ getUrlVars(document.URL)["src"] + "&&ver=" +inputVer+"&&matchVer=true"+ changeVer + anchorVal + (crv?"&&crv="+crv:""));
-                } else {
-                    window.location.replace(aTag[0].href + "?ver=" +inputVer+"&&matchVer=true"+ changeVer + anchorVal + (crv?"&&crv="+crv:""));
+                    window.location.replace(aTag[0].href + "?src="+ getUrlVars(document.URL)["src"] + "&&ver=" +inputVer+"&&matchVer=true"+ changeVer + anchorVal);
+                }
+                else{
+                    window.location.replace(aTag[0].href + "?ver=" +inputVer+"&&matchVer=true"+ changeVer + anchorVal);
                 }
                 return;
             }
@@ -202,7 +185,6 @@ function addParam (aTag, verText)
         return;
 
     var exp = new RegExp(/[?&]ver=[^&^#]+/gi);
-    // 链接中已有版本号--直接打开
 	if (exp.exec(hrefVal) != null) {
         if (aTag.target == '_blank') {
             window.open(hrefVal)
@@ -211,17 +193,16 @@ function addParam (aTag, verText)
         }
 		return;
 	}
-	// 链接中不含版本号信息，进行拼接
+	
 	var verStr = "";
 	exp = new RegExp(/[?]+([^=]+)=/gi);
-    // 链接中是否有参数
     if (exp.exec(hrefVal) != null) {
 		verStr = "&&ver=" + verText;
 	}
 	else {
 		verStr = "?ver=" + verText;
 	}
-	// 拼接时判断链接中是否有锚点
+	
 	if (hrefVal.indexOf("#") != -1) {
 		var urlAry = hrefVal.split("#");
 		if (urlAry.length == 2){
@@ -257,7 +238,6 @@ function changeVersion (liTag)
 	}
 	var curUrl = document.URL;
 	var srcVal = getUrlVars(curUrl)["src"];
-    var crv = getUrlVars(curUrl)["crv"];
 	var anchorVar = undefined;
 	if (curUrl.indexOf("#") != -1){
 		anchorVar = (curUrl.split("#")).pop();
@@ -269,14 +249,8 @@ function changeVersion (liTag)
 	if (curUrl.indexOf("#") != -1){
 		curUrl = curUrl.substring(0, curUrl.indexOf("#"));
 	}
-
-    // 如果是crv页面，在本页面切换版本树时，需要去找一下对应版本树的crv版本号
-    if (crv!=undefined) {
-        curUrl = removeVersionUrl(curUrl)
-        crv = getCrvPageVersion(ver, curUrl)
-    }
 	
-	curUrl = curUrl + "?ver=" + ver + "&&cVer=true" + (crv!=undefined ? "&&crv=" + crv:"");
+	curUrl = curUrl + "?ver=" + ver + "&&cVer=true";
 	if (srcVal != undefined){
 		curUrl = curUrl + "&&src=" + srcVal;
 	}
@@ -287,45 +261,30 @@ function changeVersion (liTag)
 	return;
 }
 
-function getCrvPageVersion(ver, curUrl) {
-    //version_tree_list: defined in index-banner.js
-    if (version_tree_list && version_tree_list.length > 0) {
-        for(var i = 0; i<version_tree_list.length; i++) {
-            if (ver == "latest") {
-                ver = "latest_version"
+function findNearestVersion(ver) {
+    var versionList = $(".fullVersionInfo li")
+    var bestVer = ver, verDiff=null
+    // console.log("versionList: " + versionList)
+    for (var i=0; i<versionList.length; i++) {
+        var tempVer = $(versionList[i]).text().toLowerCase()
+        if (tempVer == "latest version"){
+            tempVer = "latest"
+        } else{
+            tempVer = tempVer.replace('version ','');
+        }
+        // console.log("tempVer: " + tempVer)
+        if (tempVer == ver) {
+            return tempVer
+        } else {
+            var tmpDiff = GetVersionDiff(ver, tempVer);
+            if (verDiff == null || (tmpDiff >= 0 && (tmpDiff < verDiff || verDiff < 0))){
+                verDiff = tmpDiff;
+                bestVer = tempVer;
             }
-            if ($(version_tree_list[i]).attr('id') == 'version_tree_' + ver) {
-                var objs = $(version_tree_list[i]).find("li a")
-                for (var oi = 0; oi < objs.length; oi++) {
-                    var objLink = objs[oi].href
-                    if (objLink.indexOf("?") != -1){
-                        objLink = objLink.substring(0, objLink.indexOf("?"));
-                    }
-                    if (objLink.indexOf("#") != -1){
-                        objLink = objLink.substring(0, objLink.indexOf("#"));
-                    }
-                    if (objLink == curUrl) {
-                        crv = getUrlVars(objs[oi].href)["crv"]
-                        return crv
-                    }
-                }
-            }
+            // console.log('tmpDiff: ' + tmpDiff)
+            // console.log('verDiff: ' + verDiff)
+            // console.log('bestVersion: ' + bestVer)
         }
     }
-    return undefined
-}
-
-function removeVersionUrl(curUrl) {
-    if (curUrl.indexOf("-v") > 0) {
-        var candidateVersionStr = curUrl.split("-v")
-        for(var i=1; i<candidateVersionStr.length; i++) {
-            var tmpStr = candidateVersionStr[i]
-            var tmpVer = tmpStr.split("/")[0].replace(".html", "").trim()
-            var firstChar = tmpVer.replaceAll(".", "")[0]
-            if (firstChar >= "0" && firstChar <= "9") {
-                return candidateVersionStr[0] + ".html"
-            }
-        }
-    }
-    return curUrl
+    if (verDiff) {return bestVer} else {return "latest"}
 }

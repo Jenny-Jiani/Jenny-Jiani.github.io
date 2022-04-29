@@ -7,6 +7,7 @@
     <meta name="description" content="{{ page.description }}" />
     <meta name="keywords" content="{{ page.keywords }}" />
 
+    {%- assign excludeFlag = false -%}
     {%- assign targetUrl = page.url -%}
     {%- if page.url contains '-v' -%}
 	{%- assign candidateVersionStr = page.url |  split: '-v' -%}
@@ -16,6 +17,7 @@
 			{{ tmpVer | truncate: 4 | replace:"...", "" }}
 		{%- endcapture -%}
 		{%- if firstChar >= "0" and firstChar <= "9" -%}
+            {%- assign excludeFlag = true -%}
             {%- assign needRemoveStr = "-v" | append: tmpVer -%}
             {%- assign targetUrl = page.url | remove: needRemoveStr | strip -%}
 			{%- break -%}
@@ -24,16 +26,12 @@
     {%- endif -%}
     {%- assign targetUrl = targetUrl | remove: 'index.html' | strip -%}
 
-    <link href="{{ site.docFullPath }}{{ targetUrl }}" rel="canonical">
-    
-    {%- if page.hasCustomLdJson -%}
-        {{page.customLdJsonScript}}
-    {%- else -%}
-    <script type="application/ld+json">
-        {"@type":"WebPage","description":"user guide layout.","@context":"https://schema.org"}
-    </script>
+    {%- if excludeFlag -%}
+    <meta name="robots" content="noindex">
     {%- endif -%}
 
+    <link href="{{ site.docFullPath }}{{ targetUrl }}" rel="canonical">
+    
     <link rel="stylesheet" href="{{ site.assets }}css/dm-style.css?v=b8601a47f85e9c71565aa6c079c8988cd98cc1e7">
 
     <link rel="stylesheet" href="{{ site.assets }}css/bootstrap.min.css">
@@ -43,14 +41,6 @@
     <link rel="stylesheet" href="{{ site.assets }}css/basis-bs.min.css?v=b202001119">
 
     <link rel="stylesheet" href="{{ site.assets }}css/basis.min.css?v=b202001019">
-
-    <script type="text/javascript" src="{{ site.assets }}js/jquery-3.5.0.min.js"></script>
-    <script type="text/javascript" src="{{ site.assets }}js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="{{ site.assets }}js/ds-jquery-bs.min.js"></script>
-    <script type="text/javascript" src="{{ site.assets }}js/index-banner.js"></script>
-    <script type="text/javascript" src="{{ site.assets }}js/historymanage.js"></script>
-    <script type="text/javascript" src="{{ site.assets }}js/layout.min.js"></script>
-    <script type="text/javascript" src="{{ site.assets }}js/anchor.min.js"></script>
 
     {%- if page.noTitleIndex or page.url contains 'release-notes' -%}
         <style>
@@ -62,4 +52,28 @@
             .headCounter h4 { counter-increment: none!important; }
         </style>
     {%- endif -%}
+
+    <script type="text/javascript" src="{{ site.assets }}js/jquery-3.5.0.min.js"></script>
+    <script type="text/javascript" src="{{ site.assets }}js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="{{ site.assets }}js/ds-jquery-bs.min.js"></script>
+    
+    {%- if site.productName contains 'Dynamic Web TWAIN' -%}
+    <script type="text/javascript" src="{{ site.assets }}js/index-banner-two.js"></script>
+    <script type="text/javascript" src="{{ site.assets }}js/historymanage.min.js"></script>
+    {%- else -%}
+    <script type="text/javascript" src="{{ site.assets }}js/index-banner.min.js"></script>
+    <script type="text/javascript" src="{{ site.assets }}js/historymanage.min.js"></script>
+    {%- endif -%}
+
+    <script type="text/javascript" src="{{ site.assets }}js/layout.min.js"></script>
+    <script type="text/javascript" src="{{ site.assets }}js/anchor.min.js"></script>
+
+    {%- if page.hasCustomLdJson -%}
+        {{page.customLdJsonScript}}
+    {%- endif -%}
+
+    <script type="text/javascript">
+        var _hsq = window._hsq = window._hsq || [];
+        _hsq.push(['setContentType', 'knowledge-article']);
+    </script>
 </head>

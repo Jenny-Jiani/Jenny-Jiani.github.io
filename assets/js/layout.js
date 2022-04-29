@@ -1,7 +1,13 @@
 $(document).ready(function(){ 
     init();
+    // $('h1').append('<p class="subtitle">Last Modified Date: <span id="LastModifiedDate">' + formatDate(document.lastModified) + '</span></p>')
     $('.markdown-body .sample-code-prefix + blockquote > ul > li:first-child').addClass('on')
     $('.markdown-body .sample-code-prefix + blockquote > ol > li:first-child').addClass('on')
+    $('.markdown-body .sample-code-prefix.template2 + blockquote > div').eq(0).addClass('on')
+
+    if (document.URL.indexOf("web-twain/docs/faq/") > 0  && document.URL.indexOf("web-twain/docs/faq/?ver") < 0) {
+        $("#breadcrumbLastNode").text($("h1").text())
+    }
 
     var sd = $(window).scrollTop()
     if(sd > 0) {
@@ -37,6 +43,12 @@ $(document).ready(function(){
     window.addEventListener('scroll', realFunc);
 
     function realFunc() {
+        if ($(window).scrollTop() > 0) {
+            $("a#toTop").show()
+        } else {
+            $("a#toTop").hide()
+        }
+        
         $('.rightSideMenu').css({'padding-top': $('#docHead').outerHeight()+'px'});
         if (breakpoint() == 'lg') {
             var subHeight = 0;
@@ -151,6 +163,9 @@ $(document).ready(function(){
         $('.markdown-body .sample-code-prefix').eq(sIndex).find('+ blockquote ol li').removeClass('on')
         $('.markdown-body .sample-code-prefix').eq(sIndex).find('+ blockquote ul li').eq(index).addClass('on')
         $('.markdown-body .sample-code-prefix').eq(sIndex).find('+ blockquote ol li').eq(index).addClass('on')
+
+        $('.markdown-body .sample-code-prefix').eq(sIndex).find('+ blockquote > div').removeClass('on')
+        $('.markdown-body .sample-code-prefix').eq(sIndex).find('+ blockquote > div').eq(index).addClass('on')
     })
 
     $('.markdown-body .sample-code-prefix + blockquote ol li a').on('click', function() {
@@ -175,6 +190,18 @@ $(document).ready(function(){
                 }
                 foldPanel = $(foldPanel).next()
             }
+        }
+    })
+
+    $('#toTop').click(function () {
+        window.scrollTo(0, 0)
+    })
+
+    $("#fullTreeMenuListContainer li > span.noPathItem").on("click", function() {
+        if ($(this).parent().hasClass("collapseListStyle")) {
+            $(this).parent().removeClass("collapseListStyle").addClass("expandListStyle")
+        } else {
+            $(this).parent().addClass("collapseListStyle").removeClass("expandListStyle")
         }
     })
 })
@@ -253,5 +280,14 @@ function initFoldPanel() {
         $(obj).next().find('i').css({'line-height': $(obj).next().height() + 'px'})
     }
     $(".fold-panel-start").nextUntil(".fold-panel-end").hide()
+}
+
+function formatDate(date) {
+    var weekdayList = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    var monthList = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    var newDate = new Date(date)
+    var weekday = weekdayList[newDate.getDay()]
+    var month = monthList[newDate.getMonth()]
+    return weekday + ', ' + month + ' ' + newDate.getDate() + ', ' + newDate.getFullYear()
 }
 

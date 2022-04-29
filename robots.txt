@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /web-twain/docs/indepth/troubleshooting/
+Disallow: /web-twain/docs/info/schedule/released.html
+Disallow: /web-twain/downloads/1000001-confirmation/
+Disallow: /web-twain/docs/indepth/deployment/scenarios.html
+Disallow: /web-twain/docs/indepth/faqs/

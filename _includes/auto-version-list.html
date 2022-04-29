@@ -1,6 +1,16 @@
 <span class="fullVersionHistory">
     <ul class="fullVersionInfo">
-        {%- assign validVerInfo = site.data.product_version.version_info_list -%}
+        {%- if page.editon -%}
+            {%- if page.editon == 'js' -%}
+                {%- assign validVerInfo = site.data.product_version.version_info_list_js -%}
+            {%- elsif page.editon == 'mobile' -%}
+                {%- assign validVerInfo = site.data.product_version.version_info_list_mobile -%}
+            {%- else -%}
+                {%- assign validVerInfo = site.data.product_version.version_info_list_desktop -%}
+            {%- endif -%}
+        {%- else -%}
+            {%- assign validVerInfo = site.data.product_version.version_info_list -%}
+        {%- endif -%}
         {%- for verInfo in validVerInfo -%}
             {%- assign curVerText = "" -%}
             {%- assign verInfo = verInfo | downcase | strip -%}
@@ -9,8 +19,11 @@
             {%- else -%}
                 {%- assign curVerText = "Version " | append: verInfo -%}
             {%- endif -%}
-
+            {%- if site.firstLevelUrl == "/barcode-reader" -%}
+            <li onclick="changeVersion(this)" class="dbr_changeVersion_li">{{ curVerText }}</li>
+            {%- else -%}
             <li onclick="changeVersion(this)">{{ curVerText }}</li>
+            {%- endif -%}
         {%- endfor -%}
     </ul>
     <a class="fvChange fontOswald" href="javascript:;">Change +</a>

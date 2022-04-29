@@ -1,19 +1,25 @@
-# repositoryUrl: https://github.com/dynamsoft-docs-docs/blob/master
-# repositoryUrlJS: https://github.com/dynamsoft-docs-docs-js/blob/main
-# repositoryUrlMobile: https://github.com/dynamsoft-docs-docs-mobile/blob/main
-repositoryUrlCommon: https://github.com/dynamsoft-docs-docs-common/blob/main
-repository: dynamsoft-docs-docs
-docFullPath: https://www.dynamsoft.com
+repositoryUrl: https://github.com/dynamsoft-docs/web-twain-docs/blob/master
 firstLevelUrl: 
-docHomePage: /introduction/
-
-useVersionTree: true
-
-ADoc: /ADoc/
-BDoc: /BDoc/
-CDoc: /CDoc/
+repository: dynamsoft-docs/web-twain-docs
+docFullPath: https://jenny-jiani.github.io
+productUrl: https://www.dynamsoft.com/Products/WebTWAIN_Overview.aspx
+productName: Dynamic Web TWAIN
+docHomePage: /about/
+dynamsoft_logo: /assets/img-icon/dynamsoft-logo.png
+dwt_logo: /assets/img-icon/dwt-logo.png
+edit_icon: /assets/img-icon/edit-icon.png
 
 assets: /assets/
+_includes: /_includes/
+_layouts: /_layouts/
+about: /about/
+getstarted: /getstarted/
+indepth: /indepth/
+info: /info/
+faq: /faq/
+
+dynamsoft_logo: /assets/img-icon/dynamsoft-logo.png
+dbr_logo: /assets/img-icon/dbr-logo.png
 edit_icon: /assets/img-icon/edit-icon.png
 smile_icon: /assets/img-icon/icon-smile.png
 sad_icon: /assets/img-icon/icon-sad.png
@@ -21,37 +27,11 @@ dbr_icon: /assets/img-icon/icon-dbr.svg
 dwt_icon: /assets/img-icon/icon-dwt.svg
 dnt_icon: /assets/img-icon/icon-dnt.svg
 
-
 baseurl: ""
+
+theme: jekyll-theme-cayman
+
 plugins:
   - jemoji
 
-defaults:
-  - scope:
-      path: ""
-    values:
-      category: "original-repo"
-  - scope:
-      path: "programming/javascript"
-    values:
-      category: "js-repo"
-  - scope:
-      path: "programming/android"
-    values:
-      category: "mobile-repo"
-  - scope:
-      path: "programming/objectivec-swift"
-    values:
-      category: "mobile-repo"
-  - scope:
-      path: ""
-      permalink: /:categories/:year:month:date-:title.html
-    values:
-      layout: "default-layout"
-      noTitleIndex: true
-      needAutoGenerateSidebar: true
-      needGenerateH3Content: true
-
 url: "https://www.dynamsoft.com" # sitemap root
-
-markdown: kramdown

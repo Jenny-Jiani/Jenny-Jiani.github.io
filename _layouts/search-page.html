@@ -7,7 +7,7 @@
     .markdown-body .editLinkColour:hover { color: #616167; }
 </style>
 <style type="text/css">
-#searchResult h1 { margin-bottom: 15px; }
+  #searchResult h1 { margin-bottom: 15px; }
   #searchResult b { color: #444; font-family: OpenSans-Semibold; }
   #searchResult .gsc-control-cse { padding: 0; }
   #searchResult table.gsc-input { margin-bottom: 0; }
@@ -112,7 +112,7 @@
     <div class="headWrapper">
         {%- include page_header.html -%}
     </div>
-    {%- include dbrNav.html -%}
+    {%- include dwtNav.html -%}
     <div class="sideBarIcon"><i class="fa fa-list" style="margin-right: 5px;"></i> Table of contents</div>
     <div class="container" id="searchContent">
       <div class="row">
@@ -121,8 +121,8 @@
                   <div id="searchResult" class="container pt40 pb60 sm-pt50">
                       <div class="row">
                           <div class="col-xs-12">
-                              <h1>Search</h1>                        
-                              <script async src="https://cse.google.com/cse.js?cx=32039cdf85bc7ae2b"></script>
+                              <h1>Search</h1>
+                              <script async src="https://cse.google.com/cse.js?cx=2849fa1c545c59689"></script>
                               <div class="gcse-search"></div>
                           </div>
                       </div>
@@ -223,12 +223,14 @@
           $(".sideBar").toggleClass('hide-sm');
           $(".sideBar").toggleClass('hide-xs');
           setTimeout(function() {
+            //   console.log('sidebar' + $('.sideBar').width())
               $('#sideBarCnt').css({'width': $('.sideBar').width() + 'px'})
           }, 100)
       })
 
     //   let timeInt = setInterval(function() {
     //       var container = $('#sideBarCnt'), scrollTo = $('#sideBarCnt .activeLink');
+    //       console.log(scrollTo)
     //       if (scrollTo.length>0) {
     //           container.scrollTop(
     //               scrollTo.offset().top - container.offset().top + container.scrollTop()
@@ -244,11 +246,11 @@
           }
       }
 
-      $('#txtSearch').keydown(function(e) { 
-          if (e.keyCode == 13) {
-              window.location.href = '/barcode-reader/search.html?q=' + $('#txtSearch').val()
-          }
-      })
+    $('#txtSearch').keydown(function(e) { 
+        if (e.keyCode == 13) {
+            window.location.href = '/web-twain/docs/search.html?q=' + $('#txtSearch').val()
+        }
+    })
 
   </script>
 

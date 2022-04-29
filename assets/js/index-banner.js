@@ -32,8 +32,7 @@ function GenerateContentByHead(needh3 = true) {
         $('#AutoGenerateSidebar').append(appendHtml);
     }
 }
-var completeTag = null
-var version_tree_list = null
+
 function FullTreeMenuList(generateDocHead, needh3 = true, pageStartVer = undefined, useVersionTree = false) {
     if (useVersionTree == 'true') {
         useVersionTree = true;
@@ -140,17 +139,20 @@ function FullTreeMenuList(generateDocHead, needh3 = true, pageStartVer = undefin
     else {
         var versionListInterval = setInterval(function() {
             // console.log('enter full tree menu list function...')
-            completeTag = $('#sideBarIframe').contents().find('#complete_loading_tree');
+            var completeTag = $('#sideBarIframe').contents().find('#complete_loading_tree');
             
             if (completeTag && completeTag.length > 0) {
                 clearInterval(versionListInterval);
 
-                version_tree_list = null
+                var version_tree_list = null
                 var curPageVersion = verArray[0];
                 curPageVersion = curPageVersion == 'latest' || curPageVersion == null ? 'latest_version' : curPageVersion;
+                // console.log(version_tree_list, curPageVersion);
                 version_tree_list = $('#sideBarIframe').contents().find('#version_tree_list ul.version-tree-container');
+                // console.log(version_tree_list, curPageVersion);
                 if (version_tree_list && version_tree_list.length > 0  && curPageVersion) {
                     for(var i = 0; i<version_tree_list.length; i++) {
+                        // console.log($(version_tree_list[i]).attr('id'), 'version_tree_' + curPageVersion);
                         if ($(version_tree_list[i]).attr('id') == 'version_tree_' + curPageVersion) {
                             $('#fullTreeMenuListContainer').html($(version_tree_list[i]).html());
                         }
@@ -362,6 +364,15 @@ function HighlightCurrentListForFullTree(searchListId, firstTime, searchUrl = do
             
             if (bestReturnVal == 0) {
                 var ver = getUrlVars(document.URL)["ver"];
+                // if (ver != undefined) {
+                //     addParam(curListATag[0], ver);
+                // }
+                // else if (curPageRealVer != undefined) {
+                //     addParam(curListATag[0], curPageRealVer);
+                // }
+                // else {
+                //     window.location.href = curListATag[0].href;
+                // }
                 var ifChangeVersion = getUrlVars(document.URL)["cVer"];
                 if (ifChangeVersion != undefined || (ver != undefined &&
                     ((ver != "latest" && pageStartVer != undefined && pageStartVer != "" && pageStartVer > ver) 
@@ -370,9 +381,11 @@ function HighlightCurrentListForFullTree(searchListId, firstTime, searchUrl = do
                     addParam(curListATag[0], ver);
                 }
             }
-        
-            curListATag[0].style.color = '#fe8e14';
-            curListATag[0].className = "otherLinkColour activeLink"
+            
+            if (document.URL.indexOf("web-twain/docs/faq/") < 0 || document.URL.indexOf("web-twain/docs/faq/?ver") > 0) {
+                curListATag[0].style.color = '#fe8e14';
+                curListATag[0].className = "otherLinkColour activeLink"
+            }
 
             if (firstTime) {
                 var crumbul = $($('#crumbs')).children("ul")
@@ -393,7 +406,12 @@ function HighlightCurrentListForFullTree(searchListId, firstTime, searchUrl = do
                         appendText += '<li><a class="bluelink" href = "' + curListATag[0].href + '">'+ curListATag[0].textContent + '</a></li>';
                     }
                     else {
-                        appendText += '<li id="breadcrumbLastNode">' + curListATag[0].textContent + '</li>'
+                        if (document.URL.indexOf("/barcode-reader/faq/") > 0) {
+                            appendText += '<li id="breadcrumbLastNode"><a class="bluelink" href = "' + curListATag[0].href + '">'+ curListATag[0].textContent + '</a></li>'
+                        } else {
+                            appendText += '<li id="breadcrumbLastNode">' + curListATag[0].textContent + '</li>'
+                        }
+                        // appendText += '<li id="breadcrumbLastNode">' + curListATag[0].textContent + '</li>'
                     }
                     $(crumbul[0]).append(appendText);
                 }
@@ -516,7 +534,6 @@ function UrlSearch(docUrl, listUrl) {
     }
 }
 
-// 获取链接中的参数，相当于网站中使用的getUrlParams函数
 function getUrlVars(inputUrl) {
     var vars = {};
     var parts = inputUrl.replace(/[?&]+([^=&]+)=([^&^#]*)/gi, function(m,key,value) {

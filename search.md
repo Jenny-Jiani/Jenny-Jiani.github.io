@@ -1,6 +1,6 @@
 ---
 layout: search-page
-title: Dynamsoft Barcode Reader SDK Documentation Search
-keywords: Dynamsoft Barcode Reader SDK Documentation Search
+title: Dynamic Web Twain SDK Documentation Search
+keywords: Dynamic Web Twain SDK Documentation Search
 breadcrumbText: HomePage
 ---
