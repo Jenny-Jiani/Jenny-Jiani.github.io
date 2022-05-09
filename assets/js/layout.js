@@ -197,7 +197,7 @@ $(document).ready(function(){
         window.scrollTo(0, 0)
     })
 
-    $("#fullTreeMenuListContainer li > span.noPathItem").on("click", function() {
+    $("#fullTreeMenuListContainer li > span.noPathItem, #fullTreeMenuListContainer li .listStyleIcon").on("click", function() {
         if ($(this).parent().hasClass("collapseListStyle")) {
             $(this).parent().removeClass("collapseListStyle").addClass("expandListStyle")
         } else {
